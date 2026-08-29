@@ -1,0 +1,4 @@
+# RUN_LOG — Homework 1
+# One line per run: UTC timestamp | command | exit code | notes
+
+# 0000-00-00T00:00:00Z | python code/hw1_client.py --n 1 | 0 | TODO

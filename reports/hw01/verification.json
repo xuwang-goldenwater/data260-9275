@@ -1,0 +1,19 @@
+{
+  "assignment": "hw01",
+  "student_sid4": "9275",
+  "repository": "https://github.com/<your-username>/data260-9275",
+  "commit": "TODO",
+  "generated_at": "TODO",
+  "artifacts": {
+    "report": "reports/hw01/report.pdf",
+    "metrics": "reports/hw01/METRICS.md",
+    "run_log": "reports/hw01/RUN_LOG.txt",
+    "ai_use": "reports/hw01/AI_USE.md",
+    "raw": "reports/hw01/raw/"
+  },
+  "checks": {
+    "model_adapter_path": "src/model_client.py",
+    "collaborators": ["Sbnikitha", "supriyaselvanganesan"]
+  },
+  "status": "TODO"
+}
