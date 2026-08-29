@@ -3,7 +3,7 @@
 DATA 260 coursework repository. Application code is shared across all homework
 assignments; per-assignment evidence lives under `reports/hwNN/`.
 
-**Repository:** https://github.com/<your-username>/data260-9275
+**Repository:** https://github.com/xuwang-goldenwater/data260-9275
 
 ## Layout
 
