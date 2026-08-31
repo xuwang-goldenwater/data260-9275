@@ -2,11 +2,11 @@
   "assignment": "DATA 260 Homework 1",
   "sid4": 9275,
   "verify_seed": 269275,
-  "generated_at": "2026-08-31T05:22:12+00:00",
+  "generated_at": "2026-08-31T12:52:15-07:00",
   "checks_total": 55,
-  "checks_passed": 52,
+  "checks_passed": 55,
   "required_failures": 0,
-  "optional_failures": 3,
+  "optional_failures": 0,
   "status": "PASS",
   "checks": [
     {
@@ -137,7 +137,7 @@
     },
     {
       "name": "file.reports/hw01/report.pdf",
-      "passed": false,
+      "passed": true,
       "detail": "export the Word report to PDF before tagging",
       "required": false
     },
@@ -329,15 +329,15 @@
     },
     {
       "name": "ollama.reachable",
-      "passed": false,
-      "detail": "No module named 'ollama'",
-      "required": false
+      "passed": true,
+      "detail": "1 model(s) installed",
+      "required": true
     },
     {
       "name": "ollama.model_present",
-      "passed": false,
-      "detail": "skipped",
-      "required": false
+      "passed": true,
+      "detail": "installed: ['qwen3:8b']",
+      "required": true
     }
   ]
 }
