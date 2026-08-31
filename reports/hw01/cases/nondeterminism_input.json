@@ -1,0 +1,9 @@
+{
+  "case_id": "hw01-nondeterminism-001",
+  "domain_id": 3,
+  "domain": "Grocery supply and recall notices",
+  "frozen": true,
+  "note": "Fixed input for the Part 3 non-determinism experiment. Do not edit after the first run.",
+  "title": "Sunrise Valley Creamy Peanut Butter, 16 oz jar",
+  "content": "Sunrise Valley Foods is voluntarily recalling 16 oz jars of Creamy Peanut Butter with lot codes SV2451 through SV2458 and best-by dates from 2027-03-11 to 2027-03-18. Routine internal testing found the affected lots may contain undeclared milk from a shared production line. People with an allergy or severe sensitivity to milk risk a serious or life-threatening allergic reaction. The product was distributed to retail stores in California, Nevada, and Oregon. Consumers should not eat the product and may return it to the place of purchase for a full refund."
+}

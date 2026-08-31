@@ -1,2 +1,14 @@
+# DATA 260 - shared dependencies
+# Python 3.11 or 3.12 required. Python 3.13 breaks langchain's numpy dependency.
+
+# Part 2 - Planner / Reviewer / Finalizer agent pipeline
+langchain-core>=0.3
+langchain-ollama>=0.2
+langchain-community>=0.3
+
+# Part 4 - model adapter with token accounting
+ollama>=0.4
+
+# shared
 python-dotenv>=1.0
 requests>=2.31

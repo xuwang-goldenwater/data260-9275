@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Requirement I.1: page title -->
+  <title>HW1-Xu Wang</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #c0392b;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 15px;
+      margin-bottom: 18px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #c0392b;
+      outline: none;
+    }
+
+    .terms {
+      margin-bottom: 20px;
+    }
+
+    .terms input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .terms label {
+      display: inline;
+      font-weight: normal;
+    }
+
+    button {
+      background-color: #c0392b;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #a33125;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Requirement I.2: largest heading tag naming the domain entity -->
+  <h1>Recall Notice</h1>
+
+  <!-- Requirement I.4: form for the RecallNotice entity -->
+  <form id="recallForm">
+
+    <!-- I.4.a  primary field, required, placeholder, autofocus -->
+    <label for="productName">Product Name *</label>
+    <input
+      type="text"
+      id="productName"
+      placeholder="Recalled product name, e.g. Creamy Peanut Butter, 16 oz jar"
+      required
+      autofocus
+    />
+
+    <!-- I.4.b  secondary field, required, placeholder -->
+    <label for="recallingFirm">Recalling Firm *</label>
+    <input
+      type="text"
+      id="recallingFirm"
+      placeholder="Company issuing the recall, e.g. Sunrise Valley Foods, Inc."
+      required
+    />
+
+    <!-- I.4.c  submitter email, required -->
+    <label for="submitterEmail">Submitter Email *</label>
+    <input
+      type="email"
+      id="submitterEmail"
+      placeholder="Contact email for follow-up, e.g. quality@example.com"
+      required
+    />
+
+    <!-- I.4.d  content / description field, required -->
+    <label for="description">Recall Details *</label>
+    <textarea
+      id="description"
+      placeholder="Describe the problem, affected lot codes and best-by dates, distribution area, and what consumers should do"
+      required
+    ></textarea>
+
+    <!-- I.4.e  category dropdown with four domain options -->
+    <label for="category">Reason for Recall *</label>
+    <select id="category" required>
+      <option value="" disabled selected>Select a reason</option>
+      <option value="Undeclared Allergen">Undeclared Allergen</option>
+      <option value="Bacterial Contamination">Bacterial Contamination</option>
+      <option value="Foreign Material">Foreign Material</option>
+      <option value="Mislabeling">Mislabeling</option>
+    </select>
+
+    <!-- I.4.f  terms checkbox with label -->
+    <div class="terms">
+      <input type="checkbox" id="agreedToTerms" />
+      <label for="agreedToTerms">I agree to the terms and conditions.</label>
+    </div>
+
+    <!-- I.4.g  submit button with domain-appropriate text -->
+    <button type="submit">Submit Recall Notice</button>
+
+  </form>
+
+  <!-- Requirement I.5: link the Part II JavaScript at the end of the file -->
+  <script src="app.js"></script>
+
+</body>
+</html>

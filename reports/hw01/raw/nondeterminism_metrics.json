@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-30T22:01:32-07:00",
+  "case_file": "reports/hw01/cases/nondeterminism_input.json",
+  "by_temperature": {
+    "0.7": {
+      "temperature": 0.7,
+      "runs": 20,
+      "distinct_tag_sets": 2,
+      "tags_in_all_runs": [
+        "peanut butter",
+        "product recall"
+      ],
+      "tags_in_exactly_one_run": [],
+      "distinct_tags_seen": 4,
+      "tag_frequency": {
+        "peanut butter": 20,
+        "product recall": 20,
+        "milk contamination": 18,
+        "milk allergy": 2
+      },
+      "latency_ms": {
+        "p50": 12121.5,
+        "p95": 15876.4,
+        "p99": 18586.1,
+        "min": 11122.1,
+        "max": 18586.1,
+        "mean": 12872.8
+      },
+      "reviewer_changed_count": 17,
+      "distinct_summaries": 9
+    },
+    "0.0": {
+      "temperature": 0.0,
+      "runs": 20,
+      "distinct_tag_sets": 1,
+      "tags_in_all_runs": [
+        "milk contamination",
+        "peanut butter",
+        "product recall"
+      ],
+      "tags_in_exactly_one_run": [],
+      "distinct_tags_seen": 3,
+      "tag_frequency": {
+        "peanut butter": 20,
+        "milk contamination": 20,
+        "product recall": 20
+      },
+      "latency_ms": {
+        "p50": 12377.6,
+        "p95": 30359.4,
+        "p99": 36294.4,
+        "min": 10590.4,
+        "max": 36294.4,
+        "mean": 16255.6
+      },
+      "reviewer_changed_count": 20,
+      "distinct_summaries": 1
+    }
+  }
+}

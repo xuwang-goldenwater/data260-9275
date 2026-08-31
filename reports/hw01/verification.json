@@ -1,19 +1,343 @@
 {
-  "assignment": "hw01",
-  "student_sid4": "9275",
-  "repository": "https://github.com/xuwang-goldenwater/data260-9275",
-  "commit": "TODO",
-  "generated_at": "TODO",
-  "artifacts": {
-    "report": "reports/hw01/report.pdf",
-    "metrics": "reports/hw01/METRICS.md",
-    "run_log": "reports/hw01/RUN_LOG.txt",
-    "ai_use": "reports/hw01/AI_USE.md",
-    "raw": "reports/hw01/raw/"
-  },
-  "checks": {
-    "model_adapter_path": "src/model_client.py",
-    "collaborators": ["Sbnikitha", "supriyaselvanganesan"]
-  },
-  "status": "TODO"
+  "assignment": "DATA 260 Homework 1",
+  "sid4": 9275,
+  "verify_seed": 269275,
+  "generated_at": "2026-08-31T05:22:12+00:00",
+  "checks_total": 55,
+  "checks_passed": 52,
+  "required_failures": 0,
+  "optional_failures": 3,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "section0.port_base",
+      "passed": true,
+      "detail": "PORT_BASE = 8275",
+      "required": true
+    },
+    {
+      "name": "section0.domain_id",
+      "passed": true,
+      "detail": "DOMAIN_ID = 3, grocery recall notices",
+      "required": true
+    },
+    {
+      "name": "section0.verify_seed",
+      "passed": true,
+      "detail": "VERIFY_SEED = 269275",
+      "required": true
+    },
+    {
+      "name": "file.DOMAIN_SCHEMA.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.AGENT.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.README.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.requirements.txt",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/Dockerfile",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/web_application/index.html",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/web_application/app.js",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/agents_demo.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/hw1_client.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/nondeterminism_runner.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.src/model_client.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/METRICS.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/RUN_LOG.txt",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/AI_USE.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/reproducible_run_instructions.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/cases/nondeterminism_input.json",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/raw/nondeterminism_runs.csv",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/raw/nondeterminism_runs.jsonl",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw01/report.pdf",
+      "passed": false,
+      "detail": "export the Word report to PDF before tagging",
+      "required": false
+    },
+    {
+      "name": "html.title",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.h1",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.autofocus",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.email_input",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.textarea",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.four_options",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.terms_label",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.script_tag",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "html.script_at_end",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.arrow_function",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.length_check",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.terms_check",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.json_stringify",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.destructuring",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.spread_operator",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "js.closure",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "schema.fields",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "schema.matches_html",
+      "passed": true,
+      "detail": "every schema field has a matching form control id",
+      "required": true
+    },
+    {
+      "name": "schema.categories",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part2.no_hardcoded_domain",
+      "passed": true,
+      "detail": "no domain vocabulary in the agent logic",
+      "required": true
+    },
+    {
+      "name": "part2.adapter_interface",
+      "passed": true,
+      "detail": "src/model_client.py exposes complete(messages, tools=None)",
+      "required": true
+    },
+    {
+      "name": "part2.goes_through_adapter",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.forty_runs",
+      "passed": true,
+      "detail": "40 runs recorded",
+      "required": true
+    },
+    {
+      "name": "part3.both_temperatures",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.three_tags_each",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.summary_within_limit",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.has_latency",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part4.stats_command",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part4.history_length",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part4.compliance_check",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part4.agent_md_bullets",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "ollama.reachable",
+      "passed": false,
+      "detail": "No module named 'ollama'",
+      "required": false
+    },
+    {
+      "name": "ollama.model_present",
+      "passed": false,
+      "detail": "skipped",
+      "required": false
+    }
+  ]
 }

@@ -1,4 +1,223 @@
-# RUN_LOG — Homework 1
-# One line per run: UTC timestamp | command | exit code | notes
+[2026-08-30T21:51:49-07:00] case file : reports/hw01/cases/nondeterminism_input.json
+[2026-08-30T21:51:49-07:00] model     : qwen3:8b
+[2026-08-30T21:51:49-07:00] plan      : 20 runs at each of [0.7, 0.0]
+[2026-08-30T21:51:49-07:00] already completed: 0 runs
 
-# 0000-00-00T00:00:00Z | python code/hw1_client.py --n 1 | 0 | TODO
+[2026-08-30T21:52:07-07:00] temp=0.7 run= 1/20   18.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:52:19-07:00] temp=0.7 run= 2/20   12.0s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:52:32-07:00] temp=0.7 run= 3/20   12.1s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:52:44-07:00] temp=0.7 run= 4/20   12.9s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:52:58-07:00] temp=0.7 run= 5/20   13.9s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:53:10-07:00] temp=0.7 run= 6/20   11.2s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:53:25-07:00] temp=0.7 run= 7/20   15.9s  changed=False tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:53:39-07:00] temp=0.7 run= 8/20   13.7s  changed=False tags=['peanut butter', 'milk allergy', 'product recall']
+[2026-08-30T21:53:54-07:00] temp=0.7 run= 9/20   14.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:54:06-07:00] temp=0.7 run=10/20   12.1s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:54:18-07:00] temp=0.7 run=11/20   12.0s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:54:29-07:00] temp=0.7 run=12/20   11.4s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:54:43-07:00] temp=0.7 run=13/20   13.3s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:54:56-07:00] temp=0.7 run=14/20   13.5s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:55:07-07:00] temp=0.7 run=15/20   11.2s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:55:18-07:00] temp=0.7 run=16/20   11.1s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:55:30-07:00] temp=0.7 run=17/20   11.7s  changed=False tags=['peanut butter', 'milk allergy', 'product recall']
+[2026-08-30T21:55:41-07:00] temp=0.7 run=18/20   11.1s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:55:54-07:00] temp=0.7 run=19/20   12.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:56:07-07:00] temp=0.7 run=20/20   12.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:56:17-07:00] temp=0.0 run= 1/20   10.7s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:56:28-07:00] temp=0.0 run= 2/20   10.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:56:39-07:00] temp=0.0 run= 3/20   10.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:56:49-07:00] temp=0.0 run= 4/20   10.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:57:01-07:00] temp=0.0 run= 5/20   12.1s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:57:12-07:00] temp=0.0 run= 6/20   10.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:57:29-07:00] temp=0.0 run= 7/20   16.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:57:41-07:00] temp=0.0 run= 8/20   11.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:57:53-07:00] temp=0.0 run= 9/20   11.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:58:29-07:00] temp=0.0 run=10/20   36.3s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:58:51-07:00] temp=0.0 run=11/20   22.3s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:59:12-07:00] temp=0.0 run=12/20   20.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:59:35-07:00] temp=0.0 run=13/20   22.9s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T21:59:59-07:00] temp=0.0 run=14/20   24.0s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:00:29-07:00] temp=0.0 run=15/20   30.4s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:00:43-07:00] temp=0.0 run=16/20   13.5s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:00:55-07:00] temp=0.0 run=17/20   11.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:01:07-07:00] temp=0.0 run=18/20   12.8s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:01:20-07:00] temp=0.0 run=19/20   12.6s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+[2026-08-30T22:01:32-07:00] temp=0.0 run=20/20   12.4s  changed=True  tags=['peanut butter', 'milk contamination', 'product recall']
+
+==============================================================================
+PART 3 RESULTS
+==============================================================================
+Metric                        Temp 0.7                  Temp 0.0                  
+----------------------------------------------------------------------------------
+Runs completed                20                        20                        
+Distinct tag sets             2                         1                         
+Tags in all runs              2                         3                         
+Tags in exactly 1 run         0                         0                         
+Distinct summaries            9                         1                         
+Reviewer changed (count)      17                        20                        
+Latency p50 (ms)              12121.5                   12377.6                   
+Latency p95 (ms)              15876.4                   30359.4                   
+Latency p99 (ms)              18586.1                   36294.4                   
+
+--- Temperature 0.7 ---
+  tags present in all 20 runs : ['peanut butter', 'product recall']
+  tags present in exactly 1 run     : none
+  tag frequency (tag: runs out of 20)
+       20  peanut butter
+       20  product recall
+       18  milk contamination
+        2  milk allergy
+
+--- Temperature 0.0 ---
+  tags present in all 20 runs : ['milk contamination', 'peanut butter', 'product recall']
+  tags present in exactly 1 run     : none
+  tag frequency (tag: runs out of 20)
+       20  peanut butter
+       20  milk contamination
+       20  product recall
+
+raw per-run JSONL : reports/hw01/raw/nondeterminism_runs.jsonl
+raw per-run CSV   : reports/hw01/raw/nondeterminism_runs.csv
+metrics JSON      : reports/hw01/raw/nondeterminism_metrics.json
+model: qwen3:8b   temperature: 0.0
+system prompt: AGENT.md (1212 chars)
+
+==============================================================================
+USER (turn 1)
+==============================================================================
+Review this JavaScript:
+
+const createSubmissionCounter = () => {
+  let count = 0;
+  return () => {
+    count = count + 1;
+    return count;
+  };
+};
+
+--- ASSISTANT (turn 1) ---
+- The `count` variable is not declared with `const` or `let`, leading to a potential global variable.
+
+[turn 1] input tokens = 344  output tokens = 25  total tokens = 369  (17715 ms)
+[AGENT.md bullet-only check] PASS (1 bullets)
+
+==============================================================================
+USER (turn 2)
+==============================================================================
+Review this validation function:
+
+const validateRecallNotice = (description, agreedToTerms) => {
+  if (description.trim().length <= 25) {
+    alert("Recall Details must be longer than 25 characters.");
+    return false;
+  }
+  if (!agreedToTerms) {
+    alert("Please agree to the terms and conditions.");
+    return false;
+  }
+  return true;
+};
+
+--- ASSISTANT (turn 2) ---
+- The function does not handle cases where `description` is `null` or `undefined`.  
+- The function does not handle cases where `agreedToTerms` is not a boolean.  
+- The function does not provide detailed error messages for invalid inputs.  
+- The function does not prevent form submission if validation fails.  
+- The function uses `alert()` which is not ideal for user experience in web applications.  
+- The function does not allow for custom error messages or validation rules.
+
+[turn 2] input tokens = 463  output tokens = 101  total tokens = 564  (12289 ms)
+[AGENT.md bullet-only check] PASS (6 bullets)
+
+==============================================================================
+USER (turn 3)
+==============================================================================
+Review this Python:
+
+def clamp_summary(summary, limit=25):
+    words = str(summary).split()
+    if len(words) <= limit:
+        return " ".join(words), False
+    return " ".join(words[:limit]), True
+
+--- ASSISTANT (turn 3) ---
+- The function incorrectly returns `True` as a boolean but uses division to achieve it, which is unnecessary and confusing.  
+- The function does not handle non-string inputs for `summary` properly.  
+- The function does not account for edge cases where `summary` is `None` or empty.  
+- The function does not provide a clear indication of truncation in the returned value.  
+- The function does not allow for customizing the `limit` parameter in a flexible way.  
+- The function does not handle cases where the `summary` contains non-space separators.
+
+[turn 3] input tokens = 622  output tokens = 118  total tokens = 740  (16385 ms)
+[AGENT.md bullet-only check] PASS (6 bullets)
+
+
+==============================================================================
+/stats  after turn 3
+==============================================================================
+  turn count                        : 3
+  cumulative input tokens           : 1429
+  cumulative output tokens          : 244
+  cumulative total tokens           : 1673
+  conversation messages             : 7
+  serialized history length (chars) : 3359
+  serialized history length (bytes) : 3361
+==============================================================================
+
+==============================================================================
+USER (turn 4)
+==============================================================================
+Of the three functions I have shown you so far, which one is most likely to fail on unexpected input, and why?
+
+--- ASSISTANT (turn 4) ---
+- The Python `clamp_summary` function is most likely to fail on unexpected input because it does not handle non-string inputs, `None`, or non-space separators properly.
+
+[turn 4] input tokens = 774  output tokens = 35  total tokens = 809  (5480 ms)
+[AGENT.md bullet-only check] PASS (1 bullets)
+
+==============================================================================
+USER (turn 5)
+==============================================================================
+List the distinct defects you have reported across this entire conversation, without repeating any.
+
+--- ASSISTANT (turn 5) ---
+- The `count` variable is not declared with `const` or `let`, leading to a potential global variable.  
+- The function does not handle cases where `description` is `null` or `undefined`.  
+- The function does not handle cases where `agreedToTerms` is not a boolean.  
+- The function does not provide detailed error messages for invalid inputs.  
+- The function does not prevent form submission if validation fails.  
+- The function uses `alert()` which is not ideal for user experience in web applications.  
+- The function does not allow for custom error messages or validation rules.  
+- The function incorrectly returns `True` as a boolean but uses division to achieve it, which is unnecessary and confusing.  
+- The function does not handle non-string inputs for `summary` properly.  
+- The function does not account for edge cases where `summary` is `None` or empty.  
+- The function does not provide a clear indication of truncation in the returned value.  
+- The function does not allow for customizing the `limit` parameter in a flexible way.  
+- The function does not handle cases where the `summary` contains non-space separators.
+
+[turn 5] input tokens = 834  output tokens = 244  total tokens = 1078  (24959 ms)
+[AGENT.md bullet-only check] FAIL -> 13 bullets, limit is 6
+
+
+==============================================================================
+/stats  after turn 5
+==============================================================================
+  turn count                        : 5
+  cumulative input tokens           : 3037
+  cumulative output tokens          : 523
+  cumulative total tokens           : 3560
+  conversation messages             : 11
+  serialized history length (chars) : 5030
+  serialized history length (bytes) : 5032
+==============================================================================
+
+
+==============================================================================
+SESSION TOTALS
+==============================================================================
+  turns                             : 5
+  cumulative input tokens           : 3037
+  cumulative output tokens          : 523
+  cumulative total tokens           : 3560
+  serialized history length (chars) : 5030
+==============================================================================
