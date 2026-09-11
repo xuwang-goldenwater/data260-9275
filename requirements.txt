@@ -1,13 +1,22 @@
 # DATA 260 - shared dependencies
 # Python 3.11 or 3.12 required. Python 3.13 breaks langchain's numpy dependency.
 
-# Part 2 - Planner / Reviewer / Finalizer agent pipeline
+# HW1 Part 2 - Planner / Reviewer / Finalizer agent pipeline
 langchain-core>=0.3
 langchain-ollama>=0.2
 langchain-community>=0.3
 
-# Part 4 - model adapter with token accounting
+# HW1 Part 4 - model adapter with token accounting
 ollama>=0.4
+
+# HW2 Part 2 - FastAPI backend on PORT_BASE 8275
+fastapi>=0.110
+uvicorn[standard]>=0.27
+httpx>=0.27          # FastAPI TestClient, used by verify_hw02.py
+
+# HW2 Parts 3 and 4 - stateful agent graph and output-schema validation
+langgraph>=0.2
+pydantic>=2.6
 
 # shared
 python-dotenv>=1.0

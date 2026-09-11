@@ -8,28 +8,42 @@ assignments; per-assignment evidence lives under `reports/hwNN/`.
 ## Layout
 
 ```
-code/                  shared application code (extended each homework)
-  web_application/     web app source
-  agents_demo.py       agent demo entrypoint
-  hw1_client.py        HW1 driver script
-  Dockerfile           container image for the application
+code/                        shared application code (extended each homework)
+  web_application/           web app source: index.html, app.js, styles.css
+  data/                      record store seed for the API
+  agents_demo.py             HW1 Planner -> Reviewer -> Finalizer pipeline
+  hw1_client.py              HW1 driver script
+  nondeterminism_runner.py   HW1 Part 3 experiment
+  api_server.py              HW2 FastAPI backend on PORT_BASE 8275
+  agent_graph.py             HW2 LangGraph supervisor graph
+  graph_experiment_runner.py HW2 Part 4 experiments
+  graph_offline_test.py      HW2 graph behaviour test, no model required
+  Dockerfile                 container image for the static HW1 page
 src/
-  model_client.py      model adapter (required exact path)
+  model_client.py            model adapter (required exact path)
 reports/
-  hw01/                HW1 report, metrics, logs, raw outputs
-  hw02/ hw03/          future assignments
-AGENT.md               agent design, tools, prompts
-DOMAIN_SCHEMA.md       domain data schema
+  hw01/                      HW1 report, metrics, logs, raw outputs
+  hw02/                      HW2 report, metrics, logs, raw outputs
+verify_hw01.py               HW1 self-check
+verify_hw02.py               HW2 self-check
+AGENT.md                     system prompt for hw1_client.py
+DOMAIN_SCHEMA.md             domain data schema
 ```
 
 ## Quick start
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+conda create -n data260 python=3.12 -y
+conda activate data260
 pip install -r requirements.txt
-cp .env.example .env    # then fill in your API key
-python code/hw1_client.py --help
+ollama pull qwen3:8b
+
+make run-api            # HW2 web app + API on http://127.0.0.1:8275
+make run-graph          # HW2 stateful agent graph, one streamed run
+make verify-hw02        # self-check
 ```
+
+Python 3.11 or 3.12. **3.13 breaks langchain's numpy dependency.**
 
 ## Collaborators
 
@@ -40,6 +54,37 @@ python code/hw1_client.py --help
 
 - Do **not** copy application code into `reports/`. Reports hold evidence only.
 - The model adapter must stay at `src/model_client.py`.
+
+## Section 0 configuration
+
+Fixed for the semester, derived from SID4 = 9275.
+
+| Value | This repository |
+|---|---|
+| PORT_BASE | 8275 |
+| PREFIX | s9275 |
+| SEED | 9275 |
+| VERIFY_SEED | 269275 |
+| DOMAIN_ID | 3 — grocery supply and recall notices |
+
+## Homework 2 — what was added
+
+Homework 2 extends this codebase rather than copying it.
+
+- **Part 1** — `code/web_application/styles.css` is new; `index.html` and
+  `app.js` gained a list view, a search box and visible loading, empty and
+  error states, and stay usable at 375px. Every Homework 1 requirement in those
+  two files still passes `verify_hw01.py`.
+- **Part 2** — `code/api_server.py` serves the page and a `RecallNotice` REST
+  API on PORT_BASE 8275, with create, update, delete and search over a JSON
+  record store.
+- **Part 3** — `code/agent_graph.py` refactors the Homework 1 sequential
+  pipeline into a LangGraph `StateGraph` with a supervisor, conditional edges
+  and a correction loop. Every model call still goes through
+  `src/model_client.py`.
+- **Part 4** — a Pydantic gate on the Planner's output, a retry path that feeds
+  the validation error back, and 75 recorded runs in `reports/hw02/raw/`.
+  Findings are in `reports/hw02/METRICS.md`.
 
 ## Homework 1 — Part 4 conceptual answers
 

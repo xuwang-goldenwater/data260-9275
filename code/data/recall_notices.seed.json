@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar",
+    "recallingFirm": "Sunrise Valley Foods, Inc.",
+    "submitterEmail": "quality@sunrisevalleyfoods.com",
+    "description": "Sunrise Valley Foods is voluntarily recalling 16 oz jars of Creamy Peanut Butter with lot codes SV2451 through SV2458 and best-by dates from 2027-03-11 to 2027-03-18. Routine internal testing found the affected lots may contain undeclared milk from a shared production line. Consumers should not eat the product and may return it for a full refund.",
+    "category": "Undeclared Allergen",
+    "agreedToTerms": true,
+    "submissionDate": "2026-08-29T14:32:07.512Z"
+  },
+  {
+    "id": 2,
+    "productName": "Harbor Point Frozen Diced Onions, 2 lb bag",
+    "recallingFirm": "Harbor Point Produce Co.",
+    "submitterEmail": "recalls@harborpointproduce.com",
+    "description": "Harbor Point Produce is recalling 2 lb bags of Frozen Diced Onions with lot code HP-0918 after a supplier notified the company that the raw onions tested positive for Listeria monocytogenes. The product was distributed to foodservice customers in Washington and Idaho. Customers should discard the product and contact the firm for credit.",
+    "category": "Bacterial Contamination",
+    "agreedToTerms": true,
+    "submissionDate": "2026-09-02T09:14:41.108Z"
+  },
+  {
+    "id": 3,
+    "productName": "Cedar Mill Multigrain Sandwich Bread, 24 oz loaf",
+    "recallingFirm": "Cedar Mill Bakeries LLC",
+    "submitterEmail": "food.safety@cedarmillbakeries.com",
+    "description": "Cedar Mill Bakeries is recalling 24 oz loaves of Multigrain Sandwich Bread with best-by dates of 2026-09-20 and 2026-09-21 after three consumers reported small fragments of black plastic in the product. The fragments are believed to come from a damaged conveyor guard. Consumers should not eat the bread and may return it to the store for a refund.",
+    "category": "Foreign Material",
+    "agreedToTerms": true,
+    "submissionDate": "2026-09-08T16:05:23.774Z"
+  }
+]

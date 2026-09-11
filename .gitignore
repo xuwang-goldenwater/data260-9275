@@ -11,3 +11,7 @@ dist/
 build/
 node_modules/
 *.pkg
+
+# HW2 - runtime record store, recreated from code/data/recall_notices.seed.json
+code/data/recall_notices.json
+code/data/*.tmp

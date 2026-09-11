@@ -4,165 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Requirement I.1: page title -->
-  <title>HW1-Xu Wang</title>
+  <!-- HW1 requirement I.1 kept; HW2 extends the same page. -->
+  <title>HW1-Xu Wang &mdash; HW2 Recall Notices</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 640px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    h1 {
-      color: #333;
-      text-align: center;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #c0392b;
-    }
-
-    form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      font-size: 15px;
-      margin-bottom: 18px;
-      box-sizing: border-box;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #c0392b;
-      outline: none;
-    }
-
-    .terms {
-      margin-bottom: 20px;
-    }
-
-    .terms input {
-      width: auto;
-      margin-right: 8px;
-    }
-
-    .terms label {
-      display: inline;
-      font-weight: normal;
-    }
-
-    button {
-      background-color: #c0392b;
-      color: #fff;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-    }
-
-    button:hover {
-      background-color: #a33125;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+<div class="wrap">
 
-  <!-- Requirement I.2: largest heading tag naming the domain entity -->
+  <!-- HW1 requirement I.2: largest heading names the domain entity -->
   <h1>Recall Notice</h1>
+  <p class="subtitle">Grocery supply and recall notices &middot; DOMAIN_ID 3 &middot; API on port 8275</p>
 
-  <!-- Requirement I.4: form for the RecallNotice entity -->
-  <form id="recallForm">
+  <!-- one-line feedback after a create / update / delete -->
+  <div id="toast" class="toast" role="status" hidden></div>
 
-    <!-- I.4.a  primary field, required, placeholder, autofocus -->
-    <label for="productName">Product Name *</label>
-    <input
-      type="text"
-      id="productName"
-      placeholder="Recalled product name, e.g. Creamy Peanut Butter, 16 oz jar"
-      required
-      autofocus
-    />
+  <!-- ==================== HOME VIEW: list + search ==================== -->
+  <section id="homeView">
+    <h2>Recall notices</h2>
 
-    <!-- I.4.b  secondary field, required, placeholder -->
-    <label for="recallingFirm">Recalling Firm *</label>
-    <input
-      type="text"
-      id="recallingFirm"
-      placeholder="Company issuing the recall, e.g. Sunrise Valley Foods, Inc."
-      required
-    />
-
-    <!-- I.4.c  submitter email, required -->
-    <label for="submitterEmail">Submitter Email *</label>
-    <input
-      type="email"
-      id="submitterEmail"
-      placeholder="Contact email for follow-up, e.g. quality@example.com"
-      required
-    />
-
-    <!-- I.4.d  content / description field, required -->
-    <label for="description">Recall Details *</label>
-    <textarea
-      id="description"
-      placeholder="Describe the problem, affected lot codes and best-by dates, distribution area, and what consumers should do"
-      required
-    ></textarea>
-
-    <!-- I.4.e  category dropdown with four domain options -->
-    <label for="category">Reason for Recall *</label>
-    <select id="category" required>
-      <option value="" disabled selected>Select a reason</option>
-      <option value="Undeclared Allergen">Undeclared Allergen</option>
-      <option value="Bacterial Contamination">Bacterial Contamination</option>
-      <option value="Foreign Material">Foreign Material</option>
-      <option value="Mislabeling">Mislabeling</option>
-    </select>
-
-    <!-- I.4.f  terms checkbox with label -->
-    <div class="terms">
-      <input type="checkbox" id="agreedToTerms" />
-      <label for="agreedToTerms">I agree to the terms and conditions.</label>
+    <!-- Part 2.4 - search by primary (product name) or secondary (firm) field -->
+    <div class="toolbar">
+      <label class="sr-only" for="searchInput" hidden>Search</label>
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search product name or recalling firm"
+        aria-label="Search product name or recalling firm"
+      />
+      <button type="button" id="searchBtn">Search</button>
+      <button type="button" id="clearBtn" class="secondary">Clear</button>
     </div>
 
-    <!-- I.4.g  submit button with domain-appropriate text -->
-    <button type="submit">Submit Recall Notice</button>
+    <!-- the three required states all render into this one element -->
+    <div id="listState" class="state" hidden></div>
 
-  </form>
+    <ul id="noticeList" class="notice-list"></ul>
 
-  <!-- Requirement I.5: link the Part II JavaScript at the end of the file -->
-  <script src="app.js"></script>
+    <div class="form-actions" style="margin-top: 16px;">
+      <button type="button" id="newBtn">File a new recall notice</button>
+    </div>
+  </section>
+
+  <!-- ==================== FORM VIEW: create / update ==================== -->
+  <section id="formView" hidden>
+    <h2 id="formHeading">File a new recall notice</h2>
+
+    <!-- HW1 requirement I.4: form for the RecallNotice entity.
+         HW2 reuses the same form for creating and for updating a record. -->
+    <form id="recallForm" novalidate>
+
+      <!-- I.4.a primary field, required, placeholder, autofocus -->
+      <div class="field" id="field-productName">
+        <label for="productName">Product Name *</label>
+        <input
+          type="text"
+          id="productName"
+          placeholder="Recalled product name, e.g. Creamy Peanut Butter, 16 oz jar"
+          required
+          autofocus
+        />
+        <span class="field-error">Product name is required.</span>
+      </div>
+
+      <!-- I.4.b secondary field, required, placeholder -->
+      <div class="field" id="field-recallingFirm">
+        <label for="recallingFirm">Recalling Firm *</label>
+        <input
+          type="text"
+          id="recallingFirm"
+          placeholder="Company issuing the recall, e.g. Sunrise Valley Foods, Inc."
+          required
+        />
+        <span class="field-error">Recalling firm is required.</span>
+      </div>
+
+      <!-- I.4.c submitter email, required -->
+      <div class="field" id="field-submitterEmail">
+        <label for="submitterEmail">Submitter Email *</label>
+        <input
+          type="email"
+          id="submitterEmail"
+          placeholder="Contact email for follow-up, e.g. quality@example.com"
+          required
+        />
+        <span class="field-error">Enter a valid email address.</span>
+      </div>
+
+      <!-- I.4.d content / description field, required -->
+      <div class="field" id="field-description">
+        <label for="description">Recall Details *</label>
+        <textarea
+          id="description"
+          placeholder="Describe the problem, affected lot codes and best-by dates, distribution area, and what consumers should do"
+          required
+        ></textarea>
+        <span class="field-error">Recall details must be longer than 25 characters.</span>
+      </div>
+
+      <!-- I.4.e category dropdown with four domain options -->
+      <div class="field" id="field-category">
+        <label for="category">Reason for Recall *</label>
+        <select id="category" required>
+          <option value="" disabled selected>Select a reason</option>
+          <option value="Undeclared Allergen">Undeclared Allergen</option>
+          <option value="Bacterial Contamination">Bacterial Contamination</option>
+          <option value="Foreign Material">Foreign Material</option>
+          <option value="Mislabeling">Mislabeling</option>
+        </select>
+        <span class="field-error">Choose a reason for the recall.</span>
+      </div>
+
+      <!-- I.4.f terms checkbox with label -->
+      <div class="field" id="field-agreedToTerms">
+        <div class="terms">
+          <input type="checkbox" id="agreedToTerms" />
+          <label for="agreedToTerms">I agree to the terms and conditions.</label>
+        </div>
+        <span class="field-error">You must agree to the terms and conditions.</span>
+      </div>
+
+      <!-- I.4.g submit button with domain-appropriate text -->
+      <div class="form-actions">
+        <button type="submit" id="submitBtn">Submit Recall Notice</button>
+        <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+      </div>
+
+    </form>
+  </section>
+
+</div>
+
+<!-- HW1 requirement I.5: the JavaScript is linked at the end of the file -->
+<script src="app.js"></script>
 
 </body>
 </html>

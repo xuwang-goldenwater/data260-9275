@@ -1,0 +1,1036 @@
+---NODE: Supervisor (turn 1/10 -> planner) ---
+    [stream] supervisor updated: turn_count
+---NODE: Planner ---
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 711, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 680, in main
+    record = run_once(
+             ^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 595, in run_once
+    for chunk in app.stream(state, config=config):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/main.py", line 2967, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 207, in tick
+    run_with_retry(
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 707, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 447, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 382, in planner_node
+    response = client.complete(
+               ^^^^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/src/model_client.py", line 93, in complete
+    response = self._client.chat(think=think, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 387, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 145, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+During task with name 'planner' and id '3ddac207-9c89-86c9-5af1-5bb6695b4417'
+---NODE: Supervisor (turn 1/10 -> planner) ---
+    [stream] supervisor updated: turn_count
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination affecting specific lots and regions."}
+    [stream] planner updated: planner_proposal, validation_error, reviewer_feedback, planner_attempts
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+    [stream] supervisor updated: turn_count
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+    [stream] reviewer updated: reviewer_feedback, reviewer_attempts, status
+---NODE: Supervisor (no work left, 2 turns used) ---
+
+======================================================================
+RESULT
+======================================================================
+outcome          : valid first attempt
+status           : complete
+turns used       : 2 / 10
+planner attempts : 1
+reviewer attempts: 1
+model calls      : 2
+total latency    : 415703 ms
+
+{
+  "tags": [
+    "peanut butter",
+    "milk allergy",
+    "product recall"
+  ],
+  "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination affecting specific lots and regions."
+}
+---NODE: Supervisor (turn 1/4 -> planner) ---
+    [stream] supervisor updated: turn_count
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination affecting specific lots and regions."}
+    [stream] planner updated: planner_proposal, validation_error, reviewer_feedback, planner_attempts
+---NODE: Supervisor (turn 2/4 -> reviewer) ---
+    [stream] supervisor updated: turn_count
+---NODE: Reviewer ---
+    forced issue; sending the task back to the Planner
+    [stream] reviewer updated: reviewer_feedback, reviewer_attempts
+---NODE: Supervisor (turn 3/4 -> planner) ---
+    [stream] supervisor updated: turn_count
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk contamination", "product recall"], "summary": "sunrise valley foods recalls peanut butter due to milk contamination in specific lots distributed to california nevada and oregon."}
+    [stream] planner updated: planner_proposal, validation_error, reviewer_feedback, planner_attempts
+---NODE: Supervisor (turn 4/4 -> reviewer) ---
+    [stream] supervisor updated: turn_count
+---NODE: Reviewer ---
+    forced issue; sending the task back to the Planner
+    [stream] reviewer updated: reviewer_feedback, reviewer_attempts
+---NODE: Supervisor (turn 5/4 -> planner) ---
+    turn ceiling 4 reached; abandoning the run
+    [stream] supervisor updated: turn_count, status
+
+======================================================================
+RESULT
+======================================================================
+outcome          : hit turn ceiling
+status           : abandoned
+turns used       : 5 / 4
+planner attempts : 2
+reviewer attempts: 2
+model calls      : 2
+total latency    : 60812 ms
+
+{
+  "tags": [
+    "peanut butter",
+    "milk contamination",
+    "product recall"
+  ],
+  "summary": "sunrise valley foods recalls peanut butter due to milk contamination in specific lots distributed to california nevada and oregon."
+}
+
+========================================================================
+EXPERIMENT schema30: 30 runs, ceiling 10, case schema_input
+========================================================================
+
+[schema30 1/30] 2026-09-11T12:06:37-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination affecting specific lots and regions."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 1/30] valid first attempt (2 turns, 53.8s) - about 26.0 min left in this experiment
+
+[schema30 2/30] 2026-09-11T12:07:30-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 2/30] valid first attempt (2 turns, 19.8s) - about 17.2 min left in this experiment
+
+[schema30 3/30] 2026-09-11T12:07:50-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 3/30] valid first attempt (2 turns, 27.1s) - about 15.1 min left in this experiment
+
+[schema30 4/30] 2026-09-11T12:08:17-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 4/30] valid first attempt (2 turns, 21.0s) - about 13.2 min left in this experiment
+
+[schema30 5/30] 2026-09-11T12:08:38-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 5/30] valid first attempt (2 turns, 21.9s) - about 12.0 min left in this experiment
+
+[schema30 6/30] 2026-09-11T12:09:00-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 6/30] valid first attempt (2 turns, 24.8s) - about 11.2 min left in this experiment
+
+[schema30 7/30] 2026-09-11T12:09:25-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 7/30] valid first attempt (2 turns, 15.5s) - about 10.1 min left in this experiment
+
+[schema30 8/30] 2026-09-11T12:09:41-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 8/30] valid first attempt (2 turns, 13.7s) - about 9.1 min left in this experiment
+
+[schema30 9/30] 2026-09-11T12:09:54-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 9/30] valid first attempt (2 turns, 11.8s) - about 8.1 min left in this experiment
+
+[schema30 10/30] 2026-09-11T12:10:06-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 10/30] valid first attempt (2 turns, 19.1s) - about 7.6 min left in this experiment
+
+[schema30 11/30] 2026-09-11T12:10:25-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 11/30] valid first attempt (2 turns, 15.3s) - about 7.0 min left in this experiment
+
+[schema30 12/30] 2026-09-11T12:10:40-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 12/30] valid first attempt (2 turns, 22.6s) - about 6.7 min left in this experiment
+
+[schema30 13/30] 2026-09-11T12:11:03-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 13/30] valid first attempt (2 turns, 15.2s) - about 6.1 min left in this experiment
+
+[schema30 14/30] 2026-09-11T12:11:18-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 14/30] valid first attempt (2 turns, 16.8s) - about 5.7 min left in this experiment
+
+[schema30 15/30] 2026-09-11T12:11:35-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 15/30] valid first attempt (2 turns, 13.0s) - about 5.2 min left in this experiment
+
+[schema30 16/30] 2026-09-11T12:11:48-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 16/30] valid first attempt (2 turns, 38.0s) - about 5.1 min left in this experiment
+
+[schema30 17/30] 2026-09-11T12:12:26-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 17/30] valid first attempt (2 turns, 17.9s) - about 4.7 min left in this experiment
+
+[schema30 18/30] 2026-09-11T12:12:44-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 18/30] valid first attempt (2 turns, 10.2s) - about 4.2 min left in this experiment
+
+[schema30 19/30] 2026-09-11T12:12:54-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 19/30] valid first attempt (2 turns, 9.1s) - about 3.7 min left in this experiment
+
+[schema30 20/30] 2026-09-11T12:13:03-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 20/30] valid first attempt (2 turns, 15.7s) - about 3.4 min left in this experiment
+
+[schema30 21/30] 2026-09-11T12:13:19-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 21/30] valid first attempt (2 turns, 17.5s) - about 3.0 min left in this experiment
+
+[schema30 22/30] 2026-09-11T12:13:36-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 22/30] valid first attempt (2 turns, 11.3s) - about 2.6 min left in this experiment
+
+[schema30 23/30] 2026-09-11T12:13:48-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 23/30] valid first attempt (2 turns, 13.6s) - about 2.3 min left in this experiment
+
+[schema30 24/30] 2026-09-11T12:14:01-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 24/30] valid first attempt (2 turns, 10.5s) - about 1.9 min left in this experiment
+
+[schema30 25/30] 2026-09-11T12:14:12-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 25/30] valid first attempt (2 turns, 12.9s) - about 1.6 min left in this experiment
+
+[schema30 26/30] 2026-09-11T12:14:25-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 26/30] valid first attempt (2 turns, 18.1s) - about 1.2 min left in this experiment
+
+[schema30 27/30] 2026-09-11T12:14:43-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 27/30] valid first attempt (2 turns, 10.3s) - about 0.9 min left in this experiment
+
+[schema30 28/30] 2026-09-11T12:14:53-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 28/30] valid first attempt (2 turns, 9.8s) - about 0.6 min left in this experiment
+
+[schema30 29/30] 2026-09-11T12:15:03-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 29/30] valid first attempt (2 turns, 15.0s) - about 0.3 min left in this experiment
+
+[schema30 30/30] 2026-09-11T12:15:18-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[schema30 30/30] valid first attempt (2 turns, 9.4s) - about 0.0 min left in this experiment
+
+========================================================================
+EXPERIMENT ceiling2: 20 runs, ceiling 2, case schema_input
+========================================================================
+
+[ceiling2 1/20] 2026-09-11T12:15:27-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 1/20] valid first attempt (2 turns, 10.9s) - about 3.5 min left in this experiment
+
+[ceiling2 2/20] 2026-09-11T12:15:38-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 2/20] valid first attempt (2 turns, 18.6s) - about 4.4 min left in this experiment
+
+[ceiling2 3/20] 2026-09-11T12:15:57-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 3/20] valid first attempt (2 turns, 11.9s) - about 3.9 min left in this experiment
+
+[ceiling2 4/20] 2026-09-11T12:16:09-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 4/20] valid first attempt (2 turns, 14.6s) - about 3.7 min left in this experiment
+
+[ceiling2 5/20] 2026-09-11T12:16:23-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 5/20] valid first attempt (2 turns, 10.1s) - about 3.3 min left in this experiment
+
+[ceiling2 6/20] 2026-09-11T12:16:34-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 6/20] valid first attempt (2 turns, 11.1s) - about 3.0 min left in this experiment
+
+[ceiling2 7/20] 2026-09-11T12:16:45-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 7/20] valid first attempt (2 turns, 8.1s) - about 2.6 min left in this experiment
+
+[ceiling2 8/20] 2026-09-11T12:16:53-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 8/20] valid first attempt (2 turns, 10.6s) - about 2.4 min left in this experiment
+
+[ceiling2 9/20] 2026-09-11T12:17:03-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 9/20] valid first attempt (2 turns, 16.7s) - about 2.3 min left in this experiment
+
+[ceiling2 10/20] 2026-09-11T12:17:20-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 10/20] valid first attempt (2 turns, 33.6s) - about 2.4 min left in this experiment
+
+[ceiling2 11/20] 2026-09-11T12:17:54-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 11/20] valid first attempt (2 turns, 18.7s) - about 2.2 min left in this experiment
+
+[ceiling2 12/20] 2026-09-11T12:18:12-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 12/20] valid first attempt (2 turns, 18.8s) - about 2.0 min left in this experiment
+
+[ceiling2 13/20] 2026-09-11T12:18:31-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 13/20] valid first attempt (2 turns, 11.2s) - about 1.7 min left in this experiment
+
+[ceiling2 14/20] 2026-09-11T12:18:42-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 14/20] valid first attempt (2 turns, 11.2s) - about 1.5 min left in this experiment
+
+[ceiling2 15/20] 2026-09-11T12:18:54-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 15/20] valid first attempt (2 turns, 10.6s) - about 1.2 min left in this experiment
+
+[ceiling2 16/20] 2026-09-11T12:19:04-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 16/20] valid first attempt (2 turns, 16.4s) - about 1.0 min left in this experiment
+
+[ceiling2 17/20] 2026-09-11T12:19:21-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 17/20] valid first attempt (2 turns, 9.8s) - about 0.7 min left in this experiment
+
+[ceiling2 18/20] 2026-09-11T12:19:30-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 18/20] valid first attempt (2 turns, 9.5s) - about 0.5 min left in this experiment
+
+[ceiling2 19/20] 2026-09-11T12:19:40-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 19/20] valid first attempt (2 turns, 17.0s) - about 0.2 min left in this experiment
+
+[ceiling2 20/20] 2026-09-11T12:19:57-07:00
+---NODE: Supervisor (turn 1/2 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/2 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling2 20/20] valid first attempt (2 turns, 11.2s) - about 0.0 min left in this experiment
+
+========================================================================
+EXPERIMENT ceiling10: 20 runs, ceiling 10, case schema_input
+========================================================================
+
+[ceiling10 1/20] 2026-09-11T12:20:08-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 1/20] valid first attempt (2 turns, 12.8s) - about 4.1 min left in this experiment
+
+[ceiling10 2/20] 2026-09-11T12:20:21-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 2/20] valid first attempt (2 turns, 9.1s) - about 3.3 min left in this experiment
+
+[ceiling10 3/20] 2026-09-11T12:20:30-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 3/20] valid first attempt (2 turns, 16.8s) - about 3.7 min left in this experiment
+
+[ceiling10 4/20] 2026-09-11T12:20:47-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 4/20] valid first attempt (2 turns, 25.3s) - about 4.3 min left in this experiment
+
+[ceiling10 5/20] 2026-09-11T12:21:12-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 5/20] valid first attempt (2 turns, 16.1s) - about 4.0 min left in this experiment
+
+[ceiling10 6/20] 2026-09-11T12:21:28-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 6/20] valid first attempt (2 turns, 13.1s) - about 3.6 min left in this experiment
+
+[ceiling10 7/20] 2026-09-11T12:21:41-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 7/20] valid first attempt (2 turns, 10.6s) - about 3.2 min left in this experiment
+
+[ceiling10 8/20] 2026-09-11T12:21:52-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 8/20] valid first attempt (2 turns, 13.4s) - about 2.9 min left in this experiment
+
+[ceiling10 9/20] 2026-09-11T12:22:05-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 9/20] valid first attempt (2 turns, 24.3s) - about 2.9 min left in this experiment
+
+[ceiling10 10/20] 2026-09-11T12:22:29-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 10/20] valid first attempt (2 turns, 13.1s) - about 2.6 min left in this experiment
+
+[ceiling10 11/20] 2026-09-11T12:22:43-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 11/20] valid first attempt (2 turns, 58.7s) - about 2.9 min left in this experiment
+
+[ceiling10 12/20] 2026-09-11T12:23:41-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 12/20] valid first attempt (2 turns, 31.8s) - about 2.7 min left in this experiment
+
+[ceiling10 13/20] 2026-09-11T12:24:13-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 13/20] valid first attempt (2 turns, 35.0s) - about 2.5 min left in this experiment
+
+[ceiling10 14/20] 2026-09-11T12:24:48-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 14/20] valid first attempt (2 turns, 26.3s) - about 2.2 min left in this experiment
+
+[ceiling10 15/20] 2026-09-11T12:25:14-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 15/20] valid first attempt (2 turns, 20.4s) - about 1.8 min left in this experiment
+
+[ceiling10 16/20] 2026-09-11T12:25:35-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 16/20] valid first attempt (2 turns, 11.0s) - about 1.4 min left in this experiment
+
+[ceiling10 17/20] 2026-09-11T12:25:46-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 17/20] valid first attempt (2 turns, 10.7s) - about 1.0 min left in this experiment
+
+[ceiling10 18/20] 2026-09-11T12:25:56-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 18/20] valid first attempt (2 turns, 11.9s) - about 0.7 min left in this experiment
+
+[ceiling10 19/20] 2026-09-11T12:26:08-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 19/20] valid first attempt (2 turns, 16.7s) - about 0.3 min left in this experiment
+
+[ceiling10 20/20] 2026-09-11T12:26:25-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["peanut butter", "milk allergy", "product recall"], "summary": "sunrise valley foods recalls creamy peanut butter due to potential milk contamination posing risk to milk allergic consumers."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=False: nothing is wrong
+---NODE: Supervisor (no work left, 2 turns used) ---
+[ceiling10 20/20] valid first attempt (2 turns, 9.6s) - about 0.0 min left in this experiment
+
+========================================================================
+EXPERIMENT adversarial: 5 runs, ceiling 10, case adversarial_input
+========================================================================
+
+[adversarial 1/5] 2026-09-11T12:26:35-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwire"], "summary": "northgate provisions is recalling 32 oz institutional tubs due to undeclared allergens, listeria contamination, and foreign objects in soup concentrate."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'stainlesssteelwire' is not specific enough and should be 'stainlesssteelwirefragments' to match the content.
+---NODE: Supervisor (turn 3/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwirefragments"], "summary": "northgate provisions recalls 32 oz tubs due to undeclared allergens, listeria, and stainless steel wire fragments in soup concentrate."}
+---NODE: Supervisor (turn 4/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and does not directly appear in the title or content as a distinct term.
+---NODE: Supervisor (turn 5/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzedvegetableproteinseasoning' is 35 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 6/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "chickenandwildrice", "listeriamonocytogenes"], "summary": "Northgate Provisions recalls seasoning and soup products due to undeclared allergens, potential listeria contamination, and foreign object issues."}
+---NODE: Supervisor (turn 7/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and should be 'hydrolyzed-vegetable-protein-seasoning-blend'.
+---NODE: Supervisor (turn 8/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzed-vegetable-protein-seasoning-blend' is 44 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 9/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzed-vegetable-protein", "chicken-wild-rice-soup", "product-recall"], "summary": "Northgate Provisions is recalling 32 oz institutional tubs of seasoning blend and soup concentrate due to undeclared allergens, potential listeria contamination, and metal fragments."}
+---NODE: Supervisor (turn 10/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'product-recall' is too generic and not specific to the content; it should be replaced with a more specific tag related to the content.
+---NODE: Supervisor (turn 11/10 -> planner) ---
+    turn ceiling 10 reached; abandoning the run
+[adversarial 1/5] hit turn ceiling (11 turns, 110.9s) - about 7.4 min left in this experiment
+
+[adversarial 2/5] 2026-09-11T12:28:26-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwire"], "summary": "northgate provisions is recalling 32 oz institutional tubs due to undeclared allergens, listeria contamination, and foreign objects in soup concentrate."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'stainlesssteelwire' is not specific enough and should be 'stainlesssteelwirefragments' to match the content.
+---NODE: Supervisor (turn 3/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwirefragments"], "summary": "northgate provisions recalls 32 oz tubs due to undeclared allergens, listeria, and stainless steel wire fragments in soup concentrate."}
+---NODE: Supervisor (turn 4/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and does not directly appear in the title or content as a distinct term.
+---NODE: Supervisor (turn 5/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzedvegetableproteinseasoning' is 35 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 6/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "chickenandwildrice", "listeriamonocytogenes"], "summary": "Northgate Provisions recalls seasoning and soup products due to undeclared allergens, potential listeria contamination, and foreign object issues."}
+---NODE: Supervisor (turn 7/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and should be 'hydrolyzed-vegetable-protein-seasoning-blend'.
+---NODE: Supervisor (turn 8/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzed-vegetable-protein-seasoning-blend' is 44 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 9/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzed-vegetable-protein", "chicken-wild-rice-soup", "product-recall"], "summary": "Northgate Provisions is recalling 32 oz institutional tubs of seasoning blend and soup concentrate due to undeclared allergens, potential listeria contamination, and metal fragments."}
+---NODE: Supervisor (turn 10/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'product-recall' is too generic and not specific to the content; it should be replaced with a more specific tag related to the content.
+---NODE: Supervisor (turn 11/10 -> planner) ---
+    turn ceiling 10 reached; abandoning the run
+[adversarial 2/5] hit turn ceiling (11 turns, 90.2s) - about 5.0 min left in this experiment
+
+[adversarial 3/5] 2026-09-11T12:29:56-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwire"], "summary": "northgate provisions is recalling 32 oz institutional tubs due to undeclared allergens, listeria contamination, and foreign objects in soup concentrate."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'stainlesssteelwire' is not specific enough and should be 'stainlesssteelwirefragments' to match the content.
+---NODE: Supervisor (turn 3/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwirefragments"], "summary": "northgate provisions recalls 32 oz tubs due to undeclared allergens, listeria, and stainless steel wire fragments in soup concentrate."}
+---NODE: Supervisor (turn 4/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and does not directly appear in the title or content as a distinct term.
+---NODE: Supervisor (turn 5/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzedvegetableproteinseasoning' is 35 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 6/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "chickenandwildrice", "listeriamonocytogenes"], "summary": "Northgate Provisions recalls seasoning and soup products due to undeclared allergens, potential listeria contamination, and foreign object issues."}
+---NODE: Supervisor (turn 7/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and should be 'hydrolyzed-vegetable-protein-seasoning-blend'.
+---NODE: Supervisor (turn 8/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzed-vegetable-protein-seasoning-blend' is 44 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 9/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzed-vegetable-protein", "chicken-wild-rice-soup", "product-recall"], "summary": "Northgate Provisions is recalling 32 oz institutional tubs of seasoning blend and soup concentrate due to undeclared allergens, potential listeria contamination, and metal fragments."}
+---NODE: Supervisor (turn 10/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'product-recall' is too generic and not specific to the content; it should be replaced with a more specific tag related to the content.
+---NODE: Supervisor (turn 11/10 -> planner) ---
+    turn ceiling 10 reached; abandoning the run
+[adversarial 3/5] hit turn ceiling (11 turns, 97.3s) - about 3.3 min left in this experiment
+
+[adversarial 4/5] 2026-09-11T12:31:33-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwire"], "summary": "northgate provisions is recalling 32 oz institutional tubs due to undeclared allergens, listeria contamination, and foreign objects in soup concentrate."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'stainlesssteelwire' is not specific enough and should be 'stainlesssteelwirefragments' to match the content.
+---NODE: Supervisor (turn 3/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwirefragments"], "summary": "northgate provisions recalls 32 oz tubs due to undeclared allergens, listeria, and stainless steel wire fragments in soup concentrate."}
+---NODE: Supervisor (turn 4/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and does not directly appear in the title or content as a distinct term.
+---NODE: Supervisor (turn 5/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzedvegetableproteinseasoning' is 35 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 6/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "chickenandwildrice", "listeriamonocytogenes"], "summary": "Northgate Provisions recalls seasoning and soup products due to undeclared allergens, potential listeria contamination, and foreign object issues."}
+---NODE: Supervisor (turn 7/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and should be 'hydrolyzed-vegetable-protein-seasoning-blend'.
+---NODE: Supervisor (turn 8/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzed-vegetable-protein-seasoning-blend' is 44 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 9/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzed-vegetable-protein", "chicken-wild-rice-soup", "product-recall"], "summary": "Northgate Provisions is recalling 32 oz institutional tubs of seasoning blend and soup concentrate due to undeclared allergens, potential listeria contamination, and metal fragments."}
+---NODE: Supervisor (turn 10/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'product-recall' is too generic and not specific to the content; it should be replaced with a more specific tag related to the content.
+---NODE: Supervisor (turn 11/10 -> planner) ---
+    turn ceiling 10 reached; abandoning the run
+[adversarial 4/5] hit turn ceiling (11 turns, 89.8s) - about 1.6 min left in this experiment
+
+[adversarial 5/5] 2026-09-11T12:33:03-07:00
+---NODE: Supervisor (turn 1/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwire"], "summary": "northgate provisions is recalling 32 oz institutional tubs due to undeclared allergens, listeria contamination, and foreign objects in soup concentrate."}
+---NODE: Supervisor (turn 2/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'stainlesssteelwire' is not specific enough and should be 'stainlesssteelwirefragments' to match the content.
+---NODE: Supervisor (turn 3/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "listeriamonocytogenes", "stainlesssteelwirefragments"], "summary": "northgate provisions recalls 32 oz tubs due to undeclared allergens, listeria, and stainless steel wire fragments in soup concentrate."}
+---NODE: Supervisor (turn 4/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and does not directly appear in the title or content as a distinct term.
+---NODE: Supervisor (turn 5/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzedvegetableproteinseasoning' is 35 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 6/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzedvegetableprotein", "chickenandwildrice", "listeriamonocytogenes"], "summary": "Northgate Provisions recalls seasoning and soup products due to undeclared allergens, potential listeria contamination, and foreign object issues."}
+---NODE: Supervisor (turn 7/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'hydrolyzedvegetableprotein' is not specific enough and should be 'hydrolyzed-vegetable-protein-seasoning-blend'.
+---NODE: Supervisor (turn 8/10 -> planner) ---
+---NODE: Planner ---
+    rejected by schema: tags: Value error, tag 'hydrolyzed-vegetable-protein-seasoning-blend' is 44 characters; each tag must be 3-30 characters
+---NODE: Supervisor (turn 9/10 -> planner) ---
+---NODE: Planner ---
+    accepted: {"tags": ["hydrolyzed-vegetable-protein", "chicken-wild-rice-soup", "product-recall"], "summary": "Northgate Provisions is recalling 32 oz institutional tubs of seasoning blend and soup concentrate due to undeclared allergens, potential listeria contamination, and metal fragments."}
+---NODE: Supervisor (turn 10/10 -> reviewer) ---
+---NODE: Reviewer ---
+    has_issues=True: The tag 'product-recall' is too generic and not specific to the content; it should be replaced with a more specific tag related to the content.
+---NODE: Supervisor (turn 11/10 -> planner) ---
+    turn ceiling 10 reached; abandoning the run
+[adversarial 5/5] hit turn ceiling (11 turns, 87.6s) - about 0.0 min left in this experiment
+
+Part 4.3 - 30 runs on the frozen input, ceiling 10
+Outcome over 30 runs        Count     Mean latency (ms)
+valid first attempt            30               17594.4
+valid after 1 retry             0                     0
+valid after 2+ retries          0                     0
+hit turn ceiling                0                     0
+
+Part 4.4 - turn ceiling comparison, same input and model settings
+Metric                             ceiling 2    ceiling 10
+runs                                      20            20
+completion rate                         100%          100%
+mean latency (ms)                    13941.3       19167.6
+mean latency, completed (ms)         13941.3       19167.6
+mean turns used                            2             2
+mean planner attempts                      1             1
+mean model calls                           2             2
+
+Part 4.5 - adversarial input, 5 runs, ceiling 10
+valid first attempt             0
+valid after 1 retry             0
+valid after 2+ retries          0
+hit turn ceiling                5
+completion rate                0%
+
+raw runs   : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/graph_runs.jsonl
+flat table : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/graph_runs.csv
+aggregates : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/hw02_metrics.json

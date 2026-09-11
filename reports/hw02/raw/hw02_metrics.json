@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-09-11T12:34:31-07:00",
+  "experiments": {
+    "schema30": {
+      "runs": 30,
+      "turn_ceiling": 10,
+      "case_id": "schema_input",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "outcomes": {
+        "valid first attempt": 30,
+        "valid after 1 retry": 0,
+        "valid after 2+ retries": 0,
+        "hit turn ceiling": 0
+      },
+      "completion_rate": 1.0,
+      "mean_latency_ms": 17594.4,
+      "mean_latency_ms_completed": 17594.4,
+      "median_latency_ms": 15224.1,
+      "mean_turns": 2,
+      "mean_planner_attempts": 1,
+      "mean_llm_calls": 2,
+      "distinct_tag_sets": 1
+    },
+    "ceiling2": {
+      "runs": 20,
+      "turn_ceiling": 2,
+      "case_id": "schema_input",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "outcomes": {
+        "valid first attempt": 20,
+        "valid after 1 retry": 0,
+        "valid after 2+ retries": 0,
+        "hit turn ceiling": 0
+      },
+      "completion_rate": 1.0,
+      "mean_latency_ms": 13941.3,
+      "mean_latency_ms_completed": 13941.3,
+      "median_latency_ms": 11163.2,
+      "mean_turns": 2,
+      "mean_planner_attempts": 1,
+      "mean_llm_calls": 2,
+      "distinct_tag_sets": 1
+    },
+    "ceiling10": {
+      "runs": 20,
+      "turn_ceiling": 10,
+      "case_id": "schema_input",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "outcomes": {
+        "valid first attempt": 20,
+        "valid after 1 retry": 0,
+        "valid after 2+ retries": 0,
+        "hit turn ceiling": 0
+      },
+      "completion_rate": 1.0,
+      "mean_latency_ms": 19167.6,
+      "mean_latency_ms_completed": 19167.6,
+      "median_latency_ms": 14618.5,
+      "mean_turns": 2,
+      "mean_planner_attempts": 1,
+      "mean_llm_calls": 2,
+      "distinct_tag_sets": 1
+    },
+    "adversarial": {
+      "runs": 5,
+      "turn_ceiling": 10,
+      "case_id": "adversarial_input",
+      "model": "qwen3:8b",
+      "temperature": 0.0,
+      "outcomes": {
+        "valid first attempt": 0,
+        "valid after 1 retry": 0,
+        "valid after 2+ retries": 0,
+        "hit turn ceiling": 5
+      },
+      "completion_rate": 0.0,
+      "mean_latency_ms": 95057.4,
+      "mean_latency_ms_completed": 0.0,
+      "median_latency_ms": 90010.2,
+      "mean_turns": 11,
+      "mean_planner_attempts": 6,
+      "mean_llm_calls": 10,
+      "distinct_tag_sets": 0
+    }
+  }
+}

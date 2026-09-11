@@ -1,0 +1,515 @@
+{
+  "assignment": "DATA 260 Homework 2",
+  "homework_number": 2,
+  "sid4": 9275,
+  "commit_hash": "8a5a4c3fac5c8da90871e9db1ba4ee28c3670532",
+  "working_tree_clean": false,
+  "configuration": {
+    "port_base": 8275,
+    "prefix": "s9275",
+    "domain_id": 3,
+    "model": "qwen3:8b",
+    "temperature": 0.0,
+    "default_turn_ceiling": 10,
+    "ceilings_compared": [
+      2,
+      10
+    ]
+  },
+  "seed": 9275,
+  "verify_seed": 269275,
+  "generated_at": "2026-09-11T14:04:04-07:00",
+  "checks_total": 81,
+  "checks_passed": 80,
+  "required_failures": 0,
+  "optional_failures": 1,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "section0.port_base",
+      "passed": true,
+      "detail": "PORT_BASE = 8275",
+      "required": true
+    },
+    {
+      "name": "section0.prefix",
+      "passed": true,
+      "detail": "PREFIX = s9275",
+      "required": true
+    },
+    {
+      "name": "section0.seed",
+      "passed": true,
+      "detail": "SEED = 9275",
+      "required": true
+    },
+    {
+      "name": "section0.verify_seed",
+      "passed": true,
+      "detail": "VERIFY_SEED = 269275",
+      "required": true
+    },
+    {
+      "name": "section0.domain_id",
+      "passed": true,
+      "detail": "DOMAIN_ID = 3, grocery recall notices",
+      "required": true
+    },
+    {
+      "name": "file.code/api_server.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/agent_graph.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/graph_experiment_runner.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/graph_offline_test.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/data/recall_notices.seed.json",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/web_application/index.html",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/web_application/app.js",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.code/web_application/styles.css",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.src/model_client.py",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/cases/schema_input.json",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/cases/adversarial_input.json",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/raw/graph_runs.jsonl",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/raw/graph_runs.csv",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/raw/hw02_metrics.json",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/RUN_LOG.txt",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/METRICS.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/AI_USE.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/reproducible_run_instructions.md",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "file.reports/hw02/report.pdf",
+      "passed": false,
+      "detail": "export the write-up to PDF before tagging",
+      "required": false
+    },
+    {
+      "name": "part1.viewport_meta",
+      "passed": true,
+      "detail": "needed for a real 375px layout",
+      "required": true
+    },
+    {
+      "name": "part1.list_container",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.state_container",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.search_input",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.loading_state",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.empty_state",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.error_state",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.media_query",
+      "passed": true,
+      "detail": "responsive breakpoint present",
+      "required": true
+    },
+    {
+      "name": "part1.no_fixed_pixel_width",
+      "passed": true,
+      "detail": "no rule pins an element wider than the viewport",
+      "required": true
+    },
+    {
+      "name": "part1.touch_targets",
+      "passed": true,
+      "detail": "buttons meet the 44px minimum touch target",
+      "required": true
+    },
+    {
+      "name": "part1.hw1_closure_kept",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.hw1_destructuring_kept",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.hw1_spread_kept",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.hw1_length_rule_kept",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part1.four_categories",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part2.server_listens_on_port_base",
+      "passed": true,
+      "detail": "FastAPI answered on http://127.0.0.1:8275",
+      "required": true
+    },
+    {
+      "name": "part2.config_values",
+      "passed": true,
+      "detail": "{\"sid4\": 9275, \"port_base\": 8275, \"prefix\": \"s9275\", \"domain_id\": 3}",
+      "required": true
+    },
+    {
+      "name": "part2.list",
+      "passed": true,
+      "detail": "3 records",
+      "required": true
+    },
+    {
+      "name": "part2.create",
+      "passed": true,
+      "detail": "created id 4",
+      "required": true
+    },
+    {
+      "name": "part2.update",
+      "passed": true,
+      "detail": "primary field changed and the id is unchanged",
+      "required": true
+    },
+    {
+      "name": "part2.delete",
+      "passed": true,
+      "detail": "record is gone after the delete",
+      "required": true
+    },
+    {
+      "name": "part2.search_primary",
+      "passed": true,
+      "detail": "1 match on the primary field",
+      "required": true
+    },
+    {
+      "name": "part2.search_secondary",
+      "passed": true,
+      "detail": "1 match on the secondary field",
+      "required": true
+    },
+    {
+      "name": "part2.search_no_match",
+      "passed": true,
+      "detail": "a search with no hits returns an empty list, not an error",
+      "required": true
+    },
+    {
+      "name": "part2.rejects_short_description",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part2.rejects_bad_category",
+      "passed": true,
+      "detail": "category is constrained to the four DOMAIN_SCHEMA values",
+      "required": true
+    },
+    {
+      "name": "part2.missing_id_404",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part2.serves_front_end",
+      "passed": true,
+      "detail": "the Part 1 page is served by the same process",
+      "required": true
+    },
+    {
+      "name": "part3.agent_state",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.planner_node",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.reviewer_node",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.supervisor_node",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.router_logic",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.conditional_edges",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.uses_stream",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part3.goes_through_adapter",
+      "passed": true,
+      "detail": "imports: ['__future__', 'argparse', 'its', 'json', 'langgraph', 'model_client', 'pathlib', 'pydantic', 're', 'sys', 'time', 'typing']",
+      "required": true
+    },
+    {
+      "name": "part3.offline_behaviour_tests",
+      "passed": true,
+      "detail": "13/13 behaviour tests passed",
+      "required": true
+    },
+    {
+      "name": "part3.ceiling_stops_a_forced_loop",
+      "passed": true,
+      "detail": "a Reviewer that always objects is stopped by the ceiling, not by luck",
+      "required": true
+    },
+    {
+      "name": "ollama.reachable",
+      "passed": true,
+      "detail": "1 model(s) installed",
+      "required": true
+    },
+    {
+      "name": "ollama.model_present",
+      "passed": true,
+      "detail": "installed: ['qwen3:8b']",
+      "required": true
+    },
+    {
+      "name": "part3.live_graph_terminates",
+      "passed": true,
+      "detail": "exited in 49s, well inside the 240s timeout",
+      "required": true
+    },
+    {
+      "name": "part3.live_run_returns_three_tags",
+      "passed": true,
+      "detail": "3 tags",
+      "required": true
+    },
+    {
+      "name": "part4.live_tag_lengths",
+      "passed": true,
+      "detail": "lengths [13, 12, 14]",
+      "required": true
+    },
+    {
+      "name": "part4.live_summary_within_limit",
+      "passed": true,
+      "detail": "17 words",
+      "required": true
+    },
+    {
+      "name": "part3.live_run_within_ceiling",
+      "passed": true,
+      "detail": "2 of 10 turns",
+      "required": true
+    },
+    {
+      "name": "part4.schema30_run_count",
+      "passed": true,
+      "detail": "30 runs recorded, 30 required",
+      "required": true
+    },
+    {
+      "name": "part4.ceiling2_run_count",
+      "passed": true,
+      "detail": "20 runs recorded, 20 required",
+      "required": true
+    },
+    {
+      "name": "part4.ceiling10_run_count",
+      "passed": true,
+      "detail": "20 runs recorded, 20 required",
+      "required": true
+    },
+    {
+      "name": "part4.adversarial_run_count",
+      "passed": true,
+      "detail": "5 runs recorded, 5 required",
+      "required": true
+    },
+    {
+      "name": "part4.every_completed_run_has_three_tags",
+      "passed": true,
+      "detail": "70 completed runs",
+      "required": true
+    },
+    {
+      "name": "part4.every_tag_within_char_limits",
+      "passed": true,
+      "detail": "3-30 characters, as the Pydantic model requires",
+      "required": true
+    },
+    {
+      "name": "part4.every_summary_within_word_limit",
+      "passed": true,
+      "detail": "at most 25 words",
+      "required": true
+    },
+    {
+      "name": "part4.every_run_has_latency",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "part4.no_run_exceeds_its_ceiling",
+      "passed": true,
+      "detail": "the supervisor stops a run at the turn after the ceiling, never later",
+      "required": true
+    },
+    {
+      "name": "part4.ceiling_arms_use_same_input",
+      "passed": true,
+      "detail": "the ceiling comparison is on one frozen input",
+      "required": true
+    },
+    {
+      "name": "part4.ceiling_arms_use_same_model",
+      "passed": true,
+      "detail": "and one model configuration",
+      "required": true
+    },
+    {
+      "name": "part4.adversarial_reaches_ceiling",
+      "passed": true,
+      "detail": "5 of 5 runs hit the ceiling",
+      "required": true
+    }
+  ]
+}
