@@ -15,3 +15,7 @@ node_modules/
 # HW2 - runtime record store, recreated from code/data/recall_notices.seed.json
 code/data/recall_notices.json
 code/data/*.tmp
+
+# Word 打开文档时产生的临时锁文件
+~$*
+*.bak

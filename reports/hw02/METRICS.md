@@ -72,11 +72,13 @@ would be a misreading of the data.
   rate, identical turns, identical token cost.
 - They differ only on input that fails, and there the difference is the cost of
   failing. The adversarial case below took 11 turns, 10 model calls and 95
-  seconds under ceiling 10 to arrive at the same outcome ceiling 2 would have
-  reached in 3 turns and roughly 25 seconds: abandoned.
+  seconds under ceiling 10 to arrive at the same outcome ceiling 2 reaches in
+  3 turns and 2 model calls. Measured directly on the same input, ceiling 2
+  abandoned it in 38.1 s with a warm model; the first run of the session, loading
+  the model cold, took 67.5 s.
 - So the choice is not between succeeding and failing. It is between failing
-  fast and failing slow, and a fixed 4× cost on every pathological input buys
-  nothing that this data can show.
+  fast and failing slow, and a fivefold increase in model calls on every
+  pathological input buys nothing that this data can show.
 
 The honest limit on that recommendation: with a first-attempt rate of 100% on
 30 runs, this experiment never observed a run that *would* have been rescued by

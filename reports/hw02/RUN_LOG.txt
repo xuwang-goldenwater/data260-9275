@@ -1034,3 +1034,46 @@ completion rate                0%
 raw runs   : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/graph_runs.jsonl
 flat table : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/graph_runs.csv
 aggregates : /Users/Sunny/Documents/data260-9275/reports/hw02/raw/hw02_metrics.json
+---NODE: Supervisor (turn 1/10 -> planner) ---
+    [stream] supervisor updated: turn_count
+---NODE: Planner ---
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 711, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 680, in main
+    record = run_once(
+             ^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 595, in run_once
+    for chunk in app.stream(state, config=config):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/main.py", line 2967, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 207, in tick
+    run_with_retry(
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/pregel/_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 707, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 447, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/agent_graph.py", line 382, in planner_node
+    response = client.complete(
+               ^^^^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/src/model_client.py", line 93, in complete
+    response = self._client.chat(think=think, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 387, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/data260/lib/python3.12/site-packages/ollama/_client.py", line 145, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+During task with name 'planner' and id 'fb04756f-1455-790f-c394-e780c0f428ce'
