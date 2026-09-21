@@ -18,14 +18,21 @@ code/                        shared application code (extended each homework)
   agent_graph.py             HW2 LangGraph supervisor graph
   graph_experiment_runner.py HW2 Part 4 experiments
   graph_offline_test.py      HW2 graph behaviour test, no model required
+  auth_app/                  HW3 Part 1 login/logout app (FastAPI + Jinja2 + Bootstrap)
+  auth_session_demo.py       HW3 Part 1 cookie / logout / idle-timeout proof
+  rag_fetch_corpus.py        HW3 Part 2 corpus download + manifest
+  rag_chunking.py            HW3 Part 2 token / semantic / sentence-window comparison
+  rag_summary.py             HW3 Part 2 summary tables recomputed from raw/
   Dockerfile                 container image for the static HW1 page
 src/
   model_client.py            model adapter (required exact path)
 reports/
   hw01/                      HW1 report, metrics, logs, raw outputs
   hw02/                      HW2 report, metrics, logs, raw outputs
+  hw03/                      HW3 corpus, questions, metrics, logs, raw outputs
 verify_hw01.py               HW1 self-check
 verify_hw02.py               HW2 self-check
+verify_hw03.py               HW3 self-check
 AGENT.md                     system prompt for hw1_client.py
 DOMAIN_SCHEMA.md             domain data schema
 ```
@@ -66,6 +73,16 @@ Fixed for the semester, derived from SID4 = 9275.
 | SEED | 9275 |
 | VERIFY_SEED | 269275 |
 | DOMAIN_ID | 3 — grocery supply and recall notices |
+
+## Homework 3 — what was added
+
+- **Part 1** — `code/auth_app/` builds on the instructor's starter: port 8275,
+  Bootstrap alert on a failed login, a Secure/HttpOnly/SameSite session cookie,
+  and a server-side session table so a logged-out or idle (15 min) cookie
+  cannot be replayed. `make demo-session` prints the proof.
+- **Part 2** — `code/rag_chunking.py` compares LlamaIndex token, semantic and
+  sentence-window chunking on 89 FDA food recall notices plus 21 CFR Part 7.
+  Steps are in `reports/hw03/reproducible_run_instructions.md`.
 
 ## Homework 2 — what was added
 

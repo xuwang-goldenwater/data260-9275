@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Recall Notice Desk - Dashboard{% endblock %}
+{% block content %}
+<div class="card shadow-sm mb-4">
+  <div class="card-body p-4">
+    <h3 class="card-title">Dashboard</h3>
+    <p class="card-text">Welcome, <strong>{{ user }}</strong>!</p>
+    <p class="card-text text-muted small">
+      You will be logged out after {{ idle_minutes }} minutes without activity.
+    </p>
+    <a class="btn btn-danger" href="/logout">Logout</a>
+    <a class="btn btn-outline-secondary ms-2" href="/">Home</a>
+  </div>
+</div>
+
+<h5 class="mb-3">Recall categories</h5>
+<div class="row g-3">
+  <div class="col-sm-6 col-lg-3">
+    <div class="card h-100 border-danger"><div class="card-body">
+      <h6 class="card-title">Undeclared Allergen</h6>
+      <p class="card-text small text-muted">Milk, peanut, soy, wheat and other allergens missing from the label.</p>
+    </div></div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card h-100 border-warning"><div class="card-body">
+      <h6 class="card-title">Bacterial Contamination</h6>
+      <p class="card-text small text-muted">Listeria, Salmonella, E. coli and similar.</p>
+    </div></div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card h-100 border-secondary"><div class="card-body">
+      <h6 class="card-title">Foreign Material</h6>
+      <p class="card-text small text-muted">Metal, plastic, glass, stones found in product.</p>
+    </div></div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card h-100 border-info"><div class="card-body">
+      <h6 class="card-title">Mislabeling</h6>
+      <p class="card-text small text-muted">Wrong product in package or wrong label.</p>
+    </div></div>
+  </div>
+</div>
+{% endblock %}

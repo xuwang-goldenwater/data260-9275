@@ -1,0 +1,638 @@
+{
+  "created_at": "2026-09-21T00:31:47",
+  "domain": "DOMAIN_ID 3 - Grocery supply and recall notices",
+  "n_files": 90,
+  "total_bytes": 274233,
+  "files": [
+    {
+      "file": "corpus/ecfr_21cfr_part7.txt",
+      "bytes": 37649,
+      "sha256": "336611eb814ea54893aa9757dff0b169813e6bb1fa25e7896ccdd5832cd02b2b",
+      "source_url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-17/title-21.xml?part=7",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_529-commerce-llc-recalls-rooted-rare.txt",
+      "bytes": 2022,
+      "sha256": "261010e3b96161583109010954c70c2e3383df6388c9195e7c27478234cad862",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/529-commerce-llc-recalls-rooted-rare-brand-aquafaba-powder-due-undeclared-eggs",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_a2-platinum-usa-label-infant-formula.txt",
+      "bytes": 3420,
+      "sha256": "9392edf5da59a0b36ff3395c1a954ec3d9d7a164cfcd32ee489dc123cfce05d8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/a2-platinum-usa-label-infant-formula-recalled-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_ambriola-company-issues-recall-cheese-products.txt",
+      "bytes": 3071,
+      "sha256": "69dbfa190886909e7a69abb155b0817a37b0c647b20c93c2af16e93e057a4256",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ambriola-company-issues-recall-cheese-products-because-listeria-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_azuma-foods-international-inc-issues-allergy.txt",
+      "bytes": 1886,
+      "sha256": "a6417e5b29f44b3bdea41cd31df35d2b25b313f82e4770efe338009147c0f54d",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/azuma-foods-international-inc-issues-allergy-alert-undeclared-fish-tako-wasabi",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_better-bakehouse-snack-company-recalling-certain.txt",
+      "bytes": 2159,
+      "sha256": "93b53765087b1e2b4dd1a524f5793da44fd64cad0e2880d9ab4593bdd27eb2cb",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/better-bakehouse-snack-company-recalling-certain-lots-donutful-chocolate-dipped-vanilla-cake-donuts",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_blank-slate-creamery-issues-allergy-alert.txt",
+      "bytes": 1568,
+      "sha256": "f1b515704da2cacb4e1ec7592ece775100ba291c805f152d36db9f75d037c568",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/blank-slate-creamery-issues-allergy-alert-undeclared-egg-vegan-non-dairy-frozen-dessert-coconut",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_boticelli-foods-recalls-bettergoods-pistachio-nut.txt",
+      "bytes": 2629,
+      "sha256": "1f00b694bcd250694ca1d09285e2af5726568536ce5ccef5028426d075e6afd8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/boticelli-foods-recalls-bettergoods-pistachio-nut-butter-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_brownie-baker-inc-issues-allergy-alert.txt",
+      "bytes": 1892,
+      "sha256": "6eea3abef0bc8ed654e50395ccb5f16b3ece64dbf97ff2469c17a465386d681e",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/brownie-baker-inc-issues-allergy-alert-undeclared-tree-nuts-walnuts-muffin-product",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_carrot-top-kitchens-bridgeport-formerly-redding.txt",
+      "bytes": 1924,
+      "sha256": "7a254d525cd577885a45019bbd1cbdd50ac7442a49a52661b1866715f5d22961",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/carrot-top-kitchens-bridgeport-formerly-redding-issues-class-ii-recall-hummus-containing-undeclared",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_champion-foods-recalls-some-batches-motor.txt",
+      "bytes": 2960,
+      "sha256": "d08582e3e4ac9ea5bfd9a991b9770a7ae8526572a01626dbc847d870635c6171",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/champion-foods-recalls-some-batches-motor-city-pizza-co-5-cheese-bread-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_clover-hill-dairy-recalls-soft-ricottarequeson.txt",
+      "bytes": 3304,
+      "sha256": "9f7ee44681dbb44d638739a086bba4cd80439f1cd4123e3ae0cce3b0162a1e63",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/clover-hill-dairy-recalls-soft-ricottarequeson-cheese-due-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_crystal-temptations-issues-allergy-alert-undeclared.txt",
+      "bytes": 2359,
+      "sha256": "e6c8e1ccce918ec9a4e8378c8963033f295c8b3861ff2b2b050ac2a560d4adfb",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/crystal-temptations-issues-allergy-alert-undeclared-milk-chocolatey-eyeballs",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_direct-source-seafood-llc-recalling-frozen.txt",
+      "bytes": 2723,
+      "sha256": "8d63a543186aa69479c45db987088df1872459c69900288ccf005e4d81683f26",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/direct-source-seafood-llc-recalling-frozen-raw-shrimp-because-product-may-have-become-contaminated",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_eunha-fisheries-co-ltd-issues-allergy.txt",
+      "bytes": 2954,
+      "sha256": "8dbded104e37ba0aa127b4229bc40b9090483fc6c3ac9f1fe6a0a37247fd3758",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/eunha-fisheries-co-ltd-issues-allergy-alert-undeclared-wheat-soy-and-sesame-certain-frozen-olive",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_evergreen-fresh-sprouts-llc-recalls-broccoli.txt",
+      "bytes": 2230,
+      "sha256": "69356c57fc92ee9f72932e5d34e59fea88e33b0c78fa00ba8774260b2eef4fce",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/evergreen-fresh-sprouts-llc-recalls-broccoli-sprouts-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_everything-sprouts-llc-recalls-alfalfa-sprouts.txt",
+      "bytes": 3975,
+      "sha256": "68691ee54703ca848ec3ea01c9c1bca07ba2077044d64227025bc98b2a932573",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/everything-sprouts-llc-recalls-alfalfa-sprouts-due-potential-e-coli-and-salmonella-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_exotique-foods-inc-recalls-momchipz-veggie.txt",
+      "bytes": 1564,
+      "sha256": "ddc2f35c936dac9e77e617f6b5c898e6cd0dc5803df5f6dca3e875b6271c7df7",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/exotique-foods-inc-recalls-momchipz-veggie-chips-broccoli-florets-cauliflower-due-undeclared-wheat",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_falcon-trading-company-inc-issues-recall.txt",
+      "bytes": 1606,
+      "sha256": "b1909d958db4d012f7f13dcacb66af15e4a785cde91c8ad4595f719b5e5ea3ef",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/falcon-trading-company-inc-issues-recall-following-organic-black-bean-items-contain-pesticide",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_fly-jing-issues-voluntary-recall-creamy.txt",
+      "bytes": 2920,
+      "sha256": "0e8b2a547eac9b097693e0c99b2f8aaaf3494f897cdbd0e02e1ecb6039e4f3d0",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fly-jing-issues-voluntary-recall-creamy-sesame-noodles-due-potential-cross-contact-peanuts",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_foods-alive-recalls-organic-moringa-leaf.txt",
+      "bytes": 2035,
+      "sha256": "3204082afdc487d4180f26d13f8fd1315a9a0a09152099edac399fc26eec9033",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/foods-alive-recalls-organic-moringa-leaf-powder-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_frankies-organic-issues-allergy-alert-undeclared.txt",
+      "bytes": 2356,
+      "sha256": "e97f88aa9d749c52ca708f18f77524dccacc6ae7146e8481733ca58ef19b5b96",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frankies-organic-issues-allergy-alert-undeclared-milk-frankies-organic-plant-based-vegan-cheddar",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_fresh-ready-foods-llc-recalls-spicy.txt",
+      "bytes": 2450,
+      "sha256": "5f224cba864b076cc5588b52a94925fe8d43340693c7b057923f775b599887bc",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fresh-ready-foods-llc-recalls-spicy-breakfast-burrito-due-undeclared-soy",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_freshpoint-issues-recall-due-improperly-declared.txt",
+      "bytes": 1682,
+      "sha256": "673e21791c1207d46f0fa94af5bdb296e1c8081bb7b0159b7a3bd1faa640441c",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/freshpoint-issues-recall-due-improperly-declared-allergen-egg-chicken-salad-wedge-sandwiches",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_frito-lay-issues-voluntary-allergy-alert.txt",
+      "bytes": 2318,
+      "sha256": "04068fb87c8312dab0bde395714a8c3886e7448c66c936f9e2190cbdf0bffc67",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frito-lay-issues-voluntary-allergy-alert-undeclared-milk-miss-vickies-spicy-dill-pickle-potato-chips",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_frutas-y-hortalizas-del-sur-sa.txt",
+      "bytes": 2672,
+      "sha256": "50b7c5961417a4a80666cf17df4ac61acb77293346ad189eb8dde4eb79ba1561",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frutas-y-hortalizas-del-sur-sa-expands-recall-include-one-lot-great-value-frozen-organic-triple",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_gellert-global-group-issues-allergy-alert.txt",
+      "bytes": 1951,
+      "sha256": "3c11e38696fa3b76a726a2163944d5ae8d1d2c1c61c79f3a5f91b16be4c324e7",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gellert-global-group-issues-allergy-alert-undeclared-tuna-fish-aldi-brand-fusia-asian-inspirations",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_george-j-howe-co-voluntarily-recalls.txt",
+      "bytes": 2933,
+      "sha256": "f46c6e70709a0d7e0e83a4a9ed92fdb0052dc751307f82520f320a70ed61b001",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/george-j-howe-co-voluntarily-recalls-sunflower-seeds-due-undeclare-tree-nuts-cashews",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_gerber-products-company-announces-voluntary-recall.txt",
+      "bytes": 2689,
+      "sha256": "2940e6f24d1b18d85c24ed153ca344a73db3a897bfe15570fd96e0989737fc49",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gerber-products-company-announces-voluntary-recall-limited-batches-arrowroot-biscuits-out-abundance",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_gf-blends-recalls-truly-aip-all.txt",
+      "bytes": 2600,
+      "sha256": "014229870ba7d424e4246b12fa6d65efeb714cb7030931b46d2b6ebb71f40171",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gf-blends-recalls-truly-aip-all-purpose-flour-and-bread-mix-and-eat-gangster-flat-bread-pizza-mix",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_ghirardelli-chocolate-company-recalls-powdered-beverage.txt",
+      "bytes": 3433,
+      "sha256": "dbe41fc1b2ff7b1ae63f405a60dd069240bb1919c10b1e2735a1d0373d7dfd0f",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ghirardelli-chocolate-company-recalls-powdered-beverage-mixes-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_gias-foods-inc-recalls-bettergoods-authentic.txt",
+      "bytes": 2107,
+      "sha256": "5ab21096789a856f43b450937e6447943fdeb8a3f9342e8df211df88b2653fbd",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gias-foods-inc-recalls-bettergoods-authentic-italian-lemon-alfredo-fettuccine-because-possible",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_gusto-group-inc-recalls-shrimp-paste.txt",
+      "bytes": 3141,
+      "sha256": "f8bae4498cd854e39f5c5e1a173ffeb37b2e9aeadf6292ba38df67f4c18b7e14",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gusto-group-inc-recalls-shrimp-paste-klong-kone-454-g-1-lbs-and-910-g-2-lbs-because-possible-health",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_hampton-grocers-inc-recalls-its-8.txt",
+      "bytes": 3211,
+      "sha256": "4d918d980f1a80dc2591fc7016e1b18dcf200fc1e2b454ec25213c953308f966",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/hampton-grocers-inc-recalls-its-8-ounce-packages-lacnola-lactation-granola-because-possible-health",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_if-copack-llc-dba-initiative-foods.txt",
+      "bytes": 3301,
+      "sha256": "761e672463f19e9f4285fedd98d15716e18e50e2e3dd163e9263696096a97a63",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/if-copack-llc-dba-initiative-foods-recalls-tippy-toes-brand-apple-pear-banana-because-possible",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_ikm-recalls-product-because-possible-health.txt",
+      "bytes": 3075,
+      "sha256": "0dd9c708ce793f1c5144c1d4a9e24dbca7c3bc6dfe61f8c625ce20ee8dbe0b1b",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ikm-recalls-product-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_iq-produce-lcc-recalls-enoki-mushrooms.txt",
+      "bytes": 1769,
+      "sha256": "529998415717781a42f6bb0776f1fc422005a468331ab6618171739c0cf207cc",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/iq-produce-lcc-recalls-enoki-mushrooms-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_jaimes-foods-atx-issues-allergy-alert.txt",
+      "bytes": 1669,
+      "sha256": "0c8acd1489f08a39685248f7399a757c4a5e683e1a5369684ad09fab9e03d492",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/jaimes-foods-atx-issues-allergy-alert-undeclared-egg-allergen-jaimes-spanish-village-jalapeno-ranch",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_james-skinner-llc-issues-voluntary-recall.txt",
+      "bytes": 2556,
+      "sha256": "2da91a734537048e08c4bee5ab03d63b76edc4e0f0cc77a1ddcdb25ff772ef89",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/james-skinner-llc-issues-voluntary-recall-publix-maple-walnut-coffee-cake-due-incorrect-labeling",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_jonco-industries-recalls-certain-consumer-sized.txt",
+      "bytes": 2589,
+      "sha256": "837fca61094706237f3828b0b92d4dd8ee09ebfdd84152b6f1659e606499a53f",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/jonco-industries-recalls-certain-consumer-sized-white-cheddar-seasoning-products-because-possible",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_kettle-cuisine-issues-allergy-alert-undeclared.txt",
+      "bytes": 1636,
+      "sha256": "ec4c4881de83a8085fa55103fee808eec79739443d8b1d2af47f0d6b078e9d1d",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/kettle-cuisine-issues-allergy-alert-undeclared-shrimp-whole-foods-market-kitchen-minestrone-soup",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_kettle-cuisine-recalls-marketside-tomato-bisque.txt",
+      "bytes": 2988,
+      "sha256": "e4c15ac66c1d7325012d13e8ecad90ea4e947bc3addc7c48652548b338891284",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/kettle-cuisine-recalls-marketside-tomato-bisque-soup-kit-sold-exclusively-walmart-stores-because",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_khong-guan-corporation-issues-recall-glutinous.txt",
+      "bytes": 1434,
+      "sha256": "d064b263efc11b1ec0b8397ca318abcca9d3aa13aa13565fcd2974bf64700ed8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/khong-guan-corporation-issues-recall-glutinous-rice-balls-black-sesame-filling-due-undeclared",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_l-nutra-issues-allergy-alert-undeclared.txt",
+      "bytes": 1859,
+      "sha256": "5e55db62f2e3512e5def372d90ed5eb9820457d8ba88be9cd8c8b17497b91bab",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/l-nutra-issues-allergy-alert-undeclared-tree-nuts-prolon-brand-apulian-almond-cocoa-spread",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_la-ceiba-foods-latin-market-inc.txt",
+      "bytes": 3242,
+      "sha256": "5c15a6457048bac743c78f6ba9d369cae23a1595bea818a9097631dd78502f3c",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/la-ceiba-foods-latin-market-inc-recalls-cottage-cheese-products-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_lehi-valley-trading-company-issues-allergy.txt",
+      "bytes": 1637,
+      "sha256": "949d82b7feba591294c639858bd578be6678843b656beffe344caacec6575015",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lehi-valley-trading-company-issues-allergy-alert-undeclared-peanuts-chocolate-covered-raisins",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_lidl-us-recalls-eridanous-shortbread-cookies.txt",
+      "bytes": 2361,
+      "sha256": "15aa5dda187f87283b88dd7b1898bebe53dfe8e8b98c32f23223e75e3be45f4a",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lidl-us-recalls-eridanous-shortbread-cookies-chocolate-truffle-coating-apricot-filling-due",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_lidl-us-recalls-vitasia-asian-style.txt",
+      "bytes": 2563,
+      "sha256": "c7e45af5db2cf49844d08f9bf3bdc573f8965fba2c749e5384130bd0950d1889",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lidl-us-recalls-vitasia-asian-style-wok-spice-mix-due-potential-salmonella-contamination",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_liquid-blenz-corp-recalls-product-due.txt",
+      "bytes": 1532,
+      "sha256": "cf9ab6cbc5edff9d8076849d80cf7193b4b2961924395160bb32f5ccbbbe0178",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/liquid-blenz-corp-recalls-product-due-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_lmsi-llckofinas-olive-oil-issues-voluntary.txt",
+      "bytes": 1550,
+      "sha256": "f778550a943dc3e918e7739009f886a8ccb7bf7caebc88140c2411891da6c4d9",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lmsi-llckofinas-olive-oil-issues-voluntary-recall-its-garlic-mediterranean-infused-extra-virgin",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_lunds-byerlys-voluntary-recalls-lb-monster.txt",
+      "bytes": 1588,
+      "sha256": "60c7d098f7351659d9590e40f371c38d0a55cff3a32d9455994d5180b7353468",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lunds-byerlys-voluntary-recalls-lb-monster-cookies-due-incorrect-labeling",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_made-fresh-salads-inc-recalls-ready.txt",
+      "bytes": 5409,
+      "sha256": "97f45f46777431ae7fdcf3180662ef6be3c373f6a88bf74cbf6f8498fbfdab20",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-ready-eat-deli-style-salads-and-cream-cheese-because-possible-health",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_mamtakim-inc-recalls-dried-whole-smelts.txt",
+      "bytes": 2228,
+      "sha256": "35ee29a954e614c27c300242a0b6c5cf3865f997e01b942e5b4a302648a8009f",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mamtakim-inc-recalls-dried-whole-smelts-salted-korushka-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_market-choice-issues-allergy-alert-undeclared.txt",
+      "bytes": 2307,
+      "sha256": "2dd19369ae82453ce22e5b9191886377a5ad798bbc33e84241c5d070b86884c8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/market-choice-issues-allergy-alert-undeclared-sesame-vegan-kale-caesar-salad",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_mellace-family-brands-california-inc-recalls.txt",
+      "bytes": 2785,
+      "sha256": "6813543c29c4291f6bbd232f51d9fde6f3af9dda391d3bc0715e15bb68408412",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mellace-family-brands-california-inc-recalls-wegmans-deluxe-mixed-nuts-unsalted-34-oz-and-115-oz",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_midwest-poultry-services-lp-recalls-shell.txt",
+      "bytes": 6109,
+      "sha256": "c6c91f2ffe8ea40e47b04e5b9cae81d634a15ee8bf46015dc1beb3ed2d14d110",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/midwest-poultry-services-lp-recalls-shell-eggs-due-possible-salmonella-enteritidis-contamination",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_mondelez-global-llc-expands-voluntary-recall.txt",
+      "bytes": 2947,
+      "sha256": "2cbfe72d9a1cf828cb92977f739ea7cfeaf81bd39b8051ef08126980ec616f60",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mondelez-global-llc-expands-voluntary-recall-2-skus-chips-ahoy-baked-bites-brookie-usa-previous",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_morningstar-farms-voluntarily-recalling-two-varieties.txt",
+      "bytes": 1406,
+      "sha256": "41a0ba45be7e52ab1a49b9cb21d254197c34d13a8e11aad65a9190937f7105dc",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/morningstar-farms-voluntarily-recalling-two-varieties-due-possible-plastic-presence",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_my-wifes-slaw-issues-voluntary-recall.txt",
+      "bytes": 1688,
+      "sha256": "3f1ddab78f623f978cc088bc9552e2456ebe8362c8429e327fb32b80b557f815",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/my-wifes-slaw-issues-voluntary-recall-its-original-and-jalapeno-heat-flavored-coleslaw-being",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_nara-organics-recalls-all-lots-nara.txt",
+      "bytes": 4295,
+      "sha256": "f6ac2f14ea1737325ef1ae4240f3c0eec984c0d2eb51557f305c6b296f16dae0",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nara-organics-recalls-all-lots-nara-infant-formula-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_nassar-investments-recalls-malazi-tahina-due.txt",
+      "bytes": 1641,
+      "sha256": "3a6869241fd8fe6f7ecdc869cf33d7487b43e7e33dbb51332fdea3f226c42583",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nassar-investments-recalls-malazi-tahina-due-salmonella-contamination",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_navitas-organics-voluntarily-recalls-select-lots.txt",
+      "bytes": 2927,
+      "sha256": "51c45747855c9c5316522f783b216e9e374e28818c315ffc4f4417c92f9be648",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/navitas-organics-voluntarily-recalls-select-lots-8oz-organic-chia-seeds-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_nelson-isa-lacteos-llc-recalls-requeson.txt",
+      "bytes": 5070,
+      "sha256": "e746c51a16c0c85c651308e6076e06e6eb195473c82f0181d4ca70a81482175d",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nelson-isa-lacteos-llc-recalls-requeson-cheese-due-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_ocinet-inc-recalls-and-kimchi-branded.txt",
+      "bytes": 2602,
+      "sha256": "47bc4dcf68de000c9f79c482bf8eb887fc558a083ecbdfc838d677211c389602",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ocinet-inc-recalls-and-kimchi-branded-sliced-kimchi-because-product-contains-undeclared-fish",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_panorama-produce-recalls-mangoes-due-possible.txt",
+      "bytes": 2368,
+      "sha256": "4e4964feaa3bbd06a15154f8398f54d51090dbbf6031387aff87dddbf73c7b91",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/panorama-produce-recalls-mangoes-due-possible-salmonella-contamination",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_prairie-farms-announces-recall-prairie-farms.txt",
+      "bytes": 2450,
+      "sha256": "ecaba27728c27eeed19ae1198365d2937b6dd073efcb10283980bfebceb20ae5",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prairie-farms-announces-recall-prairie-farms-gallon-fat-free-milk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_prime-food-processing-llc-issues-safety.txt",
+      "bytes": 2294,
+      "sha256": "a4b91733489831e83cd5eedc26856ac4c83b76e209c2b3b4253bac611c135c22",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prime-food-processing-llc-issues-safety-warning-regarding-uneviscerated-dried-herring-fish",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_prince-bakery-inc-issues-allergy-alert.txt",
+      "bytes": 2355,
+      "sha256": "72c0b4a5aadf04397b2de9c0b0863026cf7fe9967ea7cc5cb95ace3fcffb4823",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prince-bakery-inc-issues-allergy-alert-undeclared-milk-and-sesame-prince-bakery-breads",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_pt-organics-limited-recalls-select-pumpkin.txt",
+      "bytes": 2437,
+      "sha256": "599258948ff78b47449baf7ca8bb63cb92609ca657d60555759dbd511a5b62f2",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/pt-organics-limited-recalls-select-pumpkin-tree-peter-rabbit-organics-banana-strawberry-fruit-puree",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_saputo-usa-recalls-great-value-cottage.txt",
+      "bytes": 4148,
+      "sha256": "8056c909e458eb2ae436ad301bd4119279f0a0260cc8fbe5a2eef5d169df1e17",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/saputo-usa-recalls-great-value-cottage-cheese-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_saratoga-potato-chips-issues-allergy-alert.txt",
+      "bytes": 1636,
+      "sha256": "a088e4f9d8b12d546756971f8afe2052f6e8bc8449f76d398441baa46bd1c586",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/saratoga-potato-chips-issues-allergy-alert-undeclared-soy-j-higgs-loaded-bacon-and-cheddar-potato",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_shining-sea-fish-co-recalls-ma.txt",
+      "bytes": 2257,
+      "sha256": "2c25632feca6686caa4e131de83a1e0d05e28850f02b950c926d0f5d046f9a30",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/shining-sea-fish-co-recalls-ma-cohens-kippered-herring-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_sks-copack-recalls-various-specialty-beverages.txt",
+      "bytes": 4270,
+      "sha256": "e96642b6f585107220c1d61126553e19d0c8aa48ebd11239dc29650ebf19e445",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sks-copack-recalls-various-specialty-beverages-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_slade-gorton-co-inc-recalls-one.txt",
+      "bytes": 2130,
+      "sha256": "7005e695c650e88c73640d2600be01ba0fd4f46036e91fceca8d264fdf22baf5",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/slade-gorton-co-inc-recalls-one-lot-wellsley-farms-farm-raised-atlantic-salmon-sold-bjs-wholesale",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_so-delicious-dairy-freer-issues-voluntary.txt",
+      "bytes": 2264,
+      "sha256": "932504bffc4d783973986ebbeea0b8505fcd4db556b1ffba6514bb0f29bb4f7a",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/so-delicious-dairy-freer-issues-voluntary-recall-salted-caramel-cluster-non-dairy-frozen-dessert",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_straus-family-creamery-voluntarily-recalls-select.txt",
+      "bytes": 3276,
+      "sha256": "527a4e8ecfc9f78c0f119383e5bc75f8b43a319a44448c4c4ecf434e705cbfca",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/straus-family-creamery-voluntarily-recalls-select-flavors-organic-ice-cream-due-potential-presence",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_sugar-foods-issues-recall-specific-lots.txt",
+      "bytes": 2828,
+      "sha256": "e51fa9d8344f829b5b5c503fc96cf3819263a489cbd9f4173aab48c724e6090b",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sugar-foods-issues-recall-specific-lots-kroger-homestyle-cheese-garlic-croutons-due-possible-health",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_sun-noodle-issues-voluntary-recall-sura.txt",
+      "bytes": 3155,
+      "sha256": "029ffefb5e11977e43ad4e99f8cd01ad5bcd638115319292a3376817bee2ef01",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sun-noodle-issues-voluntary-recall-sura-tanmen-hot-and-sour-flavor-premium-japanese-noodles-soup",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_taylor-fresh-foods-recalls-iceberg-lettuce.txt",
+      "bytes": 5092,
+      "sha256": "6d8c456632740c21640e2f796d60f269650cb0de955f19f50cb8a081e2f48775",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/taylor-fresh-foods-recalls-iceberg-lettuce-central-mexico-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_tbc-distribution-corporate-recalls-lucky-foods.txt",
+      "bytes": 2533,
+      "sha256": "e650f595d74931c35f964b3bdfaba66d32b9a23543bc5714db1f448d5c48fdd2",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tbc-distribution-corporate-recalls-lucky-foods-brand-cinnamon-powder-because-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_tops-issues-recall-christopher-ranch-peeled.txt",
+      "bytes": 1970,
+      "sha256": "5d51d689d7841a7e74a87719104c89526b9e1a0373bc3f94e99c84f59c2861e8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tops-issues-recall-christopher-ranch-peeled-garlic-garland-fresh-peeled-garlic-because-possible",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_tri-union-seafoods-identifies-additional-quantities.txt",
+      "bytes": 2559,
+      "sha256": "6aed1a2598c548cf036933803e9de5f1246e16c054c4df4031811fabc264e20f",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tri-union-seafoods-identifies-additional-quantities-recalled-genovar-tuna-limited-retailers-due",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_ukrops-homestyle-foods-announces-voluntary-recall.txt",
+      "bytes": 4428,
+      "sha256": "697e6b8f81ef9f96e508208edce3b5c579185113f46539dd806739859a884083",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ukrops-homestyle-foods-announces-voluntary-recall-due-possible-foreign-object",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_updated-dreyers-grand-ice-cream-inc.txt",
+      "bytes": 4189,
+      "sha256": "3181a7246720b40c439a7b3d172dbc8759384352b062d96d287c295c66ef7279",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/updated-dreyers-grand-ice-cream-inc-issues-voluntary-recall-select-outshine-fruit-bars-due-possible",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_updated-grand-central-bakery-seattle-recalls.txt",
+      "bytes": 2474,
+      "sha256": "58bcd0a556928fd9a92686a7895e857cc545ef7096b4ce6cb7f52a79b1ba400b",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/updated-grand-central-bakery-seattle-recalls-potato-sourdough-bread-due-possible-foreign-object",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_utz-quality-foods-llc-issues-voluntary.txt",
+      "bytes": 4127,
+      "sha256": "cf3b4a648aa0aacbb0344cf8ba61f358948aa286732416bde46daf0552deef4a",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/utz-quality-foods-llc-issues-voluntary-recall-certain-limited-varieties-zapps-and-dirty-potato-chips",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_wawa-issues-product-recall-16-oz.txt",
+      "bytes": 2898,
+      "sha256": "1de54c3343a4be32c278824850f2dc90910fa85f222250e897244a56e4b347d8",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/wawa-issues-product-recall-16-oz-wawa-brand-iced-tea-lemon-iced-tea-diet-lemon-diet-lemonade-and",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_wegmans-recalls-locatelli-grated-pecorino-romano.txt",
+      "bytes": 2358,
+      "sha256": "ac5c26be1c63d27817418f9ab4421d3fe2c889c8b9f6e7282315822c809bca56",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/wegmans-recalls-locatelli-grated-pecorino-romano-cheese-due-possible-health-risk",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_white-castle-frozen-food-division-recalls.txt",
+      "bytes": 2621,
+      "sha256": "b2511fe683610aa612578ddcd79996c7a5110c3c204d1f6ce65f64a6e3e304c1",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/white-castle-frozen-food-division-recalls-frozen-4-count-cartons-original-sliders-due-undeclared",
+      "accessed": "2026-09-21"
+    },
+    {
+      "file": "corpus/fda_whole-foods-market-issues-allergy-alert.txt",
+      "bytes": 1960,
+      "sha256": "0d1c8ef85ac5c762841c25b3a0afd18b1234213a163c89573c1232df2e0480f2",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/whole-foods-market-issues-allergy-alert-undeclared-egg-cabricharme-cheese",
+      "accessed": "2026-09-21"
+    }
+  ]
+}

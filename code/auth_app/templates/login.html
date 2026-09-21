@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Recall Notice Desk - Login{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h4 class="card-title mb-3">Login</h4>
+
+        {% if error %}
+          <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+        {% if info %}
+          <div class="alert alert-warning" role="alert">{{ info }}</div>
+        {% endif %}
+
+        {% if user %}
+          <div class="alert alert-info">You are already logged in as <strong>{{ user }}</strong>.</div>
+          <a class="btn btn-primary w-100" href="/dashboard">Go to Dashboard</a>
+        {% else %}
+          <form method="post" action="/login">
+            <div class="mb-3">
+              <label class="form-label" for="username">Username</label>
+              <input class="form-control" id="username" type="text" name="username" required autofocus>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-control" id="password" type="password" name="password" required>
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Login</button>
+          </form>
+        {% endif %}
+
+        <div class="text-center mt-3">
+          <a href="/">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -21,3 +21,20 @@ pydantic>=2.6
 # shared
 python-dotenv>=1.0
 requests>=2.31
+
+# HW3 Part 1 - auth app (Jinja2 templates, form posts, signed session cookie, bcrypt)
+jinja2>=3.1
+python-multipart>=0.0.9
+itsdangerous>=2.1
+bcrypt>=4.0
+
+# HW3 Part 2 - chunking comparison
+llama-index-core>=0.12
+llama-index-embeddings-huggingface>=0.5
+sentence-transformers>=3.0
+faiss-cpu>=1.8       # listed by the assignment; the graded run uses SimpleVectorStore
+numpy>=1.26
+pandas>=2.1
+pyyaml>=6.0
+beautifulsoup4>=4.12
+lxml>=5.0            # XML parser for the eCFR download

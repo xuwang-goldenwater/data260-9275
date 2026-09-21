@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Recall Notice Desk - Home{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="card-title">Welcome to the Recall Notice Desk</h2>
+        <p class="card-text text-muted">
+          File and track grocery recall notices: undeclared allergens,
+          bacterial contamination, foreign material and mislabeling.
+        </p>
+
+        {% if user %}
+          <p class="card-text">You are logged in as <strong>{{ user }}</strong>.</p>
+          <a class="btn btn-primary" href="/dashboard">Go to Dashboard</a>
+          <a class="btn btn-outline-danger ms-2" href="/logout">Logout</a>
+        {% else %}
+          <p class="card-text">Please log in to file or review recall notices.</p>
+          <a class="btn btn-success" href="/login">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

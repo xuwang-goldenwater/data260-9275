@@ -1,0 +1,49 @@
+# HW3 Part 2 - five domain questions (DOMAIN_ID 3: grocery supply and recall notices)
+#
+# Written and committed BEFORE the graded retrieval run, so the expected answers
+# cannot be adjusted after seeing the results.
+#
+# expected_source = the corpus file that contains the answer.
+# single_source   = true when that file is the ONLY place the answer appears.
+
+questions:
+  - id: q1
+    question: "What does a Class II recall mean in FDA's recall classification?"
+    expected_answer: >-
+      Use of or exposure to the product may cause temporary or medically
+      reversible adverse health consequences, or the probability of serious
+      adverse health consequences is remote (21 CFR 7.3(m)(2)).
+    expected_source: ecfr_21cfr_part7.txt
+    single_source: true
+
+  - id: q2
+    question: "How often should a recalling firm send recall status reports to FDA?"
+    expected_answer: >-
+      Periodically, as FDA specifies for each recall; generally every 2 to 4
+      weeks (21 CFR 7.53(a)).
+    expected_source: ecfr_21cfr_part7.txt
+    single_source: true
+
+  - id: q3
+    question: "Why does preparing the recalled a2 Platinum infant formula with hot water not make it safe?"
+    expected_answer: >-
+      The contaminant is cereulide, a heat-stable toxin made by some strains of
+      Bacillus cereus, so hot water does not destroy it.
+    expected_source: fda_a2-platinum-usa-label-infant-formula.txt
+    single_source: true
+
+  - id: q4
+    question: "Which recalled seafood may be contaminated with cesium-137, and where was it imported from?"
+    expected_answer: >-
+      Frozen raw shrimp sold under the Market 32 and Waterfront Bistro brands
+      (Direct Source Seafood LLC), imported from Indonesia.
+    expected_source: fda_direct-source-seafood-llc-recalling-frozen.txt
+    single_source: true
+
+  - id: q5
+    question: "Which milk was recalled because it may contain food-grade cleaning agents?"
+    expected_answer: >-
+      Prairie Farms Gallon Fat Free Milk, code date DEC08, plant code PLT19-145,
+      made in Dubuque, Iowa and sold at Woodman's stores in Illinois and Wisconsin.
+    expected_source: fda_prairie-farms-announces-recall-prairie-farms.txt
+    single_source: true

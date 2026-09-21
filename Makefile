@@ -1,6 +1,7 @@
 .PHONY: verify-hw01 verify-hw02 run-agent run-nondeterminism run-client \
         run-api run-api-demo reset-data run-graph run-hw02-experiments \
-        docker-build docker-run docker-stop
+        docker-build docker-run docker-stop \
+        run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -60,3 +61,32 @@ docker-run: docker-build
 docker-stop:
 	-docker stop $(CONTAINER)
 	-docker rm $(CONTAINER)
+
+# ---- Homework 3 -----------------------------------------------------------
+
+# Part 1: login / logout app on PORT_BASE (stop run-api / docker first)
+run-auth:
+	python code/auth_app/main.py
+
+# Part 1: Set-Cookie flags, logout replay and idle timeout, printed step by step
+demo-session:
+	python code/auth_session_demo.py
+
+# Part 2 step 1: download the corpus, write CORPUS_MANIFEST.json and SOURCES.md
+fetch-corpus:
+	python code/rag_fetch_corpus.py
+
+# Part 2 step 2: three chunking pipelines. Commit questions.yaml BEFORE this.
+run-rag:
+	@echo "===== run-rag $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a reports/hw03/RUN_LOG.txt
+	python -u code/rag_chunking.py 2>&1 | tee -a reports/hw03/RUN_LOG.txt
+
+# Part 2 step 3: annotation sheet, then summary tables recomputed from raw/
+rag-annotations:
+	python code/rag_summary.py --init-annotations
+
+rag-summary:
+	python code/rag_summary.py
+
+verify-hw03:
+	python verify_hw03.py

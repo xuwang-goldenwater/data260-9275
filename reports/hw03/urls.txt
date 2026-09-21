@@ -1,0 +1,102 @@
+# HW3 corpus - FDA company recall announcements (Food & Beverages) + 21 CFR Part 7
+# Picked from https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts
+# (Product Type = Food & Beverages), Nov 2025 - Sep 2026. Pet food, drugs sold as
+# supplements, and duplicate "expanded recall" notices were left out.
+#
+# -- Undeclared allergen
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/saratoga-potato-chips-issues-allergy-alert-undeclared-soy-j-higgs-loaded-bacon-and-cheddar-potato
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gf-blends-recalls-truly-aip-all-purpose-flour-and-bread-mix-and-eat-gangster-flat-bread-pizza-mix
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/whole-foods-market-issues-allergy-alert-undeclared-egg-cabricharme-cheese
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/freshpoint-issues-recall-due-improperly-declared-allergen-egg-chicken-salad-wedge-sandwiches
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/crystal-temptations-issues-allergy-alert-undeclared-milk-chocolatey-eyeballs
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/jaimes-foods-atx-issues-allergy-alert-undeclared-egg-allergen-jaimes-spanish-village-jalapeno-ranch
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/better-bakehouse-snack-company-recalling-certain-lots-donutful-chocolate-dipped-vanilla-cake-donuts
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/exotique-foods-inc-recalls-momchipz-veggie-chips-broccoli-florets-cauliflower-due-undeclared-wheat
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prince-bakery-inc-issues-allergy-alert-undeclared-milk-and-sesame-prince-bakery-breads
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/l-nutra-issues-allergy-alert-undeclared-tree-nuts-prolon-brand-apulian-almond-cocoa-spread
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frankies-organic-issues-allergy-alert-undeclared-milk-frankies-organic-plant-based-vegan-cheddar
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sun-noodle-issues-voluntary-recall-sura-tanmen-hot-and-sour-flavor-premium-japanese-noodles-soup
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/blank-slate-creamery-issues-allergy-alert-undeclared-egg-vegan-non-dairy-frozen-dessert-coconut
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/529-commerce-llc-recalls-rooted-rare-brand-aquafaba-powder-due-undeclared-eggs
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/khong-guan-corporation-issues-recall-glutinous-rice-balls-black-sesame-filling-due-undeclared
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gellert-global-group-issues-allergy-alert-undeclared-tuna-fish-aldi-brand-fusia-asian-inspirations
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/eunha-fisheries-co-ltd-issues-allergy-alert-undeclared-wheat-soy-and-sesame-certain-frozen-olive
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lehi-valley-trading-company-issues-allergy-alert-undeclared-peanuts-chocolate-covered-raisins
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/azuma-foods-international-inc-issues-allergy-alert-undeclared-fish-tako-wasabi
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/kettle-cuisine-issues-allergy-alert-undeclared-shrimp-whole-foods-market-kitchen-minestrone-soup
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fly-jing-issues-voluntary-recall-creamy-sesame-noodles-due-potential-cross-contact-peanuts
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/brownie-baker-inc-issues-allergy-alert-undeclared-tree-nuts-walnuts-muffin-product
+# -- Bacterial / pathogen contamination
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gias-foods-inc-recalls-bettergoods-authentic-italian-lemon-alfredo-fettuccine-because-possible
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/evergreen-fresh-sprouts-llc-recalls-broccoli-sprouts-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-ready-eat-deli-style-salads-and-cream-cheese-because-possible-health
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/foods-alive-recalls-organic-moringa-leaf-powder-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frutas-y-hortalizas-del-sur-sa-expands-recall-include-one-lot-great-value-frozen-organic-triple
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/panorama-produce-recalls-mangoes-due-possible-salmonella-contamination
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/everything-sprouts-llc-recalls-alfalfa-sprouts-due-potential-e-coli-and-salmonella-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/hampton-grocers-inc-recalls-its-8-ounce-packages-lacnola-lactation-granola-because-possible-health
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/kettle-cuisine-recalls-marketside-tomato-bisque-soup-kit-sold-exclusively-walmart-stores-because
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lidl-us-recalls-vitasia-asian-style-wok-spice-mix-due-potential-salmonella-contamination
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/midwest-poultry-services-lp-recalls-shell-eggs-due-possible-salmonella-enteritidis-contamination
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/taylor-fresh-foods-recalls-iceberg-lettuce-central-mexico-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/la-ceiba-foods-latin-market-inc-recalls-cottage-cheese-products-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/clover-hill-dairy-recalls-soft-ricottarequeson-cheese-due-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nelson-isa-lacteos-llc-recalls-requeson-cheese-due-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/champion-foods-recalls-some-batches-motor-city-pizza-co-5-cheese-bread-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sks-copack-recalls-various-specialty-beverages-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nassar-investments-recalls-malazi-tahina-due-salmonella-contamination
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/iq-produce-lcc-recalls-enoki-mushrooms-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/sugar-foods-issues-recall-specific-lots-kroger-homestyle-cheese-garlic-croutons-due-possible-health
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/boticelli-foods-recalls-bettergoods-pistachio-nut-butter-because-possible-health-risk
+# -- Foreign material
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/so-delicious-dairy-freer-issues-voluntary-recall-salted-caramel-cluster-non-dairy-frozen-dessert
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/updated-grand-central-bakery-seattle-recalls-potato-sourdough-bread-due-possible-foreign-object
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/updated-dreyers-grand-ice-cream-inc-issues-voluntary-recall-select-outshine-fruit-bars-due-possible
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ukrops-homestyle-foods-announces-voluntary-recall-due-possible-foreign-object
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/pt-organics-limited-recalls-select-pumpkin-tree-peter-rabbit-organics-banana-strawberry-fruit-puree
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/morningstar-farms-voluntarily-recalling-two-varieties-due-possible-plastic-presence
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/straus-family-creamery-voluntarily-recalls-select-flavors-organic-ice-cream-due-potential-presence
+# -- Mislabeling / other
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lmsi-llckofinas-olive-oil-issues-voluntary-recall-its-garlic-mediterranean-infused-extra-virgin
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lidl-us-recalls-eridanous-shortbread-cookies-chocolate-truffle-coating-apricot-filling-due
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fresh-ready-foods-llc-recalls-spicy-breakfast-burrito-due-undeclared-soy
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/nara-organics-recalls-all-lots-nara-infant-formula-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prime-food-processing-llc-issues-safety-warning-regarding-uneviscerated-dried-herring-fish
+# -- More announcements, Nov 2025 - May 2026 (mixed causes: allergen, pathogen,
+#    toxin, lead, pesticide, radioactive contamination, choking hazard, labeling)
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/jonco-industries-recalls-certain-consumer-sized-white-cheddar-seasoning-products-because-possible
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/shining-sea-fish-co-recalls-ma-cohens-kippered-herring-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/george-j-howe-co-voluntarily-recalls-sunflower-seeds-due-undeclare-tree-nuts-cashews
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/my-wifes-slaw-issues-voluntary-recall-its-original-and-jalapeno-heat-flavored-coleslaw-being
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/market-choice-issues-allergy-alert-undeclared-sesame-vegan-kale-caesar-salad
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ocinet-inc-recalls-and-kimchi-branded-sliced-kimchi-because-product-contains-undeclared-fish
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/utz-quality-foods-llc-issues-voluntary-recall-certain-limited-varieties-zapps-and-dirty-potato-chips
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/a2-platinum-usa-label-infant-formula-recalled-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ghirardelli-chocolate-company-recalls-powdered-beverage-mixes-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/liquid-blenz-corp-recalls-product-due-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/wawa-issues-product-recall-16-oz-wawa-brand-iced-tea-lemon-iced-tea-diet-lemon-diet-lemonade-and
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tops-issues-recall-christopher-ranch-peeled-garlic-garland-fresh-peeled-garlic-because-possible
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/falcon-trading-company-inc-issues-recall-following-organic-black-bean-items-contain-pesticide
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/frito-lay-issues-voluntary-allergy-alert-undeclared-milk-miss-vickies-spicy-dill-pickle-potato-chips
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/saputo-usa-recalls-great-value-cottage-cheese-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/if-copack-llc-dba-initiative-foods-recalls-tippy-toes-brand-apple-pear-banana-because-possible
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/slade-gorton-co-inc-recalls-one-lot-wellsley-farms-farm-raised-atlantic-salmon-sold-bjs-wholesale
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mondelez-global-llc-expands-voluntary-recall-2-skus-chips-ahoy-baked-bites-brookie-usa-previous
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gerber-products-company-announces-voluntary-recall-limited-batches-arrowroot-biscuits-out-abundance
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ikm-recalls-product-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/navitas-organics-voluntarily-recalls-select-lots-8oz-organic-chia-seeds-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tri-union-seafoods-identifies-additional-quantities-recalled-genovar-tuna-limited-retailers-due
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ambriola-company-issues-recall-cheese-products-because-listeria-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/gusto-group-inc-recalls-shrimp-paste-klong-kone-454-g-1-lbs-and-910-g-2-lbs-because-possible-health
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/carrot-top-kitchens-bridgeport-formerly-redding-issues-class-ii-recall-hummus-containing-undeclared
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/direct-source-seafood-llc-recalling-frozen-raw-shrimp-because-product-may-have-become-contaminated
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/tbc-distribution-corporate-recalls-lucky-foods-brand-cinnamon-powder-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/prairie-farms-announces-recall-prairie-farms-gallon-fat-free-milk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/wegmans-recalls-locatelli-grated-pecorino-romano-cheese-due-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mamtakim-inc-recalls-dried-whole-smelts-salted-korushka-because-possible-health-risk
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/james-skinner-llc-issues-voluntary-recall-publix-maple-walnut-coffee-cake-due-incorrect-labeling
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/lunds-byerlys-voluntary-recalls-lb-monster-cookies-due-incorrect-labeling
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/white-castle-frozen-food-division-recalls-frozen-4-count-cartons-original-sliders-due-undeclared
+https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/mellace-family-brands-california-inc-recalls-wegmans-deluxe-mixed-nuts-unsalted-34-oz-and-115-oz
+# -- Regulation (one long document), eCFR version of 2026-09-17
+https://www.ecfr.gov/api/versioner/v1/full/2026-09-17/title-21.xml?part=7
