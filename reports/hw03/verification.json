@@ -1,6 +1,6 @@
 {
   "homework": "hw03",
-  "generated_at": "2026-09-21T09:47:43",
+  "generated_at": "2026-09-21T10:09:14",
   "config": {
     "SID4": 9275,
     "PORT_BASE": 8275,
@@ -40,7 +40,7 @@
     {
       "name": "session cookie is HttpOnly, Secure, SameSite",
       "passed": true,
-      "detail": "BBKVu4; path=/; Max-Age=3600; httponly; samesite=lax; secure",
+      "detail": "vIaSbU; path=/; Max-Age=3600; httponly; samesite=lax; secure",
       "required": true
     },
     {
@@ -124,7 +124,7 @@
     {
       "name": "questions.yaml committed before the retrieval results",
       "passed": true,
-      "detail": "questions.yaml committed; retrieval results not committed yet",
+      "detail": "questions first/last commit 1789975970/1789975970, results first commit 1790010550",
       "required": true
     },
     {
