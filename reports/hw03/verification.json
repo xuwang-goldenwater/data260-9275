@@ -1,0 +1,143 @@
+{
+  "homework": "hw03",
+  "generated_at": "2026-09-21T09:47:43",
+  "config": {
+    "SID4": 9275,
+    "PORT_BASE": 8275,
+    "PREFIX": "s9275",
+    "SEED": 9275,
+    "VERIFY_SEED": 269275,
+    "DOMAIN_ID": 3
+  },
+  "passed": true,
+  "n_checks": 21,
+  "n_failed_required": 0,
+  "checks": [
+    {
+      "name": "auth app uses PORT_BASE",
+      "passed": true,
+      "detail": "PORT_BASE=8275",
+      "required": true
+    },
+    {
+      "name": "home page renders",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "wrong password shows a Bootstrap alert",
+      "passed": true,
+      "detail": "status=401",
+      "required": true
+    },
+    {
+      "name": "login redirects to /dashboard",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "session cookie is HttpOnly, Secure, SameSite",
+      "passed": true,
+      "detail": "BBKVu4; path=/; Max-Age=3600; httponly; samesite=lax; secure",
+      "required": true
+    },
+    {
+      "name": "dashboard works while logged in",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "old cookie is rejected after logout",
+      "passed": true,
+      "detail": "status=302 location=/login?reason=ended",
+      "required": true
+    },
+    {
+      "name": "idle session is rejected",
+      "passed": true,
+      "detail": "status=302 location=/login?reason=ended",
+      "required": true
+    },
+    {
+      "name": "corpus files match CORPUS_MANIFEST.json hashes",
+      "passed": true,
+      "detail": "90 files",
+      "required": true
+    },
+    {
+      "name": "corpus is at least 200 KB",
+      "passed": true,
+      "detail": "274,233 bytes",
+      "required": true
+    },
+    {
+      "name": "SOURCES.md exists",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "questions.yaml has 5+ complete questions",
+      "passed": true,
+      "detail": "5 questions",
+      "required": true
+    },
+    {
+      "name": "every expected_source is a corpus file",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "2+ questions depend on a single source document",
+      "passed": true,
+      "detail": "5 single-source",
+      "required": true
+    },
+    {
+      "name": "retrievals.jsonl covers 3 techniques x all questions x k",
+      "passed": true,
+      "detail": "75 rows, expected 75",
+      "required": true
+    },
+    {
+      "name": "chunk_stats.json has all 3 techniques",
+      "passed": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "store_score agrees with recomputed cosine",
+      "passed": true,
+      "detail": "max gap 0.000001",
+      "required": false
+    },
+    {
+      "name": "random raw rows (VERIFY_SEED) really come from their source file",
+      "passed": true,
+      "detail": "checked 5",
+      "required": true
+    },
+    {
+      "name": "questions.yaml committed before the retrieval results",
+      "passed": true,
+      "detail": "questions.yaml committed; retrieval results not committed yet",
+      "required": true
+    },
+    {
+      "name": "summary table recomputes from raw/",
+      "passed": true,
+      "detail": "3 techniques",
+      "required": true
+    },
+    {
+      "name": "METRICS.md contains the generated table",
+      "passed": true,
+      "detail": "",
+      "required": true
+    }
+  ]
+}

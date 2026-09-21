@@ -1,0 +1,46 @@
+[
+  {
+    "technique": "token",
+    "n_chunks": 413,
+    "avg_chunk_len": 760.3,
+    "min_chunk_len": 104,
+    "max_chunk_len": 1152,
+    "len_unit": "chars",
+    "params": {
+      "chunk_size": 200,
+      "chunk_overlap": 30
+    },
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_dim": 384,
+    "chunk_and_index_seconds": 12.79
+  },
+  {
+    "technique": "semantic",
+    "n_chunks": 204,
+    "avg_chunk_len": 1339.3,
+    "min_chunk_len": 5,
+    "max_chunk_len": 11491,
+    "len_unit": "chars",
+    "params": {
+      "buffer_size": 1,
+      "breakpoint_percentile_threshold": 95
+    },
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_dim": 384,
+    "chunk_and_index_seconds": 29.2
+  },
+  {
+    "technique": "sentence_window",
+    "n_chunks": 1706,
+    "avg_chunk_len": 160.2,
+    "min_chunk_len": 4,
+    "max_chunk_len": 3353,
+    "len_unit": "chars",
+    "params": {
+      "window_size": 3
+    },
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embed_dim": 384,
+    "chunk_and_index_seconds": 10.33
+  }
+]

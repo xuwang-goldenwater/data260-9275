@@ -1,0 +1,189 @@
+===== run-rag 2026-09-21 00:33:01 =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9668.40it/s]
+LLM is explicitly disabled. Using MockLLM.
+corpus: 90 files, 273,218 characters
+questions: 5, top-k = 5, embed model = sentence-transformers/all-MiniLM-L6-v2
+
+====================================================================================================
+TECHNIQUE: token
+====================================================================================================
+413 chunks, avg length 760.3 chars, built in 12.8 s, params {'chunk_size': 200, 'chunk_overlap': 30}
+
+[token] q1: What does a Class II recall mean in FDA's recall classification?
+query embedding dim = 384, first 8 = [-0.0579, -0.0077, -0.0323, 0.0221, 0.0436, -0.004, 0.0283, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 14.82 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6906      0.6906        984  ecfr_21cfr_part7.txt                           (immediate or long-range) of occurrence of the hazard. (b) On the basis of this determination, the Food and Drug Administration will assign the recall a classif
+   2       0.6154      0.6154        927  ecfr_21cfr_part7.txt                           I, II, or III, assigned by the Food and Drug Administration to a particular product recall to indicate the relative degree of health hazard presented by the pro
+   3       0.6142      0.6142       1024  ecfr_21cfr_part7.txt                           firm's removal or correction of a distributed product which involves a minor violation that would not be subject to legal action by the Food and Drug Administra
+   4       0.6035      0.6035        988  ecfr_21cfr_part7.txt                           of the product being recalled and the strategy developed for that recall. In general terms, the purpose of a recall communication is to convey: (1) That the pro
+   5       0.5826      0.5826       1046  ecfr_21cfr_part7.txt                           recall. (a) The Commissioner of Food and Drugs or designee may request a firm to initiate a recall when the following determinations have been made: (1) That a 
+
+[token] q2: How often should a recalling firm send recall status reports to FDA?
+query embedding dim = 384, first 8 = [-0.0205, -0.0152, -0.0596, 0.0345, -0.0287, 0.0391, -0.0142, 0.0625]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 7.50 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7686      0.7686       1011  ecfr_21cfr_part7.txt                           reports. (a) The recalling firm is requested to submit periodic recall status reports to the appropriate Food and Drug Administration district office so that th
+   2       0.7074      0.7074        140  fda_fresh-ready-foods-llc-recalls-spicy.txt    or by calling 1-855-424-8390, Monday through Friday, 8:00 a.m. to 6:00 p.m. ET. This recall is being conducted in cooperation with the FDA.
+   3       0.6976      0.6976       1094  ecfr_21cfr_part7.txt                           whether it was Food and Drug Administration-requested or firm-initiated, and the specific action being taken by the recalling firm. The Food and Drug Administra
+   4       0.6710      0.6710       1073  ecfr_21cfr_part7.txt                           by sending a postage-paid, self-addressed postcard or by allowing the recipient to place a collect call to the recalling firm. (2) The recall communication shou
+   5       0.6643      0.6643       1020  ecfr_21cfr_part7.txt                           A copy of the firm's recall communication if any has issued, or a proposed communication if none has issued. (8) Proposed strategy for conducting the recall. (9
+
+[token] q3: Why does preparing the recalled a2 Platinum infant formula with hot water not make it safe?
+query embedding dim = 384, first 8 = [-0.0703, -0.0642, -0.0396, 0.0528, 0.038, 0.0317, -0.039, 0.125]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 8.31 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6488      0.6488        817  fda_a2-platinum-usa-label-infant-formula.txt   a2 Platinum USA Label Infant Formula Recalled Because of Possible Health Risk Company Announcement Date: May 02, 2026 FDA Publish Date: May 02, 2026 Product Typ
+   2       0.5778      0.5778        946  fda_a2-platinum-usa-label-infant-formula.txt   not be used. The recall was initiated by a2MC after cereulide was detected through additional testing of the Product conducted in response to new guidance issue
+   3       0.5528      0.5528        404  fda_tops-issues-recall-christopher-ranch-peel  during a routine store inspection where it was observed that the recalled product was not held at sufficient temperatures to control the hazard. There are no kn
+   4       0.5246      0.5246       1024  fda_nara-organics-recalls-all-lots-nara.txt    To date, Nara infant formula has not tested positive for C. botulinum. However, Nara is voluntarily recalling all products currently in market. Nara is taking a
+   5       0.5139      0.5139        733  fda_ikm-recalls-product-because-possible-heal  give you an idea. The real product might look a little different. No illnesses have been reported to date. The recall was the result of a routine sampling progr
+
+[token] q4: Which recalled seafood may be contaminated with cesium-137, and where was it imported from?
+query embedding dim = 384, first 8 = [-0.0502, 0.02, -0.024, 0.0044, 0.0461, -0.0117, -0.0181, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 7.97 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7687      0.7687        925  fda_direct-source-seafood-llc-recalling-froze  sold under the Market 32 and Waterfront Bistro brands because they may have been prepared, packed, or held under insanitary conditions whereby they may have bec
+   2       0.7631      0.7631        800  fda_direct-source-seafood-llc-recalling-froze  and WY | On or after June 30,2025 The FDA is actively investigating reports of Cs-137 contamination in shipping containers and frozen shrimp products manufactur
+   3       0.7607      0.7607        853  fda_direct-source-seafood-llc-recalling-froze  Direct Source Seafood LLC is Recalling Frozen Raw Shrimp Because Product May Have Become Contaminated with Cesium-137 (Cs-137) Company Announcement Date: Decemb
+   4       0.6340      0.6340        677  fda_gusto-group-inc-recalls-shrimp-paste.txt   product was directly distributed to the two retailers listed below, located IA and NJ, between April 2023 to December 2023 There were no online sales. 1.Golden 
+   5       0.6086      0.6086        837  fda_gusto-group-inc-recalls-shrimp-paste.txt   2000, Product of Thailand. The recalled product was sold in two sizes: - [Klong Kone] Shrimp Paste (Klong Kone) '454 G. (1 LBS)', with UPC: 8853142000313, Produ
+
+[token] q5: Which milk was recalled because it may contain food-grade cleaning agents?
+query embedding dim = 384, first 8 = [-0.0391, -0.0944, 0.0283, 0.0426, 0.079, 0.0413, -0.0559, 0.0686]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 8.56 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6657      0.6657        608  fda_sks-copack-recalls-various-specialty-beve  | 27-Oct-2027 BT371 | Boba Time | PISTACHIO POWDER 5/3.5# | 20260219 | 20-Aug-2027 FN1000 | FANALE | UBE-TARO 10/2# | 20260223 | 24-Aug-2027 SS500 | DENDA | MIL
+   2       0.6545      0.6545        913  fda_whole-foods-market-issues-allergy-alert.t  stores in Arizona, California, Connecticut, Massachusetts, New Jersey, New York, and Rhode Island. Recalled product was cut and plastic wrapped by the pound wit
+   3       0.6475      0.6475        772  fda_sugar-foods-issues-recall-specific-lots.t  Inc. due to concerns regarding potential Salmonella contamination in milk powder. Out of an abundance of caution, and because this milk powder was used in a sea
+   4       0.6439      0.6439        933  fda_hampton-grocers-inc-recalls-its-8.txt      affected lots of Lacnola Lactation Granola. The specific source of the contamination has not yet been determined. To date, neither the finished Lacnola product 
+   5       0.6398      0.6398        908  fda_prairie-farms-announces-recall-prairie-fa  Prairie Farms Announces Recall of Prairie Farms Gallon Fat Free Milk Company Announcement Date: November 25, 2025 FDA Publish Date: November 26, 2025 Product Ty
+
+====================================================================================================
+TECHNIQUE: semantic
+====================================================================================================
+204 chunks, avg length 1339.3 chars, built in 29.2 s, params {'buffer_size': 1, 'breakpoint_percentile_threshold': 95}
+
+[semantic] q1: What does a Class II recall mean in FDA's recall classification?
+query embedding dim = 384, first 8 = [-0.0579, -0.0077, -0.0323, 0.0221, 0.0436, -0.004, 0.0283, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 4.75 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6535      0.6535         65  fda_fresh-ready-foods-llc-recalls-spicy.txt    ET. This recall is being conducted in cooperation with the FDA.
+   2       0.6143      0.6143       1404  ecfr_21cfr_part7.txt                           Any conclusion shall be supported as completely as possible by scientific documentation and/or statements that the conclusion is the opinion of the individual(s
+   3       0.6076      0.6076         87  fda_evergreen-fresh-sprouts-llc-recalls-brocc  This recall is being made with the knowledge of the U.S. Food and Drug Administration.
+   4       0.5506      0.5506       2607  ecfr_21cfr_part7.txt                           (h) No representation or suggestion that an article is guaranteed under the act shall be made in labeling. Subpart B [Reserved] Subpart C—Recalls (Including Pro
+   5       0.5207      0.5207       5766  ecfr_21cfr_part7.txt                           (v) Continued availability of essential products. (2) The Food and Drug Administration will review the adequacy of a proposed recall strategy developed by a rec
+
+[semantic] q2: How often should a recalling firm send recall status reports to FDA?
+query embedding dim = 384, first 8 = [-0.0205, -0.0152, -0.0596, 0.0345, -0.0287, 0.0391, -0.0142, 0.0625]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 3.98 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6515      0.6515      11491  ecfr_21cfr_part7.txt                           (5) Total amount of such products estimated to be in distribution channels. (6) Distribution information, including the number of direct accounts and, where nec
+   2       0.6305      0.6305        411  fda_midwest-poultry-services-lp-recalls-shell  Consumers who purchased products associated with this recall are urged to avoid consumption and return the product to its original place of purchase for a full 
+   3       0.6249      0.6249         65  fda_fresh-ready-foods-llc-recalls-spicy.txt    ET. This recall is being conducted in cooperation with the FDA.
+   4       0.6107      0.6107        404  fda_exotique-foods-inc-recalls-momchipz-veggi  Consumers who have purchased this product and have an allergy or severe sensitivity to wheat are urged to not consume the product and should discard or return p
+   5       0.5954      0.5954       5766  ecfr_21cfr_part7.txt                           (v) Continued availability of essential products. (2) The Food and Drug Administration will review the adequacy of a proposed recall strategy developed by a rec
+
+[semantic] q3: Why does preparing the recalled a2 Platinum infant formula with hot water not make it safe?
+query embedding dim = 384, first 8 = [-0.0703, -0.0642, -0.0396, 0.0528, 0.038, 0.0317, -0.039, 0.125]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 3.88 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6540      0.6540        711  fda_a2-platinum-usa-label-infant-formula.txt   a2 Platinum USA Label Infant Formula Recalled Because of Possible Health Risk Company Announcement Date: May 02, 2026 FDA Publish Date: May 02, 2026 Product Typ
+   2       0.5034      0.5034         65  fda_fresh-ready-foods-llc-recalls-spicy.txt    ET. This recall is being conducted in cooperation with the FDA.
+   3       0.5023      0.5023        716  fda_ikm-recalls-product-because-possible-heal  The real product might look a little different. No illnesses have been reported to date. The recall was the result of a routine sampling program by the FDA whic
+   4       0.4865      0.4865       1869  fda_ghirardelli-chocolate-company-recalls-pow  No illnesses have been reported to date. The recall is limited to the following powdered beverage mixes only: Product Name | Lot Number | Best if Used by 30lb C
+   5       0.4837      0.4837        811  fda_sks-copack-recalls-various-specialty-beve  for a certain lot of low heat nonfat dry milk powder due to possible Salmonella contamination. According to California Dairies, the recall followed the identifi
+
+[semantic] q4: Which recalled seafood may be contaminated with cesium-137, and where was it imported from?
+query embedding dim = 384, first 8 = [-0.0502, 0.02, -0.024, 0.0044, 0.0461, -0.0117, -0.0181, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 4.65 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.8018      0.8018       2325  fda_direct-source-seafood-llc-recalling-froze  Direct Source Seafood LLC is Recalling Frozen Raw Shrimp Because Product May Have Become Contaminated with Cesium-137 (Cs-137) Company Announcement Date: Decemb
+   2       0.6125      0.6125       2448  fda_tri-union-seafoods-identifies-additional-  Tri-Union Seafoods Identifies Additional Quantities of Recalled Genova® Tuna at Limited Retailers Due to Inadvertent Distribution of Previously Recalled Product
+   3       0.5978      0.5978        333  fda_gusto-group-inc-recalls-shrimp-paste.txt   The company is currently investigating the cause of the issue. Consumer Information: Consumers who purchased the recalled [Klong Kone] Shrimp Paste (Klong Kone)
+   4       0.5966      0.5966       1137  fda_prime-food-processing-llc-issues-safety.t  People experiencing these problems should seek immediate medical attention. Recalled Products - Item #AF4110 – Dried Herring Fish- Lot Code: 26020. Expiration: 
+   5       0.5848      0.5848        394  fda_direct-source-seafood-llc-recalling-froze  No illnesses have been reported to date. Consumers who have purchased affected shrimp should not consume the product and should dispose of or return it to the p
+
+[semantic] q5: Which milk was recalled because it may contain food-grade cleaning agents?
+query embedding dim = 384, first 8 = [-0.0391, -0.0944, 0.0283, 0.0426, 0.079, 0.0413, -0.0559, 0.0686]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 5.73 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6726      0.6726        668  fda_prairie-farms-announces-recall-prairie-fa  Prairie Farms Announces Recall of Prairie Farms Gallon Fat Free Milk Company Announcement Date: November 25, 2025 FDA Publish Date: November 26, 2025 Product Ty
+   2       0.6439      0.6439        410  fda_frito-lay-issues-voluntary-allergy-alert.  CST, Monday-Friday). If consumers have an allergy or sensitivity to milk, they should not consume the product and discard it immediately. Frito-Lay has informed
+   3       0.6412      0.6412        766  fda_prince-bakery-inc-issues-allergy-alert.tx  No illnesses have been reported to date. The recall was initiated after it was discovered during routine FDA inspection that the Spanish Style bread, which incl
+   4       0.6265      0.6265        811  fda_sks-copack-recalls-various-specialty-beve  for a certain lot of low heat nonfat dry milk powder due to possible Salmonella contamination. According to California Dairies, the recall followed the identifi
+   5       0.6213      0.6213        997  fda_lidl-us-recalls-eridanous-shortbread-cook  This recall was initiated after foreign language packaging was discovered that did not contain English ingredients, nutrition facts, or allergen declarations. C
+
+====================================================================================================
+TECHNIQUE: sentence_window
+====================================================================================================
+1706 chunks, avg length 160.2 chars, built in 10.3 s, params {'window_size': 3}
+
+[sentence_window] q1: What does a Class II recall mean in FDA's recall classification?
+query embedding dim = 384, first 8 = [-0.0579, -0.0077, -0.0323, 0.0221, 0.0436, -0.004, 0.0283, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 30.22 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7979      0.7979        259  ecfr_21cfr_part7.txt                           (b) On the basis of this determination, the Food and Drug Administration will assign the recall a classification, i.e., Class I, Class II, or Class III, to indi
+   2       0.7830      0.7830        247  ecfr_21cfr_part7.txt                           (m) Recall classification means the numerical designation, i.e., I, II, or III, assigned by the Food and Drug Administration to a particular product recall to i
+   3       0.6894      0.6894         57  fda_champion-foods-recalls-some-batches-motor  This recall is being conducted in coordination with FDA.
+   4       0.6894      0.6894         57  fda_sugar-foods-issues-recall-specific-lots.t  This recall is being conducted in coordination with FDA.
+   5       0.6679      0.6679         63  fda_if-copack-llc-dba-initiative-foods.txt     This recall is being conducted based on FDA’s recommendation.
+
+[sentence_window] q2: How often should a recalling firm send recall status reports to FDA?
+query embedding dim = 384, first 8 = [-0.0205, -0.0152, -0.0596, 0.0345, -0.0287, 0.0391, -0.0142, 0.0625]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 29.66 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7795      0.7795        199  ecfr_21cfr_part7.txt                           (a) The recalling firm is requested to submit periodic recall status reports to the appropriate Food and Drug Administration district office so that the agency 
+   2       0.7652      0.7652        231  ecfr_21cfr_part7.txt                           The frequency of such reports will be determined by the relative urgency of the recall and will be specified by the Food and Drug Administration in each recall 
+   3       0.6918      0.6918        319  ecfr_21cfr_part7.txt                           The Food and Drug Administration will promptly make available to the public in the weekly FDA Enforcement Report a descriptive listing of each new recall accord
+   4       0.6904      0.6904         57  fda_sugar-foods-issues-recall-specific-lots.t  This recall is being conducted in coordination with FDA.
+   5       0.6904      0.6904         57  fda_champion-foods-recalls-some-batches-motor  This recall is being conducted in coordination with FDA.
+
+[sentence_window] q3: Why does preparing the recalled a2 Platinum infant formula with hot water not make it safe?
+query embedding dim = 384, first 8 = [-0.0703, -0.0642, -0.0396, 0.0528, 0.038, 0.0317, -0.039, 0.125]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 29.54 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.6559      0.6559        663  fda_a2-platinum-usa-label-infant-formula.txt   a2 Platinum USA Label Infant Formula Recalled Because of Possible Health Risk Company Announcement Date: May 02, 2026 FDA Publish Date: May 02, 2026 Product Typ
+   2       0.6378      0.6378        171  fda_tops-issues-recall-christopher-ranch-peel  This issue was discovered during a routine store inspection where it was observed that the recalled product was not held at sufficient temperatures to control t
+   3       0.5615      0.5615        109  fda_better-bakehouse-snack-company-recalling-  The problem was discovered after one allergic reaction was reported in connection with the recalled product.
+   4       0.5518      0.5518        154  fda_frito-lay-issues-voluntary-allergy-alert.  Those with an allergy or severe sensitivity to milk run the risk of a serious or life-threatening allergic reaction if they consume the recalled product.
+   5       0.5383      0.5383         63  fda_if-copack-llc-dba-initiative-foods.txt     This recall is being conducted based on FDA’s recommendation.
+
+[sentence_window] q4: Which recalled seafood may be contaminated with cesium-137, and where was it imported from?
+query embedding dim = 384, first 8 = [-0.0502, 0.02, -0.024, 0.0044, 0.0461, -0.0117, -0.0181, 0.0683]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 29.68 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7701      0.7701        906  fda_direct-source-seafood-llc-recalling-froze  Direct Source Seafood LLC is Recalling Frozen Raw Shrimp Because Product May Have Become Contaminated with Cesium-137 (Cs-137) Company Announcement Date: Decemb
+   2       0.7151      0.7151        701  fda_direct-source-seafood-llc-recalling-froze  The recalled frozen raw shrimp products are as follows, as shown in the images further below: Retailer | Brand | Product Size | UPC Code | Best By Date | Store 
+   3       0.6026      0.6026        137  fda_ocinet-inc-recalls-and-kimchi-branded.txt  The recall was initiated after it was discovered that the Product was distributed in packaging that did not reveal the presence of fish.
+   4       0.5913      0.5913        193  fda_a2-platinum-usa-label-infant-formula.txt   The recall was initiated by a2MC after cereulide was detected through additional testing of the Product conducted in response to new guidance issued by New Zeal
+   5       0.5896      0.5896        157  fda_gellert-global-group-issues-allergy-alert  The recall was initiated after a consumer discovered that the fish-containing product was distributed in packaging that did not reveal the presence of fish.
+
+[sentence_window] q5: Which milk was recalled because it may contain food-grade cleaning agents?
+query embedding dim = 384, first 8 = [-0.0391, -0.0944, 0.0283, 0.0426, 0.079, 0.0413, -0.0559, 0.0686]
+query vector shape = (384,), stacked chunk vectors shape = (5, 384)
+similarity search took 30.16 ms
+rank  store_score  cosine_sim  chunk_len  source_file                                    preview
+   1       0.7301      0.7301        154  fda_frito-lay-issues-voluntary-allergy-alert.  Those with an allergy or severe sensitivity to milk run the risk of a serious or life-threatening allergic reaction if they consume the recalled product.
+   2       0.7239      0.7239        160  fda_sugar-foods-issues-recall-specific-lots.t  Out of an abundance of caution, and because this milk powder was used in a seasoning ingredient supplied to Sugar Foods, the company is initiating this recall.
+   3       0.7172      0.7172         76  fda_champion-foods-recalls-some-batches-motor  milk powder recall due to a concern of potential Salmonella contamination.
+   4       0.7106      0.7106        179  fda_ghirardelli-chocolate-company-recalls-pow  milk powder recall due to a concern of potential Salmonella contamination, which was supplied to a third-party manufacturer and used as an ingredient in powdere
+   5       0.7012      0.7012        528  fda_whole-foods-market-issues-allergy-alert.t  Recalled product was cut and plastic wrapped by the pound with Whole Foods Market scale labels and would be identified as follows: Type of Label | Product Descr
+
+wrote 75 rows to /Users/Sunny/Documents/data260-9275/reports/hw03/raw/retrievals.jsonl
+next: make rag-summary
