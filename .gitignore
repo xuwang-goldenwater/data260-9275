@@ -19,3 +19,10 @@ code/data/*.tmp
 # Word 打开文档时产生的临时锁文件
 ~$*
 *.bak
+
+# HW4 - React build output
+frontend/dist/
+
+# Postman desktop app local-mode folders (not part of the submission)
+.postman/
+postman/

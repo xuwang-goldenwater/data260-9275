@@ -1,0 +1,65 @@
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #616e7c;
+  --border: #d9dee4;
+  --primary: #1f6f5c;
+  --danger: #b42318;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body { margin: 0; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+.navbar {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 12px 16px; margin-bottom: 16px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+}
+.brand { font-weight: 700; color: var(--primary); text-decoration: none; }
+.nav-links { display: flex; gap: 12px; flex: 1; }
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a.active { color: var(--text); font-weight: 600; }
+.nav-user { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px;
+}
+.card.narrow { max-width: 520px; margin: 0 auto; }
+.card h2 { margin: 0 0 12px; font-size: 20px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+.btn {
+  display: inline-block; padding: 7px 14px; border-radius: 8px; font-size: 14px;
+  border: 1px solid var(--border); background: #fff; color: var(--text);
+  cursor: pointer; text-decoration: none;
+}
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn.danger { color: var(--danger); border-color: var(--danger); }
+
+.form { display: flex; flex-direction: column; gap: 8px; }
+.form label { font-size: 14px; font-weight: 600; margin-top: 6px; }
+.form input, .form select {
+  padding: 9px 10px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px;
+}
+.form-actions { display: flex; gap: 10px; margin-top: 12px; }
+
+.notice { color: var(--muted); }
+.alert {
+  padding: 10px 12px; margin: 8px 0; border-radius: 8px;
+  background: #fdecea; color: var(--danger); font-size: 14px;
+}
+
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.table th { color: var(--muted); font-weight: 600; }
+.actions { display: flex; gap: 6px; white-space: nowrap; }
+
+.pager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }

@@ -1,0 +1,502 @@
+{
+  "info": {
+    "name": "DATA260 HW4 s9275 - Recall Notice API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0 Health",
+      "item": [
+        {
+          "name": "Health (no login)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "health"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1 Auth",
+      "item": [
+        {
+          "name": "Login required (no cookie yet) -> 401",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"demo@s9275.example.com\",\n  \"password\": \"recall-demo-9275\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/auth/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 CRUD",
+      "item": [
+        {
+          "name": "Create notice (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Harbor Point Frozen Diced Onions, 2 lb bag\",\n  \"category\": \"Bacterial Contamination\",\n  \"firm_id\": 12\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('notice_id', pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "View all notices (GET, paged)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices?page=1&page_size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "View notice by id (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update notice (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Harbor Point Frozen Diced Onions, 3 lb bag\",\n  \"category\": \"Foreign Material\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete notice (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Deleted notice -> 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 N+1",
+      "item": [
+        {
+          "name": "naive page_size=10",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/naive?page=1&page_size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "naive"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "fixed page_size=10",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/fixed?page=1&page_size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "fixed"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "naive page_size=50",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/naive?page=1&page_size=50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "naive"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "fixed page_size=50",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/fixed?page=1&page_size=50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "fixed"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "naive page_size=200",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/naive?page=1&page_size=200",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "naive"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "200"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "fixed page_size=200",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/fixed?page=1&page_size=200",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "fixed"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "200"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 Logout",
+      "item": [
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/auth/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          }
+        },
+        {
+          "name": "After logout -> 401",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "notice_id",
+      "value": ""
+    }
+  ]
+}

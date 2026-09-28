@@ -1,0 +1,49 @@
+{
+  "seed": 9275,
+  "database": "s9275_rel",
+  "firms": 200,
+  "recall_notices": 5000,
+  "firms_referenced_by_notices": 200,
+  "notices_by_category": {
+    "Undeclared Allergen": 2078,
+    "Mislabeling": 1330,
+    "Bacterial Contamination": 801,
+    "Foreign Material": 791
+  },
+  "sha256_of_generated_rows": "018ba267220fdf94d95ec7deb6c67ea989163ce841ee4e68e1a0e6b7835be268",
+  "first_notices": [
+    [
+      "Blue Heron Enoki Mushrooms, 32 oz tub",
+      "Undeclared Allergen",
+      73,
+      "2025-06-23"
+    ],
+    [
+      "Green Leaf Almond Granola, 16 oz",
+      "Undeclared Allergen",
+      31,
+      "2021-02-25"
+    ],
+    [
+      "Sunrise Valley Tahini, 6-pack",
+      "Mislabeling",
+      173,
+      "2023-12-29"
+    ]
+  ],
+  "first_firms": [
+    [
+      "Willow Snacks Co.",
+      "CO"
+    ],
+    [
+      "Prairie Provisions Co.",
+      "MN"
+    ],
+    [
+      "Meadow Produce LLC",
+      "CA"
+    ]
+  ],
+  "demo_user": "demo@s9275.example.com"
+}

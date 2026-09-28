@@ -1,0 +1,218 @@
+{
+  "index": "ix_recall_notices_recall_date",
+  "queries": {
+    "10": "SELECT recall_notices.id, recall_notices.product_name, recall_notices.category, recall_notices.firm_id, recall_notices.recall_date, firms_1.id AS id_1, firms_1.name, firms_1.state \nFROM recall_notices LEFT OUTER JOIN firms AS firms_1 ON firms_1.id = recall_notices.firm_id ORDER BY recall_notices.recall_date DESC, recall_notices.id DESC \n LIMIT 0, 10",
+    "50": "SELECT recall_notices.id, recall_notices.product_name, recall_notices.category, recall_notices.firm_id, recall_notices.recall_date, firms_1.id AS id_1, firms_1.name, firms_1.state \nFROM recall_notices LEFT OUTER JOIN firms AS firms_1 ON firms_1.id = recall_notices.firm_id ORDER BY recall_notices.recall_date DESC, recall_notices.id DESC \n LIMIT 0, 50",
+    "200": "SELECT recall_notices.id, recall_notices.product_name, recall_notices.category, recall_notices.firm_id, recall_notices.recall_date, firms_1.id AS id_1, firms_1.name, firms_1.state \nFROM recall_notices LEFT OUTER JOIN firms AS firms_1 ON firms_1.id = recall_notices.firm_id ORDER BY recall_notices.recall_date DESC, recall_notices.id DESC \n LIMIT 0, 200"
+  },
+  "results": {
+    "before": {
+      "10": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "ALL",
+            "possible_keys": null,
+            "key": null,
+            "key_len": null,
+            "ref": null,
+            "rows": 4970,
+            "filtered": 100.0,
+            "Extra": "Using filesort"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 10 row(s)  (cost=2244 rows=10) (actual time=2.54..2.58 rows=10 loops=1)\n    -> Nested loop left join  (cost=2244 rows=4970) (actual time=2.54..2.58 rows=10 loops=1)\n        -> Sort: recall_notices.recall_date DESC, recall_notices.id DESC, limit input to 10 row(s) per chunk  (cost=504 rows=4970) (actual time=2.51..2.51 rows=10 loops=1)\n            -> Table scan on recall_notices  (cost=504 rows=4970) (actual time=0.0285..1.52 rows=5001 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=0.00657..0.00659 rows=1 loops=10)\n",
+        "median_ms_of_20_runs": 2.384
+      },
+      "50": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "ALL",
+            "possible_keys": null,
+            "key": null,
+            "key_len": null,
+            "ref": null,
+            "rows": 4970,
+            "filtered": 100.0,
+            "Extra": "Using filesort"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 50 row(s)  (cost=2244 rows=50) (actual time=2.28..2.36 rows=50 loops=1)\n    -> Nested loop left join  (cost=2244 rows=4970) (actual time=2.28..2.36 rows=50 loops=1)\n        -> Sort: recall_notices.recall_date DESC, recall_notices.id DESC, limit input to 50 row(s) per chunk  (cost=504 rows=4970) (actual time=2.28..2.28 rows=50 loops=1)\n            -> Table scan on recall_notices  (cost=504 rows=4970) (actual time=0.0237..1.46 rows=5001 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=0.00141..0.00144 rows=1 loops=50)\n",
+        "median_ms_of_20_runs": 3.418
+      },
+      "200": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "ALL",
+            "possible_keys": null,
+            "key": null,
+            "key_len": null,
+            "ref": null,
+            "rows": 4970,
+            "filtered": 100.0,
+            "Extra": "Using filesort"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 200 row(s)  (cost=2244 rows=200) (actual time=2.48..2.66 rows=200 loops=1)\n    -> Nested loop left join  (cost=2244 rows=4970) (actual time=2.48..2.65 rows=200 loops=1)\n        -> Sort: recall_notices.recall_date DESC, recall_notices.id DESC, limit input to 200 row(s) per chunk  (cost=504 rows=4970) (actual time=2.48..2.49 rows=200 loops=1)\n            -> Table scan on recall_notices  (cost=504 rows=4970) (actual time=0.0228..1.47 rows=5001 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=572e-6..603e-6 rows=1 loops=200)\n",
+        "median_ms_of_20_runs": 4.818
+      }
+    },
+    "after": {
+      "10": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "index",
+            "possible_keys": null,
+            "key": "ix_recall_notices_recall_date",
+            "key_len": "3",
+            "ref": null,
+            "rows": 10,
+            "filtered": 100.0,
+            "Extra": "Backward index scan"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 10 row(s)  (cost=1243 rows=10) (actual time=0.0915..0.148 rows=10 loops=1)\n    -> Nested loop left join  (cost=1243 rows=10) (actual time=0.091..0.147 rows=10 loops=1)\n        -> Index scan on recall_notices using ix_recall_notices_recall_date (reverse)  (cost=0.0171 rows=10) (actual time=0.0869..0.134 rows=10 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=0.00112..0.00113 rows=1 loops=10)\n",
+        "median_ms_of_20_runs": 0.373
+      },
+      "50": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "ALL",
+            "possible_keys": null,
+            "key": null,
+            "key_len": null,
+            "ref": null,
+            "rows": 4969,
+            "filtered": 100.0,
+            "Extra": "Using filesort"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 50 row(s)  (cost=2244 rows=50) (actual time=2.28..2.33 rows=50 loops=1)\n    -> Nested loop left join  (cost=2244 rows=4969) (actual time=2.28..2.32 rows=50 loops=1)\n        -> Sort: recall_notices.recall_date DESC, recall_notices.id DESC, limit input to 50 row(s) per chunk  (cost=504 rows=4969) (actual time=2.28..2.28 rows=50 loops=1)\n            -> Table scan on recall_notices  (cost=504 rows=4969) (actual time=0.0245..1.47 rows=5001 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=628e-6..653e-6 rows=1 loops=50)\n",
+        "median_ms_of_20_runs": 3.142
+      },
+      "200": {
+        "explain": [
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "recall_notices",
+            "partitions": null,
+            "type": "ALL",
+            "possible_keys": null,
+            "key": null,
+            "key_len": null,
+            "ref": null,
+            "rows": 4969,
+            "filtered": 100.0,
+            "Extra": "Using filesort"
+          },
+          {
+            "id": 1,
+            "select_type": "SIMPLE",
+            "table": "firms_1",
+            "partitions": null,
+            "type": "eq_ref",
+            "possible_keys": "PRIMARY",
+            "key": "PRIMARY",
+            "key_len": "4",
+            "ref": "s9275_rel.recall_notices.firm_id",
+            "rows": 1,
+            "filtered": 100.0,
+            "Extra": null
+          }
+        ],
+        "explain_analyze": "-> Limit: 200 row(s)  (cost=2244 rows=200) (actual time=2.41..2.58 rows=200 loops=1)\n    -> Nested loop left join  (cost=2244 rows=4969) (actual time=2.41..2.57 rows=200 loops=1)\n        -> Sort: recall_notices.recall_date DESC, recall_notices.id DESC, limit input to 200 row(s) per chunk  (cost=504 rows=4969) (actual time=2.41..2.42 rows=200 loops=1)\n            -> Table scan on recall_notices  (cost=504 rows=4969) (actual time=0.023..1.48 rows=5001 loops=1)\n        -> Single-row index lookup on firms_1 using PRIMARY (id=recall_notices.firm_id)  (cost=0.25 rows=1) (actual time=574e-6..603e-6 rows=1 loops=200)\n",
+        "median_ms_of_20_runs": 4.921
+      }
+    }
+  }
+}

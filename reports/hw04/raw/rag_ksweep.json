@@ -1,0 +1,260 @@
+[
+  {
+    "question_id": "Q2",
+    "config": "B",
+    "k": 1,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11"
+    ],
+    "kept_scores": [
+      0.6414
+    ],
+    "context_tokens": 477,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 549,
+    "latency_ms": 77980.4,
+    "answer": "A Class I recall is a situation where there is a reasonable probability that the use of or exposure to a product will cause serious adverse health consequences or death. Under 21 CFR Part 7, a recalling firm generally submits recall status reports every 2 to 4 weeks."
+  },
+  {
+    "question_id": "Q2",
+    "config": "B",
+    "k": 3,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11",
+      "ecfr_21cfr_part7#9",
+      "ecfr_21cfr_part7#7"
+    ],
+    "kept_scores": [
+      0.6414,
+      0.578,
+      0.5724
+    ],
+    "context_tokens": 1336,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 1423,
+    "latency_ms": 190091.3,
+    "answer": "Under 21 CFR Part 7, a Class I recall is the most serious type of recall, involving products that pose a high risk of serious adverse health consequences or death. A recalling firm generally submits recall status reports every 2 to 4 weeks, as specified by the Food and Drug Administration, depending on the urgency of the recall."
+  },
+  {
+    "question_id": "Q2",
+    "config": "B",
+    "k": 5,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11",
+      "ecfr_21cfr_part7#9",
+      "ecfr_21cfr_part7#7",
+      "ecfr_21cfr_part7#12",
+      "ecfr_21cfr_part7#1"
+    ],
+    "kept_scores": [
+      0.6414,
+      0.578,
+      0.5724,
+      0.5716,
+      0.5642
+    ],
+    "context_tokens": 2304,
+    "retrieval_ok": true,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 2401,
+    "latency_ms": 113068.4,
+    "answer": "Under 21 CFR Part 7, a Class I recall is a situation in which there is a reasonable probability that the use of, or exposure to, a violative product will cause serious adverse health consequences or death. A recalling firm generally submits recall status reports every 2 to 4 weeks, as specified by the Food and Drug Administration."
+  },
+  {
+    "question_id": "Q2",
+    "config": "C",
+    "k": 1,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11"
+    ],
+    "kept_scores": [
+      0.6414
+    ],
+    "context_tokens": 477,
+    "retrieval_ok": false,
+    "refused": true,
+    "auto_correct": false,
+    "input_tokens": 713,
+    "latency_ms": 23172.2,
+    "answer": "I cannot answer this question from the provided documents."
+  },
+  {
+    "question_id": "Q2",
+    "config": "C",
+    "k": 3,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11",
+      "ecfr_21cfr_part7#9",
+      "ecfr_21cfr_part7#7"
+    ],
+    "kept_scores": [
+      0.6414,
+      0.578,
+      0.5724
+    ],
+    "context_tokens": 1336,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 1665,
+    "latency_ms": 145407.6,
+    "answer": "A Class I recall is a recall that involves products that can cause serious adverse health consequences or death. The recalling firm generally submits recall status reports every 2 to 4 weeks [S1]."
+  },
+  {
+    "question_id": "Q2",
+    "config": "C",
+    "k": 5,
+    "kept_chunks": [
+      "ecfr_21cfr_part7#11",
+      "ecfr_21cfr_part7#9",
+      "ecfr_21cfr_part7#7"
+    ],
+    "kept_scores": [
+      0.6414,
+      0.578,
+      0.5724
+    ],
+    "context_tokens": 1336,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 1665,
+    "latency_ms": 133476.7,
+    "answer": "A Class I recall is a situation where there is a reasonable probability that the use of, or exposure to, a violative product will cause serious adverse health consequences or death. The recalling firm generally submits recall status reports every 2 to 4 weeks [S1]."
+  },
+  {
+    "question_id": "Q3",
+    "config": "B",
+    "k": 1,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0"
+    ],
+    "kept_scores": [
+      0.6663
+    ],
+    "context_tokens": 495,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": false,
+    "input_tokens": 588,
+    "latency_ms": 59091.9,
+    "answer": "Listeria monocytogenes can cause miscarriages and stillbirths in pregnant women, and can lead to severe symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain, and diarrhea in healthy individuals."
+  },
+  {
+    "question_id": "Q3",
+    "config": "B",
+    "k": 3,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0",
+      "fda_ambriola-company-issues-recall-cheese-products#0",
+      "fda_kettle-cuisine-recalls-marketside-tomato-bisque#1"
+    ],
+    "kept_scores": [
+      0.6663,
+      0.643,
+      0.6163
+    ],
+    "context_tokens": 1202,
+    "retrieval_ok": true,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 1359,
+    "latency_ms": 126760.8,
+    "answer": "Listeria monocytogenes can cause serious and sometimes fatal infections in young children, frail or elderly people, and those with weakened immune systems. It can also lead to miscarriages and stillbirths in pregnant women. Symptoms may include fever, muscle aches, nausea, vomiting, diarrhea, headache, stiff neck, confusion, loss of balance, or convulsions."
+  },
+  {
+    "question_id": "Q3",
+    "config": "B",
+    "k": 5,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0",
+      "fda_ambriola-company-issues-recall-cheese-products#0",
+      "fda_kettle-cuisine-recalls-marketside-tomato-bisque#1",
+      "fda_kettle-cuisine-recalls-marketside-tomato-bisque#0",
+      "fda_made-fresh-salads-inc-recalls-ready#0"
+    ],
+    "kept_scores": [
+      0.6663,
+      0.643,
+      0.6163,
+      0.6135,
+      0.5943
+    ],
+    "context_tokens": 2157,
+    "retrieval_ok": true,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 2356,
+    "latency_ms": 150000.7,
+    "answer": "Listeria monocytogenes can cause serious and sometimes fatal infections in young children, frail or elderly people, and others with weakened immune systems. It can also lead to miscarriages and stillbirths in pregnant women. Healthy individuals may experience short-term symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain, and diarrhea. In more severe cases, it can cause symptoms like headache, stiff neck, confusion, loss of balance, or convulsions."
+  },
+  {
+    "question_id": "Q3",
+    "config": "C",
+    "k": 1,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0"
+    ],
+    "kept_scores": [
+      0.6663
+    ],
+    "context_tokens": 495,
+    "retrieval_ok": false,
+    "refused": false,
+    "auto_correct": false,
+    "input_tokens": 755,
+    "latency_ms": 49068.5,
+    "answer": "Listeria monocytogenes can cause short-term symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain, and diarrhea. It can also lead to miscarriages and stillbirths among pregnant women [S1]."
+  },
+  {
+    "question_id": "Q3",
+    "config": "C",
+    "k": 3,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0",
+      "fda_ambriola-company-issues-recall-cheese-products#0",
+      "fda_kettle-cuisine-recalls-marketside-tomato-bisque#1"
+    ],
+    "kept_scores": [
+      0.6663,
+      0.643,
+      0.6163
+    ],
+    "context_tokens": 1202,
+    "retrieval_ok": true,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 1628,
+    "latency_ms": 280948.8,
+    "answer": "Listeria monocytogenes can cause serious and sometimes fatal infections in young children, frail or elderly people, and others with weakened immune systems. It can also lead to miscarriages and stillbirths among pregnant women. Healthy individuals may experience short-term symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain, and diarrhea [S1][S2]."
+  },
+  {
+    "question_id": "Q3",
+    "config": "C",
+    "k": 5,
+    "kept_chunks": [
+      "fda_slade-gorton-co-inc-recalls-one#0",
+      "fda_ambriola-company-issues-recall-cheese-products#0",
+      "fda_kettle-cuisine-recalls-marketside-tomato-bisque#1",
+      "fda_iq-produce-lcc-recalls-enoki-mushrooms#0"
+    ],
+    "kept_scores": [
+      0.6663,
+      0.643,
+      0.6163,
+      0.5534
+    ],
+    "context_tokens": 1596,
+    "retrieval_ok": true,
+    "refused": false,
+    "auto_correct": true,
+    "input_tokens": 2101,
+    "latency_ms": 63407.6,
+    "answer": "Listeria monocytogenes can cause serious and sometimes fatal infections in young children, frail or elderly people, and others with weakened immune systems. It can also lead to miscarriages and stillbirths among pregnant women. Healthy individuals may experience short-term symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain, and diarrhea [S1][S2][S4]."
+  }
+]

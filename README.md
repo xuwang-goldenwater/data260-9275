@@ -18,21 +18,29 @@ code/                        shared application code (extended each homework)
   agent_graph.py             HW2 LangGraph supervisor graph
   graph_experiment_runner.py HW2 Part 4 experiments
   graph_offline_test.py      HW2 graph behaviour test, no model required
-  auth_app/                  HW3 Part 1 login/logout app (FastAPI + Jinja2 + Bootstrap)
+  auth_app/                  HW3 login app -> HW4 MySQL-backed API (sessions, CRUD, N+1 endpoints)
+  sql/                       HW4 schema (hw04_schema.sql) and the Part 3 index (hw04_add_index.sql)
+  db_init.py, seed_hw04.py   HW4 create s9275_rel / seed 200 firms + 5000 notices
+  n1_bench.py                HW4 Part 3 N+1 measurement (180 requests)
+  explain_index.py           HW4 Part 3 EXPLAIN before/after the index
+  rag.py                     HW4 Part 4 grounded RAG (FAISS, configs A/B/C, k-sweep)
   auth_session_demo.py       HW3 Part 1 cookie / logout / idle-timeout proof
   rag_fetch_corpus.py        HW3 Part 2 corpus download + manifest
   rag_chunking.py            HW3 Part 2 token / semantic / sentence-window comparison
   rag_summary.py             HW3 Part 2 summary tables recomputed from raw/
   Dockerfile                 container image for the static HW1 page
+frontend/                    HW4 React client (Vite): Login, Home, Create/Update/DeleteRecord
 src/
   model_client.py            model adapter (required exact path)
 reports/
   hw01/                      HW1 report, metrics, logs, raw outputs
   hw02/                      HW2 report, metrics, logs, raw outputs
   hw03/                      HW3 corpus, questions, metrics, logs, raw outputs
+  hw04/                      HW4 RAG questions, metrics, logs, raw outputs
 verify_hw01.py               HW1 self-check
 verify_hw02.py               HW2 self-check
-verify_hw03.py               HW3 self-check
+verify_hw03.py               HW3 self-check (run at tag hw3)
+verify_hw04.py               HW4 self-check
 AGENT.md                     system prompt for hw1_client.py
 DOMAIN_SCHEMA.md             domain data schema
 ```
@@ -193,3 +201,19 @@ this session's timings:
   later techniques address: trimming or summarising old turns, retrieving only
   relevant history instead of all of it, and caching the unchanged prefix so
   the same prefill is not paid for repeatedly.
+
+## Homework 4 — what was added
+
+- **Backend** — the HW3 auth app in `code/auth_app/` becomes the API for the
+  React client. Users and sessions move from in-memory dicts to MySQL
+  (`s9275_rel`); login is email + password (bcrypt); the HTTP-only cookie holds
+  only an opaque token that points at a `sessions` row. Recall-notice CRUD moves
+  from HW2's JSON file into MySQL. HW2's `api_server.py` is unchanged.
+- **Part 1** — `frontend/` (Vite + React Router): Login, Home, CreateRecord,
+  UpdateRecord, DeleteRecord.
+- **Part 3** — `seed_hw04.py`, `n1_bench.py`, `explain_index.py`, `code/sql/`.
+- **Part 4** — `rag.py` over the HW3 corpus; questions in `reports/hw04/rag_questions.yaml`.
+- The HW3 Jinja pages were removed from `auth_app`; `make run-auth`,
+  `make demo-session` and `verify_hw03.py` describe HW3 and run at tag `hw3`.
+
+See `reports/hw04/reproducible_run_instructions.md` for the full run order.

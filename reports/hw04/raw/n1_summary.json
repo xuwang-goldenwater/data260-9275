@@ -1,0 +1,111 @@
+{
+  "started_at": "2026-09-28T11:27:34",
+  "base": "http://localhost:8275",
+  "reps": 30,
+  "warmup": 5,
+  "seed": 9275,
+  "requests": 180,
+  "groups": [
+    {
+      "page_size": 10,
+      "version": "naive",
+      "n": 30,
+      "sql_total_per_req": [
+        13
+      ],
+      "sql_list_per_req": [
+        11
+      ],
+      "p50_ms": 10.21,
+      "p95_ms": 12.33,
+      "p99_ms": 15.91,
+      "server_p50_ms": 9.28,
+      "all_items_identical": true
+    },
+    {
+      "page_size": 10,
+      "version": "fixed",
+      "n": 30,
+      "sql_total_per_req": [
+        3
+      ],
+      "sql_list_per_req": [
+        1
+      ],
+      "p50_ms": 9.6,
+      "p95_ms": 12.94,
+      "p99_ms": 14.52,
+      "server_p50_ms": 8.71,
+      "all_items_identical": true
+    },
+    {
+      "page_size": 50,
+      "version": "naive",
+      "n": 30,
+      "sql_total_per_req": [
+        53
+      ],
+      "sql_list_per_req": [
+        51
+      ],
+      "p50_ms": 19.33,
+      "p95_ms": 20.98,
+      "p99_ms": 22.33,
+      "server_p50_ms": 18.35,
+      "all_items_identical": true
+    },
+    {
+      "page_size": 50,
+      "version": "fixed",
+      "n": 30,
+      "sql_total_per_req": [
+        3
+      ],
+      "sql_list_per_req": [
+        1
+      ],
+      "p50_ms": 10.53,
+      "p95_ms": 12.52,
+      "p99_ms": 23.29,
+      "server_p50_ms": 9.6,
+      "all_items_identical": true
+    },
+    {
+      "page_size": 200,
+      "version": "naive",
+      "n": 30,
+      "sql_total_per_req": [
+        203
+      ],
+      "sql_list_per_req": [
+        201
+      ],
+      "p50_ms": 52.51,
+      "p95_ms": 57.3,
+      "p99_ms": 67.47,
+      "server_p50_ms": 51.47,
+      "all_items_identical": true
+    },
+    {
+      "page_size": 200,
+      "version": "fixed",
+      "n": 30,
+      "sql_total_per_req": [
+        3
+      ],
+      "sql_list_per_req": [
+        1
+      ],
+      "p50_ms": 12.76,
+      "p95_ms": 14.93,
+      "p99_ms": 15.65,
+      "server_p50_ms": 11.7,
+      "all_items_identical": true
+    }
+  ],
+  "speedup_p50_naive_over_fixed": {
+    "10": 1.06,
+    "50": 1.84,
+    "200": 4.12
+  }
+}

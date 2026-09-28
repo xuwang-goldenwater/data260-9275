@@ -1,7 +1,8 @@
 .PHONY: verify-hw01 verify-hw02 run-agent run-nondeterminism run-client \
         run-api run-api-demo reset-data run-graph run-hw02-experiments \
         docker-build docker-run docker-stop \
-        run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03
+        run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
+        db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -90,3 +91,53 @@ rag-summary:
 
 verify-hw03:
 	python verify_hw03.py
+
+# ---- Homework 4 -----------------------------------------------------------
+# The HW3 auth app (code/auth_app) is now the MySQL-backed API for the React
+# client. run-auth / demo-session / verify-hw03 describe the HW3 version: use
+# `git checkout hw3` to re-run them.
+
+HW4_LOG = reports/hw04/RUN_LOG.txt
+
+# Part 2: create s9275_rel and its tables (drops existing tables)
+db-init:
+	@mkdir -p reports/hw04
+	@echo "===== db-init $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u code/db_init.py 2>&1 | tee -a $(HW4_LOG)
+
+# Part 3 step 1: 200 firms + 5000 recall notices (SEED 9275) + demo login user
+seed:
+	@echo "===== seed $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u code/seed_hw04.py 2>&1 | tee -a $(HW4_LOG)
+
+# Part 1/2: API on PORT_BASE 8275 (stop run-api / run-auth / docker first)
+run-hw04:
+	python code/auth_app/main.py
+
+# Part 1: React dev server on http://localhost:5173 (terminal 2)
+run-frontend:
+	cd frontend && npm install && npm run dev
+
+# Part 3 steps 4-7: 180 measured requests (needs run-hw04 in another terminal)
+bench-n1:
+	@echo "===== bench-n1 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u code/n1_bench.py 2>&1 | tee -a $(HW4_LOG)
+
+# Part 3 step 8: EXPLAIN before / after the recall_date index
+explain-index:
+	@echo "===== explain-index $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u code/explain_index.py 2>&1 | tee -a $(HW4_LOG)
+
+# Part 4: A/B/C comparison + k-sweep (needs `ollama serve` with qwen3:8b).
+# Commit reports/hw04/rag_questions.yaml BEFORE running this.
+run-rag4:
+	@echo "===== run-rag4 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u code/rag.py 2>&1 | tee -a $(HW4_LOG)
+
+# Part 4: evaluation table, after filling correct_answer / grounded in raw/rag_eval.csv
+rag4-summary:
+	python code/rag.py --summary
+
+verify-hw04:
+	@echo "===== verify-hw04 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
+	python -u verify_hw04.py 2>&1 | tee -a $(HW4_LOG)
