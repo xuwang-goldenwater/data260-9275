@@ -1,0 +1,83 @@
+# HW4 Part 4 - six test questions for the grounded RAG system.
+# Corpus: reports/hw03/corpus/ (89 FDA food recall announcements + 21 CFR Part 7).
+#
+# DRAFT written before any run - review and edit, then commit this file BEFORE
+# `make run-rag4`, so the expected answers cannot be tuned to the results.
+#
+# Fields
+#   type             the Part 4 category this question tests
+#   expected_answer  what a correct answer must say
+#   answer_keywords  all must appear (case-insensitive) for the automatic
+#                    first-pass "correct" guess; the human column overrides it
+#   evidence         text fragments that prove a chunk is relevant. Correct
+#                    retrieval = every fragment appears in at least one chunk
+#                    that was put in the prompt.
+#   must_refuse      true for Q5/Q6
+
+questions:
+  - id: Q1
+    type: answer in one chunk
+    question: "What toxin caused the recall of a2 Platinum infant formula, and what produces that toxin?"
+    expected_answer: >-
+      Cereulide, a heat-stable toxin produced by some strains of the bacterium
+      Bacillus cereus.
+    answer_keywords: ["cereulide", "bacillus cereus"]
+    evidence: ["Cereulide is a heat-stable toxin"]
+    must_refuse: false
+
+  - id: Q2
+    type: answer needs two chunks
+    question: "Under 21 CFR Part 7, what is a Class I recall, and how often does a recalling firm generally submit recall status reports?"
+    expected_answer: >-
+      Class I: a reasonable probability that use of or exposure to the product
+      will cause serious adverse health consequences or death (7.3(m)(1)).
+      Status reports: at an interval FDA specifies for each recall, generally
+      every 2 to 4 weeks (7.53(a)).
+    answer_keywords: ["serious adverse health consequences", "4 weeks"]
+    evidence: ["Class I is a situation", "between 2 and 4 weeks"]
+    must_refuse: false
+
+  - id: Q3
+    type: similar information across documents
+    question: "According to the recall announcements, what health risks does Listeria monocytogenes pose?"
+    expected_answer: >-
+      Serious and sometimes fatal infections in young children, frail or
+      elderly people and others with weakened immune systems; short-term
+      symptoms such as high fever, severe headache, stiffness, nausea,
+      abdominal pain and diarrhea in healthy people; miscarriages and
+      stillbirths in pregnant women. (The same paragraph appears, with small
+      wording changes, in several different recall notices.)
+    answer_keywords: ["fatal", "pregnant"]
+    evidence: ["Listeria monocytogenes, an organism"]
+    must_refuse: false
+
+  - id: Q4
+    type: ambiguous
+    question: "What should I do if I bought the recalled product?"
+    expected_answer: >-
+      Ambiguous - the collection has dozens of recalls and the question does
+      not say which product. A good answer says it depends on the product (or
+      asks which one) and may give the common instruction found in the notices:
+      do not consume it; return it to the place of purchase for a refund or
+      discard it.
+    answer_keywords: ["refund"]
+    evidence: ["refund"]
+    must_refuse: false
+
+  - id: Q5
+    type: answer not in the documents
+    question: "How much was Prairie Farms fined by the FDA for its fat free milk recall?"
+    expected_answer: >-
+      Must refuse. The Prairie Farms notice exists, but no document mentions a
+      fine or penalty.
+    answer_keywords: []
+    evidence: []
+    must_refuse: true
+
+  - id: Q6
+    type: unrelated
+    question: "Who won the 2022 FIFA World Cup?"
+    expected_answer: "Must refuse: nothing in the corpus is about football."
+    answer_keywords: []
+    evidence: []
+    must_refuse: true
