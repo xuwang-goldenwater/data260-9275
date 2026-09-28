@@ -6,13 +6,13 @@
   "domain_id": 3,
   "seed": 9275,
   "verify_seed": 269275,
-  "commit": "527da1c90182288584a29b0c5f8f7312e81d48e4",
+  "commit": "7024b7f3e9969db24381b35d414ad702e1f1390a",
   "tag_hw4_commit": null,
-  "working_tree_clean": false,
+  "working_tree_clean_at_start": false,
   "model": "qwen3:8b (Ollama, via src/model_client.py); embeddings sentence-transformers/all-MiniLM-L6-v2",
   "database": "MySQL s9275_rel",
-  "server": "reused already-running server",
-  "run_at": "2026-09-28T13:36:21",
+  "server": "started by verify_hw04.py",
+  "run_at": "2026-09-28T13:49:55",
   "checks": [
     {
       "name": "P1 React components exist",
@@ -92,7 +92,7 @@
     {
       "name": "P2 login -> 200 + HttpOnly cookie",
       "passed": true,
-      "detail": "s9275_session=k6vMovS5tRBxAOyI\u2026; HttpOnly; Max-Age=3600; Path=/; SameSite=lax"
+      "detail": "s9275_session=90zxIEVm7tFkgSZO\u2026; HttpOnly; Max-Age=3600; Path=/; SameSite=lax"
     },
     {
       "name": "P2 cookie token is a row in sessions for this user",
@@ -112,7 +112,7 @@
     {
       "name": "P2 POST /api/notices -> 201 with auto-increment id",
       "passed": true,
-      "detail": "id 5004"
+      "detail": "id 5005"
     },
     {
       "name": "P2 created row is in MySQL",

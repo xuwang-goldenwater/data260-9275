@@ -3245,3 +3245,58 @@ rag_eval.csv: kept the human judgement for 18 unchanged answers; needs judging: 
 [PASS] reports/hw04/AI_USE.md exists  
 
 51 passed, 0 failed -> reports/hw04/verification.json
+===== verify-hw04 2026-09-28 13:49:52 =====
+===== verify-hw04 2026-09-28T13:49:52 =====
+[PASS] P1 React components exist  Login.jsx, Home.jsx, CreateRecord.jsx, UpdateRecord.jsx, DeleteRecord.jsx
+[PASS] P1 react-router-dom dependency  
+[PASS] P1 routes / /create /update /delete /login  
+[PASS] P1 Create/Update/Delete receive handler props  
+[PASS] P1 client sends cookies (credentials: include)  
+[PASS] P2 database.py defines db_session_basede26  
+[PASS] P2 database s9275_rel has tables ['firms', 'recall_notices', 'sessions', 'users']  ['firms', 'recall_notices', 'sessions', 'users']
+[PASS] P2 users(id, name, email, password_hash)  
+[PASS] P2 sessions(id, user_id, created_at, expires_at)  
+[PASS] P2 users.email is UNIQUE  
+[PASS] P2 passwords stored as bcrypt hashes  
+[PASS] P2 API responds on PORT_BASE 8275  {'status': 'ok', 'database': 's9275_rel', 'mysql_version': '8.0.43'}
+[PASS] P2 /api/config matches Section 0  {'sid4': 9275, 'port_base': 8275, 'prefix': 's9275', 'seed': 9275, 'verify_seed': 269275, 'domain_id': 3, 'database': 's9275_rel'}
+[PASS] P2 GET /api/notices without session -> 401  
+[PASS] P2 wrong password -> 401  
+[PASS] P2 login -> 200 + HttpOnly cookie  s9275_session=90zxIEVm7tFkgSZO…; HttpOnly; Max-Age=3600; Path=/; SameSite=lax
+[PASS] P2 cookie token is a row in sessions for this user  
+[PASS] P2 cookie holds only an opaque token (no user data)  length 43
+[PASS] P2 GET /api/auth/me with cookie -> 200  
+[PASS] P2 POST /api/notices -> 201 with auto-increment id  id 5005
+[PASS] P2 created row is in MySQL  
+[PASS] P2 GET /api/notices/{id} -> 200  
+[PASS] P2 PUT -> 200 and MySQL row updated  
+[PASS] P2 GET /api/notices (all, paged) -> 200  
+[PASS] P2 DELETE -> 204, row removed from MySQL, GET -> 404  
+[PASS] P2 after logout the old cookie gets 401  
+[PASS] P2 logout deleted the sessions row  
+[PASS] P3 seed manifest: seed 9275, 200 firms, 5000 notices  {'seed': 9275, 'firms': 200, 'recall_notices': 5000}
+[PASS] P3 MySQL still holds the 200 firms and the seeded notices linked to them  firms 200, seeded notices with a firm 5000
+[PASS] P3 page_size 10: naive and fixed return identical items with firms  page 240
+[PASS] P3 page_size 10: naive = 1+N list queries, fixed = 1  naive 11, fixed 1
+[PASS] P3 page_size 50: naive and fixed return identical items with firms  page 50
+[PASS] P3 page_size 50: naive = 1+N list queries, fixed = 1  naive 51, fixed 1
+[PASS] P3 page_size 200: naive and fixed return identical items with firms  page 25
+[PASS] P3 page_size 200: naive = 1+N list queries, fixed = 1  naive 201, fixed 1
+[PASS] P3 raw N+1 file exists  reports/hw04/raw/n1_requests.csv
+[PASS] P3 180 measured requests = 3 sizes x 2 versions x 30  {('10', 'naive'): 30, ('10', 'fixed'): 30, ('50', 'naive'): 30, ('50', 'fixed'): 30, ('200', 'naive'): 30, ('200', 'fixed'): 30}
+[PASS] P3 index ix_recall_notices_recall_date exists  
+[PASS] P3 EXPLAIN before/after saved  
+[PASS] P3 EXPLAIN: no index before, index used after (at least one page size)  
+[PASS] P4 corpus has >= 5 documents  90 documents
+[PASS] P4 rag.py exists  
+[PASS] P4 rag_answers.jsonl exists  
+[PASS] P4 six questions x configs A/B/C  18 combinations
+[PASS] P4 config C refused Q5 and Q6  {'Q1': False, 'Q2': False, 'Q3': False, 'Q4': False, 'Q5': True, 'Q6': True}
+[PASS] P4 retrieval printouts saved  
+[PASS] P4 top_k sweep has k = 1, 3, 5  [1, 3, 5]
+[PASS] P4 comparison and evaluation table saved  
+[PASS] reports/hw04/RUN_LOG.txt exists  
+[PASS] reports/hw04/METRICS.md exists  
+[PASS] reports/hw04/AI_USE.md exists  
+
+51 passed, 0 failed -> reports/hw04/verification.json
