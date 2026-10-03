@@ -1,0 +1,5 @@
+$kind: http-request
+name: Login required (no cookie yet) -> 401
+url: http://localhost:8275/api/notices
+method: GET
+order: 1000

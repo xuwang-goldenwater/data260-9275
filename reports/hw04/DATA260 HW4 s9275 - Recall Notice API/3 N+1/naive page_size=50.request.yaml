@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8275/api/notices/naive?page=1&page_size=50
+method: GET
+queryParams:
+  page: "1"
+  page_size: "50"
+order: 3000

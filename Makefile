@@ -2,7 +2,8 @@
         run-api run-api-demo reset-data run-graph run-hw02-experiments \
         docker-build docker-run docker-stop \
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
-        db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04
+        db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
+        migrate-hw05 db-show
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -141,3 +142,17 @@ rag4-summary:
 verify-hw04:
 	@echo "===== verify-hw04 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW4_LOG)
 	python -u verify_hw04.py 2>&1 | tee -a $(HW4_LOG)
+
+# ---- Homework 5 -----------------------------------------------------------
+
+HW5_LOG = reports/hw05/RUN_LOG.txt
+
+# Part 1-I: HW4 schema -> HW5 schema, in place (run once, after db-init + seed)
+migrate-hw05:
+	@mkdir -p reports/hw05
+	@echo "===== migrate-hw05 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/db_init.py code/sql/hw05_migrate.sql 2>&1 | tee -a $(HW5_LOG)
+
+# Part 1-II: print both table definitions and their first rows (database screenshot)
+db-show:
+	@python code/db_show.py

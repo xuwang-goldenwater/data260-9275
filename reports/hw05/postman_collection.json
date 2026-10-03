@@ -1,0 +1,745 @@
+{
+  "info": {
+    "name": "DATA260 HW5 s9275 - Firms + Recall Notices API",
+    "description": "Run the folders top to bottom. Folder 5 deletes what folders 1 and 2 created, so the collection can be run again.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "firm_id",
+      "value": ""
+    },
+    {
+      "key": "notice_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "0 Login",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"demo@s9275.example.com\",\n  \"password\": \"recall-demo-9275\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1 Firms (related entity)",
+      "item": [
+        {
+          "name": "Create firm (POST) -> 201",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/firms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bayview Test Kitchens Inc.\",\n  \"state\": \"CA\",\n  \"contact_email\": \"recalls@bayviewtest.example.com\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 201', () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set('firm_id', pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "List firms, paged (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms?page=1&page_size=5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get firm by id (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/{{firm_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "{{firm_id}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update firm (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/{{firm_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "{{firm_id}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bayview Test Kitchens LLC\",\n  \"state\": \"OR\",\n  \"contact_email\": \"recalls@bayviewtest.example.com\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2 Recall notices (primary entity)",
+      "item": [
+        {
+          "name": "Create notice (POST) -> 201, units_affected defaults to 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Harbor Point Frozen Diced Onions, 2 lb bag\",\n  \"category\": \"Bacterial Contamination\",\n  \"recall_number\": \"F-9001-2026\",\n  \"firm_id\": {{firm_id}}\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 201', () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set('notice_id', pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "List notices, paged (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices?page=1&page_size=5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get notice by id (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update notice (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Harbor Point Frozen Diced Onions, 3 lb bag\",\n  \"category\": \"Foreign Material\",\n  \"recall_number\": \"F-9001-2026\",\n  \"units_affected\": 1200,\n  \"firm_id\": {{firm_id}}\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 Relationship query",
+      "item": [
+        {
+          "name": "Notices of the new firm (GET) - total 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/{{firm_id}}/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "{{firm_id}}",
+                "notices"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Notices of firm 73 (GET) - total 26, paged",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/73/notices?page=1&page_size=5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "73",
+                "notices"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 Errors",
+      "item": [
+        {
+          "name": "Not found: firm 99999 -> 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/99999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "99999"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Validation: contact_email is not an email -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/firms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Email Foods\",\n  \"state\": \"CA\",\n  \"contact_email\": \"not-an-email\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Validation: recall_number has the wrong format -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Harbor Point Frozen Diced Onions, 2 lb bag\",\n  \"category\": \"Bacterial Contamination\",\n  \"recall_number\": \"ABC-12\",\n  \"firm_id\": {{firm_id}}\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Constraint: contact_email already used -> 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/firms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Copycat Foods\",\n  \"state\": \"CA\",\n  \"contact_email\": \"recalls@bayviewtest.example.com\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 409', () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Constraint: recall_number already used -> 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/notices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Copycat Onions\",\n  \"category\": \"Bacterial Contamination\",\n  \"recall_number\": \"F-9001-2026\",\n  \"firm_id\": {{firm_id}}\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 409', () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Constraint: delete a firm that still has notices -> 409",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/{{firm_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "{{firm_id}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 409', () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 Delete",
+      "item": [
+        {
+          "name": "Delete notice (DELETE) -> 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/notices/{{notice_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "notices",
+                "{{notice_id}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 204', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete firm (DELETE) -> 204, allowed now",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/firms/{{firm_id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8275",
+              "path": [
+                "api",
+                "firms",
+                "{{firm_id}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 204', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

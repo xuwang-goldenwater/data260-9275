@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:8275/api/notices
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "product_name": "Harbor Point Frozen Diced Onions, 2 lb bag",
+      "category": "Bacterial Contamination",
+      "firm_id": 12
+    }
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set('notice_id', pm.response.json().id);
+    language: text/javascript
+order: 1000

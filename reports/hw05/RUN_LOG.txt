@@ -1,0 +1,28 @@
+===== migrate-hw05 2026-10-02 16:58:45 =====
+applying code/sql/hw05_migrate.sql
+ok: USE s9275_rel
+ok: ALTER TABLE firms ADD COLUMN contact_email VARCHAR(255) NULL
+ok: UPDATE firms SET contact_email = CONCAT('recalls@firm', id, '.example.com') WHER
+ok: ALTER TABLE firms MODIFY COLUMN contact_email VARCHAR(255) NOT NULL, ADD CONSTRA
+ok: ALTER TABLE recall_notices DROP FOREIGN KEY fk_notices_firm
+ok: UPDATE recall_notices SET firm_id = 1 WHERE firm_id IS NULL
+ok: ALTER TABLE recall_notices ADD COLUMN recall_number CHAR(11) NULL, ADD COLUMN un
+ok: UPDATE recall_notices SET recall_number = CONCAT('F-', LPAD(id, 4, '0'), '-', YE
+ok: ALTER TABLE recall_notices MODIFY COLUMN firm_id INT NOT NULL, MODIFY COLUMN rec
+ok: SELECT COUNT(*) AS firms, COUNT(DISTINCT contact_email) AS distinct_emails FROM 
+    ['firms', 'distinct_emails']
+    (200, 200)
+ok: SELECT COUNT(*) AS notices, COUNT(DISTINCT recall_number) AS distinct_numbers, S
+    ['notices', 'distinct_numbers', 'notices_without_firm']
+    (5001, 5001, Decimal('0'))
+ok: SELECT id, name, state, contact_email, created_at FROM firms ORDER BY id LIMIT 3
+    ['id', 'name', 'state', 'contact_email', 'created_at']
+    (1, 'Willow Snacks Co.', 'CO', 'recalls@firm1.example.com', datetime.datetime(2026, 10, 2, 16, 58, 46))
+    (2, 'Prairie Provisions Co.', 'MN', 'recalls@firm2.example.com', datetime.datetime(2026, 10, 2, 16, 58, 46))
+    (3, 'Meadow Produce LLC', 'CA', 'recalls@firm3.example.com', datetime.datetime(2026, 10, 2, 16, 58, 46))
+ok: SELECT id, recall_number, product_name, units_affected, firm_id, recall_date FRO
+    ['id', 'recall_number', 'product_name', 'units_affected', 'firm_id', 'recall_date']
+    (1, 'F-0001-2025', 'Blue Heron Enoki Mushrooms, 32 oz tub', 8019, 73, datetime.date(2025, 6, 23))
+    (2, 'F-0002-2021', 'Green Leaf Almond Granola, 16 oz', 6038, 31, datetime.date(2021, 2, 25))
+    (3, 'F-0003-2023', 'Sunrise Valley Tahini, 6-pack', 4057, 173, datetime.date(2023, 12, 29))
+tables in s9275_rel: ['firms', 'recall_notices', 'sessions', 'users']

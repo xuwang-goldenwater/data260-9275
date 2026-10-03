@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:8275/api/auth/login
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "email": "demo@s9275.example.com",
+      "password": "recall-demo-9275"
+    }
+order: 2000

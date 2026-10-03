@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:8275/api/notices/{{notice_id}}
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "product_name": "Harbor Point Frozen Diced Onions, 3 lb bag",
+      "category": "Foreign Material"
+    }
+order: 4000

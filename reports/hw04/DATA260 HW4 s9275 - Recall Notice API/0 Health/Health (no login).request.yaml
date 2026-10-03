@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8275/api/health
+method: GET
+order: 1000

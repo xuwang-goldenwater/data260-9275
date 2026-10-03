@@ -21,6 +21,7 @@ import config
 import query_counter
 from database import engine
 from routers.auth import router as auth_router
+from routers.firms import router as firms_router
 from routers.notices import router as notices_router
 
 app = FastAPI(title="Recall Notice API", version="4.0.0",
@@ -51,6 +52,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(notices_router)
+app.include_router(firms_router)          # HW5: related entity
 
 
 @app.get("/", include_in_schema=False)

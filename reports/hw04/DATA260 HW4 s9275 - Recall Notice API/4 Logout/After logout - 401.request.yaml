@@ -1,0 +1,5 @@
+$kind: http-request
+name: After logout -> 401
+url: http://localhost:8275/api/notices
+method: GET
+order: 2000

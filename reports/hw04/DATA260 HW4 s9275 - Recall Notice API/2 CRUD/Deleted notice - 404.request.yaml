@@ -1,0 +1,5 @@
+$kind: http-request
+name: Deleted notice -> 404
+url: http://localhost:8275/api/notices/{{notice_id}}
+method: GET
+order: 6000

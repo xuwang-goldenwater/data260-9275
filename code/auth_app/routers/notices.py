@@ -9,11 +9,15 @@
     DELETE /api/notices/{id}
 
 Every route requires a logged-in session.
+
+HW5: a notice now carries recall_number (unique), units_affected and a required
+firm_id. A duplicate recall_number is answered with 409.
 """
 from datetime import date
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session, joinedload
 
 import config
@@ -21,13 +25,15 @@ import query_counter
 from database import get_db
 from deps import require_session
 from models import Firm, RecallNotice
-from schemas import FirmOut, NoticeIn, NoticeOut, NoticePage
+from schemas import FirmBrief, NoticeIn, NoticeOut, NoticePage
 
 router = APIRouter(prefix="/api/notices", tags=["notices"],
                    dependencies=[Depends(require_session)])
 
 PageNo = Query(1, ge=1)
 PageSize = Query(50, ge=1, le=config.MAX_PAGE_SIZE)
+
+DUPLICATE_ENTRY = 1062        # MySQL: a UNIQUE constraint would be broken
 
 
 def page_query(page: int, page_size: int):
@@ -69,12 +75,12 @@ def list_naive(response: Response, page: int = PageNo, page_size: int = PageSize
 
     items = []
     for n in notices:                                                        # N queries
-        firm = None
-        if n.firm_id is not None:
-            firm = db.execute(select(Firm).where(Firm.id == n.firm_id)).scalar_one()
+        firm = db.execute(select(Firm).where(Firm.id == n.firm_id)).scalar_one()
         items.append(NoticeOut(id=n.id, product_name=n.product_name, category=n.category,
-                               recall_date=n.recall_date,
-                               firm=FirmOut.model_validate(firm) if firm else None))
+                               recall_number=n.recall_number, units_affected=n.units_affected,
+                               recall_date=n.recall_date, firm_id=n.firm_id,
+                               firm=FirmBrief.model_validate(firm),
+                               created_at=n.created_at, updated_at=n.updated_at))
     mark_list_end(response, before)
     return NoticePage(version="naive", page=page, page_size=page_size, items=items)
 
@@ -112,9 +118,21 @@ def load_notice(db: Session, notice_id: int) -> RecallNotice:
     return notice
 
 
-def check_firm(db: Session, firm_id):
-    if firm_id is not None and db.get(Firm, firm_id) is None:
+def check_firm(db: Session, firm_id: int):
+    if db.get(Firm, firm_id) is None:
         raise HTTPException(status_code=422, detail=f"firm_id {firm_id} does not exist")
+
+
+def save(db: Session, recall_number: str) -> None:
+    """Commit; turn a duplicate recall_number into 409 instead of a 500 crash."""
+    try:
+        db.commit()
+    except IntegrityError as exc:
+        db.rollback()
+        if exc.orig.args[0] == DUPLICATE_ENTRY:
+            raise HTTPException(status_code=409,
+                                detail=f"recall_number {recall_number} already exists")
+        raise
 
 
 @router.get("/{notice_id}", response_model=NoticeOut)
@@ -128,11 +146,13 @@ def create_notice(payload: NoticeIn, db: Session = Depends(get_db)):
     notice = RecallNotice(
         product_name=payload.product_name.strip(),
         category=payload.category,
+        recall_number=payload.recall_number,
+        units_affected=payload.units_affected,     # 0 when the client leaves it out
         recall_date=payload.recall_date or date.today(),
         firm_id=payload.firm_id,
     )
     db.add(notice)
-    db.commit()                        # MySQL assigns the AUTO_INCREMENT id here
+    save(db, payload.recall_number)    # MySQL assigns the AUTO_INCREMENT id here
     return load_notice(db, notice.id)
 
 
@@ -142,11 +162,13 @@ def update_notice(notice_id: int, payload: NoticeIn, db: Session = Depends(get_d
     check_firm(db, payload.firm_id)
     notice.product_name = payload.product_name.strip()
     notice.category = payload.category
+    notice.recall_number = payload.recall_number
+    notice.firm_id = payload.firm_id
     if payload.recall_date is not None:
         notice.recall_date = payload.recall_date
-    if "firm_id" in payload.model_fields_set:   # only change the firm when it was sent
-        notice.firm_id = payload.firm_id
-    db.commit()
+    if "units_affected" in payload.model_fields_set:   # only change it when it was sent
+        notice.units_affected = payload.units_affected
+    save(db, payload.recall_number)
     db.expire(notice)                  # reload so the response shows the new firm
     return load_notice(db, notice_id)
 
