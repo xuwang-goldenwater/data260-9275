@@ -49,6 +49,8 @@ body { margin: 0; }
   padding: 9px 10px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px;
 }
 .form-actions { display: flex; gap: 10px; margin-top: 12px; }
+.id-picker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px; font-weight: 600; }
+.id-picker input { width: 110px; padding: 8px 10px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px; }
 
 .notice { color: var(--muted); }
 .alert {
@@ -61,5 +63,6 @@ body { margin: 0; }
 .table th, .table td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
 .table th { color: var(--muted); font-weight: 600; }
 .actions { display: flex; gap: 6px; white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 
 .pager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-// "Add Record" is only shown to a logged-in user.
+// "Add Record" and "Update Record" are only shown to a logged-in user.
 export default function Navbar({ user, onLogout }) {
   return (
     <nav className="navbar">
@@ -9,6 +9,7 @@ export default function Navbar({ user, onLogout }) {
       <div className="nav-links">
         <NavLink to="/" end>Notices</NavLink>
         {user && <NavLink to="/create">Add Record</NavLink>}
+        {user && <NavLink to="/update">Update Record</NavLink>}
       </div>
       <div className="nav-user">
         {user ? (

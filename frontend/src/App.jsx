@@ -1,91 +1,56 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
+import api, { toApiError } from "./api/axios.js";
 import Navbar from "./components/Navbar.jsx";
 import RequireAuth from "./components/RequireAuth.jsx";
+import { resetNotices } from "./features/notices/noticesSlice.js";
 import Login from "./pages/Login.jsx";
 import Home from "./pages/Home.jsx";
 import CreateRecord from "./pages/CreateRecord.jsx";
 import UpdateRecord from "./pages/UpdateRecord.jsx";
-import DeleteRecord from "./pages/DeleteRecord.jsx";
-import * as api from "./api/client.js";
 
-const PAGE_SIZE = 50;
-
+// HW5: App only looks after login state and routing. The notice list, and the
+// create / update / delete calls, moved to the Redux slice
+// (features/notices/noticesSlice.js); each page talks to the store directly.
 export default function App() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // user === undefined: still asking the server; null: logged out; object: logged in
   const [user, setUser] = useState(undefined);
-  const [notices, setNotices] = useState([]);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const noticesError = useSelector((state) => state.notices.error);
 
   // On first load, ask the backend whether the browser already has a live session.
   useEffect(() => {
-    api.me().then(setUser).catch(() => setUser(null));
+    api.get("/api/auth/me").then((res) => setUser(res.data)).catch(() => setUser(null));
   }, []);
 
-  // Any 401 means the server-side session is gone: show the logged-out UI.
-  const handleError = useCallback((err) => {
-    if (err.status === 401) {
-      setUser(null);
-      setNotices([]);
-    }
-    setError(err.message);
-  }, []);
-
-  const loadNotices = useCallback(async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const data = await api.listNotices(page, PAGE_SIZE);
-      setNotices(data.items);
-    } catch (err) {
-      handleError(err);
-    } finally {
-      setLoading(false);
-    }
-  }, [page, handleError]);
-
-  // Fetch the list whenever the user logs in or changes page.
+  // A 401 on the list means the server-side session is gone: show the logged-out UI.
   useEffect(() => {
-    if (user) loadNotices();
-    else setNotices([]);
-  }, [user, loadNotices]);
+    if (noticesError?.status === 401) setUser(null);
+  }, [noticesError]);
 
-  // ---- handlers passed down as props ----
+  // Logged out (Log out button, or expired session): empty the store, so the
+  // next login starts from status "idle" and Home loads page 1 again.
+  useEffect(() => {
+    if (user === null) dispatch(resetNotices());
+  }, [user, dispatch]);
 
   async function onLogin(email, password) {
-    const loggedIn = await api.login(email, password);   // server sets the cookie
-    setUser(loggedIn);
-    setPage(1);
-    navigate("/");
+    try {
+      const res = await api.post("/api/auth/login", { email, password });   // server sets the cookie
+      setUser(res.data);
+      navigate("/");
+    } catch (err) {
+      throw toApiError(err);           // Login.jsx shows err.message
+    }
   }
 
   async function onLogout() {
-    await api.logout().catch(() => {});
+    await api.post("/api/auth/logout").catch(() => {});
     setUser(null);
-    navigate("/");
-  }
-
-  async function onAdd(notice) {
-    await api.createNotice(notice);          // MySQL assigns the AUTO_INCREMENT id
-    if (page === 1) await loadNotices();     // new notices are dated today -> top of page 1
-    else setPage(1);
-    navigate("/");
-  }
-
-  async function onUpdate(id, notice) {
-    const updated = await api.updateNotice(id, notice);
-    setNotices((prev) => prev.map((n) => (n.id === id ? updated : n)));
-    navigate("/");
-  }
-
-  async function onDelete(id) {
-    await api.deleteNotice(id);
-    await loadNotices();                     // refill the page from the database
     navigate("/");
   }
 
@@ -96,37 +61,20 @@ export default function App() {
   return (
     <div className="container">
       <Navbar user={user} onLogout={onLogout} />
-      {error && <div className="alert">{error}</div>}
 
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              user={user}
-              notices={notices}
-              loading={loading}
-              page={page}
-              pageSize={PAGE_SIZE}
-              onPageChange={setPage}
-            />
-          }
-        />
+        <Route path="/" element={<Home user={user} />} />
         <Route
           path="/login"
           element={user ? <Navigate to="/" replace /> : <Login onLogin={onLogin} />}
         />
         <Route
           path="/create"
-          element={<RequireAuth user={user}><CreateRecord onAdd={onAdd} /></RequireAuth>}
+          element={<RequireAuth user={user}><CreateRecord /></RequireAuth>}
         />
         <Route
           path="/update"
-          element={<RequireAuth user={user}><UpdateRecord onUpdate={onUpdate} /></RequireAuth>}
-        />
-        <Route
-          path="/delete"
-          element={<RequireAuth user={user}><DeleteRecord onDelete={onDelete} /></RequireAuth>}
+          element={<RequireAuth user={user}><UpdateRecord /></RequireAuth>}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
