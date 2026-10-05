@@ -1,5 +1,6 @@
 """
 HW5 Part 4 steps 23-24 - offline tests for execute_tool and the three domain tools.
+Part 5-III adds the safety-rule test and the agent-loop tests (MockModel).
 
     python code/test_tools.py        # make test-tools
 
@@ -13,12 +14,15 @@ model is involved. The last test checks that claim.
 import json
 import logging
 import sys
+import tempfile
 import traceback
 from datetime import datetime
+from pathlib import Path
 
+from agent_loop import MockModel, ModelReply, run_agent
 from domain_tools import config
 from retry_policy import DEFAULT_POLICY, RetryingRepo, TransientStorageError
-from tool_entry import execute_tool
+from tool_entry import SAFETY_PREFIX, execute_tool
 
 # ---- fixture: a tiny copy of the domain data ------------------------------------
 
@@ -254,6 +258,69 @@ def test_retries_exhausted():
     assert len(repo.last_attempts) == 3 and waits == [0.1, 0.2], (repo.last_attempts, waits)
 
 
+# ---- Part 5 additions ---------------------------------------------------------------
+
+def test_safety_rule_blocks_firm_ranking():
+    """safety rule: recall_summary by firm is blocked, storage untouched; by category still works"""
+    repo = InMemoryRepo()
+    blocked = run("recall_summary", {"group_by": "firm"}, repo)
+    assert blocked["ok"] is False and blocked["data"] is None
+    assert blocked["error"].startswith(SAFETY_PREFIX), blocked["error"]
+    assert repo.calls == [], f"a blocked call reached storage: {repo.calls}"
+    as_text = run("recall_summary", '{"group_by": "FIRM", "year": 2025}', repo)   # same call, other spelling
+    assert as_text["error"].startswith(SAFETY_PREFIX) and repo.calls == []
+    allowed = run("recall_summary", {"group_by": "category"}, repo)
+    assert allowed["ok"] is True and repo.calls == ["summary"]
+
+
+def wants(tool, **arguments):
+    """A scripted model turn that asks for one tool."""
+    return ModelReply(tool_calls=[{"name": tool, "arguments": arguments}])
+
+
+def agent_run(script, max_steps):
+    """run_agent with a MockModel, an in-memory repo and a throw-away log file."""
+    model, repo = MockModel(script), InMemoryRepo()
+    with tempfile.TemporaryDirectory() as folder:
+        log_file = Path(folder) / "agent_runs.jsonl"
+        run = run_agent("test question", model=model, repo=repo, max_steps=max_steps, log_path=log_file)
+        logged = [json.loads(line) for line in log_file.read_text(encoding="utf-8").splitlines()]
+    return run, model, repo, logged
+
+
+def test_agent_stops_at_max_steps():
+    """agent loop: a model that keeps asking for tools is stopped at max_steps"""
+    run, model, repo, logged = agent_run([wants("search_notices", query="hummus")], max_steps=3)
+    assert run["stop_reason"] == "max_steps", run["stop_reason"]
+    assert run["step_count"] == 3 and model.calls == 3, (run["step_count"], model.calls)
+    assert run["tool_call_count"] == 3 and repo.calls == ["search"] * 3
+    assert len(logged) == 1 and logged[0]["stop_reason"] == "max_steps"
+    assert [len(step["tool_calls"]) for step in logged[0]["steps"]] == [1, 1, 1]
+
+
+def test_agent_completes():
+    """agent loop: search, then detail, then a text answer -> completed in 3 steps, all logged"""
+    script = [wants("search_notices", query="hummus"),
+              wants("get_notice", recall_number="F-0011-2025"),
+              ModelReply(text="The newest hummus recall is F-0011-2025.")]
+    run, model, repo, logged = agent_run(script, max_steps=5)
+    assert run["stop_reason"] == "completed" and run["step_count"] == 3, run
+    assert run["tool_call_count"] == 2 and repo.calls == ["search", "get"]
+    assert run["final_answer"] == "The newest hummus recall is F-0011-2025."
+    first_call = logged[0]["steps"][0]["tool_calls"][0]
+    assert first_call["tool"] == "search_notices" and first_call["inputs"] == {"query": "hummus"}
+    assert first_call["result"]["ok"] is True and first_call["result"]["data"]["count"] == 2
+
+
+def test_agent_stops_on_safety_block():
+    """agent loop: a blocked tool call ends the run at once with stop reason safety_block"""
+    script = [wants("recall_summary", group_by="firm"), ModelReply(text="never reached")]
+    run, model, repo, logged = agent_run(script, max_steps=5)
+    assert run["stop_reason"] == "safety_block", run["stop_reason"]
+    assert run["step_count"] == 1 and model.calls == 1, "the model must not be asked again"
+    assert repo.calls == [] and "blocked by safety rule" in run["final_answer"]
+
+
 # ---- proof that the run was offline ------------------------------------------------
 
 def test_ran_offline():
@@ -277,13 +344,17 @@ TESTS = [
     test_storage_error_becomes_envelope,
     test_retry_recovers,
     test_retries_exhausted,
+    test_safety_rule_blocks_firm_ranking,
+    test_agent_stops_at_max_steps,
+    test_agent_completes,
+    test_agent_stops_on_safety_block,
     test_ran_offline,          # keep last: it inspects what the tests above imported
 ]
 
 
 def main():
     logging.disable(logging.CRITICAL)        # rejected calls log to stderr; keep the report clean
-    print(f"{config.DEMO_NAME} | DATA 260 HW5 Part 4 | {config.PREFIX} | offline tool tests | "
+    print(f"{config.DEMO_NAME} | DATA 260 HW5 Parts 4-5 | {config.PREFIX} | offline tests | "
           f"{datetime.now():%Y-%m-%d %H:%M:%S}\n")
     passed = 0
     for number, test in enumerate(TESTS, start=1):

@@ -22,7 +22,7 @@ Every tool returns the same envelope. A rejected call is not an exception:
 ```json
 {
   "additionalProperties": false,
-  "description": "Search recall notices by product name.",
+  "description": "Search recall notices by product name, newest first. Each result has the\nrecall number, product, category, date, units affected and the firm's name.",
   "properties": {
     "query": {
       "description": "Part of a product name, e.g. 'peanut butter'",
@@ -97,7 +97,7 @@ Every tool returns the same envelope. A rejected call is not an exception:
 ```json
 {
   "additionalProperties": false,
-  "description": "Full details of one recall notice.",
+  "description": "Everything about one recall notice, looked up by its recall number:\nproduct, category, date, units affected, and the issuing firm with its\ncontact email. Use this for any question about a specific notice or its firm.",
   "properties": {
     "recall_number": {
       "description": "Recall number in the form F-NNNN-YYYY, e.g. F-0001-2025",
@@ -143,7 +143,7 @@ Every tool returns the same envelope. A rejected call is not an exception:
 ```json
 {
   "additionalProperties": false,
-  "description": "Count notices and add up units_affected, grouped one way.",
+  "description": "Statistics only: count notices and add up units_affected per group.\nNot for looking up a particular notice or a firm's details.",
   "properties": {
     "group_by": {
       "description": "What to group by; 'firm' returns the 10 firms with the most notices",

@@ -4,7 +4,8 @@
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
         migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain \
-        contracts retry-demo fault-injection test-tools
+        contracts retry-demo fault-injection test-tools \
+        safety-demo agent-scenarios
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -208,3 +209,18 @@ test-tools:
 	@mkdir -p reports/hw05
 	@echo "===== test-tools $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u code/test_tools.py 2>&1 | tee -a $(HW5_LOG)
+
+# ---- Homework 5, Part 5 -----------------------------------------------------
+
+# I: one allowed and one blocked call through execute_tool (needs MySQL for the allowed one)
+safety-demo:
+	@mkdir -p reports/hw05
+	@echo "===== safety-demo $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/tool_entry.py --safety-demo 2>&1 | tee -a $(HW5_LOG)
+
+# IV: the five scenarios with the local Ollama model (needs MySQL and `ollama serve`).
+# Another local model:  make agent-scenarios AGENT_MODEL=qwen3:4b
+agent-scenarios:
+	@mkdir -p reports/hw05/raw
+	@echo "===== agent-scenarios $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/agent_scenarios.py 2>&1 | tee -a $(HW5_LOG)

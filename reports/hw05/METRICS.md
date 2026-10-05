@@ -114,3 +114,107 @@ In a batch job nobody is waiting for one answer, so the goal changes from
 - **Keep it bounded anyway.** Attempts and waits still have limits, and an item
   that exhausts them goes to a list for a later pass instead of stopping the
   whole job. All three tools only read, so running an item again is safe.
+
+## Part 5 - Agent harness
+
+Source: `make agent-scenarios`, run of 2026-10-05 08:30-08:39, local model
+`qwen3:8b` through Ollama (temperature 0), tools reading MySQL `s9275_rel`.
+Raw data: `raw/agent_scenarios.json` (the table below) and
+`raw/agent_runs.jsonl` (one line per run with every model step, tool call and
+tool result; find a run by its `run_id`). Console output: `RUN_LOG.txt`.
+
+### How the loop counts and stops
+
+One step = one call to the model, plus running every tool it asked for.
+`run_agent()` stops for one of these reasons:
+
+| Stop reason | Meaning |
+|---|---|
+| `completed` | the model answered in text and asked for no tool |
+| `safety_block` | `execute_tool` refused a call under the safety rule; the loop ends at once |
+| `max_steps` | the step budget ran out before the model gave a final answer |
+| `model_error` | the model call itself failed (not seen in these runs) |
+
+Default budget: `MAX_STEPS = 5`.
+
+### Results
+
+| Scenario | What it tests | max_steps | Steps | Tool calls | Stop reason | Tools called | Seconds | run_id |
+|---|---|---|---|---|---|---|---|---|
+| S1 | one aggregate call, then an answer | 5 | 2 | 1 | `completed` | recall_summary | 197.9 | 75f5e739 |
+| S2 | two tools in sequence: search, then detail lookup | 5 | 3 | 2 | `completed` | search_notices, get_notice | 134.4 | 52422676 |
+| S3 | a request the safety rule refuses | 5 | 1 | 1 | `safety_block` | recall_summary | 24.9 | d680adb7 |
+| S4 | the S2 question with a budget of 2 steps | 2 | 2 | 2 | `max_steps` | search_notices, get_notice | 124.0 | 5ffba3f4 |
+| S5 | an invalid tool input (recall number in the wrong format) | 5 | 2 | 1 | `completed` | get_notice | 82.4 | 228f75ce |
+
+Questions:
+
+- S1: "How many recall notices were there in 2025, broken down by category?"
+- S2 and S4: "Find the most recent peanut butter recall and tell me which firm issued it and that firm's contact email."
+- S3: "Which firms have the most recall notices? List the top 10."
+- S5: "Give me the details of recall number 4906."
+
+### What happened in each run
+
+- **S1.** `recall_summary(group_by=category, year=2025)` returned 867 notices in
+  4 categories. The answer repeats the tool's numbers exactly (347 / 231 / 145 / 144).
+- **S2.** `search_notices("peanut butter", limit=1)` found `F-4906-2026`, then
+  `get_notice("F-4906-2026")` returned the firm and its email. The answer
+  (Meadow Bakery Inc., recalls@firm167.example.com) matches the tool result.
+- **S3.** The first call was `recall_summary(group_by=firm)`. The safety rule
+  refused it before any query ran, and the loop stopped after 1 step.
+- **S4.** The same two calls as S2. Both steps were used for tool calls, so the
+  loop stopped with `max_steps` before the model could write the answer, even
+  though the data had already been fetched. A question that needs N tool calls
+  needs N + 1 steps.
+- **S5.** `get_notice("4906")` failed input validation (`ok: false`, pattern
+  `^F-\d{4}-\d{4}$`). This is not a safety block, so the error went back to the
+  model, which explained the required format in step 2. The stop reason is
+  `completed` although the user did not get the notice: `completed` means the
+  loop ended normally, not that the question was answered.
+
+### Before and after changing the tool descriptions
+
+The first batch (08:19-08:22, kept in `raw/agent_scenarios_run1.json`) gave a
+different result for the peanut butter question:
+
+| Scenario | Batch 1 stop reason | Batch 1 tools called | Batch 2 stop reason | Batch 2 tools called |
+|---|---|---|---|---|
+| S1 | `completed` (2 steps) | recall_summary | `completed` (2 steps) | recall_summary |
+| S2 | `safety_block` (2 steps) | search_notices, recall_summary | `completed` (3 steps) | search_notices, get_notice |
+| S3 | `safety_block` (1 step) | recall_summary | `safety_block` (1 step) | recall_summary |
+| S4 | `safety_block` (2 steps) | search_notices, recall_summary | `max_steps` (2 steps) | search_notices, get_notice |
+| S5 | `completed` (2 steps) | get_notice | `completed` (2 steps) | get_notice |
+
+In batch 1, after the search the model called
+`recall_summary(group_by=firm, year=2026)` to find the firm's email. The safety
+rule blocked it, so a harmless question was refused (run_id `3adaf676`).
+
+Between the batches I changed only the text the model reads: the three tool
+descriptions in `code/domain_tools.py` and the system prompt in
+`code/agent_loop.py` now say that `get_notice` returns the firm and its contact
+email and that `recall_summary` is for statistics only. The safety rule and the
+loop are unchanged. The longer text costs 137 input tokens per model call
+(S1 step 1: 556 -> 693).
+
+Limits of this comparison: one run per scenario per batch, temperature 0, one
+wording of each question. It shows the change fixed this question, not that the
+model will always pick the right tool.
+
+### Timing
+
+Model steps took 7-54 s in batch 1 and 21-129 s in batch 2 for the same calls
+(S1: 108.5 s, then 197.9 s). `ollama ps` shows the 6.0 GB model split 24% CPU /
+76% GPU on this machine, so it does not run fully on the GPU. Seconds are not
+comparable between batches; steps, tool calls and stop reasons are.
+
+### Other runs in the log
+
+`raw/agent_runs.jsonl` holds 14 runs: 4 single trials made while building the
+loop (one of them with `qwen3:4b`, which was not faster and printed its
+reasoning into the answer, so `qwen3:8b` was kept), then the 5 runs of batch 1
+and the 5 runs of batch 2.
+
+The three stop reasons are also checked without Ollama or MySQL by tests 16-18
+in `code/test_tools.py` (`make test-tools`), using `MockModel` and the
+in-memory repo.

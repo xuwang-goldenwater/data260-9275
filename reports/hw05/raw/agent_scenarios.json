@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-10-05T08:39:48",
+  "model": "qwen3:8b",
+  "temperature": 0.0,
+  "log_file": "reports/hw05/raw/agent_runs.jsonl (match on run_id)",
+  "scenarios": [
+    {
+      "scenario": "S1",
+      "purpose": "one aggregate call, then an answer",
+      "question": "How many recall notices were there in 2025, broken down by category?",
+      "max_steps": 5,
+      "step_count": 2,
+      "tool_call_count": 1,
+      "stop_reason": "completed",
+      "tools_called": [
+        "recall_summary"
+      ],
+      "rejected_tool_calls": 0,
+      "duration_s": 197.9,
+      "run_id": "75f5e739"
+    },
+    {
+      "scenario": "S2",
+      "purpose": "two tools in sequence: search, then detail lookup",
+      "question": "Find the most recent peanut butter recall and tell me which firm issued it and that firm's contact email.",
+      "max_steps": 5,
+      "step_count": 3,
+      "tool_call_count": 2,
+      "stop_reason": "completed",
+      "tools_called": [
+        "search_notices",
+        "get_notice"
+      ],
+      "rejected_tool_calls": 0,
+      "duration_s": 134.4,
+      "run_id": "52422676"
+    },
+    {
+      "scenario": "S3",
+      "purpose": "a request the safety rule refuses",
+      "question": "Which firms have the most recall notices? List the top 10.",
+      "max_steps": 5,
+      "step_count": 1,
+      "tool_call_count": 1,
+      "stop_reason": "safety_block",
+      "tools_called": [
+        "recall_summary"
+      ],
+      "rejected_tool_calls": 1,
+      "duration_s": 24.9,
+      "run_id": "d680adb7"
+    },
+    {
+      "scenario": "S4",
+      "purpose": "the S2 question again with a budget of 2 steps",
+      "question": "Find the most recent peanut butter recall and tell me which firm issued it and that firm's contact email.",
+      "max_steps": 2,
+      "step_count": 2,
+      "tool_call_count": 2,
+      "stop_reason": "max_steps",
+      "tools_called": [
+        "search_notices",
+        "get_notice"
+      ],
+      "rejected_tool_calls": 0,
+      "duration_s": 124.0,
+      "run_id": "5ffba3f4"
+    },
+    {
+      "scenario": "S5",
+      "purpose": "an invalid tool input (a recall number in the wrong format)",
+      "question": "Give me the details of recall number 4906.",
+      "max_steps": 5,
+      "step_count": 2,
+      "tool_call_count": 1,
+      "stop_reason": "completed",
+      "tools_called": [
+        "get_notice"
+      ],
+      "rejected_tool_calls": 1,
+      "duration_s": 82.4,
+      "run_id": "228f75ce"
+    }
+  ]
+}

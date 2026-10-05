@@ -32,6 +32,9 @@ class ModelResponse:
     latency_ms: float
     model: str
     raw: Dict[str, Any] = field(default_factory=dict)
+    # HW5: tools the model asked for this turn, as [{"name": str, "arguments": dict}].
+    # Empty when the model answered in text.
+    tool_calls: List[Dict[str, Any]] = field(default_factory=list)
 
 
 class ModelClient:
@@ -69,7 +72,8 @@ class ModelClient:
         """Send a chat conversation and return the model's reply.
 
         messages         list of {"role": "system"|"user"|"assistant", "content": str}
-        tools            reserved for later homeworks; accepted and forwarded
+        tools            tool definitions the model may call (used from HW5 on);
+                         what it asks for comes back in ModelResponse.tool_calls
         temperature      overrides the client default for this call only
         response_format  Ollama `format` value: "json" or a JSON schema dict
         think            qwen3 and other reasoning models emit a thinking block
@@ -97,7 +101,15 @@ class ModelClient:
         latency_ms = (time.perf_counter() - started) * 1000.0
 
         payload = dict(response)
-        text = (payload.get("message") or {}).get("content", "") or ""
+        message = payload.get("message") or {}
+        text = message.get("content", "") or ""
+
+        # Tool calls, flattened so that callers do not depend on the Ollama types.
+        tool_calls: List[Dict[str, Any]] = []
+        for call in message.get("tool_calls") or []:
+            function = call["function"]
+            tool_calls.append({"name": function["name"],
+                               "arguments": dict(function["arguments"] or {})})
 
         input_tokens = int(payload.get("prompt_eval_count") or 0)
         output_tokens = int(payload.get("eval_count") or 0)
@@ -114,6 +126,7 @@ class ModelClient:
             latency_ms=latency_ms,
             model=self.model,
             raw=payload,
+            tool_calls=tool_calls,
         )
 
     # -- accounting helpers ------------------------------------------------

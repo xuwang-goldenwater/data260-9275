@@ -55,7 +55,8 @@ class ToolInput(BaseModel):
 
 
 class SearchNoticesInput(ToolInput):
-    """Search recall notices by product name."""
+    """Search recall notices by product name, newest first. Each result has the
+    recall number, product, category, date, units affected and the firm's name."""
 
     query: str = Field(min_length=2, max_length=100,
                        description="Part of a product name, e.g. 'peanut butter'")
@@ -65,14 +66,17 @@ class SearchNoticesInput(ToolInput):
 
 
 class GetNoticeInput(ToolInput):
-    """Full details of one recall notice."""
+    """Everything about one recall notice, looked up by its recall number:
+    product, category, date, units affected, and the issuing firm with its
+    contact email. Use this for any question about a specific notice or its firm."""
 
     recall_number: str = Field(pattern=RECALL_NUMBER_PATTERN,
                                description="Recall number in the form F-NNNN-YYYY, e.g. F-0001-2025")
 
 
 class RecallSummaryInput(ToolInput):
-    """Count notices and add up units_affected, grouped one way."""
+    """Statistics only: count notices and add up units_affected per group.
+    Not for looking up a particular notice or a firm's details."""
 
     group_by: Literal["category", "state", "year", "firm"] = Field(
         description="What to group by; 'firm' returns the 10 firms with the most notices")
