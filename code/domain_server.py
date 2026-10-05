@@ -24,6 +24,7 @@ from mcp.server.fastmcp import FastMCP
 from pydantic import Field
 
 from domain_tools import MySQLRepo, call_tool
+from retry_policy import RetryingRepo
 
 logging.basicConfig(stream=sys.stderr, level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -34,15 +35,16 @@ mcp = FastMCP("s9275_recalls")
 _repo = None
 
 
-def repo() -> MySQLRepo:
-    """One MySQLRepo for the whole process, created on the first tool call.
+def repo() -> RetryingRepo:
+    """One repo for the whole process, created on the first tool call: MySQL,
+    wrapped in the Part 3 timeout + retry policy.
 
     Not created at import time, so the server still starts and lists its tools
     when MySQL is down; the tool call then returns an ok:false envelope.
     """
     global _repo
     if _repo is None:
-        _repo = MySQLRepo()
+        _repo = RetryingRepo(MySQLRepo())
     return _repo
 
 

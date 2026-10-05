@@ -3,7 +3,8 @@
         docker-build docker-run docker-stop \
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
-        migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain
+        migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain \
+        contracts retry-demo fault-injection
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -180,3 +181,22 @@ capture-domain:
 	@mkdir -p reports/hw05/raw
 	@echo "===== capture-domain $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u code/mcp_capture.py domain 2>&1 | tee -a $(HW5_LOG)
+
+# ---- Homework 5, Part 3 -----------------------------------------------------
+
+# Step 18: schema + rejected input + error output for the three Part 2B calls
+# (run capture-domain first; this reads its raw file)
+contracts:
+	python code/tool_contracts.py
+
+# Step 19: first-attempt success, fail-then-succeed, fail-after-all-retries, timeout
+retry-demo:
+	@mkdir -p reports/hw05
+	@echo "===== retry-demo $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/retry_policy.py 2>&1 | tee -a $(HW5_LOG)
+
+# Step 20: 150 calls (0% / 20% / 50% injected failures, VERIFY_SEED 269275); needs MySQL
+fault-injection:
+	@mkdir -p reports/hw05/raw
+	@echo "===== fault-injection $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/fault_injection.py 2>&1 | tee -a $(HW5_LOG)

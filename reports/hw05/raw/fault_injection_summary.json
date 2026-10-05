@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-10-05T07:30:16",
+  "verify_seed": 269275,
+  "calls_per_rate": 50,
+  "policy": {
+    "max_attempts": 3,
+    "timeout_s": 2.0,
+    "base_delay_s": 0.1,
+    "multiplier": 2.0,
+    "max_delay_s": 1.0
+  },
+  "p99_method": "nearest rank; with 50 values it equals the maximum",
+  "storage": "MySQL s9275_rel",
+  "sequence_signature_sha256": "6c4b498b7aab90a04a9cc0f7078a29196a7179bdc75f0e26a6ff7b9920884a2e",
+  "rates": [
+    {
+      "failure_rate": 0.0,
+      "calls": 50,
+      "succeeded": 50,
+      "success_rate_pct": 100.0,
+      "mean_latency_ms": 2.41,
+      "p99_latency_ms": 13.99,
+      "max_latency_ms": 13.99,
+      "storage_attempts": 50,
+      "injected_failures": 0,
+      "sequence": "11111111111111111111111111111111111111111111111111",
+      "matches_seed_prediction": true
+    },
+    {
+      "failure_rate": 0.2,
+      "calls": 50,
+      "succeeded": 50,
+      "success_rate_pct": 100.0,
+      "mean_latency_ms": 27.91,
+      "p99_latency_ms": 326.33,
+      "max_latency_ms": 326.33,
+      "storage_attempts": 59,
+      "injected_failures": 9,
+      "sequence": "11111111112111111111121322111111111311111111121111",
+      "matches_seed_prediction": true
+    },
+    {
+      "failure_rate": 0.5,
+      "calls": 50,
+      "succeeded": 44,
+      "success_rate_pct": 88.0,
+      "mean_latency_ms": 105.72,
+      "p99_latency_ms": 329.2,
+      "max_latency_ms": 329.2,
+      "storage_attempts": 86,
+      "injected_failures": 42,
+      "sequence": "22111122211212313X21X1XX1111121311132321X1X1123111",
+      "matches_seed_prediction": true
+    }
+  ]
+}
