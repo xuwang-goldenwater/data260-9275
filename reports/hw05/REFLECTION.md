@@ -1,6 +1,6 @@
 # HW5 Reflection
 
-Xu Wang | SID4 9275 | run `3adaf676` in `raw/agent_runs.jsonl` (qwen3:8b, max_steps 5)
+Run `3adaf676` in `raw/agent_runs.jsonl` (qwen3:8b, max_steps 5)
 
 A harmless question: "Find the most recent peanut butter recall and tell
 me which firm issued it and that firm's contact email."

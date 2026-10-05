@@ -5,7 +5,7 @@
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
         migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain \
         contracts retry-demo fault-injection test-tools \
-        safety-demo agent-scenarios
+        safety-demo agent-scenarios run-hw05 verify-hw05
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -224,3 +224,16 @@ agent-scenarios:
 	@mkdir -p reports/hw05/raw
 	@echo "===== agent-scenarios $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u code/agent_scenarios.py 2>&1 | tee -a $(HW5_LOG)
+
+# ---- Homework 5, run and self-check ------------------------------------------
+
+# The HW5 API is the HW4 app, extended (firms CRUD, relationship query): same command.
+run-hw05: run-hw04
+
+# Smoke test of all five parts -> reports/hw05/verification.json
+# Needs MySQL, internet (TheMealDB) and Ollama running. Commit the code first:
+# the script records the commit hash and checks that the code matches it.
+verify-hw05:
+	@mkdir -p reports/hw05
+	@echo "===== verify-hw05 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u verify_hw05.py 2>&1 | tee -a $(HW5_LOG)
