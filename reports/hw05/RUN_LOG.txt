@@ -318,3 +318,95 @@ S5       |         5 |     2 |          1 | completed    |    82.4 | get_notice
 
 wrote reports/hw05/raw/agent_scenarios.json
 full step-by-step log: reports/hw05/raw/agent_runs.jsonl
+===== verify-hw05 2026-10-05 10:11:06 =====
+Xu Wang | DATA 260 HW5 | s9275 | self-check | 2026-10-05 10:11:07
+commit f03debd57b375509b653e75b3a2d268ab3eab64c
+
+[PASS] application code has no uncommitted changes (the commit hash describes the code tested)  clean outside reports/
+[PASS] P1 firms has contact_email, created_at, updated_at  
+[PASS] P1 recall_notices has recall_number, units_affected, firm_id, timestamps  
+[PASS] P1 unique fields: firms.contact_email and recall_notices.recall_number  
+[PASS] P1 recall_notices.firm_id is NOT NULL  
+[PASS] P1 foreign key recall_notices -> firms with ON DELETE RESTRICT  RESTRICT
+[PASS] P1 API responds on PORT_BASE 8275  {'status': 'ok', 'database': 's9275_rel', 'mysql_version': '8.0.43'}
+[PASS] P1 /api/config matches Section 0  {'sid4': 9275, 'port_base': 8275, 'prefix': 's9275', 'seed': 9275, 'verify_seed': 269275, 'domain_id': 3, 'database': 's9275_rel'}
+[PASS] P1 GET /api/firms without a session -> 401  
+[PASS] P1 login -> 200  
+[PASS] P1 POST /api/firms -> 201  id 205
+[PASS] P1 POST /api/firms with the same contact_email -> 409  
+[PASS] P1 POST /api/firms with a bad state -> 422  
+[PASS] P1 PUT /api/firms/{id} -> 200 and the MySQL row changed  
+[PASS] P1 GET /api/firms (paged) -> 200  
+[PASS] P1 POST /api/notices -> 201  id 5015
+[PASS] P1 POST /api/notices with the same recall_number -> 409  
+[PASS] P1 POST /api/notices with a malformed recall_number -> 422  
+[PASS] P1 PUT /api/notices/{id} -> 200 and the MySQL row changed  
+[PASS] P1 relationship query GET /api/firms/{id}/notices returns the firm's notice  ['F-8670-2099']
+[PASS] P1 DELETE a firm that still has a notice -> 409  
+[PASS] P1 DELETE notice, then firm -> 204 and 204  (204, 204)
+[PASS] P1 GET the deleted firm and notice -> 404  
+[PASS] P1 frontend depends on Redux Toolkit, react-redux and axios  
+[PASS] P1 notices slice has 4 async thunks (fetch, create, update, delete)  ['fetchNotices', 'createNotice', 'updateNotice', 'deleteNotice']
+[PASS] P1 store is created and given to the app  
+[PASS] P2A meals server starts and lists its 4 tools  ['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']
+[PASS] P2A tool call search_meals_by_name returns at least one meal from TheMealDB  count 1
+[PASS] P2A a call with limit outside 1-25 is rejected  
+[PASS] P2B domain server starts and lists exactly 3 tools  ['get_notice', 'recall_summary', 'search_notices']
+[PASS] P2B valid call -> envelope with ok true and the notice in data  
+[PASS] P2B invalid call -> envelope with ok false, data null and an error message  {'ok': False, 'data': None, 'error': 'limit: Input should be less than or equal to 20'}
+[PASS] P3 two transient failures, then success on attempt 3, waits 0.1 s and 0.2 s  waits [0.1, 0.2]
+[PASS] P3 an operation that always fails stops after 3 attempts  3 attempts
+[PASS] P3 a non-transient error is not retried  1 attempt
+[PASS] P3 a call slower than the timeout is cut off and retried  2 attempts in 0.42 s
+[PASS] P3 raw file has 150 call records: 50 at each of 0%, 20%, 50%  {'0.0': 50, '0.2': 50, '0.5': 50}
+[PASS] P3 saved outcomes equal what VERIFY_SEED 269275 predicts  
+[PASS] P3 replaying the 150 calls now gives the same outcomes as the saved file  success 0%: 50/50, 20%: 50/50, 50%: 44/50
+[PASS] P3 replay signature equals the one in fault_injection_summary.json  6c4b498b7aab90a0
+[PASS] P4 execute_tool returns JSON text holding an ok envelope  
+[PASS] P4 execute_tool with unknown tool -> ok false, no exception  
+[PASS] P4 execute_tool with invalid input -> ok false, no exception  
+[PASS] P4 execute_tool with inputs that are not JSON -> ok false, no exception  
+[PASS] P4 offline test runner: every test passes, at least 6 tests, X/Y summary printed  19/19 tests passed
+[PASS] P5 safety rule: recall_summary grouped by firm -> ok false envelope, no exception  
+[PASS] P5 safety rule: the same tool grouped by category is allowed  
+[PASS] P5 agent with a mock model stops at max_steps (2 steps, 2 tool calls)  
+[PASS] P5 the run is logged with each step, tool, inputs, result and the stop reason  
+[PASS] P5 Ollama is running and has the local model qwen3:8b  ['qwen3:4b', 'qwen3:8b']
+       one live agent run with qwen3:8b; this can take a minute ...
+[PASS] P5 live run with the local model ends with a defined stop reason  safety_block, 1 step(s), 1 tool call(s), 93.0 s
+[PASS] P5 agent_runs.jsonl holds runs that ended as completed, safety_block and max_steps  14 runs, ['completed', 'max_steps', 'safety_block']
+[PASS] P5 at least 4 scenarios, each with step count, tool-call count and stop reason equal to its logged run  5 scenarios
+[PASS] reports/hw05/RUN_LOG.txt exists  
+[PASS] reports/hw05/METRICS.md exists  
+[PASS] reports/hw05/AI_USE.md exists  
+[PASS] reports/hw05/REFLECTION.md exists  
+[PASS] reports/hw05/TOOL_CONTRACTS.md exists  
+[PASS] REFLECTION.md is 200-300 words  298 words
+[PASS] raw/mcp_inspector_meals.json has Inspector output for all 4 tools  ['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']
+[PASS] raw/mcp_inspector_domain.json has Inspector output for all 3 tools  ['get_notice', 'recall_summary', 'search_notices']
+
+61 passed, 0 failed -> reports/hw05/verification.json
+===== test-tools 2026-10-05 11:15:39 =====
+Xu Wang | DATA 260 HW5 Parts 4-5 | s9275 | offline tests | 2026-10-05 11:15:40
+
+PASS  01 search_notices: valid query finds both hummus notices, newest first
+PASS  02 search_notices: category filter and limit are applied
+PASS  03 get_notice: valid recall number returns that notice and its firm
+PASS  04 recall_summary: by category, counts and unit totals add up
+PASS  05 recall_summary: by state for one year only counts that year
+PASS  06 search_notices: limit 500 is rejected (Part 3 case 1) and storage is not touched
+PASS  07 get_notice: recall_number 'ABC-12' is rejected (Part 3 case 2) before any lookup
+PASS  08 recall_summary: group_by 'color' is rejected (Part 3 case 3)
+PASS  09 get_notice: well-formed but unknown number -> ok false, 'not found'
+PASS  10 execute_tool: unknown tool, unknown argument, missing argument -> ok false
+PASS  11 execute_tool: inputs may arrive as JSON text; broken JSON -> ok false
+PASS  12 execute_tool: storage that raises -> ok false, no exception escapes
+PASS  13 retry policy: one transient failure, then success on attempt 2 after a 0.1 s wait
+PASS  14 retry policy: three failures -> clean ok false, waits were 0.1 s then 0.2 s
+PASS  15 safety rule: recall_summary by firm is blocked, storage untouched; by category still works
+PASS  16 agent loop: a model that keeps asking for tools is stopped at max_steps
+PASS  17 agent loop: search, then detail, then a text answer -> completed in 3 steps, all logged
+PASS  18 agent loop: a blocked tool call ends the run at once with stop reason safety_block
+PASS  19 offline: no database driver, ORM or model client was imported by this run
+
+19/19 tests passed

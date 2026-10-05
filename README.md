@@ -24,6 +24,15 @@ code/                        shared application code (extended each homework)
   n1_bench.py                HW4 Part 3 N+1 measurement (180 requests)
   explain_index.py           HW4 Part 3 EXPLAIN before/after the index
   rag.py                     HW4 Part 4 grounded RAG (FAISS, configs A/B/C, k-sweep)
+  meals_server.py            HW5 Part 2A TheMealDB MCP server (4 tools, STDIO)
+  domain_tools.py            HW5 the three domain tools and the {ok, data, error} envelope
+  domain_server.py           HW5 Part 2B MCP server over s9275_rel (3 tools, STDIO)
+  retry_policy.py            HW5 Part 3 timeout + bounded exponential backoff
+  fault_injection.py         HW5 Part 3 seeded fault injection (150 calls)
+  tool_entry.py              HW5 Part 4 execute_tool, Part 5 safety rule
+  test_tools.py              HW5 offline tests (in-memory repo, MockModel)
+  agent_loop.py              HW5 Part 5 run_agent with the local Ollama model
+  agent_scenarios.py         HW5 Part 5 the five measured scenarios
   auth_session_demo.py       HW3 Part 1 cookie / logout / idle-timeout proof
   rag_fetch_corpus.py        HW3 Part 2 corpus download + manifest
   rag_chunking.py            HW3 Part 2 token / semantic / sentence-window comparison
@@ -37,10 +46,12 @@ reports/
   hw02/                      HW2 report, metrics, logs, raw outputs
   hw03/                      HW3 corpus, questions, metrics, logs, raw outputs
   hw04/                      HW4 RAG questions, metrics, logs, raw outputs
+  hw05/                      HW5 metrics, tool contracts, reflection, logs, raw outputs
 verify_hw01.py               HW1 self-check
 verify_hw02.py               HW2 self-check
 verify_hw03.py               HW3 self-check (run at tag hw3)
 verify_hw04.py               HW4 self-check
+verify_hw05.py               HW5 self-check
 AGENT.md                     system prompt for hw1_client.py
 DOMAIN_SCHEMA.md             domain data schema
 ```
@@ -217,3 +228,23 @@ this session's timings:
   `make demo-session` and `verify_hw03.py` describe HW3 and run at tag `hw3`.
 
 See `reports/hw04/reproducible_run_instructions.md` for the full run order.
+
+## Homework 5 — what was added
+
+- **Part 1** — `firms` becomes a full second entity (CRUD, unique
+  `contact_email`), recall notices gain a unique `recall_number`,
+  `units_affected` and a `firm_id` foreign key with ON DELETE RESTRICT
+  (`code/sql/hw05_migrate.sql`), plus the relationship query
+  `GET /api/firms/{id}/notices`. The React client reads and changes notices
+  through a Redux Toolkit slice with Axios thunks.
+- **Part 2** — two MCP servers over STDIO: `code/meals_server.py` (TheMealDB,
+  4 tools) and `code/domain_server.py` (3 tools over `s9275_rel`, one
+  `{ok, data, error}` envelope).
+- **Part 3** — `code/retry_policy.py` (timeout, bounded exponential backoff)
+  and `code/fault_injection.py` (150 calls, VERIFY_SEED 269275).
+- **Part 4** — `execute_tool` in `code/tool_entry.py` and the offline test
+  runner `code/test_tools.py`.
+- **Part 5** — a safety rule inside `execute_tool` and the agent loop
+  `code/agent_loop.py` with the local model `qwen3:8b`.
+
+See `reports/hw05/reproducible_run_instructions.md` for the full run order.

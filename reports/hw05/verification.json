@@ -1,0 +1,333 @@
+{
+  "homework": 5,
+  "sid4": 9275,
+  "port_base": 8275,
+  "prefix": "s9275",
+  "domain_id": 3,
+  "seed": 9275,
+  "verify_seed": 269275,
+  "commit": "f03debd57b375509b653e75b3a2d268ab3eab64c",
+  "tag_hw5_commit": null,
+  "uncommitted_files_at_start": [
+    "reports/hw05/RUN_LOG.txt"
+  ],
+  "model": "qwen3:8b (Ollama, temperature 0, via src/model_client.py)",
+  "configuration": {
+    "database": "MySQL s9275_rel",
+    "api": "http://localhost:8275 (started by verify_hw05.py)",
+    "mcp_transport": "stdio",
+    "retry_policy": "3 attempts, 2 s timeout per attempt, wait before retries: 0.1 s, 0.2 s (x2, capped at 1 s)",
+    "agent_max_steps_default": 5
+  },
+  "run_at": "2026-10-05T10:12:53",
+  "checks": [
+    {
+      "name": "application code has no uncommitted changes (the commit hash describes the code tested)",
+      "passed": true,
+      "detail": "clean outside reports/"
+    },
+    {
+      "name": "P1 firms has contact_email, created_at, updated_at",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 recall_notices has recall_number, units_affected, firm_id, timestamps",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 unique fields: firms.contact_email and recall_notices.recall_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 recall_notices.firm_id is NOT NULL",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 foreign key recall_notices -> firms with ON DELETE RESTRICT",
+      "passed": true,
+      "detail": "RESTRICT"
+    },
+    {
+      "name": "P1 API responds on PORT_BASE 8275",
+      "passed": true,
+      "detail": "{'status': 'ok', 'database': 's9275_rel', 'mysql_version': '8.0.43'}"
+    },
+    {
+      "name": "P1 /api/config matches Section 0",
+      "passed": true,
+      "detail": "{'sid4': 9275, 'port_base': 8275, 'prefix': 's9275', 'seed': 9275, 'verify_seed': 269275, 'domain_id': 3, 'database': 's9275_rel'}"
+    },
+    {
+      "name": "P1 GET /api/firms without a session -> 401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 login -> 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 POST /api/firms -> 201",
+      "passed": true,
+      "detail": "id 205"
+    },
+    {
+      "name": "P1 POST /api/firms with the same contact_email -> 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 POST /api/firms with a bad state -> 422",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 PUT /api/firms/{id} -> 200 and the MySQL row changed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 GET /api/firms (paged) -> 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 POST /api/notices -> 201",
+      "passed": true,
+      "detail": "id 5015"
+    },
+    {
+      "name": "P1 POST /api/notices with the same recall_number -> 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 POST /api/notices with a malformed recall_number -> 422",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 PUT /api/notices/{id} -> 200 and the MySQL row changed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 relationship query GET /api/firms/{id}/notices returns the firm's notice",
+      "passed": true,
+      "detail": "['F-8670-2099']"
+    },
+    {
+      "name": "P1 DELETE a firm that still has a notice -> 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 DELETE notice, then firm -> 204 and 204",
+      "passed": true,
+      "detail": "(204, 204)"
+    },
+    {
+      "name": "P1 GET the deleted firm and notice -> 404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 frontend depends on Redux Toolkit, react-redux and axios",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 notices slice has 4 async thunks (fetch, create, update, delete)",
+      "passed": true,
+      "detail": "['fetchNotices', 'createNotice', 'updateNotice', 'deleteNotice']"
+    },
+    {
+      "name": "P1 store is created and given to the app",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2A meals server starts and lists its 4 tools",
+      "passed": true,
+      "detail": "['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']"
+    },
+    {
+      "name": "P2A tool call search_meals_by_name returns at least one meal from TheMealDB",
+      "passed": true,
+      "detail": "count 1"
+    },
+    {
+      "name": "P2A a call with limit outside 1-25 is rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2B domain server starts and lists exactly 3 tools",
+      "passed": true,
+      "detail": "['get_notice', 'recall_summary', 'search_notices']"
+    },
+    {
+      "name": "P2B valid call -> envelope with ok true and the notice in data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2B invalid call -> envelope with ok false, data null and an error message",
+      "passed": true,
+      "detail": "{'ok': False, 'data': None, 'error': 'limit: Input should be less than or equal to 20'}"
+    },
+    {
+      "name": "P3 two transient failures, then success on attempt 3, waits 0.1 s and 0.2 s",
+      "passed": true,
+      "detail": "waits [0.1, 0.2]"
+    },
+    {
+      "name": "P3 an operation that always fails stops after 3 attempts",
+      "passed": true,
+      "detail": "3 attempts"
+    },
+    {
+      "name": "P3 a non-transient error is not retried",
+      "passed": true,
+      "detail": "1 attempt"
+    },
+    {
+      "name": "P3 a call slower than the timeout is cut off and retried",
+      "passed": true,
+      "detail": "2 attempts in 0.42 s"
+    },
+    {
+      "name": "P3 raw file has 150 call records: 50 at each of 0%, 20%, 50%",
+      "passed": true,
+      "detail": "{'0.0': 50, '0.2': 50, '0.5': 50}"
+    },
+    {
+      "name": "P3 saved outcomes equal what VERIFY_SEED 269275 predicts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 replaying the 150 calls now gives the same outcomes as the saved file",
+      "passed": true,
+      "detail": "success 0%: 50/50, 20%: 50/50, 50%: 44/50"
+    },
+    {
+      "name": "P3 replay signature equals the one in fault_injection_summary.json",
+      "passed": true,
+      "detail": "6c4b498b7aab90a0"
+    },
+    {
+      "name": "P4 execute_tool returns JSON text holding an ok envelope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 execute_tool with unknown tool -> ok false, no exception",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 execute_tool with invalid input -> ok false, no exception",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 execute_tool with inputs that are not JSON -> ok false, no exception",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 offline test runner: every test passes, at least 6 tests, X/Y summary printed",
+      "passed": true,
+      "detail": "19/19 tests passed"
+    },
+    {
+      "name": "P5 safety rule: recall_summary grouped by firm -> ok false envelope, no exception",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 safety rule: the same tool grouped by category is allowed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 agent with a mock model stops at max_steps (2 steps, 2 tool calls)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 the run is logged with each step, tool, inputs, result and the stop reason",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 Ollama is running and has the local model qwen3:8b",
+      "passed": true,
+      "detail": "['qwen3:4b', 'qwen3:8b']"
+    },
+    {
+      "name": "P5 live run with the local model ends with a defined stop reason",
+      "passed": true,
+      "detail": "safety_block, 1 step(s), 1 tool call(s), 93.0 s"
+    },
+    {
+      "name": "P5 agent_runs.jsonl holds runs that ended as completed, safety_block and max_steps",
+      "passed": true,
+      "detail": "14 runs, ['completed', 'max_steps', 'safety_block']"
+    },
+    {
+      "name": "P5 at least 4 scenarios, each with step count, tool-call count and stop reason equal to its logged run",
+      "passed": true,
+      "detail": "5 scenarios"
+    },
+    {
+      "name": "reports/hw05/RUN_LOG.txt exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reports/hw05/METRICS.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reports/hw05/AI_USE.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reports/hw05/REFLECTION.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reports/hw05/TOOL_CONTRACTS.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "REFLECTION.md is 200-300 words",
+      "passed": true,
+      "detail": "298 words"
+    },
+    {
+      "name": "raw/mcp_inspector_meals.json has Inspector output for all 4 tools",
+      "passed": true,
+      "detail": "['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']"
+    },
+    {
+      "name": "raw/mcp_inspector_domain.json has Inspector output for all 3 tools",
+      "passed": true,
+      "detail": "['get_notice', 'recall_summary', 'search_notices']"
+    }
+  ],
+  "passed": 61,
+  "failed": 0,
+  "all_passed": true
+}

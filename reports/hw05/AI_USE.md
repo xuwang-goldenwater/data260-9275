@@ -5,17 +5,17 @@
 **AI assistant (Claude):**
 
 - Explained the assignment and put the steps in order.
-- Modify the design and give me advice and options to choose.
+- Review the design and give me advice and options to choose.
 - Wrote the first version of the code for each part: the migration script, the
   firms/notices API, the Redux client, the two MCP servers, the retry policy,
   the fault-injection experiment, `execute_tool`, the offline tests and the
   agent loop. It tested these in its own environment before handing them over.
 - Read the output and logs I pasted back and diagnosed problems.
-- Put my reflection into English.
+- Review my reflection and put my reflection into English.
 
 **Me:**
 
-- First design the whole structure and ask AI to modify my ideas
+- First designed the whole structure and ask AI to modify my ideas
 - Made these design decisions: `contact_email` and `recall_number` as the unique
   fields; a migration script instead of rebuilding the tables; the safety rule
   (no ranking of named firms by recalls).
