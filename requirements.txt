@@ -45,3 +45,8 @@ pymysql>=1.1
 cryptography>=42.0   # pymysql needs it for MySQL 8's caching_sha2_password login
 email-validator>=2.1 # pydantic EmailStr on the login body
 # HW4 Part 4 - rag.py uses sentence-transformers + faiss-cpu (listed above)
+
+# HW5 Part 2 - MCP servers (meals_server.py, domain server), run over STDIO.
+# Pinned below 2: in mcp 2.x FastMCP was renamed to MCPServer and
+# `from mcp.server.fastmcp import FastMCP` no longer imports.
+mcp[cli]>=1.26,<2

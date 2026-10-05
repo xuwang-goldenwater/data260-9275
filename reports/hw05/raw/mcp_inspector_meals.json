@@ -1,0 +1,278 @@
+{
+  "captured_at": "2026-10-05T06:23:01",
+  "server": "code/meals_server.py",
+  "transport": "stdio",
+  "client": "npx @modelcontextprotocol/inspector --cli",
+  "calls": [
+    {
+      "tool": "search_meals_by_name",
+      "arguments": {
+        "query": "Arrabiata"
+      },
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"count\": 1,\n  \"message\": \"1 match(es)\",\n  \"meals\": [\n    {\n      \"id\": \"52771\",\n      \"name\": \"Spicy Arrabiata Penne\",\n      \"area\": \"Italian\",\n      \"category\": \"Vegetarian\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\"\n    }\n  ]\n}"
+          }
+        ],
+        "structuredContent": {
+          "count": 1,
+          "message": "1 match(es)",
+          "meals": [
+            {
+              "id": "52771",
+              "name": "Spicy Arrabiata Penne",
+              "area": "Italian",
+              "category": "Vegetarian",
+              "thumb": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "meals_by_ingredient",
+      "arguments": {
+        "ingredient": "chicken",
+        "limit": 3
+      },
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"count\": 3,\n  \"message\": \"3 match(es)\",\n  \"meals\": [\n    {\n      \"id\": \"52940\",\n      \"name\": \"Brown Stew Chicken\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg\"\n    },\n    {\n      \"id\": \"53161\",\n      \"name\": \"Chicken & chorizo rice pot\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/fk80jp1763280767.jpg\"\n    },\n    {\n      \"id\": \"52846\",\n      \"name\": \"Chicken & mushroom Hotpot\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg\"\n    }\n  ]\n}"
+          }
+        ],
+        "structuredContent": {
+          "count": 3,
+          "message": "3 match(es)",
+          "meals": [
+            {
+              "id": "52940",
+              "name": "Brown Stew Chicken",
+              "thumb": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg"
+            },
+            {
+              "id": "53161",
+              "name": "Chicken & chorizo rice pot",
+              "thumb": "https://www.themealdb.com/images/media/meals/fk80jp1763280767.jpg"
+            },
+            {
+              "id": "52846",
+              "name": "Chicken & mushroom Hotpot",
+              "thumb": "https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg"
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "meal_details",
+      "arguments": {
+        "id": "52771"
+      },
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"id\": \"52771\",\n  \"name\": \"Spicy Arrabiata Penne\",\n  \"category\": \"Vegetarian\",\n  \"area\": \"Italian\",\n  \"instructions\": \"Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\\r\\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\\r\\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.\",\n  \"image\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\",\n  \"source\": null,\n  \"youtube\": \"https://www.youtube.com/watch?v=1IszT_guI08\",\n  \"ingredients\": [\n    {\n      \"name\": \"penne rigate\",\n      \"measure\": \"1 pound\"\n    },\n    {\n      \"name\": \"olive oil\",\n      \"measure\": \"1/4 cup\"\n    },\n    {\n      \"name\": \"garlic\",\n      \"measure\": \"3 cloves\"\n    },\n    {\n      \"name\": \"chopped tomatoes\",\n      \"measure\": \"1 tin\"\n    },\n    {\n      \"name\": \"red chilli flakes\",\n      \"measure\": \"1/2 teaspoon\"\n    },\n    {\n      \"name\": \"italian seasoning\",\n      \"measure\": \"1/2 teaspoon\"\n    },\n    {\n      \"name\": \"basil\",\n      \"measure\": \"6 leaves\"\n    },\n    {\n      \"name\": \"Parmigiano-Reggiano\",\n      \"measure\": \"sprinkling\"\n    }\n  ]\n}"
+          }
+        ],
+        "structuredContent": {
+          "id": "52771",
+          "name": "Spicy Arrabiata Penne",
+          "category": "Vegetarian",
+          "area": "Italian",
+          "instructions": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.",
+          "image": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
+          "source": null,
+          "youtube": "https://www.youtube.com/watch?v=1IszT_guI08",
+          "ingredients": [
+            {
+              "name": "penne rigate",
+              "measure": "1 pound"
+            },
+            {
+              "name": "olive oil",
+              "measure": "1/4 cup"
+            },
+            {
+              "name": "garlic",
+              "measure": "3 cloves"
+            },
+            {
+              "name": "chopped tomatoes",
+              "measure": "1 tin"
+            },
+            {
+              "name": "red chilli flakes",
+              "measure": "1/2 teaspoon"
+            },
+            {
+              "name": "italian seasoning",
+              "measure": "1/2 teaspoon"
+            },
+            {
+              "name": "basil",
+              "measure": "6 leaves"
+            },
+            {
+              "name": "Parmigiano-Reggiano",
+              "measure": "sprinkling"
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "random_meal",
+      "arguments": {},
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"id\": \"52921\",\n  \"name\": \"Proven\u00e7al Omelette Cake\",\n  \"category\": \"Vegetarian\",\n  \"area\": \"France\",\n  \"instructions\": \"Break the eggs into two bowls, five in each. Whisk lightly and season with salt and pepper. Heat the oil in a pan, add the courgettes and spring onions, then fry gently for about 10 mins until softened. Cool, then stir into one bowl of eggs with a little salt and pepper. Add the roasted peppers to the other bowl of eggs with the garlic, chilli, salt and pepper.\\r\\nHeat a little oil in a 20-23cm frying pan, preferably non-stick. Pour the eggs with courgette into a measuring jug, then pourabout one-third of the mixture into the pan, swirling it to cover the base of the pan. Cook until the egg is set and lightly browned underneath, then cover the pan with a plate and invert the omelette onto it. Slide it back into the pan to cook the other side. Repeat with the remaining mix to make two more omelettes, adding a little oil to the pan each time. Stack the omelettes onto a plate. Make three omelettes in the same way with the red pepper mixture, then stack them on a separate plate.\\r\\nNow make the filling. Beat the cheese to soften it, then beat in the milk to make a spreadable consistency. Stir in the herbs, salt and pepper. Line a deep, 20-23cm round cake tin with cling film (use a tin the same size as the frying pan). Select the best red pepper omelette and place in the tin, prettiest side down. Spread with a thin layer of cheese filling, then cover with a courgette omelette. Repeat, alternating the layers, until all the omelettes and filling are in the tin, finishing with an omelette. Flip the cling film over the omelette, then chill for up to 24 hrs.\\r\\nTo serve, invert the omelette cake onto a serving plate and peel off the cling film. Pile rocket on the top and scatter over the cheese, a drizzle of olive oil and a little freshly ground black pepper. Serve cut into wedges.\",\n  \"image\": \"https://www.themealdb.com/images/media/meals/qwtrtp1511799242.jpg\",\n  \"source\": \"https://www.bbcgoodfood.com/recipes/6428/provenal-omelette-cake\",\n  \"youtube\": \"https://www.youtube.com/watch?v=B7isFo2uP2k\",\n  \"ingredients\": [\n    {\n      \"name\": \"Eggs\",\n      \"measure\": \"10\"\n    },\n    {\n      \"name\": \"Olive Oil\",\n      \"measure\": \"1 tbs\"\n    },\n    {\n      \"name\": \"Courgettes\",\n      \"measure\": \"2 finely chopped\"\n    },\n    {\n      \"name\": \"Spring Onions\",\n      \"measure\": \"3 finely chopped\"\n    },\n    {\n      \"name\": \"Red Pepper\",\n      \"measure\": \"4\"\n    },\n    {\n      \"name\": \"Garlic Clove\",\n      \"measure\": \"1 clove peeled crushed\"\n    },\n    {\n      \"name\": \"Red Chilli\",\n      \"measure\": \"1\"\n    },\n    {\n      \"name\": \"Cream Cheese\",\n      \"measure\": \"300g\"\n    },\n    {\n      \"name\": \"Milk\",\n      \"measure\": \"6 tblsp\"\n    },\n    {\n      \"name\": \"Chives\",\n      \"measure\": \"4 tbs\"\n    },\n    {\n      \"name\": \"Basil\",\n      \"measure\": \"2 tbs\"\n    },\n    {\n      \"name\": \"Rocket\",\n      \"measure\": \"to serve\"\n    },\n    {\n      \"name\": \"Parmesan\",\n      \"measure\": \"to serve\"\n    }\n  ]\n}"
+          }
+        ],
+        "structuredContent": {
+          "id": "52921",
+          "name": "Proven\u00e7al Omelette Cake",
+          "category": "Vegetarian",
+          "area": "France",
+          "instructions": "Break the eggs into two bowls, five in each. Whisk lightly and season with salt and pepper. Heat the oil in a pan, add the courgettes and spring onions, then fry gently for about 10 mins until softened. Cool, then stir into one bowl of eggs with a little salt and pepper. Add the roasted peppers to the other bowl of eggs with the garlic, chilli, salt and pepper.\r\nHeat a little oil in a 20-23cm frying pan, preferably non-stick. Pour the eggs with courgette into a measuring jug, then pourabout one-third of the mixture into the pan, swirling it to cover the base of the pan. Cook until the egg is set and lightly browned underneath, then cover the pan with a plate and invert the omelette onto it. Slide it back into the pan to cook the other side. Repeat with the remaining mix to make two more omelettes, adding a little oil to the pan each time. Stack the omelettes onto a plate. Make three omelettes in the same way with the red pepper mixture, then stack them on a separate plate.\r\nNow make the filling. Beat the cheese to soften it, then beat in the milk to make a spreadable consistency. Stir in the herbs, salt and pepper. Line a deep, 20-23cm round cake tin with cling film (use a tin the same size as the frying pan). Select the best red pepper omelette and place in the tin, prettiest side down. Spread with a thin layer of cheese filling, then cover with a courgette omelette. Repeat, alternating the layers, until all the omelettes and filling are in the tin, finishing with an omelette. Flip the cling film over the omelette, then chill for up to 24 hrs.\r\nTo serve, invert the omelette cake onto a serving plate and peel off the cling film. Pile rocket on the top and scatter over the cheese, a drizzle of olive oil and a little freshly ground black pepper. Serve cut into wedges.",
+          "image": "https://www.themealdb.com/images/media/meals/qwtrtp1511799242.jpg",
+          "source": "https://www.bbcgoodfood.com/recipes/6428/provenal-omelette-cake",
+          "youtube": "https://www.youtube.com/watch?v=B7isFo2uP2k",
+          "ingredients": [
+            {
+              "name": "Eggs",
+              "measure": "10"
+            },
+            {
+              "name": "Olive Oil",
+              "measure": "1 tbs"
+            },
+            {
+              "name": "Courgettes",
+              "measure": "2 finely chopped"
+            },
+            {
+              "name": "Spring Onions",
+              "measure": "3 finely chopped"
+            },
+            {
+              "name": "Red Pepper",
+              "measure": "4"
+            },
+            {
+              "name": "Garlic Clove",
+              "measure": "1 clove peeled crushed"
+            },
+            {
+              "name": "Red Chilli",
+              "measure": "1"
+            },
+            {
+              "name": "Cream Cheese",
+              "measure": "300g"
+            },
+            {
+              "name": "Milk",
+              "measure": "6 tblsp"
+            },
+            {
+              "name": "Chives",
+              "measure": "4 tbs"
+            },
+            {
+              "name": "Basil",
+              "measure": "2 tbs"
+            },
+            {
+              "name": "Rocket",
+              "measure": "to serve"
+            },
+            {
+              "name": "Parmesan",
+              "measure": "to serve"
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "search_meals_by_name",
+      "arguments": {
+        "query": "zzzzzz"
+      },
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"count\": 0,\n  \"message\": \"no matches\",\n  \"meals\": []\n}"
+          }
+        ],
+        "structuredContent": {
+          "count": 0,
+          "message": "no matches",
+          "meals": []
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "meal_details",
+      "arguments": {
+        "id": "99999999"
+      },
+      "is_error": false,
+      "inspector_exit_code": 0,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"id\": \"99999999\",\n  \"message\": \"no matches\"\n}"
+          }
+        ],
+        "structuredContent": {
+          "id": "99999999",
+          "message": "no matches"
+        },
+        "isError": false
+      }
+    },
+    {
+      "tool": "search_meals_by_name",
+      "arguments": {
+        "query": "Arrabiata",
+        "limit": 99
+      },
+      "is_error": true,
+      "inspector_exit_code": 5,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool search_meals_by_name: 1 validation error for search_meals_by_nameArguments\nlimit\n  Input should be less than or equal to 25 [type=less_than_equal, input_value=99, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/less_than_equal"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ]
+}

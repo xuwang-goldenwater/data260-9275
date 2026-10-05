@@ -3,7 +3,7 @@
         docker-build docker-run docker-stop \
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
-        migrate-hw05 db-show
+        migrate-hw05 db-show inspect-meals capture-meals
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -156,3 +156,16 @@ migrate-hw05:
 # Part 1-II: print both table definitions and their first rows (database screenshot)
 db-show:
 	@python code/db_show.py
+
+# Part 2A: open MCP Inspector on the TheMealDB server (needs Node.js for npx).
+# `mcp dev` is not used: it starts the server through `uv run --with mcp`, which
+# needs uv and would install the newest mcp (2.x) instead of the pinned 1.x.
+inspect-meals:
+	npx @modelcontextprotocol/inspector python code/meals_server.py
+
+# Part 2A: the same tool calls through the Inspector CLI, saved to
+# reports/hw05/raw/mcp_inspector_meals.json
+capture-meals:
+	@mkdir -p reports/hw05/raw
+	@echo "===== capture-meals $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/mcp_capture.py meals 2>&1 | tee -a $(HW5_LOG)

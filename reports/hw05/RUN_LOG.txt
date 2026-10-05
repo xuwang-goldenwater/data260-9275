@@ -26,3 +26,19 @@ ok: SELECT id, recall_number, product_name, units_affected, firm_id, recall_date
     (2, 'F-0002-2021', 'Green Leaf Almond Granola, 16 oz', 6038, 31, datetime.date(2021, 2, 25))
     (3, 'F-0003-2023', 'Sunrise Valley Tahini, 6-pack', 4057, 173, datetime.date(2023, 12, 29))
 tables in s9275_rel: ['firms', 'recall_notices', 'sessions', 'users']
+===== capture-meals 2026-10-05 06:22:48 =====
+ok    search_meals_by_name {"query": "Arrabiata"}
+      -> {"count": 1, "message": "1 match(es)", "meals": [{"id": "52771", "name": "Spicy Arrabiata Penne", "area": "Italian", "category": "Vegetarian", "thumb"
+ok    meals_by_ingredient {"ingredient": "chicken", "limit": 3}
+      -> {"count": 3, "message": "3 match(es)", "meals": [{"id": "52940", "name": "Brown Stew Chicken", "thumb": "https://www.themealdb.com/images/media/meals/
+ok    meal_details {"id": "52771"}
+      -> {"id": "52771", "name": "Spicy Arrabiata Penne", "category": "Vegetarian", "area": "Italian", "instructions": "Bring a large pot of water to a boil. A
+ok    random_meal {}
+      -> {"id": "52921", "name": "Proven\u00e7al Omelette Cake", "category": "Vegetarian", "area": "France", "instructions": "Break the eggs into two bowls, fi
+ok    search_meals_by_name {"query": "zzzzzz"}
+      -> {"count": 0, "message": "no matches", "meals": []}
+ok    meal_details {"id": "99999999"}
+      -> {"id": "99999999", "message": "no matches"}
+ERROR search_meals_by_name {"query": "Arrabiata", "limit": 99}
+      -> "Error executing tool search_meals_by_name: 1 validation error for search_meals_by_nameArguments\nlimit\n  Input should be less than or equal to 25 [t
+wrote reports/hw05/raw/mcp_inspector_meals.json (7 calls)
