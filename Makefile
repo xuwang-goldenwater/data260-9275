@@ -3,7 +3,7 @@
         docker-build docker-run docker-stop \
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
-        migrate-hw05 db-show inspect-meals capture-meals
+        migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -169,3 +169,14 @@ capture-meals:
 	@mkdir -p reports/hw05/raw
 	@echo "===== capture-meals $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u code/mcp_capture.py meals 2>&1 | tee -a $(HW5_LOG)
+
+# Part 2B: MCP Inspector on the domain server (needs MySQL running)
+inspect-domain:
+	npx @modelcontextprotocol/inspector python code/domain_server.py
+
+# Part 2B: one valid and one invalid call per tool through the Inspector CLI,
+# saved to reports/hw05/raw/mcp_inspector_domain.json
+capture-domain:
+	@mkdir -p reports/hw05/raw
+	@echo "===== capture-domain $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/mcp_capture.py domain 2>&1 | tee -a $(HW5_LOG)

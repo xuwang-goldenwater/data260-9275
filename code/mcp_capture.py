@@ -3,6 +3,7 @@ HW5 Part 2 - run a fixed list of tool calls through the MCP Inspector and save
 the machine-readable results under reports/hw05/raw/.
 
     python code/mcp_capture.py meals        # make capture-meals
+    python code/mcp_capture.py domain       # make capture-domain
 
 This uses the Inspector's command-line mode (`--cli`). It is the same Inspector
 as the web page: it starts the server over STDIO, sends one tools/call, and
@@ -29,6 +30,15 @@ SUITES = {
         ("search_meals_by_name", {"query": "zzzzzz"}),              # no matches -> empty result
         ("meal_details", {"id": "99999999"}),                       # unknown id  -> no matches
         ("search_meals_by_name", {"query": "Arrabiata", "limit": 99}),   # outside 1-25 -> rejected
+    ]),
+    # Part 2B: for each tool one successful call, then one intentionally invalid call
+    "domain": ("code/domain_server.py", [
+        ("search_notices", {"query": "peanut butter", "limit": 2}),
+        ("search_notices", {"query": "peanut butter", "limit": 500}),     # limit outside 1-20
+        ("get_notice", {"recall_number": "F-0001-2025"}),
+        ("get_notice", {"recall_number": "ABC-12"}),                      # not F-NNNN-YYYY
+        ("recall_summary", {"group_by": "category", "year": 2025}),
+        ("recall_summary", {"group_by": "color"}),                        # not an allowed group
     ]),
 }
 
@@ -68,9 +78,14 @@ def main():
         if answer is None:                         # an error has text only
             content = record["result"].get("content") or [{}]
             answer = content[0].get("text", record["result"])
-        status = "ERROR" if record["is_error"] else "ok   "
+        if record["is_error"]:                                # the MCP layer itself reported an error
+            status = "ERROR "
+        elif isinstance(answer, dict) and answer.get("ok") is False:   # our envelope said no
+            status = "reject"
+        else:
+            status = "ok    "
         print(f"{status} {tool} {json.dumps(arguments)}")
-        print(f"      -> {json.dumps(answer)[:150]}")
+        print(f"       -> {json.dumps(answer)[:150]}")
 
     out_file = RAW_DIR / f"mcp_inspector_{name}.json"
     RAW_DIR.mkdir(parents=True, exist_ok=True)

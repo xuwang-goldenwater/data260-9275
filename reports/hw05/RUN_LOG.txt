@@ -42,3 +42,17 @@ ok    meal_details {"id": "99999999"}
 ERROR search_meals_by_name {"query": "Arrabiata", "limit": 99}
       -> "Error executing tool search_meals_by_name: 1 validation error for search_meals_by_nameArguments\nlimit\n  Input should be less than or equal to 25 [t
 wrote reports/hw05/raw/mcp_inspector_meals.json (7 calls)
+===== capture-domain 2026-10-05 07:11:47 =====
+ok     search_notices {"query": "peanut butter", "limit": 2}
+       -> {"ok": true, "data": {"count": 2, "notices": [{"id": 4906, "recall_number": "F-4906-2026", "product_name": "Morning Dew Creamy Peanut Butter, 16 oz", 
+reject search_notices {"query": "peanut butter", "limit": 500}
+       -> {"ok": false, "data": null, "error": "limit: Input should be less than or equal to 20"}
+ok     get_notice {"recall_number": "F-0001-2025"}
+       -> {"ok": true, "data": {"id": 1, "recall_number": "F-0001-2025", "product_name": "Blue Heron Enoki Mushrooms, 32 oz tub", "category": "Undeclared Allerg
+reject get_notice {"recall_number": "ABC-12"}
+       -> {"ok": false, "data": null, "error": "recall_number: String should match pattern '^F-\\d{4}-\\d{4}$'"}
+ok     recall_summary {"group_by": "category", "year": 2025}
+       -> {"ok": true, "data": {"group_by": "category", "year": 2025, "total_notices": 867, "total_units_affected": 4399044, "group_count": 4, "groups": [{"key"
+reject recall_summary {"group_by": "color"}
+       -> {"ok": false, "data": null, "error": "group_by: Input should be 'category', 'state', 'year' or 'firm'"}
+wrote reports/hw05/raw/mcp_inspector_domain.json (6 calls)
