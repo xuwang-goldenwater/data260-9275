@@ -4,7 +4,7 @@
         run-auth demo-session fetch-corpus run-rag rag-annotations rag-summary verify-hw03 \
         db-init seed run-hw04 run-frontend bench-n1 explain-index run-rag4 rag4-summary verify-hw04 \
         migrate-hw05 db-show inspect-meals capture-meals inspect-domain capture-domain \
-        contracts retry-demo fault-injection
+        contracts retry-demo fault-injection test-tools
 
 PORT_BASE = 8275
 IMAGE     = recall-notice-app
@@ -200,3 +200,11 @@ fault-injection:
 	@mkdir -p reports/hw05/raw
 	@echo "===== fault-injection $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u code/fault_injection.py 2>&1 | tee -a $(HW5_LOG)
+
+# ---- Homework 5, Part 4 -----------------------------------------------------
+
+# Steps 23-24: offline tests of execute_tool (no MySQL, no network, no model)
+test-tools:
+	@mkdir -p reports/hw05
+	@echo "===== test-tools $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
+	python -u code/test_tools.py 2>&1 | tee -a $(HW5_LOG)
