@@ -264,3 +264,12 @@ memory-cost:
 memory-summary:
 	@echo "===== memory-summary $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
 	python -u code/hw06_cost_summary.py 2>&1 | tee -a $(HW6_LOG)
+
+# Part 4: file-based memory chat (AGENT.md + MEMORY.md); commands /memory /compact /dream /help
+file-memory:
+	python code/file_memory_cli.py
+
+# Part 4-5: consolidate the 55-line MEMORY.original.md and grade it against memory_55_key.yaml
+memory-consolidate:
+	@echo "===== memory-consolidate $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
+	python -u code/hw06_consolidation_test.py 2>&1 | tee -a $(HW6_LOG)

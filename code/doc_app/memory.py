@@ -143,6 +143,14 @@ def load_short_term(user_id: str, session_id: str, n: int,
     return [{"role": d["role"], "content": d["content"]} for d in docs]
 
 
+def load_short_term_any(user_id: str, n: int) -> List[Dict[str, Any]]:
+    """The user's last n messages across all sessions, oldest first (Part 4 /dream)."""
+    docs = list(messages_col().find({"user_id": user_id}, {"role": 1, "content": 1})
+                .sort([("created_at", DESCENDING), ("_id", DESCENDING)]).limit(n))
+    docs.reverse()
+    return [{"role": d["role"], "content": d["content"]} for d in docs]
+
+
 def count_user_messages(user_id: str, session_id: str) -> int:
     return messages_col().count_documents({"user_id": user_id, "session_id": session_id,
                                            "role": "user"})

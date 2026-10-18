@@ -1,0 +1,18 @@
+# HW6 Part 4-5 answer key for MEMORY.original.md, written BEFORE running /compact.
+# Line numbers are positions among the 51 fact lines (L1 = first '- [date]' line).
+# 18 unique facts + 6 duplicate groups (23 lines) + 4 contradictions (8 lines) + 1 trap (2 lines) = 51.
+# A correct consolidation leaves 18 + 6 + 4 + 2 = 30 facts.
+duplicates:              # each group should become ONE fact
+  D1: {lines: [4, 17, 25, 33], topic: "daughter Mia - tree nut allergy"}
+  D2: {lines: [9, 19, 26, 36], topic: "short bullet answers"}
+  D3: {lines: [2, 16, 28, 39], topic: "repository name"}
+  D4: {lines: [6, 18, 24, 34], topic: "port 8275"}
+  D5: {lines: [8, 14, 22, 32], topic: "conda env data260, no .venv"}
+  D6: {lines: [12, 20, 30], topic: "name visible in screenshots"}
+contradictions:          # correct: keep the newer line, supersede the older one
+  C1: {keep: 40, superseded: [5], topic: "store: Costco replaces Safeway"}
+  C2: {keep: 50, superseded: [27], topic: "chat model"}
+  C3: {keep: 15, superseded: [11], topic: "report tool"}
+  C5: {keep: 41, superseded: [31], topic: "HW6 deadline"}
+traps:                   # look like a contradiction, but both lines stay true; superseding either is WRONG
+  C4: {lines: [1, 44], topic: "home city vs. a temporary trip (newest-wins would wrongly drop San Jose)"}
