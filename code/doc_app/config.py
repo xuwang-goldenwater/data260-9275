@@ -69,3 +69,7 @@ TOP_K = 3
 # low MiniLM cosine). Missing an allergy costs more than 3 extra facts in the prompt.
 EPISODE_MIN_SCORE = float(os.getenv("HW6_EPISODE_MIN_SCORE", "0.0"))
 EPISODE_DEDUP_COSINE = 0.95      # a new fact this close to a stored one is skipped
+
+# ---- HW6 Part 3: memory cost --------------------------------------------------
+ASSISTANT_KEEP_CHARS = 160       # compress_assistant policy: keep the first sentence, at most this long
+CHAT_LOG_PATH = ROOT / "reports" / "hw06" / "raw" / "api_chat_turns.jsonl"   # every /api/chat call

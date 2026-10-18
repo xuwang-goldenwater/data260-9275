@@ -252,3 +252,10 @@ mongo-init:
 # Part 1-II/Part 2: document API on PORT_BASE 8275 (stop run-hw04/run-hw05 first)
 run-hw06:
 	python code/doc_app/main.py
+
+# Part 3: 30-message conversation + 5 probes x {N4, N12, N30, N30_comp} (~45-60 min).
+# One setting only:  make memory-cost SETTINGS=N4
+memory-cost:
+	@mkdir -p reports/hw06/raw
+	@echo "===== memory-cost $(SETTINGS) $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
+	python -u code/hw06_memory_cost.py $(SETTINGS) 2>&1 | tee -a $(HW6_LOG)

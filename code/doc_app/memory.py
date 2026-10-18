@@ -38,6 +38,7 @@ from pymongo import ASCENDING, DESCENDING
 
 import config
 import db
+import token_count
 
 sys.path.insert(0, str(config.ROOT / "src"))
 from model_client import ModelClient  # noqa: E402  (HW1 adapter)
@@ -93,8 +94,9 @@ _embedder = None
 def get_model() -> ModelClient:
     global _model
     if _model is None:
+        # temperature 0 + fixed seed: the same prompt gives the same reply (Part 3 reruns)
         _model = ModelClient(model=config.CHAT_MODEL, temperature=0.0,
-                             options={"num_ctx": config.NUM_CTX})
+                             options={"num_ctx": config.NUM_CTX, "seed": config.SEED})
     return _model
 
 
@@ -419,17 +421,95 @@ def build_prompt(session_summary: Optional[str], lifetime_summary: Optional[str]
     return messages, sections
 
 
+# ---------------------------------------------------------------- Part 3: policy + logging
+
+WINDOW_POLICIES = ("full", "compress_assistant")
+
+
+def first_sentence(text: str, limit: int) -> str:
+    """'Yes. Class I means...' -> 'Yes.'  Cut at the first . ! ? or at `limit` chars."""
+    text = " ".join(text.split())
+    for i, ch in enumerate(text):
+        if ch in ".!?" and i >= 15:
+            return text[: i + 1][:limit]
+        if i >= limit:
+            break
+    return text[:limit].rstrip() + ("..." if len(text) > limit else "")
+
+
+def apply_window_policy(window: List[Dict[str, str]], policy: str) -> List[Dict[str, str]]:
+    """Part 3-4 compression policy.
+
+    full                the window as stored
+    compress_assistant  user messages verbatim; each assistant reply cut to its first
+                        sentence (<= ASSISTANT_KEEP_CHARS). Facts about the user live in
+                        the user's own messages; the replies are most of the tokens.
+    """
+    if policy == "full":
+        return window
+    if policy == "compress_assistant":
+        return [m if m["role"] == "user"
+                else {"role": m["role"], "content": first_sentence(m["content"],
+                                                                   config.ASSISTANT_KEEP_CHARS)}
+                for m in window]
+    raise ValueError(f"unknown window policy {policy!r}")
+
+
+def log_turn(path, result: Dict[str, Any], extra: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    """Append one JSON line per /api/chat call: tokens per section, latency, memory work."""
+    sections = result["_sections"]
+    tokens = {name: token_count.count(text) for name, text in sections.items()}
+    usage = result["usage"]
+    summaries = result["memory_written"]["summaries"]
+    row = {
+        "ts": now_utc().isoformat(),
+        **(extra or {}),
+        "user_id": result["user_id"], "session_id": result["session_id"],
+        "model": usage["model"], "tokenizer": token_count.tokenizer_name(),
+        "short_term_n": result["memory_used"]["short_term"]["n"],
+        "window_policy": result["window_policy"],
+        "window_messages": result["memory_used"]["short_term"]["count"],
+        "facts_retrieved": len(result["memory_used"]["episodic_facts"]),
+        "prompt_tokens": usage["prompt_tokens"],
+        "completion_tokens": usage["completion_tokens"],
+        "tokens_system_primer": tokens["system_primer"],
+        "tokens_long_term_summary": tokens["long_term_summary"],
+        "tokens_short_term_window": tokens["short_term_window"],
+        "tokens_current_message": tokens["current_message"],
+        "tokens_episodic_facts": tokens["episodic_facts"],
+        "template_overhead": usage["prompt_tokens"] - sum(tokens.values()),
+        "chat_latency_ms": usage["chat_latency_ms"],
+        "total_latency_ms": usage["total_latency_ms"],
+        # memory upkeep: extra model calls this turn caused
+        "extract_input_tokens": usage["extract"].get("input_tokens", 0),
+        "extract_output_tokens": usage["extract"].get("output_tokens", 0),
+        "summary_input_tokens": sum(e["input_tokens"] for e in summaries),
+        "summary_output_tokens": sum(e["output_tokens"] for e in summaries),
+        "summaries_written": [e["scope"] for e in summaries],
+        "episodes_added": len(result["memory_written"]["episodes_added"]),
+        "reply": result["reply"],
+    }
+    if path:
+        from pathlib import Path
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+    return row
+
+
 # ---------------------------------------------------------------- one chat turn
 
 
 def chat_turn(user_id: str, message: str, session_id: Optional[str] = None,
-              short_term_n: Optional[int] = None) -> Dict[str, Any]:
+              short_term_n: Optional[int] = None,
+              window_policy: str = "full") -> Dict[str, Any]:
     started = time.perf_counter()
     session_id = session_id or new_session_id()
     n = config.SHORT_TERM_N if short_term_n is None else short_term_n
 
     user_doc = save_message(user_id, session_id, "user", message)                 # 1
     window = load_short_term(user_id, session_id, n, exclude_id=user_doc["_id"])  # 2
+    window = apply_window_policy(window, window_policy)
     session_summary = latest_summary(user_id, "session", session_id)             # 3
     lifetime_summary = latest_summary(user_id, "user")
     facts = retrieve_episodes(user_id, message, config.TOP_K)                     # 4
@@ -445,6 +525,7 @@ def chat_turn(user_id: str, message: str, session_id: Optional[str] = None,
     return {
         "user_id": user_id,
         "session_id": session_id,
+        "window_policy": window_policy,
         "reply": reply,
         "memory_used": {
             "short_term": {"n": n, "count": len(window), "messages": window},

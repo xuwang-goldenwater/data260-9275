@@ -6,11 +6,12 @@
 
 Errors: 422 bad body (Pydantic), 503 Ollama or MongoDB unreachable, 500 other database error.
 """
-from typing import Optional
+from typing import Literal, Optional
 
 from fastapi import APIRouter, HTTPException, Path
 from pydantic import BaseModel, ConfigDict, Field
 
+import config
 import memory
 from routers.notices import mongo_errors          # same PyMongo -> HTTP mapping as Part 1
 
@@ -28,6 +29,7 @@ class ChatIn(BaseModel):
     # Part 3 runs the same conversation with N = 4 / 12 / 30 without restarting the API
     short_term_n: Optional[int] = Field(default=None, ge=0, le=60,
                                         description="override SHORT_TERM_N for this turn")
+    window_policy: Literal[memory.WINDOW_POLICIES] = "full"     # Part 3-4 compression policy
 
 
 def model_unavailable(exc: Exception) -> bool:
@@ -42,12 +44,18 @@ def chat(payload: ChatIn):
     with mongo_errors("running the chat turn"):
         try:
             result = memory.chat_turn(payload.user_id, payload.message,
-                                      payload.session_id, payload.short_term_n)
+                                      payload.session_id, payload.short_term_n,
+                                      payload.window_policy)
         except Exception as exc:
             if model_unavailable(exc):
                 raise HTTPException(status_code=503,
                                     detail="Model unavailable: is Ollama running (ollama serve)?")
             raise
+    # Part 3-1: every /api/chat call is logged (tokens per section, latency)
+    try:
+        memory.log_turn(config.CHAT_LOG_PATH, result, {"source": "api"})
+    except Exception as exc:                  # logging must never break the chat
+        print(f"[warn] chat log not written: {exc}")
     result.pop("_sections", None)
     return result
 
