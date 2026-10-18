@@ -1,0 +1,52 @@
+# HW6 Part 3 - five fixed memory probes, asked in this order right after the
+# 30-message conversation (conversation_30.yaml), in the same session.
+# Written and committed BEFORE any Part 3 run. Scored by hand (Xu Wang) with the
+# rubric below; scores go in reports/hw06/raw/part3_probe_scores.csv.
+
+rubric:
+  5: "Every expected element is correct and nothing false is added."
+  4: "The main element is correct; one secondary detail is missing or vague."
+  3: "Partly correct: about half of the expected elements, or correct but hedged ('I think...')."
+  2: "Mentions the right topic, but the main element is missing or wrong."
+  1: "Wrong, invented, or 'I don't know'. A confident wrong answer also scores 1."
+
+probes:
+  - id: P1
+    question: "Who in my family has a food allergy, and to what?"
+    source_message: 2
+    expected: ["Mia", "daughter", "tree nuts"]
+    criteria: >
+      5 = names Mia (or 'your daughter') AND tree nuts. 4 = daughter + nuts without
+      'tree', or Mia without saying daughter. Saying the USER is allergic, or peanuts,
+      is wrong (max 2).
+
+  - id: P2
+    question: "Where do I do my grocery shopping now?"
+    source_message: 11            # updates message 3 (Safeway) -> contradiction
+    expected: ["Costco"]
+    criteria: >
+      5 = Costco as the current store. 4 = Costco, and mentions the earlier Safeway as
+      past. 2 = lists both without saying which is current. 1 = Safeway only.
+
+  - id: P3
+    question: "What is my son's name, and what diet does he follow?"
+    source_message: 5
+    expected: ["Leo", "vegetarian"]
+    criteria: >
+      5 = Leo AND vegetarian. 3 = only one of the two. 1 = neither, or invented.
+
+  - id: P4
+    question: "When and where is our camping trip?"
+    source_message: 14
+    expected: ["Yosemite", "November 14"]
+    criteria: >
+      5 = Yosemite AND November 14. 4 = Yosemite and November without the day.
+      3 = only one of place or date. 1 = neither.
+
+  - id: P5
+    question: "Which product did I buy last Tuesday?"
+    source_message: 17            # inside the N = 30 window only
+    expected: ["Honey Oat Granola Bars"]
+    criteria: >
+      5 = Honey Oat Granola Bars. 4 = granola bars without the brand words.
+      1 = a different product, or does not know.

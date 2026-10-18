@@ -1,0 +1,46 @@
+# HW6 Part 3 - the fixed 30-message conversation, replayed in a fresh session for
+# every setting (SHORT_TERM_N = 4 / 12 / 30, and the compression policy).
+# Committed before any Part 3 run, like HW3's questions.yaml.
+#
+# Nine messages state a fact (marked fact: true); the probes in memory_probes.yaml
+# ask about five of them. The other messages are ordinary recall questions that
+# push the facts out of the short-term window.
+#
+# Window coverage when the probes are asked (after message 30):
+#   N = 4  -> messages 29-30 only          (2 user turns)
+#   N = 12 -> messages 25-30               (6 user turns)
+#   N = 30 -> messages 16-30               (15 user turns)
+# So facts from messages 1-14 are outside every window and must come from
+# the long-term summary or episodic memory; message 17 is inside N = 30 only.
+user_id_prefix: probe              # each run uses user_id probe_<setting>_<timestamp>
+messages:
+  - {n: 1,  fact: true,  text: "Hi, I'm Xu and I live in San Jose."}
+  - {n: 2,  fact: true,  text: "My daughter Mia is allergic to tree nuts."}
+  - {n: 3,  fact: true,  text: "I usually do my grocery shopping at Safeway."}
+  - {n: 4,  fact: false, text: "What does a Class I recall mean?"}
+  - {n: 5,  fact: true,  text: "My son Leo is vegetarian."}
+  - {n: 6,  fact: false, text: "How do I check if a product I bought has been recalled?"}
+  - {n: 7,  fact: false, text: "Are store-brand products recalled as often as name brands?"}
+  - {n: 8,  fact: true,  text: "We buy oat milk every week."}
+  - {n: 9,  fact: false, text: "What is the most common reason for food recalls?"}
+  - {n: 10, fact: false, text: "Can frozen vegetables carry Listeria?"}
+  - {n: 11, fact: true,  text: "I switched from Safeway to Costco this month."}
+  - {n: 12, fact: false, text: "Do warehouse stores notify members about recalls?"}
+  - {n: 13, fact: false, text: "How long do recalls usually stay open?"}
+  - {n: 14, fact: true,  text: "We are going camping in Yosemite on November 14."}
+  - {n: 15, fact: false, text: "What foods are safest to pack for camping?"}
+  - {n: 16, fact: false, text: "Is canned salmon ever recalled for botulism?"}
+  - {n: 17, fact: true,  text: "Last Tuesday I bought Honey Oat Granola Bars."}
+  - {n: 18, fact: false, text: "What should I do if a product is recalled after I ate some?"}
+  - {n: 19, fact: false, text: "Can undeclared allergens show up in granola bars?"}
+  - {n: 20, fact: true,  text: "Please keep your answers under 50 words."}
+  - {n: 21, fact: false, text: "What is the difference between a recall and a market withdrawal?"}
+  - {n: 22, fact: false, text: "How are FDA recall numbers formatted?"}
+  - {n: 23, fact: false, text: "Do recalls cover pet food too?"}
+  - {n: 24, fact: false, text: "Is it safe to cook food from a recalled package?"}
+  - {n: 25, fact: false, text: "What does best by mean compared with use by?"}
+  - {n: 26, fact: false, text: "How should I store opened oat milk?"}
+  - {n: 27, fact: false, text: "Are peanut allergies and tree nut allergies the same thing?"}
+  - {n: 28, fact: false, text: "Can I get a refund for recalled food at the store?"}
+  - {n: 29, fact: false, text: "Which agencies publish food recall notices in the US?"}
+  - {n: 30, fact: false, text: "Thanks, that is all my recall questions for now."}
