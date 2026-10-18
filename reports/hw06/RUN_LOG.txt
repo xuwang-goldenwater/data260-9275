@@ -1,0 +1,199 @@
+===== memory-cost N4 2026-10-18 15:56:07 =====
+Xu Wang | DATA 260 HW6 Part 3 | memory cost | 2026-10-18 15:56:08
+model=qwen2.5:3b num_ctx=8192 seed=9275 commit=6a7157c settings=['N4']
+
+=== N4: N=4 policy=full user=probe_N4_20261018155608 session=659ac9a2a131
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4479.65it/s]
+  N4 t01 conve prompt=  108 window=    0 lt=   0 ep=  0  27.2s
+  N4 t02 conve prompt=  174 window=   45 lt=   0 ep= 18   7.2s
+  N4 t03 conve prompt=  243 window=   96 lt=   0 ep= 29   7.7s
+  N4 t04 conve prompt=  261 window=  107 lt=   0 ep= 38   9.0s
+  N4 t05 conve prompt=  303 window=  102 lt=  49 ep= 38   9.4s
+  N4 t06 conve prompt=  320 window=  111 lt=  49 ep= 39   9.5s
+  N4 t07 conve prompt=  380 window=  173 lt=  49 ep= 39   7.4s
+  N4 t08 conve prompt=  386 window=  183 lt=  49 ep= 39  19.0s
+  N4 t09 conve prompt=  413 window=  155 lt= 101 ep= 39   8.2s
+  N4 t10 conve prompt=  410 window=  154 lt= 101 ep= 39   7.3s
+  N4 t11 conve prompt=  410 window=  153 lt= 101 ep= 38   9.2s
+  N4 t12 conve prompt=  411 window=  152 lt= 101 ep= 42  11.1s
+  N4 t13 conve prompt=  396 window=  137 lt= 101 ep= 42   6.9s
+  N4 t14 conve prompt=  393 window=  135 lt= 101 ep= 37   5.3s
+  N4 t15 conve prompt=  362 window=  105 lt= 101 ep= 39   7.6s
+  N4 t16 conve prompt=  381 window=  121 lt= 101 ep= 41  19.3s
+  N4 t17 conve prompt=  473 window=  169 lt= 143 ep= 42   9.4s
+  N4 t18 conve prompt=  451 window=  142 lt= 143 ep= 43   7.0s
+  N4 t19 conve prompt=  447 window=  141 lt= 143 ep= 42   7.7s
+  N4 t20 conve prompt=  474 window=  175 lt= 143 ep= 38  13.8s
+  N4 t21 conve prompt=  456 window=  138 lt= 155 ep= 43   4.5s
+  N4 t22 conve prompt=  405 window=   92 lt= 155 ep= 43   3.1s
+  N4 t23 conve prompt=  397 window=   84 lt= 155 ep= 43   3.6s
+  N4 t24 conve prompt=  390 window=   73 lt= 155 ep= 43  14.7s
+  N4 t25 conve prompt=  383 window=   79 lt= 143 ep= 43   6.5s
+  N4 t26 conve prompt=  419 window=  117 lt= 143 ep= 43   4.0s
+  N4 t27 conve prompt=  425 window=  121 lt= 143 ep= 42   6.9s
+  N4 t28 conve prompt=  431 window=  125 lt= 143 ep= 43  10.4s
+  N4 t29 conve prompt=  436 window=  132 lt= 143 ep= 43   5.0s
+  N4 t30 conve prompt=  415 window=  114 lt= 143 ep= 39   4.9s
+  N4 t31 probe prompt=  411 window=  105 lt= 143 ep= 42   3.2s  P1: 'In your family, Mia, your daughter, has a food allergy to tree nuts. L'
+  N4 t32 probe prompt=  389 window=   86 lt= 143 ep= 43  14.1s  P2: 'You now do your grocery shopping at Costco.'
+  N4 t33 probe prompt=  371 window=   64 lt= 143 ep= 42   2.4s  P3: "Your son's name is Leo, and he follows a vegetarian diet."
+  N4 t34 probe prompt=  354 window=   54 lt= 143 ep= 41   3.7s  P4: 'Your camping trip is scheduled for November 14. You usually do grocery'
+  N4 t35 probe prompt=  378 window=   76 lt= 143 ep= 43   2.1s  P5: 'You bought Honey Oat Granola Bars last Tuesday.'
+=== N4 done in 5.0 min
+
+rows appended to reports/hw06/raw/part3_turns.jsonl and reports/hw06/raw/part3_probe_scores.csv
+next: fill the score column (1-5, rubric in memory_probes.yaml), then make memory-summary
+===== memory-cost N12 N30 N30_comp 2026-10-18 16:13:10 =====
+Xu Wang | DATA 260 HW6 Part 3 | memory cost | 2026-10-18 16:13:11
+model=qwen2.5:3b num_ctx=8192 seed=9275 commit=6a7157c settings=['N12', 'N30', 'N30_comp']
+
+=== N12: N=12 policy=full user=probe_N12_20261018161311 session=132c63b59891
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6118.91it/s]
+  N12 t01 conve prompt=  108 window=    0 lt=   0 ep=  0  26.2s
+  N12 t02 conve prompt=  174 window=   45 lt=   0 ep= 18   7.5s
+  N12 t03 conve prompt=  243 window=   96 lt=   0 ep= 29   7.1s
+  N12 t04 conve prompt=  312 window=  152 lt=   0 ep= 38  10.7s
+  N12 t05 conve prompt=  411 window=  198 lt=  49 ep= 38  13.7s
+  N12 t06 conve prompt=  483 window=  256 lt=  49 ep= 39  14.7s
+  N12 t07 conve prompt=  604 window=  373 lt=  49 ep= 39  10.3s
+  N12 t08 conve prompt=  631 window=  404 lt=  49 ep= 39  23.8s
+  N12 t09 conve prompt=  729 window=  433 lt= 115 ep= 39  12.9s
+  N12 t10 conve prompt=  741 window=  447 lt= 115 ep= 39  11.0s
+  N12 t11 conve prompt=  776 window=  481 lt= 115 ep= 38  14.1s
+  N12 t12 conve prompt=  797 window=  500 lt= 115 ep= 42  15.0s
+  N12 t13 conve prompt=  745 window=  448 lt= 115 ep= 42  14.4s
+  N12 t14 conve prompt=  759 window=  463 lt= 115 ep= 37  13.2s
+  N12 t15 conve prompt=  758 window=  463 lt= 115 ep= 39  23.2s
+  N12 t16 conve prompt=  904 window=  606 lt= 115 ep= 41  30.2s
+  N12 t17 conve prompt=  970 window=  639 lt= 146 ep= 42  20.0s
+  N12 t18 conve prompt= 1008 window=  673 lt= 146 ep= 43  21.0s
+  N12 t19 conve prompt= 1112 window=  780 lt= 146 ep= 42  19.5s
+  N12 t20 conve prompt= 1180 window=  854 lt= 146 ep= 38  20.2s
+  N12 t21 conve prompt= 1170 window=  825 lt= 158 ep= 43  12.2s
+  N12 t22 conve prompt=  996 window=  656 lt= 158 ep= 43   8.2s
+  N12 t23 conve prompt=  914 window=  574 lt= 158 ep= 43   8.8s
+  N12 t24 conve prompt=  853 window=  509 lt= 158 ep= 43  19.5s
+  N12 t25 conve prompt=  711 window=  380 lt= 146 ep= 43   6.7s
+  N12 t26 conve prompt=  589 window=  260 lt= 146 ep= 43   4.5s
+  N12 t27 conve prompt=  571 window=  241 lt= 146 ep= 42   7.6s
+  N12 t28 conve prompt=  598 window=  266 lt= 146 ep= 43  12.0s
+  N12 t29 conve prompt=  619 window=  289 lt= 146 ep= 43   5.4s
+  N12 t30 conve prompt=  612 window=  285 lt= 146 ep= 39   5.9s
+  N12 t31 probe prompt=  616 window=  284 lt= 146 ep= 42   5.7s  P1: 'In your family, Mia, your daughter, has a food allergy to tree nuts, a'
+  N12 t32 probe prompt=  612 window=  283 lt= 146 ep= 43  14.7s  P2: 'You now do your grocery shopping at Costco.'
+  N12 t33 probe prompt=  607 window=  273 lt= 146 ep= 42   4.6s  P3: "Your son's name is Leo, and he follows a vegetarian diet."
+  N12 t34 probe prompt=  563 window=  236 lt= 146 ep= 41   3.9s  P4: 'Your camping trip is scheduled for November 14. You are going to Yosem'
+  N12 t35 probe prompt=  540 window=  211 lt= 146 ep= 43   3.4s  P5: 'Last Tuesday, you bought Honey Oat Granola Bars.'
+=== N12 done in 7.6 min
+
+=== N30: N=30 policy=full user=probe_N30_20261018162044 session=3d3e68bc56d1
+  N30 t01 conve prompt=  108 window=    0 lt=   0 ep=  0   7.8s
+  N30 t02 conve prompt=  174 window=   45 lt=   0 ep= 18   6.6s
+  N30 t03 conve prompt=  243 window=   96 lt=   0 ep= 29   7.0s
+  N30 t04 conve prompt=  312 window=  152 lt=   0 ep= 38   7.2s
+  N30 t05 conve prompt=  411 window=  198 lt=  49 ep= 38   8.7s
+  N30 t06 conve prompt=  483 window=  256 lt=  49 ep= 39  11.0s
+  N30 t07 conve prompt=  604 window=  373 lt=  49 ep= 39   5.4s
+  N30 t08 conve prompt=  682 window=  449 lt=  49 ep= 39  15.1s
+  N30 t09 conve prompt=  810 window=  516 lt= 101 ep= 39  10.6s
+  N30 t10 conve prompt=  884 window=  586 lt= 101 ep= 39  11.2s
+  N30 t11 conve prompt=  967 window=  662 lt= 101 ep= 38  18.5s
+  N30 t12 conve prompt= 1064 window=  751 lt= 101 ep= 42  23.4s
+  N30 t13 conve prompt= 1142 window=  823 lt= 101 ep= 42  15.2s
+  N30 t14 conve prompt= 1221 window=  897 lt= 101 ep= 37  19.9s
+  N30 t15 conve prompt= 1351 window= 1022 lt= 101 ep= 39  21.7s
+  N30 t16 conve prompt= 1497 window= 1159 lt= 101 ep= 41  35.5s
+  N30 t17 conve prompt= 1603 window= 1221 lt= 143 ep= 42  26.4s
+  N30 t18 conve prompt= 1651 window= 1265 lt= 143 ep= 43  28.6s
+  N30 t19 conve prompt= 1763 window= 1380 lt= 143 ep= 42  22.1s
+  N30 t20 conve prompt= 1816 window= 1439 lt= 143 ep= 38  26.8s
+  N30 t21 conve prompt= 1818 window= 1422 lt= 155 ep= 43  19.6s
+  N30 t22 conve prompt= 1745 window= 1354 lt= 155 ep= 43  15.0s
+  N30 t23 conve prompt= 1694 window= 1303 lt= 155 ep= 43  17.9s
+  N30 t24 conve prompt= 1677 window= 1282 lt= 155 ep= 43  29.3s
+  N30 t25 conve prompt= 1638 window= 1256 lt= 143 ep= 43  20.8s
+  N30 t26 conve prompt= 1619 window= 1239 lt= 143 ep= 43  14.9s
+  N30 t27 conve prompt= 1560 window= 1179 lt= 143 ep= 42  17.4s
+  N30 t28 conve prompt= 1539 window= 1156 lt= 143 ep= 43  22.3s
+  N30 t29 conve prompt= 1507 window= 1126 lt= 143 ep= 43  13.8s
+  N30 t30 conve prompt= 1404 window= 1026 lt= 143 ep= 39  13.2s
+  N30 t31 probe prompt= 1311 window=  928 lt= 143 ep= 42  12.5s  P1: '- Mia has a food allergy to tree nuts.\n- Leo is a vegetarian.'
+  N30 t32 probe prompt= 1234 window=  854 lt= 143 ep= 43  20.0s  P2: 'You now do your grocery shopping at Costco.'
+  N30 t33 probe prompt= 1165 window=  781 lt= 143 ep= 42  11.2s  P3: "Your son's name is Leo, and he follows a vegetarian diet."
+  N30 t34 probe prompt= 1019 window=  642 lt= 143 ep= 41   8.1s  P4: 'Your camping trip is on November 14, and you are going to Yosemite.'
+  N30 t35 probe prompt=  945 window=  566 lt= 143 ep= 43   6.8s  P5: 'You bought Honey Oat Granola Bars last Tuesday.'
+=== N30 done in 9.5 min
+
+=== N30_comp: N=30 policy=compress_assistant user=probe_N30_comp_20261018163016 session=9d853e5d1eee
+  N30_comp t01 conve prompt=  108 window=    0 lt=   0 ep=  0   8.2s
+  N30_comp t02 conve prompt=  156 window=   27 lt=   0 ep= 18   4.3s
+  N30_comp t03 conve prompt=  206 window=   59 lt=   0 ep= 29   6.6s
+  N30_comp t04 conve prompt=  250 window=   90 lt=   0 ep= 38   6.1s
+  N30_comp t05 conve prompt=  338 window=  125 lt=  49 ep= 38   5.0s
+  N30_comp t06 conve prompt=  377 window=  150 lt=  49 ep= 39   7.3s
+  N30_comp t07 conve prompt=  430 window=  199 lt=  49 ep= 39   5.3s
+  N30_comp t08 conve prompt=  461 window=  228 lt=  49 ep= 39  14.4s
+  N30_comp t09 conve prompt=  571 window=  275 lt= 103 ep= 39   6.3s
+  N30_comp t10 conve prompt=  612 window=  312 lt= 103 ep= 39   6.3s
+  N30_comp t11 conve prompt=  649 window=  342 lt= 103 ep= 38   9.9s
+  N30_comp t12 conve prompt=  681 window=  366 lt= 103 ep= 42  11.8s
+  N30_comp t13 conve prompt=  725 window=  404 lt= 103 ep= 42   7.8s
+  N30_comp t14 conve prompt=  759 window=  433 lt= 103 ep= 37  12.3s
+  N30_comp t15 conve prompt=  801 window=  470 lt= 103 ep= 39   8.6s
+  N30_comp t16 conve prompt=  845 window=  505 lt= 103 ep= 41  22.0s
+  N30_comp t17 conve prompt=  904 window=  520 lt= 145 ep= 42  16.2s
+  N30_comp t18 conve prompt=  909 window=  521 lt= 145 ep= 43   8.6s
+  N30_comp t19 conve prompt=  908 window=  523 lt= 145 ep= 42   8.4s
+  N30_comp t20 conve prompt=  909 window=  530 lt= 145 ep= 38  15.8s
+  N30_comp t21 conve prompt=  937 window=  539 lt= 157 ep= 43   9.9s
+  N30_comp t22 conve prompt=  928 window=  535 lt= 157 ep= 43   8.0s
+  N30_comp t23 conve prompt=  926 window=  533 lt= 157 ep= 43   7.4s
+  N30_comp t24 conve prompt=  909 window=  512 lt= 157 ep= 43  19.6s
+  N30_comp t25 conve prompt=  886 window=  506 lt= 141 ep= 43   9.5s
+  N30_comp t26 conve prompt=  892 window=  514 lt= 141 ep= 43   6.7s
+  N30_comp t27 conve prompt=  896 window=  517 lt= 141 ep= 42   6.9s
+  N30_comp t28 conve prompt=  888 window=  507 lt= 141 ep= 43  14.0s
+  N30_comp t29 conve prompt=  890 window=  511 lt= 141 ep= 43   7.3s
+  N30_comp t30 conve prompt=  875 window=  499 lt= 141 ep= 39   7.3s
+  N30_comp t31 probe prompt=  879 window=  498 lt= 141 ep= 42   6.8s  P1: 'Your daughter Mia has a food allergy to tree nuts, and your son Leo is'
+  N30_comp t32 probe prompt=  869 window=  491 lt= 141 ep= 43  17.4s  P2: 'You now do your grocery shopping at Costco.'
+  N30_comp t33 probe prompt=  861 window=  480 lt= 140 ep= 42   8.0s  P3: "Your son's name is Leo, and he follows a vegetarian diet."
+  N30_comp t34 probe prompt=  853 window=  479 lt= 140 ep= 41   6.5s  P4: 'Your camping trip is on November 14, and you are going to Yosemite.'
+  N30_comp t35 probe prompt=  842 window=  466 lt= 140 ep= 43   6.0s  P5: 'You bought Honey Oat Granola Bars last Tuesday.'
+=== N30_comp done in 5.5 min
+
+rows appended to reports/hw06/raw/part3_turns.jsonl and reports/hw06/raw/part3_probe_scores.csv
+next: fill the score column (1-5, rubric in memory_probes.yaml), then make memory-summary
+===== memory-summary 2026-10-18 16:43:13 =====
+Xu Wang | DATA 260 HW6 Part 3 | memory cost summary
+
+| Setting | Mean prompt tokens/turn | Mean latency (ms) | Probe quality (1-5) |
+|---|---|---|---|
+| SHORT_TERM_N=4 | 378.4 | 9088 | 4.6 |
+| SHORT_TERM_N=12 | 702.6 | 13982 | 5 |
+| SHORT_TERM_N=30 | 1166.2 | 17089 | 4.8 |
+| Compression: N=30, assistant replies cut to 1st sentence | 687.5 | 9595 | 5 |
+
+Mean tokens per prompt section (conversation turns):
+
+| Setting | primer | long-term summary | short-term window | current msg | episodic facts | template |
+|---|---|---|---|---|---|---|
+| N4 | 83 | 101.8 | 121.0 | 9.9 | 38.2 | 24.5 |
+| N12 | 83 | 106.9 | 419.9 | 9.9 | 38.2 | 44.7 |
+| N30 | 83 | 101.8 | 854.4 | 9.9 | 38.2 | 78.9 |
+| N30_comp | 83 | 102.5 | 375.1 | 9.9 | 38.2 | 78.9 |
+
+Compression vs N=30: prompt tokens 1166.2 -> 687.5 (41.0% saved); probe score 4.8 -> 5
+
+Cost of 10,000 conversations x 30 turns ($1/M input, $5/M output):
+
+| Setting | chat in/out tokens per conv | chat only (USD) | + memory upkeep (USD) |
+|---|---|---|---|
+| N4 | 11,353 / 1,504 | 188.73 | 278.21 |
+| N12 | 21,078 / 1,876 | 304.58 | 395.26 |
+| N30 | 34,987 / 1,699 | 434.82 | 524.30 |
+| N30_comp | 20,626 / 915 | 252.01 | 341.60 |
+
+written reports/hw06/raw/part3_summary.json

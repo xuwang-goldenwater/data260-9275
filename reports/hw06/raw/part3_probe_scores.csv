@@ -1,0 +1,22 @@
+run_id,setting,probe_id,question,answer,score
+N4_20261018155608,N4,P1,"Who in my family has a food allergy, and to what?","In your family, Mia, your daughter, has a food allergy to tree nuts. Leo, your son, is vegetarian.",5
+N4_20261018155608,N4,P2,Where do I do my grocery shopping now?,You now do your grocery shopping at Costco.,5
+N4_20261018155608,N4,P3,"What is my son's name, and what diet does he follow?","Your son's name is Leo, and he follows a vegetarian diet.",5
+N4_20261018155608,N4,P4,When and where is our camping trip?,"Your camping trip is scheduled for November 14. You usually do grocery shopping at Costco, but you haven't specified where you do your grocery shopping now.",3
+N4_20261018155608,N4,P5,Which product did I buy last Tuesday?,You bought Honey Oat Granola Bars last Tuesday.,5
+N12_20261018161311,N12,P1,"Who in my family has a food allergy, and to what?","In your family, Mia, your daughter, has a food allergy to tree nuts, and Leo, your son, is a vegetarian.",5
+N12_20261018161311,N12,P2,Where do I do my grocery shopping now?,You now do your grocery shopping at Costco.,5
+N12_20261018161311,N12,P3,"What is my son's name, and what diet does he follow?","Your son's name is Leo, and he follows a vegetarian diet.",5
+N12_20261018161311,N12,P4,When and where is our camping trip?,Your camping trip is scheduled for November 14. You are going to Yosemite.,5
+N12_20261018161311,N12,P5,Which product did I buy last Tuesday?,"Last Tuesday, you bought Honey Oat Granola Bars.",5
+N30_20261018162044,N30,P1,"Who in my family has a food allergy, and to what?","- Mia has a food allergy to tree nuts.
+- Leo is a vegetarian.",4
+N30_20261018162044,N30,P2,Where do I do my grocery shopping now?,You now do your grocery shopping at Costco.,5
+N30_20261018162044,N30,P3,"What is my son's name, and what diet does he follow?","Your son's name is Leo, and he follows a vegetarian diet.",5
+N30_20261018162044,N30,P4,When and where is our camping trip?,"Your camping trip is on November 14, and you are going to Yosemite.",5
+N30_20261018162044,N30,P5,Which product did I buy last Tuesday?,You bought Honey Oat Granola Bars last Tuesday.,5
+N30_comp_20261018163016,N30_comp,P1,"Who in my family has a food allergy, and to what?","Your daughter Mia has a food allergy to tree nuts, and your son Leo is vegetarian.",5
+N30_comp_20261018163016,N30_comp,P2,Where do I do my grocery shopping now?,You now do your grocery shopping at Costco.,5
+N30_comp_20261018163016,N30_comp,P3,"What is my son's name, and what diet does he follow?","Your son's name is Leo, and he follows a vegetarian diet.",5
+N30_comp_20261018163016,N30_comp,P4,When and where is our camping trip?,"Your camping trip is on November 14, and you are going to Yosemite.",5
+N30_comp_20261018163016,N30_comp,P5,Which product did I buy last Tuesday?,You bought Honey Oat Granola Bars last Tuesday.,5

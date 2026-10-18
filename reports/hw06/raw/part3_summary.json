@@ -1,0 +1,138 @@
+{
+  "N4": {
+    "run_id": "N4_20261018155608",
+    "label": "SHORT_TERM_N=4",
+    "mean_prompt_tokens": 378.4,
+    "mean_completion_tokens": 50.1,
+    "mean_chat_latency_ms": 5881.2,
+    "mean_total_latency_ms": 9087.8,
+    "mean_tokens_by_section": {
+      "system_primer": 83,
+      "long_term_summary": 101.8,
+      "short_term_window": 121.0,
+      "current_message": 9.9,
+      "episodic_facts": 38.2
+    },
+    "mean_template_overhead": 24.5,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 3,
+      "P5": 5
+    },
+    "mean_probe_score": 4.6,
+    "per_conversation_tokens": {
+      "chat_in": 11353,
+      "chat_out": 1504,
+      "upkeep_in": 4658,
+      "upkeep_out": 858
+    },
+    "cost_10k_conversations_usd": {
+      "chat_only": 188.73,
+      "chat_plus_upkeep": 278.21
+    }
+  },
+  "N12": {
+    "run_id": "N12_20261018161311",
+    "label": "SHORT_TERM_N=12",
+    "mean_prompt_tokens": 702.6,
+    "mean_completion_tokens": 62.5,
+    "mean_chat_latency_ms": 10471.5,
+    "mean_total_latency_ms": 13981.8,
+    "mean_tokens_by_section": {
+      "system_primer": 83,
+      "long_term_summary": 106.9,
+      "short_term_window": 419.9,
+      "current_message": 9.9,
+      "episodic_facts": 38.2
+    },
+    "mean_template_overhead": 44.7,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 5,
+      "P5": 5
+    },
+    "mean_probe_score": 5,
+    "per_conversation_tokens": {
+      "chat_in": 21078,
+      "chat_out": 1876,
+      "upkeep_in": 4678,
+      "upkeep_out": 878
+    },
+    "cost_10k_conversations_usd": {
+      "chat_only": 304.58,
+      "chat_plus_upkeep": 395.26
+    }
+  },
+  "N30": {
+    "run_id": "N30_20261018162044",
+    "label": "SHORT_TERM_N=30",
+    "mean_prompt_tokens": 1166.2,
+    "mean_completion_tokens": 56.6,
+    "mean_chat_latency_ms": 14056.4,
+    "mean_total_latency_ms": 17088.9,
+    "mean_tokens_by_section": {
+      "system_primer": 83,
+      "long_term_summary": 101.8,
+      "short_term_window": 854.4,
+      "current_message": 9.9,
+      "episodic_facts": 38.2
+    },
+    "mean_template_overhead": 78.9,
+    "probe_scores": {
+      "P1": 4,
+      "P2": 5,
+      "P3": 5,
+      "P4": 5,
+      "P5": 5
+    },
+    "mean_probe_score": 4.8,
+    "per_conversation_tokens": {
+      "chat_in": 34987,
+      "chat_out": 1699,
+      "upkeep_in": 4658,
+      "upkeep_out": 858
+    },
+    "cost_10k_conversations_usd": {
+      "chat_only": 434.82,
+      "chat_plus_upkeep": 524.3
+    }
+  },
+  "N30_comp": {
+    "run_id": "N30_comp_20261018163016",
+    "label": "Compression: N=30, assistant replies cut to 1st sentence",
+    "mean_prompt_tokens": 687.5,
+    "mean_completion_tokens": 30.5,
+    "mean_chat_latency_ms": 6807.9,
+    "mean_total_latency_ms": 9595.1,
+    "mean_tokens_by_section": {
+      "system_primer": 83,
+      "long_term_summary": 102.5,
+      "short_term_window": 375.1,
+      "current_message": 9.9,
+      "episodic_facts": 38.2
+    },
+    "mean_template_overhead": 78.9,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 5,
+      "P5": 5
+    },
+    "mean_probe_score": 5,
+    "per_conversation_tokens": {
+      "chat_in": 20626,
+      "chat_out": 915,
+      "upkeep_in": 4659,
+      "upkeep_out": 860
+    },
+    "cost_10k_conversations_usd": {
+      "chat_only": 252.01,
+      "chat_plus_upkeep": 341.6
+    }
+  }
+}

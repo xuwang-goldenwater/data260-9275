@@ -259,3 +259,8 @@ memory-cost:
 	@mkdir -p reports/hw06/raw
 	@echo "===== memory-cost $(SETTINGS) $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
 	python -u code/hw06_memory_cost.py $(SETTINGS) 2>&1 | tee -a $(HW6_LOG)
+
+# Part 3: METRICS tables + cost estimate from raw/part3_turns.jsonl and the hand-filled scores
+memory-summary:
+	@echo "===== memory-summary $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
+	python -u code/hw06_cost_summary.py 2>&1 | tee -a $(HW6_LOG)
