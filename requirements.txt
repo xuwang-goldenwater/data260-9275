@@ -50,3 +50,6 @@ email-validator>=2.1 # pydantic EmailStr on the login body
 # Pinned below 2: in mcp 2.x FastMCP was renamed to MCPServer and
 # `from mcp.server.fastmcp import FastMCP` no longer imports.
 mcp[cli]>=1.26,<2
+
+# HW6 Part 1-2 - MongoDB document API and memory collections (database s9275_doc)
+pymongo>=4.6

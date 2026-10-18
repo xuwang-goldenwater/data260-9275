@@ -237,3 +237,18 @@ verify-hw05:
 	@mkdir -p reports/hw05
 	@echo "===== verify-hw05 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW5_LOG)
 	python -u verify_hw05.py 2>&1 | tee -a $(HW5_LOG)
+
+# ---- Homework 6 ----------------------------------------------------------------
+# MongoDB runs in Docker (no local install):
+#   docker run -d --name s9275-mongo -p 27017:27017 -v s9275_mongo_data:/data/db mongo:7.0
+HW6_LOG = reports/hw06/RUN_LOG.txt
+
+# Part 1-I: s9275_doc.recall_notices + $jsonSchema validator + indexes + 5 samples (re-runnable)
+mongo-init:
+	@mkdir -p reports/hw06
+	@echo "===== mongo-init $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
+	python -u code/doc_app/init_db.py --seed 2>&1 | tee -a $(HW6_LOG)
+
+# Part 1-II/Part 2: document API on PORT_BASE 8275 (stop run-hw04/run-hw05 first)
+run-hw06:
+	python code/doc_app/main.py

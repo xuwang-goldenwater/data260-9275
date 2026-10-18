@@ -1,0 +1,489 @@
+{
+  "info": {
+    "name": "DATA260 HW6 s9275 - Recall Notice Documents (MongoDB)",
+    "description": "Run folders top to bottom. Folder 4 deletes the notice created in folder 1, so the collection can be re-run.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "notice_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1 CRUD success",
+      "item": [
+        {
+          "name": "1.1 Create notice (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Peanut Butter Cookies 8 oz\",\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0901-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  }\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 201', () => pm.response.to.have.status(201));",
+                  "const j = pm.response.json(); pm.collectionVariables.set('notice_id', j.id);",
+                  "pm.test('status defaulted to ongoing', () => pm.expect(j.status).to.eql('ongoing'));",
+                  "pm.test('timestamps set', () => pm.expect(j.created_at).to.be.a('string'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "1.2 Get all notices (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('count >= 6', () => pm.expect(pm.response.json().count).to.be.at.least(6));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "1.3 Get one notice (GET /:id)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/{{notice_id}}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "1.4 Update notice (PUT /:id)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/{{notice_id}}"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Peanut Butter Cookies 8 oz\",\n  \"reason\": \"Undeclared tree nuts; all affected lots removed from shelves.\",\n  \"recall_number\": \"F-0901-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  },\n  \"status\": \"completed\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));",
+                  "const j = pm.response.json();",
+                  "pm.test('status now completed', () => pm.expect(j.status).to.eql('completed'));",
+                  "pm.test('updated_at changed', () => pm.expect(j.updated_at).to.not.eql(j.created_at));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "1.5 Filter by status (GET ?status=completed)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices?status=completed"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 200', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2 Validation errors",
+      "item": [
+        {
+          "name": "2.1 Missing required fields -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Mystery Snack\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.2 Invalid enum values -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Peanut Butter Cookies 8 oz\",\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0902-2026\",\n  \"category\": \"Color\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  },\n  \"status\": \"lost\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.3 Wrong data types -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": 12345,\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0903-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"next tuesday\",\n  \"firm\": \"Golden Oven\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.4 product_name over 100 chars -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0904-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  }\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.5 Unknown field (created_at) -> 422",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Peanut Butter Cookies 8 oz\",\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0905-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  },\n  \"created_at\": \"2020-01-01T00:00:00Z\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 422', () => pm.response.to.have.status(422));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.6 Duplicate recall_number -> 409",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_name\": \"Peanut Butter Cookies 8 oz\",\n  \"reason\": \"Undeclared tree nuts (almonds).\",\n  \"recall_number\": \"F-0101-2026\",\n  \"category\": \"Undeclared Allergen\",\n  \"recall_date\": \"2026-10-18T09:30:00Z\",\n  \"firm\": {\n    \"name\": \"Golden Oven Bakery\",\n    \"state\": \"CA\"\n  }\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 409', () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.7 Malformed JSON -> 400",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"product_name\": \"Broken\", "
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2.8 Not JSON (text/plain) -> 415",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "product_name=Broken"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 415', () => pm.response.to.have.status(415));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 Id errors",
+      "item": [
+        {
+          "name": "3.1 Invalid id format -> 400",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/abc"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3.2 Valid id, not found -> 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/000000000000000000000000"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 Delete",
+      "item": [
+        {
+          "name": "4.1 Delete notice (DELETE /:id) -> 204",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/{{notice_id}}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 204', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4.2 Delete again -> 404",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8275/api/doc/notices/{{notice_id}}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('status is 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
