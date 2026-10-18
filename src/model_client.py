@@ -49,9 +49,14 @@ class ModelClient:
         model: str = DEFAULT_MODEL,
         temperature: float = 0.0,
         host: Optional[str] = None,
+        options: Optional[Dict[str, Any]] = None,
     ) -> None:
         self.model = model
         self.temperature = temperature
+        # HW6: extra Ollama options sent on every call, e.g. {"num_ctx": 8192}.
+        # Ollama's default context window (4096 for qwen2.5:3b) silently drops
+        # the oldest prompt tokens, which would hide what memory actually sends.
+        self.options: Dict[str, Any] = dict(options or {})
         self._client = ollama.Client(host=host) if host else ollama.Client()
 
         # cumulative accounting across the life of this client
@@ -68,6 +73,7 @@ class ModelClient:
         temperature: Optional[float] = None,
         response_format: Optional[Any] = None,
         think: bool = False,
+        max_tokens: Optional[int] = None,
     ) -> ModelResponse:
         """Send a chat conversation and return the model's reply.
 
@@ -76,6 +82,7 @@ class ModelClient:
                          what it asks for comes back in ModelResponse.tool_calls
         temperature      overrides the client default for this call only
         response_format  Ollama `format` value: "json" or a JSON schema dict
+        max_tokens       HW6: upper bound on reply tokens (Ollama num_predict)
         think            qwen3 and other reasoning models emit a thinking block
                          unless this is turned off; off by default so the reply
                          is the answer itself
@@ -85,8 +92,10 @@ class ModelClient:
         kwargs: Dict[str, Any] = {
             "model": self.model,
             "messages": messages,
-            "options": {"temperature": temp},
+            "options": {**self.options, "temperature": temp},
         }
+        if max_tokens is not None:              # HW6: cap the reply length (num_predict)
+            kwargs["options"]["num_predict"] = max_tokens
         if tools:
             kwargs["tools"] = tools
         if response_format is not None:

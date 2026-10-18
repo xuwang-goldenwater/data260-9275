@@ -2,7 +2,7 @@
 Recall Notice Document API - HW6 (MongoDB).
 
 Part 1: CRUD on s9275_doc.recall_notices   (routers/notices.py)
-Part 2 will add /api/chat and the memory endpoints to this same app.
+Part 2: /api/chat, /api/memory/{user_id}, /api/aggregate/{user_id}   (routers/chat.py)
 
 Run:  make run-hw06      (API on http://localhost:8275, docs at /docs)
 Stop run-hw04 / run-hw05 first: they use the same port.
@@ -11,10 +11,11 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 import config
 import db
+from routers.chat import router as chat_router
 from routers.notices import router as notices_router
 
 app = FastAPI(title="Recall Notice Document API", version="6.0.0",
@@ -70,6 +71,26 @@ async def unexpected_error(request: Request, exc: Exception):
 
 
 app.include_router(notices_router)
+app.include_router(chat_router)            # Part 2: /api/chat, /api/memory, /api/aggregate
+
+
+@app.on_event("startup")
+def create_memory_indexes():
+    """Indexes for messages / summaries / episodes (create_index is idempotent)."""
+    try:
+        import memory
+        memory.ensure_indexes()
+    except Exception as exc:              # API still starts; /api/health reports MongoDB down
+        print(f"[warn] memory indexes not created: {exc}")
+
+
+STATIC = config.ROOT / "code" / "doc_app" / "static"
+
+
+@app.get("/chat", include_in_schema=False)
+def chat_page():
+    """Part 2 mini chat page; same origin as the API, so no CORS needed."""
+    return FileResponse(STATIC / "chat.html")
 
 
 @app.get("/api/health")

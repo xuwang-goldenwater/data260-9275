@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RecallBot Memory Chat</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1d2330; --muted:#667085; --line:#e3e6eb;
+          --user:#1f6feb; --bot:#eef1f5; --accent:#0f766e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.45 -apple-system, system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:12px 16px; background:var(--card); border-bottom:1px solid var(--line);
+           display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  header h1 { font-size:16px; margin:0 12px 0 0; }
+  header label { font-size:13px; color:var(--muted); }
+  header input { width:140px; padding:4px 6px; border:1px solid var(--line); border-radius:6px; }
+  header button { padding:5px 10px; border:1px solid var(--line); background:#fff; border-radius:6px; cursor:pointer; }
+  main { display:grid; grid-template-columns: minmax(0,3fr) minmax(0,2fr); gap:12px; padding:12px; height:calc(100vh - 58px); }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; display:flex; flex-direction:column; min-height:0; }
+  #log { flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:8px; }
+  .msg { max-width:85%; padding:8px 11px; border-radius:12px; white-space:pre-wrap; }
+  .user { align-self:flex-end; background:var(--user); color:#fff; }
+  .bot  { align-self:flex-start; background:var(--bot); }
+  .meta { font-size:11px; color:var(--muted); margin-top:3px; }
+  form { display:flex; gap:8px; padding:10px; border-top:1px solid var(--line); }
+  form input { flex:1; padding:9px 10px; border:1px solid var(--line); border-radius:8px; font-size:15px; }
+  form button { padding:9px 16px; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+  form button:disabled { opacity:.5; cursor:wait; }
+  #side { padding:12px; overflow-y:auto; font-size:13px; }
+  #side h2 { font-size:13px; margin:12px 0 4px; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; }
+  #side h2:first-child { margin-top:0; }
+  #side pre { white-space:pre-wrap; background:#f8f9fb; border:1px solid var(--line); border-radius:6px; padding:6px 8px; margin:0; }
+  #side li { margin-bottom:3px; }
+  @media (max-width: 760px) { main { grid-template-columns:1fr; height:auto; } #log { min-height:50vh; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>RecallBot · Xu Wang · DATA 260 HW6</h1>
+  <label>user_id <input id="user" value="xu_wang"></label>
+  <label>session <input id="session" placeholder="(new)"></label>
+  <button type="button" id="newSession">New session</button>
+  <button type="button" id="showMemory">GET /api/memory</button>
+  <button type="button" id="showAggregate">GET /api/aggregate</button>
+</header>
+<main>
+  <section class="panel">
+    <div id="log"></div>
+    <form id="form">
+      <input id="text" autocomplete="off" placeholder="Type a message…" required>
+      <button id="send">Send</button>
+    </form>
+  </section>
+  <aside class="panel" id="side"><p>Memory used for each turn appears here.</p></aside>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const log = $("log"), side = $("side");
+const esc = (s) => String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+function bubble(cls, text, meta) {
+  const div = document.createElement("div");
+  div.className = "msg " + cls;
+  div.textContent = text;
+  if (meta) { const m = document.createElement("div"); m.className = "meta"; m.textContent = meta; div.appendChild(m); }
+  log.appendChild(div); log.scrollTop = log.scrollHeight;
+}
+
+function showUsed(r) {
+  const u = r.memory_used, w = r.memory_written, st = u.short_term;
+  side.innerHTML = `
+    <h2>Short-term window (N=${st.n})</h2><p>${st.count} earlier message(s) in the prompt</p>
+    <h2>Long-term summary</h2>
+    <pre>lifetime:\n${esc(u.long_term_summary.lifetime || "(none yet)")}\n\nsession:\n${esc(u.long_term_summary.session || "(none yet)")}</pre>
+    <h2>Episodic facts retrieved (top-k)</h2>
+    <ul>${u.episodic_facts.map(f => `<li>${esc(f.fact)} <small>(cos ${f.score}, imp ${f.importance})</small></li>`).join("") || "<li>none</li>"}</ul>
+    <h2>Written this turn</h2>
+    <ul>${w.episodes_added.map(f => `<li>+ ${esc(f.fact)} <small>(imp ${f.importance})</small></li>`).join("") || "<li>no new facts</li>"}
+        ${w.summaries.map(s => `<li>summary updated: ${s.scope}</li>`).join("")}</ul>
+    <h2>Usage</h2><p>prompt ${r.usage.prompt_tokens} tok · reply ${r.usage.completion_tokens} tok · ${(r.usage.total_latency_ms/1000).toFixed(1)} s</p>`;
+}
+
+async function showJson(path) {
+  const res = await fetch(path + encodeURIComponent($("user").value));
+  side.innerHTML = `<h2>${esc(path)}${esc($("user").value)}</h2><pre>${esc(JSON.stringify(await res.json(), null, 2))}</pre>`;
+}
+
+$("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const text = $("text").value.trim(); if (!text) return;
+  bubble("user", text); $("text").value = ""; $("send").disabled = true;
+  try {
+    const body = { user_id: $("user").value, message: text };
+    if ($("session").value) body.session_id = $("session").value;
+    const res = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const r = await res.json();
+    if (!res.ok) { bubble("bot", "Error " + res.status + ": " + JSON.stringify(r.detail || r.errors || r)); return; }
+    $("session").value = r.session_id;
+    const st = r.memory_used.short_term;
+    bubble("bot", r.reply, `window ${st.count} · facts ${r.memory_used.episodic_facts.length} · ${(r.usage.total_latency_ms/1000).toFixed(1)} s`);
+    showUsed(r);
+  } catch (err) { bubble("bot", "Request failed: " + err); }
+  finally { $("send").disabled = false; $("text").focus(); }
+});
+$("newSession").onclick = () => { $("session").value = ""; log.innerHTML = ""; };
+$("showMemory").onclick = () => showJson("/api/memory/");
+$("showAggregate").onclick = () => showJson("/api/aggregate/");
+</script>
+</body>
+</html>

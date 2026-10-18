@@ -1,0 +1,231 @@
+{
+  "episodes": [
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "Xu lives in San Jose.",
+      "importance": 1,
+      "created_at": {
+        "$date": "2026-10-18T22:10:21.954Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "Xu does her grocery shopping at Safeway.",
+      "importance": 1,
+      "created_at": {
+        "$date": "2026-10-18T22:10:21.960Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User's daughter has a nut allergy.",
+      "importance": 1,
+      "created_at": {
+        "$date": "2026-10-18T22:10:38.080Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User checks food labels carefully.",
+      "importance": 0.7,
+      "created_at": {
+        "$date": "2026-10-18T22:10:38.082Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User has a daughter.",
+      "importance": 0.5,
+      "created_at": {
+        "$date": "2026-10-18T22:10:38.084Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User has a tree nut allergy.",
+      "importance": 1,
+      "created_at": {
+        "$date": "2026-10-18T22:10:54.018Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User lives in San Jose.",
+      "importance": 0.2,
+      "created_at": {
+        "$date": "2026-10-18T22:10:54.021Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User prefers gluten-free products.",
+      "importance": 0.1,
+      "created_at": {
+        "$date": "2026-10-18T22:10:54.022Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User buys a lot of frozen spinach for smoothies.",
+      "importance": 0.5,
+      "created_at": {
+        "$date": "2026-10-18T22:11:19.904Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User prefers short answers with bullet points.",
+      "importance": 0.2,
+      "created_at": {
+        "$date": "2026-10-18T22:12:03.499Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User plans a camping trip next month.",
+      "importance": 0.8,
+      "created_at": {
+        "$date": "2026-10-18T22:12:25.896Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User will pack canned salmon for the trip.",
+      "importance": 0.7,
+      "created_at": {
+        "$date": "2026-10-18T22:12:25.902Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User is planning a trip outdoors.",
+      "importance": 0.6,
+      "created_at": {
+        "$date": "2026-10-18T22:12:25.904Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User switched to Costco from Safeway last week.",
+      "importance": 0.8,
+      "created_at": {
+        "$date": "2026-10-18T22:13:19.745Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User has a family member with allergies.",
+      "importance": 0.8,
+      "created_at": {
+        "$date": "2026-10-18T22:14:01.715Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User needs to remind someone about family allergies.",
+      "importance": 0.7,
+      "created_at": {
+        "$date": "2026-10-18T22:14:01.718Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User is looking for information about family allergies.",
+      "importance": 0.6,
+      "created_at": {
+        "$date": "2026-10-18T22:14:01.720Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User usually shops at Walmart.",
+      "importance": 0.3,
+      "created_at": {
+        "$date": "2026-10-18T22:14:50.443Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User prefers coffee over tea.",
+      "importance": 0.7,
+      "created_at": {
+        "$date": "2026-10-18T22:15:11.077Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User lives in New York City.",
+      "importance": 0.8,
+      "created_at": {
+        "$date": "2026-10-18T22:15:11.082Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "fact": "User enjoys hiking on weekends.",
+      "importance": 0.6,
+      "created_at": {
+        "$date": "2026-10-18T22:15:11.083Z"
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "scope": "session",
+      "text": "- User Xu lives in San Jose and shops at Safeway.\n- User Xu's daughter has a tree nut allergy.\n- User Xu buys granola bars and frozen spinach for smoothies.",
+      "created_at": {
+        "$date": "2026-10-18T22:11:25.284Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "scope": "session",
+      "text": "- Listeria is a harmful bacteria.\n- Frozen vegetables are generally safe but check labels for warnings.\n- Canned salmon is safe to pack for camping.\n- Canned fish can be recalled for botulism.",
+      "created_at": {
+        "$date": "2026-10-18T22:12:49.827Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": null,
+      "scope": "user",
+      "text": "- Listeria is a harmful bacteria.\n- Frozen vegetables are generally safe but should be checked for warnings on labels.\n- Canned salmon is safe to pack for camping, but canned fish can be recalled for botulism.",
+      "created_at": {
+        "$date": "2026-10-18T22:12:55.603Z"
+      }
+    },
+    {
+      "user_id": "xu_wang",
+      "session_id": "d7777a5ccae9",
+      "scope": "session",
+      "text": "- You switched from Safeway to Costco last week.\n- You have a daughter with a nut allergy and you have a tree nut allergy.\n- You check food labels carefully, especially for high-risk groups.",
+      "created_at": {
+        "$date": "2026-10-18T22:15:17.869Z"
+      }
+    }
+  ]
+}
