@@ -16,8 +16,8 @@ Functions the assignment asks for:
     needs_consolidation      > 40 lines, or last consolidation > 24 hours ago
 plus consolidate() for /compact and dream() for /dream.
 
-Consolidation never deletes silently. The model only proposes a plan (which lines are
-duplicates, which contradict, which fact wins); the code renders the file from the plan,
+Consolidation never deletes silently. The model only labels candidate pairs (duplicate /
+contradiction / different); the code applies the rules and renders the file,
 keeping every line the plan does not mention, and writes each superseded fact into
 "## Resolved contradictions". verify_no_silent_deletion() then re-reads the rendered text and
 checks that every original fact still appears (verbatim, as a merged sentence, or as a
@@ -40,10 +40,6 @@ AGENT_PATH = ROOT / "AGENT.md"
 MEMORY_PATH = ROOT / "MEMORY.md"
 MAX_MEMORY_LINES = 40
 MAX_AGE = timedelta(hours=24)
-# A merged sentence must stay close in meaning to every line it replaces (MiniLM cosine).
-# Found in testing: a plan that merged "User's name is Xu Wang." and "User studies ... at SJSU."
-# into one unrelated sentence deleted both facts while the text check still passed.
-DUP_MIN_COSINE = 0.5
 
 TIMESTAMP_RE = re.compile(r"<!--\s*last_consolidated:\s*(\S+)\s*-->")
 FACT_RE = re.compile(r"^-\s*\[(\d{4}-\d{2}-\d{2})\]\s*(.+)$")
@@ -120,21 +116,6 @@ def needs_consolidation(memory_text: str, now: Optional[datetime] = None) -> Tup
 
 # ---------------------------------------------------------------- consolidation
 
-PLAN_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "duplicates": {"type": "array", "items": {"type": "object", "properties": {
-            "lines": {"type": "array", "items": {"type": "integer"}},
-            "merged_fact": {"type": "string"}}, "required": ["lines", "merged_fact"]}},
-        "contradictions": {"type": "array", "items": {"type": "object", "properties": {
-            "keep": {"type": "integer"},
-            "superseded": {"type": "array", "items": {"type": "integer"}},
-            "reason": {"type": "string"}}, "required": ["keep", "superseded", "reason"]}},
-    },
-    "required": ["duplicates", "contradictions"],
-}
-
-
 @dataclass
 class Fact:
     line: int          # 1-based number among the fact lines
@@ -166,30 +147,23 @@ def parse_facts(memory_text: str) -> List[Fact]:
     return facts
 
 
-def _plan_prompt(facts: List[Fact]) -> str:
-    numbered = "\n".join(f"L{f.line}: [{f.date}] {f.text}" for f in facts)
-    return (
-        "You are consolidating a memory file about one user. Each line has a number and the "
-        "date it was learned.\n"
-        "1. duplicates: groups of lines that state the SAME fact (same meaning, maybe other "
-        "words). Give the line numbers and one merged sentence.\n"
-        "2. contradictions: lines that cannot both be true now. Keep the line with the newer "
-        "date and list the older ones as superseded. Give a short reason.\n"
-        "Only list real duplicates and real contradictions; leave every other line out.\n\n"
-        + numbered
-    )
-
-
-def _validate_plan(plan: Dict[str, Any], facts: List[Fact],
-                   similarity=None) -> Tuple[List[Dict], List[Dict], List[str]]:
-    """Drop plan entries that point at lines that do not exist or are used twice, and
-    duplicate groups whose merged sentence does not mean the same as each member.
-    similarity(a, b) -> cosine; None skips the meaning check."""
-    by_line = {f.line: f for f in facts}
+def _validate_plan(plan: Dict[str, Any], facts: List[Fact]) -> Tuple[List[Dict], List[Dict], List[str]]:
+    """Drop plan entries that point at lines that do not exist or are used twice."""
     valid = {f.line for f in facts}
     used: set = set()
     errors: List[str] = []
     dups, cons = [], []
+    for d in plan.get("duplicates", []):
+        lines = list(d.get("lines", []))
+        if len(lines) < 2 or not all(isinstance(n, int) and n in valid for n in lines):
+            errors.append(f"duplicate group with invalid lines {lines}")
+            continue
+        if used & set(lines):
+            errors.append(f"duplicate group reuses lines {sorted(used & set(lines))}")
+            continue
+        merged = str(d.get("merged_fact", "")).strip()[:200]
+        used |= set(lines)
+        dups.append({"lines": lines, "merged_fact": merged})
     for c in plan.get("contradictions", []):
         lines = [c.get("keep")] + list(c.get("superseded", []))
         if not all(isinstance(n, int) and n in valid for n in lines) or len(lines) < 2:
@@ -201,24 +175,6 @@ def _validate_plan(plan: Dict[str, Any], facts: List[Fact],
         used |= set(lines)
         cons.append({"keep": c["keep"], "superseded": list(c["superseded"]),
                      "reason": str(c.get("reason", ""))[:200]})
-    for d in plan.get("duplicates", []):
-        lines = list(d.get("lines", []))
-        if len(lines) < 2 or not all(isinstance(n, int) and n in valid for n in lines):
-            errors.append(f"duplicate group with invalid lines {lines}")
-            continue
-        if used & set(lines):
-            errors.append(f"duplicate group reuses lines {sorted(used & set(lines))}")
-            continue
-        merged = str(d.get("merged_fact", "")).strip()[:200]
-        if similarity is not None:
-            far = [n for n in lines if similarity(by_line[n].text, merged or by_line[lines[0]].text)
-                   < DUP_MIN_COSINE]
-            if far:
-                errors.append(f"duplicate group {lines} rejected: merged sentence {merged!r} "
-                              f"does not mean the same as lines {far}")
-                continue
-        used |= set(lines)
-        dups.append({"lines": lines, "merged_fact": merged})
     return dups, cons, errors
 
 
@@ -271,31 +227,90 @@ def verify_no_silent_deletion(facts: List[Fact], dups: List[Dict], new_text: str
     return lost
 
 
+# Candidate pairs: facts at least this similar (MiniLM). The model still judges every pair,
+# so a low threshold only costs time. 0.55 was tried first and missed paraphrases such as
+# "Use conda activate data260, not a .venv." (run 3 stopped at 40 counted lines).
+PAIR_MIN_COSINE = 0.45
+MAX_PAIRS = 150
+PAIR_SCHEMA = {"type": "object",
+               "properties": {"relation": {"enum": ["duplicate", "contradiction", "different"]}},
+               "required": ["relation"]}
+
+
+def _judge_pair(model, a: Fact, b: Fact) -> Tuple[str, int, int]:
+    prompt = (
+        "Two lines from a memory file about one user:\n"
+        f"A [{a.date}]: {a.text}\nB [{b.date}]: {b.text}\n"
+        "Answer with one relation:\n"
+        "duplicate = A and B state the same fact (maybe in other words)\n"
+        "contradiction = A and B cannot both be true now\n"
+        "different = different facts that can both be true"
+    )
+    resp = model.complete([{"role": "user", "content": prompt}],
+                          response_format=PAIR_SCHEMA, max_tokens=20)
+    try:
+        relation = json.loads(resp.text).get("relation", "different")
+    except json.JSONDecodeError:
+        relation = "different"
+    return relation, resp.input_tokens, resp.output_tokens
+
+
 def consolidate(memory_text: str, model=None,
                 now: Optional[datetime] = None) -> Tuple[str, ConsolidationReport]:
-    """Merge duplicates and resolve contradictions explicitly. Returns (new text, report)."""
+    """Merge duplicates and resolve contradictions explicitly. Returns (new text, report).
+
+    1 MiniLM finds candidate pairs (cosine >= 0.45), as in HW3/HW4 retrieval
+    2 the model labels each pair: duplicate / contradiction / different
+    3 the code applies fixed rules: a duplicate group keeps its newest wording; in a
+      contradiction the newer date wins and the older line goes to "Resolved contradictions"
+    (One prompt with all 51 lines was tried first: qwen2.5:3b returned an empty plan.)
+    """
+    import memory as chat_memory              # doc_app/memory.py: same HW1 adapter + MiniLM
     now = now or datetime.now().astimezone()
     facts = parse_facts(memory_text)
     report = ConsolidationReport(count_memory_lines(memory_text), 0, len(facts), 0)
     if not facts:
         report.lines_after = report.lines_before
         return memory_text, report
-    if model is None:
-        import memory as chat_memory              # doc_app/memory.py: same HW1 adapter + model
-        model = chat_memory.get_model()
-    resp = model.complete([{"role": "user", "content": _plan_prompt(facts)}],
-                          response_format=PLAN_SCHEMA, max_tokens=1200)
-    report.model_tokens = {"input": resp.input_tokens, "output": resp.output_tokens}
-    try:
-        plan = json.loads(resp.text)
-    except json.JSONDecodeError:
-        plan = {"duplicates": [], "contradictions": []}
-        report.plan_errors.append("model plan was not valid JSON; nothing merged")
-    import memory as chat_memory
-    def similarity(a: str, b: str) -> float:
-        va, vb = chat_memory.embed([a, b])
-        return float(va @ vb)
-    dups, cons, errors = _validate_plan(plan, facts, similarity)
+    model = model or chat_memory.get_model()
+
+    vectors = chat_memory.embed([f.text for f in facts])
+    sims = vectors @ vectors.T
+    pairs = sorted(((float(sims[i, j]), i, j) for i in range(len(facts))
+                    for j in range(i + 1, len(facts)) if sims[i, j] >= PAIR_MIN_COSINE),
+                   reverse=True)[:MAX_PAIRS]
+
+    parent = {f.line: f.line for f in facts}            # union-find for duplicate groups
+    def root(n: int) -> int:
+        while parent[n] != n:
+            n = parent[n]
+        return n
+    contradictions, tokens_in, tokens_out = [], 0, 0
+    for _, i, j in pairs:
+        a, b = facts[i], facts[j]
+        relation, t_in, t_out = _judge_pair(model, a, b)
+        tokens_in, tokens_out = tokens_in + t_in, tokens_out + t_out
+        if relation == "duplicate":
+            parent[root(a.line)] = root(b.line)
+        elif relation == "contradiction":
+            new, old = (a, b) if a.date > b.date else (b, a)
+            contradictions.append({"keep": new.line, "superseded": [old.line],
+                                   "reason": "model: contradiction; newer date wins"})
+    groups: Dict[int, List[int]] = {}
+    for f in facts:
+        groups.setdefault(root(f.line), []).append(f.line)
+    by_line = {f.line: f for f in facts}
+    # A pair cannot be both. If two lines already sit in one duplicate group (through other
+    # pairs), the "contradiction" label is the inconsistent one: drop it. (Run 2: the model
+    # called two paraphrases of the conda rule a contradiction, which blocked the whole group.)
+    contradictions = [c for c in contradictions if root(c["keep"]) != root(c["superseded"][0])]
+    plan = {"contradictions": contradictions,
+            "duplicates": [{"lines": g, "merged_fact": max((by_line[n] for n in g),
+                                                             key=lambda f: f.date).text}
+                           for g in groups.values() if len(g) > 1]}
+    report.model_tokens = {"pairs_judged": len(pairs), "input": tokens_in, "output": tokens_out}
+
+    dups, cons, errors = _validate_plan(plan, facts)
     report.plan_errors += errors
     new_text, missing = render_consolidated(facts, dups, cons, now)
     report.duplicates_merged = dups

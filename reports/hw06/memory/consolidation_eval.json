@@ -1,0 +1,172 @@
+{
+  "duplicates": {
+    "D1": {
+      "topic": "daughter Mia - tree nut allergy",
+      "expected_lines": [
+        4,
+        17,
+        25,
+        33
+      ],
+      "merged_together": [
+        4,
+        17,
+        25,
+        33
+      ],
+      "verdict": "merged"
+    },
+    "D2": {
+      "topic": "short bullet answers",
+      "expected_lines": [
+        9,
+        19,
+        26,
+        36
+      ],
+      "merged_together": [
+        9,
+        19,
+        26,
+        36
+      ],
+      "verdict": "merged"
+    },
+    "D3": {
+      "topic": "repository name",
+      "expected_lines": [
+        2,
+        16,
+        28,
+        39
+      ],
+      "merged_together": [
+        2,
+        16,
+        28,
+        39
+      ],
+      "verdict": "merged"
+    },
+    "D4": {
+      "topic": "port 8275",
+      "expected_lines": [
+        6,
+        18,
+        24,
+        34
+      ],
+      "merged_together": [
+        18,
+        24,
+        34
+      ],
+      "verdict": "partly merged"
+    },
+    "D5": {
+      "topic": "conda env data260, no .venv",
+      "expected_lines": [
+        8,
+        14,
+        22,
+        32
+      ],
+      "merged_together": [
+        14,
+        32
+      ],
+      "verdict": "partly merged"
+    },
+    "D6": {
+      "topic": "name visible in screenshots",
+      "expected_lines": [
+        12,
+        20,
+        30
+      ],
+      "merged_together": [
+        12,
+        20,
+        30
+      ],
+      "verdict": "merged"
+    }
+  },
+  "contradictions": {
+    "C1": {
+      "topic": "store: Costco replaces Safeway",
+      "expected_keep": 40,
+      "model": null,
+      "verdict": "missed (both lines kept, conflict left unresolved)"
+    },
+    "C2": {
+      "topic": "chat model",
+      "expected_keep": 50,
+      "model": null,
+      "verdict": "missed (both lines kept, conflict left unresolved)"
+    },
+    "C3": {
+      "topic": "report tool",
+      "expected_keep": 15,
+      "model": null,
+      "verdict": "missed (both lines kept, conflict left unresolved)"
+    },
+    "C5": {
+      "topic": "HW6 deadline",
+      "expected_keep": 41,
+      "model": {
+        "keep": 41,
+        "superseded": [
+          31
+        ],
+        "reason": "model: contradiction; newer date wins"
+      },
+      "verdict": "correct"
+    }
+  },
+  "traps": {
+    "C4": {
+      "topic": "home city vs. a temporary trip (newest-wins would wrongly drop San Jose)",
+      "lines": [
+        1,
+        44
+      ],
+      "verdict": "WRONG: superseded ['User lives in San Jose.']"
+    }
+  },
+  "false_merges": [
+    {
+      "lines": [
+        3,
+        12,
+        20,
+        30
+      ],
+      "texts": [
+        "User's name is Xu Wang.",
+        "Every terminal screenshot must show the name Xu Wang.",
+        "Terminal screenshots need the name Xu Wang visible.",
+        "The name Xu Wang must be visible in every terminal screenshot."
+      ]
+    }
+  ],
+  "incorrectly_resolved": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "summary": {
+    "file_lines_before": 55,
+    "file_lines_after": 42,
+    "counted_lines_before": 53,
+    "counted_lines_after": 39,
+    "under_40": true,
+    "facts_before": 51,
+    "facts_after": 34,
+    "silently_deleted_lines": [],
+    "plan_errors": [
+      "contradiction reuses lines [14]"
+    ]
+  }
+}

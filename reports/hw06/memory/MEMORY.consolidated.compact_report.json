@@ -1,0 +1,84 @@
+{
+  "lines_before": 53,
+  "lines_after": 39,
+  "facts_before": 51,
+  "facts_after": 34,
+  "duplicates_merged": [
+    {
+      "lines": [
+        2,
+        16,
+        28,
+        39
+      ],
+      "merged_fact": "The repository xuwang-goldenwater/data260-9275 is public."
+    },
+    {
+      "lines": [
+        3,
+        12,
+        20,
+        30
+      ],
+      "merged_fact": "The name Xu Wang must be visible in every terminal screenshot."
+    },
+    {
+      "lines": [
+        4,
+        17,
+        25,
+        33
+      ],
+      "merged_fact": "Mia has a tree nut allergy."
+    },
+    {
+      "lines": [
+        9,
+        19,
+        26,
+        36
+      ],
+      "merged_fact": "Keep replies short, as bullet points."
+    },
+    {
+      "lines": [
+        14,
+        32
+      ],
+      "merged_fact": "Activate the data260 conda environment before running scripts."
+    },
+    {
+      "lines": [
+        18,
+        24,
+        34
+      ],
+      "merged_fact": "PORT_BASE 8275 is the port for every homework API."
+    }
+  ],
+  "contradictions_resolved": [
+    {
+      "keep": 41,
+      "superseded": [
+        31
+      ],
+      "reason": "model: contradiction; newer date wins"
+    },
+    {
+      "keep": 44,
+      "superseded": [
+        1
+      ],
+      "reason": "model: contradiction; newer date wins"
+    }
+  ],
+  "not_accounted": [],
+  "plan_errors": [
+    "contradiction reuses lines [14]"
+  ],
+  "model_tokens": {
+    "pairs_judged": 44,
+    "input": 5816,
+    "output": 411
+  }
+}
