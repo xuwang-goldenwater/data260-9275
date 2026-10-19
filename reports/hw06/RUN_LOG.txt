@@ -383,3 +383,52 @@ commit d34f93396b2edf191463dec7a4c3826afa7fe166
 [PASS] P4 CLI /help lists /memory /compact /dream  
 
 34 passed, 0 failed -> reports/hw06/verification.json
+===== memory-consolidate 2026-10-18 21:30:41 =====
+Xu Wang | DATA 260 HW6 Part 4 | consolidation test | 2026-10-18 21:30:41
+original: 55 lines in file, 53 counted, 51 facts; due: (True, ['53 lines > 40', 'last consolidated 204.5 h ago > 24 h'])
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/hw06_consolidation_test.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "/Users/Sunny/Documents/data260-9275/code/hw06_consolidation_test.py", line 81, in main
+    print(session.cmd_compact())
+          ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/Sunny/Documents/data260-9275/code/file_memory_cli.py", line 55, in cmd_compact
+    new_text, rep = fm.consolidate(mem)
+                    ~~~~~~~~~~~~~~^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/file_memory.py", line 268, in consolidate
+    import memory as chat_memory              # doc_app/memory.py: same HW1 adapter + MiniLM
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/doc_app/memory.py", line 37, in <module>
+    from pymongo import ASCENDING, DESCENDING
+ModuleNotFoundError: No module named 'pymongo'
+===== memory-consolidate 2026-10-18 21:33:05 =====
+Xu Wang | DATA 260 HW6 Part 4 | consolidation test | 2026-10-18 21:33:05
+original: 55 lines in file, 53 counted, 51 facts; due: (True, ['53 lines > 40', 'last consolidated 204.6 h ago > 24 h'])
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6610.66it/s]
+/compact: 53 lines -> 39 lines; 51 facts -> 34 facts (under 40)
+  duplicate groups merged: 6
+  contradictions resolved: 2
+  silently deleted lines: none
+  plan entries rejected: ['contradiction reuses lines [14]']
+  report: MEMORY.consolidated.compact_report.json
+
+duplicates:
+  D1 daughter Mia - tree nut allergy    merged         [4, 17, 25, 33]
+  D2 short bullet answers               merged         [9, 19, 26, 36]
+  D3 repository name                    merged         [2, 16, 28, 39]
+  D4 port 8275                          partly merged  [18, 24, 34]
+  D5 conda env data260, no .venv        partly merged  [14, 32]
+  D6 name visible in screenshots        merged         [12, 20, 30]
+contradictions:
+  C1 store: Costco replaces Safeway     missed (both lines kept, conflict left unresolved)
+  C2 chat model                         missed (both lines kept, conflict left unresolved)
+  C3 report tool                        missed (both lines kept, conflict left unresolved)
+  C5 HW6 deadline                       correct
+traps:
+  C4 home city vs. a temporary trip (ne WRONG: superseded ['User lives in San Jose.']
+false merges: [{'lines': [3, 12, 20, 30], 'texts': ["User's name is Xu Wang.", 'Every terminal screenshot must show the name Xu Wang.', 'Terminal screenshots need the name Xu Wang visible.', 'The name Xu Wang must be visible in every terminal screenshot.']}]
+
+incorrectly resolved: ['C1', 'C2', 'C3', 'C4']
+summary: {'file_lines_before': 55, 'file_lines_after': 42, 'counted_lines_before': 53, 'counted_lines_after': 39, 'under_40': True, 'facts_before': 51, 'facts_after': 34, 'silently_deleted_lines': [], 'plan_errors': ['contradiction reuses lines [14]']}
