@@ -90,3 +90,67 @@ point on P4 (the trip location), so it was not chosen as best.
 
 One run per setting, five probes, and a ceiling effect (17 of 20 answers scored 5). Differences
 of 0.2–0.4 points are within run-to-run noise. Probes were scored by one person (Xu Wang).
+
+## Part 4 — File-based memory and consolidation
+
+### 4-5 Consolidation of the 55-line MEMORY.md
+
+Input `memory/MEMORY.original.md`: 55 lines (53 counted: non-empty, non-comment), 51 facts —
+18 unique facts, 6 duplicate groups (23 lines), 4 contradictions (8 lines) and 1 trap
+(2 lines: a home city and a temporary trip). The answer key `memory/memory_55_key.yaml` was
+committed before the run. Result `memory/MEMORY.consolidated.md`; grading
+`memory/consolidation_eval.json` (`make memory-consolidate`).
+
+| | Before | After |
+|---|---|---|
+| Counted lines | 53 | **39** (< 40) |
+| Facts | 51 | 34 |
+| Silently deleted facts | — | 0 |
+
+| Item | Expected | Result |
+|---|---|---|
+| D1 daughter Mia, tree nuts (4 lines) | merge | merged |
+| D2 short bullet answers (4) | merge | merged |
+| D3 repository name (4) | merge | merged |
+| D4 port 8275 (4) | merge | partly (3 of 4) |
+| D5 conda env data260 (4) | merge | partly (2 of 4) |
+| D6 name in screenshots (3) | merge | merged, **but also swallowed "User's name is Xu Wang."** (false merge) |
+| C5 HW6 deadline | Oct 22 replaces Oct 20 | correct |
+| C1 Safeway → Costco | Costco replaces Safeway | **missed** (both kept, unresolved) |
+| C2 qwen3:8b → qwen2.5:3b | newer model wins | **missed** |
+| C3 Google Docs → Word | Word wins | **missed** |
+| C4 trap: lives in San Jose / in Los Angeles this week | keep both | **resolved incorrectly**: "in Los Angeles this week" superseded "lives in San Jose" |
+
+**Contradictions resolved incorrectly:** C4 (newest-date-wins cannot tell a temporary state from
+a permanent fact), plus C1–C3 left unresolved. Resolved items are written explicitly under
+"## Resolved contradictions" with both facts and their dates, so nothing is deleted silently.
+
+How it works: MiniLM pairs similar facts (cosine ≥ 0.45), qwen2.5:3b labels each pair
+duplicate / contradiction / different, and the code applies the rules (a duplicate group keeps
+its newest wording; in a contradiction the newer date wins). A first version that gave the
+model all 51 lines in one prompt returned an empty plan (14 output tokens) and changed nothing.
+
+### 4-4 One function checked against AGENT.md
+
+`code/doc_app/recall_number.py: parse_recall_number()` with `code/doc_app/test_recall_number.py`.
+
+| AGENT.md rule (category) | Followed? | Where |
+|---|---|---|
+| Type hints on every parameter and return value (coding conventions) | ✅ | `(value: str) -> Tuple[int, int]` |
+| Docstring says what it returns and when it fails (coding conventions) | ✅ | docstring |
+| Config values not hardcoded (coding conventions) | ✅ | uses `config.RECALL_NUMBER_PATTERN` |
+| Invalid input raises `ValueError` naming the value; no `print()` (coding conventions) | ✅ | two `raise ValueError(... {value!r} ...)` |
+| Offline test with a valid and an invalid case (testing approach) | ✅ | `test_valid`, `test_invalid` |
+| No hardcoded ports, paths or credentials (prohibited actions) | ✅ | none in the file |
+
+### 4-6 MongoDB memory vs. file-based memory
+
+| | MongoDB (Part 2) | Files: AGENT.md + MEMORY.md (Part 4) |
+|---|---|---|
+| Inspectability | Needs Compass or queries; embeddings are 384 numbers. The Part 2 memory poisoning was only found by querying. | Plain text anyone can read; `git diff` shows every change (original vs consolidated). |
+| Persistence after restart | Kept in the Docker volume `s9275_mongo_data`. | Kept on disk, plus git history to roll back. |
+| Scalability across sessions | Indexed by user and session; four Part 3 users and hundreds of messages did not interfere. | One file, sent whole in every prompt; 55 lines already needed consolidation; concurrent writes would clash. |
+| Facts that must not be forgotten | Episodic recall is by similarity and not guaranteed ("allergy" scored cosine 0.097 for "Which recalls should I worry about?"). | Every line is in every prompt, so nothing depends on retrieval — but automatic consolidation can still drop a fact (trap C4), so critical facts belong in AGENT.md or must be protected from consolidation. |
+
+Use both: durable rules and must-keep facts in files, the large conversation history in the
+database with retrieval.
