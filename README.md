@@ -248,3 +248,25 @@ See `reports/hw04/reproducible_run_instructions.md` for the full run order.
   `code/agent_loop.py` with the local model `qwen3:8b`.
 
 See `reports/hw05/reproducible_run_instructions.md` for the full run order.
+
+## Homework 6 — MongoDB documents and memory
+
+Everything runs from the repo root in the conda env `data260`. MongoDB runs in Docker:
+
+    docker run -d --name s9275-mongo -p 27017:27017 -v s9275_mongo_data:/data/db mongo:7.0
+    ollama pull qwen2.5:3b
+
+| Step | Command | Output |
+|---|---|---|
+| Part 1 database + samples | `make mongo-init` | `s9275_doc.recall_notices` with a `$jsonSchema` validator |
+| API (Parts 1-2) | `make run-hw06` | http://localhost:8275/docs, chat page http://localhost:8275/chat |
+| Part 1 requests | Postman: `reports/hw06/postman_collection.json` | CRUD + validation errors |
+| Part 3 runs | `make memory-cost` | `reports/hw06/raw/part3_turns.jsonl`, `part3_probe_scores.csv` |
+| Part 3 tables | `make memory-summary` | `reports/hw06/raw/part3_summary.json` |
+| Part 4 chat + commands | `make file-memory` | `/memory /compact /dream /help` on `MEMORY.md` |
+| Part 4 consolidation test | `make memory-consolidate` | `reports/hw06/memory/MEMORY.consolidated.md` |
+| Self-check | `make verify-hw06` | `reports/hw06/verification.json` |
+
+Code: `code/doc_app/` (FastAPI app: config, db, schemas, routers, memory, token_count),
+`code/hw06_memory_cost.py`, `code/hw06_cost_summary.py`, `code/file_memory.py`,
+`code/file_memory_cli.py`, `code/hw06_consolidation_test.py`. Results: `reports/hw06/METRICS.md`.

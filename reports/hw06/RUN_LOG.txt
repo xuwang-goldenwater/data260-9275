@@ -343,3 +343,43 @@ false merges: [{'lines': [3, 12, 20, 30], 'texts': ["User's name is Xu Wang.", '
 
 incorrectly resolved: ['C1', 'C2', 'C3', 'C4']
 summary: {'file_lines_before': 55, 'file_lines_after': 42, 'counted_lines_before': 53, 'counted_lines_after': 39, 'under_40': True, 'facts_before': 51, 'facts_after': 34, 'silently_deleted_lines': [], 'plan_errors': ['contradiction reuses lines [14]']}
+===== verify-hw06 2026-10-18 19:54:52 =====
+Xu Wang | DATA 260 HW6 | s9275 | self-check | 2026-10-18 19:54:53
+commit d34f93396b2edf191463dec7a4c3826afa7fe166
+
+[PASS] application code has no uncommitted changes (the commit hash describes the code tested)  clean outside reports/
+[PASS] P1 MongoDB reachable  mongodb://localhost:27017
+[PASS] P1 s9275_doc.recall_notices has a $jsonSchema validator  
+[PASS] P1 recall_number has a unique index  ['_id_', 'ix_recall_date', 'uniq_recall_number']
+[PASS] P1 API answers on PORT_BASE 8275  {'status': 'ok', 'database': 's9275_doc', 'notices': 5}
+[PASS] P1 POST creates a notice (201, status defaults to ongoing)  201
+[PASS] P1 GET all lists notices (200)  
+[PASS] P1 GET /:id returns it (200)  
+[PASS] P1 PUT /:id updates it (200, status completed)  200
+[PASS] P1 duplicate recall_number -> 409  
+[PASS] P1 missing required fields -> 422  
+[PASS] P1 invalid enum -> 422  
+[PASS] P1 invalid id format -> 400  
+[PASS] P1 DELETE /:id removes it (204, then 404)  
+[PASS] P2 POST /api/chat returns a reply  200
+[PASS] P2 response shows the memory used  
+[PASS] P2 second turn sees the first turn in the short-term window  2
+[PASS] P2 second turn retrieves episodic facts  2
+[PASS] P2 GET /api/memory/{user_id} returns messages  4
+[PASS] P2 GET /api/aggregate/{user_id} returns daily counts  [{'messages': 4, 'user_messages': 2, 'date': '2026-10-19'}]
+[PASS] P2 messages / summaries / episodes collections exist  
+[PASS] P3 complete 35-turn runs for N4, N12, N30, N30_comp  ['N12', 'N30', 'N30_comp', 'N4']
+[PASS] P3 per-turn rows carry section tokens and latency  
+[PASS] P3 20 probe answers, all scored 1-5  20
+[PASS] P3 summary with cost estimate  ['N12', 'N30', 'N30_comp', 'N4']
+[PASS] P3 memory_probes.yaml has 5 probes and a rubric  
+[PASS] P4 original MEMORY.md has 55 lines and needs consolidation  ['53 lines > 40', 'last consolidated 202.9 h ago > 24 h']
+[PASS] P4 consolidated MEMORY.md has fewer than 40 lines  39
+[PASS] P4 consolidated file records resolved contradictions explicitly  
+[PASS] P4 consolidated file has a last_consolidated timestamp  
+[PASS] P4 AGENT.md has the five instruction sections  all
+[PASS] P4 system prompt contains AGENT.md and MEMORY.md  
+[PASS] P4 parse_recall_number tests pass  Xu Wang | test_recall_number: 2 tests passed
+[PASS] P4 CLI /help lists /memory /compact /dream  
+
+34 passed, 0 failed -> reports/hw06/verification.json

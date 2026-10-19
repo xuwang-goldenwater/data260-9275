@@ -1,0 +1,198 @@
+{
+  "homework": 6,
+  "sid4": 9275,
+  "port_base": 8275,
+  "prefix": "s9275",
+  "domain_id": 3,
+  "seed": 9275,
+  "verify_seed": 269275,
+  "commit": "d34f93396b2edf191463dec7a4c3826afa7fe166",
+  "uncommitted_files_at_start": [
+    "reports/hw06/RUN_LOG.txt"
+  ],
+  "model": "qwen2.5:3b (Ollama, temperature 0, seed 9275, num_ctx 8192, via src/model_client.py)",
+  "configuration": {
+    "database": "MongoDB s9275_doc (mongodb://localhost:27017)",
+    "api": "http://localhost:8275 (started by verify_hw06.py)",
+    "embeddings": "sentence-transformers/all-MiniLM-L6-v2 (CPU)",
+    "short_term_n": 12,
+    "summarize_every_user_msgs": 4,
+    "top_k": 3
+  },
+  "run_at": "2026-10-18T19:55:15",
+  "checks": [
+    {
+      "name": "application code has no uncommitted changes (the commit hash describes the code tested)",
+      "passed": true,
+      "detail": "clean outside reports/"
+    },
+    {
+      "name": "P1 MongoDB reachable",
+      "passed": true,
+      "detail": "mongodb://localhost:27017"
+    },
+    {
+      "name": "P1 s9275_doc.recall_notices has a $jsonSchema validator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 recall_number has a unique index",
+      "passed": true,
+      "detail": "['_id_', 'ix_recall_date', 'uniq_recall_number']"
+    },
+    {
+      "name": "P1 API answers on PORT_BASE 8275",
+      "passed": true,
+      "detail": "{'status': 'ok', 'database': 's9275_doc', 'notices': 5}"
+    },
+    {
+      "name": "P1 POST creates a notice (201, status defaults to ongoing)",
+      "passed": true,
+      "detail": "201"
+    },
+    {
+      "name": "P1 GET all lists notices (200)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 GET /:id returns it (200)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 PUT /:id updates it (200, status completed)",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P1 duplicate recall_number -> 409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 missing required fields -> 422",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 invalid enum -> 422",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 invalid id format -> 400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 DELETE /:id removes it (204, then 404)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 POST /api/chat returns a reply",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P2 response shows the memory used",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 second turn sees the first turn in the short-term window",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "P2 second turn retrieves episodic facts",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "P2 GET /api/memory/{user_id} returns messages",
+      "passed": true,
+      "detail": "4"
+    },
+    {
+      "name": "P2 GET /api/aggregate/{user_id} returns daily counts",
+      "passed": true,
+      "detail": "[{'messages': 4, 'user_messages': 2, 'date': '2026-10-19'}]"
+    },
+    {
+      "name": "P2 messages / summaries / episodes collections exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 complete 35-turn runs for N4, N12, N30, N30_comp",
+      "passed": true,
+      "detail": "['N12', 'N30', 'N30_comp', 'N4']"
+    },
+    {
+      "name": "P3 per-turn rows carry section tokens and latency",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 20 probe answers, all scored 1-5",
+      "passed": true,
+      "detail": "20"
+    },
+    {
+      "name": "P3 summary with cost estimate",
+      "passed": true,
+      "detail": "['N12', 'N30', 'N30_comp', 'N4']"
+    },
+    {
+      "name": "P3 memory_probes.yaml has 5 probes and a rubric",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 original MEMORY.md has 55 lines and needs consolidation",
+      "passed": true,
+      "detail": "['53 lines > 40', 'last consolidated 202.9 h ago > 24 h']"
+    },
+    {
+      "name": "P4 consolidated MEMORY.md has fewer than 40 lines",
+      "passed": true,
+      "detail": "39"
+    },
+    {
+      "name": "P4 consolidated file records resolved contradictions explicitly",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 consolidated file has a last_consolidated timestamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 AGENT.md has the five instruction sections",
+      "passed": true,
+      "detail": "all"
+    },
+    {
+      "name": "P4 system prompt contains AGENT.md and MEMORY.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 parse_recall_number tests pass",
+      "passed": true,
+      "detail": "Xu Wang | test_recall_number: 2 tests passed"
+    },
+    {
+      "name": "P4 CLI /help lists /memory /compact /dream",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "passed": 34,
+  "failed": 0,
+  "all_passed": true
+}
