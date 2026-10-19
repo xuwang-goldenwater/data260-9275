@@ -273,3 +273,10 @@ file-memory:
 memory-consolidate:
 	@echo "===== memory-consolidate $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
 	python -u code/hw06_consolidation_test.py 2>&1 | tee -a $(HW6_LOG)
+
+# Smoke test of all four parts -> reports/hw06/verification.json
+# Needs MongoDB (Docker) and Ollama. Commit the code first: the script records the commit hash.
+verify-hw06:
+	@mkdir -p reports/hw06
+	@echo "===== verify-hw06 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
+	python -u verify_hw06.py 2>&1 | tee -a $(HW6_LOG)
