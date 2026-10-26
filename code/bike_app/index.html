@@ -85,21 +85,24 @@ function render(d) {
     return `<div class="step${okc}"><div class="call">#${e.step} · ${e.t}s · <b>${esc(e.tool)}</b>(${esc(JSON.stringify(e.input))})</div>
       <div class="obs">${esc(JSON.stringify(o.success ? o.data : {error:o.error}, null, 1)).slice(0, 900)}</div></div>`;
   }).join("") || "No tool calls.";
-  const x = d.results, t = x.totals || {};
-  const weekly = (x.weekly || []).map(w => `<tr><td>${esc(w.week_start)}</td><td>${w.rides}</td><td>${w.avg_minutes}</td><td>${usd(w.pay_per_use_spend)}</td></tr>`).join("");
+  const x = d.results, t = x.totals || {}, a = x.audit || {};
+  const m = k => a.agent_matches ? (a.agent_matches[k] ? "✓" : "✗") : "-";
+  const weekly = (x.weekly || []).map(w => `<tr><td>${esc(w.week_start)}</td><td>${w.rides}</td><td>${w.avg_minutes}</td><td>${usd(w.pay_per_use_spend)}</td><td>${usd(w.member_usage_spend)}</td></tr>`).join("");
   const cites = (x.citations || []).map(c => `<li><a href="${esc(c.url)}" target="_blank">${esc(c.url)}</a><br><span class="muted">captured ${esc(c.captured_at)} · SHA-256 ${esc(c.sha256.slice(0,16))}…</span></li>`).join("");
   $("results").innerHTML = `
-    <div class="decision">${esc(x.decision || "No decision line found")}</div>
-    <div class="muted">${x.decision_matches_totals ? "Decision matches the cheaper computed total." : "Check: decision does not match the computed totals (or a total is missing)."}</div>
+    <div class="decision">${esc(x.decision || "No decision")}</div>
+    <div class="muted">Decision source: ${esc(x.decision_source)}.
+      Agent's stated decision: <b>${esc(x.agent_decision || "none")}</b> ${x.agent_decision_agrees ? "✓ agrees" : "✗ disagrees"}</div>
     <h3>Cost comparison</h3>
-    <table><tr><th>Option</th><th>Total</th></tr>
-      <tr><td>Pay per ride/minute</td><td>${usd(x.pay_per_use_total)}</td></tr>
-      <tr><td>Monthly membership (+ residual charges)</td><td>${usd(x.membership_total)}</td></tr>
-      <tr><td>Break-even rides per month</td><td>${x.break_even_rides_per_month ?? "-"}</td></tr>
-      <tr><td>Actual rides per month</td><td>${x.actual_rides_per_month ?? "-"}</td></tr></table>
+    <table><tr><th>Option</th><th>Agent (calculator)</th><th>Rule (cited prices + SQL)</th><th>Match</th></tr>
+      <tr><td>Pay per ride/minute</td><td>${usd(x.pay_per_use_total)}</td><td>${usd(a.pay_per_use_total)}</td><td>${m("pay_per_use_total")}</td></tr>
+      <tr><td>Monthly membership (+ residual charges)</td><td>${usd(x.membership_total)}</td><td>${usd(a.membership_total)}</td><td>${m("membership_total")}</td></tr>
+      <tr><td>Break-even rides per month</td><td>${x.break_even_rides_per_month ?? "-"}</td><td>${a.break_even_rides_per_month ?? "-"}</td><td>${m("break_even_rides_per_month")}</td></tr>
+      <tr><td>Actual rides per month</td><td colspan="3">${x.actual_rides_per_month ?? "-"}</td></tr></table>
+    <div class="muted">Audit prices: ${a.prices ? Object.entries(a.prices).map(([k,v]) => k + " $" + v).join(" · ") : "could not parse the snapshot"}</div>
     <div class="muted">${t.rides ?? "-"} rides over ${t.months ?? "-"} month(s) · classic ${t.classic_minutes ?? "-"} min · ebike ${t.ebike_minutes ?? "-"} min · classic over 45 min ${t.classic_over45_minutes ?? "-"} min</div>
     <h3>By week (latest 8 weeks with rides)</h3>
-    <table><tr><th>Week of</th><th>Rides</th><th>Avg min</th><th>Pay-per-use spend</th></tr>${weekly}</table>
+    <table><tr><th>Week of</th><th>Rides</th><th>Avg min</th><th>Pay-per-use spend</th><th>Member usage fees</th></tr>${weekly}</table>
     <h3>Citations</h3><ul>${cites || "<li>none</li>"}</ul>
     <h3>Agent answer</h3><div class="answer">${esc(d.final_answer)}</div>
     <p class="muted">Saved to ${esc(d.saved_to)} · prompt defense ${d.prompt_defense} · tool defense ${d.tool_defense}</p>`;

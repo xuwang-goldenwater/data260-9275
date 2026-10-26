@@ -270,3 +270,18 @@ Everything runs from the repo root in the conda env `data260`. MongoDB runs in D
 Code: `code/doc_app/` (FastAPI app: config, db, schemas, routers, memory, token_count),
 `code/hw06_memory_cost.py`, `code/hw06_cost_summary.py`, `code/file_memory.py`,
 `code/file_memory_cli.py`, `code/hw06_consolidation_test.py`. Results: `reports/hw06/METRICS.md`.
+
+## Homework 7 — JWT roles, agent reliability, Reflexion, Bay Wheels advisor, safety
+
+| Part | What | Code |
+|---|---|---|
+| 1 | JWT bearer auth (`POST /auth/login`, `GET /auth/me`), reader/writer/moderator roles, Ruff + pre-commit | `code/auth_app/` (deps, routers/auth), `code/hw07_users.py`, `pyproject.toml`, `.pre-commit-config.yaml` |
+| 2 | Agent loop with a repair path, 3 fixed tasks, 21-attempt reliability run | `code/agent_hw07.py`, `code/hw07_tasks.py`, `code/hw07_reliability.py` |
+| 3 | Bounded Reflexion with deterministic verifiers | `code/reflexion_hw07.py` |
+| 4 | Bay Wheels membership vs pay-per-use advisor (LangGraph ReAct + 3 tools + web UI) | `code/bike_app/`, `code/bike_fetch_data.py` |
+| 5 | Prompt-injection attacks and defenses | `code/bike_attacks.py`, `reports/hw07/fixtures/` |
+| 6 | Sandboxed file tools and a bash safety gate | `code/file_tools.py`, `code/test_file_tools.py` |
+
+Run instructions: `reports/hw07/reproducible_run_instructions.md`. Results: `reports/hw07/METRICS.md`.
+The session-cookie login of HW4/HW5 (and the React front end that uses it) is kept at tags hw4/hw5.
+

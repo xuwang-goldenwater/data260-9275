@@ -333,3 +333,13 @@ bike-agent:
 # Part 4: web UI on PORT_BASE 8275 (stop run-hw07 first), then open http://localhost:8275
 run-bike:
 	python code/bike_app/main.py
+
+# Part 5: 3 prompt-injection attacks x 3 defense states (9 agent runs, ~10-15 min)
+bike-attacks:
+	@echo "===== bike-attacks $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	python -u code/bike_attacks.py 2>&1 | tee -a $(HW7_LOG)
+
+# Self-check -> reports/hw07/verification.json (needs MySQL + Ollama; commit code first)
+verify-hw07:
+	@echo "===== verify-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	python -u verify_hw07.py 2>&1 | tee -a $(HW7_LOG)

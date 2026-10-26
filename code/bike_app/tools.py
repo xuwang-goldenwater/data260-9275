@@ -76,7 +76,9 @@ SCHEMAS = {
             "url": {"type": "string"}, "query": {"type": "string"},
             "k": {"type": "integer", "minimum": 1, "maximum": 8}},
             "required": ["url", "query"], "additionalProperties": False},
-        "output": {"type": "object", "properties": {"passages": {"type": "array", "items": {
+        "output": {"type": "object", "properties": {
+            "prices": {"type": ["object", "null"], "description": "six named prices parsed from the page table"},
+            "passages": {"type": "array", "items": {
             "type": "object", "properties": {"text": {"type": "string"}, "source": {"type": "string"},
                                              "score": {"type": "number"}}}}}},
     },
@@ -167,7 +169,10 @@ def csv_sql(sql: str, store: TripStore, read_only: bool = True) -> dict:
         rows = [dict(r) for r in cur.fetchmany(MAX_ROWS)] if cur.description else []
         store.conn.commit()
     except sqlite3.Error as exc:
-        return fail(f"SQL error: {exc}", source="uploaded.csv")
+        hint = ""
+        if "no such column" in str(exc):
+            hint = " If this is a placeholder (e.g. UNLOCK), replace it with the number from the pricing page."
+        return fail(f"SQL error: {exc}.{hint}", source="uploaded.csv")
     return ok({"rows": rows, "row_count": len(rows), "source": "uploaded.csv"}, source="uploaded.csv")
 
 
@@ -208,6 +213,42 @@ class _TextExtractor(HTMLParser):
             self.lines.append(("# " if heading else "") + text)
 
 
+def table_rows(raw: list[str]) -> list[str]:
+    """Rebuild a comparison table as one quotable line per row.
+
+    A pricing table comes out of the HTML as a run of column headings
+    ("# Single ride", "# Day pass", ...), then each row as a label line
+    ("Classic bike prices") followed by one cell per column. Joining a row's
+    cells with their column names keeps "45 min free, then $0.17/min" tied to
+    "Month pass" instead of floating free. Returns [] when there is no table.
+    """
+    cols, i = [], 0
+    while i < len(raw):                              # first run of 3+ headings = the columns
+        run = []
+        while i < len(raw) and raw[i].startswith("# "):
+            run.append(raw[i][2:])
+            i += 1
+        if len(run) >= 3:
+            cols = run
+            break
+        i += 1
+    if not cols:
+        return []
+    rows, n = [], len(cols)
+    cells = raw[i:i + n]
+    if all("$" in c for c in cells):                 # the plan-price row right under the headings
+        rows.append("TABLE plan price - " + "; ".join(f"{c}: {v}" for c, v in zip(cols, cells)))
+    done = set()
+    for j in range(i, len(raw) - n):
+        label = raw[j]
+        if label.lower().endswith("prices") and label not in done:
+            cells = raw[j + 1:j + 1 + n]
+            if all("$" in c or "free" in c.lower() for c in cells):
+                rows.append(f"TABLE {label} - " + "; ".join(f"{c}: {v}" for c, v in zip(cols, cells)))
+                done.add(label)
+    return rows
+
+
 _PAGES: dict[str, dict] = {}            # url -> snapshot, so one run uses one capture
 
 
@@ -223,9 +264,9 @@ def fetch_page(url: str) -> dict:
     html = raw.decode("utf-8", errors="replace")
     parser = _TextExtractor()
     parser.feed(html)
-    lines, seen = [], set()
+    lines, seen = table_rows(parser.lines), set()
     for line in parser.lines:                       # the pricing table repeats once per column
-        if line not in seen:
+        if line not in seen and line not in lines:
             seen.add(line)
             lines.append(line)
     text = "\n".join(lines)
@@ -239,6 +280,34 @@ def fetch_page(url: str) -> dict:
     snap["meta"] = meta
     _PAGES[url] = snap
     return snap
+
+
+_MONEY = r"\$(\d+(?:\.\d+)?)"
+
+
+def parse_prices(lines: list[str]) -> dict | None:
+    """The six numbers the decision needs, read with regexes from the TABLE rows.
+
+    Deterministic (no model): the cell under "Single ride" and "Month pass" in
+    the plan-price, classic and ebike rows. None if the page has no such table.
+    """
+    rows = {}
+    for ln in lines:
+        if ln.startswith("TABLE ") and " - " in ln:
+            label, cells = ln.split(" - ", 1)
+            rows[label] = dict(c.split(": ", 1) for c in cells.split("; ") if ": " in c)
+    try:
+        plan, classic, ebike = rows["TABLE plan price"], rows["TABLE Classic bike prices"], rows["TABLE Ebike prices"]
+        single_c = re.findall(_MONEY, classic["Single ride"])      # $1.00 to unlock, then $0.19/min
+        single_e = re.findall(_MONEY, ebike["Single ride"])        # $1.00 unlock + $0.49/min
+        return {"single_ride_unlock": float(single_c[0]),
+                "single_ride_classic_per_min": float(single_c[1]),
+                "single_ride_ebike_per_min": float(single_e[-1]),
+                "month_pass_price": float(re.findall(_MONEY, plan["Month pass"])[0]),
+                "month_pass_classic_overage_per_min": float(re.findall(_MONEY, classic["Month pass"])[-1]),
+                "month_pass_ebike_per_min": float(re.findall(_MONEY, ebike["Month pass"])[-1])}
+    except (KeyError, IndexError, ValueError):
+        return None
 
 
 _WORD = re.compile(r"[a-z0-9$.]+")
@@ -256,14 +325,18 @@ def policy_retriever(url: str, query: str, k: int = 3) -> dict:
         if line.startswith("# "):
             heading = line[2:]
             continue
-        text = line if len(line) <= 240 else line[:240] + "..."
+        text = line if len(line) <= 420 else line[:420] + "..."
         words = set(_WORD.findall(text.lower()))
         score = len(q & words) + 0.5 * len(PRICE_WORDS & words) + (1 if "$" in text else 0)
+        if text.startswith("TABLE "):
+            score += 3
         if score > 0:
-            scored.append({"text": f"[{heading}] {text}" if heading else text,
+            scored.append({"text": f"[{heading}] {text}" if heading and not text.startswith("TABLE ")
+                           else text,
                            "source": url, "score": round(score, 2)})
     scored.sort(key=lambda p: -p["score"])
-    return ok({"passages": scored[:max(1, min(k, 8))], "snapshot": snap["meta"]}, source=url)
+    return ok({"prices": parse_prices(snap["lines"]), "passages": scored[:max(1, min(k, 8))],
+               "snapshot": snap["meta"]}, source=url)
 
 
 # ---- 3. calculator ------------------------------------------------------------------
@@ -287,7 +360,8 @@ def _eval(node):
 
 def calculator(expression: str, units: str | None = None) -> dict:
     if not _ALLOWED.match(expression or ""):
-        return fail("expression may contain only digits, + - * / ( ) . and spaces")
+        return fail("expression may contain only digits, + - * / ( ) . and spaces. Replace every "
+                    "name with the number from an earlier tool result, e.g. 600*1.00 + 4401*0.19")
     try:
         value = _eval(ast.parse(expression, mode="eval"))
     except ZeroDivisionError:

@@ -1,0 +1,28 @@
+{
+  "label": "membership",
+  "started_at": "2026-10-26T09:41:25",
+  "model": "qwen3:8b",
+  "pricing_url": "https://www.lyft.com/bikes/bay-wheels/pricing",
+  "rows_loaded": 600,
+  "rows_skipped": 0,
+  "prompt_defense": true,
+  "tool_defense": true,
+  "timeline": [],
+  "final_answer": "",
+  "results": {
+    "decision": null,
+    "pay_per_use_total": null,
+    "membership_total": null,
+    "break_even_rides_per_month": null,
+    "actual_rides_per_month": null,
+    "totals": {},
+    "weekly": [],
+    "citations": [],
+    "decision_matches_totals": false
+  },
+  "steps": 0,
+  "tokens": null,
+  "total_time_s": 300.6,
+  "stop_reason": "error",
+  "error": "ReadTimeout: timed out"
+}
