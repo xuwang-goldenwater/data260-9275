@@ -1,0 +1,601 @@
+ride_id,rideable_type,started_at,ended_at,start_station_name,end_station_name,member_casual
+5E4C973D1EDADA53,classic_bike,2026-08-01 10:45:34.743,2026-08-01 11:05:51.030,Mission Bay Kids Park,21st St at Valencia St,member
+AAB4638D1A9E5DC2,classic_bike,2026-08-01 10:54:22.753,2026-08-01 11:47:37.358,West Crissy Field,Buchanan St at North Point St,casual
+93BD25E7BBF78C5D,electric_bike,2026-08-01 11:21:34.920,2026-08-01 11:41:59.522,Bush St at Leavenworth St,22nd St Caltrain Station,member
+41AC40AE70B1BA42,electric_bike,2026-08-01 11:25:05.379,2026-08-01 11:47:45.743,22nd St at Valencia St,Page St at Masonic Ave,casual
+0B50E995E3ED9F42,electric_bike,2026-08-01 11:25:22.333,2026-08-01 11:46:50.838,San Francisco Public Library,Spruce St at California St,member
+7B120C4927D5C8DB,electric_bike,2026-08-01 12:20:26.873,2026-08-01 12:50:17.364,Pier 1/2 at The Embarcadero,Bay St at Fillmore St,casual
+8C46E64B851AC2A8,electric_bike,2026-08-01 12:29:44.382,2026-08-01 12:50:11.114,Webster St at Union St,23rd St at San Bruno Ave,member
+CB3B7937E43F4CB7,electric_bike,2026-08-01 12:46:24.957,2026-08-01 13:13:53.077,Division St at Potrero Ave,West Crissy Field,member
+AFD252680F9968CA,electric_bike,2026-08-01 12:54:37.170,2026-08-01 13:19:25.117,Great Highway at Taraval St,25th Ave at Irving St,casual
+973372F6A2838DB7,electric_bike,2026-08-01 13:38:50.018,2026-08-01 14:00:43.647,18th Ave at California St,,casual
+EA3090140EAD2F0B,classic_bike,2026-08-01 13:44:56.738,2026-08-01 14:08:18.663,Sonora Ave at 1st St,Santa Clara St at Almaden Blvd,casual
+98712A191B3CCB45,electric_bike,2026-08-01 13:47:30.172,2026-08-01 14:08:40.000,48th Ave at Cabrillo St,La Playa St at Lincoln Way,member
+C16F5D00987C5D20,electric_bike,2026-08-01 14:15:00.217,2026-08-01 15:07:12.539,North Point St at Polk St,West Crissy Field,casual
+60BAC50DBEEFDD11,electric_bike,2026-08-01 14:18:35.577,2026-08-01 14:49:16.644,,Carl St at Cole St,member
+A5F3D6BE11D29F2B,electric_bike,2026-08-01 14:23:04.445,2026-08-01 14:46:48.637,Frederick St at Arguello Blvd,Clement St at 32nd Ave,member
+4F1A68F4929B0D19,electric_bike,2026-08-01 14:31:10.997,2026-08-01 15:02:45.238,,,casual
+6EE3D4FC382F4E66,electric_bike,2026-08-01 14:35:59.577,2026-08-01 15:17:22.017,Addison St at Fourth St,13th St at Webster St,member
+02EA112A336F082C,classic_bike,2026-08-01 14:39:08.137,2026-08-01 15:00:58.136,Pier 1/2 at The Embarcadero,North Point St at Powell St,casual
+FCC5806C46E549C4,electric_bike,2026-08-01 14:58:14.882,2026-08-01 15:29:16.265,8th Ave at JFK Dr,JFK Dr at Great Highway,member
+B9680012534B915E,classic_bike,2026-08-01 15:12:14.043,2026-08-01 15:53:00.305,8th Ave at JFK Dr,Clement St at 32nd Ave,casual
+3A67DEC80525E292,classic_bike,2026-08-01 15:15:14.130,2026-08-01 15:40:03.246,Divisadero St at Clay St,North Point St at Powell St,casual
+8B7111D69BD229ED,electric_bike,2026-08-01 15:44:07.762,2026-08-01 16:15:43.793,Powell St at Columbus Ave,MacArthur Ave at Fernandez St,casual
+B8DA2C1C44951FD7,electric_bike,2026-08-01 16:51:36.103,2026-08-01 17:37:11.246,Great Highway at Judah St,In Chan Kaajal Park,casual
+74FB627E621A575C,classic_bike,2026-08-01 16:53:10.198,2026-08-01 17:16:22.354,4th St at Harrison St,Pier 1/2 at The Embarcadero,casual
+8680430437B03A11,electric_bike,2026-08-01 17:01:25.657,2026-08-01 17:26:31.216,,,member
+9A0F1B32EA204D5B,electric_bike,2026-08-01 17:15:49.901,2026-08-01 17:45:06.255,Lafayette Park,18th Ave at California St,casual
+EF511412AFC8E5A2,electric_bike,2026-08-01 17:41:54.721,2026-08-01 18:03:06.687,Chestnut St at Van Ness Ave,Page St at Scott St,member
+6DCF62D19E64492E,electric_bike,2026-08-01 17:54:37.482,2026-08-01 18:15:28.214,McAllister St at Baker St,,member
+4C03D8376A1340E1,classic_bike,2026-08-01 18:29:26.635,2026-08-01 19:03:17.996,Hyde St at Post St,West Crissy Field,casual
+263C282ABE1D6A99,classic_bike,2026-08-01 20:09:58.141,2026-08-01 20:31:23.732,Minna St at 1st St,Fulton St at Laguna St,member
+D0F4D95FB3B0F482,electric_bike,2026-08-01 20:11:10.172,2026-08-01 20:35:18.329,JFK Dr at Great Highway,Koshland Park,member
+1288874151DD7E43,classic_bike,2026-08-01 20:19:08.074,2026-08-01 20:45:14.404,36th Ave at Spreckels Lake Dr,JFK Dr at Great Highway,casual
+FD619AF504385C27,electric_bike,2026-08-01 21:04:52.813,2026-08-01 21:49:15.319,Page St at Masonic Ave,Page St at Masonic Ave,member
+2AAB0C01AE5083D1,electric_bike,2026-08-01 22:36:08.470,2026-08-01 23:06:52.225,,,member
+A014C7D5F8A98865,electric_bike,2026-08-01 22:44:20.490,2026-08-01 23:20:18.142,45th Ave at Noriega St,10th Ave at Irving St,casual
+E6145046E0E3A826,electric_bike,2026-08-01 22:47:23.784,2026-08-01 23:08:26.965,MacArthur Ave at Fernandez St,Leavenworth St at Broadway,casual
+FD56B9879557820C,electric_bike,2026-08-02 08:11:24.059,2026-08-02 08:33:28.547,,10th Ave at Irving St,casual
+D0427CD125CAC58F,classic_bike,2026-08-02 08:20:07.706,2026-08-02 09:04:09.950,West Crissy Field,Brannan St at Colin P Kelly Jr St,member
+5008BF3EBB5C655C,electric_bike,2026-08-02 10:10:19.233,2026-08-02 10:31:46.200,Green St at Van Ness Ave,Illinois St at 16th St,member
+F0E0937E4DD11C89,electric_bike,2026-08-02 11:27:21.003,2026-08-02 12:09:37.964,Garfield Square,,member
+036E1C49E75D342E,electric_bike,2026-08-02 11:42:16.833,2026-08-02 12:06:54.833,22nd St at Valencia St,Frederick St at Arguello Blvd,casual
+05D856362CB4C5A1,electric_bike,2026-08-02 11:44:53.989,2026-08-02 12:15:49.946,7th Ave at Irving St,Polk St at Bush St,member
+3EF467827E668E12,electric_bike,2026-08-02 11:51:17.138,2026-08-02 12:19:42.346,San Francisco Caltrain Station - Townsend St,Divisadero St at Lombard St,member
+2518B54C752533A2,electric_bike,2026-08-02 12:22:49.074,2026-08-02 12:43:21.401,Greenwich St at Webster St,Mission Dolores Park,casual
+D912AFD701AB4A4F,electric_bike,2026-08-02 12:35:05.598,2026-08-02 12:55:12.461,McAllister St at Baker St,Leavenworth St at Broadway,member
+47800184E414640F,electric_bike,2026-08-02 12:36:43.427,2026-08-02 13:01:42.067,Parque Ninos Unidos,Scott St at Golden Gate Ave,casual
+EB50B4145A15559E,classic_bike,2026-08-02 12:47:28.770,2026-08-02 13:14:29.013,Illinois St at 20th St,Hospital St at Mariposa St,member
+FB191F7468876299,electric_bike,2026-08-02 12:56:19.695,2026-08-02 13:27:09.088,22nd St at Dolores St,,casual
+1A0D1E6447F37285,electric_bike,2026-08-02 13:00:21.714,2026-08-02 13:23:03.926,Parker St at Fulton St,Telegraph Ave at Carleton St,member
+A3B22A80FD6AF9D8,electric_bike,2026-08-02 13:54:50.530,2026-08-02 14:21:53.748,Drumm St at Market St,MLK Jr Dr at 7th Ave,casual
+237A8174B39A9B78,electric_bike,2026-08-02 14:17:23.971,2026-08-02 15:02:54.859,,Father Alfred E Boeddeker Park,member
+0A5478FAAA999085,electric_bike,2026-08-02 14:21:26.430,2026-08-02 14:45:55.504,,,casual
+5D9D868DCB334326,classic_bike,2026-08-02 14:33:34.707,2026-08-02 14:59:28.935,Irving St at 17th Ave,Great Highway at Balboa St,casual
+51958854DAE9B18A,electric_bike,2026-08-02 14:40:59.027,2026-08-02 15:06:31.699,,,member
+D42129C24D28858E,electric_bike,2026-08-02 14:42:19.272,2026-08-02 15:35:24.170,,Grove St at Divisadero St,member
+396D02A3B779C1C8,electric_bike,2026-08-02 14:53:34.944,2026-08-02 15:41:30.214,JFK Dr at Great Highway,Spear St at Folsom St,casual
+53E63622EDDAAC2F,electric_bike,2026-08-02 15:02:11.346,2026-08-02 15:36:02.606,,,member
+860FADDE9207B29E,electric_bike,2026-08-02 15:03:45.208,2026-08-02 15:56:57.125,Fell St at Stanyan St,Great Highway at Judah St,casual
+088F45B0367C68D3,electric_bike,2026-08-02 15:36:14.468,2026-08-02 15:58:35.088,Oakdale Ave at Phelps St,Webster St at Union St,member
+0C61033D882B4E9E,classic_bike,2026-08-02 15:36:29.790,2026-08-02 16:05:37.380,Telegraph Ave at 19th St,Doyle St at 59th St,member
+F1F8CE952756017C,classic_bike,2026-08-02 15:44:03.106,2026-08-02 16:28:23.925,Larkin St at California St,Lincoln Blvd at Bowley St,member
+9BF9B4DF27CF585B,electric_bike,2026-08-02 16:17:43.430,2026-08-02 16:40:11.838,Kearny St at Bush St,,member
+534610B378428756,classic_bike,2026-08-02 17:01:00.554,2026-08-02 17:43:38.082,Buchanan St at North Point St,West Crissy Field,casual
+97B35D555A003131,electric_bike,2026-08-02 17:31:11.222,2026-08-02 18:07:17.104,41st Ave at Irving St,Clay St at Lyon St,casual
+0D5BECCC536CDBDE,electric_bike,2026-08-02 17:36:53.815,2026-08-02 18:09:41.850,Adeline St at 40th St,Brooklyn Ave at Lakeshore Ave,casual
+50418BB7CBE65B95,electric_bike,2026-08-02 17:48:40.321,2026-08-02 18:28:45.431,Powell St at Columbus Ave,,casual
+1A5A5FDD79EC5CA7,classic_bike,2026-08-02 17:52:50.271,2026-08-02 18:25:09.744,Scott St at Golden Gate Ave,Green St at Van Ness Ave,member
+1706A61ABC8A4942,electric_bike,2026-08-02 18:04:06.502,2026-08-02 18:26:15.899,Brooklyn Ave at Lakeshore Ave,Fulton St at Ashby Ave,casual
+28165E0D152EF08B,electric_bike,2026-08-02 18:10:41.796,2026-08-02 18:31:14.825,Berkeley Marina,Grove Park,member
+8AC69D5612AE3360,electric_bike,2026-08-02 18:44:58.119,2026-08-02 19:19:43.484,,MLK Jr Dr at 7th Ave,casual
+588AEFD59D7178DF,electric_bike,2026-08-03 07:29:59.919,2026-08-03 07:55:48.640,Jersey St at Castro St,Clay St at Battery St,member
+5267466E6DCA0582,electric_bike,2026-08-03 07:43:51.164,2026-08-03 08:05:51.334,,,member
+3759AF6E2E3926AF,electric_bike,2026-08-03 08:35:55.023,2026-08-03 08:59:27.515,San Francisco City Hall,Mason St at Halleck St,member
+925B6C44F885D297,electric_bike,2026-08-03 11:19:40.213,2026-08-03 11:42:16.161,Mechanics Monument Plaza,Francisco St at Columbus Ave,casual
+8008B572E1D42C45,electric_bike,2026-08-03 12:25:36.513,2026-08-03 13:16:47.126,Spruce St at California St,Bay St at Fillmore St,member
+5E32CB4193AB5333,classic_bike,2026-08-03 13:05:27.523,2026-08-03 13:44:25.674,Turk St at Fillmore St,Turk St at Fillmore St,casual
+C8C0D077C5F8C723,electric_bike,2026-08-03 14:40:37.850,2026-08-03 15:15:23.887,Fell St at Clayton St,JFK Dr at Great Highway,casual
+94B2A286D915D7A3,classic_bike,2026-08-03 15:56:41.173,2026-08-03 16:20:46.311,Carl St at Cole St,18th Ave at California St,member
+F79FC823A725DC19,electric_bike,2026-08-03 16:08:46.301,2026-08-03 16:39:04.995,Leavenworth St at Broadway,Clement St at 32nd Ave,member
+0FDAA90B2612638A,electric_bike,2026-08-03 17:24:56.774,2026-08-03 17:46:19.011,Jackson St at Sansome St,Lyon St at Fell St,member
+EEDDE6903917778E,electric_bike,2026-08-03 18:46:19.449,2026-08-03 19:06:26.581,West Portal MUNI,Post St at Baker St,member
+E4538A9BA1A1445C,electric_bike,2026-08-03 18:59:11.568,2026-08-03 19:23:17.480,,McAllister St at Baker St,member
+AB274969339C737B,electric_bike,2026-08-03 19:20:51.562,2026-08-03 19:46:57.751,Natoma St at 1st St,Jersey St at Castro St,member
+106A4A4F3DC28D72,electric_bike,2026-08-03 21:05:33.920,2026-08-03 21:27:43.705,,North Point St at Powell St,member
+5AFA72C44807365D,electric_bike,2026-08-03 21:28:02.080,2026-08-03 22:01:17.352,La Playa St at Lincoln Way,Parker Ave at McAllister St,member
+C28A94D081D878E6,electric_bike,2026-08-04 06:45:31.422,2026-08-04 07:09:36.505,Page St at Masonic Ave,Spear St at Folsom St,member
+4A906DF9398302AF,electric_bike,2026-08-04 08:07:29.557,2026-08-04 08:33:36.502,22nd St Caltrain Station,The Embarcadero at Sansome St,member
+DF2B983C37AB2CD5,classic_bike,2026-08-04 08:57:59.620,2026-08-04 09:27:41.689,The Embarcadero at Bryant St,North Point St at Grant Ave,casual
+F7B35F885FD25B67,electric_bike,2026-08-04 09:22:22.762,2026-08-04 09:42:59.283,Jersey St at Castro St,Folsom St at Main St,member
+C838A240A40D5D60,classic_bike,2026-08-04 10:47:18.768,2026-08-04 11:10:41.269,Torney Ave at Lincoln Blvd,West Crissy Field,casual
+2C40CA66C158D8B1,electric_bike,2026-08-04 11:02:50.164,2026-08-04 11:45:00.972,2nd St at Townsend St,Market St at Steuart St,member
+7DE5E2BA5161172E,classic_bike,2026-08-04 13:24:30.664,2026-08-04 13:53:03.920,Snow Park,Lakeside Dr at 14th St,casual
+2E554446E20B4FDE,electric_bike,2026-08-04 16:13:52.385,2026-08-04 16:42:22.812,20th St at Bryant St,16th St Mission BART North,member
+2301BB9EB8D708F8,classic_bike,2026-08-04 16:38:21.894,2026-08-04 17:03:17.531,Sutter St at Montgomery St,Precita Park,member
+5E35BC7CDD240590,electric_bike,2026-08-04 17:21:31.171,2026-08-04 17:52:56.493,McAllister St at Baker St,Mission Playground,member
+1D9A6E861663AB91,electric_bike,2026-08-04 17:55:11.280,2026-08-04 18:44:45.928,Mission Dolores Park,36th Ave at Kirkham St,member
+2AFA777F594D87D0,electric_bike,2026-08-04 18:00:23.204,2026-08-04 18:48:30.077,North Point St at Polk St,,casual
+9AB590D596EA667A,classic_bike,2026-08-04 18:23:48.683,2026-08-04 18:59:12.731,West St at Brockhurst St,Lakeshore Ave at Trestle Glen Rd,casual
+2B86D8460DBE1E13,electric_bike,2026-08-04 18:29:57.515,2026-08-04 18:53:36.780,Page St at Scott St,23rd Ave at Clement St,member
+E95B3CAF09D88ABE,electric_bike,2026-08-04 18:39:58.667,2026-08-04 19:16:42.511,4th St at Harrison St,Polk St at Post St,member
+567B0FDCFDDCD2B7,classic_bike,2026-08-04 18:53:29.713,2026-08-04 19:24:10.669,Minna St at 1st St,Greenwich St at Webster St,casual
+5F192D97C0C573A8,electric_bike,2026-08-04 19:52:47.397,2026-08-04 20:16:52.534,25th Ave at Irving St,Mission Playground,member
+5DB1DD12927AA7A3,electric_bike,2026-08-04 20:55:44.867,2026-08-04 21:21:09.068,Broadway at Kearny St,McAllister St at Arguello Blvd,member
+7B6590133AA8061F,electric_bike,2026-08-04 21:32:34.523,2026-08-04 21:53:18.073,Post St at Webster St,Front St at California St,casual
+5E83CDB92E6B9B4C,classic_bike,2026-08-04 21:50:50.627,2026-08-04 22:24:43.007,Powell St at Columbus Ave,22nd St Caltrain Station,member
+8BE4690632A5CD6C,electric_bike,2026-08-04 23:41:49.536,2026-08-05 00:03:33.172,MacArthur Blvd at Telegraph Ave,Virginia St at Shattuck Ave,member
+6684B74E1AEF7B6B,electric_bike,2026-08-05 08:20:41.995,2026-08-05 08:43:48.443,S Van Ness Ave at Market St,11th St at Natoma St,member
+D11AB5DE5FF16AF4,electric_bike,2026-08-05 08:53:25.069,2026-08-05 09:20:49.011,Judson Ave at Gennessee St,22nd St Caltrain Station,member
+1748D46BE08623ED,classic_bike,2026-08-05 13:06:31.651,2026-08-05 13:34:36.996,JFK Dr at Great Highway,Fell St at Stanyan St,casual
+8113E61B30FCA89F,electric_bike,2026-08-05 13:59:09.678,2026-08-05 14:20:11.549,,North Point St at Grant Ave,casual
+0BCA73CA2D3D7512,classic_bike,2026-08-05 14:32:01.832,2026-08-05 14:56:11.258,Hospital St at Mariposa St,17th St at Valencia St,member
+E7BDC95E15F26950,electric_bike,2026-08-05 14:49:06.478,2026-08-05 15:10:08.827,Front St at California St,Fell St at Clayton St,member
+086494A853CC6A3B,electric_bike,2026-08-05 14:53:16.382,2026-08-05 15:14:13.775,Lyon St at Lombard St,San Francisco Ferry Building,member
+51462D21A5622D18,electric_bike,2026-08-05 15:40:08.363,2026-08-05 16:04:48.076,Cruise Terminal at Pier 27,Illinois St at 20th St,casual
+4E56CB2D7BF0B2B0,electric_bike,2026-08-05 17:27:34.193,2026-08-05 17:48:02.280,,Pierce St at Haight St,casual
+179F1D75A36F3F99,electric_bike,2026-08-05 17:29:59.186,2026-08-05 17:50:14.087,Broderick St at Oak St,JFK Dr at Great Highway,member
+920EBCBF14837133,electric_bike,2026-08-05 17:42:55.643,2026-08-05 18:09:15.395,2nd St at Townsend St,Greenwich St at Webster St,casual
+8DF2BF1EAD43F1F9,electric_bike,2026-08-05 17:47:52.771,2026-08-05 18:08:48.428,,Turk St at Fillmore St,member
+283A80A173FD3920,classic_bike,2026-08-05 18:15:31.346,2026-08-05 18:56:43.140,Lincoln Blvd at Hoffman St,Pier 1/2 at The Embarcadero,casual
+77F61ED0D3F006B1,electric_bike,2026-08-05 18:45:39.502,2026-08-05 19:09:10.596,The Embarcadero at Steuart St,Evans Ave at Newhall St,member
+EF3A33E6B6132870,classic_bike,2026-08-05 20:18:14.611,2026-08-05 20:50:31.984,Metro Dr at Technology Dr,Backesto Park,member
+562B01A3C9114726,electric_bike,2026-08-05 20:23:54.452,2026-08-05 20:47:04.307,Divisadero St at Lombard St,,member
+DECC0A2C1C8E45D0,classic_bike,2026-08-05 21:48:44.764,2026-08-05 22:14:04.275,Division St at Potrero Ave,Page St at Masonic Ave,member
+756E9B02ADAF8346,electric_bike,2026-08-06 07:37:32.241,2026-08-06 08:00:27.665,Carl St at Cole St,22nd St at Potrero Ave,member
+84A2F5B9CE8B3E8D,electric_bike,2026-08-06 09:02:15.268,2026-08-06 09:25:49.738,23rd St at Tennessee St,Grant Ave at Sutter St,member
+323D6F2FB643024C,classic_bike,2026-08-06 10:47:11.330,2026-08-06 11:17:44.970,22nd St at Dolores St,Pier 1/2 at The Embarcadero,member
+6835153C78BDEA3C,electric_bike,2026-08-06 12:43:03.032,2026-08-06 13:18:36.643,Market St at Dolores St,Dolores St at 15th St,member
+B75FADD3777E42AF,electric_bike,2026-08-06 14:14:59.780,2026-08-06 14:51:45.595,Post St at Webster St,Lincoln Blvd at Bowley St,member
+CAF2A9263C8825B4,classic_bike,2026-08-06 14:50:47.784,2026-08-06 15:10:52.055,North Point St at Polk St,2nd St at Folsom St,member
+E7E933E4EA11C9E7,electric_bike,2026-08-06 15:23:41.536,2026-08-06 15:45:12.665,Fell St at Clayton St,Lincoln Blvd at Bowley St,casual
+EFB3D32CFBED3513,classic_bike,2026-08-06 15:48:31.173,2026-08-06 16:19:40.516,7th St at King St,The Embarcadero at Steuart St,member
+ABBDFE52B0E3E78C,electric_bike,2026-08-06 16:18:23.450,2026-08-06 16:42:27.356,19th St at Florida St,,member
+5C1BC791A98D095F,electric_bike,2026-08-06 16:39:26.106,2026-08-06 17:00:38.669,Pierce St at Haight St,Polk St at Clay St - Two Segments,member
+913145498C8D8284,electric_bike,2026-08-06 17:01:44.235,2026-08-06 17:31:17.275,La Playa St at Lincoln Way,La Playa St at Lincoln Way,casual
+1A436429D64A4719,electric_bike,2026-08-06 17:12:47.131,2026-08-06 17:35:48.437,,Pompei Circle at JFK Dr,member
+0EFB28C7C9734C46,electric_bike,2026-08-06 17:42:11.665,2026-08-06 18:03:07.707,,,member
+BC0FE708B52D6BC0,classic_bike,2026-08-06 18:38:22.076,2026-08-06 19:35:37.656,Market St at 40th St,Emeryville Public Market,member
+042CB4260EBC0B8D,electric_bike,2026-08-06 18:48:06.653,2026-08-06 19:08:51.931,Scott St at California St,Market St at Steuart St,member
+9A94C5257D448A9A,electric_bike,2026-08-06 19:29:53.833,2026-08-06 20:07:28.997,,26th Ave at Clement St,member
+920F48CE296E52FE,electric_bike,2026-08-06 19:48:55.610,2026-08-06 20:25:07.864,Valencia St at 24th St,,member
+D888419E3325B5C6,classic_bike,2026-08-06 20:33:58.489,2026-08-06 20:54:28.458,Tehama St at 2nd St,Hospital St at Mariposa St,casual
+10AD59ADCBF065CC,electric_bike,2026-08-07 07:42:14.274,2026-08-07 08:03:24.355,,Frederick St at Arguello Blvd,member
+E2639C56015A41C0,electric_bike,2026-08-07 08:12:32.530,2026-08-07 08:41:38.544,,,member
+0BA2916C2232A11C,electric_bike,2026-08-07 08:56:51.835,2026-08-07 09:21:21.805,10th Ave at Irving St,23rd St at Tennessee St,member
+C0D6CBEE4A010C2B,classic_bike,2026-08-07 09:58:10.910,2026-08-07 10:21:44.356,Terry Francois Blvd at Warriors Way,Washington St at Kearny St,member
+38D97851C155B4CE,classic_bike,2026-08-07 10:10:07.810,2026-08-07 10:44:18.013,The Embarcadero at Sansome St,Folsom St at 1st St,casual
+0B0276DBECF5871E,classic_bike,2026-08-07 11:19:44.515,2026-08-07 11:48:35.158,Sansome St at Sutter St,Sanchez St at 15th St,casual
+02D5317496A6B535,classic_bike,2026-08-07 11:53:57.794,2026-08-07 12:14:31.535,Mississippi St at 17th St,San Francisco Ferry Building,casual
+90428DA3F8F0276F,classic_bike,2026-08-07 13:26:04.091,2026-08-07 13:59:23.821,Market St at Steuart St,North Point St at Powell St,member
+CCDE49239F408A04,electric_bike,2026-08-07 13:52:41.183,2026-08-07 14:16:40.943,Market St at Franklin St,7th Ave at Clement St,member
+6607F3F6A61BD362,classic_bike,2026-08-07 14:02:45.066,2026-08-07 14:37:20.614,Sanchez St at 17th St,Outside Lands,casual
+7F7FA63A82DD91D1,electric_bike,2026-08-07 14:37:37.080,2026-08-07 15:01:53.037,Harrison St at 17th St,Outside Lands,casual
+A9AA0854940E3FBD,classic_bike,2026-08-07 16:45:07.443,2026-08-07 17:18:25.937,Pierce Ave at Market St,1st St at San Carlos St,member
+8ABA3A1A185363FD,electric_bike,2026-08-07 17:23:16.364,2026-08-07 17:46:46.439,Evans Ave at Newhall St,Polk St at Post St,casual
+9C9531E80ACCF1BA,electric_bike,2026-08-07 17:51:34.858,2026-08-07 18:11:42.457,Fulton St at Laguna St,Outside Lands,casual
+B94AB965B368073B,electric_bike,2026-08-07 17:56:42.827,2026-08-07 18:19:01.890,San Francisco City Hall,7th Ave at Clement St,member
+80DD2E464C936FD2,classic_bike,2026-08-07 18:40:56.537,2026-08-07 19:22:31.658,San Pedro St at Hedding St,Santa Clara St at 7th St,member
+791E1D909BABACAF,electric_bike,2026-08-07 21:46:55.361,2026-08-07 22:14:56.576,,,casual
+85CFA0CE125F607B,classic_bike,2026-08-07 22:12:17.254,2026-08-07 22:42:28.619,38th Ave at Balboa St,Arguello Blvd at Geary Blvd,casual
+0BD51F7C72DDD600,electric_bike,2026-08-07 22:20:51.669,2026-08-07 22:41:59.270,,,casual
+18547F5175FD4AB4,electric_bike,2026-08-07 22:35:09.352,2026-08-07 23:24:49.922,Outside Lands,16th St at Prosper St,casual
+2D0EC0306E426DDF,electric_bike,2026-08-07 22:41:40.095,2026-08-07 23:02:58.516,Dolores St at 15th St,,member
+6B9543690DE0F5EE,classic_bike,2026-08-07 22:59:26.167,2026-08-07 23:23:43.320,Outside Lands,Koshland Park,casual
+D5F322A41405C0E8,electric_bike,2026-08-07 23:05:25.886,2026-08-07 23:40:19.461,24th Ave at Quintara St,Folsom St at 21st St,member
+FDF0D233A5B1342A,electric_bike,2026-08-07 23:15:12.175,2026-08-07 23:45:30.398,38th Ave at Balboa St,36th Ave at Kirkham St,casual
+70A27AEC45E4AF7C,electric_bike,2026-08-08 08:23:15.837,2026-08-08 08:53:38.779,,Washington St at Van Ness Ave,member
+BECE8DAAC5A1D193,electric_bike,2026-08-08 09:05:11.707,2026-08-08 09:42:50.166,Mission Playground,41st Ave at Irving St,casual
+AD81C5519C98BF9B,electric_bike,2026-08-08 09:34:33.374,2026-08-08 10:09:54.394,17th St at Dolores St,JFK Dr at Great Highway,member
+75CD0137D875704B,electric_bike,2026-08-08 09:36:50.944,2026-08-08 09:57:11.928,Jackson St at Polk St,Mason St at Halleck St,casual
+6F60FE4FA4ECAF2E,electric_bike,2026-08-08 09:45:41.938,2026-08-08 10:09:25.923,29th St at Church St,Sutter St at Taylor St,member
+D1A84DBFFDAC367E,electric_bike,2026-08-08 11:37:58.367,2026-08-08 12:05:19.333,8th Ave at JFK Dr,Anza St at 19th Ave,member
+E32F6ED8F9C0E19A,electric_bike,2026-08-08 12:17:03.532,2026-08-08 13:14:32.812,Funston Ave at Irving St,Fillmore St at Jefferson St,casual
+BBA3CAB5C71C30D7,classic_bike,2026-08-08 13:30:43.074,2026-08-08 14:01:51.510,Funston Ave at Fulton St,Irving St at 17th Ave,casual
+8D161BC0CCA52C6A,electric_bike,2026-08-08 13:37:56.335,2026-08-08 14:29:21.499,Jackson St at Polk St,Outside Lands,member
+2214CA61A42343EB,classic_bike,2026-08-08 13:43:33.078,2026-08-08 14:08:47.294,Fulton St at Laguna St,Outside Lands,casual
+3F6A0B5953E01884,electric_bike,2026-08-08 13:55:03.929,2026-08-08 14:19:21.830,34th Ave at Balboa St,Frederick St at Arguello Blvd,casual
+5E08E50C182E0D76,electric_bike,2026-08-08 14:07:56.398,2026-08-08 14:50:29.165,29th St at Church St,San Francisco Ferry Building,member
+8A1C3295036FCC88,classic_bike,2026-08-08 14:44:36.098,2026-08-08 15:08:02.301,Illinois St at 20th St,Yerba Buena Center for the Arts,member
+063FBE61DF72AA2B,electric_bike,2026-08-08 15:09:14.095,2026-08-08 15:35:28.504,Outside Lands,48th Ave at Cabrillo St,casual
+1DCCAC2D25210869,electric_bike,2026-08-08 15:10:35.366,2026-08-08 15:30:43.038,Mission Dolores Park,Outside Lands,member
+1C5FB141C6A262C6,electric_bike,2026-08-08 15:37:47.156,2026-08-08 16:04:29.751,Eureka Valley Recreation Center,,casual
+1E0C095FA97DE8A7,electric_bike,2026-08-08 17:44:21.409,2026-08-08 18:06:52.280,Powell St BART North,,casual
+89CE2835CDE04B8B,electric_bike,2026-08-08 18:05:49.907,2026-08-08 18:53:16.350,,Church St at Duboce Ave,casual
+61D8654DA229B00D,electric_bike,2026-08-08 18:26:45.937,2026-08-08 18:51:59.046,Market St at Dolores St,Irving St at 21st Ave,member
+D284DA6474A2FAD0,electric_bike,2026-08-08 19:25:01.267,2026-08-08 19:46:20.894,,Webster St at Union St,member
+09F799A5435CC675,electric_bike,2026-08-08 19:35:56.464,2026-08-08 20:08:18.418,Taylor St at Pacific Ave,,member
+547704E7C3299DC5,electric_bike,2026-08-08 20:23:23.604,2026-08-08 21:03:24.171,Brannan St at 4th St,Clement St at 32nd Ave,member
+4ED690C6D2DA945A,electric_bike,2026-08-08 21:45:54.599,2026-08-08 22:16:10.504,,Rhode Island St at 17th St,member
+D9B60ADD144D3B5F,electric_bike,2026-08-08 21:54:08.551,2026-08-08 22:27:27.303,,Mission Playground,casual
+17D9A0762A705D87,electric_bike,2026-08-08 22:04:31.783,2026-08-08 22:29:04.999,Webster St at Union St,,member
+384F34ED2C9D5F26,electric_bike,2026-08-09 00:07:34.960,2026-08-09 00:33:13.986,,,casual
+978A6FDD57650198,electric_bike,2026-08-09 08:56:05.198,2026-08-09 09:25:21.107,Brooklyn Basin,65th St at San Pablo Ave,member
+4F490C3908A35048,classic_bike,2026-08-09 09:40:53.318,2026-08-09 10:27:54.692,Powell St at Columbus Ave,Lincoln Blvd at Graham St,casual
+008CB5F7DE55A3DC,classic_bike,2026-08-09 10:03:24.476,2026-08-09 10:27:23.819,Myrtle St at Polk St,Alamo Square,casual
+427FBD5C0913508A,electric_bike,2026-08-09 10:24:04.452,2026-08-09 10:44:41.333,,In Chan Kaajal Park,member
+DBE8CA2743B09FAC,electric_bike,2026-08-09 10:32:57.538,2026-08-09 10:54:22.180,Valencia St at 24th St,Clay St at Lyon St,member
+497722C90D1005BF,electric_bike,2026-08-09 11:03:53.314,2026-08-09 11:24:41.443,Sanchez St at 15th St,22nd St at Dolores St,member
+90E74219706478F5,electric_bike,2026-08-09 11:13:37.354,2026-08-09 11:36:02.881,Divisadero St at Clay St,25th Ave at Irving St,member
+BE629A38867D8F2F,classic_bike,2026-08-09 11:39:14.507,2026-08-09 12:10:36.831,22nd St at Valencia St,Outside Lands,casual
+73F37782B560FFD3,electric_bike,2026-08-09 11:42:48.585,2026-08-09 12:07:57.638,,Outside Lands,casual
+177137EB2AD2A750,electric_bike,2026-08-09 12:13:22.905,2026-08-09 12:36:43.199,Lafayette Park,Waller St at Shrader St,casual
+C65E6C49F23B3170,electric_bike,2026-08-09 12:49:54.563,2026-08-09 13:10:18.128,Broderick St at Oak St,Outside Lands,casual
+C482CAF2FFEB03A7,electric_bike,2026-08-09 12:58:36.861,2026-08-09 13:36:44.009,Pierce St at Haight St,Great Highway at Balboa St,casual
+DDD04E1ADB144916,electric_bike,2026-08-09 13:30:51.822,2026-08-09 13:51:30.992,Scott St at Geary Blvd,Outside Lands Ebike Valet,member
+F364F5961408C37E,electric_bike,2026-08-09 14:10:19.726,2026-08-09 14:32:18.265,4th St at Long Bridge St,Buchanan St at North Point St,member
+A14B274316955AF5,electric_bike,2026-08-09 15:04:29.783,2026-08-09 15:33:18.121,Mission Dolores Park,8th Ave at JFK Dr,member
+3BEAB68A6094C1DF,electric_bike,2026-08-09 15:09:17.650,2026-08-09 15:37:44.612,Townsend St at 7th St,Outside Lands,member
+E5BB884909345083,electric_bike,2026-08-09 15:58:34.751,2026-08-09 16:50:53.685,Divisadero St at Lombard St,Great Highway at Balboa St,casual
+B4524A02883B098E,electric_bike,2026-08-09 16:13:10.395,2026-08-09 16:41:33.300,,18th Ave at California St,casual
+E207D8FA5D086A8A,electric_bike,2026-08-09 16:39:38.804,2026-08-09 17:00:28.869,,Outside Lands Ebike Valet,member
+E0951A9DCF35BF76,classic_bike,2026-08-09 16:47:36.294,2026-08-09 17:17:09.239,Waller St at Shrader St,Irving St at 21st Ave,casual
+186309324756B043,classic_bike,2026-08-09 16:48:41.596,2026-08-09 17:18:17.950,Mission Dolores Park,Fell St at Clayton St,casual
+744BF1FBD35CCDE3,classic_bike,2026-08-09 17:46:13.828,2026-08-09 18:32:54.489,Fell St at Stanyan St,JFK Dr at Great Highway,casual
+13EF6133DFC691CD,electric_bike,2026-08-09 18:39:51.190,2026-08-09 19:04:28.432,,,member
+A2F19F9413DA1B59,electric_bike,2026-08-09 19:45:19.540,2026-08-09 20:07:05.509,2nd Ave at E 18th St,West St at 40th St,member
+6D1A85BAB2BD7DCC,electric_bike,2026-08-09 20:32:51.671,2026-08-09 21:09:10.859,Greenwich St at Franklin St,West Crissy Field,casual
+5A529DBCB7B445C2,electric_bike,2026-08-09 20:43:20.116,2026-08-09 21:08:54.377,Outside Lands Ebike Valet,,member
+B6166CED90080690,electric_bike,2026-08-09 20:43:44.328,2026-08-09 21:12:05.817,Outside Lands Ebike Valet,26th Ave at Noriega St,casual
+22D06764F58B0E5C,electric_bike,2026-08-09 22:22:36.818,2026-08-09 22:46:32.759,,,casual
+8C3DE7D78D5EEB68,electric_bike,2026-08-10 06:50:49.774,2026-08-10 07:26:56.497,,Mission St at Beale St,member
+5D16C3F9BC55D2FA,classic_bike,2026-08-10 10:33:09.583,2026-08-10 10:56:10.888,Pine St at Market St,4th St at Gene Friend Way,member
+AABE918470437C3A,electric_bike,2026-08-10 12:26:42.932,2026-08-10 12:54:49.768,Lyon St at Fell St,Church St at Duboce Ave,casual
+6122D7E70B8DBA41,electric_bike,2026-08-10 14:03:50.038,2026-08-10 14:41:26.936,West Crissy Field,West Crissy Field,casual
+5EDD8B5DB9594822,electric_bike,2026-08-10 14:30:25.826,2026-08-10 15:01:44.974,,20th St at Bryant St,member
+EE817BADE4CEF477,electric_bike,2026-08-10 14:33:18.370,2026-08-10 15:08:30.656,,Powell St at Columbus Ave,casual
+C78D93F7C938ACF1,classic_bike,2026-08-10 15:26:50.098,2026-08-10 15:48:09.538,Turk St at Fillmore St,20th St at Bryant St,member
+A64B63BCBDB574B0,electric_bike,2026-08-10 15:35:39.898,2026-08-10 16:23:23.381,,,casual
+49F17D3C7A6D633B,electric_bike,2026-08-10 16:15:33.875,2026-08-10 16:37:30.924,Lincoln Blvd at Hoffman St,48th Ave at Cabrillo St,member
+8CB15F9A759F51E9,electric_bike,2026-08-10 16:15:47.556,2026-08-10 16:37:08.482,Howard St at 8th St,Market St at Steuart St,member
+80CA17D26CD67A4B,electric_bike,2026-08-10 16:27:32.608,2026-08-10 16:49:46.276,10th Ave at Irving St,Lincoln Blvd at Graham St,casual
+E7E182DE9D5D2A0A,electric_bike,2026-08-10 17:25:04.717,2026-08-10 17:50:41.380,Funston Ave at Irving St,9th Ave at Geary Blvd,member
+C1E528086A0A3A39,electric_bike,2026-08-10 17:45:06.924,2026-08-10 18:05:52.157,Salesforce Transit Center,Carl St at Cole St,member
+2B3B746402036EC5,electric_bike,2026-08-10 18:46:32.786,2026-08-10 19:06:51.012,Kearny St at Bush St,San Francisco Caltrain Station - 4th St,casual
+18E8BB09C103A1B1,electric_bike,2026-08-11 06:50:05.374,2026-08-11 07:14:24.011,Salesforce Transit Center,Williams Ave at 3rd St,member
+A7F1F152DD4BEF8E,electric_bike,2026-08-11 07:54:31.429,2026-08-11 08:25:55.087,,,member
+FCF492C1FA20E96D,electric_bike,2026-08-11 08:00:50.984,2026-08-11 08:25:01.500,,Townsend St at 7th St,member
+10DFA50209C77299,electric_bike,2026-08-11 08:23:27.264,2026-08-11 08:45:30.281,Cesar Chavez St at Dolores St,Powell St BART North,member
+AD3089986EA82D31,electric_bike,2026-08-11 08:30:51.136,2026-08-11 08:58:23.243,Lincoln Blvd at Graham St,38th Ave at Balboa St,casual
+7C54EE6C72E39614,electric_bike,2026-08-11 10:03:02.596,2026-08-11 10:24:56.336,The Embarcadero at Sansome St,Greenwich St at Webster St,member
+5C3865A5DF3FD299,electric_bike,2026-08-11 10:51:15.082,2026-08-11 11:15:35.679,,,member
+246B5AD979122BD8,electric_bike,2026-08-11 14:02:03.748,2026-08-11 14:28:56.035,,,member
+54E00E866C73FEB4,electric_bike,2026-08-11 14:12:44.197,2026-08-11 14:34:34.495,Civic Center BART,Civic Center BART,member
+750F4F7762236E19,electric_bike,2026-08-11 14:59:00.898,2026-08-11 15:20:42.898,,Anza St at Collins St,member
+B1C71C3F9CCF1836,electric_bike,2026-08-11 16:01:44.975,2026-08-11 16:22:01.400,Fell St at Stanyan St,,member
+43786F31BB618832,electric_bike,2026-08-11 16:16:22.850,2026-08-11 16:41:37.056,Montgomery St at Pacific Ave,29th St at Tiffany Ave,member
+8BF7DF514AB4FB95,electric_bike,2026-08-11 16:23:25.369,2026-08-11 16:48:08.309,Terry Francois Blvd at Warriors Way,West Crissy Field,member
+9F94468C1973BB73,electric_bike,2026-08-11 16:38:54.220,2026-08-11 17:05:38.992,Balboa Park BART,Great Highway at Taraval St,member
+5B5D0DA555F0ABDD,electric_bike,2026-08-11 18:46:23.485,2026-08-11 19:16:24.768,Grove St at Masonic Ave,Mason St at Halleck St,casual
+A1D7D28E9DE5F572,classic_bike,2026-08-11 19:09:12.484,2026-08-11 19:36:49.897,The Embarcadero at Steuart St,Page St at Scott St,member
+C3879C90F36EF9EA,classic_bike,2026-08-11 19:20:37.332,2026-08-11 19:42:32.567,North Point St at Grant Ave,Post St at Webster St,member
+8C25501DDB502620,electric_bike,2026-08-12 07:30:49.775,2026-08-12 07:57:18.120,38th Ave at Balboa St,8th St at Hooper St,member
+47EA4B318A165238,classic_bike,2026-08-12 08:36:47.597,2026-08-12 09:03:57.217,21st St at Valencia St,Fell St at Stanyan St,casual
+51DD53734E6B3FB5,electric_bike,2026-08-12 09:30:11.099,2026-08-12 09:53:50.656,Frederick St at Arguello Blvd,Commercial St at Montgomery St,member
+318D152E26688576,electric_bike,2026-08-12 10:50:09.593,2026-08-12 11:11:03.819,Powell St BART South,Powell St BART South,casual
+90B499E304A56A17,classic_bike,2026-08-12 11:22:06.160,2026-08-12 11:44:50.325,Parque Ninos Unidos,Tehama St at 1st St,member
+12A1A9892F8D96AB,electric_bike,2026-08-12 12:47:40.438,2026-08-12 13:19:04.555,Lyon St at Lombard St,McAllister St at Arguello Blvd,casual
+E25A5E2D71C3B32E,classic_bike,2026-08-12 16:01:24.884,2026-08-12 16:44:28.247,Fulton St at Laguna St,Williams Ave at 3rd St,casual
+A2163439D7CB97AE,electric_bike,2026-08-12 16:47:25.733,2026-08-12 17:10:40.751,,Green St at Van Ness Ave,member
+724903A438A3CDEF,classic_bike,2026-08-12 17:16:55.800,2026-08-12 17:48:50.063,Funston Ave at Fulton St,JFK Dr at Great Highway,casual
+392F74FD9D139A94,classic_bike,2026-08-12 17:24:42.112,2026-08-12 17:54:25.958,Bryant St at 2nd St,Mission Playground,casual
+FF10DFCDD68BFEC7,electric_bike,2026-08-12 17:34:27.808,2026-08-12 17:55:28.085,,,member
+ED34A771F214D0AB,electric_bike,2026-08-12 17:41:04.566,2026-08-12 18:02:50.953,Kearny St at Bush St,,member
+3FA59EB794B47101,electric_bike,2026-08-12 17:57:48.215,2026-08-12 18:21:18.453,8th Ave at JFK Dr,8th Ave at JFK Dr,casual
+2F65DA94D9AFBE55,electric_bike,2026-08-12 18:59:22.089,2026-08-12 19:27:36.534,Montgomery St at Pacific Ave,9th Ave at Geary Blvd,member
+FF0A37604152B180,electric_bike,2026-08-12 22:42:19.562,2026-08-12 23:19:43.207,Lincoln Blvd at Graham St,Mission St at Beale St,casual
+FBB88CCFEB37B222,classic_bike,2026-08-13 07:48:50.650,2026-08-13 08:16:16.413,Allyne Park,Allyne Park,member
+5E75211100841FC1,classic_bike,2026-08-13 07:57:33.872,2026-08-13 08:18:36.372,7th Ave at Irving St,Montgomery St BART,member
+9959BE14140CE029,electric_bike,2026-08-13 08:25:30.361,2026-08-13 08:46:53.068,10th Ave at Irving St,5th St at Howard St,member
+5E4C0EF29AA0847C,classic_bike,2026-08-13 08:49:59.342,2026-08-13 09:11:38.203,7th St at King St,Battery St at Filbert St,member
+4B9A61E481870277,electric_bike,2026-08-13 09:07:54.116,2026-08-13 09:32:39.744,,,member
+ADC7871B474B914A,electric_bike,2026-08-13 11:03:59.669,2026-08-13 11:32:44.404,,,member
+E806E324A8A09479,electric_bike,2026-08-13 17:14:17.110,2026-08-13 17:34:30.186,Lincoln Blvd at Bowley St,North Point St at Polk St,casual
+D303815D3438594E,electric_bike,2026-08-13 17:15:38.788,2026-08-13 17:37:18.628,Salesforce Transit Center,Waller St at Shrader St,member
+1D50B95761178F0B,electric_bike,2026-08-13 18:07:05.462,2026-08-13 18:30:42.009,38th Ave at Balboa St,15th St at Valencia St,member
+ECDA8F43576C0F3A,electric_bike,2026-08-13 18:14:12.651,2026-08-13 19:03:17.738,Evans Ave at Mendell St,Williams Ave at 3rd St,member
+78A1B6ABCC99F451,electric_bike,2026-08-13 19:11:16.462,2026-08-13 19:33:45.405,Market St at Franklin St,,casual
+AB5CE5F9F72FEB90,electric_bike,2026-08-14 07:31:49.203,2026-08-14 07:56:02.631,21st Ave at Noriega St,Washington St at Van Ness Ave,member
+6B3BD5EAFB724461,classic_bike,2026-08-14 11:55:58.260,2026-08-14 12:18:39.031,S Van Ness Ave at Market St,Fell St at Clayton St,member
+77AF659DA7B59C59,electric_bike,2026-08-14 13:18:17.294,2026-08-14 13:39:18.611,Koshland Park,Taylor St at Columbus Ave,member
+1BF6D28BAD380D88,classic_bike,2026-08-14 13:20:57.965,2026-08-14 13:48:26.689,Pompei Circle at JFK Dr,JFK Dr at Great Highway,casual
+0F18B3383F9FA22F,classic_bike,2026-08-14 15:00:10.930,2026-08-14 15:29:37.057,Divisadero St at Lombard St,Francisco St at Columbus Ave,casual
+D82622FFD4693F3A,electric_bike,2026-08-14 15:21:41.922,2026-08-14 16:00:05.431,,,casual
+B6E65F2DFFC73DED,electric_bike,2026-08-14 18:48:27.699,2026-08-14 19:11:25.196,,,member
+23CFE6371421D756,electric_bike,2026-08-14 18:56:29.555,2026-08-14 19:17:00.770,21st St at Valencia St,Powell St at Green St,member
+87A9C655B6C48753,electric_bike,2026-08-14 23:07:07.334,2026-08-14 23:38:24.339,11th St at Bryant St,Clement St at 32nd Ave,casual
+4652DEAE6F68A6EB,classic_bike,2026-08-15 10:05:25.456,2026-08-15 10:46:30.662,Alamo Square,26th Ave at Clement St,member
+D9404BE3AAE9DFEF,electric_bike,2026-08-15 10:16:56.299,2026-08-15 11:07:10.531,Lincoln Blvd at Graham St,2nd St at Folsom St,member
+6ECE08B49BA7C10C,electric_bike,2026-08-15 10:36:20.219,2026-08-15 10:57:16.785,10th Ave at Irving St,Lincoln Blvd at Graham St,member
+A4AA7F0931015A5C,classic_bike,2026-08-15 10:36:42.116,2026-08-15 10:57:12.527,Illinois St at Cesar Chavez St,Heron's Head Park,casual
+695BE77342AB4370,electric_bike,2026-08-15 11:08:41.295,2026-08-15 12:06:18.372,Illinois St at 16th St,San Francisco Ferry Building,casual
+E2B4FDCAFB39D63B,electric_bike,2026-08-15 12:08:50.708,2026-08-15 12:31:51.390,El Embarcadero at Grand Ave,Franklin St at 13th St,casual
+C1DCE97FA219CAC2,electric_bike,2026-08-15 12:10:20.257,2026-08-15 12:32:47.093,15th St at Potrero Ave,Mason St at Bay St,member
+A475D61E30C23729,electric_bike,2026-08-15 12:22:16.717,2026-08-15 12:45:57.945,3rd St at King St,24th St at Chattanooga St,member
+FEA8ED39B31EAB81,electric_bike,2026-08-15 12:26:06.480,2026-08-15 12:48:48.484,Lyon St at Fell St,JFK Dr at Great Highway,member
+B4F810EB979BFC26,electric_bike,2026-08-15 12:43:30.529,2026-08-15 13:29:30.603,La Playa St at Lincoln Way,Fell St at Stanyan St,casual
+7D27F36260AD2CE5,electric_bike,2026-08-15 13:17:14.352,2026-08-15 13:40:02.805,,Buchanan St at Lombard St,member
+435748A2AB7019B4,classic_bike,2026-08-15 13:19:03.387,2026-08-15 13:39:36.850,West Crissy Field,Divisadero St at Lombard St,casual
+DE43DD4152291CF6,electric_bike,2026-08-15 13:31:51.729,2026-08-15 13:58:06.019,Broderick St at Oak St,Torney Ave at Lincoln Blvd,member
+3A79D315EDE6E191,electric_bike,2026-08-15 14:02:11.374,2026-08-15 14:25:56.345,7th Ave at Clement St,Powell St at Columbus Ave,member
+73FE771F254D23AD,electric_bike,2026-08-15 14:06:25.955,2026-08-15 14:27:34.195,17th St at Dolores St,,casual
+C3C1CBB9F9446554,electric_bike,2026-08-15 14:16:55.223,2026-08-15 14:39:07.175,Powell St BART South,Pompei Circle at JFK Dr,member
+4F978721F756D53C,classic_bike,2026-08-15 14:20:43.409,2026-08-15 14:56:55.876,La Playa St at Lincoln Way,La Playa St at Lincoln Way,casual
+02DB72BF43AF644A,electric_bike,2026-08-15 14:29:26.529,2026-08-15 14:59:49.380,24th St BART,Steiner St at California St,member
+BD081D38BD3C8DA6,electric_bike,2026-08-15 14:29:38.045,2026-08-15 14:52:12.236,La Playa St at Lincoln Way,Great Highway at Judah St,casual
+F8253B384114F54A,electric_bike,2026-08-15 15:23:09.963,2026-08-15 15:47:36.078,Waller St at Shrader St,41st Ave at Irving St,casual
+D355B4887EC557E2,electric_bike,2026-08-15 15:55:26.536,2026-08-15 16:21:41.329,Valencia St at 24th St,McAllister St at Baker St,member
+A3B7B41AAACCC40F,electric_bike,2026-08-15 16:04:24.397,2026-08-15 16:37:09.480,,Bay St at Fillmore St,casual
+926916CCAD22F0B5,classic_bike,2026-08-15 16:41:49.396,2026-08-15 17:12:37.324,Lincoln Blvd at Hoffman St,North Point St at Polk St,casual
+E3F8E57692019A66,electric_bike,2026-08-15 17:18:27.981,2026-08-15 17:49:39.079,,7th Ave at Clement St,member
+3F0D61993232DD52,classic_bike,2026-08-15 17:20:39.980,2026-08-15 17:51:31.662,San Francisco Caltrain Station - King St,Bay St at Fillmore St,casual
+A3F7BFE99274B267,electric_bike,2026-08-15 18:18:43.159,2026-08-15 18:38:51.039,17th St at Dolores St,Funston Ave at Irving St,member
+DA802CD6B3D866A9,electric_bike,2026-08-15 18:43:22.049,2026-08-15 19:11:01.143,Market St at Dolores St,Allyne Park,member
+2039B45042FB8917,electric_bike,2026-08-15 18:59:56.322,2026-08-15 19:34:37.099,,,casual
+58B3DA7F22B716E0,electric_bike,2026-08-15 20:10:56.460,2026-08-15 20:34:56.585,Webster St at O'Farrell St,,member
+10F564DE817BC259,electric_bike,2026-08-15 20:12:02.529,2026-08-15 20:32:34.198,JFK Dr at Great Highway,23rd Ave at Clement St,casual
+00DEE0AF3CCC3B07,electric_bike,2026-08-15 20:30:39.907,2026-08-15 20:54:16.997,The Embarcadero at Vallejo St,Jackson Playground,casual
+DB99B2380ECE74A8,classic_bike,2026-08-15 20:56:36.166,2026-08-15 21:18:50.295,7th Ave at Clement St,10th Ave at Irving St,member
+145EC55E53555420,electric_bike,2026-08-16 10:33:12.507,2026-08-16 11:16:45.778,Grove St at Masonic Ave,2nd St at Townsend St,member
+29D3F90D50DB050C,electric_bike,2026-08-16 11:27:02.553,2026-08-16 11:48:52.821,Division St at Potrero Ave,,casual
+E895CE9E6BF1464B,electric_bike,2026-08-16 12:16:43.266,2026-08-16 12:42:07.263,North Point St at Polk St,8th Ave at JFK Dr,casual
+228E966C7DFDE965,electric_bike,2026-08-16 13:39:35.252,2026-08-16 14:00:20.829,Webster St at Clay St,Page St at Masonic Ave,member
+4D9B8FBB3A3EFCE1,electric_bike,2026-08-16 13:47:47.080,2026-08-16 14:18:05.423,JFK Dr at Great Highway,8th Ave at JFK Dr,member
+DADCC480CED140AB,electric_bike,2026-08-16 14:35:39.186,2026-08-16 15:09:52.670,Lyon St at Lombard St,Webster St at Union St,casual
+6A4160E62FA40731,electric_bike,2026-08-16 14:54:53.560,2026-08-16 15:17:44.840,Randall St at Chenery St,Jackson Playground,casual
+09EAED3F8C04CA4E,electric_bike,2026-08-16 16:05:36.361,2026-08-16 16:28:35.953,17th St at Valencia St,,member
+A76AD33C8E1C173D,classic_bike,2026-08-16 17:36:52.449,2026-08-16 18:07:07.991,Lyon St at Lombard St,Lincoln Blvd at Hoffman St,casual
+9C4B130828E0E460,electric_bike,2026-08-16 18:06:03.025,2026-08-16 18:39:20.905,The Embarcadero at Steuart St,23rd St at Tennessee St,casual
+8B0AB4175A028686,classic_bike,2026-08-16 18:15:08.770,2026-08-16 18:55:03.430,JFK Dr at Great Highway,Fell St at Stanyan St,casual
+470D8502F91945ED,electric_bike,2026-08-16 18:25:38.684,2026-08-16 19:16:59.351,Crissy Field Overlook,West Crissy Field,casual
+9D632F152625662B,electric_bike,2026-08-16 19:09:49.059,2026-08-16 19:33:55.397,Mission Dolores Park,,casual
+0693F7228F3CA4E6,electric_bike,2026-08-17 08:26:33.993,2026-08-17 08:51:53.749,Frederick St at Arguello Blvd,South Park St at 2nd St,member
+1F88653F2C098D9B,electric_bike,2026-08-17 14:04:50.286,2026-08-17 14:25:43.422,Arguello Blvd at Geary Blvd,Francisco St at Columbus Ave,member
+11C2222E86CFCA2F,electric_bike,2026-08-17 16:43:40.718,2026-08-17 17:07:55.955,4th St at 16th St,5th Ave at Anza St,member
+1CCBAFD0C08C4EDC,electric_bike,2026-08-17 17:57:25.782,2026-08-17 18:20:05.386,Webster St at Union St,Harrison St at 20th St,member
+6C531BDBE6EE7C21,electric_bike,2026-08-17 18:16:55.055,2026-08-17 18:46:35.646,Irving St at 17th Ave,4th St at Gene Friend Way,member
+72666F6565A332B1,classic_bike,2026-08-17 18:32:47.302,2026-08-17 18:53:52.031,Market St at Steuart St,Buchanan St at Lombard St,member
+DF182FE0AA9C6AB2,classic_bike,2026-08-17 18:46:10.723,2026-08-17 19:08:50.439,36th Ave at Irving St,36th Ave at Irving St,casual
+4A241891F0C9D50B,electric_bike,2026-08-17 19:27:56.949,2026-08-17 20:03:25.852,Quintara St at Great Highway,Quintara St at Great Highway,casual
+296B3994604D2385,classic_bike,2026-08-17 19:47:27.236,2026-08-17 20:12:42.550,The Embarcadero at Vallejo St,Webster St at Grove St,member
+0D492CBD3AC2593C,electric_bike,2026-08-17 22:11:04.900,2026-08-17 22:47:33.995,Bowling Green,South Lake,member
+3C546ABF2DFE2DB8,electric_bike,2026-08-18 06:22:24.672,2026-08-18 06:49:05.590,Mission Playground,34th Ave at Balboa St,casual
+A53415CE6F43FA07,electric_bike,2026-08-18 07:55:53.392,2026-08-18 08:18:28.782,,,member
+4DB5AFA7339082F2,classic_bike,2026-08-18 08:25:44.190,2026-08-18 08:46:53.861,Harrison St at 20th St,The Embarcadero at Steuart St,member
+65B3F819BE5CE550,electric_bike,2026-08-18 09:31:43.236,2026-08-18 09:51:54.127,Mission Dolores Park,,member
+B4E595E3BBB890A7,electric_bike,2026-08-18 09:38:13.562,2026-08-18 10:04:10.721,Powell St BART South,Mason St at Bay St,member
+F2AB7B17C9067C9A,electric_bike,2026-08-18 10:48:14.858,2026-08-18 11:34:20.573,Otis St at Brady St,S Van Ness Ave at Market St,member
+D44B757AE70D1E7D,classic_bike,2026-08-18 11:59:55.372,2026-08-18 12:24:51.423,Townsend St at 7th St,The Embarcadero at Vallejo St,member
+55D005FDFC3927D0,classic_bike,2026-08-18 12:23:02.964,2026-08-18 12:58:16.861,Grove St at Masonic Ave,Brannan St at 7th St,member
+567645E9F313A640,electric_bike,2026-08-18 14:32:24.977,2026-08-18 15:11:12.591,San Francisco Ferry Building,Raymond Kimbell Playground,casual
+14D1E814E509AC01,electric_bike,2026-08-18 16:17:25.103,2026-08-18 16:38:28.123,,Valencia St at Clinton Park,member
+0D9AA1BDA6F36267,electric_bike,2026-08-18 16:46:38.088,2026-08-18 17:06:39.880,Webster St at Union St,7th Ave at Irving St,member
+10E79735E541837F,electric_bike,2026-08-18 17:20:56.402,2026-08-18 17:47:57.300,34th Ave at Balboa St,West Portal MUNI,member
+07C8CF617A65D992,electric_bike,2026-08-18 17:27:09.987,2026-08-18 18:17:01.265,Powell St BART North,Taylor St at Columbus Ave,casual
+76247AC2D830395C,classic_bike,2026-08-18 17:46:01.998,2026-08-18 18:09:20.493,8th Ave at JFK Dr,JFK Dr at Great Highway,casual
+A96CCA52221EE73F,electric_bike,2026-08-18 19:06:44.284,2026-08-18 19:31:14.781,Illinois St at Cesar Chavez St,Page St at Scott St,member
+BF3A223FCD4C9AEF,electric_bike,2026-08-18 19:13:57.643,2026-08-18 19:35:00.415,,,member
+4B7594A5835B03A0,electric_bike,2026-08-18 20:06:21.103,2026-08-18 20:29:28.553,,,member
+232F7A6E36791290,electric_bike,2026-08-19 07:50:25.084,2026-08-19 08:24:02.605,29th St at Church St,Lincoln Blvd at Graham St,member
+83492059378CAC44,electric_bike,2026-08-19 08:49:40.180,2026-08-19 09:14:06.188,Lincoln Blvd at Bowley St,Battery St at Filbert St,member
+FDA8485AFD6F1D64,electric_bike,2026-08-19 09:37:44.359,2026-08-19 10:00:06.043,,,member
+B021F0201C572955,electric_bike,2026-08-19 12:02:32.445,2026-08-19 12:25:47.979,,Green St at Van Ness Ave,member
+78206C61AA987853,electric_bike,2026-08-19 13:23:07.639,2026-08-19 13:59:45.095,Minna St at 1st St,30th St at San Jose Ave,member
+3B5E2473433CB00F,electric_bike,2026-08-19 13:51:46.302,2026-08-19 14:22:59.644,Telegraph Ave at 58th St,Telegraph Ave at 58th St,member
+49526C3C3F1311A2,classic_bike,2026-08-19 15:21:20.572,2026-08-19 15:47:15.832,Sanchez St at 17th St,Detroit St at Hearst Ave,member
+BD434710FF8BB53D,classic_bike,2026-08-19 15:59:35.631,2026-08-19 16:46:12.023,Lincoln Blvd at Hoffman St,Powell St BART North,casual
+1E22F8BC5DEB1D3B,electric_bike,2026-08-19 17:10:40.113,2026-08-19 17:39:49.170,Commercial St at Montgomery St,Lincoln Blvd at Bowley St,member
+DAF8EC5FB8BB5FE3,electric_bike,2026-08-19 17:43:48.825,2026-08-19 18:09:27.567,Terry Francois Blvd at Warriors Way,MLK Jr Dr at 7th Ave,member
+07A45D4CF099251A,electric_bike,2026-08-19 17:55:11.157,2026-08-19 18:15:44.150,MacArthur BART,Webster St at 40th St,casual
+C768204087D38489,electric_bike,2026-08-19 18:26:45.788,2026-08-19 18:49:22.418,Arguello Blvd at Geary Blvd,,casual
+0CB3C31212D98A13,electric_bike,2026-08-19 21:24:17.004,2026-08-19 21:47:50.269,7th Ave at Clement St,Broderick St at Oak St,casual
+33385EA1BC9E63DF,classic_bike,2026-08-19 21:37:39.044,2026-08-19 22:07:45.123,Franklin Square,Commercial St at Montgomery St,casual
+9465ADAA3B5002BF,classic_bike,2026-08-20 11:48:30.809,2026-08-20 12:16:07.417,Illinois St at 20th St,Clay St at Davis St,casual
+A5A1D37B54B25A36,electric_bike,2026-08-20 13:36:39.355,2026-08-20 13:57:04.872,Hyde St at Post St,Jersey St at Church St,casual
+383EFF111D2E709C,electric_bike,2026-08-20 13:51:34.666,2026-08-20 14:20:14.693,,29th St at Tiffany Ave,member
+5F01C24815005EED,electric_bike,2026-08-20 15:22:24.362,2026-08-20 15:46:49.386,41st Ave at Irving St,Great Highway at Balboa St,casual
+7D94912C07A880CE,electric_bike,2026-08-20 16:34:58.099,2026-08-20 16:56:29.717,Grove St at Divisadero St,Beale St at Howard St,member
+AF3AF2FA80E5B3A5,electric_bike,2026-08-20 17:42:48.717,2026-08-20 18:09:45.834,Divisadero St at Lombard St,Brannan St at Harriet St,member
+A0799A61A1E571C9,classic_bike,2026-08-20 19:11:12.743,2026-08-20 19:35:01.478,8th St at Brannan St,Pierce St at Haight St,member
+09A726F2A1D442D4,electric_bike,2026-08-20 19:43:36.370,2026-08-20 20:19:00.815,Almaden Blvd at San Fernando St,Almaden Blvd at San Fernando St,member
+25D9CE1C2329FADB,classic_bike,2026-08-20 21:36:23.931,2026-08-20 22:05:27.575,Market St at 24th St,Market St at 24th St,member
+439025C44A1E48FB,electric_bike,2026-08-21 09:17:49.206,2026-08-21 09:40:51.415,,8th St at Brannan St,member
+B2EB0E56217F4E06,electric_bike,2026-08-21 13:11:59.994,2026-08-21 13:40:52.966,Market St at Dolores St,JFK Dr at Great Highway,member
+1FF54151A79D2BA5,classic_bike,2026-08-21 15:07:58.216,2026-08-21 15:33:00.270,Jackson St at Sansome St,Montgomery St BART,casual
+2E60804D1B56E486,classic_bike,2026-08-21 16:56:58.232,2026-08-21 17:19:02.569,Beale St at Howard St,17th St at Dolores St,member
+FF39D5AB381C32A7,electric_bike,2026-08-21 17:20:35.662,2026-08-21 17:54:44.671,Fifth St at Delaware St,Grand Ave at Perkins St,member
+65D58BFB1B7DE044,electric_bike,2026-08-21 17:23:14.669,2026-08-21 17:53:54.654,Glen Park BART,Buchanan St at North Point St,member
+CC00C35E278714E5,classic_bike,2026-08-21 17:52:54.936,2026-08-21 18:13:55.716,22nd St Caltrain Station,17th St at Valencia St,casual
+B073069933D71FAB,electric_bike,2026-08-21 18:05:53.076,2026-08-21 18:31:12.137,,Jackson St at Sansome St,casual
+821CD1D2E6FF87F2,electric_bike,2026-08-21 19:11:05.757,2026-08-21 19:31:48.459,Davis St at Jackson St,,casual
+0C8B3BAC6593FAFF,electric_bike,2026-08-21 19:21:20.045,2026-08-21 19:49:24.068,10th Ave at Irving St,Great Highway at Balboa St,casual
+3C2776669C64F22B,electric_bike,2026-08-21 19:46:01.229,2026-08-21 20:06:29.751,,Battery St at Filbert St,casual
+D6AA983E05BB777A,electric_bike,2026-08-21 19:53:21.802,2026-08-21 20:15:44.900,The Embarcadero at Steuart St,,member
+C9BF788F289BFFDE,electric_bike,2026-08-21 20:11:12.105,2026-08-21 20:43:50.500,Broadway at Kearny St,Commercial St at Montgomery St,member
+21D1BB97BEF405A2,electric_bike,2026-08-21 21:42:14.966,2026-08-21 22:08:22.288,Blue Heron Lake,Polk St at Clay St - Two Segments,member
+BDAFF60DD5E7A74D,classic_bike,2026-08-21 22:55:50.257,2026-08-21 23:22:01.500,Berry St at 4th St,18th St at Noe St,casual
+3F04671E0A7FC1BF,electric_bike,2026-08-21 23:25:02.305,2026-08-21 23:45:58.298,Berry St at King St,Scott St at Golden Gate Ave,member
+C6DB51B349DB43D3,electric_bike,2026-08-22 09:13:43.221,2026-08-22 09:46:31.874,29th St at Church St,West Crissy Field,member
+3B69A6F054F548E7,electric_bike,2026-08-22 09:34:01.587,2026-08-22 09:59:34.539,15th St at Valencia St,,member
+67C3816A17BDAAFF,electric_bike,2026-08-22 11:39:49.172,2026-08-22 12:07:01.180,,San Francisco Ferry Building,casual
+6D6DCF65BE65CEB0,classic_bike,2026-08-22 12:00:20.808,2026-08-22 12:25:57.240,Pine St at Market St,Valencia St at 24th St,member
+E3B39EAD17FFFD09,electric_bike,2026-08-22 12:13:15.128,2026-08-22 12:59:01.292,,,casual
+475E2C84441A147A,electric_bike,2026-08-22 12:22:06.515,2026-08-22 12:48:14.989,8th Ave at JFK Dr,Mechanics Monument Plaza,casual
+36B6E0A18CCF1B52,electric_bike,2026-08-22 12:22:19.665,2026-08-22 12:46:26.072,,36th Ave at Spreckels Lake Dr,member
+2E175DF749F098C5,electric_bike,2026-08-22 13:21:21.507,2026-08-22 13:41:52.267,Harrison St at 20th St,14th St at Mission St,member
+4B99B6B122DE2553,electric_bike,2026-08-22 13:53:00.206,2026-08-22 14:18:40.927,Greenwich St at Franklin St,Pompei Circle at JFK Dr,member
+F01A192517389F15,classic_bike,2026-08-22 15:35:01.296,2026-08-22 16:21:22.716,Washington St at Kearny St,Post St at Webster St,casual
+9750966B3BCAA824,electric_bike,2026-08-22 16:03:04.878,2026-08-22 16:23:42.823,Lincoln Blvd at Bowley St,Arguello Blvd at Edward St,casual
+F0CAD83A691182CF,electric_bike,2026-08-22 17:11:36.817,2026-08-22 17:45:42.672,7th Ave at Irving St,La Playa St at Lincoln Way,casual
+9F0A509A13913633,electric_bike,2026-08-22 17:17:59.149,2026-08-22 17:38:48.317,North Point St at Powell St,Fillmore St at Jefferson St,casual
+5D5FBE7ECE34ADA1,electric_bike,2026-08-22 17:25:14.840,2026-08-22 17:58:02.709,Victoria Manalo Draves Park,Howard St at 8th St,member
+838DE051784ACB1B,electric_bike,2026-08-22 18:10:12.455,2026-08-22 18:31:50.166,,,casual
+B61645D6BFD7E723,classic_bike,2026-08-22 18:18:22.132,2026-08-22 19:17:54.828,Milvia St at Derby St,Berkeley Marina,member
+4134F5C292BCF836,electric_bike,2026-08-22 18:18:51.917,2026-08-22 18:43:59.664,JFK Dr at Great Highway,Waller St at Shrader St,casual
+C079CC488ED6561C,electric_bike,2026-08-22 18:31:00.691,2026-08-22 18:57:03.880,,,member
+6D362659DB39D74F,classic_bike,2026-08-22 19:25:05.884,2026-08-22 19:58:35.153,Great Highway at Taraval St,Great Highway at Taraval St,member
+B66409FB7C121F25,electric_bike,2026-08-22 23:31:13.017,2026-08-23 00:11:07.617,,8th St at Ringold St,casual
+5D1D427430ECB2FE,classic_bike,2026-08-22 23:32:06.767,2026-08-23 00:24:58.530,Valencia St at Clinton Park,Lincoln Blvd at Hoffman St,casual
+498B9F172DD2F60D,classic_bike,2026-08-23 01:14:22.030,2026-08-23 01:37:29.064,Jackson St at Polk St,Valencia St at 24th St,casual
+C05202235A9598F4,electric_bike,2026-08-23 07:07:16.340,2026-08-23 07:48:19.043,North Point St at Grant Ave,Market St at Steuart St,member
+18850D4C77E50290,classic_bike,2026-08-23 10:03:46.715,2026-08-23 10:39:46.872,JFK Dr at Great Highway,8th Ave at JFK Dr,casual
+0AE4F11117AD62BD,electric_bike,2026-08-23 10:07:05.424,2026-08-23 10:31:17.692,17th St at Valencia St,North Point St at Grant Ave,member
+02F6D989FAA11752,electric_bike,2026-08-23 10:08:06.606,2026-08-23 11:01:22.825,North Point St at Grant Ave,Lincoln Blvd at Hoffman St,casual
+E9E07F8B081FBB5E,electric_bike,2026-08-23 11:04:40.235,2026-08-23 11:36:32.936,21st Ave at Noriega St,48th Ave at Cabrillo St,casual
+239A8CEEED911436,classic_bike,2026-08-23 11:39:44.512,2026-08-23 12:00:19.392,Minna St at 1st St,North Point St at Grant Ave,casual
+96FF242AC1B509CF,electric_bike,2026-08-23 12:06:37.168,2026-08-23 12:50:55.292,MLK Jr Dr at 7th Ave,8th Ave at JFK Dr,casual
+39A05F44843D44AB,electric_bike,2026-08-23 12:06:38.660,2026-08-23 12:50:01.848,MLK Jr Dr at 7th Ave,8th Ave at JFK Dr,casual
+829A646A64C71E90,electric_bike,2026-08-23 12:34:26.137,2026-08-23 12:54:45.961,Greenwich St at Webster St,,member
+A024EBD509C01EE0,classic_bike,2026-08-23 12:45:05.839,2026-08-23 13:09:14.736,The Embarcadero at Sansome St,Illinois St at 20th St,casual
+E6090A2A7C5B33E7,electric_bike,2026-08-23 12:54:44.190,2026-08-23 13:28:14.215,Valencia St at Clinton Park,Rio Verde St at Geneva Ave,casual
+A750289F9CC13B47,electric_bike,2026-08-23 13:40:52.107,2026-08-23 14:06:27.378,20th St at Dolores St,San Francisco Ferry Building,casual
+3A8895E8C140043F,classic_bike,2026-08-23 14:16:59.464,2026-08-23 14:50:19.098,Main St at Howard St,Pierce St at Haight St,member
+9F0BB89260AF8EB0,electric_bike,2026-08-23 14:31:42.041,2026-08-23 15:17:09.397,Buchanan St at North Point St,Lincoln Blvd at Hoffman St,casual
+3E09BBA1A97EF1EA,electric_bike,2026-08-23 15:37:47.141,2026-08-23 16:07:04.045,10th Ave at Irving St,Green St at Van Ness Ave,member
+07788979B508BC85,electric_bike,2026-08-23 16:10:21.671,2026-08-23 16:31:44.956,7th Ave at Irving St,19th St at Mission St,member
+9CAC5F3765996D84,electric_bike,2026-08-23 16:22:37.895,2026-08-23 16:46:30.874,Page St at Masonic Ave,Broadway at Kearny St,casual
+DEBF363298B1FD4B,electric_bike,2026-08-23 16:42:13.443,2026-08-23 17:02:46.200,26th Ave at Clement St,Grove St at Masonic Ave,casual
+52A533C3BD6E1576,electric_bike,2026-08-23 18:32:17.527,2026-08-23 19:00:14.499,Pompei Circle at JFK Dr,Lyon St at Fell St,casual
+1946B435A0732710,electric_bike,2026-08-23 18:43:53.956,2026-08-23 19:05:19.838,Irving St at 17th Ave,17th St at Valencia St,casual
+68A9F32DB3CF0BF0,electric_bike,2026-08-23 20:13:12.882,2026-08-23 20:35:25.203,Powell St at Columbus Ave,26th Ave at Clement St,member
+010A188F973CD83B,electric_bike,2026-08-24 01:22:10.684,2026-08-24 02:18:55.440,23rd St at Santa Clara St,,member
+D1BF244AB0E8AE97,electric_bike,2026-08-24 09:17:47.940,2026-08-24 09:43:22.168,Turk Blvd at Stanyan St,Battery St at Filbert St,member
+1DE2D5C340747E39,classic_bike,2026-08-24 10:26:46.313,2026-08-24 10:52:44.228,36th Ave at Spreckels Lake Dr,Fell St at Clayton St,member
+54E4FCC3803476EF,electric_bike,2026-08-24 10:48:43.927,2026-08-24 11:15:25.978,Frederick St at Arguello Blvd,Hospital St at Mariposa St,casual
+DF96635E68FEC66C,electric_bike,2026-08-24 12:04:07.906,2026-08-24 12:31:52.173,West Crissy Field,North Point St at Polk St,casual
+7A69433C1746C5E3,classic_bike,2026-08-24 15:07:45.003,2026-08-24 15:29:59.202,Green St at Van Ness Ave,18th St at Noe St,member
+3A48EEC6DC1B23EA,electric_bike,2026-08-24 16:16:17.594,2026-08-24 16:39:23.251,Commercial St at Montgomery St,Esprit Park,member
+FEC33C3D859D28A2,classic_bike,2026-08-24 16:19:46.740,2026-08-24 16:41:39.929,21st St at Valencia St,Powell St BART South,casual
+1D68B3398BDB87DE,electric_bike,2026-08-24 17:41:14.333,2026-08-24 18:02:07.153,Webster St at Union St,10th Ave at Irving St,member
+FA6D66E95D0C8E04,electric_bike,2026-08-24 17:44:23.788,2026-08-24 18:04:50.097,,Grove St at Divisadero St,casual
+9F50C75EBE42CD95,electric_bike,2026-08-24 17:52:58.985,2026-08-24 18:14:52.438,Clay St at Battery St,,member
+F7E0FC1A419997F2,electric_bike,2026-08-24 19:46:49.535,2026-08-24 20:08:01.716,Laurel St at California St,JFK Dr at Great Highway,casual
+BEB4E668B9354D69,electric_bike,2026-08-24 23:10:28.082,2026-08-24 23:33:23.879,,Lyon St at Fell St,member
+66175F48AC8C17B0,electric_bike,2026-08-25 09:52:46.458,2026-08-25 10:13:46.284,20th St at Dolores St,Battery St at Filbert St,member
+5CE4A9F3BEEC8466,classic_bike,2026-08-25 10:12:01.504,2026-08-25 10:37:04.674,Irving St at 21st Ave,S Van Ness Ave at Market St,member
+A8639D1E1EF60450,classic_bike,2026-08-25 10:20:17.028,2026-08-25 10:42:35.692,Esprit Park,Esprit Park,member
+451D9B0B6FD277EE,electric_bike,2026-08-25 14:43:38.290,2026-08-25 15:04:01.279,23rd St at Telegraph Ave,Vallejo St at 66th St,member
+25D55B80D53CB08A,electric_bike,2026-08-25 16:52:17.324,2026-08-25 17:13:50.336,North Point St at Grant Ave,North Point St at Polk St,member
+1198E8F897780160,classic_bike,2026-08-25 17:04:19.148,2026-08-25 17:59:21.023,Carl St at Cole St,JFK Dr at Great Highway,member
+636F97536EF0293B,electric_bike,2026-08-25 17:41:01.377,2026-08-25 18:28:29.181,Great Highway at Judah St,Great Highway at Judah St,casual
+8BDBD7E8730300AF,electric_bike,2026-08-25 18:12:36.932,2026-08-25 18:32:59.850,,Folsom St at 19th St,member
+8327BC4067716C84,classic_bike,2026-08-25 18:48:53.880,2026-08-25 19:11:19.244,Mechanics Monument Plaza,Mechanics Monument Plaza,member
+4F6BDDDC6B233085,electric_bike,2026-08-25 18:53:51.012,2026-08-25 19:20:00.130,Pompei Circle at JFK Dr,La Playa St at Lincoln Way,casual
+FAF830C560099925,electric_bike,2026-08-25 19:49:55.389,2026-08-25 20:14:33.448,Mint St at Mission St,23rd Ave at Clement St,member
+DB3BAAB09634F73F,electric_bike,2026-08-25 22:44:14.503,2026-08-25 23:05:19.730,,,member
+68E81A669FE2AA0F,electric_bike,2026-08-26 07:27:14.556,2026-08-26 07:59:30.076,Clement St at 32nd Ave,Illinois St at 20th St,member
+C0D5B9590475EF99,electric_bike,2026-08-26 07:39:21.728,2026-08-26 08:04:20.527,Lyon St at Lombard St,4th St at 16th St,casual
+10DB0735A0F34066,electric_bike,2026-08-26 07:43:37.860,2026-08-26 08:09:06.821,,29th St at Tiffany Ave,member
+BE9E2541D9A8FE73,electric_bike,2026-08-26 08:00:42.578,2026-08-26 08:23:17.690,Fulton St at Laguna St,Terry Francois Blvd at Warriors Way,member
+4DBCD577AD0F2E98,classic_bike,2026-08-26 10:24:07.508,2026-08-26 10:45:57.554,Mason St at Bay St,Grant Ave at Sutter St,member
+BAA0C3A21B8857BA,electric_bike,2026-08-26 11:23:33.480,2026-08-26 11:45:17.609,Minna St at 1st St,Mason St at Bay St,member
+605AC3F8791BD748,classic_bike,2026-08-26 11:50:15.883,2026-08-26 12:25:38.611,Webster St at Union St,Divisadero St at Lombard St,casual
+110D24973D6D0D93,electric_bike,2026-08-26 11:55:31.789,2026-08-26 12:20:40.969,Webster St at Clay St,China Basin St at 3rd St,casual
+A9EA88E59C9E0DC5,electric_bike,2026-08-26 12:56:31.643,2026-08-26 13:18:15.239,Lincoln Blvd at Graham St,Leavenworth St at Broadway,casual
+3EDE3884FF5EAF09,electric_bike,2026-08-26 14:40:26.614,2026-08-26 15:01:04.093,Montgomery St BART,24th St at Chattanooga St,casual
+DA01866A1787F968,classic_bike,2026-08-26 15:44:40.768,2026-08-26 16:11:12.361,4th St at Long Bridge St,Mission Playground,member
+CF0620EB1CDFCEA5,electric_bike,2026-08-26 16:20:33.171,2026-08-26 16:43:16.619,4th St at 16th St,Allyne Park,member
+CC98CEEC94DEB1CA,electric_bike,2026-08-26 16:27:39.890,2026-08-26 17:23:49.671,Ferry Plaza Virtual Station,Lincoln Blvd at Graham St,casual
+C0322AC6D50046FA,classic_bike,2026-08-26 16:39:39.972,2026-08-26 17:06:30.302,Tenth St at Gilman St,Euclid Ave at Hearst Ave,member
+77F8FFAF39E219EA,electric_bike,2026-08-26 16:54:07.068,2026-08-26 17:16:09.929,Main St at Howard St,17th St at Dolores St,member
+1D0E93CC0A45AA29,electric_bike,2026-08-26 17:10:51.613,2026-08-26 17:32:49.337,Victoria Manalo Draves Park,Waller St at Shrader St,member
+05905E4F82B138D7,electric_bike,2026-08-26 17:13:58.750,2026-08-26 17:34:18.276,,2nd St at Townsend St,casual
+22E092D0A7856EA4,classic_bike,2026-08-26 17:18:11.971,2026-08-26 17:39:16.952,10th St at University Ave,Berkeley Civic Center,casual
+C429C8DF375F2408,classic_bike,2026-08-26 17:19:41.003,2026-08-26 17:44:37.006,Holloway Ave at Arellano Ave,San Francisco Zoo,member
+A70ED06BA751230D,electric_bike,2026-08-26 17:20:33.062,2026-08-26 17:41:21.698,Clay St at Battery St,Spruce St at California St,member
+6D287E292041845B,electric_bike,2026-08-26 17:44:08.960,2026-08-26 18:13:17.989,4th St at Long Bridge St,26th Ave at Clement St,member
+16A0B528EE00486C,electric_bike,2026-08-26 18:14:04.931,2026-08-26 18:42:52.465,,,casual
+C50A44E115A14064,classic_bike,2026-08-26 18:36:07.377,2026-08-26 19:04:29.995,36th Ave at Irving St,Koshland Park,member
+C734FCD9C5F6D08F,electric_bike,2026-08-26 18:58:53.297,2026-08-26 19:20:59.635,West Crissy Field,Lincoln Blvd at Graham St,casual
+3ABAA039C55C8CEE,electric_bike,2026-08-26 19:52:05.688,2026-08-26 20:22:14.998,Townsend St at 5th St,5th Ave at Anza St,member
+91713A5665BA4BE3,classic_bike,2026-08-26 20:59:12.454,2026-08-26 21:23:55.958,11th St at Bryant St,Fulton St at Laguna St,member
+10003D13346A6E35,electric_bike,2026-08-26 22:01:22.452,2026-08-26 22:38:58.304,Raymond Kimbell Playground,Waller St at Shrader St,casual
+5D84A13B7378BD9C,classic_bike,2026-08-27 07:40:55.900,2026-08-27 08:15:07.317,7th Ave at Irving St,Tehama St at 1st St,member
+677DD8E562593FD8,classic_bike,2026-08-27 08:07:51.134,2026-08-27 08:39:33.693,Greenwich St at Franklin St,Greenwich St at Franklin St,member
+78DB1FFE2F85AB60,electric_bike,2026-08-27 08:50:20.291,2026-08-27 09:23:00.913,14th Ave at Geary Blvd,Jackson St at Sansome St,member
+6B94865A3C7D5D14,electric_bike,2026-08-27 09:06:59.709,2026-08-27 09:28:33.301,,,member
+20819619CD67D247,electric_bike,2026-08-27 11:31:25.690,2026-08-27 11:54:08.855,North Point St at Polk St,22nd St at Potrero Ave,member
+E8D5E4A2F20B3CF9,electric_bike,2026-08-27 12:23:25.465,2026-08-27 12:55:53.692,Cruise Terminal at Pier 27,Cruise Terminal at Pier 27,casual
+6E61761CD1588A76,electric_bike,2026-08-27 15:13:39.397,2026-08-27 15:38:07.861,2nd St at Townsend St,Mission Dolores Park,casual
+5C4833CC8D3205EE,electric_bike,2026-08-27 15:20:39.454,2026-08-27 15:51:08.504,Cyril Magnin St at Ellis St,North Point St at Grant Ave,casual
+6BCC452B332D39A8,electric_bike,2026-08-27 15:50:27.960,2026-08-27 16:33:12.284,Webster St at Union St,,casual
+E4CA292E2D8E4AC8,classic_bike,2026-08-27 16:09:28.097,2026-08-27 16:45:28.802,Anza St at Collins St,O'Farrell St at Masonic Ave,member
+537007636064F991,electric_bike,2026-08-27 16:20:01.266,2026-08-27 16:43:55.341,Waller St at Shrader St,Larkin St at California St,member
+43E1C6B60F3F8885,electric_bike,2026-08-27 16:25:00.114,2026-08-27 16:49:19.596,,29th St at Church St,member
+7175BB30C21D909B,electric_bike,2026-08-27 16:56:11.938,2026-08-27 17:36:25.508,Mabini St at Folsom St,,member
+8CCF30394EA652FE,electric_bike,2026-08-27 17:38:10.030,2026-08-27 17:58:43.956,Illinois St at Cesar Chavez St,South Park St at 3rd St,member
+CC83D077214C7059,electric_bike,2026-08-27 18:02:08.815,2026-08-27 18:22:39.771,Illinois St at 20th St,Masonic Ave at Turk St,member
+121D88BA7C12F7E1,electric_bike,2026-08-27 18:32:43.759,2026-08-27 19:00:02.077,Carl St at Cole St,8th St at Ringold St,member
+80097C287005FBA7,classic_bike,2026-08-27 18:36:11.155,2026-08-27 18:56:49.387,Commercial St at Montgomery St,Commercial St at Montgomery St,member
+E8558095121E233C,electric_bike,2026-08-27 21:16:08.664,2026-08-27 21:39:26.226,Jersey St at Castro St,Vallejo St at Stockton St - Two Segments,member
+CC4BBF13EE15CFE4,electric_bike,2026-08-27 21:22:20.561,2026-08-27 21:49:12.013,2nd St at Townsend St,Greenwich St at Franklin St,casual
+E862018DBF973F41,electric_bike,2026-08-27 23:12:22.333,2026-08-27 23:32:47.927,,North Point St at Powell St,member
+03779B2DC85E302F,classic_bike,2026-08-28 10:47:06.348,2026-08-28 11:27:40.279,Great Highway at Taraval St,Great Highway at Taraval St,casual
+BCFE85FA7E2CDF9F,classic_bike,2026-08-28 13:37:28.001,2026-08-28 14:01:42.824,The Embarcadero at Vallejo St,North Point St at Polk St,casual
+8C2EB1C7FA235578,electric_bike,2026-08-28 14:53:33.975,2026-08-28 15:27:23.007,Frederick St at Arguello Blvd,Waller St at Shrader St,casual
+5DD914D0AC115A1D,classic_bike,2026-08-28 15:17:58.276,2026-08-28 15:40:40.048,Fell St at Clayton St,8th Ave at JFK Dr,casual
+E61BF65F697D6070,electric_bike,2026-08-28 15:32:23.441,2026-08-28 16:11:17.618,Lincoln Blvd at Hoffman St,Washington St at Van Ness Ave,member
+D83AB2B24289EAD4,electric_bike,2026-08-28 15:34:06.843,2026-08-28 15:56:20.829,Pierce St at Haight St,Divisadero St at Lombard St,member
+2EDF2F00AE49078C,classic_bike,2026-08-28 15:35:29.468,2026-08-28 15:58:56.417,Fell St at Stanyan St,Pier 1/2 at The Embarcadero,member
+ABFDB394789ABC0D,classic_bike,2026-08-28 15:51:28.780,2026-08-28 16:17:02.829,San Francisco Caltrain Station - Townsend St,18th St at Noe St,member
+A2B55428A833BFEF,electric_bike,2026-08-28 17:13:27.280,2026-08-28 17:38:19.075,Grove St at Gough St,36th Ave at Spreckels Lake Dr,member
+F4CB694DD5192735,electric_bike,2026-08-28 17:26:14.115,2026-08-28 17:49:14.312,5th St at Howard St,Irving St at 21st Ave,member
+3EF2C4802AB86FDE,electric_bike,2026-08-28 17:28:15.634,2026-08-28 17:49:45.103,24th St at Chattanooga St,24th St at Chattanooga St,member
+C795D8E602E0C545,electric_bike,2026-08-28 17:34:54.122,2026-08-28 18:10:04.268,Union Square,Buchanan St at North Point St,casual
+D5C4529C12BE7D53,electric_bike,2026-08-28 17:36:37.501,2026-08-28 17:57:44.591,8th Ave at JFK Dr,,member
+D77312BB0660848F,electric_bike,2026-08-28 18:34:10.608,2026-08-28 18:57:08.578,Powell St BART South,Potrero del Sol Park,member
+72A54FC89A6AFC90,classic_bike,2026-08-28 19:29:53.442,2026-08-28 19:56:09.392,North Point St at Powell St,San Francisco Caltrain Station - Townsend St,casual
+137B4D03806AE0D5,classic_bike,2026-08-28 19:41:08.553,2026-08-28 20:03:54.360,Franklin Square,Grove St at Divisadero St,member
+DBEB490A04EB551E,electric_bike,2026-08-28 20:04:30.976,2026-08-28 20:27:24.416,Carl St at Cole St,Jersey St at Castro St,member
+71C266C22260B20D,electric_bike,2026-08-28 22:47:26.826,2026-08-28 23:09:36.361,Vallejo St at Stockton St - Two Segments,Frederick St at Arguello Blvd,member
+C07FD42DFFF972FF,electric_bike,2026-08-29 09:06:40.632,2026-08-29 09:39:44.647,,Webster St at Union St,member
+FEC1F4EDFD422EC6,electric_bike,2026-08-29 10:18:06.964,2026-08-29 10:40:13.680,,Guerrero Park,member
+3280E6E60661A493,electric_bike,2026-08-29 10:37:16.064,2026-08-29 10:59:21.796,Mason St at Bay St,Mission Dolores Park,member
+391235946F158775,classic_bike,2026-08-29 11:41:48.040,2026-08-29 12:16:45.102,Lakeshore Ave at Trestle Glen Rd,Jefferson St at 14th St,member
+2AD5A2693A2189E0,electric_bike,2026-08-29 11:57:26.310,2026-08-29 12:51:48.769,Irving St at 21st Ave,5th St at Howard St,member
+19CB0ACD61F34B6C,electric_bike,2026-08-29 11:59:35.120,2026-08-29 12:52:38.899,8th Ave at JFK Dr,Frederick St at Arguello Blvd,casual
+1A07ABC64196AC3B,electric_bike,2026-08-29 12:40:47.661,2026-08-29 13:06:56.085,In Chan Kaajal Park,Hellman Hollow,member
+F1EADD8330F03EC4,electric_bike,2026-08-29 13:04:37.903,2026-08-29 13:24:44.339,,2nd St at Townsend St,member
+9A171779ABB5CC35,classic_bike,2026-08-29 13:06:41.453,2026-08-29 13:27:35.737,23rd Ave at Clement St,Great Highway at Balboa St,casual
+FE126F2C6EC2B167,electric_bike,2026-08-29 13:38:52.905,2026-08-29 14:10:03.702,North Point St at Polk St,,casual
+BB1556E1C628F559,electric_bike,2026-08-29 13:40:50.404,2026-08-29 14:28:39.171,Pompei Circle at JFK Dr,Otis St at Brady St,casual
+90CC8F86EC33AE57,electric_bike,2026-08-29 13:54:36.800,2026-08-29 14:34:55.998,JFK Dr at Great Highway,Mission Dolores Park,casual
+A41BDF148BF34A24,electric_bike,2026-08-29 13:55:50.059,2026-08-29 14:29:10.099,West Crissy Field,Divisadero St at Lombard St,casual
+97E01F0569796CFD,electric_bike,2026-08-29 14:10:44.399,2026-08-29 14:37:41.776,Chestnut St at Van Ness Ave,San Francisco Caltrain Station - Townsend St,member
+58252252C184AE2C,electric_bike,2026-08-29 14:11:59.424,2026-08-29 14:35:17.547,Quintara St at Great Highway,Great Highway at Judah St,casual
+CE4AFDEE8B2128DC,electric_bike,2026-08-29 14:14:46.444,2026-08-29 14:48:31.573,Vallejo St at Stockton St - Two Segments,Pompei Circle at JFK Dr,member
+31AC16E8B69D6745,electric_bike,2026-08-29 14:15:22.439,2026-08-29 14:45:39.202,China Basin Park,Buchanan St at North Point St,casual
+8DCE62F0176FA5A5,electric_bike,2026-08-29 14:47:06.382,2026-08-29 15:07:21.375,Octavia Blvd at Page St,North Point St at Powell St,member
+EA1DE4F2DAE5D925,electric_bike,2026-08-29 14:48:52.067,2026-08-29 15:10:03.905,Torney Ave at Lincoln Blvd,Lincoln Blvd at Hoffman St,casual
+701B6E5C56FC0F95,classic_bike,2026-08-29 14:56:02.152,2026-08-29 15:46:23.965,Green St at Van Ness Ave,Crissy Field Overlook,casual
+486B7C349FC90D47,electric_bike,2026-08-29 15:06:05.666,2026-08-29 15:26:27.902,Lincoln Blvd at Hoffman St,,casual
+622E10BDA5AEA787,electric_bike,2026-08-29 15:24:12.798,2026-08-29 15:45:58.043,La Playa St at Lincoln Way,Frederick St at Arguello Blvd,member
+C1DC572DBB671B3D,electric_bike,2026-08-29 15:25:51.789,2026-08-29 15:47:22.743,,,member
+0DC751C6D72ED512,electric_bike,2026-08-29 15:37:54.235,2026-08-29 16:08:52.550,,Pompei Circle at JFK Dr,casual
+1F25799FC1EA6F81,electric_bike,2026-08-29 15:41:27.040,2026-08-29 16:02:32.067,Jersey St at Castro St,Alemany Blvd at Silver Ave,casual
+AA9ABD2AC512756D,electric_bike,2026-08-29 15:59:52.530,2026-08-29 16:24:35.886,Pompei Circle at JFK Dr,48th Ave at Cabrillo St,casual
+BB52FDC1206139D0,electric_bike,2026-08-29 16:24:28.630,2026-08-29 16:46:50.409,8th Ave at JFK Dr,36th Ave at Spreckels Lake Dr,casual
+89A7F23C284CB795,classic_bike,2026-08-29 16:38:53.953,2026-08-29 17:00:53.775,8th Ave at JFK Dr,Broderick St at Oak St,casual
+8A87692FED3F9481,electric_bike,2026-08-29 16:44:28.302,2026-08-29 17:06:27.490,,Page St at Scott St,casual
+3F8567BAB957ECA3,classic_bike,2026-08-29 16:46:54.637,2026-08-29 17:10:14.349,The Embarcadero at Bryant St,Union Square,casual
+EB8AE609EDFA7147,electric_bike,2026-08-29 16:48:41.644,2026-08-29 17:18:17.042,,San Francisco Ferry Building,member
+2A8CDC5449BC1E5B,electric_bike,2026-08-29 17:01:11.771,2026-08-29 17:33:48.285,Grove St at Gough St,JFK Dr at Great Highway,casual
+7AEBD1025FCA895D,electric_bike,2026-08-29 17:07:07.437,2026-08-29 17:45:30.437,Lincoln Blvd at Graham St,San Francisco Caltrain Station - Townsend St,casual
+4E0428C84C3C1095,electric_bike,2026-08-29 17:10:31.584,2026-08-29 17:39:34.449,La Playa St at Lincoln Way,Waller St at Shrader St,casual
+2E0C00F63AD2E78D,electric_bike,2026-08-29 17:50:02.590,2026-08-29 18:13:38.145,Cyril Magnin St at Ellis St,Cyril Magnin St at Ellis St,casual
+4E0DFE825149F101,electric_bike,2026-08-29 18:18:02.277,2026-08-29 18:48:16.800,,McAllister St at Baker St,casual
+AD6A6D3E67CB6B45,electric_bike,2026-08-29 18:59:30.137,2026-08-29 19:52:51.124,10th Ave at Irving St,Folsom St at 13th St,member
+19D7F0A17B811AD2,electric_bike,2026-08-29 19:13:11.361,2026-08-29 19:34:53.623,21st St at Valencia St,Greenwich St at Webster St,casual
+349324568E75AC98,electric_bike,2026-08-29 19:22:58.967,2026-08-29 19:52:36.899,21st St at Valencia St,26th Ave at Noriega St,casual
+8A7BA6A03573A621,classic_bike,2026-08-29 19:28:02.009,2026-08-29 20:00:07.555,Steiner St at California St,Pompei Circle at JFK Dr,casual
+01DC31C5FFFD4743,electric_bike,2026-08-29 19:33:23.039,2026-08-29 20:06:47.229,Market St at Steuart St,Kearny St at California St,casual
+E954B7E770C70E91,electric_bike,2026-08-29 19:37:43.202,2026-08-29 20:02:58.921,Guerrero Park,Howard St at 6th St,member
+7EF5A275CC1E4ECD,electric_bike,2026-08-29 19:50:24.565,2026-08-29 20:16:14.387,Illinois St at 20th St,North Point St at Polk St,member
+2EE0F73C1621E539,electric_bike,2026-08-29 20:06:34.393,2026-08-29 20:43:13.649,Cyril Magnin St at Ellis St,Union Square,casual
+B9340DC0E2FCEBA1,electric_bike,2026-08-29 20:07:08.246,2026-08-29 20:27:36.155,Grove St at Divisadero St,Great Highway at Balboa St,member
+0DED7448F31AFBC7,classic_bike,2026-08-30 00:39:23.192,2026-08-30 01:18:27.970,Folsom St at 7th St,9th Ave at Geary Blvd,casual
+E7587B1B25668ED3,classic_bike,2026-08-30 08:58:24.133,2026-08-30 09:43:54.863,Howard St at 8th St,Brannan St at 7th St,member
+223EF4F647C23ED6,electric_bike,2026-08-30 11:53:52.582,2026-08-30 12:32:23.641,Lincoln Blvd at Bowley St,Lincoln Blvd at Bowley St,casual
+95E76F3D6374532A,electric_bike,2026-08-30 12:02:54.984,2026-08-30 12:40:55.013,Buchanan St at Lombard St,Union Square,member
+947BF536F78D3B7B,electric_bike,2026-08-30 14:11:38.112,2026-08-30 14:35:08.065,Page St at Masonic Ave,Mississippi St at 17th St,member
+CFE544DA444D401D,electric_bike,2026-08-30 14:12:42.833,2026-08-30 15:02:11.041,Pier 1/2 at The Embarcadero,Buchanan St at North Point St,casual
+F907293D0B76BD50,classic_bike,2026-08-30 14:17:52.834,2026-08-30 14:55:43.749,Illinois St at 16th St,Francisco St at Columbus Ave,member
+FEB524D4CAD8CCEF,electric_bike,2026-08-30 14:23:34.599,2026-08-30 14:56:45.495,7th Ave at Clement St,Potrero Ave at Mariposa St,member
+8FB7CD6937128D95,electric_bike,2026-08-30 14:30:29.155,2026-08-30 15:01:28.877,38th Ave at Balboa St,Great Highway at Noriega St,member
+1FB8B51CB732AAAF,electric_bike,2026-08-30 14:59:58.441,2026-08-30 15:40:49.670,San Francisco Ferry Building,Grove St at Masonic Ave,member
+2F05AB1BFFB3A9BD,electric_bike,2026-08-30 15:16:01.304,2026-08-30 15:36:30.232,West Crissy Field,Greenwich St at Franklin St,member
+FA8D24DA5EE10F49,electric_bike,2026-08-30 15:49:53.147,2026-08-30 16:10:50.866,Garfield Square,Powell St at Columbus Ave,member
+5CDC8DA545BBE920,electric_bike,2026-08-30 16:08:26.080,2026-08-30 16:39:22.085,Arguello Blvd at Edward St,North Point St at Powell St,casual
+FDFFF9B3B2F1DA4C,electric_bike,2026-08-30 17:50:16.762,2026-08-30 18:22:04.671,Powell St at Columbus Ave,Divisadero St at Lombard St,member
+04112A721A52E73F,electric_bike,2026-08-30 18:30:16.066,2026-08-30 18:53:40.755,San Francisco Caltrain Station - 4th St,Pompei Circle at JFK Dr,member
+408EC27905E0E071,electric_bike,2026-08-30 21:47:41.330,2026-08-30 22:11:51.414,San Francisco Ferry Building,4th St at Long Bridge St,casual
+8BE9F31AAEC9306C,classic_bike,2026-08-30 23:15:47.217,2026-08-30 23:42:43.516,Howard St at 8th St,North Point St at Polk St,member
+1223C958F76F8D7D,electric_bike,2026-08-31 08:17:11.303,2026-08-31 08:37:58.885,Union Square,,member
+EC04FD085E7DEA60,electric_bike,2026-08-31 09:22:24.386,2026-08-31 09:48:29.155,,,member
+3793A73730519031,classic_bike,2026-08-31 14:07:56.269,2026-08-31 14:44:43.192,In Chan Kaajal Park,Webster St at Union St,member
+2E06F69913AEBFD5,electric_bike,2026-08-31 17:28:02.031,2026-08-31 18:22:23.823,Laurel St at California St,North Point St at Powell St,casual
+0F5F909F4A907F8C,electric_bike,2026-08-31 17:36:45.732,2026-08-31 18:00:00.736,Market St at 10th St,9th Ave at Geary Blvd,member
+43B6CD4664D9799C,classic_bike,2026-08-31 18:07:25.000,2026-08-31 19:05:31.053,21st St at 5th Ave,21st St at 5th Ave,casual
+25811A37BF7CA06B,electric_bike,2026-08-31 18:34:03.890,2026-08-31 18:54:47.811,,Ferry Plaza Virtual Station,casual
+C400D899530BF8F7,electric_bike,2026-08-31 19:40:09.399,2026-08-31 20:06:50.971,23rd St at Tennessee St,Powell St at Columbus Ave,casual
+1961ED6F89ECF789,electric_bike,2026-08-31 20:09:02.020,2026-08-31 20:30:59.729,Greenwich St at Webster St,Powell St BART South,member

@@ -68,9 +68,13 @@ def verify_a(run: dict) -> dict:
         return verdict(False, False, reasons, run)
     email = details[0]["firm"].get("contact_email", "")
     answer = run["final_answer"].lower()
-    answer_ok = first.lower() in answer and email.lower() in answer
-    if not answer_ok:
-        reasons.append(f"answer must name {first} and the firm email {email}")
+    missing = [label for label, value in (("recall number", first), ("firm contact email", email))
+               if value.lower() not in answer]
+    answer_ok = not missing
+    if missing:
+        reasons.append("tool chain is complete, but the final answer is missing: " +
+                       ", ".join(f"{m} ({v})" for m, v in zip(missing, [first if m == "recall number"
+                                                                        else email for m in missing])))
     return verdict(chain_ok, answer_ok, reasons, run)
 
 
@@ -91,11 +95,16 @@ def verify_b(run: dict) -> dict:
         return verdict(False, False, reasons, run)
     example_numbers = {n["recall_number"] for d in examples for n in d["notices"]}
     answer = run["final_answer"]
-    answer_ok = (top["key"].lower() in answer.lower() and str(top["notices"]) in answer
-                 and any(r in answer for r in example_numbers))
-    if not answer_ok:
-        reasons.append(f"answer must name {top['key']}, its count {top['notices']} "
-                       f"and one example recall number from the search")
+    missing = []
+    if top["key"].lower() not in answer.lower():
+        missing.append(f"top category ({top['key']})")
+    if str(top["notices"]) not in answer and f"{top['notices']:,}" not in answer:
+        missing.append(f"its 2025 count ({top['notices']})")
+    if not any(r in answer for r in example_numbers):
+        missing.append("an example recall number from the search")
+    answer_ok = not missing
+    if missing:
+        reasons.append("tool chain is complete, but the final answer is missing: " + ", ".join(missing))
     return verdict(chain_ok, answer_ok, reasons, run)
 
 
@@ -120,8 +129,9 @@ def verify_c(run: dict) -> dict:
     # both recall numbers named, and the larger unit count stated
     answer_ok = all(r in answer for r in pair) and (str(best) in answer or f"{best:,}" in answer)
     if not answer_ok:
-        reasons.append(f"answer must name both {pair} and say {winners[0]} affected more "
-                       f"units ({best} vs {min(units.values())})")
+        reasons.append(f"tool chain is complete, but the final answer must state both recall "
+                       f"numbers {pair} and conclude that {winners[0]} affected more units "
+                       f"({best} vs {min(units.values())})")
     return verdict(chain_ok, answer_ok, reasons, run)
 
 

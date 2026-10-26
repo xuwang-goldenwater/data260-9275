@@ -1,0 +1,505 @@
+ride_id,rideable_type,started_at,ended_at,start_station_name,end_station_name,member_casual
+00B176202196D71E,classic_bike,2022-10-03 08:50:21,2022-10-03 08:57:32,Folsom St at 15th St,Mint St at Mission St,member
+65BA4CAE7F7E4D44,classic_bike,2022-10-07 08:58:01,2022-10-07 09:02:26,Telegraph Ave at Carleton St,Bancroft Way at Telegraph Ave,member
+C1748FF506D9ACBC,classic_bike,2022-10-11 21:57:15,2022-10-11 22:02:18,Grove St at Gough St,Folsom St at 7th St,member
+4B365731207779A2,classic_bike,2022-10-20 08:34:29,2022-10-20 08:39:23,1st St at San Carlos St,San Salvador St at 9th St,member
+D754A8FFE7DE3EF7,classic_bike,2022-10-20 11:01:32,2022-10-20 11:07:25,4th St at Harrison St,San Francisco Caltrain Station (King St at 4th St),member
+C391EA89C5FC45BA,classic_bike,2022-10-23 20:15:59,2022-10-23 20:22:27,Parker St at Fulton St,Haste St at Telegraph Ave,casual
+1282C063A95C3A18,classic_bike,2022-10-24 21:19:42,2022-10-24 21:26:27,University Ave at Oxford St,Milvia St at Derby St,member
+B10198E3FF3038D5,classic_bike,2022-10-26 08:16:37,2022-10-26 08:19:54,Valencia St at 21st St,Valencia St at 16th St,member
+A485318F5E967B73,classic_bike,2022-10-26 23:10:48,2022-10-26 23:14:00,Bancroft Way at Telegraph Ave,Telegraph Ave at Carleton St,member
+7BBF4B3BE0B18227,classic_bike,2022-10-27 19:02:33,2022-10-27 19:08:30,Folsom St at 19th St,Garfield Square (25th St at Harrison St),member
+56F2460A58D77588,classic_bike,2022-10-28 12:29:18,2022-10-28 12:35:43,Bancroft Way at Telegraph Ave,Hearst Ave at Euclid Ave,member
+3C87CB57DA581BAF,classic_bike,2022-10-31 16:31:18,2022-10-31 16:37:56,Powell St BART Station (Market St at 4th St),Spear St at Folsom St,member
+E0976B4F37F5E88A,classic_bike,2022-12-01 15:52:20,2022-12-01 16:00:00,Howard St at Beale St,Powell St BART Station (Market St at 5th St),member
+48FF8B69E9DF6CD2,classic_bike,2022-12-04 13:03:38,2022-12-04 13:10:08,Page St at Scott St,Market St at Dolores St,member
+41A86B940DEE665E,classic_bike,2022-12-07 07:33:56,2022-12-07 07:38:55,2nd St at Townsend St,Salesforce Transit Center (Natoma St at 2nd St),member
+7ECED6CA74239524,classic_bike,2022-12-07 08:13:12,2022-12-07 08:16:40,Brannan St at 7th St,Brannan St at 4th St,member
+9D7405ADFDD89405,classic_bike,2022-12-12 17:52:54,2022-12-12 18:00:09,Market St at 10th St,Union Square (Powell St at Post St),member
+01D1BC9CB4BA61D4,classic_bike,2022-12-13 08:40:20,2022-12-13 08:45:26,Powell St BART Station (Market St at 5th St),Victoria Manalo Draves Park,member
+F38E0E193C143371,classic_bike,2022-12-14 10:20:11,2022-12-14 10:24:10,Greenwich St at Webster St,Greenwich St at Franklin St,casual
+FE253D2F3852D00F,classic_bike,2022-12-20 11:36:42,2022-12-20 11:44:24,Webster St at 19th St,El Embarcadero at Grand Ave,casual
+329BA35F1BC3F88D,classic_bike,2022-12-20 15:52:59,2022-12-20 15:56:24,Lincoln Blvd at Graham St,Lincoln Blvd at Graham St,casual
+3FC58A60EEAAF332,classic_bike,2022-12-21 19:21:29,2022-12-21 19:27:16,Civic Center/UN Plaza BART Station (Market St at McAllister St),Laguna St at Grove St (Fulton St at Laguna St),casual
+010E0D052051D1B0,classic_bike,2022-12-22 22:49:14,2022-12-22 22:55:52,22nd St at Dolores St,Folsom St at 19th St,member
+0C626E5D8A1856BD,classic_bike,2022-12-24 07:25:05,2022-12-24 07:32:14,22nd St at Potrero Ave,4th St at Gene Friend Way,member
+0E418FCAC8059673,classic_bike,2023-01-01 16:36:05,2023-01-01 16:43:03,Pierce St at Haight St,Valencia St at 16th St,member
+A3EE6B97E9963C9F,classic_bike,2023-01-06 11:32:56,2023-01-06 11:37:32,Valencia St at 22nd St,Mission Dolores Park,member
+868D6DBDDB1A0B35,classic_bike,2023-01-07 14:03:01,2023-01-07 14:10:06,1st St at Folsom St,4th St at Harrison St,member
+2D1D3728E04F7352,classic_bike,2023-01-12 12:47:11,2023-01-12 12:52:51,4th St at Harrison St,Folsom St at 7th St,member
+C48EE8FF164BEBFF,classic_bike,2023-01-23 16:32:49,2023-01-23 16:36:32,Telegraph Ave at 27th St,19th Street BART Station,member
+F4C1A32E57FACDAF,classic_bike,2023-01-23 19:15:52,2023-01-23 19:22:01,Grant Ave at Sutter St,Broadway at Kearny St,member
+E8552450C7774730,classic_bike,2023-01-24 17:13:51,2023-01-24 17:18:07,McCoppin St at Valencia St,17th St at Valencia St,member
+500835589E55641E,classic_bike,2023-01-24 19:12:45,2023-01-24 19:20:29,Folsom St at 9th St,Octavia Blvd at Page St,casual
+F0FC2D2912CD9DFF,classic_bike,2023-01-26 18:19:37,2023-01-26 18:25:43,Valencia St at 24th St,Valencia St at 16th St,casual
+B1E80D45B1B2BC43,classic_bike,2023-01-27 16:24:52,2023-01-27 16:32:48,Lafayette Park (Laguna St at Washington St),North Point St at Polk St,member
+4C814E208FC1B54F,classic_bike,2023-01-27 20:56:17,2023-01-27 21:01:09,Embarcadero BART Station (Beale St at Market St),Beale St at Harrison St,member
+FDC76E6B7C145838,classic_bike,2023-01-29 21:16:37,2023-01-29 21:21:17,Market St at 10th St,8th St at Ringold St,casual
+958DC68CB46CEC3E,classic_bike,2023-02-05 16:41:38,2023-02-05 16:48:28,20th St at Dolores St,Church St at Duboce Ave,member
+9F650169127B7DBF,classic_bike,2023-02-06 10:54:32,2023-02-06 11:00:21,The Embarcadero at Pier 38,Terry Francois Blvd at Mission Bay Blvd N,member
+F490DE830ECD9BAB,classic_bike,2023-02-06 13:21:52,2023-02-06 13:28:09,Victoria Manalo Draves Park,San Francisco Public Library (Grove St at Hyde St),member
+E0E6ACE5750C36ED,classic_bike,2023-02-09 11:22:43,2023-02-09 11:29:46,Precita Park,22nd St at Potrero Ave,member
+B27FF64B6DF19B9C,classic_bike,2023-02-11 17:49:35,2023-02-11 17:54:37,Berry St at 4th St,The Embarcadero at Pier 38,member
+FA7C1C7D7D0B9376,classic_bike,2023-02-11 18:56:28,2023-02-11 19:01:37,Garfield Square (25th St at Harrison St),20th St at Bryant St,casual
+C7DEC318E7500C1B,classic_bike,2023-02-14 10:02:50,2023-02-14 10:08:00,Emeryville Town Hall,Stanford Ave at Hollis St,casual
+0E95F9768115FB8D,classic_bike,2023-02-17 22:09:21,2023-02-17 22:15:29,Civic Center/UN Plaza BART Station (Market St at McAllister St),Howard St at Grace St,casual
+08F3A2C57CC3CA73,classic_bike,2023-02-20 12:19:46,2023-02-20 12:27:29,Folsom St at 5th St,Folsom St at Main St,member
+C7852CDEBC1D879C,classic_bike,2023-02-25 16:44:24,2023-02-25 16:48:46,Washington St at Kearny St,Natoma St at New Montgomery St,member
+97CA6E2C4ACC4167,classic_bike,2023-02-27 10:22:31,2023-02-27 10:26:32,4th St at Gene Friend Way,Berry St at 4th St,member
+9237096E59C875F9,classic_bike,2023-02-27 18:38:41,2023-02-27 18:42:00,4th St at 16th St,Jackson Playground,member
+391CE7A388944F52,classic_bike,2023-03-01 12:47:27,2023-03-01 12:53:38,Alcatraz Ave at Shattuck Ave,Ashby BART Station,casual
+22891ABF44F57124,classic_bike,2023-03-02 11:21:36,2023-03-02 11:26:45,Folsom St at Main St,Mechanics Monument Plaza (Market St at Bush St),casual
+5522B7DF514678E8,classic_bike,2023-03-07 12:27:33,2023-03-07 12:32:12,19th St at Mission St,Harrison St at 17th St,member
+58C722B18D17DA84,classic_bike,2023-03-08 13:19:49,2023-03-08 13:24:59,Montgomery St BART Station (Market St at 2nd St),2nd St at Folsom St,casual
+50766E505A306515,classic_bike,2023-03-08 16:20:48,2023-03-08 16:28:44,Frank H Ogawa Plaza,Telegraph Ave at 19th St,member
+CC15E0DD4B27846C,classic_bike,2023-03-18 17:40:19,2023-03-18 17:47:20,Eureka Valley Recreation Center,Folsom St at 19th St,member
+D790D1EE274D13FE,classic_bike,2023-03-23 12:28:46,2023-03-23 12:32:37,29th St at Church St,Jersey St at Church St,member
+DCC0C0F7017E25E1,classic_bike,2023-03-23 17:37:49,2023-03-23 17:42:02,Channing Way at Shattuck Ave,Downtown Berkeley BART,member
+9D1F0C421AEFD2F8,classic_bike,2023-03-23 20:16:56,2023-03-23 20:20:04,Embarcadero BART Station (Beale St at Market St),Folsom St at Main St,member
+0742E366F7029A49,classic_bike,2023-03-27 10:12:53,2023-03-27 10:20:22,Precita Park,Valencia St at 24th St,member
+C99D65A0A2077D77,classic_bike,2023-03-30 10:06:29,2023-03-30 10:12:38,19th St at Florida St,16th St Mission BART Station 2,member
+202CBD75D65BF438,classic_bike,2023-03-31 13:33:26,2023-03-31 13:40:16,Broadway at Kearny St,San Francisco Ferry Building (Harry Bridges Plaza),casual
+523A76455ADDF23D,classic_bike,2023-04-01 00:40:11,2023-04-01 00:46:28,Telegraph Ave at Ashby Ave,Ashby BART Station,casual
+F01703CA99888D30,classic_bike,2023-04-03 21:22:32,2023-04-03 21:30:07,16th St at Prosper St,Harrison St at 20th St,member
+49D4C8748C521A71,classic_bike,2023-04-05 10:49:36,2023-04-05 10:56:01,Fulton St at Bancroft Way,Oregon St at Adeline St,member
+4D14518BB660BCCF,classic_bike,2023-04-08 12:56:07,2023-04-08 12:59:50,20th St at Dolores St,Valencia St at 21st St,member
+C24F89C290181BCA,classic_bike,2023-04-12 11:48:34,2023-04-12 11:52:11,17th St at Valencia St,Sanchez St at 17th St,member
+8ADE913008F387CA,classic_bike,2023-04-21 18:38:38,2023-04-21 18:43:13,Webster St at Grove St,Post St at Webster St,member
+185DA29FDB9B365E,classic_bike,2023-04-22 20:38:17,2023-04-22 20:45:03,7th Ave at Clement St,23rd Ave at Clement St,casual
+BF2031136DD9CAEA,classic_bike,2023-04-23 11:44:54,2023-04-23 11:49:13,Lafayette Park (Laguna St at Washington St),Scott St at California St,casual
+4D0E31F5770306D2,classic_bike,2023-04-25 14:45:22,2023-04-25 14:48:57,San Fernando St at 7th St,5th St at San Salvador St,member
+1ADF2DFA67DC5D72,classic_bike,2023-04-28 07:16:34,2023-04-28 07:22:44,Market St at Steuart St,The Embarcadero at Sansome St,member
+541F65D3BB3EE608,classic_bike,2023-04-29 11:57:54,2023-04-29 12:04:56,Ellis St at Pierce St,Hyde St at Post St,member
+8B7711C651C95FAA,classic_bike,2023-04-30 21:17:37,2023-04-30 21:24:38,Montgomery St BART Station (Market St at 2nd St),Broadway at Kearny St,member
+1DD9BB84397844A1,classic_bike,2023-05-02 08:29:05,2023-05-02 08:34:59,Alamo Square (Steiner St at Fulton St),S Van Ness Ave at Market St,member
+6AF66E62499AE0AF,classic_bike,2023-05-03 10:52:54,2023-05-03 10:57:10,Fulton St at Laguna St,S Van Ness Ave at Market St,member
+CC09CF9C5EB9FC1E,classic_bike,2023-05-03 17:49:08,2023-05-03 17:56:02,The Embarcadero at Bryant St,San Francisco Caltrain Station (King St at 4th St),member
+4ADDD51991FFEACC,classic_bike,2023-05-04 13:10:20,2023-05-04 13:15:48,MacArthur BART Station,Telegraph Ave at 49th St,casual
+0EFBDF9E8ED23400,classic_bike,2023-05-04 22:30:17,2023-05-04 22:35:35,Sanchez St at 15th St,Mission Dolores Park,member
+D1CD9CAA24B139FA,classic_bike,2023-05-09 11:41:55,2023-05-09 11:47:11,The Embarcadero at Sansome St,Market St at Steuart St,member
+D398B67A2BF75AC8,classic_bike,2023-05-09 20:59:53,2023-05-09 21:05:41,Lyon St at Fell St,Koshland Park,member
+FD3CE65A44482246,classic_bike,2023-05-11 17:05:07,2023-05-11 17:12:40,Funston Ave at Irving St,7th Ave at Cabrillo St,member
+FC63380B7B67F378,classic_bike,2023-05-17 11:04:29,2023-05-17 11:10:42,Delancey St at Brannan St,San Francisco Caltrain Station (King St at 4th St),member
+1BA578B727321434,classic_bike,2023-05-22 05:33:02,2023-05-22 05:38:03,Valencia St at Clinton Park,Market St at 10th St,casual
+920A5FDF854B9705,classic_bike,2023-05-27 23:28:53,2023-05-27 23:35:25,Ryland Park,Ryland Park,member
+992FB07BAAD972EC,classic_bike,2023-05-30 08:54:20,2023-05-30 08:58:20,North Point St at Powell St,Battery St at Filbert St,member
+8235AF00C50F2C83,classic_bike,2023-06-01 08:39:23,2023-06-01 08:44:27,Telegraph Ave at 19th St,Franklin St at 9th St,member
+1DC9BBEF8BD1F99F,classic_bike,2023-06-01 10:21:55,2023-06-01 10:29:50,Fruitvale BART Station,Foothill Blvd at Fruitvale Ave,casual
+9A548078F0B25473,classic_bike,2023-06-03 11:04:43,2023-06-03 11:09:39,14th St at Mission St,Folsom St at 13th St,member
+7906A040A2F92B7F,classic_bike,2023-06-06 17:17:05,2023-06-06 17:21:58,Telegraph Ave at Carleton St,Oregon St at Adeline St,member
+BBC90F6727DCB959,classic_bike,2023-06-10 16:54:52,2023-06-10 16:59:17,Market St at Franklin St,San Francisco City Hall (Polk St at Grove St),casual
+8F73F6360F8DD507,classic_bike,2023-06-13 08:11:16,2023-06-13 08:17:19,Turk St at Fillmore St,Octavia Blvd at Page St,member
+02C62724E31AB34A,classic_bike,2023-06-17 15:14:35,2023-06-17 15:19:20,Valencia St at 21st St,Mission Dolores Park,member
+82E50E2D9D2D7DA1,classic_bike,2023-06-23 09:54:38,2023-06-23 10:01:48,Grant Ave at Sutter St,San Francisco Ferry Building (Harry Bridges Plaza),member
+81909FE5A20B7009,classic_bike,2023-06-23 18:39:40,2023-06-23 18:46:03,21st St at 5th Ave,10th St at Fallon St,member
+0C2E1290B0F85525,classic_bike,2023-06-25 16:15:41,2023-06-25 16:22:50,2nd St at Townsend St,The Embarcadero at Bryant St,casual
+933EADCFDA1C23D8,classic_bike,2023-06-26 17:45:23,2023-06-26 17:50:17,Church St at Duboce Ave,S Van Ness Ave at Market St,member
+9C8624D1B438F721,classic_bike,2023-06-27 12:03:17,2023-06-27 12:09:56,24th St BART Station,19th St at Mission St,member
+583B91F6045B6019,classic_bike,2023-07-08 11:13:00,2023-07-08 11:20:29,Washington St at Van Ness Ave,Powell St at Columbus Ave,casual
+F02D18D68E4D8866,classic_bike,2023-07-11 16:55:08,2023-07-11 17:00:58,Webster St at Union St,Lyon St at Lombard St,member
+BBA52E5CF2E4D09B,classic_bike,2023-07-13 09:49:51,2023-07-13 09:54:11,Vine St at Shattuck Ave,Berkeley Civic Center,casual
+8A6C3D43CD8DA19B,classic_bike,2023-07-13 16:37:33,2023-07-13 16:43:01,Front St at California St,The Embarcadero at Sansome St,member
+F191B5A4FD62A53F,classic_bike,2023-07-19 11:56:57,2023-07-19 12:04:19,Harrison St at 20th St,Valencia St at 24th St,member
+35DEC72547E1D9E7,classic_bike,2023-07-21 19:02:02,2023-07-21 19:05:49,4th St at Gene Friend Way,Mission Bay Kids Park,member
+BFD1B79B634DCF85,classic_bike,2023-07-23 18:11:43,2023-07-23 18:15:45,Devine St at San Pedro St,Devine St at San Pedro St,member
+8DC6F7AAFC9F4DB0,classic_bike,2023-07-26 15:48:53,2023-07-26 15:56:29,Downtown Berkeley BART,Vine St at Shattuck Ave,member
+0B17D2D51FB513BE,classic_bike,2023-07-28 09:53:12,2023-07-28 09:56:36,Battery St at Filbert St,Clay St at Battery St,member
+8A32DC9792BCEF5F,classic_bike,2023-07-28 18:11:54,2023-07-28 18:19:53,Bancroft Way at College Ave,Parker St at Fulton St,member
+BE046C22C6ECAF53,classic_bike,2023-07-28 20:04:18,2023-07-28 20:11:10,MacArthur BART Station,Broadway at 40th St,member
+0BF1A18EF771C82C,classic_bike,2023-07-31 22:00:28,2023-07-31 22:05:46,3rd St at Townsend St,7th St at King St,casual
+504067A1370D65B3,classic_bike,2023-08-02 21:21:12,2023-08-02 21:27:17,Market St at 10th St,Victoria Manalo Draves Park,member
+F791D5692EC8EC7A,classic_bike,2023-08-04 17:09:06,2023-08-04 17:16:53,Church St at Duboce Ave,Turk St at Fillmore St,member
+DE62267B1AEC1214,classic_bike,2023-08-05 09:50:07,2023-08-05 09:54:18,McAllister St at Baker St,Pierce St at Haight St,member
+3BDC8F1E57FD171A,classic_bike,2023-08-09 16:48:24,2023-08-09 16:54:34,MLK Jr Way at University Ave,Vine St at Shattuck Ave,casual
+5AC4CC8054352F8D,classic_bike,2023-08-13 16:34:30,2023-08-13 16:41:13,Market St at Steuart St,The Embarcadero at Bryant St,casual
+0757336518D8D39D,classic_bike,2023-08-14 09:44:43,2023-08-14 09:50:46,Valencia St at 22nd St,Harrison St at 17th St,member
+1536983D3DC47CC5,classic_bike,2023-08-17 18:15:12,2023-08-17 18:20:19,Davis St at Jackson St,Howard St at Beale St,member
+B2C1032EA36CE5D2,classic_bike,2023-08-19 00:30:37,2023-08-19 00:37:52,Channing Way at Shattuck Ave,MLK Jr Way at University Ave,casual
+6265F70F12406F09,classic_bike,2023-08-23 15:12:12,2023-08-23 15:17:34,Ninth St at Parker St,Addison St at Fourth St,member
+7E49F022DBF645A4,classic_bike,2023-08-29 08:23:00,2023-08-29 08:27:37,Market St at 10th St,Market St at Franklin St,member
+49C84A5F5B235142,classic_bike,2023-08-29 08:44:43,2023-08-29 08:49:09,16th St Mission BART Station 2,Harrison St at 17th St,member
+D8173F0B27854BF7,classic_bike,2023-08-30 16:36:47,2023-08-30 16:44:46,Polk St at Post St,Market St at Franklin St,member
+16E06E6AAB3B4790,classic_bike,2023-09-04 12:09:37,2023-09-04 12:16:23,Folsom St at Main St,Pier 1/2 at The Embarcadero,casual
+CD796AB59D84D216,classic_bike,2023-09-05 07:05:02,2023-09-05 07:10:58,Brannan St at 4th St,Division St at Potrero Ave,member
+7C3924B7A7EF6577,classic_bike,2023-09-14 17:00:13,2023-09-14 17:05:19,San Francisco Caltrain (Townsend St at 4th St),Townsend St at 7th St,member
+4E5AD5287D5345D0,classic_bike,2023-09-19 12:06:55,2023-09-19 12:12:44,William St at 10th St,Bestor Art Park,member
+1846645EF6773CC6,classic_bike,2023-09-23 13:50:39,2023-09-23 13:55:44,Post St at Kearny St,Powell St BART Station (Market St at 5th St),member
+1CF8CD3BA13C5018,classic_bike,2023-09-23 15:43:09,2023-09-23 15:49:10,Clay St at Battery St,Battery St at Filbert St,casual
+7A7F7E70F4C574AF,classic_bike,2023-09-25 09:35:15,2023-09-25 09:40:53,Mississippi St at 17th St,Victoria Manalo Draves Park,member
+D745B6BCF68D2FF3,classic_bike,2023-09-26 15:47:09,2023-09-26 15:54:46,Powell St BART Station (Market St at 4th St),S Van Ness Ave at Market St,member
+A082A494D45B7D6D,classic_bike,2023-09-27 09:25:55,2023-09-27 09:31:34,Market St at Dolores St,Valencia St at Clinton Park,member
+55A11A8EF7A36EAF,classic_bike,2023-09-28 05:24:00,2023-09-28 05:29:39,Tehama St at 1st St,Brannan St at Colin P Kelly Jr St,member
+DC365EAE4ED76964,classic_bike,2023-09-28 18:12:32,2023-09-28 18:16:52,Natoma St at New Montgomery St,4th St at Harrison St,member
+62B9A52BEC28374C,classic_bike,2023-09-28 20:10:33,2023-09-28 20:14:10,Rhode Island St at 17th St,Franklin Square,member
+A103C6CD45CBDE03,classic_bike,2023-10-01 15:45:41,2023-10-01 15:53:02,Mission Dolores Park,Valencia St at 24th St,member
+0600298E006CCBFB,classic_bike,2023-10-05 08:22:19,2023-10-05 08:27:00,Lakeside Dr at 14th St,13th St at Franklin St,member
+A649338D77FEFD46,classic_bike,2023-10-05 16:35:30,2023-10-05 16:42:17,Montgomery St BART Station (Market St at 2nd St),Civic Center/UN Plaza BART Station (Market St at McAllister St),member
+77B7A5D7A4CEC1A1,classic_bike,2023-10-09 14:05:58,2023-10-09 14:10:40,Embarcadero BART Station (Beale St at Market St),Montgomery St at Pacific Ave,member
+8AFF0FC1F5713FA0,classic_bike,2023-10-11 12:36:48,2023-10-11 12:39:50,Dolores St at 15th St,McCoppin St at Valencia St,member
+DD0E7C236D3CCB26,classic_bike,2023-10-21 16:58:50,2023-10-21 17:04:11,San Francisco Ferry Building (Harry Bridges Plaza),Montgomery St BART Station (Market St at 2nd St),casual
+B4A3D773A84F11CD,classic_bike,2023-10-22 08:51:12,2023-10-22 08:58:33,24th St BART Station,Mission Dolores Park,member
+D7EC10CD926B1536,classic_bike,2023-10-23 09:19:37,2023-10-23 09:23:31,Hyde St at Post St,Myrtle St at Polk St,casual
+2DAA617891A069AD,classic_bike,2023-10-25 11:48:59,2023-10-25 11:55:55,Washington St at Kearny St,Folsom St at 3rd St,member
+56088F931796788A,classic_bike,2023-10-27 16:32:12,2023-10-27 16:35:26,Folsom St at 15th St,Division St at Potrero Ave,member
+170F27B880A2E96C,classic_bike,2023-10-28 08:02:18,2023-10-28 08:08:29,Arguello Blvd at Geary Blvd,Pompei Circle at John F Kennedy Dr,member
+A93AA2028B6B996B,classic_bike,2023-10-29 12:46:47,2023-10-29 12:50:22,Sanchez St at 17th St,Sanchez St at 15th St,member
+CCFD5C4F8812EB38,classic_bike,2023-11-10 16:31:55,2023-11-10 16:37:17,Chestnut St at Van Ness Ave,Greenwich St at Webster St,member
+09A883FF9C2BC550,classic_bike,2023-11-15 08:32:45,2023-11-15 08:37:23,20th St at Bryant St,16th St Mission BART Station 2,member
+FB0AE8BB1A018BDC,classic_bike,2023-11-15 13:26:33,2023-11-15 13:33:53,Market St at Dolores St,S Van Ness Ave at Market St,member
+7FB60DB4C6D12936,classic_bike,2023-11-16 08:55:06,2023-11-16 09:02:45,Brannan St at 4th St,4th St at Mission Bay Blvd S,member
+DB8B0369F66718F9,classic_bike,2023-11-17 13:57:41,2023-11-17 14:01:33,Front St at California St,Folsom St at Main St,member
+A9D5C2252988B613,classic_bike,2023-11-18 08:30:25,2023-11-18 08:36:39,23rd St at Tennessee St,4th St at Gene Friend Way,member
+A493E231375EAA3B,classic_bike,2023-11-20 08:35:24,2023-11-20 08:41:01,North Point St at Polk St,The Embarcadero at Sansome St,member
+7A9D5ED61ED4B568,classic_bike,2023-11-21 17:56:32,2023-11-21 18:00:55,4th St at Long Bridge St,Hospital St at Mariposa St,member
+93356B6213C0D6BF,classic_bike,2023-11-22 13:38:25,2023-11-22 13:44:50,Post St at Kearny St,4th St at Harrison St,member
+03668A72E6179304,classic_bike,2023-11-29 12:57:37,2023-11-29 13:01:45,Market St at Steuart St,The Embarcadero at Vallejo St,member
+B7F8EF720BAC05BE,classic_bike,2023-11-30 13:15:29,2023-11-30 13:20:10,Euclid Ave at Hearst Ave,University Ave at Oxford St,member
+E679148C9C2C4EA8,classic_bike,2023-11-30 17:25:28,2023-11-30 17:31:47,24th St BART Station,Guerrero Park,member
+596C7D6598B3EF3F,classic_bike,2023-12-01 00:02:47.146,2023-12-01 00:08:54.283,MacArthur BART Station,Telegraph Ave at 27th St,casual
+BF0A0DF1E3A4CEC7,classic_bike,2023-12-01 10:45:07.251,2023-12-01 10:51:44.605,Telegraph Ave at Ashby Ave,Ashby BART Station,casual
+BD61D2CB2480B38F,classic_bike,2023-12-02 15:38:22.547,2023-12-02 15:43:58.612,5th St at Howard St,San Francisco Caltrain (Townsend St at 4th St),member
+092D01DDAB28D856,classic_bike,2023-12-03 14:14:07.475,2023-12-03 14:18:33.118,Jackson Playground,Division St at Potrero Ave,member
+FE526A1469C4D24E,classic_bike,2023-12-04 16:42:39.330,2023-12-04 16:46:22.382,The Embarcadero at Vallejo St,Market St at Steuart St,member
+FC1616AEC24F3C8A,classic_bike,2023-12-05 09:53:41.671,2023-12-05 10:00:12.809,Broderick St at Oak St,Laguna St at Grove St,member
+50429A98A237E311,classic_bike,2023-12-08 21:23:09.892,2023-12-08 21:28:42.939,Yerba Buena Center for the Arts (Howard St at 3rd St),Howard St at 8th St,member
+3F5FC659C394E8AE,classic_bike,2023-12-08 22:32:25.984,2023-12-08 22:39:02.701,5th St at Howard St,Folsom St at 9th St,member
+B3F0908BBF2675C5,classic_bike,2023-12-09 15:15:07.795,2023-12-09 15:20:55.965,Spruce St at California St,Post St at Baker St,member
+48391E762370140C,classic_bike,2023-12-10 20:46:25.522,2023-12-10 20:51:21.590,Harrison St at 20th St,Garfield Square (25th St at Harrison St),member
+8E73076D98F20E9D,classic_bike,2023-12-27 13:23:05.028,2023-12-27 13:29:01.815,San Francisco Public Library (Grove St at Hyde St),Howard St at 8th St,member
+4940EC9ADFC31FA8,classic_bike,2023-12-30 18:18:47.377,2023-12-30 18:22:07.470,4th St at Mission Bay Blvd S,Berry St at 4th St,member
+767FDB5EE7FD965B,classic_bike,2024-01-03 17:00:31,2024-01-03 17:07:28,17th & Folsom Street Park (17th St at Folsom St),Valencia St at Clinton Park,member
+79936FE5A90AC222,classic_bike,2024-01-04 13:20:03,2024-01-04 13:24:15,17th St at Valencia St,Folsom St at 15th St,member
+2A8C7D9043AEFDEC,classic_bike,2024-01-04 19:19:54,2024-01-04 19:26:59,MacArthur BART Station,47th St at San Pablo Ave,member
+60D137FD0399F984,classic_bike,2024-01-09 17:30:06,2024-01-09 17:36:23,Santa Clara St at 7th St,San Carlos St at 11th St,member
+0C605A5DB03FB028,classic_bike,2024-01-11 12:05:30,2024-01-11 12:09:18,Page St at Masonic Ave,Page St at Scott St,member
+4A0F0B91B51BE6B2,classic_bike,2024-01-14 18:39:56,2024-01-14 18:44:41,Bay Pl at Vernon St,19th Street BART Station,member
+6D910936BEFF1FFF,classic_bike,2024-01-14 23:11:14,2024-01-14 23:17:43,North Berkeley BART Station,Fifth St at Delaware St,member
+4BF50D5228008A72,classic_bike,2024-01-15 14:40:25,2024-01-15 14:47:03,West Oakland BART Station,DeFremery Park,member
+F342D05AFA55F84B,classic_bike,2024-01-18 09:10:32,2024-01-18 09:16:50,San Francisco Caltrain (Townsend St at 4th St),Folsom St at 7th St,member
+135A0ABEF5B6FC09,classic_bike,2024-01-21 13:07:18,2024-01-21 13:13:23,37th Ave at Ortega St,Lower Great Hwy at Noriega St,member
+FF8010DC36AFF141,classic_bike,2024-01-29 09:41:48,2024-01-29 09:47:39,Sanchez St at 17th St,17th & Folsom Street Park (17th St at Folsom St),member
+DB95B5303CAD3E32,classic_bike,2024-01-30 11:43:16,2024-01-30 11:46:42,Davis St at Jackson St,Battery St at Filbert St,member
+83A2D861B2C1512D,classic_bike,2024-02-01 12:14:32,2024-02-01 12:20:13,Pierce St at Haight St,Lyon St at Fell St,member
+C116F9D911E89DC3,classic_bike,2024-02-01 16:28:03,2024-02-01 16:35:00,Turk Blvd at Stanyan St,Scott St at Golden Gate Ave,casual
+4CC44427A96C27FF,classic_bike,2024-02-02 08:29:00,2024-02-02 08:33:20,Frank H Ogawa Plaza,Lakeside Dr at 14th St,member
+A5C2B466C53D7C4A,classic_bike,2024-02-04 16:14:09,2024-02-04 16:20:00,Golden Gate Ave at Polk St,5th St at Howard St,member
+893D2844238978D3,classic_bike,2024-02-06 16:14:17,2024-02-06 16:20:57,Haste St at College Ave,Channing Way at Shattuck Ave,member
+B997A23E534CB340,classic_bike,2024-02-07 15:52:02,2024-02-07 15:57:56,14th St at Mission St,Folsom St at 19th St,member
+1D0CD264A3BCFA5B,classic_bike,2024-02-15 08:05:20,2024-02-15 08:12:18,San Pablo Park,Ashby BART Station,member
+CD48A10119B3CC81,classic_bike,2024-02-22 07:58:04,2024-02-22 08:01:54,Grand Ave at Perkins St,19th Street BART Station,member
+3038F938C6FDE891,classic_bike,2024-02-25 06:53:20,2024-02-25 06:59:14,The Embarcadero at Steuart St,Davis St at Jackson St,member
+CF233BE700744A8C,classic_bike,2024-02-26 14:24:39,2024-02-26 14:28:36,Raymond Kimbell Playground,Alamo Square (Steiner St at Fulton St),member
+7BE879E7AB67A71F,classic_bike,2024-02-28 15:51:54,2024-02-28 15:58:14,2nd St at Folsom St,San Francisco Caltrain Station (King St at 4th St),casual
+E3F2A2D2F6387BE9,classic_bike,2024-02-28 16:52:23,2024-02-28 16:59:58,Adeline St at 40th St,DeFremery Park,member
+7E43BBBB929383C5,classic_bike,2024-03-01 13:17:01,2024-03-01 13:20:17,Folsom St at 15th St,11th St at Natoma St,member
+DA4B2DB4E0D20F07,classic_bike,2024-03-02 14:23:05,2024-03-02 14:26:52,McAllister St at Arguello Blvd,Arguello Blvd at Geary Blvd,member
+8F9BD7D8590B10CE,classic_bike,2024-03-07 15:10:29,2024-03-07 15:15:58,Market St at Franklin St,Market St at Dolores St,member
+538FD20947FC89D1,classic_bike,2024-03-10 12:04:46,2024-03-10 12:11:30,Folsom St at 7th St,Brannan St at 4th St,member
+AFAEEFCEE8440050,classic_bike,2024-03-11 14:20:28,2024-03-11 14:26:24,16th St at Prosper St,Mission Playground,member
+1439721512FD7613,classic_bike,2024-03-12 06:59:58,2024-03-12 07:05:03,Lafayette Park (Laguna St at Washington St),Scott St at California St,casual
+300924B71695CA28,classic_bike,2024-03-15 09:54:17,2024-03-15 09:57:23,Union St at 10th St,West Oakland BART Station,casual
+BB09639EAF6B3CB5,classic_bike,2024-03-24 00:12:01,2024-03-24 00:17:52,Valencia St at Clinton Park,Grove St at Gough St,member
+97C9C009B5D32695,classic_bike,2024-03-25 21:55:31,2024-03-25 21:58:52,Front St at California St,Broadway at Battery St,member
+C997FAE20B412575,classic_bike,2024-03-25 22:03:14,2024-03-25 22:10:22,Buchanan St at Lombard St,North Point St at Polk St,member
+420200B526CCD0CA,classic_bike,2024-03-27 12:13:16,2024-03-27 12:19:39,Folsom St at 3rd St,Beale St at Harrison St,member
+79A0AB79E3A22C49,classic_bike,2024-03-29 18:10:51,2024-03-29 18:15:56,McAllister St at Baker St,O'Farrell St at Masonic Ave,member
+2C1AF74B0152C979,classic_bike,2024-04-01 10:47:45,2024-04-01 10:51:16,Berry St at King St,4th St at Mission Bay Blvd S,casual
+3AF529BC1D154CAA,classic_bike,2024-04-03 09:44:05,2024-04-03 09:49:07,Howard St at 6th St,11th St at Natoma St,member
+47D63DBB86E14A32,classic_bike,2024-04-07 07:25:15,2024-04-07 07:29:26,Euclid Ave at Hearst Ave,Downtown Berkeley BART,member
+2DEA156C7C0ED5F3,classic_bike,2024-04-09 10:28:28,2024-04-09 10:32:27,Lakeside Dr at 14th St,Grand Ave at Webster St,member
+8167C59F5990F0FD,classic_bike,2024-04-18 08:32:19,2024-04-18 08:36:59,Telegraph Ave at 49th St,MacArthur BART Station,member
+521130D5ACB0FA11,classic_bike,2024-04-18 18:05:29,2024-04-18 18:13:04,19th St at Florida St,Alameda St at Henry Adams St,member
+1DC6F16CBFED5248,classic_bike,2024-04-20 11:42:37,2024-04-20 11:46:40,Market St at 10th St,11th St at Bryant St,member
+F2DC0B3F11F5FF47,classic_bike,2024-04-25 09:34:29,2024-04-25 09:39:48,Spear St at Folsom St,1st St at Folsom St,member
+8C491F36E7BDDDF8,classic_bike,2024-04-26 12:19:27,2024-04-26 12:27:06,Fountain Alley at S 2nd St,San Salvador St at 9th St,member
+E30E6251969DD729,classic_bike,2024-04-27 13:54:16,2024-04-27 14:01:11,McAllister St at Baker St,Fell St at Stanyan St,member
+6F09417107C5C79F,classic_bike,2024-04-28 16:33:57,2024-04-28 16:38:32,11th St at Bryant St,Division St at Potrero Ave,member
+0457BA555A9FFFB2,classic_bike,2024-04-29 12:20:10,2024-04-29 12:27:14,Front St at California St,Cyril Magnin St at Ellis St,casual
+5335932DF924389B,classic_bike,2024-05-02 22:01:07,2024-05-02 22:04:49,Battery St at Filbert St,Davis St at Jackson St,member
+82A5ACADE9B28E2E,classic_bike,2024-05-04 18:55:28,2024-05-04 18:58:55,Powell St BART Station (Market St at 4th St),Father Alfred E Boeddeker Park,member
+5752A32D8905B073,classic_bike,2024-05-08 14:13:33,2024-05-08 14:18:13,Folsom St at Main St,Pier 1/2 at The Embarcadero,member
+611212A8CCA233D5,classic_bike,2024-05-14 21:22:33,2024-05-14 21:26:27,Folsom St at 19th St,17th St at Valencia St,member
+D94FBACE8E549FA6,classic_bike,2024-05-17 18:10:45,2024-05-17 18:16:25,Davis St at Jackson St,The Embarcadero at Sansome St,member
+3146B1F4CF6E805A,classic_bike,2024-05-18 13:16:09,2024-05-18 13:23:53,Folsom St at 5th St,Salesforce Transit Center (Natoma St at 2nd St),member
+331C40CD01AC1BA9,classic_bike,2024-05-20 17:13:42,2024-05-20 17:18:31,Market St at 10th St,Powell St BART Station (Market St at 5th St),casual
+55AFCCBB3B2A5747,classic_bike,2024-05-23 16:49:49,2024-05-23 16:54:52,Valencia St at 22nd St,Valencia St at 16th St,member
+4DC65E68BE6A5500,classic_bike,2024-05-24 17:52:19,2024-05-24 17:57:25,Hospital St at Mariposa St,8th St at Hooper St,member
+5680D89803E31696,classic_bike,2024-05-25 10:46:11,2024-05-25 10:53:28,23rd St at Telegraph Ave,MacArthur Blvd at Telegraph Ave,member
+0D68C74625E01F5B,classic_bike,2024-05-26 11:39:16,2024-05-26 11:43:21,Shattuck Ave at Hearst Ave,Vine St at Shattuck Ave,member
+E13941C525D2EF7A,classic_bike,2024-05-30 20:22:31,2024-05-30 20:29:46,Folsom St at 3rd St,San Francisco Caltrain East,member
+BA2E4192E4CE13AE,classic_bike,2024-06-02 22:36:00.344,2024-06-02 22:42:08.947,Tehama St at 1st St,5th St at Howard St,member
+9B903005425C48B7,classic_bike,2024-06-04 11:22:20.028,2024-06-04 11:27:44.999,Rhode Island St at 17th St,Townsend St at 7th St,casual
+C308CBBDF2553D71,classic_bike,2024-06-06 13:40:47.285,2024-06-06 13:46:56.688,5th St at Howard St,Brannan St at Harriet St,casual
+67D0260272E9F635,classic_bike,2024-06-10 08:12:10.762,2024-06-10 08:17:16.700,Delancey St at Brannan St,Brannan St at 4th St,member
+FE3B16FB2156B123,classic_bike,2024-06-12 17:03:44.343,2024-06-12 17:10:46.952,Brannan St at 4th St,The Embarcadero at Bryant St,member
+415880C4B4E24CF4,classic_bike,2024-06-16 12:19:59.270,2024-06-16 12:23:49.732,2nd St at Folsom St,Montgomery St BART,member
+ADB8D5D7472EE3C8,classic_bike,2024-06-16 16:48:38.025,2024-06-16 16:53:09.105,Mission Playground,Valencia St at 24th St,member
+C96729FB385EEF49,classic_bike,2024-06-16 18:39:23.228,2024-06-16 18:42:41.729,17th St at Valencia St,Valencia St at 21st St,casual
+FDF578ED374219F5,classic_bike,2024-06-18 13:53:01.426,2024-06-18 13:59:20.318,Valencia St at 16th St,Folsom St at 15th St,member
+88FA003DE047BFCA,classic_bike,2024-06-23 10:19:43.063,2024-06-23 10:27:27.249,Powell St BART South,1st St at Folsom St,member
+B0A4B81FA68481DA,classic_bike,2024-06-23 14:55:26.230,2024-06-23 14:59:49.047,Garfield Square,Folsom St at 19th St,casual
+D8A026EB82787BEC,classic_bike,2024-06-30 14:10:14.946,2024-06-30 14:17:59.627,8th St at Ringold St,2nd St at Folsom St,member
+8D3E7C981F616063,classic_bike,2024-07-06 19:09:34.748,2024-07-06 19:14:51.135,Funston Ave at Irving St,Irving St at 21st Ave,casual
+87F5D96DB1DC5120,classic_bike,2024-07-11 12:45:25.558,2024-07-11 12:50:13.096,Lyon St at Fell St,O'Farrell St at Divisadero St,member
+BE1695065C900822,classic_bike,2024-07-13 17:25:30.892,2024-07-13 17:28:55.550,North Point St at Powell St,The Embarcadero at Sansome St,member
+77255C9684160DB4,classic_bike,2024-07-16 08:59:26.038,2024-07-16 09:03:22.168,Union Square,Powell St BART South,member
+0FC59C74F34A4C30,classic_bike,2024-07-17 10:48:21.737,2024-07-17 10:52:37.718,3rd St at King St,Mission Bay Kids Park,member
+F954AD9A1C40E9A2,classic_bike,2024-07-17 13:23:14.672,2024-07-17 13:27:03.064,14th St at Mission St,Harrison St at 14th St,member
+B260F118EBCAF205,classic_bike,2024-07-18 10:57:56.476,2024-07-18 11:01:49.717,Market St at Dolores St,Mission Dolores Park,member
+13027654283E1D49,classic_bike,2024-07-18 13:22:50.547,2024-07-18 13:27:20.047,24th St BART,Garfield Square,member
+18874AF3B5074ECE,classic_bike,2024-07-19 12:57:53.549,2024-07-19 13:03:02.135,Bay Pl at Vernon St,Madison St at 17th St,member
+3AF0EB43D452F040,classic_bike,2024-07-20 20:04:05.066,2024-07-20 20:07:33.216,11th St at Bryant St,8th St at Ringold St,member
+A98BC13B990DEA22,classic_bike,2024-07-21 11:03:22.345,2024-07-21 11:08:00.282,Shattuck Ave at Telegraph Ave,MacArthur BART,member
+279816AC4981F0BA,classic_bike,2024-07-23 13:50:06.156,2024-07-23 13:54:41.939,The Embarcadero at Sansome St,Mason St at Bay St,member
+2A1A0D5E8B3B60D7,classic_bike,2024-08-02 10:35:42.704,2024-08-02 10:39:22.170,Delancey St at Brannan St,3rd St at King St,member
+1E3FE4937BEE63E3,classic_bike,2024-08-03 09:11:01.675,2024-08-03 09:16:53.848,Hyde St at Post St,Washington St at Kearny St,member
+6B1D8896096D7185,classic_bike,2024-08-03 19:42:03.917,2024-08-03 19:49:36.060,4th St at Mission Bay Blvd S,Rhode Island St at 17th St,member
+51B3E3B3747DB935,classic_bike,2024-08-04 16:09:36.570,2024-08-04 16:13:59.561,Laguna St at Grove St,Market St at Franklin St,member
+FD7B164F83D9C2A6,classic_bike,2024-08-08 14:16:32.010,2024-08-08 14:20:03.918,Page St at Scott St,Church St at Duboce Ave,member
+FF08F7CA2C1A2BBD,classic_bike,2024-08-09 16:09:57.626,2024-08-09 16:15:55.653,South Park St at 2nd St,Bryant St at 6th St,casual
+552F5A1A15739A9B,classic_bike,2024-08-12 01:09:23.165,2024-08-12 01:12:56.872,17th St at Dolores St,18th St at Noe St,member
+7D9E7515B33B0DB4,classic_bike,2024-08-16 19:11:12.803,2024-08-16 19:17:37.609,17th St at Valencia St,19th St at Florida St,casual
+C864C39BB202D6B4,classic_bike,2024-08-17 09:34:04.593,2024-08-17 09:41:54.285,Broadway at Kearny St,North Point St at Polk St,member
+23575AA08B5AA767,classic_bike,2024-08-25 14:37:27.560,2024-08-25 14:43:04.197,17th St at Valencia St,Harrison St at 17th St,member
+E15E5FD84B7DE858,classic_bike,2024-08-28 10:52:49.706,2024-08-28 10:59:43.872,Beale St at Harrison St,Brannan St at 4th St,member
+363AD280539FB9EE,classic_bike,2024-08-29 20:53:47.433,2024-08-29 20:58:49.630,4th St at Harrison St,5th St at Howard St,member
+BA0673347F16E57A,classic_bike,2024-09-03 08:56:17.981,2024-09-03 09:02:23.519,Polk St at Bush St,Union Square,casual
+2E3D14096FB30119,classic_bike,2024-09-04 17:33:32.713,2024-09-04 17:38:36.548,Glen Park BART,Detroit St at Hearst Ave,member
+9E6284900AA501B9,classic_bike,2024-09-07 14:06:07.933,2024-09-07 14:10:50.067,17th St at Valencia St,In Chan Kaajal Park,member
+DD73F538934B41A2,classic_bike,2024-09-09 09:23:41.501,2024-09-09 09:27:16.980,San Pedro Square,Almaden Blvd at San Fernando St,member
+8C85048A33CB4F45,classic_bike,2024-09-09 18:03:56.358,2024-09-09 18:10:25.420,San Francisco Caltrain West,Victoria Manalo Draves Park,member
+49A296A6771B88B2,classic_bike,2024-09-10 13:15:32.383,2024-09-10 13:23:25.892,The Embarcadero at Steuart St,Jackson St at Sansome St,member
+138C987BD3833182,classic_bike,2024-09-11 09:13:12.429,2024-09-11 09:19:24.547,Harrison St at 20th St,Division St at Potrero Ave,member
+71B081AE0D099E8F,classic_bike,2024-09-19 17:18:17.440,2024-09-19 17:22:19.282,19th Street BART,Telegraph Ave at 27th St,casual
+DDB14CC747B436AE,classic_bike,2024-09-22 13:24:15.914,2024-09-22 13:27:39.415,4th St at Long Bridge St,Berry St at 4th St,member
+C97ADCC158C02820,classic_bike,2024-09-24 08:14:42.773,2024-09-24 08:22:31.047,Broadway at Kearny St,Howard St at Beale St,member
+4C5C73D8ADE36E71,classic_bike,2024-09-27 17:52:38.069,2024-09-27 17:59:45.628,Grand Ave at Webster St,El Embarcadero at Grand Ave,member
+17D19F02BA842C1C,classic_bike,2024-09-28 19:07:15.758,2024-09-28 19:13:09.873,8th St at Ringold St,5th St at Howard St,member
+40A5A304D7E30EBC,classic_bike,2024-10-06 20:20:19.140,2024-10-06 20:27:50.535,4th St at Mission Bay Blvd S,Illinois St at 20th St,member
+A733F07996E0E47A,classic_bike,2024-10-07 08:15:29.111,2024-10-07 08:18:47.011,7th St at King St,Alameda St at Henry Adams St,member
+183D708BEF5FB164,classic_bike,2024-10-07 09:13:49.710,2024-10-07 09:17:55.092,Milvia St at Derby St,Ashby BART,member
+9702F88DB618C4CF,classic_bike,2024-10-12 17:02:31.365,2024-10-12 17:06:11.837,Powell St at Columbus Ave,Taylor St at Columbus Ave,member
+940A49D69AE1D42D,classic_bike,2024-10-13 21:53:32.276,2024-10-13 21:59:40.169,Downtown Berkeley BART,North Berkeley BART,member
+020F0A8E7CD07981,classic_bike,2024-10-15 09:13:17.825,2024-10-15 09:20:18.413,Greenwich St at Webster St,North Point St at Polk St,member
+D49AF0B53A2FA8D4,classic_bike,2024-10-16 07:45:29.343,2024-10-16 07:53:13.900,Arguello Blvd at Geary Blvd,Arguello Blvd at Geary Blvd,member
+619D5985A99DB0D6,classic_bike,2024-10-20 06:55:16.844,2024-10-20 06:58:36.226,San Francisco Public Library,Cyril Magnin St at Ellis St,member
+4786E82CAA065660,classic_bike,2024-10-22 17:34:14.891,2024-10-22 17:40:42.666,Lyon St at Lombard St,Torney Ave at Lincoln Blvd,member
+558BE4A438857A76,classic_bike,2024-10-24 22:54:35.588,2024-10-24 22:58:38.578,San Francsico Caltrain Station - Townsend St,Townsend St at 7th St,member
+94BE4670A8E631A0,classic_bike,2024-10-25 10:42:19.572,2024-10-25 10:46:06.400,20th St at Dolores St,Valencia St at 22nd St,member
+78133DEBA5F70EB7,classic_bike,2024-10-26 22:39:14.410,2024-10-26 22:46:30.378,Victoria Manalo Draves Park,Folsom St at 13th St,member
+9BE268AC79AC3A2A,classic_bike,2024-11-01 18:04:33.635,2024-11-01 18:12:14.611,Davis St at Jackson St,Grant Ave at Sutter St,member
+3D4E212E0B60A1A9,classic_bike,2024-11-02 07:21:11.671,2024-11-02 07:26:51.468,Commercial St at Montgomery St,Spear St at Folsom St,casual
+7A66071B6D63D987,classic_bike,2024-11-02 19:54:52.108,2024-11-02 20:00:57.802,Washington St at Kearny St,Post St at Kearny St,member
+A90FDB10804786BC,classic_bike,2024-11-08 16:25:56.662,2024-11-08 16:30:47.312,19th St at Mission St,Parque Ninos Unidos,member
+FFD40422954B140A,classic_bike,2024-11-10 17:20:50.053,2024-11-10 17:26:23.124,8th St at Ringold St,Berry St at King St,member
+5E92BB892BD54698,classic_bike,2024-11-14 18:19:12.811,2024-11-14 18:23:39.707,Greenwich St at Franklin St,North Point St at Polk St,member
+409CF8764EF32FD8,classic_bike,2024-11-18 16:56:27.064,2024-11-18 17:00:31.982,North Point St at Polk St,Mason St at Bay St,member
+6F8CD3E29548101D,classic_bike,2024-11-21 21:24:04.307,2024-11-21 21:27:12.561,Harrison St at 17th St,Folsom St at 15th St,member
+96CEFE4DF31B7746,classic_bike,2024-11-22 08:15:27.759,2024-11-22 08:19:44.547,Valencia St at 22nd St,16th St Mission BART North,member
+8DC846EF749BF2B8,classic_bike,2024-11-24 18:12:37.982,2024-11-24 18:16:48.132,Union Square,Salesforce Transit Center,member
+9C44523CCB984069,classic_bike,2024-11-26 19:07:30.425,2024-11-26 19:11:28.752,Golden Gate Ave at Franklin St,Grove St at Gough St,member
+8BF58652562160A7,classic_bike,2024-11-27 14:30:03.560,2024-11-27 14:33:21.931,Market St at 10th St,Market St at Franklin St,member
+D6622581ADEC9626,classic_bike,2024-12-01 19:49:39.426,2024-12-01 19:54:56.231,Broadway at Kearny St,Market St at Steuart St,member
+F6D90254AECBC0E7,classic_bike,2024-12-02 16:19:54.859,2024-12-02 16:23:33.541,West Oakland BART,14th St at Mandela Pkwy,member
+3363D9F9CE4C083C,classic_bike,2024-12-05 22:55:51.630,2024-12-05 22:59:59.453,Church St at Duboce Ave,17th St at Dolores St,member
+4A1605F0DD556CC9,classic_bike,2024-12-08 15:23:50.177,2024-12-08 15:29:19.385,Folsom St at Main St,Davis St at Jackson St,member
+7B999334980CCF48,classic_bike,2024-12-13 09:04:00.183,2024-12-13 09:11:38.582,1st St at Folsom St,San Francsico Caltrain Station - Townsend St,member
+9CFCA53045F90342,classic_bike,2024-12-13 10:25:30.699,2024-12-13 10:33:02.796,Grand Ave at Perkins St,19th Street BART,member
+8023831289771B34,classic_bike,2024-12-18 19:33:35.281,2024-12-18 19:38:59.042,Frank H Ogawa Plaza,Madison St at 17th St,member
+D4102B5E514B4185,classic_bike,2024-12-18 20:01:07.398,2024-12-18 20:04:39.346,Spear St at Folsom St,1st St at Folsom St,member
+D5880E4A05C2F3AC,classic_bike,2024-12-19 18:55:07.732,2024-12-19 18:59:53.131,Berry St at 4th St,Brannan St at Colin P Kelly Jr St,member
+8E7D43C67D2F1772,classic_bike,2024-12-20 18:07:16.292,2024-12-20 18:11:39.163,Grove St at Masonic Ave,Grove St at Divisadero,member
+DC4E9B9A7E5095BB,classic_bike,2024-12-22 00:06:33.179,2024-12-22 00:11:27.620,19th Street BART,Broadway at 30th St,member
+5D2FF366A5A2A459,classic_bike,2024-12-31 10:13:46.484,2024-12-31 10:21:06.551,Fulton St at Laguna St,Raymond Kimbell Playground,member
+56E03077500AC6C5,classic_bike,2025-01-06 09:36:43.060,2025-01-06 09:42:38.357,Beale St at Harrison St,The Embarcadero at Steuart St,member
+1C7B2E245D907D1C,classic_bike,2025-01-08 07:09:49.429,2025-01-08 07:16:15.636,San Francsico Caltrain Station - Townsend St,Brannan St at 7th St,member
+F1A8326B60A90F9A,classic_bike,2025-01-12 15:58:49.503,2025-01-12 16:01:53.282,Jackson St at Polk St,Polk St at Bush St,member
+EB61F48ADD56AD23,classic_bike,2025-01-12 19:05:19.400,2025-01-12 19:10:23.481,North Point St at Powell St,Mason St at Bay St,member
+DEF312533840A6C1,classic_bike,2025-01-13 15:55:31.174,2025-01-13 16:00:53.190,The Embarcadero at Sansome St,Market St at Steuart St,member
+29CC98D8FCA8F151,classic_bike,2025-01-14 13:57:21.331,2025-01-14 14:04:28.865,South Park St at 2nd St,Post St at Kearny St,member
+3356D576B132B93B,classic_bike,2025-01-19 16:35:23.190,2025-01-19 16:42:22.704,Myrtle St at Polk St,Washington St at Van Ness Ave,member
+C4DC14AB7488C53F,classic_bike,2025-01-21 17:22:31.945,2025-01-21 17:25:45.009,11th St at Bryant St,Division St at Potrero Ave,member
+8DBD06DF21AF7F37,classic_bike,2025-01-22 12:08:24.270,2025-01-22 12:13:28.596,Grant Ave at Sutter St,Tehama St at 1st St,member
+7AA81153D6EC4D63,classic_bike,2025-01-24 17:21:35.257,2025-01-24 17:27:12.809,Shattuck Ave at Telegraph Ave,Broadway at 40th St,casual
+939B7DD7CAD2BC2F,classic_bike,2025-01-27 14:11:03.409,2025-01-27 14:14:41.845,Market St at Dolores St,14th St at Mission St,member
+96315EED509F0F15,classic_bike,2025-01-30 12:20:22.890,2025-01-30 12:27:33.619,Castro St at Jersey St,Mission Playground,casual
+B00DE0A913FAE1D6,classic_bike,2025-02-09 15:43:38.535,2025-02-09 15:50:27.887,San Francisco Ferry Building,The Embarcadero at Sansome St,member
+EEC0645FC0C97FD0,classic_bike,2025-02-10 13:55:02.665,2025-02-10 13:59:03.164,Fulton St at Laguna St,Market St at Franklin St,member
+451DA73C92B93742,classic_bike,2025-02-11 16:24:15.431,2025-02-11 16:29:36.858,Bay St at Fillmore St,Divisadero St at Lombard St,casual
+A876653796DE5766,classic_bike,2025-02-13 09:05:07.721,2025-02-13 09:10:25.009,Garfield Square,19th St at Florida St,member
+258C09150638B29F,classic_bike,2025-02-14 15:15:25.833,2025-02-14 15:20:53.915,Valencia St at 16th St,Otis St at Brady St,member
+B4B77EA4E3F2F88F,classic_bike,2025-02-14 16:10:49.963,2025-02-14 16:16:17.445,Clay St at Battery St,The Embarcadero at Sansome St,member
+ADE7CEE31E9BA048,classic_bike,2025-02-15 09:07:21.940,2025-02-15 09:15:16.329,40th St at Piedmont Ave,Grand Ave at Santa Clara Ave,member
+D1CC411C56C24BBB,classic_bike,2025-02-15 11:47:26.947,2025-02-15 11:51:04.935,Sansome St at Sutter St,Howard St at 2nd St,member
+8EE4A699BA9C062B,classic_bike,2025-02-15 15:36:19.766,2025-02-15 15:41:12.052,Howard St at 2nd St,Powell St BART North,member
+BBE0CA71E7646282,classic_bike,2025-02-20 21:44:56.658,2025-02-20 21:48:02.572,San Jose Diridon Station,Santa Clara St at Almaden Blvd,member
+45CAA4DB2238AF8F,classic_bike,2025-02-23 10:23:05.646,2025-02-23 10:27:14.932,Madison St at 17th St,Franklin St at 13th St,casual
+AED02D64FC411B85,classic_bike,2025-02-23 21:30:13.765,2025-02-23 21:34:05.233,San Francisco Public Library,Otis St at Brady St,member
+1755B387639758DA,classic_bike,2025-04-12 19:10:07.366,2025-04-12 19:13:26.735,8th St at Brannan St,11th St at Bryant St,member
+54337387C0D434E2,classic_bike,2025-04-16 16:18:51.655,2025-04-16 16:26:50.688,North Point St at Grant Ave,Market St at Steuart St,member
+2386AE7DF402AE31,classic_bike,2025-04-16 17:50:13.352,2025-04-16 17:54:56.997,Howard St at 8th St,Alameda St at Henry Adams St,member
+495C191570AF0B65,classic_bike,2025-04-17 18:29:14.783,2025-04-17 18:33:15.113,Rockridge BART,Miles Ave at Cavour St,member
+1899EBB3F7DAD35C,classic_bike,2025-04-22 05:56:03.883,2025-04-22 06:02:49.373,Davis St at Jackson St,Howard St at 2nd St,member
+D5B4D7E6E1F5954D,classic_bike,2025-04-24 08:54:43.713,2025-04-24 08:58:45.504,San Francsico Caltrain Station - Townsend St,Townsend St at 7th St,member
+A52D69E39839F68E,classic_bike,2025-04-25 18:21:36.574,2025-04-25 18:27:43.492,17th St at Valencia St,Harrison St at 20th St,member
+042F1367CBCEA9E9,classic_bike,2025-04-26 16:06:54.520,2025-04-26 16:14:53.862,2nd St at Julian St,Santa Clara St at 7th St,member
+3DF15E47951F1BF5,classic_bike,2025-04-27 08:53:47.600,2025-04-27 08:58:33.571,22nd St at Valencia St,16th St Mission BART North,member
+306D82B59C414F73,classic_bike,2025-04-27 11:53:21.973,2025-04-27 11:59:12.898,Brighton Ave at Ocean Ave,Judson Ave at Gennessee St,member
+4E4D56D54135A49E,classic_bike,2025-04-28 17:52:57.877,2025-04-28 17:56:59.294,The Embarcadero at Bryant St,Brannan St at Colin P Kelly Jr St,member
+789CC907DC59A612,classic_bike,2025-04-30 00:06:46.347,2025-04-30 00:10:51.104,Mission Dolores Park,22nd St at Valencia St,casual
+BF7C9E6D33007074,classic_bike,2025-05-06 17:15:38.593,2025-05-06 17:21:49.527,2nd St at Townsend St,4th St at Long Bridge St,member
+1C0743AABF53ED41,classic_bike,2025-05-07 17:18:42.846,2025-05-07 17:26:04.057,Salesforce Transit Center,Howard St at 6th St,member
+706555504B15249D,classic_bike,2025-05-10 10:48:12.248,2025-05-10 10:54:23.965,5th St at Virginia St,4th St at San Carlos St,member
+DE3604E7861FE731,classic_bike,2025-05-11 11:27:43.972,2025-05-11 11:32:30.253,The Embarcadero at Sansome St,Market St at Steuart St,member
+DB20B60BA83FF836,classic_bike,2025-05-13 17:04:18.057,2025-05-13 17:10:46.976,Division St at Potrero Ave,Victoria Manalo Draves Park,member
+407114D580A7B82A,classic_bike,2025-05-14 08:31:12.030,2025-05-14 08:34:21.816,4th St at Long Bridge St,3rd St at King St,member
+F3355A9F588D494E,classic_bike,2025-05-14 17:33:55.854,2025-05-14 17:40:58.895,The Embarcadero at Bryant St,South Park St at 2nd St,member
+8DF0567B2A39E9DD,classic_bike,2025-05-15 09:20:19.629,2025-05-15 09:26:33.245,Powell St BART North,2nd St at Folsom St,member
+89026E7C113D4147,classic_bike,2025-05-16 09:04:45.871,2025-05-16 09:10:56.824,Parque Ninos Unidos,In Chan Kaajal Park,member
+4B21B8F6EBE055E9,classic_bike,2025-05-20 19:50:58.297,2025-05-20 19:57:42.493,4th St at Mission Bay Blvd S,Berry St at 4th St,member
+90B5CD2187A2E0E8,classic_bike,2025-05-27 09:38:40.887,2025-05-27 09:43:45.304,Powell St BART South,Bryant St at 6th St,member
+DA6620A821F54A1A,classic_bike,2025-05-29 11:46:43.115,2025-05-29 11:50:51.344,Scott St at Golden Gate Ave,Golden Gate Ave at Franklin St,member
+87D1026F771B6EF5,classic_bike,2025-06-01 16:12:53.236,2025-06-01 16:17:49.751,Victoria Manalo Draves Park,San Francisco Caltrain Station - Townsend St,member
+47CB5A277FCA4D03,classic_bike,2025-06-04 20:07:38.135,2025-06-04 20:12:32.020,San Francisco Caltrain Station - Townsend St,8th St at Brannan St,member
+87E1EE9407743625,classic_bike,2025-06-07 10:50:31.405,2025-06-07 10:58:29.095,Addison St at California St,Fulton St at Bancroft Way,member
+C2FDE869702AA693,classic_bike,2025-06-07 17:35:36.805,2025-06-07 17:38:41.802,16th St Mission BART North,Valencia St at Clinton Park,member
+05D88D0C9E993822,classic_bike,2025-06-09 15:58:47.426,2025-06-09 16:04:11.914,The Embarcadero at Sansome St,Market St at Steuart St,member
+9107A07C4397F89A,classic_bike,2025-06-09 23:02:25.765,2025-06-09 23:08:39.867,4th St at Harrison St,Cyril Magnin St at Ellis St,member
+75EFB339F7136E47,classic_bike,2025-06-10 12:11:25.373,2025-06-10 12:14:51.124,11th St at Bryant St,Otis St at Brady St,member
+DF40428AB4EDDFAE,classic_bike,2025-06-12 06:28:56.569,2025-06-12 06:33:07.421,Berry St at 4th St,4th St at Gene Friend Way,member
+14311E4107F7171A,classic_bike,2025-06-13 08:53:43.518,2025-06-13 08:57:18.407,Mission Bay Kids Park,3rd St at King St,casual
+BD8FD451F558A1D8,classic_bike,2025-06-13 09:43:19.882,2025-06-13 09:47:08.203,San Francisco Caltrain Station - Townsend St,Brannan St at Harriet St,member
+39B17EF6B69D7692,classic_bike,2025-06-18 21:29:50.184,2025-06-18 21:37:10.556,North Point St at Powell St,Broadway at Battery St,member
+BE09359C89BE0E42,classic_bike,2025-06-23 08:17:46.689,2025-06-23 08:23:13.469,Parker Ave at McAllister St,7th Ave at Cabrillo St,member
+765A18B5ED98A243,classic_bike,2025-07-11 14:47:06.234,2025-07-11 14:52:27.458,Harrison St at 20th St,In Chan Kaajal Park,member
+4D8B0BC664B7A70E,classic_bike,2025-07-14 07:52:32.138,2025-07-14 07:58:15.094,Dover St at 57th St,West St at 40th St,member
+3A250DA782933336,classic_bike,2025-07-14 17:06:12.287,2025-07-14 17:13:08.644,In Chan Kaajal Park,22nd St at Valencia St,member
+A20C1FFE970EC653,classic_bike,2025-07-17 10:39:13.462,2025-07-17 10:43:22.159,Market St at Steuart St,The Embarcadero at Vallejo St,member
+3DD5D22740B29A2A,classic_bike,2025-07-17 19:06:02.691,2025-07-17 19:12:57.650,Townsend St at 7th St,3rd St at King St,member
+ADB2946509713BF2,classic_bike,2025-07-21 17:21:10.431,2025-07-21 17:25:30.990,2nd St at Julian St,Fountain Alley at S 2nd St,member
+900C71F58CAAFBAF,classic_bike,2025-07-22 09:23:40.728,2025-07-22 09:30:15.907,Turk Blvd at Stanyan St,7th Ave at Clement St,member
+60AB36AF02BFD6A6,classic_bike,2025-07-22 19:16:08.000,2025-07-22 19:20:54.282,2nd St at Julian St,San Jose City Hall,member
+20ABA5CC99C7D62A,classic_bike,2025-07-27 10:30:03.888,2025-07-27 10:36:27.221,The Embarcadero at Bryant St,Howard St at Beale St,casual
+26B2BE4BFFDFB345,classic_bike,2025-07-28 17:17:14.031,2025-07-28 17:23:04.345,22nd St at Dolores St,17th St at Dolores St,member
+6A5524F33EAF9634,classic_bike,2025-07-30 07:48:31.812,2025-07-30 07:53:25.094,Buchanan St at North Point St,Divisadero St at Lombard St,member
+89387B968AD58186,classic_bike,2025-07-30 12:50:39.953,2025-07-30 12:56:02.938,Lyon St at Fell St,O'Farrell St at Divisadero St,member
+772BC3CED4D4D292,classic_bike,2025-08-05 18:12:22.942,2025-08-05 18:18:58.444,Folsom St at 15th St,Market St at 10th St,member
+6DF3023FA93064D2,classic_bike,2025-08-07 21:27:39.834,2025-08-07 21:35:05.183,West St at 40th St,Horton St at 40th St,member
+D6653E7CEA51FC66,classic_bike,2025-08-08 05:51:55.162,2025-08-08 05:59:38.747,Beale St at Harrison St,3rd St at King St,member
+5618618A5AD7297D,classic_bike,2025-08-09 17:30:14.840,2025-08-09 17:34:21.929,3rd St at King St,Townsend St at 6th St,casual
+BD7D406083F40F93,classic_bike,2025-08-11 15:18:10.326,2025-08-11 15:25:00.091,Raymond Kimbell Playground,Laguna St at Hayes St,member
+B390E5B4D0DEF874,classic_bike,2025-08-14 06:48:13.586,2025-08-14 06:51:13.914,Drumm St at Market St,Sutter St at Montgomery St,member
+4F05188794BFABC2,classic_bike,2025-08-14 08:55:05.137,2025-08-14 08:58:13.399,Fifth St at Delaware St,Addison St at Fourth St,member
+BB7C748163BC3783,classic_bike,2025-08-14 17:39:07.184,2025-08-14 17:42:20.229,Church St at Duboce Ave,Dolores St at 15th St,member
+3F29B93574F364E0,classic_bike,2025-08-15 19:50:26.326,2025-08-15 19:57:01.030,20th St at Dolores St,Sanchez St at 24th St,member
+62866F316C8CA970,classic_bike,2025-08-16 15:04:34.779,2025-08-16 15:08:09.378,Turk St at Fillmore St,Laguna St at Hayes St,member
+023A3C0F8A0CF6DE,classic_bike,2025-08-16 16:02:02.048,2025-08-16 16:09:52.305,40th St at Piedmont Ave,MacArthur BART,casual
+CAE7152BC3C930B9,classic_bike,2025-08-22 06:18:44.131,2025-08-22 06:24:04.610,Mabini St at Folsom St,8th St at Ringold St,member
+6A5E7216615CCEFD,classic_bike,2025-09-02 19:52:41.418,2025-09-02 19:58:15.146,Powell St BART North,San Francisco Public Library,member
+38C3661993FEDC85,classic_bike,2025-09-03 11:06:22.508,2025-09-03 11:11:04.644,Davis St at Jackson St,The Embarcadero at Sansome St,member
+EA2911CE7406D1D4,classic_bike,2025-09-04 08:48:05.220,2025-09-04 08:54:02.439,Union Square,Yerba Buena Center for the Arts,member
+08F88E934579A830,classic_bike,2025-09-05 11:07:18.735,2025-09-05 11:12:48.282,17th St at Dolores St,In Chan Kaajal Park,member
+305241F8D5636592,classic_bike,2025-09-12 17:07:21.612,2025-09-12 17:12:39.011,Mason St at Bay St,North Point St at Grant Ave,casual
+A40AFB953A6BB647,classic_bike,2025-09-17 09:18:09.414,2025-09-17 09:22:54.674,China Basin St at 3rd St,San Francisco Caltrain Station - King St,member
+54C0224BD0226518,classic_bike,2025-09-18 11:37:38.248,2025-09-18 11:43:29.225,Beale St at Harrison St,Sansome St at Sutter St,member
+F95052CB331BB618,classic_bike,2025-09-19 12:14:35.847,2025-09-19 12:19:05.390,Frederick St at Arguello Blvd,Waller St at Shrader St,member
+588E6589F97FAFDB,classic_bike,2025-09-23 08:45:16.698,2025-09-23 08:48:42.177,North Point St at Grant Ave,The Embarcadero at Sansome St,member
+BC2F83F4BDFCC059,classic_bike,2025-09-26 13:26:15.589,2025-09-26 13:31:12.796,Pompei Circle at JFK Dr,Fell St at Clayton St,member
+7C6F94AB7C6054E0,classic_bike,2025-09-26 13:30:30.958,2025-09-26 13:34:06.947,4th St at Mission Bay Blvd S,Terry Francois Blvd at Warriors Way,member
+AB6F7969634B4070,classic_bike,2025-09-30 09:54:47.859,2025-09-30 09:59:58.448,Garfield Square,Harrison St at 20th St,casual
+2FF4EF06CAE3B211,classic_bike,2025-11-04 19:01:54.529,2025-11-04 19:05:16.498,Ashby BART,Alcatraz Ave at Shattuck Ave,member
+6B42C8355A1205B0,classic_bike,2025-11-06 09:01:08.364,2025-11-06 09:05:59.817,Sutter St at Montgomery St,Montgomery St at Pacific Ave,member
+0660A6A19AB6402F,classic_bike,2025-11-06 22:23:46.118,2025-11-06 22:30:21.151,Parque Ninos Unidos,Parque Ninos Unidos,member
+FE9C1DCE31BB9DE2,classic_bike,2025-11-07 13:57:57.373,2025-11-07 14:01:41.310,8th St at Brannan St,Townsend St at 7th St,member
+84A39DCE01BEF0AF,classic_bike,2025-11-08 17:46:00.979,2025-11-08 17:53:27.535,4th St at Mission Bay Blvd S,Esprit Park,member
+4ADC6D92347ED1EB,classic_bike,2025-11-11 08:38:57.999,2025-11-11 08:44:11.929,Pierce St at Haight St,14th St at Mission St,member
+0054FAF9DE3877EE,classic_bike,2025-11-11 17:41:02.882,2025-11-11 17:46:59.617,8th St at Brannan St,Victoria Manalo Draves Park,member
+17F946BE23AFA738,classic_bike,2025-11-18 10:48:57.570,2025-11-18 10:52:57.028,Torney Ave at Lincoln Blvd,Divisadero St at Lombard St,member
+5AC1C3426AD8A85A,classic_bike,2025-11-18 21:28:47.264,2025-11-18 21:32:37.030,Howard St at 2nd St,4th St at Harrison St,member
+AD03992D0A40CCFC,classic_bike,2025-11-19 14:25:05.647,2025-11-19 14:31:03.517,1st St at Folsom St,Grant Ave at Sutter St,member
+58A9266E3ED2FDB2,classic_bike,2025-11-21 13:01:19.715,2025-11-21 13:09:11.405,Howard St at Beale St,South Park St at 2nd St,member
+C3FBB9B9229C7A55,classic_bike,2025-11-28 17:41:01.481,2025-11-28 17:48:19.914,19th St at Mission St,11th St at Natoma St,member
+92E4AAA360C893F2,classic_bike,2025-12-01 19:35:26.322,2025-12-01 19:41:57.148,Sansome St at Sutter St,Market St at 10th St,member
+F8F0EBE2C0DC45BD,classic_bike,2025-12-02 13:12:31.811,2025-12-02 13:19:21.649,Spear St at Folsom St,Berry St at 4th St,member
+D1A06A6D044AB7F7,classic_bike,2025-12-03 23:14:26.518,2025-12-03 23:21:37.041,Grove St at Divisadero,Fell St at Clayton St,member
+CB7A60ADB246F29E,classic_bike,2025-12-04 09:34:18.092,2025-12-04 09:42:02.502,8th St at Ringold St,San Francisco Caltrain Station - 4th St,member
+B7E0E7392DB3B0CF,classic_bike,2025-12-10 08:59:42.748,2025-12-10 09:06:37.121,McCoppin St at Valencia St,Valencia St at 24th St,member
+0A617051EC515D22,classic_bike,2025-12-13 09:37:53.309,2025-12-13 09:42:20.658,Santa Clara St at 7th St,San Salvador St at 9th St,member
+2EA2D07CA4FF6CBF,classic_bike,2025-12-18 07:35:55.303,2025-12-18 07:40:41.708,Mosswood Park,MacArthur BART,member
+862A4833FFDA1B41,classic_bike,2025-12-18 16:30:32.072,2025-12-18 16:35:46.447,Howard St at Grace St,Townsend St at 7th St,member
+0FD28F354FFD35A0,classic_bike,2025-12-21 14:33:02.982,2025-12-21 14:37:35.275,Townsend St at 5th St,4th St at Long Bridge St,member
+32AA98CAFE3B1304,classic_bike,2025-12-27 16:43:11.400,2025-12-27 16:47:40.377,Frank H Ogawa Plaza,19th Street BART,member
+0F303CE406462F28,classic_bike,2025-12-29 12:06:36.218,2025-12-29 12:14:08.215,Powell St BART South,Howard St at Beale St,member
+3DF44B6B2E80BF14,classic_bike,2025-12-30 11:58:22.793,2025-12-30 12:04:37.008,Valencia St at 24th St,Harrison St at 20th St,member
+EC25790ED69A159A,classic_bike,2026-02-03 17:55:12.546,2026-02-03 18:01:03.898,San Pedro Square,San Fernando St at 7th St,member
+094353C71EEC792A,classic_bike,2026-02-05 15:23:26.398,2026-02-05 15:30:11.864,29th St at Tiffany Ave,21st St at Valencia St,member
+3C7FAA4893A9B6E4,classic_bike,2026-02-09 18:34:51.632,2026-02-09 18:37:55.545,Clay St at Battery St,Battery St at Filbert St,member
+D9EB99FC956CB19C,classic_bike,2026-02-11 17:52:18.318,2026-02-11 17:56:28.469,19th St at Mission St,22nd St at Valencia St,member
+7CD485753A682501,classic_bike,2026-02-11 21:16:15.717,2026-02-11 21:22:21.283,Leavenworth St at Broadway,Bush St at Leavenworth St,member
+81A28C07E9F4DF9C,classic_bike,2026-02-12 13:35:45.544,2026-02-12 13:40:51.362,Civic Center BART,Grove St at Gough St,casual
+0A2939F9E3F0B99D,classic_bike,2026-02-16 05:34:42.272,2026-02-16 05:39:27.896,Fulton St at Laguna St,Market St at 10th St,member
+4030AA6F4D13B570,classic_bike,2026-02-21 16:25:44.955,2026-02-21 16:31:32.441,Jersey St at Church St,Valencia St at Duncan St,member
+B6500FBE31C8CBDB,classic_bike,2026-02-25 18:46:48.836,2026-02-25 18:54:35.867,Brannan St at 4th St,Folsom St at Main St,casual
+9ABC77D48292F5ED,classic_bike,2026-02-27 08:04:25.526,2026-02-27 08:10:23.695,22nd St at Dolores St,Harrison St at 20th St,member
+E1966E21F886D535,classic_bike,2026-02-27 17:01:00.474,2026-02-27 17:06:01.935,Virginia St at Shattuck Ave,North Berkeley BART,casual
+025ABFFE7AD994EF,classic_bike,2026-02-28 22:38:12.922,2026-02-28 22:45:28.029,Brannan St at 4th St,Beale St at Harrison St,member
+B5F76BC677046A14,classic_bike,2026-03-03 07:46:16.444,2026-03-03 07:53:20.750,Howard St at 2nd St,Brannan St at 4th St,member
+34A17688E1DB4BBA,classic_bike,2026-03-04 08:11:44.056,2026-03-04 08:15:41.267,Raymond Kimbell Playground,Post St at Baker St,member
+7348F16A259C692B,classic_bike,2026-03-04 08:45:05.362,2026-03-04 08:48:13.077,Shattuck Ave at Telegraph Ave,MacArthur BART,member
+254D23DB892CC04E,classic_bike,2026-03-07 20:01:45.335,2026-03-07 20:08:55.795,Raymond Kimbell Playground,Grove St at Gough St,member
+84D6F55535452192,classic_bike,2026-03-15 19:17:22.075,2026-03-15 19:24:09.484,Market St at Franklin St,8th St at Ringold St,member
+D5B646F440824033,classic_bike,2026-03-17 17:48:09.431,2026-03-17 17:52:47.709,Minna St at 1st St,Brannan St at Colin P Kelly Jr St,member
+80983625E97FF8E7,classic_bike,2026-03-20 22:41:39.146,2026-03-20 22:44:54.865,Grove St at Gough St,Laguna St at Hayes St,member
+0D1E3B309EA1AF71,classic_bike,2026-03-21 12:50:34.035,2026-03-21 12:56:51.593,S Van Ness Ave at Market St,Golden Gate Ave at Franklin St,member
+255606A9A7B30821,classic_bike,2026-03-28 16:18:17.387,2026-03-28 16:22:25.084,Esprit Park,4th St at Gene Friend Way,member
+8081EB3AC7411773,classic_bike,2026-03-30 08:07:40.406,2026-03-30 08:12:41.243,Delancey St at Brannan St,San Francisco Caltrain Station - 4th St,member
+C23A29CB1E5C00DF,classic_bike,2026-03-30 15:58:42.099,2026-03-30 16:04:05.473,Lakeside Dr at 14th St,2nd Ave at E 18th St,member
+84F7191C0AC1738D,classic_bike,2026-03-30 17:42:44.428,2026-03-30 17:45:52.767,24th St BART,Garfield Square,member
+E9482412B7AC76EA,classic_bike,2026-05-01 16:04:25.218,2026-05-01 16:09:19.589,El Embarcadero at Grand Ave,2nd Ave at E 18th St,member
+CD1127A104320899,classic_bike,2026-05-02 19:20:51.244,2026-05-02 19:25:29.589,North Point St at Polk St,Taylor St at Columbus Ave,member
+C6E92E07D269C06F,classic_bike,2026-05-02 23:11:07.066,2026-05-02 23:17:29.302,Powell St at Columbus Ave,Taylor St at Columbus Ave,member
+BACC9B680ED36BE0,classic_bike,2026-05-03 21:03:49.021,2026-05-03 21:07:21.848,San Francisco Caltrain Station - 4th St,4th St at Mission Bay Blvd S,member
+BDC6E9AA6686D89D,classic_bike,2026-05-04 17:45:57.200,2026-05-04 17:51:20.888,Mabini St at Folsom St,Montgomery St BART,member
+3426CDE6D26C6DF2,classic_bike,2026-05-04 18:36:42.529,2026-05-04 18:43:32.880,Bancroft Way at Telegraph Ave,Telegraph Ave at Ashby Ave,member
+116F58A18B34A51C,classic_bike,2026-05-07 17:00:49.983,2026-05-07 17:04:25.393,The Embarcadero at Steuart St,Natoma St at 1st St,member
+5D08F60C8F1D1284,classic_bike,2026-05-09 17:14:07.305,2026-05-09 17:20:26.090,11th St at Natoma St,8th St at Ringold St,member
+5CD87A15179AF0F4,classic_bike,2026-05-10 16:12:19.593,2026-05-10 16:16:54.318,7th Ave at Cabrillo St,9th Ave at Geary Blvd,casual
+A1E0EF6F61576EDB,classic_bike,2026-05-27 19:20:32.659,2026-05-27 19:27:57.005,14th Ave at Geary Blvd,14th Ave at Geary Blvd,casual
+F6AFA2944503D1ED,classic_bike,2026-05-28 14:12:58.715,2026-05-28 14:16:35.537,7th Ave at Clement St,5th Ave at Anza St,member
+262905EE0476F449,classic_bike,2026-05-31 09:58:26.963,2026-05-31 10:04:11.453,Kearny St at Bush St,San Francisco Ferry Building,member
+56F1ED121EFB1E6E,classic_bike,2026-06-03 12:33:45.496,2026-06-03 12:39:06.151,Polk St at Post St,San Francisco City Hall,casual
+FD6D588BEBEB9833,classic_bike,2026-06-06 19:52:17.943,2026-06-06 19:57:29.452,Mission Playground,Harrison St at 17th St,casual
+45F840F2A0213CD1,classic_bike,2026-06-07 10:48:48.117,2026-06-07 10:56:17.986,Webster St at Grove St,Raymond Kimbell Playground,casual
+F329E0F5BAF53209,classic_bike,2026-06-09 19:53:47.695,2026-06-09 19:56:58.344,Folsom St at 19th St,Parque Ninos Unidos,member
+FB12985CE6327007,classic_bike,2026-06-11 19:18:57.506,2026-06-11 19:22:39.311,Salesforce Transit Center,Montgomery St BART,member
+86BB16052EB62D2A,classic_bike,2026-06-12 08:22:16.322,2026-06-12 08:29:36.436,Mississippi St at 17th St,Mission Bay Kids Park,member
+0EFFB5CDA4A7A53B,classic_bike,2026-06-16 10:53:23.181,2026-06-16 11:01:02.683,Hyde St at Post St,Powell St BART North,member
+C58F131E092B920E,classic_bike,2026-06-18 15:50:28.572,2026-06-18 15:56:08.760,San Francisco Caltrain Station - 4th St,Mission Bay Kids Park,member
+09623E5DD7E6A373,classic_bike,2026-06-26 15:34:47.947,2026-06-26 15:40:01.642,Harmon St at Adeline St,Grove Park,member
+594E215B063F11AB,classic_bike,2026-06-29 16:12:08.018,2026-06-29 16:18:18.093,23rd St at Tennessee St,4th St at 16th St,member
+177EAD3BA8092796,classic_bike,2026-06-30 11:09:06.711,2026-06-30 11:16:30.730,2nd St at Folsom St,Victoria Manalo Draves Park,member
+5415B6726D8791BC,classic_bike,2026-06-30 20:32:39.705,2026-06-30 20:36:51.718,Harrison St at 17th St,Folsom St at 21st St,member
+DF23ECF75B40889F,classic_bike,2026-07-05 15:34:23.521,2026-07-05 15:41:14.613,San Francisco Public Library,Octavia Blvd at Page St,member
+9A4EBA975BF14A23,classic_bike,2026-07-07 17:40:00.281,2026-07-07 17:47:57.532,3rd St at King St,Market St at Steuart St,casual
+A66B43719B408567,classic_bike,2026-07-09 17:11:55.916,2026-07-09 17:19:50.579,4th St at Gene Friend Way,South Park St at 3rd St,member
+A90E218A5FEEBCC4,classic_bike,2026-07-13 16:29:36.843,2026-07-13 16:34:54.862,Franklin Square,Parque Ninos Unidos,member
+92C011CA0BC58E46,classic_bike,2026-07-13 17:18:38.712,2026-07-13 17:26:29.476,North Point St at Grant Ave,North Point St at Polk St,member
+EF5E41A71F142B1A,classic_bike,2026-07-14 19:45:25.925,2026-07-14 19:49:37.818,McCoppin St at Valencia St,15th St at Valencia St,member
+1AD05F999AEA3E98,classic_bike,2026-07-20 18:09:53.615,2026-07-20 18:14:17.524,Lombard St at Columbus Ave,The Embarcadero at Sansome St,member
+768CF9D2AAFDCD8D,classic_bike,2026-07-21 08:30:49.552,2026-07-21 08:38:08.652,Delmas Ave and San Fernando St,San Fernando St at 4th St,member
+5F0D6897401FE624,classic_bike,2026-07-21 15:18:32.750,2026-07-21 15:23:05.784,Sonora Ave at 1st St,Sonora Ave at 1st St,member
+77F488636A6E7532,classic_bike,2026-07-27 07:47:45.585,2026-07-27 07:54:24.795,Rhode Island St at 17th St,Hospital St at Mariposa St,member
+0F481C791E91E72C,classic_bike,2026-07-27 12:56:54.471,2026-07-27 13:02:44.138,Octavia Blvd at Page St,Golden Gate Ave at Polk St,member
+D4D04D28EBC57AC6,classic_bike,2026-07-28 09:02:48.463,2026-07-28 09:08:45.580,19th St at Florida St,16th St Mission BART South,member
+49B4D59BABCCC82D,classic_bike,2026-08-01 17:53:44.558,2026-08-01 17:58:09.765,Folsom St at 13th St,Howard St at 8th St,member
+CABED886B78F7BDF,classic_bike,2026-08-03 07:39:02.159,2026-08-03 07:43:54.157,Market St at 10th St,Powell St BART North,member
+41CBABC2B3CA017D,classic_bike,2026-08-04 18:26:11.459,2026-08-04 18:32:48.676,23rd St at Tennessee St,Terry Francois Blvd at Warriors Way,casual
+E1071D557611C03A,classic_bike,2026-08-06 19:11:13.262,2026-08-06 19:16:26.946,Alameda St at Henry Adams St,4th St at Gene Friend Way,member
+AE1C68D8299BF2E8,classic_bike,2026-08-07 19:14:44.360,2026-08-07 19:18:53.914,Octavia Blvd at Page St,San Francisco Public Library,member
+B78FABB2E35D9035,classic_bike,2026-08-14 22:18:17.949,2026-08-14 22:24:20.721,65th St at San Pablo Ave,65th St at Hollis St,member
+F1FF93FA915CEDF4,classic_bike,2026-08-16 10:08:19.863,2026-08-16 10:11:47.179,24th St at Chattanooga St,22nd St at Valencia St,member
+E5410BDAA30EBDDF,classic_bike,2026-08-16 16:20:54.978,2026-08-16 16:26:08.963,19th Street BART,Bay Pl at Vernon St,member
+FB96E793CB20E130,classic_bike,2026-08-17 10:38:30.768,2026-08-17 10:45:23.828,San Francisco Public Library,Townsend St at 7th St,casual
+8E685645C7079771,classic_bike,2026-08-25 08:54:17.966,2026-08-25 08:58:10.574,Waller St at Shrader St,Frederick St at Arguello Blvd,member
+C817724DE95C94DC,classic_bike,2026-08-31 11:58:05.076,2026-08-31 12:04:26.342,Grand Ave at Webster St,Madison St at 17th St,member
+F782C58087F0B3A3,classic_bike,2026-08-31 15:55:29.445,2026-08-31 15:58:33.021,Market St at Dolores St,Valencia St at Clinton Park,member

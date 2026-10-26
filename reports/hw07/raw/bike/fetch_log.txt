@@ -1,0 +1,48 @@
+===== bike-data 2026-10-26 01:05:40 =====
+Xu Wang | DATA 260 HW7 Part 4 | Bay Wheels scenario data | 2026-10-26 01:05:41
+bucket has 82 monthly files, 201905 .. 202608
+membership_wins: 600 rides from 202608 (of 67639 rides 20-60 min); types {'electric_bike': 456, 'classic_bike': 144}
+  202210:  265763 rides,  28377 short classic, kept 12
+  202212:  136764 rides,  16045 short classic, kept 12
+  202301:  154561 rides,  18954 short classic, kept 12
+  202302:  157715 rides,  19411 short classic, kept 12
+  202303:  172807 rides,  20477 short classic, kept 12
+  202304:  214478 rides,  22818 short classic, kept 12
+  202305:  218021 rides,  21806 short classic, kept 12
+  202306:  226052 rides,  20946 short classic, kept 12
+  202307:  233971 rides,  21694 short classic, kept 12
+  202308:  260089 rides,  24190 short classic, kept 12
+  202309:  251180 rides,  22984 short classic, kept 12
+  202310:  270840 rides,  24956 short classic, kept 12
+  202311:  221443 rides,  30824 short classic, kept 12
+  202312:  171790 rides,  15105 short classic, kept 12
+  202401:  191662 rides,  15782 short classic, kept 12
+  202402:  207172 rides,  16971 short classic, kept 12
+  202403:  251470 rides,  19419 short classic, kept 12
+  202404:  269900 rides,  20002 short classic, kept 12
+  202405:  296466 rides,  19952 short classic, kept 12
+  202406:  303100 rides,  21315 short classic, kept 12
+  202407:  311850 rides,  23384 short classic, kept 12
+  202408:  328606 rides,  24566 short classic, kept 12
+  202409:  334732 rides,  25584 short classic, kept 12
+  202410:  378317 rides,  28986 short classic, kept 12
+  202411:  261311 rides,  18665 short classic, kept 12
+  202412:  218683 rides,  15331 short classic, kept 12
+  202501:  282929 rides,  21957 short classic, kept 12
+  202502:  246807 rides,  19303 short classic, kept 12
+  202504:  349133 rides,  26528 short classic, kept 12
+  202505:  381748 rides,  27571 short classic, kept 12
+  202506:  378745 rides,  27557 short classic, kept 12
+  202507:  388168 rides,  30479 short classic, kept 12
+  202508:  429922 rides,  32152 short classic, kept 12
+  202509:  458240 rides,  31654 short classic, kept 12
+  202511:  384928 rides,  26618 short classic, kept 12
+  202512:  286680 rides,  19742 short classic, kept 12
+  202602:  370839 rides,  26244 short classic, kept 12
+  202603:  526277 rides,  38593 short classic, kept 12
+  202605:  532967 rides,  30648 short classic, kept 12
+  202606:  560299 rides,  33991 short classic, kept 12
+  202607:  585287 rides,  37081 short classic, kept 12
+  202608:  591798 rides,  40324 short classic, kept 12
+payperuse_wins: 504 rides over 42 months
+wrote /Users/Sunny/Documents/data260-9275/reports/hw07/raw/bike

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bay Wheels Advisor</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1d2433; --muted:#667085; --line:#e4e7ec;
+          --accent:#0b6bcb; --good:#067647; --warn:#b54708; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:14px 20px; background:#1d2433; color:#fff; display:flex; justify-content:space-between; align-items:baseline; }
+  header h1 { margin:0; font-size:18px; } header span { color:#c7cdd8; font-size:12px; }
+  main { display:grid; grid-template-columns: 1fr 1.2fr; gap:16px; padding:16px 20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px; }
+  .card h2 { margin:0 0 10px; font-size:15px; }
+  form { display:grid; gap:10px; grid-column: 1 / -1; grid-template-columns: 1fr 2fr auto auto; align-items:end; }
+  label { font-size:12px; color:var(--muted); display:grid; gap:4px; }
+  input[type=text] { padding:7px 8px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  button { padding:8px 18px; background:var(--accent); color:#fff; border:0; border-radius:6px; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:wait; }
+  details { font-size:12px; color:var(--muted); }
+  .metrics { grid-column: 1 / -1; display:flex; gap:24px; padding:10px 14px; }
+  .metrics div b { display:block; font-size:18px; }
+  .step { border-left:3px solid var(--accent); padding:4px 10px; margin:0 0 10px; }
+  .step .call { font-family: ui-monospace, Menlo, monospace; font-size:12px; word-break:break-word; }
+  .step .obs { font-family: ui-monospace, Menlo, monospace; font-size:11px; color:var(--muted); white-space:pre-wrap; max-height:120px; overflow:auto; }
+  .fail { border-left-color: var(--warn); }
+  table { border-collapse:collapse; width:100%; font-size:13px; margin:6px 0 12px; }
+  th, td { border-bottom:1px solid var(--line); padding:4px 6px; text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  .decision { font-size:20px; font-weight:700; color:var(--good); margin:4px 0 8px; }
+  .answer { white-space:pre-wrap; background:#f9fafb; border:1px solid var(--line); border-radius:6px; padding:8px; font-size:13px; }
+  .muted { color:var(--muted); font-size:12px; }
+  #timeline { max-height: 78vh; overflow:auto; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } form { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><h1>Bay Wheels: Monthly Membership or Pay-per-use?</h1><span id="who">Xu Wang | DATA 260 HW7 | s9275</span></header>
+<main>
+  <form id="f" class="card">
+    <label>Trip CSV <input type="file" name="file" accept=".csv" required></label>
+    <label>Pricing page URL <input type="text" name="pricing_url" value="https://www.lyft.com/bikes/bay-wheels/pricing" required></label>
+    <details><summary>Defenses</summary>
+      <label><input type="checkbox" name="prompt_defense" checked> untrusted-data prompt</label>
+      <label><input type="checkbox" name="tool_defense" checked> read-only SELECT</label>
+    </details>
+    <button id="run">Run</button>
+  </form>
+  <div class="card metrics" id="metrics"><div><span class="muted">Steps</span><b id="m-steps">-</b></div>
+    <div><span class="muted">Total time</span><b id="m-time">-</b></div>
+    <div><span class="muted">Stop reason</span><b id="m-stop">-</b></div>
+    <div><span class="muted">Model</span><b id="m-model">-</b></div></div>
+  <section class="card"><h2>Timeline: tool calls and observations</h2><div id="timeline" class="muted">Upload a CSV and press Run.</div></section>
+  <section class="card"><h2>Results</h2><div id="results" class="muted">No run yet.</div></section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const usd = v => v == null ? "-" : "$" + Number(v).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+fetch("/api/info").then(r => r.json()).then(i => { $("m-model").textContent = i.model; });
+
+$("f").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const fd = new FormData($("f"));
+  fd.set("prompt_defense", $("f").prompt_defense.checked);
+  fd.set("tool_defense", $("f").tool_defense.checked);
+  $("run").disabled = true; $("run").textContent = "Running...";
+  $("timeline").textContent = "The agent is working (this takes a few minutes on a local model)...";
+  $("results").textContent = "";
+  try {
+    const r = await fetch("/api/run", {method:"POST", body:fd});
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || r.statusText);
+    render(d);
+  } catch (e) { $("timeline").textContent = "Error: " + e.message; }
+  $("run").disabled = false; $("run").textContent = "Run";
+});
+
+function render(d) {
+  $("m-steps").textContent = d.steps; $("m-time").textContent = d.total_time_s + " s";
+  $("m-stop").textContent = d.stop_reason; $("m-model").textContent = d.model;
+  $("timeline").innerHTML = d.timeline.map(e => {
+    const o = e.observation, okc = o.success ? "" : " fail";
+    return `<div class="step${okc}"><div class="call">#${e.step} · ${e.t}s · <b>${esc(e.tool)}</b>(${esc(JSON.stringify(e.input))})</div>
+      <div class="obs">${esc(JSON.stringify(o.success ? o.data : {error:o.error}, null, 1)).slice(0, 900)}</div></div>`;
+  }).join("") || "No tool calls.";
+  const x = d.results, t = x.totals || {};
+  const weekly = (x.weekly || []).map(w => `<tr><td>${esc(w.week_start)}</td><td>${w.rides}</td><td>${w.avg_minutes}</td><td>${usd(w.pay_per_use_spend)}</td></tr>`).join("");
+  const cites = (x.citations || []).map(c => `<li><a href="${esc(c.url)}" target="_blank">${esc(c.url)}</a><br><span class="muted">captured ${esc(c.captured_at)} · SHA-256 ${esc(c.sha256.slice(0,16))}…</span></li>`).join("");
+  $("results").innerHTML = `
+    <div class="decision">${esc(x.decision || "No decision line found")}</div>
+    <div class="muted">${x.decision_matches_totals ? "Decision matches the cheaper computed total." : "Check: decision does not match the computed totals (or a total is missing)."}</div>
+    <h3>Cost comparison</h3>
+    <table><tr><th>Option</th><th>Total</th></tr>
+      <tr><td>Pay per ride/minute</td><td>${usd(x.pay_per_use_total)}</td></tr>
+      <tr><td>Monthly membership (+ residual charges)</td><td>${usd(x.membership_total)}</td></tr>
+      <tr><td>Break-even rides per month</td><td>${x.break_even_rides_per_month ?? "-"}</td></tr>
+      <tr><td>Actual rides per month</td><td>${x.actual_rides_per_month ?? "-"}</td></tr></table>
+    <div class="muted">${t.rides ?? "-"} rides over ${t.months ?? "-"} month(s) · classic ${t.classic_minutes ?? "-"} min · ebike ${t.ebike_minutes ?? "-"} min · classic over 45 min ${t.classic_over45_minutes ?? "-"} min</div>
+    <h3>By week (latest 8 weeks with rides)</h3>
+    <table><tr><th>Week of</th><th>Rides</th><th>Avg min</th><th>Pay-per-use spend</th></tr>${weekly}</table>
+    <h3>Citations</h3><ul>${cites || "<li>none</li>"}</ul>
+    <h3>Agent answer</h3><div class="answer">${esc(d.final_answer)}</div>
+    <p class="muted">Saved to ${esc(d.saved_to)} · prompt defense ${d.prompt_defense} · tool defense ${d.tool_defense}</p>`;
+}
+</script>
+</body>
+</html>

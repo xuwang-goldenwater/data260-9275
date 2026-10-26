@@ -310,3 +310,26 @@ N ?= 7
 reliability-hw07:
 	@echo "===== reliability-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
 	cd code && python -u hw07_reliability.py $(N) 2>&1 | tee -a ../$(HW7_LOG)
+
+# Part 3: original loop vs Reflexion on the 3 fixed tasks (3 rounds), ~15-20 min. Quick: make reflexion-hw07 R=1
+R ?= 3
+reflexion-hw07:
+	@echo "===== reflexion-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	cd code && python -u reflexion_hw07.py $(R) 2>&1 | tee -a ../$(HW7_LOG)
+
+# Part 4: build the two Bay Wheels scenario CSVs from the public bucket (~10-20 min, network only)
+# (own log file, so it can run while another target is writing RUN_LOG.txt)
+bike-data:
+	@mkdir -p reports/hw07/raw/bike
+	@echo "===== bike-data $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a reports/hw07/raw/bike/fetch_log.txt
+	python -u code/bike_fetch_data.py 2>&1 | tee -a reports/hw07/raw/bike/fetch_log.txt
+
+# Part 4: run the advisor from the terminal (no UI). make bike-agent S=membership | S=payperuse
+S ?= membership
+bike-agent:
+	@echo "===== bike-agent $(S) $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	cd code && python -u -m bike_app.agent $(S) 2>&1 | tee -a ../$(HW7_LOG)
+
+# Part 4: web UI on PORT_BASE 8275 (stop run-hw07 first), then open http://localhost:8275
+run-bike:
+	python code/bike_app/main.py

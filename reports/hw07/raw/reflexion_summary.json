@@ -1,0 +1,39 @@
+{
+  "model": "qwen2.5:3b",
+  "temperature": 0.7,
+  "max_retries": 2,
+  "budget_per_task": {
+    "max_tool_calls": 10,
+    "max_tokens": 20000
+  },
+  "rounds": 3,
+  "original": {
+    "task_success": "1/9",
+    "unsupported_claims": 0,
+    "retry_rate": "0/9",
+    "retries_total": 0,
+    "tool_calls_total": 16,
+    "tool_calls_avg": 1.78,
+    "tokens_total": 25849,
+    "tokens_avg": 2872,
+    "latency_ms_avg": 23946,
+    "stop_reasons": {
+      "completed": 9
+    }
+  },
+  "reflexion": {
+    "task_success": "7/9",
+    "unsupported_claims": 0,
+    "retry_rate": "8/9",
+    "retries_total": 13,
+    "tool_calls_total": 40,
+    "tool_calls_avg": 4.44,
+    "tokens_total": 76573,
+    "tokens_avg": 8508,
+    "latency_ms_avg": 78934,
+    "stop_reasons": {
+      "human_review": 2,
+      "success": 7
+    }
+  }
+}
