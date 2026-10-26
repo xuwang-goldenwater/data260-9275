@@ -1,0 +1,11 @@
+n,command,expected,is_destructive,decision,reason,result
+1,ls -la,allow,False,allow,allowed: every segment matches SAFE_PREFIXES,ok
+2,cat pricing.py,allow,False,allow,allowed: every segment matches SAFE_PREFIXES,ok
+3,grep -n DEBUG *.py,allow,False,allow,allowed: every segment matches SAFE_PREFIXES,ok
+4,wc -l loader.py report.py,allow,False,allow,allowed: every segment matches SAFE_PREFIXES,ok
+5,python3 --version,allow,False,allow,allowed: every segment matches SAFE_PREFIXES,ok
+6,rm -rf build,block,True,block,blocked: destructive (recursive deletion) needs confirmation,ok
+7,sudo rm /var/log/system.log,block,True,block,blocked: destructive (privilege escalation) needs confirmation,ok
+8,chmod 777 pricing.py,block,True,block,blocked: destructive (permission/ownership change) needs confirmation,ok
+9,echo hacked > /etc/hosts,block,True,block,blocked: destructive (redirection to root path) needs confirmation,ok
+10,"python3 -c ""__import__('shutil').rmtree('data')""",block,False,block,"blocked: not on allow-list, needs confirmation",ok
