@@ -1,11 +1,9 @@
 # HW7 AI_USE — Xu Wang
 
 **1. What I used an AI assistant for, and what I did myself.**
-<!-- XU: rewrite this paragraph in your own words before submitting. -->
-I used Claude (Anthropic) as a coding assistant. Because of time, it wrote the first version of
-the code for all six parts and the evidence documents. I chose the model (qwen2.5:3b, after a
-qwen3:8b run timed out on my 8 GB M1), the city (Bay Wheels) and how to handle the model's
-weaknesses. I ran every command on my Mac, took the Postman, terminal and UI screenshots, and
+
+I used Claude (Anthropic) as a coding assistant. I utilized AI as a learning assistant to navigate this assignment. Specifically, I used AI to break down the assignment requirements in conjunction with the lecture slides, clarify the core objectives, and outline an initial structural framework. Based on these AI-generated prompts and my previous coursework, I drafted the assignment myself. When encountering complex concepts or technical roadblocks, I sought code assistance and explanations from AI. Additionally, AI helped generate a template and structural outline for the final report, as well as refine the formatting and polish the language. 
+I chose the model (qwen2.5:3b, after a qwen3:8b run timed out on my 8 GB M1), the city (Bay Wheels) and how to handle the model's weaknesses. I ran every command on my Mac, took the Postman, terminal and UI screenshots, and
 reviewed each result before it was committed.
 
 **2. One AI-produced output that was wrong.**

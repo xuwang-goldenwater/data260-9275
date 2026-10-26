@@ -1,0 +1,205 @@
+{
+  "student": "Xu Wang",
+  "homework": "HW7",
+  "run_at": "2026-10-26T10:41:06",
+  "commit": "34a82c6",
+  "passed": 39,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Repo: no uncommitted changes outside reports/",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "P1 users table has reader/writer/moderator with bcrypt hashes",
+      "passed": true,
+      "detail": "[('s9275_moderator', 'moderator'), ('s9275_reader', 'reader'), ('s9275_writer', 'writer')]"
+    },
+    {
+      "name": "P1 login reader -> 200 + JWT",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P1 login writer -> 200 + JWT",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P1 login moderator -> 200 + JWT",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P1 login wrong password -> 401",
+      "passed": true,
+      "detail": "401"
+    },
+    {
+      "name": "P1 /auth/me without token -> 401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 /auth/me with invalid token -> 401",
+      "passed": true,
+      "detail": "Invalid token"
+    },
+    {
+      "name": "P1 /auth/me returns identity and role",
+      "passed": true,
+      "detail": "{'id': 4, 'username': 's9275_writer', 'role': 'writer'}"
+    },
+    {
+      "name": "P1 reader can list notices -> 200",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 reader create -> 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 writer create -> 201",
+      "passed": true,
+      "detail": "201"
+    },
+    {
+      "name": "P1 writer delete -> 403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 moderator delete -> 204",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 ruff check passes on the HW7 files",
+      "passed": true,
+      "detail": "All checks passed!"
+    },
+    {
+      "name": "P1 pre-commit config + installed hook",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 live run: nonexistent ID -> tool says not found, agent answers",
+      "passed": true,
+      "detail": "completed, 1 tool call(s)"
+    },
+    {
+      "name": "P2 reliability: >= 20 attempts, rates before/after repair, failure classes",
+      "passed": true,
+      "detail": "21 attempts, 0.975 -> 1.0, {'malformed_arguments': 1, 'unknown_tool': 0, 'text_when_tool_required': 0, 'lost_multi_step_chain': 10}"
+    },
+    {
+      "name": "P3 original vs Reflexion summary on the same tasks",
+      "passed": true,
+      "detail": "success 1/9 -> 7/9"
+    },
+    {
+      "name": "P3 stored reflections carry user, run and evidence",
+      "passed": true,
+      "detail": "13 reflection(s)"
+    },
+    {
+      "name": "P3 Reflexion stop reasons are from success/budget_exhausted/human_review",
+      "passed": true,
+      "detail": "{'human_review', 'success'}"
+    },
+    {
+      "name": "P4 membership_wins.csv has >= 500 trip rows",
+      "passed": true,
+      "detail": "600"
+    },
+    {
+      "name": "P4 payperuse_wins.csv has >= 500 trip rows",
+      "passed": true,
+      "detail": "504"
+    },
+    {
+      "name": "P4 UI run saved for membership_wins",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "P4 membership_wins: decision Buy Monthly Membership",
+      "passed": true,
+      "detail": "Buy Monthly Membership (rule over cited prices + SQL totals); agent said Buy Monthly Membership"
+    },
+    {
+      "name": "P4 membership_wins: weekly table + citation with capture time and SHA-256",
+      "passed": true,
+      "detail": "6 weeks, 1 citation(s), 6 steps, 57.7 s, final_answer"
+    },
+    {
+      "name": "P4 membership_wins: snapshot text matches its SHA-256",
+      "passed": true,
+      "detail": "cc586f20d725.txt"
+    },
+    {
+      "name": "P4 UI run saved for payperuse_wins",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "P4 payperuse_wins: decision Pay Per Ride/Minute",
+      "passed": true,
+      "detail": "Pay Per Ride/Minute (rule over cited prices + SQL totals); agent said Buy Monthly Membership"
+    },
+    {
+      "name": "P4 payperuse_wins: weekly table + citation with capture time and SHA-256",
+      "passed": true,
+      "detail": "8 weeks, 1 citation(s), 6 steps, 54.5 s, final_answer"
+    },
+    {
+      "name": "P4 payperuse_wins: snapshot text matches its SHA-256",
+      "passed": true,
+      "detail": "cc586f20d725.txt"
+    },
+    {
+      "name": "P4 csv_sql refuses a write statement",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4 calculator refuses names",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 three hostile fixtures exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P5 with prompt+tool defenses no attack succeeded",
+      "passed": true,
+      "detail": "['1 change decision: False', '2 SQL misuse: False', '3 exfiltration: False']"
+    },
+    {
+      "name": "P5 matrix has 3 attacks x 3 defense states",
+      "passed": true,
+      "detail": "undefended successes: 1/3"
+    },
+    {
+      "name": "P5 tool replay: works without tool defense, blocked with it",
+      "passed": true,
+      "detail": "['2 SQL misuse none: True', '2 SQL misuse prompt+tool: False', '3 exfiltration none: True', '3 exfiltration prompt+tool: False']"
+    },
+    {
+      "name": "P6 safety gate decides 10/10 commands correctly",
+      "passed": true,
+      "detail": "10/10"
+    },
+    {
+      "name": "P6 destructive command with a safe prefix is blocked",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
