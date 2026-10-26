@@ -1,0 +1,22 @@
+attempt,task,seed,stop_reason,tool_calls,slots,first_try_ok,repaired,malformed_arguments,unknown_tool,text_when_tool_required,lost_multi_step_chain,chain_ok,task_passed,tokens,latency_ms,check
+1,A,9276,completed,2,2,2,0,0,0,0,0,True,True,3057,19049,all checks passed
+2,B,9277,completed,2,2,2,0,0,0,0,0,True,True,3215,23645,all checks passed
+3,C,9278,completed,1,1,1,0,0,0,0,1,False,False,1923,13027,"get_notice missing for ['F-4529-2026', 'F-4048-2026']"
+4,A,9279,completed,1,1,1,0,0,0,0,1,False,False,1767,7564,get_notice was not called on the first search result F-0235-2026
+5,B,9280,completed,2,2,2,0,0,0,0,0,True,False,3153,19996,"answer must name Undeclared Allergen, its count 347 and one example recall number from the search"
+6,C,9281,completed,2,2,2,0,0,0,0,1,False,False,3507,36496,get_notice missing for ['F-4529-2026']
+7,A,9282,completed,2,2,2,0,0,0,0,0,True,False,3053,16413,answer must name F-0235-2026 and the firm email recalls@firm84.example.com
+8,B,9283,completed,3,3,3,0,0,0,0,1,False,False,4547,35310,no search_notices in the top category 'Undeclared Allergen' returned an example
+9,C,9284,completed,2,2,2,0,0,0,0,1,False,False,3669,47721,get_notice missing for ['F-4048-2026']
+10,A,9285,completed,2,2,2,0,0,0,0,0,True,True,3154,23782,all checks passed
+11,B,9286,completed,2,2,2,0,0,0,0,0,True,True,3166,20378,all checks passed
+12,C,9287,completed,1,1,1,0,0,0,0,1,False,False,2059,25153,"get_notice missing for ['F-4529-2026', 'F-4048-2026']"
+13,A,9288,completed,1,1,1,0,0,0,0,1,False,False,1776,9596,get_notice was not called on the first search result F-0235-2026
+14,B,9289,completed,2,2,2,0,0,0,0,0,True,True,4171,31476,all checks passed
+15,C,9290,completed,3,3,3,0,0,0,0,0,True,False,3627,29646,"answer must name both ['F-4529-2026', 'F-4048-2026'] and say F-4048-2026 affected more units (9912 vs 7451)"
+16,A,9291,completed,1,1,1,0,0,0,0,1,False,False,1782,8788,get_notice was not called on the first search result F-0235-2026
+17,B,9292,completed,4,2,1,1,1,0,0,1,False,False,4310,30686,"no recall_summary(group_by=category, year=2025)"
+18,C,9293,completed,3,3,3,0,0,0,0,0,True,True,3699,36692,all checks passed
+19,A,9294,completed,1,1,1,0,0,0,0,1,False,False,1766,7837,get_notice was not called on the first search result F-0235-2026
+20,B,9295,completed,2,2,2,0,0,0,0,0,True,True,4192,31773,all checks passed
+21,C,9296,completed,3,3,3,0,0,0,0,0,True,False,5239,40799,"answer must name both ['F-4529-2026', 'F-4048-2026'] and say F-4048-2026 affected more units (9912 vs 7451)"

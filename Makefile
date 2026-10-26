@@ -298,3 +298,15 @@ run-hw07:
 test-file-tools:
 	@echo "===== test-file-tools $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
 	python -u code/test_file_tools.py 2>&1 | tee -a $(HW7_LOG)
+
+# Part 2: one agent run. make agent-hw07 TASK=A   (A, B, C, error, or a question in quotes)
+TASK ?= A
+agent-hw07:
+	@echo "===== agent-hw07 $(TASK) $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	cd code && python -u agent_hw07.py "$(TASK)" 2>&1 | tee -a ../$(HW7_LOG)
+
+# Part 2-III: 21 tool-use attempts (7 per task), ~10-15 min. Quick try: make reliability-hw07 N=1
+N ?= 7
+reliability-hw07:
+	@echo "===== reliability-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	cd code && python -u hw07_reliability.py $(N) 2>&1 | tee -a ../$(HW7_LOG)

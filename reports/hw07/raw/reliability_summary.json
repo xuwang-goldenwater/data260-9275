@@ -1,0 +1,27 @@
+{
+  "model": "qwen2.5:3b",
+  "temperature": 0.7,
+  "num_ctx": 8192,
+  "max_iterations": 6,
+  "max_repairs": 2,
+  "seeds": "9276..9296",
+  "attempts": 21,
+  "call_slots": 40,
+  "well_formed_before_repair": 39,
+  "well_formed_after_repair": 40,
+  "rate_before_repair": 0.975,
+  "rate_after_repair": 1.0,
+  "failures": {
+    "malformed_arguments": 1,
+    "unknown_tool": 0,
+    "text_when_tool_required": 0,
+    "lost_multi_step_chain": 10
+  },
+  "task_success": {
+    "A": "2/7",
+    "B": "4/7",
+    "C": "1/7"
+  },
+  "task_success_total": "7/21",
+  "total_tool_calls": 42
+}
