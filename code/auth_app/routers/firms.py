@@ -7,7 +7,8 @@
     DELETE /api/firms/{id}                      409 while the firm still has notices
     GET    /api/firms/{id}/notices?page=&page_size=    every notice of one firm
 
-Every route requires a logged-in session.
+Every route requires a JWT bearer token (HW7). Reads: any role.
+Create/update: writer or moderator. Delete: moderator (403 otherwise).
 
 Status codes: 404 unknown id, 422 body fails the schema (FastAPI does this
 before the function runs), 409 the request is valid but MySQL refuses it
@@ -20,12 +21,17 @@ from sqlalchemy.orm import Session, joinedload
 
 import config
 from database import get_db
-from deps import require_session
+from deps import get_current_user, require_role
 from models import Firm, RecallNotice
 from schemas import FirmIn, FirmNoticesPage, FirmOut, FirmPage
 
+# HW7 roles: read = any logged-in role, create/update = writer or moderator,
+# delete = moderator only.
+WRITERS = [Depends(require_role("writer", "moderator"))]
+MODERATORS = [Depends(require_role("moderator"))]
+
 router = APIRouter(prefix="/api/firms", tags=["firms"],
-                   dependencies=[Depends(require_session)])
+                   dependencies=[Depends(get_current_user)])
 
 PageNo = Query(1, ge=1)
 PageSize = Query(20, ge=1, le=config.MAX_PAGE_SIZE)
@@ -93,7 +99,7 @@ def list_firm_notices(firm_id: int, page: int = PageNo, page_size: int = PageSiz
 
 # ---- create, update, delete ----------------------------------------------------
 
-@router.post("", response_model=FirmOut, status_code=201)
+@router.post("", response_model=FirmOut, status_code=201, dependencies=WRITERS)
 def create_firm(payload: FirmIn, db: Session = Depends(get_db)):
     email = payload.contact_email.lower()
     firm = Firm(name=payload.name.strip(), state=payload.state, contact_email=email)
@@ -103,7 +109,7 @@ def create_firm(payload: FirmIn, db: Session = Depends(get_db)):
     return firm
 
 
-@router.put("/{firm_id}", response_model=FirmOut)
+@router.put("/{firm_id}", response_model=FirmOut, dependencies=WRITERS)
 def update_firm(firm_id: int, payload: FirmIn, db: Session = Depends(get_db)):
     firm = load_firm(db, firm_id)
     email = payload.contact_email.lower()
@@ -115,7 +121,7 @@ def update_firm(firm_id: int, payload: FirmIn, db: Session = Depends(get_db)):
     return firm
 
 
-@router.delete("/{firm_id}", status_code=204)
+@router.delete("/{firm_id}", status_code=204, dependencies=MODERATORS)
 def delete_firm(firm_id: int, db: Session = Depends(get_db)):
     """Delete a firm - unless notices still belong to it.
 

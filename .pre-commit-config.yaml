@@ -1,0 +1,14 @@
+# HW7 Part 1-V: run Ruff on the staged Python files before every commit.
+#   one-time setup:   pre-commit install
+#   check everything: pre-commit run --all-files
+# "local" + "system" uses the ruff installed in the conda env (pip install ruff),
+# so the hook needs no download and lints with the same version as `ruff check`.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (lint)
+        entry: ruff check
+        language: system
+        types: [python]
+        exclude: ^(frontend|reports|postman)/

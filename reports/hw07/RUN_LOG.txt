@@ -1,0 +1,12 @@
+===== users-hw07 2026-10-25 23:07:00 =====
+Xu Wang | DATA 260 HW7 Part 1 - users table (s9275_rel)
+adding users.username
+adding users.role
+user s9275_reader       role=reader
+user s9275_writer       role=writer
+user s9275_moderator    role=moderator
+id  username            role       hash_prefix  hash_len
+1   user1               reader     $2b$12$      60
+3   s9275_reader        reader     $2b$12$      60
+4   s9275_writer        writer     $2b$12$      60
+5   s9275_moderator     moderator  $2b$12$      60

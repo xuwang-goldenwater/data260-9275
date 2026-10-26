@@ -1,5 +1,5 @@
 """ORM classes. They mirror code/sql/hw04_schema.sql; the SQL file is the source of truth."""
-from sqlalchemy import Column, Date, DateTime, FetchedValue, ForeignKey, Integer, String, func
+from sqlalchemy import Column, Date, DateTime, Enum, FetchedValue, ForeignKey, Integer, String, func
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -9,13 +9,16 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(50), nullable=False, unique=True)   # HW7: login name
     name = Column(String(100), nullable=False)
     email = Column(String(255), nullable=False, unique=True)
     password_hash = Column(String(60), nullable=False)   # bcrypt output is 60 chars
+    role = Column(Enum("reader", "writer", "moderator", name="user_role"),
+                  nullable=False, server_default="reader")   # HW7
 
 
 class SessionToken(Base):
-    """One row per logged-in browser. The cookie holds only `id`."""
+    """HW4 only: one row per logged-in browser. Unused since HW7 (JWT), table kept."""
 
     __tablename__ = "sessions"
 

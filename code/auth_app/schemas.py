@@ -20,15 +20,22 @@ INT_UNSIGNED_MAX = 4_294_967_295                # MySQL INT UNSIGNED
 # ---- auth ---------------------------------------------------------------------
 
 class LoginIn(BaseModel):
-    email: EmailStr
+    username: str = Field(min_length=1, max_length=50)
     password: str = Field(min_length=1)
+
+
+class TokenOut(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    expires_in: int                  # seconds
+    role: str
 
 
 class UserOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: int
-    name: str
-    email: str
+    username: str
+    role: str
 
 
 # ---- firms (related entity) ---------------------------------------------------

@@ -21,10 +21,12 @@ MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "")
 MYSQL_HOST = os.getenv("MYSQL_HOST", "127.0.0.1")
 MYSQL_PORT = int(os.getenv("MYSQL_PORT", "3306"))
 
-# Session rules carried over from HW3: 15 minutes idle, 1 hour absolute.
-IDLE_TIMEOUT_SECONDS = int(os.getenv("IDLE_TIMEOUT_SECONDS", "900"))
-ABSOLUTE_TIMEOUT_SECONDS = 3600
-COOKIE_NAME = f"{PREFIX}_session"
+# HW7: JWT bearer tokens replace the HW4 server-side sessions (kept at tag hw4).
+# The secret signs every token; set JWT_SECRET in .env for anything but local dev.
+JWT_SECRET = os.getenv("JWT_SECRET", f"dev-only-secret-{PREFIX}-change-me")
+JWT_ALGORITHM = "HS256"
+ACCESS_TOKEN_MINUTES = int(os.getenv("ACCESS_TOKEN_MINUTES", "30"))
+ROLES = ("reader", "writer", "moderator")
 
 # The React dev server (Vite) runs on 5173 and calls this API on 8275.
 FRONTEND_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]

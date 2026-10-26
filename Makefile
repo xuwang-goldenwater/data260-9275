@@ -280,3 +280,16 @@ verify-hw06:
 	@mkdir -p reports/hw06
 	@echo "===== verify-hw06 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW6_LOG)
 	python -u verify_hw06.py 2>&1 | tee -a $(HW6_LOG)
+
+# ===================== HW7 =====================
+HW7_LOG = reports/hw07/RUN_LOG.txt
+
+# Part 1-III: add username + role to users, create reader/writer/moderator
+users-hw07:
+	@mkdir -p reports/hw07
+	@echo "===== users-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
+	python -u code/hw07_users.py 2>&1 | tee -a $(HW7_LOG)
+
+# Part 1: JWT API on PORT_BASE 8275 (same app as run-hw04, now with JWT + roles)
+run-hw07:
+	python code/auth_app/main.py

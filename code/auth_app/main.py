@@ -8,7 +8,10 @@ HW3 -> HW4 changes:
   - recall-notice CRUD is served here (moved from HW2's JSON file into MySQL)
   - every request is timed and its SQL statements counted (Part 3)
 
-Run:  make run-hw04      (API on http://localhost:8275, docs at /docs)
+HW7: JWT bearer auth with roles (reader / writer / moderator) replaces the
+HW4 session cookie on every route. POST /auth/login, GET /auth/me.
+
+Run:  make run-hw07      (API on http://localhost:8275, docs at /docs)
 """
 import time
 
@@ -24,7 +27,7 @@ from routers.auth import router as auth_router
 from routers.firms import router as firms_router
 from routers.notices import router as notices_router
 
-app = FastAPI(title="Recall Notice API", version="4.0.0",
+app = FastAPI(title="Recall Notice API", version="7.0.0",
               description=f"DATA 260 HW4 - domain {config.DOMAIN_ID} ({config.PREFIX})")
 
 

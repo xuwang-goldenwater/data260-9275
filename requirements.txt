@@ -53,3 +53,8 @@ mcp[cli]>=1.26,<2
 
 # HW6 Part 1-2 - MongoDB document API and memory collections (database s9275_doc)
 pymongo>=4.6
+
+# HW7 Part 1 - JWT bearer tokens; Ruff + pre-commit linting
+pyjwt>=2.8
+ruff>=0.6
+pre-commit>=3.7

@@ -8,7 +8,8 @@
     PUT    /api/notices/{id}
     DELETE /api/notices/{id}
 
-Every route requires a logged-in session.
+Every route requires a JWT bearer token (HW7). Reads: any role.
+Create/update: writer or moderator. Delete: moderator (403 otherwise).
 
 HW5: a notice now carries recall_number (unique), units_affected and a required
 firm_id. A duplicate recall_number is answered with 409.
@@ -23,12 +24,17 @@ from sqlalchemy.orm import Session, joinedload
 import config
 import query_counter
 from database import get_db
-from deps import require_session
+from deps import get_current_user, require_role
 from models import Firm, RecallNotice
 from schemas import FirmBrief, NoticeIn, NoticeOut, NoticePage
 
+# HW7 roles: read = any logged-in role, create/update = writer or moderator,
+# delete = moderator only.
+WRITERS = [Depends(require_role("writer", "moderator"))]
+MODERATORS = [Depends(require_role("moderator"))]
+
 router = APIRouter(prefix="/api/notices", tags=["notices"],
-                   dependencies=[Depends(require_session)])
+                   dependencies=[Depends(get_current_user)])
 
 PageNo = Query(1, ge=1)
 PageSize = Query(50, ge=1, le=config.MAX_PAGE_SIZE)
@@ -140,7 +146,7 @@ def get_notice(notice_id: int, db: Session = Depends(get_db)):
     return load_notice(db, notice_id)
 
 
-@router.post("", response_model=NoticeOut, status_code=201)
+@router.post("", response_model=NoticeOut, status_code=201, dependencies=WRITERS)
 def create_notice(payload: NoticeIn, db: Session = Depends(get_db)):
     check_firm(db, payload.firm_id)
     notice = RecallNotice(
@@ -156,7 +162,7 @@ def create_notice(payload: NoticeIn, db: Session = Depends(get_db)):
     return load_notice(db, notice.id)
 
 
-@router.put("/{notice_id}", response_model=NoticeOut)
+@router.put("/{notice_id}", response_model=NoticeOut, dependencies=WRITERS)
 def update_notice(notice_id: int, payload: NoticeIn, db: Session = Depends(get_db)):
     notice = load_notice(db, notice_id)
     check_firm(db, payload.firm_id)
@@ -173,7 +179,7 @@ def update_notice(notice_id: int, payload: NoticeIn, db: Session = Depends(get_d
     return load_notice(db, notice_id)
 
 
-@router.delete("/{notice_id}", status_code=204)
+@router.delete("/{notice_id}", status_code=204, dependencies=MODERATORS)
 def delete_notice(notice_id: int, db: Session = Depends(get_db)):
     notice = load_notice(db, notice_id)
     db.delete(notice)
