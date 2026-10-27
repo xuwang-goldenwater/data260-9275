@@ -1,0 +1,34 @@
+{"ts": "2026-10-27T16:19:50.996", "agent": "planner", "stage": "READY", "text": "listening on s9275_inbox (group s9275_planner)"}
+{"ts": "2026-10-27T16:20:48.465", "agent": "planner", "stage": "RECEIVED", "text": "cid=plan-test-1 from s9275_inbox offset=0 question='What should a grocery store do when it gets a recall notice for peanut butter with undeclared milk?'", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:20:57.875", "agent": "planner", "stage": "PLANNED", "text": "cid=plan-test-1 steps=['Assess the affected products and determine the extent of the recall.', 'Notify customers who have purchased the recalled peanut butter.', 'Update inventory records and remove the recalled products from shelves.']", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:20:57.903", "agent": "planner", "stage": "SENT", "text": "cid=plan-test-1 -> s9275_tasks", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:22:55.760", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer)"}
+{"ts": "2026-10-27T16:22:56.470", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=plan-test-1 from s9275_tasks partition=0 offset=0", "cid": "plan-test-1", "partition": 0}
+{"ts": "2026-10-27T16:23:02.243", "agent": "writer-w1", "stage": "WROTE", "text": "cid=plan-test-1 draft=33 words", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:23:02.304", "agent": "writer-w1", "stage": "SENT", "text": "cid=plan-test-1 -> s9275_drafts", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:24:44.607", "agent": "reviewer", "stage": "READY", "text": "listening on s9275_drafts (group s9275_reviewer)"}
+{"ts": "2026-10-27T16:24:44.813", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=plan-test-1 from s9275_drafts offset=0", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:24:49.473", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=plan-test-1 status=approved reason='The draft follows the plan and answers the question'", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:24:49.800", "agent": "reviewer", "stage": "SENT", "text": "cid=plan-test-1 -> s9275_final", "cid": "plan-test-1"}
+{"ts": "2026-10-27T16:27:43.510", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer)"}
+{"ts": "2026-10-27T16:28:08.400", "agent": "reviewer", "stage": "READY", "text": "listening on s9275_drafts (group s9275_reviewer)"}
+{"ts": "2026-10-27T16:28:31.482", "agent": "planner", "stage": "RECEIVED", "text": "cid=plan-test-2 from s9275_inbox offset=1 question='What should a grocery store do when it gets a recall notice for peanut butter with undeclared milk?'", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:35.983", "agent": "planner", "stage": "PLANNED", "text": "cid=plan-test-2 steps=['Assess the affected products and determine the extent of the recall.', 'Notify customers who have purchased the recalled peanut butter.', 'Update inventory records and remove the recalled products from shelves.']", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:36.004", "agent": "planner", "stage": "SENT", "text": "cid=plan-test-2 -> s9275_tasks", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:36.012", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=plan-test-2 from s9275_tasks partition=1 offset=0", "cid": "plan-test-2", "partition": 1}
+{"ts": "2026-10-27T16:28:43.143", "agent": "writer-w1", "stage": "WROTE", "text": "cid=plan-test-2 draft=53 words", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:43.153", "agent": "writer-w1", "stage": "SENT", "text": "cid=plan-test-2 -> s9275_drafts", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:43.157", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=plan-test-2 from s9275_drafts offset=1", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:45.406", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=plan-test-2 status=approved reason='Answers the question and follows the plan'", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:28:45.473", "agent": "reviewer", "stage": "SENT", "text": "cid=plan-test-2 -> s9275_final", "cid": "plan-test-2"}
+{"ts": "2026-10-27T16:31:45.854", "agent": "client", "stage": "SENT", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_inbox question='What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?'", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:45.856", "agent": "planner", "stage": "RECEIVED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_inbox offset=2 question='What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?'", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:49.897", "agent": "planner", "stage": "PLANNED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 steps=['Assess the affected products and determine the scope of the recall.', 'Notify customers who have purchased the recalled peanut butter.', 'Update inventory records and remove the recalled products from shelves.']", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:49.934", "agent": "planner", "stage": "SENT", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_tasks", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:49.955", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_tasks partition=0 offset=1", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1", "partition": 0}
+{"ts": "2026-10-27T16:31:59.067", "agent": "writer-w1", "stage": "WROTE", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 draft=85 words", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:59.106", "agent": "writer-w1", "stage": "SENT", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_drafts", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:31:59.124", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_drafts offset=2", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:32:02.350", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 status=approved reason='Answers the question and follows the plan'", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:32:02.365", "agent": "reviewer", "stage": "SENT", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_final", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:32:02.379", "agent": "client", "stage": "FINAL", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_final status=approved", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}

@@ -1,0 +1,32 @@
+=== HW8 Part 1 demo - Xu Wang (SID4 9275, PREFIX s9275) ===
+
+--- CREATE_RECALL_NOTICE ---
+16:11:38.858 [client] CID       created correlation_id=94cf8dce-408f-4be0-aece-11c784362f26
+16:11:38.858 [client] SENT      topic=s9275_recall_notice_requests {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "category": "Undeclared Allergen", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "agreedToTerms": true}}
+16:11:38.883 [worker] RECEIVED  partition=0 offset=0 {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "category": "Undeclared Allergen", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "agreedToTerms": true}}
+16:11:38.884 [worker] PROCESSED cid=94cf8dce-408f-4be0-aece-11c784362f26 op=CREATE_RECALL_NOTICE success=True store_size=1
+16:11:38.887 [worker] SENT      topic=s9275_recall_notice_responses {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "success": true, "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "message": "Recall notice created"}
+16:11:38.926 [client] RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "success": true, "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "message": "Recall notice created"}
+16:11:38.926 [client] CHECK     correlation_id preserved: True
+16:11:38.926 [client] EXTRACT   recall_notice_id=08b73dc8-bd08-4934-952f-2ba9dd9ea64c
+
+--- GET_RECALL_NOTICE ---
+16:11:38.926 [client] CID       created correlation_id=6bbe28f4-d1a2-4707-8557-3e9882595ee7
+16:11:38.926 [client] SENT      topic=s9275_recall_notice_requests {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c"}}
+16:11:38.929 [worker] RECEIVED  partition=0 offset=1 {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c"}}
+16:11:38.929 [worker] PROCESSED cid=6bbe28f4-d1a2-4707-8557-3e9882595ee7 op=GET_RECALL_NOTICE success=True store_size=1
+16:11:38.931 [worker] SENT      topic=s9275_recall_notice_responses {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "success": true, "recall_notice": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:11:38.962 [client] RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "success": true, "recall_notice": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:11:38.962 [client] CHECK     correlation_id preserved: True
+
+--- Result ---
+{
+  "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c",
+  "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar",
+  "recallingFirm": "Sunrise Valley Foods, Inc.",
+  "submitterEmail": "quality@sunrisevalleyfoods.com",
+  "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.",
+  "category": "Undeclared Allergen",
+  "agreedToTerms": true
+}
+16:11:38.962 [client] CHECK     retrieved id matches created id: True

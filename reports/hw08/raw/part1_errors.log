@@ -1,0 +1,26 @@
+=== HW8 Part 1 error cases via FastAPI - Xu Wang (s9275) ===
+--- missing field (no productName) ---
+{"correlation_id":"err-missing-1","success":false,"error":"Missing field: productName"}
+--- invalid category ---
+{"correlation_id":"err-category-1","success":false,"error":"Invalid field: category must be one of ['Undeclared Allergen', 'Bacterial Contamination', 'Foreign Material', 'Mislabeling']"}
+--- unknown id ---
+{"correlation_id":"err-notfound-1","success":false,"error":"Recall notice not found"}
+--- unknown operation ---
+{"correlation_id":"err-op-1","success":false,"error":"Unknown operation"}
+--- API log ---
+16:12:08.525 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-missing-1", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"recallingFirm": "Test Foods", "submitterEmail": "qa@testfoods.com", "description": "Lot TF100 may contain undeclared peanuts.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:12:08.533 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-missing-1", "success": false, "error": "Missing field: productName"}
+16:12:08.533 [api]    RETURNED  cid=err-missing-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58050 - "POST /recall-notices HTTP/1.1" 200 OK
+16:12:08.551 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-category-1", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Oat Bar", "recallingFirm": "Test Foods", "submitterEmail": "qa@testfoods.com", "description": "Lot TF100 may contain undeclared peanuts.", "category": "Spoiled", "agreedToTerms": true}}
+16:12:08.556 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-category-1", "success": false, "error": "Invalid field: category must be one of ['Undeclared Allergen', 'Bacterial Contamination', 'Foreign Material', 'Mislabeling']"}
+16:12:08.556 [api]    RETURNED  cid=err-category-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58060 - "POST /recall-notices HTTP/1.1" 200 OK
+16:12:08.575 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-notfound-1", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "does-not-exist"}}
+16:12:08.583 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-notfound-1", "success": false, "error": "Recall notice not found"}
+16:12:08.583 [api]    RETURNED  cid=err-notfound-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58064 - "GET /recall-notices/does-not-exist HTTP/1.1" 200 OK
+16:12:08.601 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-op-1", "reply_to": "s9275_recall_notice_responses", "operation": "DELETE_RECALL_NOTICE", "data": {}}
+16:12:08.607 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-op-1", "success": false, "error": "Unknown operation"}
+16:12:08.607 [api]    RETURNED  cid=err-op-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58074 - "POST /requests HTTP/1.1" 200 OK

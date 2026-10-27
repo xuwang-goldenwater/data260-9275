@@ -26,3 +26,6 @@ frontend/dist/
 # Postman desktop app local-mode folders (not part of the submission)
 .postman/
 postman/
+
+# HW8 - runtime state for idempotency (processed correlation_ids)
+var/
