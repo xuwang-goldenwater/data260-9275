@@ -32,3 +32,243 @@
 {"ts": "2026-10-27T16:32:02.350", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 status=approved reason='Answers the question and follows the plan'", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
 {"ts": "2026-10-27T16:32:02.365", "agent": "reviewer", "stage": "SENT", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_final", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
 {"ts": "2026-10-27T16:32:02.379", "agent": "client", "stage": "FINAL", "text": "cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_final status=approved", "cid": "58079cf2-9ec8-419b-9062-22e66b9e2bb1"}
+{"ts": "2026-10-27T16:40:55.670", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=50971 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T16:41:07.179", "agent": "client", "stage": "SENT", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d -> s9275_inbox question='What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?'", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:07.189", "agent": "planner", "stage": "RECEIVED", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d from s9275_inbox offset=3 question='What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?'", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:16.446", "agent": "planner", "stage": "PLANNED", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d steps=['Assess the affected products and determine the scope of the recall.', 'Notify customers who have purchased the recalled peanut butter.', 'Update inventory records and remove the recalled products from shelves.']", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:16.487", "agent": "planner", "stage": "SENT", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d -> s9275_tasks", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:16.516", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d from s9275_tasks partition=0 offset=2", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d", "partition": 0, "offset": 2}
+{"ts": "2026-10-27T16:41:27.944", "agent": "writer-w1", "stage": "WROTE", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d draft=85 words", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:27.970", "agent": "writer-w1", "stage": "SENT", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d -> s9275_drafts", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:27.982", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=0 offset=3"}
+{"ts": "2026-10-27T16:41:28.000", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d from s9275_drafts offset=3", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:31.344", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d status=approved reason='Answers the question and follows the plan'", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:31.366", "agent": "reviewer", "stage": "SENT", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d -> s9275_final", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:41:31.388", "agent": "client", "stage": "FINAL", "text": "cid=e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d from s9275_final status=approved", "cid": "e7d42b0b-f8f4-41f4-91c0-e4c3d07b130d"}
+{"ts": "2026-10-27T16:44:00.568", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=53379 fixes: idempotency=False manual_commit=True dlq=True"}
+{"ts": "2026-10-27T16:44:08.142", "agent": "part3", "stage": "REPLAY", "text": "send #1 cid=dup-0c594693 -> s9275_tasks", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:08.146", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=dup-0c594693 from s9275_tasks partition=1 offset=1", "cid": "dup-0c594693", "partition": 1, "offset": 1}
+{"ts": "2026-10-27T16:44:08.150", "agent": "part3", "stage": "REPLAY", "text": "send #2 cid=dup-0c594693 -> s9275_tasks", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:17.357", "agent": "writer-w1", "stage": "WROTE", "text": "cid=dup-0c594693 draft=73 words", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:17.388", "agent": "writer-w1", "stage": "SENT", "text": "cid=dup-0c594693 -> s9275_drafts", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:17.397", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=dup-0c594693 from s9275_drafts offset=4", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:17.403", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=2"}
+{"ts": "2026-10-27T16:44:17.404", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=dup-0c594693 from s9275_tasks partition=1 offset=2", "cid": "dup-0c594693", "partition": 1, "offset": 2}
+{"ts": "2026-10-27T16:44:26.485", "agent": "writer-w1", "stage": "WROTE", "text": "cid=dup-0c594693 draft=73 words", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:26.516", "agent": "writer-w1", "stage": "SENT", "text": "cid=dup-0c594693 -> s9275_drafts", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:26.523", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=3"}
+{"ts": "2026-10-27T16:44:29.731", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=dup-0c594693 status=approved reason='Answers the question and follows the plan'", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:29.859", "agent": "reviewer", "stage": "SENT", "text": "cid=dup-0c594693 -> s9275_final", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:29.871", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=dup-0c594693 from s9275_drafts offset=5", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:31.476", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=dup-0c594693 status=approved reason='Answers the question and follows the plan'", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:44:31.496", "agent": "reviewer", "stage": "SENT", "text": "cid=dup-0c594693 -> s9275_final", "cid": "dup-0c594693"}
+{"ts": "2026-10-27T16:45:37.404", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=54688 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T16:45:55.602", "agent": "part3", "stage": "REPLAY", "text": "send #1 cid=dup-9bd1743b -> s9275_tasks", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:45:55.608", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=dup-9bd1743b from s9275_tasks partition=1 offset=3", "cid": "dup-9bd1743b", "partition": 1, "offset": 3}
+{"ts": "2026-10-27T16:45:55.612", "agent": "part3", "stage": "REPLAY", "text": "send #2 cid=dup-9bd1743b -> s9275_tasks", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:04.141", "agent": "writer-w1", "stage": "WROTE", "text": "cid=dup-9bd1743b draft=73 words", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:04.159", "agent": "writer-w1", "stage": "SENT", "text": "cid=dup-9bd1743b -> s9275_drafts", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:04.165", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=dup-9bd1743b from s9275_drafts offset=6", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:04.169", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=4"}
+{"ts": "2026-10-27T16:46:04.169", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=dup-9bd1743b from s9275_tasks partition=1 offset=4", "cid": "dup-9bd1743b", "partition": 1, "offset": 4}
+{"ts": "2026-10-27T16:46:04.170", "agent": "writer-w1", "stage": "DUPLICATE", "text": "cid=dup-9bd1743b already processed - skipped, no new draft", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:04.171", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=5"}
+{"ts": "2026-10-27T16:46:05.747", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=dup-9bd1743b status=approved reason='Answers the question and follows the plan'", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:46:05.765", "agent": "reviewer", "stage": "SENT", "text": "cid=dup-9bd1743b -> s9275_final", "cid": "dup-9bd1743b"}
+{"ts": "2026-10-27T16:48:22.304", "agent": "part3", "stage": "CHECK", "text": "cid=dup-0c594693 drafts in s9275_drafts: 2", "cid": "dup-0c594693", "drafts": 2}
+{"ts": "2026-10-27T16:48:27.788", "agent": "part3", "stage": "CHECK", "text": "cid=dup-9bd1743b drafts in s9275_drafts: 1", "cid": "dup-9bd1743b", "drafts": 1}
+{"ts": "2026-10-27T16:49:15.024", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=57433 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T16:49:23.557", "agent": "part3", "stage": "SENT", "text": "cid=kill-d99066ed -> s9275_tasks (kill the Writer during its WORKING line)", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:49:23.562", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-d99066ed from s9275_tasks partition=0 offset=3", "cid": "kill-d99066ed", "partition": 0, "offset": 3}
+{"ts": "2026-10-27T16:49:23.563", "agent": "writer-w1", "stage": "WORKING", "text": "cid=kill-d99066ed pid=57433 sleeping 20s - kill window"}
+{"ts": "2026-10-27T16:49:52.237", "agent": "writer-w1", "stage": "WROTE", "text": "cid=kill-d99066ed draft=73 words", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:49:52.266", "agent": "writer-w1", "stage": "SENT", "text": "cid=kill-d99066ed -> s9275_drafts", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:49:52.281", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=kill-d99066ed from s9275_drafts offset=7", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:49:54.010", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=kill-d99066ed status=approved reason='Answers the question and follows the plan'", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:49:54.034", "agent": "reviewer", "stage": "SENT", "text": "cid=kill-d99066ed -> s9275_final", "cid": "kill-d99066ed"}
+{"ts": "2026-10-27T16:50:02.184", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=58078 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T16:50:32.221", "agent": "part3", "stage": "SENT", "text": "cid=kill-66a6f995 -> s9275_tasks (kill the Writer during its WORKING line)", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:50:32.225", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-66a6f995 from s9275_tasks partition=1 offset=5", "cid": "kill-66a6f995", "partition": 1, "offset": 5}
+{"ts": "2026-10-27T16:50:32.226", "agent": "writer-w1", "stage": "WORKING", "text": "cid=kill-66a6f995 pid=58078 sleeping 20s - kill window"}
+{"ts": "2026-10-27T16:51:00.910", "agent": "writer-w1", "stage": "WROTE", "text": "cid=kill-66a6f995 draft=73 words", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:51:00.941", "agent": "writer-w1", "stage": "SENT", "text": "cid=kill-66a6f995 -> s9275_drafts", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:51:00.945", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=kill-66a6f995 from s9275_drafts offset=8", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:51:02.453", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=kill-66a6f995 status=approved reason='Answers the question and follows the plan'", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:51:02.461", "agent": "reviewer", "stage": "SENT", "text": "cid=kill-66a6f995 -> s9275_final", "cid": "kill-66a6f995"}
+{"ts": "2026-10-27T16:52:24.416", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=59875 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T16:52:30.271", "agent": "part3", "stage": "SENT", "text": "cid=kill-ebf57452 -> s9275_tasks (kill the Writer during its WORKING line)", "cid": "kill-ebf57452"}
+{"ts": "2026-10-27T16:52:30.275", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-ebf57452 from s9275_tasks partition=1 offset=6", "cid": "kill-ebf57452", "partition": 1, "offset": 6}
+{"ts": "2026-10-27T16:52:30.276", "agent": "writer-w1", "stage": "WORKING", "text": "cid=kill-ebf57452 pid=59875 sleeping 20s - kill window"}
+{"ts": "2026-10-27T16:53:28.460", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=60691 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T16:54:07.563", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=61214 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T16:54:27.644", "agent": "part3", "stage": "CHECK", "text": "cid=kill-xxxx drafts in s9275_drafts: 0", "cid": "kill-xxxx", "drafts": 0}
+{"ts": "2026-10-27T17:26:37.224", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=80376 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T17:26:48.756", "agent": "part3", "stage": "SENT", "text": "cid=kill-a0c7ae0b -> s9275_tasks (kill the Writer during its WORKING line)", "cid": "kill-a0c7ae0b"}
+{"ts": "2026-10-27T17:26:48.759", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-a0c7ae0b from s9275_tasks partition=0 offset=4", "cid": "kill-a0c7ae0b", "partition": 0, "offset": 4}
+{"ts": "2026-10-27T17:26:48.760", "agent": "writer-w1", "stage": "WORKING", "text": "cid=kill-a0c7ae0b pid=80376 sleeping 20s - kill window"}
+{"ts": "2026-10-27T17:27:55.930", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=81457 fixes: idempotency=True manual_commit=False dlq=True"}
+{"ts": "2026-10-27T17:28:07.327", "agent": "part3", "stage": "CHECK", "text": "cid=kill-xxxxxxxx drafts in s9275_drafts: 0", "cid": "kill-xxxxxxxx", "drafts": 0}
+{"ts": "2026-10-27T17:29:19.339", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=82546 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T17:29:30.734", "agent": "part3", "stage": "SENT", "text": "cid=kill-e2ca57a0 -> s9275_tasks (kill the Writer during its WORKING line)", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:29:30.738", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5", "cid": "kill-e2ca57a0", "partition": 0, "offset": 5}
+{"ts": "2026-10-27T17:29:30.743", "agent": "writer-w1", "stage": "WORKING", "text": "cid=kill-e2ca57a0 pid=82546 sleeping 20s - kill window"}
+{"ts": "2026-10-27T17:30:35.339", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=83529 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T17:30:35.428", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5", "cid": "kill-e2ca57a0", "partition": 0, "offset": 5}
+{"ts": "2026-10-27T17:30:50.770", "agent": "writer-w1", "stage": "WROTE", "text": "cid=kill-e2ca57a0 draft=73 words", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:30:50.826", "agent": "writer-w1", "stage": "SENT", "text": "cid=kill-e2ca57a0 -> s9275_drafts", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:30:50.850", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=0 offset=6"}
+{"ts": "2026-10-27T17:30:50.856", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=kill-e2ca57a0 from s9275_drafts offset=9", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:30:54.961", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=kill-e2ca57a0 status=approved reason='Answers the question and follows the plan'", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:30:55.031", "agent": "reviewer", "stage": "SENT", "text": "cid=kill-e2ca57a0 -> s9275_final", "cid": "kill-e2ca57a0"}
+{"ts": "2026-10-27T17:31:02.138", "agent": "part3", "stage": "CHECK", "text": "cid=kill-yyyyyyyy drafts in s9275_drafts: 0", "cid": "kill-yyyyyyyy", "drafts": 0}
+{"ts": "2026-10-27T17:33:05.373", "agent": "part3", "stage": "CHECK", "text": "cid=dup-0c594693 drafts in s9275_drafts: 2", "cid": "dup-0c594693", "drafts": 2}
+{"ts": "2026-10-27T17:33:11.072", "agent": "part3", "stage": "CHECK", "text": "cid=dup-9bd1743b drafts in s9275_drafts: 1", "cid": "dup-9bd1743b", "drafts": 1}
+{"ts": "2026-10-27T17:33:22.084", "agent": "part3", "stage": "CHECK", "text": "cid=kill-a0c7ae0b drafts in s9275_drafts: 0", "cid": "kill-a0c7ae0b", "drafts": 0}
+{"ts": "2026-10-27T17:33:27.725", "agent": "part3", "stage": "CHECK", "text": "cid=kill-e2ca57a0 drafts in s9275_drafts: 1", "cid": "kill-e2ca57a0", "drafts": 1}
+{"ts": "2026-10-27T17:33:52.633", "agent": "part3", "stage": "CHECK", "text": "cid=dup-0c594693 drafts in s9275_drafts: 2", "cid": "dup-0c594693", "drafts": 2}
+{"ts": "2026-10-27T17:33:58.270", "agent": "part3", "stage": "CHECK", "text": "cid=dup-9bd1743b drafts in s9275_drafts: 1", "cid": "dup-9bd1743b", "drafts": 1}
+{"ts": "2026-10-27T17:37:08.372", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=88670 fixes: idempotency=True manual_commit=True dlq=False"}
+{"ts": "2026-10-27T17:37:17.480", "agent": "part3", "stage": "SENT", "text": "POISON cid=poison-73ba33df (no 'question' field) -> s9275_tasks", "cid": "poison-73ba33df"}
+{"ts": "2026-10-27T17:37:17.482", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=poison-73ba33df from s9275_tasks partition=1 offset=7", "cid": "poison-73ba33df", "partition": 1, "offset": 7}
+{"ts": "2026-10-27T17:37:17.486", "agent": "part3", "stage": "SENT", "text": "normal cid=after-poison-542fb13e queued behind it -> s9275_tasks", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:37:40.209", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=89175 fixes: idempotency=True manual_commit=True dlq=False"}
+{"ts": "2026-10-27T17:37:40.277", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=poison-73ba33df from s9275_tasks partition=1 offset=7", "cid": "poison-73ba33df", "partition": 1, "offset": 7}
+{"ts": "2026-10-27T17:39:07.778", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=90295 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T17:39:07.860", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=poison-73ba33df from s9275_tasks partition=1 offset=7", "cid": "poison-73ba33df", "partition": 1, "offset": 7}
+{"ts": "2026-10-27T17:39:07.860", "agent": "writer-w1", "stage": "RETRY", "text": "cid=poison-73ba33df attempt 1/3 failed: KeyError: 'question'", "cid": "poison-73ba33df"}
+{"ts": "2026-10-27T17:39:08.363", "agent": "writer-w1", "stage": "RETRY", "text": "cid=poison-73ba33df attempt 2/3 failed: KeyError: 'question'", "cid": "poison-73ba33df"}
+{"ts": "2026-10-27T17:39:09.369", "agent": "writer-w1", "stage": "RETRY", "text": "cid=poison-73ba33df attempt 3/3 failed: KeyError: 'question'", "cid": "poison-73ba33df"}
+{"ts": "2026-10-27T17:39:09.390", "agent": "writer-w1", "stage": "DEAD_LTR", "text": "cid=poison-73ba33df -> s9275_dead_letter after 3 attempts (KeyError: 'question')", "cid": "poison-73ba33df"}
+{"ts": "2026-10-27T17:39:09.393", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=8"}
+{"ts": "2026-10-27T17:39:09.394", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=after-poison-542fb13e from s9275_tasks partition=1 offset=8", "cid": "after-poison-542fb13e", "partition": 1, "offset": 8}
+{"ts": "2026-10-27T17:39:22.366", "agent": "writer-w1", "stage": "WROTE", "text": "cid=after-poison-542fb13e draft=73 words", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:39:22.395", "agent": "writer-w1", "stage": "SENT", "text": "cid=after-poison-542fb13e -> s9275_drafts", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:39:22.409", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=9"}
+{"ts": "2026-10-27T17:39:22.427", "agent": "reviewer", "stage": "RECEIVED", "text": "cid=after-poison-542fb13e from s9275_drafts offset=10", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:39:26.341", "agent": "reviewer", "stage": "REVIEWED", "text": "cid=after-poison-542fb13e status=approved reason='Answers the question and follows the plan'", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:39:26.369", "agent": "reviewer", "stage": "SENT", "text": "cid=after-poison-542fb13e -> s9275_final", "cid": "after-poison-542fb13e"}
+{"ts": "2026-10-27T17:42:01.562", "agent": "part3", "stage": "CHECK", "text": "cid=after-poison-542fb13e drafts in s9275_drafts: 1", "cid": "after-poison-542fb13e", "drafts": 1}
+{"ts": "2026-10-27T17:42:23.179", "agent": "writer-w1", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=92920 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T17:42:35.670", "agent": "writer-w2", "stage": "READY", "text": "listening on s9275_tasks (group s9275_writer) pid=93081 fixes: idempotency=True manual_commit=True dlq=True"}
+{"ts": "2026-10-27T17:43:47.584", "agent": "part3", "stage": "ORDER", "text": "run=nokey sent 20 tasks (VERIFY_SEED=269275) -> s9275_tasks"}
+{"ts": "2026-10-27T17:43:47.585", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-01-174347 from s9275_tasks partition=1 offset=9", "cid": "ord-nokey-01-174347", "partition": 1, "offset": 9}
+{"ts": "2026-10-27T17:43:47.585", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-00-174347 from s9275_tasks partition=0 offset=6", "cid": "ord-nokey-00-174347", "partition": 0, "offset": 6}
+{"ts": "2026-10-27T17:43:47.767", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-01-174347 order-test RN-efb54f step 1", "cid": "ord-nokey-01-174347", "recall_notice_id": "RN-efb54f", "seq": 1}
+{"ts": "2026-10-27T17:43:47.776", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=10"}
+{"ts": "2026-10-27T17:43:47.776", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-03-174347 from s9275_tasks partition=1 offset=10", "cid": "ord-nokey-03-174347", "partition": 1, "offset": 10}
+{"ts": "2026-10-27T17:43:47.965", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-00-174347 order-test RN-c6810e step 1", "cid": "ord-nokey-00-174347", "recall_notice_id": "RN-c6810e", "seq": 1}
+{"ts": "2026-10-27T17:43:47.970", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=7"}
+{"ts": "2026-10-27T17:43:47.971", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-02-174347 from s9275_tasks partition=0 offset=7", "cid": "ord-nokey-02-174347", "partition": 0, "offset": 7}
+{"ts": "2026-10-27T17:43:48.138", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-02-174347 order-test RN-c6810e step 2", "cid": "ord-nokey-02-174347", "recall_notice_id": "RN-c6810e", "seq": 2}
+{"ts": "2026-10-27T17:43:48.142", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=8"}
+{"ts": "2026-10-27T17:43:48.143", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-04-174347 from s9275_tasks partition=0 offset=8", "cid": "ord-nokey-04-174347", "partition": 0, "offset": 8}
+{"ts": "2026-10-27T17:43:48.341", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-03-174347 order-test RN-c97b16 step 1", "cid": "ord-nokey-03-174347", "recall_notice_id": "RN-c97b16", "seq": 1}
+{"ts": "2026-10-27T17:43:48.353", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=11"}
+{"ts": "2026-10-27T17:43:48.356", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-05-174347 from s9275_tasks partition=1 offset=11", "cid": "ord-nokey-05-174347", "partition": 1, "offset": 11}
+{"ts": "2026-10-27T17:43:48.512", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-05-174347 order-test RN-c6810e step 4", "cid": "ord-nokey-05-174347", "recall_notice_id": "RN-c6810e", "seq": 4}
+{"ts": "2026-10-27T17:43:48.519", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=12"}
+{"ts": "2026-10-27T17:43:48.520", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-07-174347 from s9275_tasks partition=1 offset=12", "cid": "ord-nokey-07-174347", "partition": 1, "offset": 12}
+{"ts": "2026-10-27T17:43:48.633", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-04-174347 order-test RN-c6810e step 3", "cid": "ord-nokey-04-174347", "recall_notice_id": "RN-c6810e", "seq": 3}
+{"ts": "2026-10-27T17:43:48.637", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=9"}
+{"ts": "2026-10-27T17:43:48.638", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-06-174347 from s9275_tasks partition=0 offset=9", "cid": "ord-nokey-06-174347", "partition": 0, "offset": 9}
+{"ts": "2026-10-27T17:43:48.824", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-06-174347 order-test RN-efb54f step 2", "cid": "ord-nokey-06-174347", "recall_notice_id": "RN-efb54f", "seq": 2}
+{"ts": "2026-10-27T17:43:48.830", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=10"}
+{"ts": "2026-10-27T17:43:48.831", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-08-174347 from s9275_tasks partition=0 offset=10", "cid": "ord-nokey-08-174347", "partition": 0, "offset": 10}
+{"ts": "2026-10-27T17:43:48.852", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-07-174347 order-test RN-efb54f step 3", "cid": "ord-nokey-07-174347", "recall_notice_id": "RN-efb54f", "seq": 3}
+{"ts": "2026-10-27T17:43:48.859", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=13"}
+{"ts": "2026-10-27T17:43:48.859", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-09-174347 from s9275_tasks partition=1 offset=13", "cid": "ord-nokey-09-174347", "partition": 1, "offset": 13}
+{"ts": "2026-10-27T17:43:49.035", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-09-174347 order-test RN-efb54f step 4", "cid": "ord-nokey-09-174347", "recall_notice_id": "RN-efb54f", "seq": 4}
+{"ts": "2026-10-27T17:43:49.038", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=14"}
+{"ts": "2026-10-27T17:43:49.039", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-11-174347 from s9275_tasks partition=1 offset=14", "cid": "ord-nokey-11-174347", "partition": 1, "offset": 14}
+{"ts": "2026-10-27T17:43:49.239", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-11-174347 order-test RN-c973f5 step 1", "cid": "ord-nokey-11-174347", "recall_notice_id": "RN-c973f5", "seq": 1}
+{"ts": "2026-10-27T17:43:49.242", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=15"}
+{"ts": "2026-10-27T17:43:49.243", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-13-174347 from s9275_tasks partition=1 offset=15", "cid": "ord-nokey-13-174347", "partition": 1, "offset": 15}
+{"ts": "2026-10-27T17:43:49.353", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-08-174347 order-test RN-c97b16 step 2", "cid": "ord-nokey-08-174347", "recall_notice_id": "RN-c97b16", "seq": 2}
+{"ts": "2026-10-27T17:43:49.357", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=11"}
+{"ts": "2026-10-27T17:43:49.358", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-10-174347 from s9275_tasks partition=0 offset=11", "cid": "ord-nokey-10-174347", "partition": 0, "offset": 11}
+{"ts": "2026-10-27T17:43:49.665", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-13-174347 order-test RN-c97b16 step 3", "cid": "ord-nokey-13-174347", "recall_notice_id": "RN-c97b16", "seq": 3}
+{"ts": "2026-10-27T17:43:49.668", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=16"}
+{"ts": "2026-10-27T17:43:49.668", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-15-174347 from s9275_tasks partition=1 offset=16", "cid": "ord-nokey-15-174347", "partition": 1, "offset": 16}
+{"ts": "2026-10-27T17:43:49.938", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-10-174347 order-test RN-efb54f step 5", "cid": "ord-nokey-10-174347", "recall_notice_id": "RN-efb54f", "seq": 5}
+{"ts": "2026-10-27T17:43:49.944", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=12"}
+{"ts": "2026-10-27T17:43:49.945", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-12-174347 from s9275_tasks partition=0 offset=12", "cid": "ord-nokey-12-174347", "partition": 0, "offset": 12}
+{"ts": "2026-10-27T17:43:49.954", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-15-174347 order-test RN-c973f5 step 3", "cid": "ord-nokey-15-174347", "recall_notice_id": "RN-c973f5", "seq": 3}
+{"ts": "2026-10-27T17:43:49.958", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=17"}
+{"ts": "2026-10-27T17:43:49.958", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-17-174347 from s9275_tasks partition=1 offset=17", "cid": "ord-nokey-17-174347", "partition": 1, "offset": 17}
+{"ts": "2026-10-27T17:43:50.272", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-12-174347 order-test RN-c973f5 step 2", "cid": "ord-nokey-12-174347", "recall_notice_id": "RN-c973f5", "seq": 2}
+{"ts": "2026-10-27T17:43:50.278", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=13"}
+{"ts": "2026-10-27T17:43:50.279", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-14-174347 from s9275_tasks partition=0 offset=13", "cid": "ord-nokey-14-174347", "partition": 0, "offset": 13}
+{"ts": "2026-10-27T17:43:50.320", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-17-174347 order-test RN-c973f5 step 5", "cid": "ord-nokey-17-174347", "recall_notice_id": "RN-c973f5", "seq": 5}
+{"ts": "2026-10-27T17:43:50.326", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=18"}
+{"ts": "2026-10-27T17:43:50.327", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-nokey-19-174347 from s9275_tasks partition=1 offset=18", "cid": "ord-nokey-19-174347", "partition": 1, "offset": 18}
+{"ts": "2026-10-27T17:43:50.575", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-14-174347 order-test RN-c97b16 step 4", "cid": "ord-nokey-14-174347", "recall_notice_id": "RN-c97b16", "seq": 4}
+{"ts": "2026-10-27T17:43:50.579", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=14"}
+{"ts": "2026-10-27T17:43:50.579", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-16-174347 from s9275_tasks partition=0 offset=14", "cid": "ord-nokey-16-174347", "partition": 0, "offset": 14}
+{"ts": "2026-10-27T17:43:50.710", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-nokey-19-174347 order-test RN-c6810e step 5", "cid": "ord-nokey-19-174347", "recall_notice_id": "RN-c6810e", "seq": 5}
+{"ts": "2026-10-27T17:43:50.713", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=19"}
+{"ts": "2026-10-27T17:43:50.967", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-16-174347 order-test RN-c973f5 step 4", "cid": "ord-nokey-16-174347", "recall_notice_id": "RN-c973f5", "seq": 4}
+{"ts": "2026-10-27T17:43:50.971", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=15"}
+{"ts": "2026-10-27T17:43:50.972", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-nokey-18-174347 from s9275_tasks partition=0 offset=15", "cid": "ord-nokey-18-174347", "partition": 0, "offset": 15}
+{"ts": "2026-10-27T17:43:51.495", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-nokey-18-174347 order-test RN-c97b16 step 5", "cid": "ord-nokey-18-174347", "recall_notice_id": "RN-c97b16", "seq": 5}
+{"ts": "2026-10-27T17:43:51.500", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=16"}
+{"ts": "2026-10-27T17:44:32.079", "agent": "part3", "stage": "ORDER", "text": "run=keyed sent 20 tasks (VERIFY_SEED=269275) -> s9275_tasks"}
+{"ts": "2026-10-27T17:44:32.083", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-00-174432 from s9275_tasks partition=0 offset=16", "cid": "ord-keyed-00-174432", "partition": 0, "offset": 16}
+{"ts": "2026-10-27T17:44:32.083", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-03-174432 from s9275_tasks partition=1 offset=19", "cid": "ord-keyed-03-174432", "partition": 1, "offset": 19}
+{"ts": "2026-10-27T17:44:32.464", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-00-174432 order-test RN-c6810e step 1", "cid": "ord-keyed-00-174432", "recall_notice_id": "RN-c6810e", "seq": 1}
+{"ts": "2026-10-27T17:44:32.486", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=17"}
+{"ts": "2026-10-27T17:44:32.487", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-01-174432 from s9275_tasks partition=0 offset=17", "cid": "ord-keyed-01-174432", "partition": 0, "offset": 17}
+{"ts": "2026-10-27T17:44:32.650", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-03-174432 order-test RN-c97b16 step 1", "cid": "ord-keyed-03-174432", "recall_notice_id": "RN-c97b16", "seq": 1}
+{"ts": "2026-10-27T17:44:32.656", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=20"}
+{"ts": "2026-10-27T17:44:32.656", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-08-174432 from s9275_tasks partition=1 offset=20", "cid": "ord-keyed-08-174432", "partition": 1, "offset": 20}
+{"ts": "2026-10-27T17:44:32.666", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-01-174432 order-test RN-efb54f step 1", "cid": "ord-keyed-01-174432", "recall_notice_id": "RN-efb54f", "seq": 1}
+{"ts": "2026-10-27T17:44:32.670", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=18"}
+{"ts": "2026-10-27T17:44:32.670", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-02-174432 from s9275_tasks partition=0 offset=18", "cid": "ord-keyed-02-174432", "partition": 0, "offset": 18}
+{"ts": "2026-10-27T17:44:32.840", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-02-174432 order-test RN-c6810e step 2", "cid": "ord-keyed-02-174432", "recall_notice_id": "RN-c6810e", "seq": 2}
+{"ts": "2026-10-27T17:44:32.845", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=19"}
+{"ts": "2026-10-27T17:44:32.846", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-04-174432 from s9275_tasks partition=0 offset=19", "cid": "ord-keyed-04-174432", "partition": 0, "offset": 19}
+{"ts": "2026-10-27T17:44:33.183", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-08-174432 order-test RN-c97b16 step 2", "cid": "ord-keyed-08-174432", "recall_notice_id": "RN-c97b16", "seq": 2}
+{"ts": "2026-10-27T17:44:33.189", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=21"}
+{"ts": "2026-10-27T17:44:33.190", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-11-174432 from s9275_tasks partition=1 offset=21", "cid": "ord-keyed-11-174432", "partition": 1, "offset": 21}
+{"ts": "2026-10-27T17:44:33.336", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-04-174432 order-test RN-c6810e step 3", "cid": "ord-keyed-04-174432", "recall_notice_id": "RN-c6810e", "seq": 3}
+{"ts": "2026-10-27T17:44:33.342", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=20"}
+{"ts": "2026-10-27T17:44:33.343", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-05-174432 from s9275_tasks partition=0 offset=20", "cid": "ord-keyed-05-174432", "partition": 0, "offset": 20}
+{"ts": "2026-10-27T17:44:33.388", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-11-174432 order-test RN-c973f5 step 1", "cid": "ord-keyed-11-174432", "recall_notice_id": "RN-c973f5", "seq": 1}
+{"ts": "2026-10-27T17:44:33.393", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=22"}
+{"ts": "2026-10-27T17:44:33.393", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-12-174432 from s9275_tasks partition=1 offset=22", "cid": "ord-keyed-12-174432", "partition": 1, "offset": 22}
+{"ts": "2026-10-27T17:44:33.497", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-05-174432 order-test RN-c6810e step 4", "cid": "ord-keyed-05-174432", "recall_notice_id": "RN-c6810e", "seq": 4}
+{"ts": "2026-10-27T17:44:33.501", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=21"}
+{"ts": "2026-10-27T17:44:33.502", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-06-174432 from s9275_tasks partition=0 offset=21", "cid": "ord-keyed-06-174432", "partition": 0, "offset": 21}
+{"ts": "2026-10-27T17:44:33.687", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-06-174432 order-test RN-efb54f step 2", "cid": "ord-keyed-06-174432", "recall_notice_id": "RN-efb54f", "seq": 2}
+{"ts": "2026-10-27T17:44:33.691", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=22"}
+{"ts": "2026-10-27T17:44:33.692", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-07-174432 from s9275_tasks partition=0 offset=22", "cid": "ord-keyed-07-174432", "partition": 0, "offset": 22}
+{"ts": "2026-10-27T17:44:33.721", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-12-174432 order-test RN-c973f5 step 2", "cid": "ord-keyed-12-174432", "recall_notice_id": "RN-c973f5", "seq": 2}
+{"ts": "2026-10-27T17:44:33.727", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=23"}
+{"ts": "2026-10-27T17:44:33.728", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-13-174432 from s9275_tasks partition=1 offset=23", "cid": "ord-keyed-13-174432", "partition": 1, "offset": 23}
+{"ts": "2026-10-27T17:44:34.026", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-07-174432 order-test RN-efb54f step 3", "cid": "ord-keyed-07-174432", "recall_notice_id": "RN-efb54f", "seq": 3}
+{"ts": "2026-10-27T17:44:34.029", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=23"}
+{"ts": "2026-10-27T17:44:34.030", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-09-174432 from s9275_tasks partition=0 offset=23", "cid": "ord-keyed-09-174432", "partition": 0, "offset": 23}
+{"ts": "2026-10-27T17:44:34.154", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-13-174432 order-test RN-c97b16 step 3", "cid": "ord-keyed-13-174432", "recall_notice_id": "RN-c97b16", "seq": 3}
+{"ts": "2026-10-27T17:44:34.158", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=24"}
+{"ts": "2026-10-27T17:44:34.159", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-14-174432 from s9275_tasks partition=1 offset=24", "cid": "ord-keyed-14-174432", "partition": 1, "offset": 24}
+{"ts": "2026-10-27T17:44:34.213", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-09-174432 order-test RN-efb54f step 4", "cid": "ord-keyed-09-174432", "recall_notice_id": "RN-efb54f", "seq": 4}
+{"ts": "2026-10-27T17:44:34.216", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=24"}
+{"ts": "2026-10-27T17:44:34.216", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-10-174432 from s9275_tasks partition=0 offset=24", "cid": "ord-keyed-10-174432", "partition": 0, "offset": 24}
+{"ts": "2026-10-27T17:44:34.457", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-14-174432 order-test RN-c97b16 step 4", "cid": "ord-keyed-14-174432", "recall_notice_id": "RN-c97b16", "seq": 4}
+{"ts": "2026-10-27T17:44:34.461", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=25"}
+{"ts": "2026-10-27T17:44:34.461", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-15-174432 from s9275_tasks partition=1 offset=25", "cid": "ord-keyed-15-174432", "partition": 1, "offset": 25}
+{"ts": "2026-10-27T17:44:34.748", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-15-174432 order-test RN-c973f5 step 3", "cid": "ord-keyed-15-174432", "recall_notice_id": "RN-c973f5", "seq": 3}
+{"ts": "2026-10-27T17:44:34.755", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=26"}
+{"ts": "2026-10-27T17:44:34.756", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-16-174432 from s9275_tasks partition=1 offset=26", "cid": "ord-keyed-16-174432", "partition": 1, "offset": 26}
+{"ts": "2026-10-27T17:44:34.801", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-10-174432 order-test RN-efb54f step 5", "cid": "ord-keyed-10-174432", "recall_notice_id": "RN-efb54f", "seq": 5}
+{"ts": "2026-10-27T17:44:34.805", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=25"}
+{"ts": "2026-10-27T17:44:34.807", "agent": "writer-w2", "stage": "RECEIVED", "text": "cid=ord-keyed-19-174432 from s9275_tasks partition=0 offset=25", "cid": "ord-keyed-19-174432", "partition": 0, "offset": 25}
+{"ts": "2026-10-27T17:44:35.140", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-16-174432 order-test RN-c973f5 step 4", "cid": "ord-keyed-16-174432", "recall_notice_id": "RN-c973f5", "seq": 4}
+{"ts": "2026-10-27T17:44:35.143", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=27"}
+{"ts": "2026-10-27T17:44:35.143", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-17-174432 from s9275_tasks partition=1 offset=27", "cid": "ord-keyed-17-174432", "partition": 1, "offset": 27}
+{"ts": "2026-10-27T17:44:35.194", "agent": "writer-w2", "stage": "ORDERED", "text": "cid=ord-keyed-19-174432 order-test RN-c6810e step 5", "cid": "ord-keyed-19-174432", "recall_notice_id": "RN-c6810e", "seq": 5}
+{"ts": "2026-10-27T17:44:35.196", "agent": "writer-w2", "stage": "COMMITTED", "text": "partition=0 offset=26"}
+{"ts": "2026-10-27T17:44:35.504", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-17-174432 order-test RN-c973f5 step 5", "cid": "ord-keyed-17-174432", "recall_notice_id": "RN-c973f5", "seq": 5}
+{"ts": "2026-10-27T17:44:35.508", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=28"}
+{"ts": "2026-10-27T17:44:35.508", "agent": "writer-w1", "stage": "RECEIVED", "text": "cid=ord-keyed-18-174432 from s9275_tasks partition=1 offset=28", "cid": "ord-keyed-18-174432", "partition": 1, "offset": 28}
+{"ts": "2026-10-27T17:44:36.033", "agent": "writer-w1", "stage": "ORDERED", "text": "cid=ord-keyed-18-174432 order-test RN-c97b16 step 5", "cid": "ord-keyed-18-174432", "recall_notice_id": "RN-c97b16", "seq": 5}
+{"ts": "2026-10-27T17:44:36.039", "agent": "writer-w1", "stage": "COMMITTED", "text": "partition=1 offset=29"}

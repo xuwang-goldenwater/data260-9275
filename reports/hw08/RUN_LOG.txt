@@ -1,0 +1,466 @@
+DATA 260 HW8 RUN_LOG - Xu Wang (SID4 9275, PREFIX s9275)
+Real console output of the runs behind the reported results, 2026-10-27, America/Los_Angeles.
+Each block is copied unchanged from reports/hw08/raw/<file>.
+
+====================================================================================================
+## Part 1 IV - homework_demo.py (CREATE -> GET over Kafka)
+## source: raw/part1_demo.log
+====================================================================================================
+=== HW8 Part 1 demo - Xu Wang (SID4 9275, PREFIX s9275) ===
+
+--- CREATE_RECALL_NOTICE ---
+16:11:38.858 [client] CID       created correlation_id=94cf8dce-408f-4be0-aece-11c784362f26
+16:11:38.858 [client] SENT      topic=s9275_recall_notice_requests {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "category": "Undeclared Allergen", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "agreedToTerms": true}}
+16:11:38.883 [worker] RECEIVED  partition=0 offset=0 {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "category": "Undeclared Allergen", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "agreedToTerms": true}}
+16:11:38.884 [worker] PROCESSED cid=94cf8dce-408f-4be0-aece-11c784362f26 op=CREATE_RECALL_NOTICE success=True store_size=1
+16:11:38.887 [worker] SENT      topic=s9275_recall_notice_responses {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "success": true, "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "message": "Recall notice created"}
+16:11:38.926 [client] RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "94cf8dce-408f-4be0-aece-11c784362f26", "success": true, "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "message": "Recall notice created"}
+16:11:38.926 [client] CHECK     correlation_id preserved: True
+16:11:38.926 [client] EXTRACT   recall_notice_id=08b73dc8-bd08-4934-952f-2ba9dd9ea64c
+
+--- GET_RECALL_NOTICE ---
+16:11:38.926 [client] CID       created correlation_id=6bbe28f4-d1a2-4707-8557-3e9882595ee7
+16:11:38.926 [client] SENT      topic=s9275_recall_notice_requests {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c"}}
+16:11:38.929 [worker] RECEIVED  partition=0 offset=1 {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c"}}
+16:11:38.929 [worker] PROCESSED cid=6bbe28f4-d1a2-4707-8557-3e9882595ee7 op=GET_RECALL_NOTICE success=True store_size=1
+16:11:38.931 [worker] SENT      topic=s9275_recall_notice_responses {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "success": true, "recall_notice": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:11:38.962 [client] RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "6bbe28f4-d1a2-4707-8557-3e9882595ee7", "success": true, "recall_notice": {"recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c", "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar", "recallingFirm": "Sunrise Valley Foods, Inc.", "submitterEmail": "quality@sunrisevalleyfoods.com", "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:11:38.962 [client] CHECK     correlation_id preserved: True
+
+--- Result ---
+{
+  "recall_notice_id": "08b73dc8-bd08-4934-952f-2ba9dd9ea64c",
+  "productName": "Sunrise Valley Creamy Peanut Butter, 16 oz jar",
+  "recallingFirm": "Sunrise Valley Foods, Inc.",
+  "submitterEmail": "quality@sunrisevalleyfoods.com",
+  "description": "Lots SV2451-SV2458, best-by 2027-03-11 to 2027-03-18, may contain undeclared milk from a shared production line. Do not eat; return to the store for a full refund.",
+  "category": "Undeclared Allergen",
+  "agreedToTerms": true
+}
+16:11:38.962 [client] CHECK     retrieved id matches created id: True
+
+====================================================================================================
+## Part 1 - error cases through FastAPI + API log
+## source: raw/part1_errors.log
+====================================================================================================
+=== HW8 Part 1 error cases via FastAPI - Xu Wang (s9275) ===
+--- missing field (no productName) ---
+{"correlation_id":"err-missing-1","success":false,"error":"Missing field: productName"}
+--- invalid category ---
+{"correlation_id":"err-category-1","success":false,"error":"Invalid field: category must be one of ['Undeclared Allergen', 'Bacterial Contamination', 'Foreign Material', 'Mislabeling']"}
+--- unknown id ---
+{"correlation_id":"err-notfound-1","success":false,"error":"Recall notice not found"}
+--- unknown operation ---
+{"correlation_id":"err-op-1","success":false,"error":"Unknown operation"}
+--- API log ---
+16:12:08.525 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-missing-1", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"recallingFirm": "Test Foods", "submitterEmail": "qa@testfoods.com", "description": "Lot TF100 may contain undeclared peanuts.", "category": "Undeclared Allergen", "agreedToTerms": true}}
+16:12:08.533 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-missing-1", "success": false, "error": "Missing field: productName"}
+16:12:08.533 [api]    RETURNED  cid=err-missing-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58050 - "POST /recall-notices HTTP/1.1" 200 OK
+16:12:08.551 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-category-1", "reply_to": "s9275_recall_notice_responses", "operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Oat Bar", "recallingFirm": "Test Foods", "submitterEmail": "qa@testfoods.com", "description": "Lot TF100 may contain undeclared peanuts.", "category": "Spoiled", "agreedToTerms": true}}
+16:12:08.556 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-category-1", "success": false, "error": "Invalid field: category must be one of ['Undeclared Allergen', 'Bacterial Contamination', 'Foreign Material', 'Mislabeling']"}
+16:12:08.556 [api]    RETURNED  cid=err-category-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58060 - "POST /recall-notices HTTP/1.1" 200 OK
+16:12:08.575 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-notfound-1", "reply_to": "s9275_recall_notice_responses", "operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "does-not-exist"}}
+16:12:08.583 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-notfound-1", "success": false, "error": "Recall notice not found"}
+16:12:08.583 [api]    RETURNED  cid=err-notfound-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58064 - "GET /recall-notices/does-not-exist HTTP/1.1" 200 OK
+16:12:08.601 [api]    SENT      topic=s9275_recall_notice_requests {"correlation_id": "err-op-1", "reply_to": "s9275_recall_notice_responses", "operation": "DELETE_RECALL_NOTICE", "data": {}}
+16:12:08.607 [api]    RECEIVED  topic=s9275_recall_notice_responses {"correlation_id": "err-op-1", "success": false, "error": "Unknown operation"}
+16:12:08.607 [api]    RETURNED  cid=err-op-1 success=False -> HTTP caller
+INFO:     172.18.0.1:58074 - "POST /requests HTTP/1.1" 200 OK
+
+====================================================================================================
+## Part 2 - one question through Planner -> Writer -> Reviewer
+## source: raw/part2_journey.log
+====================================================================================================
+=== HW8 Part 2 pipeline - Xu Wang (SID4 9275, PREFIX s9275) ===
+16:31:45.854 [client  ] SENT       cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_inbox question='What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?'
+16:32:02.379 [client  ] FINAL      cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_final status=approved
+
+--- Journey (all agents, ordered by time) ---
+16:31:45.854 [client   ] SENT       cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_inbox question='What should a grocery store do when it recei
+16:31:45.856 [planner  ] RECEIVED   cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_inbox offset=2 question='What should a grocery store do wh
+16:31:49.897 [planner  ] PLANNED    cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 steps=['Assess the affected products and determine the scope of the r
+16:31:49.934 [planner  ] SENT       cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_tasks
+16:31:49.955 [writer-w1] RECEIVED   cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_tasks partition=0 offset=1
+16:31:59.067 [writer-w1] WROTE      cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 draft=85 words
+16:31:59.106 [writer-w1] SENT       cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_drafts
+16:31:59.124 [reviewer ] RECEIVED   cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_drafts offset=2
+16:32:02.350 [reviewer ] REVIEWED   cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 status=approved reason='Answers the question and follows the plan'
+16:32:02.365 [reviewer ] SENT       cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 -> s9275_final
+16:32:02.379 [client   ] FINAL      cid=58079cf2-9ec8-419b-9062-22e66b9e2bb1 from s9275_final status=approved
+
+--- Final message from s9275_final ---
+{
+  "correlation_id": "58079cf2-9ec8-419b-9062-22e66b9e2bb1",
+  "question": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+  "plan": [
+    "Assess the affected products and determine the scope of the recall.",
+    "Notify customers who have purchased the recalled peanut butter.",
+    "Update inventory records and remove the recalled products from shelves."
+  ],
+  "trace": [
+    {
+      "agent": "planner",
+      "at": "2026-10-27T16:31:49"
+    },
+    {
+      "agent": "writer-w1",
+      "at": "2026-10-27T16:31:59"
+    },
+    {
+      "agent": "reviewer",
+      "at": "2026-10-27T16:32:02"
+    }
+  ],
+  "draft": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+  "status": "approved",
+  "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+  "review": "Answers the question and follows the plan"
+}
+
+correlation_id preserved end to end: True
+saved reports/hw08/raw/part2_final.json
+
+====================================================================================================
+## Part 3 I - duplicate delivery, BEFORE fix (FIX_IDEMPOTENCY=0) - Writer
+## source: raw/p3_dup_before_writer.log
+====================================================================================================
+16:44:00.568 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=53379 fixes: idempotency=False manual_commit=True dlq=True
+16:44:08.146 [writer-w1] RECEIVED   cid=dup-0c594693 from s9275_tasks partition=1 offset=1
+16:44:17.357 [writer-w1] WROTE      cid=dup-0c594693 draft=73 words
+16:44:17.388 [writer-w1] SENT       cid=dup-0c594693 -> s9275_drafts
+16:44:17.403 [writer-w1] COMMITTED  partition=1 offset=2
+16:44:17.404 [writer-w1] RECEIVED   cid=dup-0c594693 from s9275_tasks partition=1 offset=2
+16:44:26.485 [writer-w1] WROTE      cid=dup-0c594693 draft=73 words
+16:44:26.516 [writer-w1] SENT       cid=dup-0c594693 -> s9275_drafts
+16:44:26.523 [writer-w1] COMMITTED  partition=1 offset=3
+
+====================================================================================================
+## Part 3 I - duplicate delivery, AFTER fix - Writer
+## source: raw/p3_dup_after_writer.log
+====================================================================================================
+16:45:37.404 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=54688 fixes: idempotency=True manual_commit=True dlq=True
+16:45:55.608 [writer-w1] RECEIVED   cid=dup-9bd1743b from s9275_tasks partition=1 offset=3
+16:46:04.141 [writer-w1] WROTE      cid=dup-9bd1743b draft=73 words
+16:46:04.159 [writer-w1] SENT       cid=dup-9bd1743b -> s9275_drafts
+16:46:04.169 [writer-w1] COMMITTED  partition=1 offset=4
+16:46:04.169 [writer-w1] RECEIVED   cid=dup-9bd1743b from s9275_tasks partition=1 offset=4
+16:46:04.170 [writer-w1] DUPLICATE  cid=dup-9bd1743b already processed - skipped, no new draft
+16:46:04.171 [writer-w1] COMMITTED  partition=1 offset=5
+
+====================================================================================================
+## Part 3 I - drafts per correlation_id
+## source: raw/p3_dup_check.log
+====================================================================================================
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:33:52.633 [part3   ] CHECK      cid=dup-0c594693 drafts in s9275_drafts: 2
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:33:58.270 [part3   ] CHECK      cid=dup-9bd1743b drafts in s9275_drafts: 1
+
+====================================================================================================
+## Part 3 II - consumer death, BEFORE fix (FIX_MANUAL_COMMIT=0) - Writer (killed with kill -9, then restarted)
+## source: raw/p3_kill_before_writer.log
+====================================================================================================
+17:26:37.224 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=80376 fixes: idempotency=True manual_commit=False dlq=True
+17:26:48.759 [writer-w1] RECEIVED   cid=kill-a0c7ae0b from s9275_tasks partition=0 offset=4
+17:26:48.760 [writer-w1] WORKING    cid=kill-a0c7ae0b pid=80376 sleeping 20s - kill window
+17:27:55.930 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=81457 fixes: idempotency=True manual_commit=False dlq=True
+
+====================================================================================================
+## Part 3 II - consumer death, BEFORE fix - offsets after crash + drafts
+## source: raw/p3_kill_before_offsets.log
+====================================================================================================
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          5               5               0               -               -               -
+s9275_writer    s9275_tasks     1          7               7               0               -               -               -
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:33:22.084 [part3   ] CHECK      cid=kill-a0c7ae0b drafts in s9275_drafts: 0
+
+====================================================================================================
+## Part 3 II - consumer death, AFTER fix - Writer (killed with kill -9, then restarted)
+## source: raw/p3_kill_after_writer.log
+====================================================================================================
+17:29:19.339 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=82546 fixes: idempotency=True manual_commit=True dlq=True
+17:29:30.738 [writer-w1] RECEIVED   cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5
+17:29:30.743 [writer-w1] WORKING    cid=kill-e2ca57a0 pid=82546 sleeping 20s - kill window
+17:30:35.339 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=83529 fixes: idempotency=True manual_commit=True dlq=True
+17:30:35.428 [writer-w1] RECEIVED   cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5
+17:30:50.770 [writer-w1] WROTE      cid=kill-e2ca57a0 draft=73 words
+17:30:50.826 [writer-w1] SENT       cid=kill-e2ca57a0 -> s9275_drafts
+17:30:50.850 [writer-w1] COMMITTED  partition=0 offset=6
+
+====================================================================================================
+## Part 3 II - consumer death, AFTER fix - offsets after crash, after restart + drafts
+## source: raw/p3_kill_after_offsets.log
+====================================================================================================
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          5               6               1               -               -               -
+s9275_writer    s9275_tasks     1          7               7               0               -               -               -
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                  HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          6               6               0               rdkafka-696f666f-8ec6-45d4-bbea-8f891e717741 /192.168.65.1   rdkafka
+s9275_writer    s9275_tasks     1          7               7               0               rdkafka-696f666f-8ec6-45d4-bbea-8f891e717741 /192.168.65.1   rdkafka
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:33:27.725 [part3   ] CHECK      cid=kill-e2ca57a0 drafts in s9275_drafts: 1
+
+====================================================================================================
+## Part 3 III - poison message sent
+## source: raw/p3_poison_send.log
+====================================================================================================
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:37:17.480 [part3   ] SENT       POISON cid=poison-73ba33df (no 'question' field) -> s9275_tasks
+17:37:17.486 [part3   ] SENT       normal cid=after-poison-542fb13e queued behind it -> s9275_tasks
+
+then:  python part3_tools.py dlq   and   python part3_tools.py check after-poison-542fb13e
+
+====================================================================================================
+## Part 3 III - poison, BEFORE fix (FIX_DLQ=0) - Writer crashes twice on the same offset
+## source: raw/p3_poison_before_writer.log
+====================================================================================================
+17:37:08.372 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=88670 fixes: idempotency=True manual_commit=True dlq=False
+17:37:17.482 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 156, in <module>
+    main()
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 136, in main
+    draft = work(message)        # before fix: an exception ends the process
+            ^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 66, in write_draft
+    prompt = f"Question: {message['question']}\n\nPlan:\n{steps}"
+                          ~~~~~~~^^^^^^^^^^^^
+KeyError: 'question'
+17:37:40.209 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=89175 fixes: idempotency=True manual_commit=True dlq=False
+17:37:40.277 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 156, in <module>
+    main()
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 136, in main
+    draft = work(message)        # before fix: an exception ends the process
+            ^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 66, in write_draft
+    prompt = f"Question: {message['question']}\n\nPlan:\n{steps}"
+                          ~~~~~~~^^^^^^^^^^^^
+KeyError: 'question'
+
+====================================================================================================
+## Part 3 III - poison, BEFORE fix - offsets (partition blocked)
+## source: raw/p3_poison_offsets.log
+====================================================================================================
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          6               6               0               -               -               -
+s9275_writer    s9275_tasks     1          7               9               2               -               -               -
+
+====================================================================================================
+## Part 3 III - poison, AFTER fix - Writer retries, dead-letters, continues
+## source: raw/p3_poison_after_writer.log
+====================================================================================================
+17:39:07.778 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=90295 fixes: idempotency=True manual_commit=True dlq=True
+17:39:07.860 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+17:39:07.860 [writer-w1] RETRY      cid=poison-73ba33df attempt 1/3 failed: KeyError: 'question'
+17:39:08.363 [writer-w1] RETRY      cid=poison-73ba33df attempt 2/3 failed: KeyError: 'question'
+17:39:09.369 [writer-w1] RETRY      cid=poison-73ba33df attempt 3/3 failed: KeyError: 'question'
+17:39:09.390 [writer-w1] DEAD_LTR   cid=poison-73ba33df -> s9275_dead_letter after 3 attempts (KeyError: 'question')
+17:39:09.393 [writer-w1] COMMITTED  partition=1 offset=8
+17:39:09.394 [writer-w1] RECEIVED   cid=after-poison-542fb13e from s9275_tasks partition=1 offset=8
+17:39:22.366 [writer-w1] WROTE      cid=after-poison-542fb13e draft=73 words
+17:39:22.395 [writer-w1] SENT       cid=after-poison-542fb13e -> s9275_drafts
+17:39:22.409 [writer-w1] COMMITTED  partition=1 offset=9
+
+====================================================================================================
+## Part 3 III - s9275_dead_letter contents + drafts for the message behind the poison
+## source: raw/p3_poison_dlq.log
+====================================================================================================
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+1 message(s) in s9275_dead_letter
+{
+  "correlation_id": "poison-73ba33df",
+  "failed_agent": "writer-w1",
+  "source_topic": "s9275_tasks",
+  "source_partition": 1,
+  "source_offset": 7,
+  "attempts": 3,
+  "error": "KeyError: 'question'",
+  "failed_at": "2026-10-27T17:39:09",
+  "original": {
+    "correlation_id": "poison-73ba33df",
+    "plan": [
+      "Pull the affected lots from shelves and back stock.",
+      "Tell customers who bought it how to return it.",
+      "Record the removed units and follow the firm's instructions."
+    ]
+  }
+}
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:42:01.562 [part3   ] CHECK      cid=after-poison-542fb13e drafts in s9275_drafts: 1
+
+====================================================================================================
+## Part 3 IV - partition assignment, two Writers in group s9275_writer
+## source: raw/p3_order_assignment.log
+====================================================================================================
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                  HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          6               6               0               rdkafka-bce9de13-b25b-42b0-b03a-32703e07c3d7 /192.168.65.1   rdkafka
+s9275_writer    s9275_tasks     1          9               9               0               rdkafka-dde27ba4-eb0d-417f-88ba-5e92749db3d2 /192.168.65.1   rdkafka
+
+====================================================================================================
+## Part 3 IV - ordering run WITHOUT key
+## source: raw/p3_order_nokey.log
+====================================================================================================
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+run=nokey: 20 of 20 processed
+recall     partitions  writers  seq in processing order    violations
+RN-c6810e  0,1         w1,w2    [1, 2, 4, 3, 5]            1
+RN-c973f5  0,1         w1,w2    [1, 3, 2, 5, 4]            2
+RN-c97b16  0,1         w1,w2    [1, 2, 3, 4, 5]            0
+RN-efb54f  0,1         w1,w2    [1, 2, 3, 4, 5]            0
+total order violations: 3
+
+====================================================================================================
+## Part 3 IV - ordering run WITH key = recall_notice_id
+## source: raw/p3_order_keyed.log
+====================================================================================================
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+run=keyed: 20 of 20 processed
+recall     partitions  writers  seq in processing order    violations
+RN-c6810e  0           w2       [1, 2, 3, 4, 5]            0
+RN-c973f5  1           w1       [1, 2, 3, 4, 5]            0
+RN-c97b16  1           w1       [1, 2, 3, 4, 5]            0
+RN-efb54f  0           w2       [1, 2, 3, 4, 5]            0
+total order violations: 0
+
+====================================================================================================
+## Part 3 IV - Writer w1 log (both runs)
+## source: raw/p3_order_w1.log
+====================================================================================================
+17:42:23.179 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=92920 fixes: idempotency=True manual_commit=True dlq=True
+17:43:47.585 [writer-w1] RECEIVED   cid=ord-nokey-01-174347 from s9275_tasks partition=1 offset=9
+17:43:47.767 [writer-w1] ORDERED    cid=ord-nokey-01-174347 order-test RN-efb54f step 1
+17:43:47.776 [writer-w1] COMMITTED  partition=1 offset=10
+17:43:47.776 [writer-w1] RECEIVED   cid=ord-nokey-03-174347 from s9275_tasks partition=1 offset=10
+17:43:48.341 [writer-w1] ORDERED    cid=ord-nokey-03-174347 order-test RN-c97b16 step 1
+17:43:48.353 [writer-w1] COMMITTED  partition=1 offset=11
+17:43:48.356 [writer-w1] RECEIVED   cid=ord-nokey-05-174347 from s9275_tasks partition=1 offset=11
+17:43:48.512 [writer-w1] ORDERED    cid=ord-nokey-05-174347 order-test RN-c6810e step 4
+17:43:48.519 [writer-w1] COMMITTED  partition=1 offset=12
+17:43:48.520 [writer-w1] RECEIVED   cid=ord-nokey-07-174347 from s9275_tasks partition=1 offset=12
+17:43:48.852 [writer-w1] ORDERED    cid=ord-nokey-07-174347 order-test RN-efb54f step 3
+17:43:48.859 [writer-w1] COMMITTED  partition=1 offset=13
+17:43:48.859 [writer-w1] RECEIVED   cid=ord-nokey-09-174347 from s9275_tasks partition=1 offset=13
+17:43:49.035 [writer-w1] ORDERED    cid=ord-nokey-09-174347 order-test RN-efb54f step 4
+17:43:49.038 [writer-w1] COMMITTED  partition=1 offset=14
+17:43:49.039 [writer-w1] RECEIVED   cid=ord-nokey-11-174347 from s9275_tasks partition=1 offset=14
+17:43:49.239 [writer-w1] ORDERED    cid=ord-nokey-11-174347 order-test RN-c973f5 step 1
+17:43:49.242 [writer-w1] COMMITTED  partition=1 offset=15
+17:43:49.243 [writer-w1] RECEIVED   cid=ord-nokey-13-174347 from s9275_tasks partition=1 offset=15
+17:43:49.665 [writer-w1] ORDERED    cid=ord-nokey-13-174347 order-test RN-c97b16 step 3
+17:43:49.668 [writer-w1] COMMITTED  partition=1 offset=16
+17:43:49.668 [writer-w1] RECEIVED   cid=ord-nokey-15-174347 from s9275_tasks partition=1 offset=16
+17:43:49.954 [writer-w1] ORDERED    cid=ord-nokey-15-174347 order-test RN-c973f5 step 3
+17:43:49.958 [writer-w1] COMMITTED  partition=1 offset=17
+17:43:49.958 [writer-w1] RECEIVED   cid=ord-nokey-17-174347 from s9275_tasks partition=1 offset=17
+17:43:50.320 [writer-w1] ORDERED    cid=ord-nokey-17-174347 order-test RN-c973f5 step 5
+17:43:50.326 [writer-w1] COMMITTED  partition=1 offset=18
+17:43:50.327 [writer-w1] RECEIVED   cid=ord-nokey-19-174347 from s9275_tasks partition=1 offset=18
+17:43:50.710 [writer-w1] ORDERED    cid=ord-nokey-19-174347 order-test RN-c6810e step 5
+17:43:50.713 [writer-w1] COMMITTED  partition=1 offset=19
+17:44:32.083 [writer-w1] RECEIVED   cid=ord-keyed-03-174432 from s9275_tasks partition=1 offset=19
+17:44:32.650 [writer-w1] ORDERED    cid=ord-keyed-03-174432 order-test RN-c97b16 step 1
+17:44:32.656 [writer-w1] COMMITTED  partition=1 offset=20
+17:44:32.656 [writer-w1] RECEIVED   cid=ord-keyed-08-174432 from s9275_tasks partition=1 offset=20
+17:44:33.183 [writer-w1] ORDERED    cid=ord-keyed-08-174432 order-test RN-c97b16 step 2
+17:44:33.189 [writer-w1] COMMITTED  partition=1 offset=21
+17:44:33.190 [writer-w1] RECEIVED   cid=ord-keyed-11-174432 from s9275_tasks partition=1 offset=21
+17:44:33.388 [writer-w1] ORDERED    cid=ord-keyed-11-174432 order-test RN-c973f5 step 1
+17:44:33.393 [writer-w1] COMMITTED  partition=1 offset=22
+17:44:33.393 [writer-w1] RECEIVED   cid=ord-keyed-12-174432 from s9275_tasks partition=1 offset=22
+17:44:33.721 [writer-w1] ORDERED    cid=ord-keyed-12-174432 order-test RN-c973f5 step 2
+17:44:33.727 [writer-w1] COMMITTED  partition=1 offset=23
+17:44:33.728 [writer-w1] RECEIVED   cid=ord-keyed-13-174432 from s9275_tasks partition=1 offset=23
+17:44:34.154 [writer-w1] ORDERED    cid=ord-keyed-13-174432 order-test RN-c97b16 step 3
+17:44:34.158 [writer-w1] COMMITTED  partition=1 offset=24
+17:44:34.159 [writer-w1] RECEIVED   cid=ord-keyed-14-174432 from s9275_tasks partition=1 offset=24
+17:44:34.457 [writer-w1] ORDERED    cid=ord-keyed-14-174432 order-test RN-c97b16 step 4
+17:44:34.461 [writer-w1] COMMITTED  partition=1 offset=25
+17:44:34.461 [writer-w1] RECEIVED   cid=ord-keyed-15-174432 from s9275_tasks partition=1 offset=25
+17:44:34.748 [writer-w1] ORDERED    cid=ord-keyed-15-174432 order-test RN-c973f5 step 3
+17:44:34.755 [writer-w1] COMMITTED  partition=1 offset=26
+17:44:34.756 [writer-w1] RECEIVED   cid=ord-keyed-16-174432 from s9275_tasks partition=1 offset=26
+17:44:35.140 [writer-w1] ORDERED    cid=ord-keyed-16-174432 order-test RN-c973f5 step 4
+17:44:35.143 [writer-w1] COMMITTED  partition=1 offset=27
+17:44:35.143 [writer-w1] RECEIVED   cid=ord-keyed-17-174432 from s9275_tasks partition=1 offset=27
+17:44:35.504 [writer-w1] ORDERED    cid=ord-keyed-17-174432 order-test RN-c973f5 step 5
+17:44:35.508 [writer-w1] COMMITTED  partition=1 offset=28
+17:44:35.508 [writer-w1] RECEIVED   cid=ord-keyed-18-174432 from s9275_tasks partition=1 offset=28
+17:44:36.033 [writer-w1] ORDERED    cid=ord-keyed-18-174432 order-test RN-c97b16 step 5
+17:44:36.039 [writer-w1] COMMITTED  partition=1 offset=29
+
+====================================================================================================
+## Part 3 IV - Writer w2 log (both runs)
+## source: raw/p3_order_w2.log
+====================================================================================================
+17:42:35.670 [writer-w2] READY      listening on s9275_tasks (group s9275_writer) pid=93081 fixes: idempotency=True manual_commit=True dlq=True
+17:43:47.585 [writer-w2] RECEIVED   cid=ord-nokey-00-174347 from s9275_tasks partition=0 offset=6
+17:43:47.965 [writer-w2] ORDERED    cid=ord-nokey-00-174347 order-test RN-c6810e step 1
+17:43:47.970 [writer-w2] COMMITTED  partition=0 offset=7
+17:43:47.971 [writer-w2] RECEIVED   cid=ord-nokey-02-174347 from s9275_tasks partition=0 offset=7
+17:43:48.138 [writer-w2] ORDERED    cid=ord-nokey-02-174347 order-test RN-c6810e step 2
+17:43:48.142 [writer-w2] COMMITTED  partition=0 offset=8
+17:43:48.143 [writer-w2] RECEIVED   cid=ord-nokey-04-174347 from s9275_tasks partition=0 offset=8
+17:43:48.633 [writer-w2] ORDERED    cid=ord-nokey-04-174347 order-test RN-c6810e step 3
+17:43:48.637 [writer-w2] COMMITTED  partition=0 offset=9
+17:43:48.638 [writer-w2] RECEIVED   cid=ord-nokey-06-174347 from s9275_tasks partition=0 offset=9
+17:43:48.824 [writer-w2] ORDERED    cid=ord-nokey-06-174347 order-test RN-efb54f step 2
+17:43:48.830 [writer-w2] COMMITTED  partition=0 offset=10
+17:43:48.831 [writer-w2] RECEIVED   cid=ord-nokey-08-174347 from s9275_tasks partition=0 offset=10
+17:43:49.353 [writer-w2] ORDERED    cid=ord-nokey-08-174347 order-test RN-c97b16 step 2
+17:43:49.357 [writer-w2] COMMITTED  partition=0 offset=11
+17:43:49.358 [writer-w2] RECEIVED   cid=ord-nokey-10-174347 from s9275_tasks partition=0 offset=11
+17:43:49.938 [writer-w2] ORDERED    cid=ord-nokey-10-174347 order-test RN-efb54f step 5
+17:43:49.944 [writer-w2] COMMITTED  partition=0 offset=12
+17:43:49.945 [writer-w2] RECEIVED   cid=ord-nokey-12-174347 from s9275_tasks partition=0 offset=12
+17:43:50.272 [writer-w2] ORDERED    cid=ord-nokey-12-174347 order-test RN-c973f5 step 2
+17:43:50.278 [writer-w2] COMMITTED  partition=0 offset=13
+17:43:50.279 [writer-w2] RECEIVED   cid=ord-nokey-14-174347 from s9275_tasks partition=0 offset=13
+17:43:50.575 [writer-w2] ORDERED    cid=ord-nokey-14-174347 order-test RN-c97b16 step 4
+17:43:50.579 [writer-w2] COMMITTED  partition=0 offset=14
+17:43:50.579 [writer-w2] RECEIVED   cid=ord-nokey-16-174347 from s9275_tasks partition=0 offset=14
+17:43:50.967 [writer-w2] ORDERED    cid=ord-nokey-16-174347 order-test RN-c973f5 step 4
+17:43:50.971 [writer-w2] COMMITTED  partition=0 offset=15
+17:43:50.972 [writer-w2] RECEIVED   cid=ord-nokey-18-174347 from s9275_tasks partition=0 offset=15
+17:43:51.495 [writer-w2] ORDERED    cid=ord-nokey-18-174347 order-test RN-c97b16 step 5
+17:43:51.500 [writer-w2] COMMITTED  partition=0 offset=16
+17:44:32.083 [writer-w2] RECEIVED   cid=ord-keyed-00-174432 from s9275_tasks partition=0 offset=16
+17:44:32.464 [writer-w2] ORDERED    cid=ord-keyed-00-174432 order-test RN-c6810e step 1
+17:44:32.486 [writer-w2] COMMITTED  partition=0 offset=17
+17:44:32.487 [writer-w2] RECEIVED   cid=ord-keyed-01-174432 from s9275_tasks partition=0 offset=17
+17:44:32.666 [writer-w2] ORDERED    cid=ord-keyed-01-174432 order-test RN-efb54f step 1
+17:44:32.670 [writer-w2] COMMITTED  partition=0 offset=18
+17:44:32.670 [writer-w2] RECEIVED   cid=ord-keyed-02-174432 from s9275_tasks partition=0 offset=18
+17:44:32.840 [writer-w2] ORDERED    cid=ord-keyed-02-174432 order-test RN-c6810e step 2
+17:44:32.845 [writer-w2] COMMITTED  partition=0 offset=19
+17:44:32.846 [writer-w2] RECEIVED   cid=ord-keyed-04-174432 from s9275_tasks partition=0 offset=19
+17:44:33.336 [writer-w2] ORDERED    cid=ord-keyed-04-174432 order-test RN-c6810e step 3
+17:44:33.342 [writer-w2] COMMITTED  partition=0 offset=20
+17:44:33.343 [writer-w2] RECEIVED   cid=ord-keyed-05-174432 from s9275_tasks partition=0 offset=20
+17:44:33.497 [writer-w2] ORDERED    cid=ord-keyed-05-174432 order-test RN-c6810e step 4
+17:44:33.501 [writer-w2] COMMITTED  partition=0 offset=21
+17:44:33.502 [writer-w2] RECEIVED   cid=ord-keyed-06-174432 from s9275_tasks partition=0 offset=21
+17:44:33.687 [writer-w2] ORDERED    cid=ord-keyed-06-174432 order-test RN-efb54f step 2
+17:44:33.691 [writer-w2] COMMITTED  partition=0 offset=22
+17:44:33.692 [writer-w2] RECEIVED   cid=ord-keyed-07-174432 from s9275_tasks partition=0 offset=22
+17:44:34.026 [writer-w2] ORDERED    cid=ord-keyed-07-174432 order-test RN-efb54f step 3
+17:44:34.029 [writer-w2] COMMITTED  partition=0 offset=23
+17:44:34.030 [writer-w2] RECEIVED   cid=ord-keyed-09-174432 from s9275_tasks partition=0 offset=23
+17:44:34.213 [writer-w2] ORDERED    cid=ord-keyed-09-174432 order-test RN-efb54f step 4
+17:44:34.216 [writer-w2] COMMITTED  partition=0 offset=24
+17:44:34.216 [writer-w2] RECEIVED   cid=ord-keyed-10-174432 from s9275_tasks partition=0 offset=24
+17:44:34.801 [writer-w2] ORDERED    cid=ord-keyed-10-174432 order-test RN-efb54f step 5
+17:44:34.805 [writer-w2] COMMITTED  partition=0 offset=25
+17:44:34.807 [writer-w2] RECEIVED   cid=ord-keyed-19-174432 from s9275_tasks partition=0 offset=25
+17:44:35.194 [writer-w2] ORDERED    cid=ord-keyed-19-174432 order-test RN-c6810e step 5
+17:44:35.196 [writer-w2] COMMITTED  partition=0 offset=26
+

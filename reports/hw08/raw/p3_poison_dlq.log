@@ -1,0 +1,22 @@
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+1 message(s) in s9275_dead_letter
+{
+  "correlation_id": "poison-73ba33df",
+  "failed_agent": "writer-w1",
+  "source_topic": "s9275_tasks",
+  "source_partition": 1,
+  "source_offset": 7,
+  "attempts": 3,
+  "error": "KeyError: 'question'",
+  "failed_at": "2026-10-27T17:39:09",
+  "original": {
+    "correlation_id": "poison-73ba33df",
+    "plan": [
+      "Pull the affected lots from shelves and back stock.",
+      "Tell customers who bought it how to return it.",
+      "Record the removed units and follow the firm's instructions."
+    ]
+  }
+}
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:42:01.562 [part3   ] CHECK      cid=after-poison-542fb13e drafts in s9275_drafts: 1

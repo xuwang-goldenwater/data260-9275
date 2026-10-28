@@ -1,0 +1,8 @@
+17:29:19.339 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=82546 fixes: idempotency=True manual_commit=True dlq=True
+17:29:30.738 [writer-w1] RECEIVED   cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5
+17:29:30.743 [writer-w1] WORKING    cid=kill-e2ca57a0 pid=82546 sleeping 20s - kill window
+17:30:35.339 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=83529 fixes: idempotency=True manual_commit=True dlq=True
+17:30:35.428 [writer-w1] RECEIVED   cid=kill-e2ca57a0 from s9275_tasks partition=0 offset=5
+17:30:50.770 [writer-w1] WROTE      cid=kill-e2ca57a0 draft=73 words
+17:30:50.826 [writer-w1] SENT       cid=kill-e2ca57a0 -> s9275_drafts
+17:30:50.850 [writer-w1] COMMITTED  partition=0 offset=6

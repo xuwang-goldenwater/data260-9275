@@ -1,0 +1,72 @@
+{
+  "run": "keyed",
+  "verify_seed": 269275,
+  "processed": 20,
+  "recalls": {
+    "RN-c6810e": {
+      "partitions": [
+        "0"
+      ],
+      "writers": [
+        "w2"
+      ],
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "violations": 0
+    },
+    "RN-c973f5": {
+      "partitions": [
+        "1"
+      ],
+      "writers": [
+        "w1"
+      ],
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "violations": 0
+    },
+    "RN-c97b16": {
+      "partitions": [
+        "1"
+      ],
+      "writers": [
+        "w1"
+      ],
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "violations": 0
+    },
+    "RN-efb54f": {
+      "partitions": [
+        "0"
+      ],
+      "writers": [
+        "w2"
+      ],
+      "seq_order": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "violations": 0
+    }
+  },
+  "total_violations": 0
+}

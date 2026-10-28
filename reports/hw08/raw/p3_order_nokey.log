@@ -1,0 +1,8 @@
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+run=nokey: 20 of 20 processed
+recall     partitions  writers  seq in processing order    violations
+RN-c6810e  0,1         w1,w2    [1, 2, 4, 3, 5]            1
+RN-c973f5  0,1         w1,w2    [1, 3, 2, 5, 4]            2
+RN-c97b16  0,1         w1,w2    [1, 2, 3, 4, 5]            0
+RN-efb54f  0,1         w1,w2    [1, 2, 3, 4, 5]            0
+total order violations: 3

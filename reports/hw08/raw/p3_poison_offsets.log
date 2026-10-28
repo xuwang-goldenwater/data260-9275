@@ -1,0 +1,4 @@
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          6               6               0               -               -               -
+s9275_writer    s9275_tasks     1          7               9               2               -               -               -

@@ -1,0 +1,11 @@
+17:39:07.778 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=90295 fixes: idempotency=True manual_commit=True dlq=True
+17:39:07.860 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+17:39:07.860 [writer-w1] RETRY      cid=poison-73ba33df attempt 1/3 failed: KeyError: 'question'
+17:39:08.363 [writer-w1] RETRY      cid=poison-73ba33df attempt 2/3 failed: KeyError: 'question'
+17:39:09.369 [writer-w1] RETRY      cid=poison-73ba33df attempt 3/3 failed: KeyError: 'question'
+17:39:09.390 [writer-w1] DEAD_LTR   cid=poison-73ba33df -> s9275_dead_letter after 3 attempts (KeyError: 'question')
+17:39:09.393 [writer-w1] COMMITTED  partition=1 offset=8
+17:39:09.394 [writer-w1] RECEIVED   cid=after-poison-542fb13e from s9275_tasks partition=1 offset=8
+17:39:22.366 [writer-w1] WROTE      cid=after-poison-542fb13e draft=73 words
+17:39:22.395 [writer-w1] SENT       cid=after-poison-542fb13e -> s9275_drafts
+17:39:22.409 [writer-w1] COMMITTED  partition=1 offset=9

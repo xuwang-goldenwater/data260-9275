@@ -1,0 +1,5 @@
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:37:17.480 [part3   ] SENT       POISON cid=poison-73ba33df (no 'question' field) -> s9275_tasks
+17:37:17.486 [part3   ] SENT       normal cid=after-poison-542fb13e queued behind it -> s9275_tasks
+
+then:  python part3_tools.py dlq   and   python part3_tools.py check after-poison-542fb13e

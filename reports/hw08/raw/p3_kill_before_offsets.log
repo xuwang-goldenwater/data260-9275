@@ -1,0 +1,6 @@
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          5               5               0               -               -               -
+s9275_writer    s9275_tasks     1          7               7               0               -               -               -
+=== HW8 Part 3 - Xu Wang (SID4 9275, PREFIX s9275) ===
+17:33:22.084 [part3   ] CHECK      cid=kill-a0c7ae0b drafts in s9275_drafts: 0

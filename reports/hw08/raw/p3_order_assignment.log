@@ -1,0 +1,4 @@
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                  HOST            CLIENT-ID
+s9275_writer    s9275_tasks     0          6               6               0               rdkafka-bce9de13-b25b-42b0-b03a-32703e07c3d7 /192.168.65.1   rdkafka
+s9275_writer    s9275_tasks     1          9               9               0               rdkafka-dde27ba4-eb0d-417f-88ba-5e92749db3d2 /192.168.65.1   rdkafka

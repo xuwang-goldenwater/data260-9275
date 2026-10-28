@@ -343,3 +343,22 @@ bike-attacks:
 verify-hw07:
 	@echo "===== verify-hw07 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW7_LOG)
 	python -u verify_hw07.py 2>&1 | tee -a $(HW7_LOG)
+
+# ---- Homework 8 -----------------------------------------------------------
+# Kafka stack (broker + topics + worker + FastAPI on 8275): docker compose up -d --build
+HW8_LOG = reports/hw08/RUN_LOG.txt
+
+.PHONY: hw8-up hw8-demo verify-hw08
+
+hw8-up:
+	docker compose up -d --build
+
+# Part 1 IV: CREATE -> GET through Kafka, with the worker log lines in order
+hw8-demo:
+	@echo "===== hw8-demo $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW8_LOG)
+	python -u code/kafka_app/homework_demo.py 2>&1 | tee -a $(HW8_LOG)
+
+# Self-check -> reports/hw08/verification.json (needs the compose stack up; commit code first)
+verify-hw08:
+	@echo "===== verify-hw08 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW8_LOG)
+	python -u verify_hw08.py 2>&1 | tee -a $(HW8_LOG)

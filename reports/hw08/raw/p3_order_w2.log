@@ -1,0 +1,61 @@
+17:42:35.670 [writer-w2] READY      listening on s9275_tasks (group s9275_writer) pid=93081 fixes: idempotency=True manual_commit=True dlq=True
+17:43:47.585 [writer-w2] RECEIVED   cid=ord-nokey-00-174347 from s9275_tasks partition=0 offset=6
+17:43:47.965 [writer-w2] ORDERED    cid=ord-nokey-00-174347 order-test RN-c6810e step 1
+17:43:47.970 [writer-w2] COMMITTED  partition=0 offset=7
+17:43:47.971 [writer-w2] RECEIVED   cid=ord-nokey-02-174347 from s9275_tasks partition=0 offset=7
+17:43:48.138 [writer-w2] ORDERED    cid=ord-nokey-02-174347 order-test RN-c6810e step 2
+17:43:48.142 [writer-w2] COMMITTED  partition=0 offset=8
+17:43:48.143 [writer-w2] RECEIVED   cid=ord-nokey-04-174347 from s9275_tasks partition=0 offset=8
+17:43:48.633 [writer-w2] ORDERED    cid=ord-nokey-04-174347 order-test RN-c6810e step 3
+17:43:48.637 [writer-w2] COMMITTED  partition=0 offset=9
+17:43:48.638 [writer-w2] RECEIVED   cid=ord-nokey-06-174347 from s9275_tasks partition=0 offset=9
+17:43:48.824 [writer-w2] ORDERED    cid=ord-nokey-06-174347 order-test RN-efb54f step 2
+17:43:48.830 [writer-w2] COMMITTED  partition=0 offset=10
+17:43:48.831 [writer-w2] RECEIVED   cid=ord-nokey-08-174347 from s9275_tasks partition=0 offset=10
+17:43:49.353 [writer-w2] ORDERED    cid=ord-nokey-08-174347 order-test RN-c97b16 step 2
+17:43:49.357 [writer-w2] COMMITTED  partition=0 offset=11
+17:43:49.358 [writer-w2] RECEIVED   cid=ord-nokey-10-174347 from s9275_tasks partition=0 offset=11
+17:43:49.938 [writer-w2] ORDERED    cid=ord-nokey-10-174347 order-test RN-efb54f step 5
+17:43:49.944 [writer-w2] COMMITTED  partition=0 offset=12
+17:43:49.945 [writer-w2] RECEIVED   cid=ord-nokey-12-174347 from s9275_tasks partition=0 offset=12
+17:43:50.272 [writer-w2] ORDERED    cid=ord-nokey-12-174347 order-test RN-c973f5 step 2
+17:43:50.278 [writer-w2] COMMITTED  partition=0 offset=13
+17:43:50.279 [writer-w2] RECEIVED   cid=ord-nokey-14-174347 from s9275_tasks partition=0 offset=13
+17:43:50.575 [writer-w2] ORDERED    cid=ord-nokey-14-174347 order-test RN-c97b16 step 4
+17:43:50.579 [writer-w2] COMMITTED  partition=0 offset=14
+17:43:50.579 [writer-w2] RECEIVED   cid=ord-nokey-16-174347 from s9275_tasks partition=0 offset=14
+17:43:50.967 [writer-w2] ORDERED    cid=ord-nokey-16-174347 order-test RN-c973f5 step 4
+17:43:50.971 [writer-w2] COMMITTED  partition=0 offset=15
+17:43:50.972 [writer-w2] RECEIVED   cid=ord-nokey-18-174347 from s9275_tasks partition=0 offset=15
+17:43:51.495 [writer-w2] ORDERED    cid=ord-nokey-18-174347 order-test RN-c97b16 step 5
+17:43:51.500 [writer-w2] COMMITTED  partition=0 offset=16
+17:44:32.083 [writer-w2] RECEIVED   cid=ord-keyed-00-174432 from s9275_tasks partition=0 offset=16
+17:44:32.464 [writer-w2] ORDERED    cid=ord-keyed-00-174432 order-test RN-c6810e step 1
+17:44:32.486 [writer-w2] COMMITTED  partition=0 offset=17
+17:44:32.487 [writer-w2] RECEIVED   cid=ord-keyed-01-174432 from s9275_tasks partition=0 offset=17
+17:44:32.666 [writer-w2] ORDERED    cid=ord-keyed-01-174432 order-test RN-efb54f step 1
+17:44:32.670 [writer-w2] COMMITTED  partition=0 offset=18
+17:44:32.670 [writer-w2] RECEIVED   cid=ord-keyed-02-174432 from s9275_tasks partition=0 offset=18
+17:44:32.840 [writer-w2] ORDERED    cid=ord-keyed-02-174432 order-test RN-c6810e step 2
+17:44:32.845 [writer-w2] COMMITTED  partition=0 offset=19
+17:44:32.846 [writer-w2] RECEIVED   cid=ord-keyed-04-174432 from s9275_tasks partition=0 offset=19
+17:44:33.336 [writer-w2] ORDERED    cid=ord-keyed-04-174432 order-test RN-c6810e step 3
+17:44:33.342 [writer-w2] COMMITTED  partition=0 offset=20
+17:44:33.343 [writer-w2] RECEIVED   cid=ord-keyed-05-174432 from s9275_tasks partition=0 offset=20
+17:44:33.497 [writer-w2] ORDERED    cid=ord-keyed-05-174432 order-test RN-c6810e step 4
+17:44:33.501 [writer-w2] COMMITTED  partition=0 offset=21
+17:44:33.502 [writer-w2] RECEIVED   cid=ord-keyed-06-174432 from s9275_tasks partition=0 offset=21
+17:44:33.687 [writer-w2] ORDERED    cid=ord-keyed-06-174432 order-test RN-efb54f step 2
+17:44:33.691 [writer-w2] COMMITTED  partition=0 offset=22
+17:44:33.692 [writer-w2] RECEIVED   cid=ord-keyed-07-174432 from s9275_tasks partition=0 offset=22
+17:44:34.026 [writer-w2] ORDERED    cid=ord-keyed-07-174432 order-test RN-efb54f step 3
+17:44:34.029 [writer-w2] COMMITTED  partition=0 offset=23
+17:44:34.030 [writer-w2] RECEIVED   cid=ord-keyed-09-174432 from s9275_tasks partition=0 offset=23
+17:44:34.213 [writer-w2] ORDERED    cid=ord-keyed-09-174432 order-test RN-efb54f step 4
+17:44:34.216 [writer-w2] COMMITTED  partition=0 offset=24
+17:44:34.216 [writer-w2] RECEIVED   cid=ord-keyed-10-174432 from s9275_tasks partition=0 offset=24
+17:44:34.801 [writer-w2] ORDERED    cid=ord-keyed-10-174432 order-test RN-efb54f step 5
+17:44:34.805 [writer-w2] COMMITTED  partition=0 offset=25
+17:44:34.807 [writer-w2] RECEIVED   cid=ord-keyed-19-174432 from s9275_tasks partition=0 offset=25
+17:44:35.194 [writer-w2] ORDERED    cid=ord-keyed-19-174432 order-test RN-c6810e step 5
+17:44:35.196 [writer-w2] COMMITTED  partition=0 offset=26

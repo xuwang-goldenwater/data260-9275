@@ -1,0 +1,24 @@
+17:37:08.372 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=88670 fixes: idempotency=True manual_commit=True dlq=False
+17:37:17.482 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 156, in <module>
+    main()
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 136, in main
+    draft = work(message)        # before fix: an exception ends the process
+            ^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 66, in write_draft
+    prompt = f"Question: {message['question']}\n\nPlan:\n{steps}"
+                          ~~~~~~~^^^^^^^^^^^^
+KeyError: 'question'
+17:37:40.209 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=89175 fixes: idempotency=True manual_commit=True dlq=False
+17:37:40.277 [writer-w1] RECEIVED   cid=poison-73ba33df from s9275_tasks partition=1 offset=7
+Traceback (most recent call last):
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 156, in <module>
+    main()
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 136, in main
+    draft = work(message)        # before fix: an exception ends the process
+            ^^^^^^^^^^^^^
+  File "/Users/Sunny/Documents/data260-9275/code/kafka_agents/writer.py", line 66, in write_draft
+    prompt = f"Question: {message['question']}\n\nPlan:\n{steps}"
+                          ~~~~~~~^^^^^^^^^^^^
+KeyError: 'question'

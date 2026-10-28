@@ -69,7 +69,8 @@ def write_draft(message: dict) -> str:
 
 def order_test_work(message: dict, msg) -> str:
     """Ordering test: fixed fake work time per message, then one CSV row."""
-    digest = hashlib.sha256(message["correlation_id"].encode()).digest()
+    work_key = f"{message['recall_notice_id']}-{message['seq']}"
+    digest = hashlib.sha256(work_key.encode()).digest()
     time.sleep(0.1 + (digest[0] / 255) * 0.5)          # 0.1-0.6 s, same every run
     path = ROOT / f"reports/hw08/raw/ordering_{message['run']}.csv"
     new_file = not path.exists()

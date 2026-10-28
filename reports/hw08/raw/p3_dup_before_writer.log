@@ -1,0 +1,9 @@
+16:44:00.568 [writer-w1] READY      listening on s9275_tasks (group s9275_writer) pid=53379 fixes: idempotency=False manual_commit=True dlq=True
+16:44:08.146 [writer-w1] RECEIVED   cid=dup-0c594693 from s9275_tasks partition=1 offset=1
+16:44:17.357 [writer-w1] WROTE      cid=dup-0c594693 draft=73 words
+16:44:17.388 [writer-w1] SENT       cid=dup-0c594693 -> s9275_drafts
+16:44:17.403 [writer-w1] COMMITTED  partition=1 offset=2
+16:44:17.404 [writer-w1] RECEIVED   cid=dup-0c594693 from s9275_tasks partition=1 offset=2
+16:44:26.485 [writer-w1] WROTE      cid=dup-0c594693 draft=73 words
+16:44:26.516 [writer-w1] SENT       cid=dup-0c594693 -> s9275_drafts
+16:44:26.523 [writer-w1] COMMITTED  partition=1 offset=3

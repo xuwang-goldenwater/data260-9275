@@ -73,6 +73,9 @@ def make_consumer(group_id: str, topics: List[str], offset_reset: str = "earlies
         "group.id": group_id,
         "auto.offset.reset": offset_reset,
         "enable.auto.commit": auto_commit,
+        # A killed consumer is noticed after 10 s instead of the default 45 s,
+        # so its partitions move to the restarted consumer quickly.
+        "session.timeout.ms": 10000,
     }
     if auto_commit:
         config["auto.commit.interval.ms"] = 1000
