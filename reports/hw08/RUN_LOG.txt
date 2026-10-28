@@ -464,3 +464,71 @@ total order violations: 0
 17:44:35.194 [writer-w2] ORDERED    cid=ord-keyed-19-174432 order-test RN-c6810e step 5
 17:44:35.196 [writer-w2] COMMITTED  partition=0 offset=26
 
+===== verify-hw08 2026-10-27 17:48:20 =====
+Xu Wang | DATA 260 HW8 self-check | 2026-10-27 17:48:21
+[FAIL] Repo: no uncommitted changes outside reports/  ['?? code/kafka_app/', '?? docker-compose.yml']
+[PASS] Docker: container s9275-kafka running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Docker: container s9275-worker running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Docker: container s9275-api running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Kafka: all 7 s9275 topics exist  ['__consumer_offsets', 's9275_dead_letter', 's9275_drafts', 's9275_final', 's9275_inbox', 's9275_recall_notice_requests', 's9275_recall_notice_responses', 's9275_tasks']
+[PASS] Kafka: s9275_tasks has 2 partitions  2
+[PASS] P1 Kafka CREATE_RECALL_NOTICE -> success + recall_notice_id  {'correlation_id': 'verify-f2b0a6c7-4011-4cb6-9f25-5f7bb98693af', 'success': True, 'recall_notice_id': '2d28c790-afb8-4513-80b3-ce064f3942e4', 'message': 'Recall notice created'}
+[PASS] P1 CREATE response echoes correlation_id  
+[PASS] P1 Kafka GET_RECALL_NOTICE round-trips the created record  True
+[PASS] P1 GET response echoes correlation_id  
+[PASS] P1 error case (missing productName) -> success false + error + same correlation_id  Missing field: productName
+[PASS] P1 error case (unknown recall_notice_id) -> success false + error + same correlation_id  Recall notice not found
+[PASS] P1 error case (unknown operation) -> success false + error + same correlation_id  Unknown operation
+[PASS] P1 FastAPI POST /recall-notices on 8275 -> success, caller's correlation_id kept  {'correlation_id': 'verify-api-d3c5c011', 'success': True, 'recall_notice_id': 'ab9a4bb3-c1cb-44f6-a6ce-b2167c9dcb40', 'message': 'Recall notice created'}
+[PASS] P1 FastAPI GET /recall-notices/{id} returns the record  
+[PASS] P2 saved final message has status and answer  approved
+[FAIL] P2 correlation_id preserved end to end (saved run)  
+[PASS] P2 trace shows planner -> writer -> reviewer  ['planner', 'writer-w1', 'reviewer']
+[PASS] P2 Reviewer rule rejects a draft that copies the plan  
+[PASS] P2 Reviewer rule accepts the saved real answer  
+[PASS] P3 idempotency: processed id still known after reload  
+[PASS] P3 poison message: 3 attempts, then reported as failed  KeyError: 'question'
+[PASS] P3 duplicate: 2 drafts before fix, 1 after  
+[PASS] P3 consumer death: 0 drafts before fix (lost), 1 after (redelivered)  
+[PASS] P3 poison: message in s9275_dead_letter with attempts 3 and the error  1
+[PASS] P3 poison: the message behind it was processed (1 draft)  
+[PASS] P3 ordering: both runs used VERIFY_SEED and processed 20 messages  
+[PASS] P3 ordering without key: recalls split across partitions, order violated  3
+[PASS] P3 ordering with key: one partition per recall, 0 violations  
+[PASS] P3 ordering keyed CSV: 20 rows, both Writers used  
+
+28 passed, 2 failed -> reports/hw08/verification.json
+===== verify-hw08 2026-10-27 17:49:20 =====
+Xu Wang | DATA 260 HW8 self-check | 2026-10-27 17:49:20
+[PASS] Repo: no uncommitted changes outside reports/  []
+[PASS] Docker: container s9275-kafka running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Docker: container s9275-worker running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Docker: container s9275-api running  ['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Kafka: all 7 s9275 topics exist  ['__consumer_offsets', 's9275_dead_letter', 's9275_drafts', 's9275_final', 's9275_inbox', 's9275_recall_notice_requests', 's9275_recall_notice_responses', 's9275_tasks']
+[PASS] Kafka: s9275_tasks has 2 partitions  2
+[PASS] P1 Kafka CREATE_RECALL_NOTICE -> success + recall_notice_id  {'correlation_id': 'verify-fbff1c78-02f5-4e08-b436-66928cd599da', 'success': True, 'recall_notice_id': '45128873-368c-4c00-be46-9173d68268bd', 'message': 'Recall notice created'}
+[PASS] P1 CREATE response echoes correlation_id  
+[PASS] P1 Kafka GET_RECALL_NOTICE round-trips the created record  True
+[PASS] P1 GET response echoes correlation_id  
+[PASS] P1 error case (missing productName) -> success false + error + same correlation_id  Missing field: productName
+[PASS] P1 error case (unknown recall_notice_id) -> success false + error + same correlation_id  Recall notice not found
+[PASS] P1 error case (unknown operation) -> success false + error + same correlation_id  Unknown operation
+[PASS] P1 FastAPI POST /recall-notices on 8275 -> success, caller's correlation_id kept  {'correlation_id': 'verify-api-d0a5d592', 'success': True, 'recall_notice_id': '9c16a3f5-a85a-4711-8bbb-5cd4be2c1658', 'message': 'Recall notice created'}
+[PASS] P1 FastAPI GET /recall-notices/{id} returns the record  
+[PASS] P2 saved final message has status and answer  approved
+[PASS] P2 correlation_id preserved end to end (saved run)  
+[PASS] P2 trace shows planner -> writer -> reviewer  ['planner', 'writer-w1', 'reviewer']
+[PASS] P2 Reviewer rule rejects a draft that copies the plan  
+[PASS] P2 Reviewer rule accepts the saved real answer  
+[PASS] P3 idempotency: processed id still known after reload  
+[PASS] P3 poison message: 3 attempts, then reported as failed  KeyError: 'question'
+[PASS] P3 duplicate: 2 drafts before fix, 1 after  
+[PASS] P3 consumer death: 0 drafts before fix (lost), 1 after (redelivered)  
+[PASS] P3 poison: message in s9275_dead_letter with attempts 3 and the error  1
+[PASS] P3 poison: the message behind it was processed (1 draft)  
+[PASS] P3 ordering: both runs used VERIFY_SEED and processed 20 messages  
+[PASS] P3 ordering without key: recalls split across partitions, order violated  3
+[PASS] P3 ordering with key: one partition per recall, 0 violations  
+[PASS] P3 ordering keyed CSV: 20 rows, both Writers used  
+
+30 passed, 0 failed -> reports/hw08/verification.json

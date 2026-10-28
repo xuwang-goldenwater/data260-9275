@@ -59,3 +59,6 @@
 17:44:34.807 [writer-w2] RECEIVED   cid=ord-keyed-19-174432 from s9275_tasks partition=0 offset=25
 17:44:35.194 [writer-w2] ORDERED    cid=ord-keyed-19-174432 order-test RN-c6810e step 5
 17:44:35.196 [writer-w2] COMMITTED  partition=0 offset=26
+%4|1793149307.047|SESSTMOUT|rdkafka#consumer-1| [thrd:main]: Consumer group session timed out (in join-state steady) after 247328 ms without a successful response from the group coordinator (broker 1, last error was Success): revoking assignment and rejoining group
+%5|1793149307.120|REQTMOUT|rdkafka#consumer-1| [thrd:localhost:9092/1]: localhost:9092/1: Timed out FetchRequest in flight (after 246895ms, timeout #0)
+%4|1793149307.131|REQTMOUT|rdkafka#consumer-1| [thrd:localhost:9092/1]: localhost:9092/1: Timed out 1 in-flight, 0 retry-queued, 0 out-queue, 0 partially-sent requests

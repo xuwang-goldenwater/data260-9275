@@ -1,0 +1,165 @@
+{
+  "student": "Xu Wang",
+  "homework": "HW8",
+  "sid4": 9275,
+  "run_at": "2026-10-27T17:49:22",
+  "commit": "cdf9602",
+  "model": "qwen2.5:3b (Ollama, temperature 0, seed 9275) - Part 2 agents",
+  "kafka": "apache/kafka:3.8.0, 1 broker, KRaft",
+  "seed": 9275,
+  "verify_seed": 269275,
+  "passed": 30,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Repo: no uncommitted changes outside reports/",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Docker: container s9275-kafka running",
+      "passed": true,
+      "detail": "['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']"
+    },
+    {
+      "name": "Docker: container s9275-worker running",
+      "passed": true,
+      "detail": "['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']"
+    },
+    {
+      "name": "Docker: container s9275-api running",
+      "passed": true,
+      "detail": "['s9275-api', 's9275-worker', 's9275-kafka', 'lab2-postgres-1']"
+    },
+    {
+      "name": "Kafka: all 7 s9275 topics exist",
+      "passed": true,
+      "detail": "['__consumer_offsets', 's9275_dead_letter', 's9275_drafts', 's9275_final', 's9275_inbox', 's9275_recall_notice_requests', 's9275_recall_notice_responses', 's9275_tasks']"
+    },
+    {
+      "name": "Kafka: s9275_tasks has 2 partitions",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "P1 Kafka CREATE_RECALL_NOTICE -> success + recall_notice_id",
+      "passed": true,
+      "detail": "{'correlation_id': 'verify-fbff1c78-02f5-4e08-b436-66928cd599da', 'success': True, 'recall_notice_id': '45128873-368c-4c00-be46-9173d68268bd', 'message': 'Recall notice created'}"
+    },
+    {
+      "name": "P1 CREATE response echoes correlation_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 Kafka GET_RECALL_NOTICE round-trips the created record",
+      "passed": true,
+      "detail": "True"
+    },
+    {
+      "name": "P1 GET response echoes correlation_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1 error case (missing productName) -> success false + error + same correlation_id",
+      "passed": true,
+      "detail": "Missing field: productName"
+    },
+    {
+      "name": "P1 error case (unknown recall_notice_id) -> success false + error + same correlation_id",
+      "passed": true,
+      "detail": "Recall notice not found"
+    },
+    {
+      "name": "P1 error case (unknown operation) -> success false + error + same correlation_id",
+      "passed": true,
+      "detail": "Unknown operation"
+    },
+    {
+      "name": "P1 FastAPI POST /recall-notices on 8275 -> success, caller's correlation_id kept",
+      "passed": true,
+      "detail": "{'correlation_id': 'verify-api-d0a5d592', 'success': True, 'recall_notice_id': '9c16a3f5-a85a-4711-8bbb-5cd4be2c1658', 'message': 'Recall notice created'}"
+    },
+    {
+      "name": "P1 FastAPI GET /recall-notices/{id} returns the record",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 saved final message has status and answer",
+      "passed": true,
+      "detail": "approved"
+    },
+    {
+      "name": "P2 correlation_id preserved end to end (saved run)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 trace shows planner -> writer -> reviewer",
+      "passed": true,
+      "detail": "['planner', 'writer-w1', 'reviewer']"
+    },
+    {
+      "name": "P2 Reviewer rule rejects a draft that copies the plan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2 Reviewer rule accepts the saved real answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 idempotency: processed id still known after reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 poison message: 3 attempts, then reported as failed",
+      "passed": true,
+      "detail": "KeyError: 'question'"
+    },
+    {
+      "name": "P3 duplicate: 2 drafts before fix, 1 after",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 consumer death: 0 drafts before fix (lost), 1 after (redelivered)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 poison: message in s9275_dead_letter with attempts 3 and the error",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "P3 poison: the message behind it was processed (1 draft)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 ordering: both runs used VERIFY_SEED and processed 20 messages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 ordering without key: recalls split across partitions, order violated",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "P3 ordering with key: one partition per recall, 0 violations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3 ordering keyed CSV: 20 rows, both Writers used",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
