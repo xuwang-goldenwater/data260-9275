@@ -362,3 +362,47 @@ hw8-demo:
 verify-hw08:
 	@echo "===== verify-hw08 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW8_LOG)
 	python -u verify_hw08.py 2>&1 | tee -a $(HW8_LOG)
+
+# ---- Homework 9 -----------------------------------------------------------
+# Redis: docker compose up -d redis.  Parts 2-3 misses and 3.5 need Kafka + the 3 HW8
+# agents started with HW8_EVENTS=reports/hw09/raw/agent_events.jsonl
+HW9_LOG = reports/hw09/RUN_LOG.txt
+
+.PHONY: hw9-counter hw9-cache-demo hw9-prepare hw9-sweep hw9-cost hw9-stale \
+        hw9-data hw9-train hw9-validate hw9-test verify-hw09
+
+hw9-counter:
+	@echo "===== hw9-counter $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u code/cache_app/recall_cache.py 2>&1 | tee -a $(HW9_LOG)
+
+hw9-cache-demo:
+	@echo "===== hw9-cache-demo $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u code/cache_app/part2_demo.py 2>&1 | tee -a $(HW9_LOG)
+
+hw9-prepare:
+	@echo "===== hw9-prepare $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	caffeinate -i python -u code/cache_app/threshold_sweep.py prepare 2>&1 | tee -a $(HW9_LOG)
+
+hw9-sweep:
+	@echo "===== hw9-sweep $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u code/cache_app/threshold_sweep.py sweep 2>&1 | tee -a $(HW9_LOG)
+
+hw9-cost:
+	@echo "===== hw9-cost $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u code/cache_app/cost_model.py 2>&1 | tee -a $(HW9_LOG)
+
+hw9-stale:
+	@echo "===== hw9-stale $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u code/cache_app/stale_demo.py 2>&1 | tee -a $(HW9_LOG)
+
+hw9-data:
+	python -u code/self_improve/build_reference.py 2>&1 | tee -a $(HW9_LOG)
+
+hw9-train hw9-validate hw9-test:
+	@echo "===== $@ $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	caffeinate -i python -u code/self_improve/run_part4.py $(subst hw9-,,$@) 2>&1 | tee -a $(HW9_LOG)
+
+# Self-check -> reports/hw09/verification.json (needs Redis + MySQL; commit code first)
+verify-hw09:
+	@echo "===== verify-hw09 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
+	python -u verify_hw09.py 2>&1 | tee -a $(HW9_LOG)
