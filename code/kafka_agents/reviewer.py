@@ -13,6 +13,10 @@ Two layers of review:
   2. the model's verdict as JSON {"approved": bool, "reason": str}; if the
      model returns something unparseable, the deterministic result stands
 
+HW9: when the message carries "facts", the Reviewer also gets them (prompt +
+a rule that rejects numbers not found in the facts). Without "facts" nothing
+changes from HW8.
+
 Run:  python code/kafka_agents/reviewer.py
 """
 
@@ -44,7 +48,7 @@ def _norm(text: str) -> str:
     return " ".join(re.sub(r"[^a-z0-9 ]", " ", text.lower()).split())
 
 
-def rule_check(draft: str, plan: list[str]) -> str | None:
+def rule_check(draft: str, plan: list[str], facts: dict | None = None) -> str | None:
     """Return a rejection reason, or None if the draft passes the hard rules."""
     if not draft.strip():
         return "draft is empty"
@@ -53,18 +57,37 @@ def rule_check(draft: str, plan: list[str]) -> str | None:
     similarity = SequenceMatcher(None, _norm(draft), _norm(" ".join(plan))).ratio()
     if similarity >= COPY_THRESHOLD:
         return f"draft repeats the plan instead of answering (similarity {similarity:.2f})"
+    if facts:                                   # HW9: answer must not invent numbers
+        allowed = set(re.findall(r"\d+", " ".join(str(v) for v in facts.values())))
+        invented = [n for n in re.findall(r"\d+", draft.replace(",", "")) if n not in allowed]
+        if invented:
+            return f"draft has numbers that are not in the database facts: {invented}"
     return None
+
+
+def facts_text(facts: dict | None) -> str:
+    """HW9: the same database facts the Writer saw, so the Reviewer can check against them."""
+    if not facts:
+        return ""
+    if facts.get("not_found"):
+        return (f"\n\nDatabase facts: recall {facts['not_found']} does not exist. "
+                "Approve only if the draft says it was not found and invents nothing.")
+    lines = "\n".join(f"- {k}: {v}" for k, v in facts.items())
+    return ("\n\nDatabase facts (ground truth):\n" + lines +
+            "\nApprove if the draft states the values the question asks about and they "
+            "match these facts.")
 
 
 def review(message: dict) -> tuple[str, str]:
     """Return (status, reason)."""
     draft = message.get("draft", "")
-    problem = rule_check(draft, message.get("plan", []))
+    problem = rule_check(draft, message.get("plan", []), message.get("facts"))
     if problem:
         return "rejected", f"rule check: {problem}"
 
     steps = "\n".join(f"{i}. {s}" for i, s in enumerate(message.get("plan", []), 1))
-    raw = llm(SYSTEM, f"Question: {message['question']}\n\nPlan:\n{steps}\n\nDraft:\n{draft}",
+    raw = llm(SYSTEM, f"Question: {message['question']}\n\nPlan:\n{steps}\n\nDraft:\n{draft}"
+              + facts_text(message.get("facts")),
               max_tokens=120, json_mode=True)
     try:
         verdict = json.loads(raw)

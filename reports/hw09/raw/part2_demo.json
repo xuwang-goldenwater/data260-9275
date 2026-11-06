@@ -1,0 +1,218 @@
+{
+  "run_at": "2026-11-06T14:18:24",
+  "threshold": 0.85,
+  "queries": [
+    {
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": false,
+      "similarity": null,
+      "latency_ms": 16885.4,
+      "timings": {
+        "embed_ms": 16.3,
+        "search_ms": 6.8,
+        "agent_ms": 16135.7
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:16:59",
+      "notice_id": 1,
+      "status": "approved",
+      "n": 1,
+      "kind": "new"
+    },
+    {
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 252.1,
+      "timings": {
+        "embed_ms": 248.4,
+        "search_ms": 2.6
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:16:59",
+      "matched": "How many units were affected by recall F-0001-2025?",
+      "notice_id": "1",
+      "n": 2,
+      "kind": "duplicate"
+    },
+    {
+      "question": "For recall F-0001-2025, what was the number of units affected?",
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": true,
+      "similarity": 0.9717,
+      "latency_ms": 21.5,
+      "timings": {
+        "embed_ms": 16.6,
+        "search_ms": 2.0
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:16:59",
+      "matched": "How many units were affected by recall F-0001-2025?",
+      "notice_id": "1",
+      "n": 3,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "Which firm issued recall F-0002-2021?",
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "is_cached": false,
+      "similarity": 0.7265,
+      "latency_ms": 24641.5,
+      "timings": {
+        "embed_ms": 19.9,
+        "search_ms": 2.6,
+        "agent_ms": 24506.7
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:24",
+      "notice_id": 2,
+      "status": "approved",
+      "n": 4,
+      "kind": "new"
+    },
+    {
+      "question": "Which company is behind recall F-0002-2021?",
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "is_cached": true,
+      "similarity": 0.9356,
+      "latency_ms": 294.7,
+      "timings": {
+        "embed_ms": 290.8,
+        "search_ms": 3.0
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:24",
+      "matched": "Which firm issued recall F-0002-2021?",
+      "notice_id": "2",
+      "n": 5,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+      "is_cached": false,
+      "similarity": 0.4278,
+      "latency_ms": 18268.6,
+      "timings": {
+        "embed_ms": 18.1,
+        "search_ms": 3.0,
+        "agent_ms": 18233.5
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:43",
+      "notice_id": null,
+      "status": "approved",
+      "n": 6,
+      "kind": "new"
+    },
+    {
+      "question": "How should a grocery store respond to a recall notice for peanut butter that may contain undeclared milk?",
+      "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+      "is_cached": true,
+      "similarity": 0.9783,
+      "latency_ms": 287.9,
+      "timings": {
+        "embed_ms": 286.1,
+        "search_ms": 1.8
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:43",
+      "matched": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "notice_id": "",
+      "n": 7,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "Which firm issued recall F-0002-2021?",
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 21.3,
+      "timings": {
+        "embed_ms": 18.6,
+        "search_ms": 1.5
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:43",
+      "matched": "Which firm issued recall F-0002-2021?",
+      "notice_id": "2",
+      "n": 8,
+      "kind": "duplicate"
+    },
+    {
+      "question": "When was recall F-0003-2023 issued?",
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "is_cached": true,
+      "similarity": 0.8518,
+      "latency_ms": 13.6,
+      "timings": {
+        "embed_ms": 11.7,
+        "search_ms": 1.2
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:43",
+      "matched": "Which firm issued recall F-0002-2021?",
+      "notice_id": "2",
+      "n": 9,
+      "kind": "new"
+    },
+    {
+      "question": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 17.1,
+      "timings": {
+        "embed_ms": 15.8,
+        "search_ms": 1.3
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:17:43",
+      "matched": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "notice_id": "",
+      "n": 10,
+      "kind": "duplicate"
+    },
+    {
+      "question": "How should a store dispose of recalled frozen vegetables?",
+      "answer": "The store should first precisely identify the type and quantity of recalled frozen vegetables, ensuring no confusion with other items. Next, they must promptly contact the supplier or manufacturer for specific instructions on how to safely dispose of these items, as they may have unique handling requirements. Finally, the store should work closely with local waste management facilities to ensure the recalled vegetables are disposed of using safe and appropriate methods, minimizing any risk to public health.",
+      "is_cached": false,
+      "similarity": 0.5655,
+      "latency_ms": 17896.9,
+      "timings": {
+        "embed_ms": 38.4,
+        "search_ms": 2.0,
+        "agent_ms": 17832.3
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:18:01",
+      "notice_id": null,
+      "status": "approved",
+      "n": 11,
+      "kind": "new"
+    },
+    {
+      "question": "What is the recall date of F-0003-2023?",
+      "answer": "The recall date for F-0003-2023 is 2023-12-29. This specific date is mentioned in the recall notice for the Sunrise Valley Tahini, 6-pack batch affected by mislabeling from Harbor Mills Inc. in Georgia.",
+      "is_cached": false,
+      "similarity": 0.75,
+      "latency_ms": 23077.5,
+      "timings": {
+        "embed_ms": 430.6,
+        "search_ms": 2.3,
+        "agent_ms": 22519.9
+      },
+      "threshold": 0.85,
+      "at": "2026-11-06T14:18:24",
+      "notice_id": 3,
+      "status": "approved",
+      "n": 12,
+      "kind": "paraphrase"
+    }
+  ],
+  "hit_rate": 0.5833333333333334,
+  "avg_latency_cached_ms": 129.74285714285713,
+  "avg_latency_not_cached_ms": 20153.98
+}

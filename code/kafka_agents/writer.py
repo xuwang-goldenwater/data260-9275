@@ -20,6 +20,10 @@ Test helpers (only used by part3_tools.py):
     "order_test" field   fake 0.1-0.6 s of work instead of a model call and log
                          the processing order to reports/hw08/raw/ordering_<run>.csv
 
+HW9: a message may carry "facts" (one recall notice, looked up by the HW9
+gateway). The Writer then answers from those values; without "facts" the
+prompt is exactly the HW8 one.
+
 Run:  python code/kafka_agents/writer.py
       WRITER_ID=w2 python code/kafka_agents/writer.py     (second instance)
       FIX_DLQ=0 python code/kafka_agents/writer.py         (poison test, before fix)
@@ -64,7 +68,25 @@ def write_draft(message: dict) -> str:
         time.sleep(SLOW_SECONDS)
     steps = "\n".join(f"{i}. {s}" for i, s in enumerate(message.get("plan", []), 1))
     prompt = f"Question: {message['question']}\n\nPlan:\n{steps}"
+    if "facts" in message:                      # HW9: the gateway looked the record up
+        prompt += "\n\n" + facts_block(message["facts"])
     return llm(SYSTEM, prompt, max_tokens=300)
+
+
+def facts_block(facts: dict | None) -> str:
+    """HW9: database facts for the prompt. Messages without 'facts' never get here,
+    so HW8 questions are answered exactly as before."""
+    if not facts or facts.get("not_found"):
+        number = (facts or {}).get("not_found", "the recall number in the question")
+        return (f"Database lookup: no recall notice {number} exists in the recall database. "
+                "Say that this recall number was not found. Do not invent product, firm, "
+                "units or dates.")
+    lines = "\n".join(f"- {k}: {v}" for k, v in facts.items())
+    return ("Facts from the recall database (the only source for specific values):\n"
+            f"{lines}\n"
+            "Start the answer with the exact values that the question asks about, copied "
+            "from these facts. Do not change or invent any number, name, date, or reason "
+            "for the recall; if the facts do not say why, do not give a reason.")
 
 
 def order_test_work(message: dict, msg) -> str:
