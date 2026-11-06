@@ -58,11 +58,22 @@ DIM = 384
 DEFAULT_THRESHOLD = 0.85
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 VERSION_CHECK = os.getenv("VERSION_CHECK", "1") == "1"        # Part 3.5 switch
+RECALL_GUARD = os.getenv("RECALL_GUARD", "1") == "1"          # Part 3.4 shipped config
 AGENT_TIMEOUT_S = 240
 RECALL_NUMBER = re.compile(r"\bF-\d{4}-\d{4}\b", re.IGNORECASE)
 QUERY_LOG = ROOT / "reports/hw09/raw/part2_queries.jsonl"
 
 log = logging.getLogger("semantic_cache")
+
+
+def recall_guard_ok(incoming: str, cached: str) -> bool:
+    """Part 3.4: a hit may only reuse an answer about the SAME recall number.
+    The sweep showed MiniLM scores 'units of F-0001-2025' vs 'units of F-0002-2021'
+    at 0.97, above real paraphrases, so the threshold cannot separate them.
+    Both questions without a recall number -> no constraint (general questions)."""
+    a = {m.upper() for m in RECALL_NUMBER.findall(incoming)}
+    b = {m.upper() for m in RECALL_NUMBER.findall(cached)}
+    return a == b
 
 
 def version_key(notice_id) -> str:
@@ -84,8 +95,10 @@ class Embedder:
 
 
 class SemanticCache:
-    def __init__(self, threshold: float = DEFAULT_THRESHOLD, redis_url: str = REDIS_URL):
+    def __init__(self, threshold: float = DEFAULT_THRESHOLD, redis_url: str = REDIS_URL,
+                 recall_guard: bool = RECALL_GUARD):
         self.threshold = threshold
+        self.recall_guard = recall_guard
         self.r = redis.Redis.from_url(redis_url, decode_responses=True)
         self.embed = Embedder()
         self._repo = None        # MySQL, opened on first miss
@@ -204,6 +217,11 @@ class SemanticCache:
         sim = best["similarity"] if best else None
         timings = {"embed_ms": (t_embed - t0) * 1000, "search_ms": (t_search - t_embed) * 1000}
 
+        if best and sim >= self.threshold and self.recall_guard \
+                and not recall_guard_ok(question, best["query"]):
+            log.info("CACHE GUARD sim=%.4f but recall number differs from %r -> miss",
+                     sim, best["query"])
+            best = None                       # not allowed to reuse; fall through to the agents
         if best and sim >= self.threshold:
             stale = VERSION_CHECK and best["data_version"] != self.current_version(best["notice_id"])
             if not stale:
