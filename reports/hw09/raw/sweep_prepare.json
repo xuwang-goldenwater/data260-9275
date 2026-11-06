@@ -1,0 +1,427 @@
+{
+  "prepared_at": "2026-11-06T15:06:30",
+  "seeds": {
+    "S1": {
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "status": "approved",
+      "agent_ms": 30098.1,
+      "notice_id": 1,
+      "version": 0,
+      "query": "How many units were affected by recall F-0001-2025?",
+      "key": "s9275:semcache:651798d953c68134",
+      "tries": 1
+    },
+    "S2": {
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "status": "approved",
+      "agent_ms": 26034.9,
+      "notice_id": 2,
+      "version": 0,
+      "query": "Which firm issued recall F-0002-2021?",
+      "key": "s9275:semcache:6a68631f2a0b2ed1",
+      "tries": 1
+    },
+    "S3": {
+      "answer": "The recall date for F-0003-2023 is 2023-12-29. This specific date is mentioned in the recall notice for the Sunrise Valley Tahini, 6-pack batch affected by mislabeling from Harbor Mills Inc. in Georgia.",
+      "status": "approved",
+      "agent_ms": 24503.3,
+      "notice_id": 3,
+      "version": 0,
+      "query": "What is the recall date of F-0003-2023?",
+      "key": "s9275:semcache:58837d58da06e4c3",
+      "tries": 1
+    },
+    "S4": {
+      "answer": "The product recalled under F-4393-2026 was Coastal Catch Cheddar Crackers, 12 oz, associated with Oak Hill Dairy Co. in Arizona. This recall was due to mislabeling, affecting 9567 units.",
+      "status": "approved",
+      "agent_ms": 21544.1,
+      "notice_id": 4393,
+      "version": 0,
+      "query": "What product was recalled under F-4393-2026?",
+      "key": "s9275:semcache:1df66a84c73aa376",
+      "tries": 1
+    },
+    "S5": {
+      "answer": "The recall category of F-2015-2026 is Undeclared Allergen. This recall affects Mountain Fresh Sourdough Bread, 6-pack, produced by Bayview Dairy Co. in CA, affecting 7985 units. The recall was initiated due to the potential presence of an undeclared allergen in the product.",
+      "status": "approved",
+      "agent_ms": 23405.2,
+      "notice_id": 2015,
+      "version": 0,
+      "query": "What is the recall category of F-2015-2026?",
+      "key": "s9275:semcache:30f50f059428cd41",
+      "tries": 1
+    },
+    "S6": {
+      "answer": "The firm for recall F-4529-2026 is located in the state of Georgia (GA). This information is derived directly from the recall database, which states that the firm name associated with this recall is Bayview Foods, Inc., and its location is specified as GA.",
+      "status": "approved",
+      "agent_ms": 23698.9,
+      "notice_id": 4529,
+      "version": 0,
+      "query": "In which state is the firm for recall F-4529-2026 located?",
+      "key": "s9275:semcache:ddc513a133fea737",
+      "tries": 1
+    },
+    "S7": {
+      "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+      "status": "approved",
+      "agent_ms": 26720.3,
+      "notice_id": null,
+      "version": 0,
+      "query": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "key": "s9275:semcache:f2034dc923d26763",
+      "tries": 1
+    },
+    "S8": {
+      "answer": "A grocery store should first precisely identify all products included in the recall, ensuring no item is overlooked. Next, they must promptly inform suppliers and customers about the recall and the disposal process to prevent further distribution or consumption of affected items. Finally, the store should safely dispose of these recalled products in accordance with local regulations and food safety guidelines to protect public health.",
+      "status": "approved",
+      "agent_ms": 19246.4,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a grocery store dispose of recalled products?",
+      "key": "s9275:semcache:5779b109aa9e6a24",
+      "tries": 1
+    },
+    "S9": {
+      "answer": "The store should first ascertain the specifics of the recall, including affected products and their return policies, to ensure accurate communication and swift resolution. Next, they must promptly inform customers about their return options and the refund/exchange process, maintaining transparency and customer trust. Finally, the store must execute the refund or exchange process accurately, recording transactions and promptly informing customers of the outcome to uphold their commitment to customer service.",
+      "status": "approved",
+      "agent_ms": 21144.9,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a store handle refunds for customers who return recalled items?",
+      "key": "s9275:semcache:91fda505b81948fb",
+      "tries": 1
+    },
+    "S10": {
+      "answer": "A grocery store should first assess the recall's extent and urgency, ensuring all affected products are identified. Next, they must promptly inform customers via email, social media, and in-store signage, providing details like product names, lot numbers, and expiration dates. Finally, they should outline a straightforward return or exchange process for customers, including instructions on where and how to submit their recalled items.",
+      "status": "approved",
+      "agent_ms": 14889.0,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a grocery store notify customers about a product recall?",
+      "key": "s9275:semcache:7c7f1b91fa47b3c0",
+      "tries": 1
+    }
+  },
+  "case_answers": {
+    "E01": {
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "status": "approved",
+      "agent_ms": 30098.1,
+      "notice_id": 1,
+      "version": 0,
+      "query": "How many units were affected by recall F-0001-2025?",
+      "key": "s9275:semcache:651798d953c68134",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E02": {
+      "answer": "The firm that issued recall F-0002-2021 is Maple Snacks Co., based on the information available. This recall was for Green Leaf Almond Granola, 16 oz, due to an undeclared allergen, affecting 6038 units. The recall was initiated on February 25, 2021, by Maple Snacks Co., located in Nevada.",
+      "status": "approved",
+      "agent_ms": 26034.9,
+      "notice_id": 2,
+      "version": 0,
+      "query": "Which firm issued recall F-0002-2021?",
+      "key": "s9275:semcache:6a68631f2a0b2ed1",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E03": {
+      "answer": "The recall date for F-0003-2023 is 2023-12-29. This specific date is mentioned in the recall notice for the Sunrise Valley Tahini, 6-pack batch affected by mislabeling from Harbor Mills Inc. in Georgia.",
+      "status": "approved",
+      "agent_ms": 24503.3,
+      "notice_id": 3,
+      "version": 0,
+      "query": "What is the recall date of F-0003-2023?",
+      "key": "s9275:semcache:58837d58da06e4c3",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E04": {
+      "answer": "The product recalled under F-4393-2026 was Coastal Catch Cheddar Crackers, 12 oz, associated with Oak Hill Dairy Co. in Arizona. This recall was due to mislabeling, affecting 9567 units.",
+      "status": "approved",
+      "agent_ms": 21544.1,
+      "notice_id": 4393,
+      "version": 0,
+      "query": "What product was recalled under F-4393-2026?",
+      "key": "s9275:semcache:1df66a84c73aa376",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E05": {
+      "answer": "The recall category of F-2015-2026 is Undeclared Allergen. This recall affects Mountain Fresh Sourdough Bread, 6-pack, produced by Bayview Dairy Co. in CA, affecting 7985 units. The recall was initiated due to the potential presence of an undeclared allergen in the product.",
+      "status": "approved",
+      "agent_ms": 23405.2,
+      "notice_id": 2015,
+      "version": 0,
+      "query": "What is the recall category of F-2015-2026?",
+      "key": "s9275:semcache:30f50f059428cd41",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E06": {
+      "answer": "The firm for recall F-4529-2026 is located in the state of Georgia (GA). This information is derived directly from the recall database, which states that the firm name associated with this recall is Bayview Foods, Inc., and its location is specified as GA.",
+      "status": "approved",
+      "agent_ms": 23698.9,
+      "notice_id": 4529,
+      "version": 0,
+      "query": "In which state is the firm for recall F-4529-2026 located?",
+      "key": "s9275:semcache:ddc513a133fea737",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E07": {
+      "answer": "Upon receiving a recall notice for peanut butter potentially containing undeclared milk, a grocery store should immediately assess and document all affected products, ensuring no other stores or customers are exposed. Next, they must promptly notify customers who have purchased the recalled peanut butter, providing clear instructions on how to return or exchange the product, and offering alternatives like milk-free peanut butter. Finally, the store should update their inventory records and remove the recalled items from shelves to prevent further distribution and ensure consumer safety.",
+      "status": "approved",
+      "agent_ms": 26720.3,
+      "notice_id": null,
+      "version": 0,
+      "query": "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?",
+      "key": "s9275:semcache:f2034dc923d26763",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E08": {
+      "answer": "A grocery store should first precisely identify all products included in the recall, ensuring no item is overlooked. Next, they must promptly inform suppliers and customers about the recall and the disposal process to prevent further distribution or consumption of affected items. Finally, the store should safely dispose of these recalled products in accordance with local regulations and food safety guidelines to protect public health.",
+      "status": "approved",
+      "agent_ms": 19246.4,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a grocery store dispose of recalled products?",
+      "key": "s9275:semcache:5779b109aa9e6a24",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E09": {
+      "answer": "The store should first ascertain the specifics of the recall, including affected products and their return policies, to ensure accurate communication and swift resolution. Next, they must promptly inform customers about their return options and the refund/exchange process, maintaining transparency and customer trust. Finally, the store must execute the refund or exchange process accurately, recording transactions and promptly informing customers of the outcome to uphold their commitment to customer service.",
+      "status": "approved",
+      "agent_ms": 21144.9,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a store handle refunds for customers who return recalled items?",
+      "key": "s9275:semcache:91fda505b81948fb",
+      "tries": 1,
+      "from_seed": true
+    },
+    "E10": {
+      "answer": "A grocery store should first assess the recall's extent and urgency, ensuring all affected products are identified. Next, they must promptly inform customers via email, social media, and in-store signage, providing details like product names, lot numbers, and expiration dates. Finally, they should outline a straightforward return or exchange process for customers, including instructions on where and how to submit their recalled items.",
+      "status": "approved",
+      "agent_ms": 14889.0,
+      "notice_id": null,
+      "version": 0,
+      "query": "How should a grocery store notify customers about a product recall?",
+      "key": "s9275:semcache:7c7f1b91fa47b3c0",
+      "tries": 1,
+      "from_seed": true
+    },
+    "P01": {
+      "answer": "The number of units affected by recall F-0001-2025 was 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen and was conducted by Harbor Snacks Co. in Georgia.",
+      "status": "approved",
+      "agent_ms": 18381.9,
+      "notice_id": 1,
+      "version": 0
+    },
+    "P02": {
+      "answer": "The company responsible for recall F-0002-2021 is Maple Snacks Co. from NV. The recall affects Green Leaf Almond Granola, 16 oz, due to an undeclared allergen. This information is directly from the recall database.",
+      "status": "approved",
+      "agent_ms": 19201.8,
+      "notice_id": 2,
+      "version": 0
+    },
+    "P03": {
+      "answer": "Recall F-0003-2023-2023 was announced on 2023-12-29. This specific date corresponds to the information available in the recall database for the Sunrise Valley Tahini, 6-pack mislabeling recall from Harbor Mills Inc. in Georgia.",
+      "status": "approved",
+      "agent_ms": 20120.7,
+      "notice_id": 3,
+      "version": 0
+    },
+    "P04": {
+      "answer": "Recall F-4393-2026 covers Coastal Catch Cheddar Crackers, 12 oz, produced by Oak Hill Dairy Co. in Arizona. This recall is due to mislabeling, affecting 9567 units.",
+      "status": "approved",
+      "agent_ms": 20916.1,
+      "notice_id": 4393,
+      "version": 0
+    },
+    "P05": {
+      "answer": "The product in recall F-2015-2026 was Mountain Fresh Sourdough Bread, 6-pack, from Bayview Dairy Co. in CA. This recall was initiated due to an undeclared allergen issue. The firm took action to ensure consumer safety by recalling 7985 units of the product on 2026-08-31.",
+      "status": "approved",
+      "agent_ms": 21626.1,
+      "notice_id": 2015,
+      "version": 0
+    },
+    "P06": {
+      "answer": "The company behind recall F-4529-2026 is Bayview Foods, Inc., based in GA. To find their headquarters, you would need to conduct further research on Bayview Foods, Inc., as the specific address, city, and country where they are based are not provided in the recall database.",
+      "status": "rejected",
+      "agent_ms": 19745.2,
+      "notice_id": 4529,
+      "version": 0
+    },
+    "P07": {
+      "answer": "A grocery store should immediately assess the recall's severity to ensure customer safety, then promptly notify customers who have purchased the affected peanut butter, offering clear instructions on how to return or exchange the product. Additionally, staff must be updated to handle customer inquiries and ensure smooth operations, addressing any concerns promptly and accurately.",
+      "status": "approved",
+      "agent_ms": 16547.2,
+      "notice_id": null,
+      "version": 0
+    },
+    "P08": {
+      "answer": "A grocery store should first segregate and remove recalled products from store shelves to prevent consumer confusion and potential misuse. Next, they must promptly inform customers about the recall, offering return or exchange options to ensure fair treatment and customer satisfaction. Finally, thorough cleaning and sanitization of affected areas and storage are crucial to eliminate any risk of cross-contamination and restore consumer trust.",
+      "status": "approved",
+      "agent_ms": 14838.3,
+      "notice_id": null,
+      "version": 0
+    },
+    "P09": {
+      "answer": "The store should first identify and communicate the specific recalled items to customers, ensuring they understand the recall details and potential risks. Next, they should provide customers with the choice to either exchange the recalled items for different products or receive a refund, allowing flexibility based on customer preference. Finally, the store must promptly process these refunds or exchanges in accordance with their refund policy, maintaining accurate records to avoid any discrepancies or delays.",
+      "status": "approved",
+      "agent_ms": 20175.6,
+      "notice_id": null,
+      "version": 0
+    },
+    "P10": {
+      "answer": "A grocery store should promptly notify customers through in-store signage and digital screens to ensure immediate visibility, followed by sending out an email or text message blast to reach a wider audience, and finally updating their website and social media platforms to keep customers informed and updated about the recall.",
+      "status": "approved",
+      "agent_ms": 13038.0,
+      "notice_id": null,
+      "version": 0
+    },
+    "M01": {
+      "answer": "Recall F-0002-2021 affected 6038 units of Green Leaf Almond Granola, 16 oz, produced by Maple Snacks Co. in NV. This recall was due to an undeclared allergen issue.",
+      "status": "approved",
+      "agent_ms": 19257.0,
+      "notice_id": 2,
+      "version": 0
+    },
+    "M02": {
+      "answer": "The firm that issued recall F-0003-2023 is Harbor Mills Inc., located in Georgia. This recall pertains to Sunrise Valley Tahini, a 6-pack product, due to mislabeling issues.",
+      "status": "approved",
+      "agent_ms": 18537.5,
+      "notice_id": 3,
+      "version": 0
+    },
+    "M03": {
+      "answer": "The recall date for F-0001-2025 is 2025-06-23. This specific recall was initiated for Blue Heron Enoki Mushrooms, 32 oz tub, due to an undeclared allergen issue. The firm involved is Harbor Snacks Co. from Georgia.",
+      "status": "approved",
+      "agent_ms": 23080.4,
+      "notice_id": 1,
+      "version": 0
+    },
+    "M04": {
+      "answer": "The product that was recalled under F-4906-2026 was Morning Dew Creamy Peanut Butter, 16 oz. This recall was due to an undeclared allergen, affecting 3114 units. Meadow Bakery Inc., based in Arizona, issued the recall on August 30, 2026. Consumers should check if their product is affected by looking for the recall number on packaging or contacting the firm directly. If their product is affected, they should return it or contact the firm for a refund or replacement.",
+      "status": "approved",
+      "agent_ms": 24368.5,
+      "notice_id": 4906,
+      "version": 0
+    },
+    "M05": {
+      "answer": "The recall category of F-1867-2026 is Bacterial Contamination. This recall affects Prairie Gold Creamy Peanut Butter, 6-pack, manufactured by Harbor Farms LLC in UT, affecting 4173 units.",
+      "status": "approved",
+      "agent_ms": 18445.6,
+      "notice_id": 1867,
+      "version": 0
+    },
+    "M06": {
+      "answer": "The firm for recall F-2320-2026 is located in the state of Iowa (IA). Harbor Dairy Co., the firm associated with this recall, is situated there.",
+      "status": "approved",
+      "agent_ms": 15171.6,
+      "notice_id": 2320,
+      "version": 0
+    },
+    "M07": {
+      "answer": "If a consumer finds their peanut butter product may contain undeclared milk, they should first carefully inspect the label and packaging for any mention of a recall. Next, they should promptly contact the manufacturer or retailer to inquire about the situation and seek guidance on what to do next, ensuring they follow up on any recommendations provided. Consumers should also stay informed by monitoring health authorities or the recall notice for any additional updates or instructions.",
+      "status": "approved",
+      "agent_ms": 15158.2,
+      "notice_id": null,
+      "version": 0
+    },
+    "M08": {
+      "answer": "The store should first identify precisely which products are affected by the recall and how many units, then set up a secure, isolated storage area specifically for these recalled items to prevent further contamination or misuse. Additionally, the store must promptly inform customers about the recall, offering alternatives such as exchanging products or providing refunds, to maintain trust and ensure consumer safety.",
+      "status": "approved",
+      "agent_ms": 14047.3,
+      "notice_id": null,
+      "version": 0
+    },
+    "M09": {
+      "answer": "A store should first ascertain the terms of the recall agreement with the supplier, including any reimbursement policies. Next, they must accurately calculate the cost of the recalled items, encompassing the purchase price, storage expenses, and any disposal fees. Finally, they should submit a claim to the supplier, ensuring all required documentation is provided and adhering to the agreed-upon reimbursement process.",
+      "status": "approved",
+      "agent_ms": 15829.1,
+      "notice_id": null,
+      "version": 0
+    },
+    "M10": {
+      "answer": "A food company should immediately identify the specific product and any potential health risks, then contact the FDA via their official channels with comprehensive details such as product name, UPC code, and other pertinent information. This ensures the FDA has all necessary data to initiate the recall process effectively. Concurrently, the company must coordinate with retailers and distributors to halt sales and communicate the recall to consumers, ensuring swift and widespread dissemination of the recall information.",
+      "status": "approved",
+      "agent_ms": 19443.2,
+      "notice_id": null,
+      "version": 0
+    },
+    "U01": {
+      "answer": "To accurately answer the user's query, the store must first determine which specific grocery store they are inquiring about, then conduct research to find the exact Sunday opening hours, and finally, promptly provide this information to the user in clear, concise language.",
+      "status": "rejected",
+      "agent_ms": 11610.7,
+      "notice_id": null,
+      "version": 0
+    },
+    "U02": {
+      "answer": "To reset your account password, first identify your account details like email or username, then contact customer support to initiate a password reset process. This ensures security and allows you to securely access your account with a new password. Follow the instructions provided to create a unique and strong new password.",
+      "status": "approved",
+      "agent_ms": 11350.4,
+      "notice_id": null,
+      "version": 0
+    },
+    "U03": {
+      "answer": "The capital of France is Paris, a city renowned for its art, history, and iconic landmarks like the Eiffel Tower, making it a global cultural hub.",
+      "status": "approved",
+      "agent_ms": 9089.8,
+      "notice_id": null,
+      "version": 0
+    },
+    "U04": {
+      "answer": "For a perfectly boiled egg, choose a medium-sized egg, as larger eggs require longer cooking times. Calculate the boiling time by adding about 6 minutes for every ounce of egg, ensuring the egg is fully cooked without a runny yolk. Adjust for desired doneness, hard-boiling takes about 12 minutes for a medium egg.",
+      "status": "rejected",
+      "agent_ms": 13368.0,
+      "notice_id": null,
+      "version": 0
+    },
+    "U05": {
+      "answer": "I cannot provide the weather in San Jose today as my response, since I lack real-time data access. To answer accurately, I would need to determine the current date and then research the weather forecast for San Jose on that specific day.",
+      "status": "rejected",
+      "agent_ms": 12553.7,
+      "notice_id": null,
+      "version": 0
+    },
+    "U06": {
+      "answer": "To make a sourdough starter at home, begin by selecting and preparing equal parts flour and water, mixing them thoroughly. Next, keep this mixture in a warm location to allow beneficial bacteria and yeast to develop, which requires regular monitoring. Continuously feed the starter with additional flour and water to ensure it grows and remains active for your sourdough baking needs.",
+      "status": "approved",
+      "agent_ms": 13315.2,
+      "notice_id": null,
+      "version": 0
+    },
+    "U07": {
+      "answer": "A grocery store freezer should be set to a temperature of at least 0\u00b0F (-18\u00b0C) or lower to safely store frozen foods. This ensures that bacteria and other microorganisms are inhibited from growing, preserving the quality and safety of the frozen items. Regularly checking and maintaining this temperature is crucial to maintaining food safety standards.",
+      "status": "approved",
+      "agent_ms": 12505.6,
+      "notice_id": null,
+      "version": 0
+    },
+    "U08": {
+      "answer": "To apply for a cashier job at a grocery store, start by gathering all necessary documents such as a valid ID, proof of employment, and any required certifications. Next, thoroughly research the application process, which may include submitting an application form, taking aptitude tests, and possibly attending an interview. Finally, submit your application and stay in touch with the store to ensure your application is processed and any additional steps are completed.",
+      "status": "rejected",
+      "agent_ms": 15569.8,
+      "notice_id": null,
+      "version": 0
+    },
+    "U09": {
+      "answer": "The store should first ascertain the specific brand and type of tahini as different products can vary in shelf life. Once the brand and type are known, they should note the opening date to accurately calculate the remaining usable time. Typically, tahini has a shelf life of 6-9 months unopened, so from the opening date, they can determine how much longer the product can be safely consumed.",
+      "status": "rejected",
+      "agent_ms": 19486.5,
+      "notice_id": null,
+      "version": 0
+    },
+    "U10": {
+      "answer": "In 2024, numerous grocery products were recalled due to potential safety issues, resulting in a total of over 500 individual recall notices being issued by various stores and manufacturers to ensure consumer safety and compliance with food safety regulations. Each notice alerts consumers to the recall, advising them to return the affected items or dispose of them safely.",
+      "status": "rejected",
+      "agent_ms": 16384.0,
+      "notice_id": null,
+      "version": 0
+    }
+  }
+}

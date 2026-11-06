@@ -1,0 +1,61 @@
+{
+  "run_at": "2026-11-06T15:07:33",
+  "prepared_at": "2026-11-06T15:06:30",
+  "thresholds": [
+    {
+      "threshold": 0.75,
+      "hits": 30,
+      "correct_hits": 19,
+      "false_hits": 11,
+      "missed_hits": 0,
+      "misses": 10,
+      "hit_rate": 0.75,
+      "false_hit_rate": 0.36666666666666664,
+      "mean_latency_ms": 3394.9493009936136
+    },
+    {
+      "threshold": 0.8,
+      "hits": 28,
+      "correct_hits": 18,
+      "false_hits": 10,
+      "missed_hits": 1,
+      "misses": 12,
+      "hit_rate": 0.7,
+      "false_hit_rate": 0.35714285714285715,
+      "mean_latency_ms": 4300.743940704956
+    },
+    {
+      "threshold": 0.85,
+      "hits": 25,
+      "correct_hits": 18,
+      "false_hits": 7,
+      "missed_hits": 2,
+      "misses": 15,
+      "hit_rate": 0.625,
+      "false_hit_rate": 0.28,
+      "mean_latency_ms": 5703.943515419987
+    },
+    {
+      "threshold": 0.9,
+      "hits": 23,
+      "correct_hits": 18,
+      "false_hits": 5,
+      "missed_hits": 2,
+      "misses": 17,
+      "hit_rate": 0.575,
+      "false_hit_rate": 0.21739130434782608,
+      "mean_latency_ms": 6538.750799949588
+    },
+    {
+      "threshold": 0.95,
+      "hits": 16,
+      "correct_hits": 13,
+      "false_hits": 3,
+      "missed_hits": 7,
+      "misses": 24,
+      "hit_rate": 0.4,
+      "false_hit_rate": 0.1875,
+      "mean_latency_ms": 9693.18489904886
+    }
+  ]
+}

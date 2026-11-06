@@ -1,0 +1,201 @@
+threshold,case,kind,expect,seed,nearest_seed,similarity,outcome,lookup_ms,agent_ms,latency_ms,query
+0.75,E01,exact,hit,S1,S1,1.0,correct_hit,32.58,0.0,32.6,How many units were affected by recall F-0001-2025?
+0.75,E02,exact,hit,S2,S2,1.0,correct_hit,20.22,0.0,20.2,Which firm issued recall F-0002-2021?
+0.75,E03,exact,hit,S3,S3,1.0,correct_hit,13.97,0.0,14.0,What is the recall date of F-0003-2023?
+0.75,E04,exact,hit,S4,S4,1.0,correct_hit,14.44,0.0,14.4,What product was recalled under F-4393-2026?
+0.75,E05,exact,hit,S5,S5,1.0,correct_hit,13.15,0.0,13.1,What is the recall category of F-2015-2026?
+0.75,E06,exact,hit,S6,S6,1.0,correct_hit,14.05,0.0,14.1,In which state is the firm for recall F-4529-2026 located?
+0.75,E07,exact,hit,S7,S7,1.0,correct_hit,15.59,0.0,15.6,What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?
+0.75,E08,exact,hit,S8,S8,1.0,correct_hit,13.38,0.0,13.4,How should a grocery store dispose of recalled products?
+0.75,E09,exact,hit,S9,S9,1.0,correct_hit,14.16,0.0,14.2,How should a store handle refunds for customers who return recalled items?
+0.75,E10,exact,hit,S10,S10,1.0,correct_hit,12.98,0.0,13.0,How should a grocery store notify customers about a product recall?
+0.75,P01,paraphrase,hit,S1,S1,0.9799,correct_hit,13.34,0.0,13.3,What was the number of units affected by recall F-0001-2025?
+0.75,P02,paraphrase,hit,S2,S2,0.9439,correct_hit,12.78,0.0,12.8,Which company is responsible for recall F-0002-2021?
+0.75,P03,paraphrase,hit,S3,S3,0.9324,correct_hit,12.76,0.0,12.8,On what date was recall F-0003-2023 announced?
+0.75,P04,paraphrase,hit,S4,S4,0.7683,correct_hit,15.63,0.0,15.6,Which product does recall F-4393-2026 cover?
+0.75,P05,paraphrase,hit,S5,S4,0.8436,FALSE_HIT,14.38,0.0,14.4,Why was the product in recall F-2015-2026 recalled?
+0.75,P06,paraphrase,hit,S6,S6,0.9147,correct_hit,13.64,0.0,13.6,Where is the company behind recall F-4529-2026 based?
+0.75,P07,paraphrase,hit,S7,S7,0.978,correct_hit,12.53,0.0,12.5,How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?
+0.75,P08,paraphrase,hit,S8,S8,0.9235,correct_hit,12.82,0.0,12.8,What is the proper way for a grocery store to get rid of recalled products?
+0.75,P09,paraphrase,hit,S9,S9,0.9624,correct_hit,13.99,0.0,14.0,How should a store process refunds when customers bring back recalled items?
+0.75,P10,paraphrase,hit,S10,S10,0.9402,correct_hit,11.6,0.0,11.6,What is the best way for a grocery store to tell customers about a product recall?
+0.75,M01,similar,miss,S1,S1,0.9742,FALSE_HIT,17.67,0.0,17.7,How many units were affected by recall F-0002-2021?
+0.75,M02,similar,miss,S2,S2,0.9505,FALSE_HIT,16.4,0.0,16.4,Which firm issued recall F-0003-2023?
+0.75,M03,similar,miss,S3,S3,0.9758,FALSE_HIT,14.63,0.0,14.6,What is the recall date of F-0001-2025?
+0.75,M04,similar,miss,S4,S4,0.9335,FALSE_HIT,14.31,0.0,14.3,What product was recalled under F-4906-2026?
+0.75,M05,similar,miss,S5,S5,0.837,FALSE_HIT,12.92,0.0,12.9,What is the recall category of F-1867-2026?
+0.75,M06,similar,miss,S6,S6,0.9354,FALSE_HIT,13.62,0.0,13.6,In which state is the firm for recall F-2320-2026 located?
+0.75,M07,similar,miss,S7,S7,0.7866,FALSE_HIT,13.07,0.0,13.1,What should a consumer do if they bought peanut butter that may contain undeclared milk?
+0.75,M08,similar,miss,S8,S8,0.8774,FALSE_HIT,14.27,0.0,14.3,How should a grocery store hold recalled products until the supplier collects them?
+0.75,M09,similar,miss,S9,S9,0.8295,FALSE_HIT,13.72,0.0,13.7,How should a store get reimbursed by the supplier for recalled items it removed?
+0.75,M10,similar,miss,S10,S10,0.8694,FALSE_HIT,12.72,0.0,12.7,How should a food company notify the FDA about a product recall?
+0.75,U01,unrelated,miss,,S8,0.1651,correct_miss,12.91,11610.7,11623.6,What are the store's opening hours on Sunday?
+0.75,U02,unrelated,miss,,S8,0.1831,correct_miss,11.87,11350.4,11362.3,How do I reset my account password?
+0.75,U03,unrelated,miss,,S3,0.123,correct_miss,10.97,9089.8,9100.8,What is the capital of France?
+0.75,U04,unrelated,miss,,S7,0.0141,correct_miss,11.75,13368.0,13379.7,How long should I boil an egg?
+0.75,U05,unrelated,miss,,S3,0.1556,correct_miss,12.32,12553.7,12566.0,What is the weather in San Jose today?
+0.75,U06,unrelated,miss,,S8,0.1807,correct_miss,12.07,13315.2,13327.3,How do I make a sourdough starter at home?
+0.75,U07,unrelated,miss,,S8,0.3265,correct_miss,13.62,12505.6,12519.2,What temperature should a grocery store freezer be set to?
+0.75,U08,unrelated,miss,,S8,0.3054,correct_miss,11.73,15569.8,15581.5,How do I apply for a cashier job at a grocery store?
+0.75,U09,unrelated,miss,,S7,0.3156,correct_miss,12.67,19486.5,19499.2,What is the shelf life of an opened jar of tahini?
+0.75,U10,unrelated,miss,,S1,0.6702,correct_miss,13.04,16384.0,16397.0,How many recall notices were issued in total in 2024?
+0.8,E01,exact,hit,S1,S1,1.0,correct_hit,13.05,0.0,13.1,How many units were affected by recall F-0001-2025?
+0.8,E02,exact,hit,S2,S2,1.0,correct_hit,12.18,0.0,12.2,Which firm issued recall F-0002-2021?
+0.8,E03,exact,hit,S3,S3,1.0,correct_hit,13.3,0.0,13.3,What is the recall date of F-0003-2023?
+0.8,E04,exact,hit,S4,S4,1.0,correct_hit,11.9,0.0,11.9,What product was recalled under F-4393-2026?
+0.8,E05,exact,hit,S5,S5,1.0,correct_hit,13.05,0.0,13.1,What is the recall category of F-2015-2026?
+0.8,E06,exact,hit,S6,S6,1.0,correct_hit,12.96,0.0,13.0,In which state is the firm for recall F-4529-2026 located?
+0.8,E07,exact,hit,S7,S7,1.0,correct_hit,12.13,0.0,12.1,What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?
+0.8,E08,exact,hit,S8,S8,1.0,correct_hit,13.15,0.0,13.2,How should a grocery store dispose of recalled products?
+0.8,E09,exact,hit,S9,S9,1.0,correct_hit,12.65,0.0,12.6,How should a store handle refunds for customers who return recalled items?
+0.8,E10,exact,hit,S10,S10,1.0,correct_hit,12.89,0.0,12.9,How should a grocery store notify customers about a product recall?
+0.8,P01,paraphrase,hit,S1,S1,0.9799,correct_hit,12.89,0.0,12.9,What was the number of units affected by recall F-0001-2025?
+0.8,P02,paraphrase,hit,S2,S2,0.9439,correct_hit,16.45,0.0,16.5,Which company is responsible for recall F-0002-2021?
+0.8,P03,paraphrase,hit,S3,S3,0.9324,correct_hit,27.59,0.0,27.6,On what date was recall F-0003-2023 announced?
+0.8,P04,paraphrase,hit,S4,S4,0.7683,missed_hit,18.38,20916.1,20934.5,Which product does recall F-4393-2026 cover?
+0.8,P05,paraphrase,hit,S5,S4,0.8436,FALSE_HIT,24.24,0.0,24.2,Why was the product in recall F-2015-2026 recalled?
+0.8,P06,paraphrase,hit,S6,S6,0.9147,correct_hit,25.28,0.0,25.3,Where is the company behind recall F-4529-2026 based?
+0.8,P07,paraphrase,hit,S7,S7,0.978,correct_hit,53.11,0.0,53.1,How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?
+0.8,P08,paraphrase,hit,S8,S8,0.9235,correct_hit,24.25,0.0,24.3,What is the proper way for a grocery store to get rid of recalled products?
+0.8,P09,paraphrase,hit,S9,S9,0.9624,correct_hit,33.08,0.0,33.1,How should a store process refunds when customers bring back recalled items?
+0.8,P10,paraphrase,hit,S10,S10,0.9402,correct_hit,19.34,0.0,19.3,What is the best way for a grocery store to tell customers about a product recall?
+0.8,M01,similar,miss,S1,S1,0.9742,FALSE_HIT,20.03,0.0,20.0,How many units were affected by recall F-0002-2021?
+0.8,M02,similar,miss,S2,S2,0.9505,FALSE_HIT,45.5,0.0,45.5,Which firm issued recall F-0003-2023?
+0.8,M03,similar,miss,S3,S3,0.9758,FALSE_HIT,16.65,0.0,16.6,What is the recall date of F-0001-2025?
+0.8,M04,similar,miss,S4,S4,0.9335,FALSE_HIT,16.19,0.0,16.2,What product was recalled under F-4906-2026?
+0.8,M05,similar,miss,S5,S5,0.837,FALSE_HIT,16.6,0.0,16.6,What is the recall category of F-1867-2026?
+0.8,M06,similar,miss,S6,S6,0.9354,FALSE_HIT,17.36,0.0,17.4,In which state is the firm for recall F-2320-2026 located?
+0.8,M07,similar,miss,S7,S7,0.7866,correct_miss,15.37,15158.2,15173.6,What should a consumer do if they bought peanut butter that may contain undeclared milk?
+0.8,M08,similar,miss,S8,S8,0.8774,FALSE_HIT,15.27,0.0,15.3,How should a grocery store hold recalled products until the supplier collects them?
+0.8,M09,similar,miss,S9,S9,0.8295,FALSE_HIT,15.24,0.0,15.2,How should a store get reimbursed by the supplier for recalled items it removed?
+0.8,M10,similar,miss,S10,S10,0.8694,FALSE_HIT,15.67,0.0,15.7,How should a food company notify the FDA about a product recall?
+0.8,U01,unrelated,miss,,S8,0.1651,correct_miss,15.71,11610.7,11626.4,What are the store's opening hours on Sunday?
+0.8,U02,unrelated,miss,,S8,0.1831,correct_miss,14.0,11350.4,11364.4,How do I reset my account password?
+0.8,U03,unrelated,miss,,S3,0.123,correct_miss,16.41,9089.8,9106.2,What is the capital of France?
+0.8,U04,unrelated,miss,,S7,0.0141,correct_miss,15.19,13368.0,13383.2,How long should I boil an egg?
+0.8,U05,unrelated,miss,,S3,0.1556,correct_miss,15.83,12553.7,12569.5,What is the weather in San Jose today?
+0.8,U06,unrelated,miss,,S8,0.1807,correct_miss,14.9,13315.2,13330.1,How do I make a sourdough starter at home?
+0.8,U07,unrelated,miss,,S8,0.3265,correct_miss,13.0,12505.6,12518.6,What temperature should a grocery store freezer be set to?
+0.8,U08,unrelated,miss,,S8,0.3054,correct_miss,13.46,15569.8,15583.3,How do I apply for a cashier job at a grocery store?
+0.8,U09,unrelated,miss,,S7,0.3156,correct_miss,13.21,19486.5,19499.7,What is the shelf life of an opened jar of tahini?
+0.8,U10,unrelated,miss,,S1,0.6702,correct_miss,14.29,16384.0,16398.3,How many recall notices were issued in total in 2024?
+0.85,E01,exact,hit,S1,S1,1.0,correct_hit,14.55,0.0,14.5,How many units were affected by recall F-0001-2025?
+0.85,E02,exact,hit,S2,S2,1.0,correct_hit,14.08,0.0,14.1,Which firm issued recall F-0002-2021?
+0.85,E03,exact,hit,S3,S3,1.0,correct_hit,14.48,0.0,14.5,What is the recall date of F-0003-2023?
+0.85,E04,exact,hit,S4,S4,1.0,correct_hit,14.44,0.0,14.4,What product was recalled under F-4393-2026?
+0.85,E05,exact,hit,S5,S5,1.0,correct_hit,14.12,0.0,14.1,What is the recall category of F-2015-2026?
+0.85,E06,exact,hit,S6,S6,1.0,correct_hit,16.1,0.0,16.1,In which state is the firm for recall F-4529-2026 located?
+0.85,E07,exact,hit,S7,S7,1.0,correct_hit,14.91,0.0,14.9,What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?
+0.85,E08,exact,hit,S8,S8,1.0,correct_hit,13.72,0.0,13.7,How should a grocery store dispose of recalled products?
+0.85,E09,exact,hit,S9,S9,1.0,correct_hit,13.88,0.0,13.9,How should a store handle refunds for customers who return recalled items?
+0.85,E10,exact,hit,S10,S10,1.0,correct_hit,15.21,0.0,15.2,How should a grocery store notify customers about a product recall?
+0.85,P01,paraphrase,hit,S1,S1,0.9799,correct_hit,18.46,0.0,18.5,What was the number of units affected by recall F-0001-2025?
+0.85,P02,paraphrase,hit,S2,S2,0.9439,correct_hit,17.37,0.0,17.4,Which company is responsible for recall F-0002-2021?
+0.85,P03,paraphrase,hit,S3,S3,0.9324,correct_hit,15.6,0.0,15.6,On what date was recall F-0003-2023 announced?
+0.85,P04,paraphrase,hit,S4,S4,0.7683,missed_hit,21.57,20916.1,20937.7,Which product does recall F-4393-2026 cover?
+0.85,P05,paraphrase,hit,S5,S4,0.8436,missed_hit,18.52,21626.1,21644.6,Why was the product in recall F-2015-2026 recalled?
+0.85,P06,paraphrase,hit,S6,S6,0.9147,correct_hit,17.76,0.0,17.8,Where is the company behind recall F-4529-2026 based?
+0.85,P07,paraphrase,hit,S7,S7,0.978,correct_hit,15.22,0.0,15.2,How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?
+0.85,P08,paraphrase,hit,S8,S8,0.9235,correct_hit,17.33,0.0,17.3,What is the proper way for a grocery store to get rid of recalled products?
+0.85,P09,paraphrase,hit,S9,S9,0.9624,correct_hit,17.99,0.0,18.0,How should a store process refunds when customers bring back recalled items?
+0.85,P10,paraphrase,hit,S10,S10,0.9402,correct_hit,19.23,0.0,19.2,What is the best way for a grocery store to tell customers about a product recall?
+0.85,M01,similar,miss,S1,S1,0.9742,FALSE_HIT,14.94,0.0,14.9,How many units were affected by recall F-0002-2021?
+0.85,M02,similar,miss,S2,S2,0.9505,FALSE_HIT,17.41,0.0,17.4,Which firm issued recall F-0003-2023?
+0.85,M03,similar,miss,S3,S3,0.9758,FALSE_HIT,25.18,0.0,25.2,What is the recall date of F-0001-2025?
+0.85,M04,similar,miss,S4,S4,0.9335,FALSE_HIT,29.51,0.0,29.5,What product was recalled under F-4906-2026?
+0.85,M05,similar,miss,S5,S5,0.837,correct_miss,30.7,18445.6,18476.3,What is the recall category of F-1867-2026?
+0.85,M06,similar,miss,S6,S6,0.9354,FALSE_HIT,21.6,0.0,21.6,In which state is the firm for recall F-2320-2026 located?
+0.85,M07,similar,miss,S7,S7,0.7866,correct_miss,19.25,15158.2,15177.4,What should a consumer do if they bought peanut butter that may contain undeclared milk?
+0.85,M08,similar,miss,S8,S8,0.8774,FALSE_HIT,18.19,0.0,18.2,How should a grocery store hold recalled products until the supplier collects them?
+0.85,M09,similar,miss,S9,S9,0.8295,correct_miss,19.1,15829.1,15848.2,How should a store get reimbursed by the supplier for recalled items it removed?
+0.85,M10,similar,miss,S10,S10,0.8694,FALSE_HIT,22.79,0.0,22.8,How should a food company notify the FDA about a product recall?
+0.85,U01,unrelated,miss,,S8,0.1651,correct_miss,33.7,11610.7,11644.4,What are the store's opening hours on Sunday?
+0.85,U02,unrelated,miss,,S8,0.1831,correct_miss,31.11,11350.4,11381.5,How do I reset my account password?
+0.85,U03,unrelated,miss,,S3,0.123,correct_miss,52.2,9089.8,9142.0,What is the capital of France?
+0.85,U04,unrelated,miss,,S7,0.0141,correct_miss,37.39,13368.0,13405.4,How long should I boil an egg?
+0.85,U05,unrelated,miss,,S3,0.1556,correct_miss,56.25,12553.7,12609.9,What is the weather in San Jose today?
+0.85,U06,unrelated,miss,,S8,0.1807,correct_miss,52.37,13315.2,13367.6,How do I make a sourdough starter at home?
+0.85,U07,unrelated,miss,,S8,0.3265,correct_miss,38.91,12505.6,12544.5,What temperature should a grocery store freezer be set to?
+0.85,U08,unrelated,miss,,S8,0.3054,correct_miss,33.84,15569.8,15603.6,How do I apply for a cashier job at a grocery store?
+0.85,U09,unrelated,miss,,S7,0.3156,correct_miss,27.57,19486.5,19514.1,What is the shelf life of an opened jar of tahini?
+0.85,U10,unrelated,miss,,S1,0.6702,correct_miss,42.39,16384.0,16426.4,How many recall notices were issued in total in 2024?
+0.9,E01,exact,hit,S1,S1,1.0,correct_hit,41.16,0.0,41.2,How many units were affected by recall F-0001-2025?
+0.9,E02,exact,hit,S2,S2,1.0,correct_hit,62.7,0.0,62.7,Which firm issued recall F-0002-2021?
+0.9,E03,exact,hit,S3,S3,1.0,correct_hit,34.39,0.0,34.4,What is the recall date of F-0003-2023?
+0.9,E04,exact,hit,S4,S4,1.0,correct_hit,34.23,0.0,34.2,What product was recalled under F-4393-2026?
+0.9,E05,exact,hit,S5,S5,1.0,correct_hit,35.46,0.0,35.5,What is the recall category of F-2015-2026?
+0.9,E06,exact,hit,S6,S6,1.0,correct_hit,23.46,0.0,23.5,In which state is the firm for recall F-4529-2026 located?
+0.9,E07,exact,hit,S7,S7,1.0,correct_hit,22.76,0.0,22.8,What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?
+0.9,E08,exact,hit,S8,S8,1.0,correct_hit,23.75,0.0,23.8,How should a grocery store dispose of recalled products?
+0.9,E09,exact,hit,S9,S9,1.0,correct_hit,25.85,0.0,25.9,How should a store handle refunds for customers who return recalled items?
+0.9,E10,exact,hit,S10,S10,1.0,correct_hit,25.88,0.0,25.9,How should a grocery store notify customers about a product recall?
+0.9,P01,paraphrase,hit,S1,S1,0.9799,correct_hit,28.2,0.0,28.2,What was the number of units affected by recall F-0001-2025?
+0.9,P02,paraphrase,hit,S2,S2,0.9439,correct_hit,21.41,0.0,21.4,Which company is responsible for recall F-0002-2021?
+0.9,P03,paraphrase,hit,S3,S3,0.9324,correct_hit,25.94,0.0,25.9,On what date was recall F-0003-2023 announced?
+0.9,P04,paraphrase,hit,S4,S4,0.7683,missed_hit,24.02,20916.1,20940.1,Which product does recall F-4393-2026 cover?
+0.9,P05,paraphrase,hit,S5,S4,0.8436,missed_hit,26.53,21626.1,21652.6,Why was the product in recall F-2015-2026 recalled?
+0.9,P06,paraphrase,hit,S6,S6,0.9147,correct_hit,18.28,0.0,18.3,Where is the company behind recall F-4529-2026 based?
+0.9,P07,paraphrase,hit,S7,S7,0.978,correct_hit,15.55,0.0,15.6,How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?
+0.9,P08,paraphrase,hit,S8,S8,0.9235,correct_hit,18.6,0.0,18.6,What is the proper way for a grocery store to get rid of recalled products?
+0.9,P09,paraphrase,hit,S9,S9,0.9624,correct_hit,16.76,0.0,16.8,How should a store process refunds when customers bring back recalled items?
+0.9,P10,paraphrase,hit,S10,S10,0.9402,correct_hit,19.6,0.0,19.6,What is the best way for a grocery store to tell customers about a product recall?
+0.9,M01,similar,miss,S1,S1,0.9742,FALSE_HIT,17.98,0.0,18.0,How many units were affected by recall F-0002-2021?
+0.9,M02,similar,miss,S2,S2,0.9505,FALSE_HIT,15.19,0.0,15.2,Which firm issued recall F-0003-2023?
+0.9,M03,similar,miss,S3,S3,0.9758,FALSE_HIT,18.01,0.0,18.0,What is the recall date of F-0001-2025?
+0.9,M04,similar,miss,S4,S4,0.9335,FALSE_HIT,17.25,0.0,17.3,What product was recalled under F-4906-2026?
+0.9,M05,similar,miss,S5,S5,0.837,correct_miss,14.5,18445.6,18460.1,What is the recall category of F-1867-2026?
+0.9,M06,similar,miss,S6,S6,0.9354,FALSE_HIT,15.05,0.0,15.1,In which state is the firm for recall F-2320-2026 located?
+0.9,M07,similar,miss,S7,S7,0.7866,correct_miss,13.95,15158.2,15172.1,What should a consumer do if they bought peanut butter that may contain undeclared milk?
+0.9,M08,similar,miss,S8,S8,0.8774,correct_miss,14.07,14047.3,14061.4,How should a grocery store hold recalled products until the supplier collects them?
+0.9,M09,similar,miss,S9,S9,0.8295,correct_miss,14.08,15829.1,15843.2,How should a store get reimbursed by the supplier for recalled items it removed?
+0.9,M10,similar,miss,S10,S10,0.8694,correct_miss,13.48,19443.2,19456.7,How should a food company notify the FDA about a product recall?
+0.9,U01,unrelated,miss,,S8,0.1651,correct_miss,15.03,11610.7,11625.7,What are the store's opening hours on Sunday?
+0.9,U02,unrelated,miss,,S8,0.1831,correct_miss,14.64,11350.4,11365.0,How do I reset my account password?
+0.9,U03,unrelated,miss,,S3,0.123,correct_miss,13.03,9089.8,9102.8,What is the capital of France?
+0.9,U04,unrelated,miss,,S7,0.0141,correct_miss,14.02,13368.0,13382.0,How long should I boil an egg?
+0.9,U05,unrelated,miss,,S3,0.1556,correct_miss,16.66,12553.7,12570.4,What is the weather in San Jose today?
+0.9,U06,unrelated,miss,,S8,0.1807,correct_miss,16.68,13315.2,13331.9,How do I make a sourdough starter at home?
+0.9,U07,unrelated,miss,,S8,0.3265,correct_miss,16.0,12505.6,12521.6,What temperature should a grocery store freezer be set to?
+0.9,U08,unrelated,miss,,S8,0.3054,correct_miss,17.77,15569.8,15587.6,How do I apply for a cashier job at a grocery store?
+0.9,U09,unrelated,miss,,S7,0.3156,correct_miss,15.17,19486.5,19501.7,What is the shelf life of an opened jar of tahini?
+0.9,U10,unrelated,miss,,S1,0.6702,correct_miss,13.64,16384.0,16397.6,How many recall notices were issued in total in 2024?
+0.95,E01,exact,hit,S1,S1,1.0,correct_hit,13.55,0.0,13.6,How many units were affected by recall F-0001-2025?
+0.95,E02,exact,hit,S2,S2,1.0,correct_hit,13.17,0.0,13.2,Which firm issued recall F-0002-2021?
+0.95,E03,exact,hit,S3,S3,1.0,correct_hit,13.72,0.0,13.7,What is the recall date of F-0003-2023?
+0.95,E04,exact,hit,S4,S4,1.0,correct_hit,15.96,0.0,16.0,What product was recalled under F-4393-2026?
+0.95,E05,exact,hit,S5,S5,1.0,correct_hit,25.22,0.0,25.2,What is the recall category of F-2015-2026?
+0.95,E06,exact,hit,S6,S6,1.0,correct_hit,23.0,0.0,23.0,In which state is the firm for recall F-4529-2026 located?
+0.95,E07,exact,hit,S7,S7,1.0,correct_hit,14.52,0.0,14.5,What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?
+0.95,E08,exact,hit,S8,S8,1.0,correct_hit,13.32,0.0,13.3,How should a grocery store dispose of recalled products?
+0.95,E09,exact,hit,S9,S9,1.0,correct_hit,15.98,0.0,16.0,How should a store handle refunds for customers who return recalled items?
+0.95,E10,exact,hit,S10,S10,1.0,correct_hit,16.23,0.0,16.2,How should a grocery store notify customers about a product recall?
+0.95,P01,paraphrase,hit,S1,S1,0.9799,correct_hit,14.97,0.0,15.0,What was the number of units affected by recall F-0001-2025?
+0.95,P02,paraphrase,hit,S2,S2,0.9439,missed_hit,13.24,19201.8,19215.0,Which company is responsible for recall F-0002-2021?
+0.95,P03,paraphrase,hit,S3,S3,0.9324,missed_hit,12.4,20120.7,20133.1,On what date was recall F-0003-2023 announced?
+0.95,P04,paraphrase,hit,S4,S4,0.7683,missed_hit,18.28,20916.1,20934.4,Which product does recall F-4393-2026 cover?
+0.95,P05,paraphrase,hit,S5,S4,0.8436,missed_hit,14.11,21626.1,21640.2,Why was the product in recall F-2015-2026 recalled?
+0.95,P06,paraphrase,hit,S6,S6,0.9147,missed_hit,12.14,19745.2,19757.3,Where is the company behind recall F-4529-2026 based?
+0.95,P07,paraphrase,hit,S7,S7,0.978,correct_hit,13.9,0.0,13.9,How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?
+0.95,P08,paraphrase,hit,S8,S8,0.9235,missed_hit,15.47,14838.3,14853.8,What is the proper way for a grocery store to get rid of recalled products?
+0.95,P09,paraphrase,hit,S9,S9,0.9624,correct_hit,13.52,0.0,13.5,How should a store process refunds when customers bring back recalled items?
+0.95,P10,paraphrase,hit,S10,S10,0.9402,missed_hit,11.56,13038.0,13049.6,What is the best way for a grocery store to tell customers about a product recall?
+0.95,M01,similar,miss,S1,S1,0.9742,FALSE_HIT,13.23,0.0,13.2,How many units were affected by recall F-0002-2021?
+0.95,M02,similar,miss,S2,S2,0.9505,FALSE_HIT,14.76,0.0,14.8,Which firm issued recall F-0003-2023?
+0.95,M03,similar,miss,S3,S3,0.9758,FALSE_HIT,12.21,0.0,12.2,What is the recall date of F-0001-2025?
+0.95,M04,similar,miss,S4,S4,0.9335,correct_miss,11.89,24368.5,24380.4,What product was recalled under F-4906-2026?
+0.95,M05,similar,miss,S5,S5,0.837,correct_miss,12.59,18445.6,18458.2,What is the recall category of F-1867-2026?
+0.95,M06,similar,miss,S6,S6,0.9354,correct_miss,11.75,15171.6,15183.4,In which state is the firm for recall F-2320-2026 located?
+0.95,M07,similar,miss,S7,S7,0.7866,correct_miss,11.56,15158.2,15169.8,What should a consumer do if they bought peanut butter that may contain undeclared milk?
+0.95,M08,similar,miss,S8,S8,0.8774,correct_miss,11.34,14047.3,14058.6,How should a grocery store hold recalled products until the supplier collects them?
+0.95,M09,similar,miss,S9,S9,0.8295,correct_miss,12.33,15829.1,15841.4,How should a store get reimbursed by the supplier for recalled items it removed?
+0.95,M10,similar,miss,S10,S10,0.8694,correct_miss,12.17,19443.2,19455.4,How should a food company notify the FDA about a product recall?
+0.95,U01,unrelated,miss,,S8,0.1651,correct_miss,11.65,11610.7,11622.3,What are the store's opening hours on Sunday?
+0.95,U02,unrelated,miss,,S8,0.1831,correct_miss,10.95,11350.4,11361.4,How do I reset my account password?
+0.95,U03,unrelated,miss,,S3,0.123,correct_miss,13.16,9089.8,9103.0,What is the capital of France?
+0.95,U04,unrelated,miss,,S7,0.0141,correct_miss,11.57,13368.0,13379.6,How long should I boil an egg?
+0.95,U05,unrelated,miss,,S3,0.1556,correct_miss,12.36,12553.7,12566.1,What is the weather in San Jose today?
+0.95,U06,unrelated,miss,,S8,0.1807,correct_miss,11.23,13315.2,13326.4,How do I make a sourdough starter at home?
+0.95,U07,unrelated,miss,,S8,0.3265,correct_miss,11.41,12505.6,12517.0,What temperature should a grocery store freezer be set to?
+0.95,U08,unrelated,miss,,S8,0.3054,correct_miss,11.35,15569.8,15581.2,How do I apply for a cashier job at a grocery store?
+0.95,U09,unrelated,miss,,S7,0.3156,correct_miss,11.31,19486.5,19497.8,What is the shelf life of an opened jar of tahini?
+0.95,U10,unrelated,miss,,S1,0.6702,correct_miss,10.94,16384.0,16394.9,How many recall notices were issued in total in 2024?
