@@ -1,0 +1,1455 @@
+{
+  "run_at": "2026-11-06T15:51:54",
+  "table": [
+    {
+      "variant": "Baseline",
+      "correct": 8,
+      "incorrect": 4,
+      "avg_attempts": 1.0,
+      "avg_latency_ms": 4521.433333333333
+    },
+    {
+      "variant": "Evaluator Repair",
+      "correct": 11,
+      "incorrect": 1,
+      "avg_attempts": 1.3333333333333333,
+      "avg_latency_ms": 4914.416666666667
+    },
+    {
+      "variant": "Lesson Memory",
+      "correct": 11,
+      "incorrect": 1,
+      "avg_attempts": 1.25,
+      "avg_latency_ms": 4711.158333333334
+    },
+    {
+      "variant": "Validated Improvement",
+      "correct": 11,
+      "incorrect": 1,
+      "avg_attempts": 1.25,
+      "avg_latency_ms": 5142.566666666667
+    }
+  ],
+  "rows": {
+    "Baseline": [
+      {
+        "id": "test_01",
+        "question": "Which firm issued recall F-0847-2021, and how many units were affected?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-0847-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 6807.7
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 6808.8
+      },
+      {
+        "id": "test_02",
+        "question": "How many planets are in the solar system?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 3005.7
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "REVISE",
+        "final_answer": "The solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+        "question_kind": "off_domain",
+        "final_failure": "answered_off_domain",
+        "latency_ms": 3006.5
+      },
+      {
+        "id": "test_03",
+        "question": "In which state is the firm behind recall F-0174-2025 located?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state) match the reference record for F-0174-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3854.7
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3855.4
+      },
+      {
+        "id": "test_04",
+        "question": "In which state is the firm behind recall F-7840-2023 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-7840-2023 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-7840-2023 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-7840-2023 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3715.5
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "REVISE",
+        "final_answer": "The recall notice F-7840-2023 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": "fabricated_not_found",
+        "latency_ms": 3715.8
+      },
+      {
+        "id": "test_05",
+        "question": "What is the recall category of F-0584-2022, and in which state is the firm located?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state, category) match the reference record for F-0584-2022.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3668.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3669.3
+      },
+      {
+        "id": "test_06",
+        "question": "Which firm issued recall F-0406-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name) match the reference record for F-0406-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5040.4
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5040.7
+      },
+      {
+        "id": "test_07",
+        "question": "How many units were affected by recall F-1081-2021?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected) match the reference record for F-1081-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5714.4
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5714.7
+      },
+      {
+        "id": "test_08",
+        "question": "In which state is the firm behind recall F-6725-2024 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-6725-2024 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-6725-2024 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-6725-2024 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3480.4
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "REVISE",
+        "final_answer": "The recall notice F-6725-2024 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": "fabricated_not_found",
+        "latency_ms": 3480.6
+      },
+      {
+        "id": "test_09",
+        "question": "How many units were affected by recall F-2912-2025, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected, recall_date) match the reference record for F-2912-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5074.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5074.6
+      },
+      {
+        "id": "test_10",
+        "question": "What is the best way to learn to play the guitar?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The best way to learn to play the guitar depends on personal learning style, but common methods include taking lessons from a professional, using online tutorials, practicing regularly, and playing with a group for performance practice.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 3746.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "REVISE",
+        "final_answer": "The best way to learn to play the guitar depends on personal learning style, but common methods include taking lessons from a professional, using online tutorials, practicing regularly, and playing with a group for performance practice.",
+        "question_kind": "off_domain",
+        "final_failure": "answered_off_domain",
+        "latency_ms": 3747.1
+      },
+      {
+        "id": "test_11",
+        "question": "What product was recalled under F-2975-2021, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+            "result": "PASS",
+            "explanation": "All asked fields (recall_date, product_name) match the reference record for F-2975-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4808.7
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4809.3
+      },
+      {
+        "id": "test_12",
+        "question": "What is the recall category of F-4489-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+            "result": "PASS",
+            "explanation": "All asked fields (category) match the reference record for F-4489-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5334.1
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5334.4
+      }
+    ],
+    "Evaluator Repair": [
+      {
+        "id": "test_01",
+        "question": "Which firm issued recall F-0847-2021, and how many units were affected?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-0847-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3938.2
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3938.4
+      },
+      {
+        "id": "test_02",
+        "question": "How many planets are in the solar system?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 2873.2
+          },
+          {
+            "attempt": 2,
+            "answer": "I can only answer questions about grocery recall notices. The question about the number of planets in the solar system is unrelated to that topic.",
+            "result": "PASS",
+            "explanation": "The answer declines a question outside recall notices.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "off_domain",
+            "answer_ms": 3088.1
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "I can only answer questions about grocery recall notices. The question about the number of planets in the solar system is unrelated to that topic.",
+        "question_kind": "off_domain",
+        "final_failure": null,
+        "latency_ms": 5961.8
+      },
+      {
+        "id": "test_03",
+        "question": "In which state is the firm behind recall F-0174-2025 located?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state) match the reference record for F-0174-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3063.8
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3064.2
+      },
+      {
+        "id": "test_04",
+        "question": "In which state is the firm behind recall F-7840-2023 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-7840-2023 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-7840-2023 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-7840-2023 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 2750.1
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-7840-2023 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 4199.1
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 6949.7
+      },
+      {
+        "id": "test_05",
+        "question": "What is the recall category of F-0584-2022, and in which state is the firm located?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state, category) match the reference record for F-0584-2022.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 2353.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 2353.5
+      },
+      {
+        "id": "test_06",
+        "question": "Which firm issued recall F-0406-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name) match the reference record for F-0406-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3599.4
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3599.6
+      },
+      {
+        "id": "test_07",
+        "question": "How many units were affected by recall F-1081-2021?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected) match the reference record for F-1081-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5465.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5466.2
+      },
+      {
+        "id": "test_08",
+        "question": "In which state is the firm behind recall F-6725-2024 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-6725-2024 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-6725-2024 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-6725-2024 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3236.6
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-6725-2024 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 3510.4
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 6747.4
+      },
+      {
+        "id": "test_09",
+        "question": "How many units were affected by recall F-2912-2025, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected, recall_date) match the reference record for F-2912-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4057.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4058.3
+      },
+      {
+        "id": "test_10",
+        "question": "What is the best way to learn to play the guitar?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The best way to learn to play the guitar depends on personal learning style, but common methods include taking lessons from a professional, using online tutorials, practicing regularly, and playing with a group for performance practice.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 3387.0
+          },
+          {
+            "attempt": 2,
+            "answer": "The best way to learn to play the guitar depends on personal learning style, but common methods include taking lessons from a professional, using online tutorials, practicing regularly, and playing with a group for performance practice. However, I can only answer questions about grocery recall notices.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 5556.2
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "REVISE",
+        "final_answer": "The best way to learn to play the guitar depends on personal learning style, but common methods include taking lessons from a professional, using online tutorials, practicing regularly, and playing with a group for performance practice. However, I can only answer questions about grocery recall notices.",
+        "question_kind": "off_domain",
+        "final_failure": "answered_off_domain",
+        "latency_ms": 8943.9
+      },
+      {
+        "id": "test_11",
+        "question": "What product was recalled under F-2975-2021, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+            "result": "PASS",
+            "explanation": "All asked fields (recall_date, product_name) match the reference record for F-2975-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3778.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3778.7
+      },
+      {
+        "id": "test_12",
+        "question": "What is the recall category of F-4489-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+            "result": "PASS",
+            "explanation": "All asked fields (category) match the reference record for F-4489-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4110.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4111.3
+      }
+    ],
+    "Lesson Memory": [
+      {
+        "id": "test_01",
+        "question": "Which firm issued recall F-0847-2021, and how many units were affected?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-0847-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4726.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4726.6
+      },
+      {
+        "id": "test_02",
+        "question": "How many planets are in the solar system?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 2639.5
+          },
+          {
+            "attempt": 2,
+            "answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 3000.0
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "REVISE",
+        "final_answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+        "question_kind": "off_domain",
+        "final_failure": "answered_off_domain",
+        "latency_ms": 5641.8
+      },
+      {
+        "id": "test_03",
+        "question": "In which state is the firm behind recall F-0174-2025 located?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state) match the reference record for F-0174-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3355.8
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3356.3
+      },
+      {
+        "id": "test_04",
+        "question": "In which state is the firm behind recall F-7840-2023 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-7840-2023 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-7840-2023 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-7840-2023 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3855.2
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-7840-2023 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 4638.5
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 8495.3
+      },
+      {
+        "id": "test_05",
+        "question": "What is the recall category of F-0584-2022, and in which state is the firm located?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state, category) match the reference record for F-0584-2022.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 2868.2
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 2869.1
+      },
+      {
+        "id": "test_06",
+        "question": "Which firm issued recall F-0406-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name) match the reference record for F-0406-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4370.7
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4371.0
+      },
+      {
+        "id": "test_07",
+        "question": "How many units were affected by recall F-1081-2021?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected) match the reference record for F-1081-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4738.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4739.2
+      },
+      {
+        "id": "test_08",
+        "question": "In which state is the firm behind recall F-6725-2024 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-6725-2024 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-6725-2024 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-6725-2024 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3370.1
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-6725-2024 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 3242.3
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 6612.8
+      },
+      {
+        "id": "test_09",
+        "question": "How many units were affected by recall F-2912-2025, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected, recall_date) match the reference record for F-2912-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4290.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4290.9
+      },
+      {
+        "id": "test_10",
+        "question": "What is the best way to learn to play the guitar?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer questions about grocery recall notices. Learning to play the guitar is not related to grocery recall notices.",
+            "result": "PASS",
+            "explanation": "The answer declines a question outside recall notices.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "off_domain",
+            "answer_ms": 2905.1
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "I can only answer questions about grocery recall notices. Learning to play the guitar is not related to grocery recall notices.",
+        "question_kind": "off_domain",
+        "final_failure": null,
+        "latency_ms": 2905.3
+      },
+      {
+        "id": "test_11",
+        "question": "What product was recalled under F-2975-2021, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+            "result": "PASS",
+            "explanation": "All asked fields (recall_date, product_name) match the reference record for F-2975-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4432.6
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4433.0
+      },
+      {
+        "id": "test_12",
+        "question": "What is the recall category of F-4489-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+            "result": "PASS",
+            "explanation": "All asked fields (category) match the reference record for F-4489-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4092.1
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4092.6
+      }
+    ],
+    "Validated Improvement": [
+      {
+        "id": "test_01",
+        "question": "Which firm issued recall F-0847-2021, and how many units were affected?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-0847-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4273.1
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Golden Farms LLC, a company from California, issued recall F-0847-2021 for 5193 units of Farmhouse Creamy Peanut Butter, 32 oz tub, due to a bacterial contamination issue.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4273.2
+      },
+      {
+        "id": "test_02",
+        "question": "How many planets are in the solar system?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 2430.0
+          },
+          {
+            "attempt": 2,
+            "answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+            "result": "REVISE",
+            "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+            "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+            "failure_type": "answered_off_domain",
+            "question_kind": "off_domain",
+            "answer_ms": 5316.3
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "REVISE",
+        "final_answer": "I can only answer questions related to grocery recall notices. The question about the number of planets in the solar system is not relevant to this database.",
+        "question_kind": "off_domain",
+        "final_failure": "answered_off_domain",
+        "latency_ms": 7749.4
+      },
+      {
+        "id": "test_03",
+        "question": "In which state is the firm behind recall F-0174-2025 located?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state) match the reference record for F-0174-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4052.0
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The firm behind recall F-0174-2025, River Bend Snacks Co., is located in the state of Pennsylvania (PA).",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4054.1
+      },
+      {
+        "id": "test_04",
+        "question": "In which state is the firm behind recall F-7840-2023 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-7840-2023 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-7840-2023 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-7840-2023 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 4131.2
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-7840-2023 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 4171.5
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-7840-2023 does not exist in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 8304.2
+      },
+      {
+        "id": "test_05",
+        "question": "What is the recall category of F-0584-2022, and in which state is the firm located?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_state, category) match the reference record for F-0584-2022.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 2724.0
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-0584-2022 is Mislabeling, and the firm is located in NJ.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 2724.2
+      },
+      {
+        "id": "test_06",
+        "question": "Which firm issued recall F-0406-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+            "result": "PASS",
+            "explanation": "All asked fields (firm_name) match the reference record for F-0406-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4317.2
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Red Barn Kitchens Inc., located in IA, issued the recall with recall number F-0406-2024 for Sunrise Valley Cheddar Crackers, 1 lb bag, due to foreign material concerns.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4317.4
+      },
+      {
+        "id": "test_07",
+        "question": "How many units were affected by recall F-1081-2021?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected) match the reference record for F-1081-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 5885.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "6939 units were affected by the recall F-1081-2021 for the Hearth & Home Enoki Mushrooms, 2 lb bag due to an undeclared allergen, conducted by Cedar Provisions Co. in PA.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 5887.7
+      },
+      {
+        "id": "test_08",
+        "question": "In which state is the firm behind recall F-6725-2024 located?",
+        "features": [
+          "recall_lookup",
+          "record_not_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall notice F-6725-2024 could not be found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "REVISE",
+            "explanation": "F-6725-2024 is not in the reference dataset, but the answer gives details for it as if it existed.",
+            "feedback": "Recall F-6725-2024 does not exist. Say it was not found and do not give any product, firm, units or date.",
+            "failure_type": "fabricated_not_found",
+            "question_kind": "not_found",
+            "answer_ms": 3822.4
+          },
+          {
+            "attempt": 2,
+            "answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+            "result": "PASS",
+            "explanation": "F-6725-2024 is not in the reference dataset and the answer says it was not found.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "not_found",
+            "answer_ms": 4916.4
+          }
+        ],
+        "n_attempts": 2,
+        "final_result": "PASS",
+        "final_answer": "Recall F-6725-2024 was not found in the database, so I cannot determine the location of the firm behind this recall.",
+        "question_kind": "not_found",
+        "final_failure": null,
+        "latency_ms": 8742.6
+      },
+      {
+        "id": "test_09",
+        "question": "How many units were affected by recall F-2912-2025, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+            "result": "PASS",
+            "explanation": "All asked fields (units_affected, recall_date) match the reference record for F-2912-2025.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4502.3
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "Recall F-2912-2025 affected 3128 units and was issued on December 1, 2025 by Silver Creek Dairy Co. in Florida.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4504.3
+      },
+      {
+        "id": "test_10",
+        "question": "What is the best way to learn to play the guitar?",
+        "features": [
+          "no_recall_number"
+        ],
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer questions about grocery recall notices. Learning to play the guitar is not related to grocery recall notices.",
+            "result": "PASS",
+            "explanation": "The answer declines a question outside recall notices.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "off_domain",
+            "answer_ms": 2279.9
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "I can only answer questions about grocery recall notices. Learning to play the guitar is not related to grocery recall notices.",
+        "question_kind": "off_domain",
+        "final_failure": null,
+        "latency_ms": 2280.0
+      },
+      {
+        "id": "test_11",
+        "question": "What product was recalled under F-2975-2021, and when was it issued?",
+        "features": [
+          "multi_part",
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+            "result": "PASS",
+            "explanation": "All asked fields (recall_date, product_name) match the reference record for F-2975-2021.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 4968.1
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The product recalled under F-2975-2021 was Prairie Gold Pistachio Ice Cream, 2 lb bag, and the recall notice was issued on November 14, 2021.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 4968.6
+      },
+      {
+        "id": "test_12",
+        "question": "What is the recall category of F-4489-2024?",
+        "features": [
+          "recall_lookup",
+          "record_found"
+        ],
+        "lessons_loaded": [],
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+            "result": "PASS",
+            "explanation": "All asked fields (category) match the reference record for F-4489-2024.",
+            "feedback": null,
+            "failure_type": null,
+            "question_kind": "record",
+            "answer_ms": 3905.0
+          }
+        ],
+        "n_attempts": 1,
+        "final_result": "PASS",
+        "final_answer": "The recall category for F-4489-2024 is an Undeclared Allergen, affecting 7491 units of Prairie Gold Chicken Salad, 32 oz tub.",
+        "question_kind": "record",
+        "final_failure": null,
+        "latency_ms": 3905.1
+      }
+    ]
+  }
+}

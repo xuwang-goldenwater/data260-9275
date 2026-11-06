@@ -4,7 +4,7 @@
     "failure_pattern": "The question is not about grocery recall notices and the answer still answers it.",
     "correction": "Reply that you can only answer questions about grocery recall notices. Do not answer the question itself.",
     "created_at": "2026-11-06",
-    "use_count": 2,
+    "use_count": 6,
     "applies_to": "no_recall_number",
     "failure_type": "answered_off_domain",
     "created_from": [
