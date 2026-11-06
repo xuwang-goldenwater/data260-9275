@@ -1,0 +1,106 @@
+# DATA 260 HW9 Part 3.1 - labeled test set for the semantic-cache threshold sweep.
+# Xu Wang, PREFIX s9275, domain 3 (Grocery supply and recall notices).
+#
+# Committed BEFORE any sweep is run. Labels are not edited after results exist;
+# a labeling mistake found later goes to reports/hw09/LABEL_ERRATA.md instead.
+#
+# How the sweep uses this file
+#   1. empty the cache, put the 10 seeds in it (each answered once by the HW8 agents)
+#   2. freeze the cache: during the sweep a miss is never written back
+#   3. send all 40 cases at thresholds 0.75 / 0.80 / 0.85 / 0.90 / 0.95
+#
+# Definitions (fixed here, before any result):
+#   correct hit  = an exact or paraphrase case that hits ITS OWN seed
+#   false hit    = (a) a similar or unrelated case that hits any seed, or
+#                  (b) an exact or paraphrase case that hits a DIFFERENT seed
+#   missed hit   = an exact or paraphrase case that misses
+#   hit rate        = hits / 40
+#   false-hit rate  = false hits / hits      (of the answers the cache served, how many were wrong)
+#
+# kinds
+#   exact       the seed, word for word                         expect: hit
+#   paraphrase  same question, same correct answer, new wording   expect: hit
+#   similar     looks like the seed, but the correct answer differs
+#               (other recall number, other field, other audience) expect: miss
+#   unrelated   no cached answer applies                          expect: miss
+#
+# Record values below come from s9275_rel on 2026-11-06 (MySQLRepo.get / search).
+
+seeds:
+  # --- record questions: the answer depends on one s9275_rel row -------------
+  - {id: S1, query: "How many units were affected by recall F-0001-2025?",
+     recall_number: F-0001-2025, field: units_affected, value: 8019}
+  - {id: S2, query: "Which firm issued recall F-0002-2021?",
+     recall_number: F-0002-2021, field: firm_name, value: "Maple Snacks Co."}
+  - {id: S3, query: "What is the recall date of F-0003-2023?",
+     recall_number: F-0003-2023, field: recall_date, value: "2023-12-29"}
+  - {id: S4, query: "What product was recalled under F-4393-2026?",
+     recall_number: F-4393-2026, field: product_name, value: "Coastal Catch Cheddar Crackers, 12 oz"}
+  - {id: S5, query: "What is the recall category of F-2015-2026?",
+     recall_number: F-2015-2026, field: category, value: "Undeclared Allergen"}
+  - {id: S6, query: "In which state is the firm for recall F-4529-2026 located?",
+     recall_number: F-4529-2026, field: firm_state, value: GA}
+  # --- general questions: no recall number, answered from the agents' knowledge --
+  - {id: S7, query: "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?"}
+  - {id: S8, query: "How should a grocery store dispose of recalled products?"}
+  - {id: S9, query: "How should a store handle refunds for customers who return recalled items?"}
+  - {id: S10, query: "How should a grocery store notify customers about a product recall?"}
+
+cases:
+  # ===== exact duplicates (10) - expect hit on own seed ==========================
+  - {id: E01, kind: exact, seed: S1,  expect: hit, query: "How many units were affected by recall F-0001-2025?"}
+  - {id: E02, kind: exact, seed: S2,  expect: hit, query: "Which firm issued recall F-0002-2021?"}
+  - {id: E03, kind: exact, seed: S3,  expect: hit, query: "What is the recall date of F-0003-2023?"}
+  - {id: E04, kind: exact, seed: S4,  expect: hit, query: "What product was recalled under F-4393-2026?"}
+  - {id: E05, kind: exact, seed: S5,  expect: hit, query: "What is the recall category of F-2015-2026?"}
+  - {id: E06, kind: exact, seed: S6,  expect: hit, query: "In which state is the firm for recall F-4529-2026 located?"}
+  - {id: E07, kind: exact, seed: S7,  expect: hit, query: "What should a grocery store do when it receives a recall notice for peanut butter that may contain undeclared milk?"}
+  - {id: E08, kind: exact, seed: S8,  expect: hit, query: "How should a grocery store dispose of recalled products?"}
+  - {id: E09, kind: exact, seed: S9,  expect: hit, query: "How should a store handle refunds for customers who return recalled items?"}
+  - {id: E10, kind: exact, seed: S10, expect: hit, query: "How should a grocery store notify customers about a product recall?"}
+
+  # ===== paraphrases (10) - same correct answer, expect hit on own seed ==========
+  - {id: P01, kind: paraphrase, seed: S1,  expect: hit, query: "What was the number of units affected by recall F-0001-2025?"}
+  - {id: P02, kind: paraphrase, seed: S2,  expect: hit, query: "Which company is responsible for recall F-0002-2021?"}
+  - {id: P03, kind: paraphrase, seed: S3,  expect: hit, query: "On what date was recall F-0003-2023 announced?"}
+  - {id: P04, kind: paraphrase, seed: S4,  expect: hit, query: "Which product does recall F-4393-2026 cover?"}
+  - {id: P05, kind: paraphrase, seed: S5,  expect: hit, query: "Why was the product in recall F-2015-2026 recalled?"}
+  - {id: P06, kind: paraphrase, seed: S6,  expect: hit, query: "Where is the company behind recall F-4529-2026 based?"}
+  - {id: P07, kind: paraphrase, seed: S7,  expect: hit, query: "How should a grocery store respond to a recall notice for peanut butter that might contain undeclared milk?"}
+  - {id: P08, kind: paraphrase, seed: S8,  expect: hit, query: "What is the proper way for a grocery store to get rid of recalled products?"}
+  - {id: P09, kind: paraphrase, seed: S9,  expect: hit, query: "How should a store process refunds when customers bring back recalled items?"}
+  - {id: P10, kind: paraphrase, seed: S10, expect: hit, query: "What is the best way for a grocery store to tell customers about a product recall?"}
+
+  # ===== superficially similar (10) - different correct answer, expect miss ======
+  - {id: M01, kind: similar, seed: S1, expect: miss, query: "How many units were affected by recall F-0002-2021?",
+     why: "same wording as S1, other recall number: 6038 units, not 8019"}
+  - {id: M02, kind: similar, seed: S2, expect: miss, query: "Which firm issued recall F-0003-2023?",
+     why: "same wording as S2, other recall number: Harbor Mills Inc., not Maple Snacks Co."}
+  - {id: M03, kind: similar, seed: S3, expect: miss, query: "What is the recall date of F-0001-2025?",
+     why: "same wording as S3, recall number of S1: 2025-06-23, not 2023-12-29"}
+  - {id: M04, kind: similar, seed: S4, expect: miss, query: "What product was recalled under F-4906-2026?",
+     why: "same wording as S4, other recall number: Morning Dew Creamy Peanut Butter, not cheddar crackers"}
+  - {id: M05, kind: similar, seed: S5, expect: miss, query: "What is the recall category of F-1867-2026?",
+     why: "same wording as S5, other recall number: Bacterial Contamination, not Undeclared Allergen"}
+  - {id: M06, kind: similar, seed: S6, expect: miss, query: "In which state is the firm for recall F-2320-2026 located?",
+     why: "same wording as S6, other recall number: IA, not GA"}
+  - {id: M07, kind: similar, seed: S7, expect: miss, query: "What should a consumer do if they bought peanut butter that may contain undeclared milk?",
+     why: "consumer instead of store: stop eating / return it, not pull stock from shelves"}
+  - {id: M08, kind: similar, seed: S8, expect: miss, query: "How should a grocery store hold recalled products until the supplier collects them?",
+     why: "keep and segregate for pickup, the opposite of disposing of them"}
+  - {id: M09, kind: similar, seed: S9, expect: miss, query: "How should a store get reimbursed by the supplier for recalled items it removed?",
+     why: "store-to-supplier credit, not store-to-customer refund"}
+  - {id: M10, kind: similar, seed: S10, expect: miss, query: "How should a food company notify the FDA about a product recall?",
+     why: "firm reporting to the regulator, not a store informing shoppers"}
+
+  # ===== unrelated (10) - nothing in the cache applies, expect miss ==============
+  - {id: U01, kind: unrelated, seed: null, expect: miss, query: "What are the store's opening hours on Sunday?"}
+  - {id: U02, kind: unrelated, seed: null, expect: miss, query: "How do I reset my account password?"}
+  - {id: U03, kind: unrelated, seed: null, expect: miss, query: "What is the capital of France?"}
+  - {id: U04, kind: unrelated, seed: null, expect: miss, query: "How long should I boil an egg?"}
+  - {id: U05, kind: unrelated, seed: null, expect: miss, query: "What is the weather in San Jose today?"}
+  - {id: U06, kind: unrelated, seed: null, expect: miss, query: "How do I make a sourdough starter at home?"}
+  - {id: U07, kind: unrelated, seed: null, expect: miss, query: "What temperature should a grocery store freezer be set to?"}
+  - {id: U08, kind: unrelated, seed: null, expect: miss, query: "How do I apply for a cashier job at a grocery store?"}
+  - {id: U09, kind: unrelated, seed: null, expect: miss, query: "What is the shelf life of an opened jar of tahini?"}
+  - {id: U10, kind: unrelated, seed: null, expect: miss, query: "How many recall notices were issued in total in 2024?"}
