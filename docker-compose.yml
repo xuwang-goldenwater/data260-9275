@@ -83,3 +83,18 @@ services:
       worker:
         condition: service_started
     restart: on-failure
+
+  # HW9: Redis for the view counter (Part 1) and the semantic cache (Parts 2-3).
+  # redis-stack-server = Redis + the RediSearch module, which provides the vector
+  # index (FT.CREATE ... VECTOR) that a plain redis image does not have.
+  # Every key the homework writes starts with s9275: .
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    container_name: s9275-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

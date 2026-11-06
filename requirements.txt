@@ -58,3 +58,6 @@ pymongo>=4.6
 pyjwt>=2.8
 ruff>=0.6
 pre-commit>=3.7
+
+# HW9 Parts 1-3 - Redis view counter and semantic cache (vector index needs redis-stack)
+redis>=5.0
