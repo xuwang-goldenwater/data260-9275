@@ -1,0 +1,42 @@
+[
+  {
+    "id": "train_01",
+    "question": "What is the capital of France?"
+  },
+  {
+    "id": "train_02",
+    "question": "What product was recalled under F-4083-2025, and when was it issued?"
+  },
+  {
+    "id": "train_03",
+    "question": "What product was recalled under F-1756-2023?"
+  },
+  {
+    "id": "train_04",
+    "question": "What is the recall category of F-7258-2022?"
+  },
+  {
+    "id": "train_05",
+    "question": "Which firm issued recall F-2764-2022, and how many units were affected?"
+  },
+  {
+    "id": "train_06",
+    "question": "What is the recall category of F-3598-2022, and in which state is the firm located?"
+  },
+  {
+    "id": "train_07",
+    "question": "How long should I boil an egg?"
+  },
+  {
+    "id": "train_08",
+    "question": "When was recall F-4837-2023 issued?"
+  },
+  {
+    "id": "train_09",
+    "question": "When was recall F-9873-2024 issued?"
+  },
+  {
+    "id": "train_10",
+    "question": "What is the recall category of F-1764-2023?"
+  }
+]

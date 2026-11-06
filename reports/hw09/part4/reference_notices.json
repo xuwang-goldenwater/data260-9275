@@ -1,0 +1,307 @@
+{
+  "source": "s9275_rel.recall_notices JOIN firms",
+  "exported_at": "2026-11-06T15:19:11",
+  "seed": 9275,
+  "records": [
+    {
+      "id": 4837,
+      "recall_number": "F-4837-2023",
+      "product_name": "Coastal Catch Baby Spinach, 12 oz",
+      "category": "Mislabeling",
+      "recall_date": "2023-05-29",
+      "units_affected": 1203,
+      "firm_name": "Heartland Farms LLC",
+      "firm_state": "CO"
+    },
+    {
+      "id": 1756,
+      "recall_number": "F-1756-2023",
+      "product_name": "Prairie Gold Fruit Cups, 32 oz tub",
+      "category": "Foreign Material",
+      "recall_date": "2023-09-12",
+      "units_affected": 6264,
+      "firm_name": "Northstar Foods, Inc.",
+      "firm_state": "IA"
+    },
+    {
+      "id": 1764,
+      "recall_number": "F-1764-2023",
+      "product_name": "Green Leaf Cheddar Crackers, 2 lb bag",
+      "category": "Undeclared Allergen",
+      "recall_date": "2023-10-12",
+      "units_affected": 316,
+      "firm_name": "Pine Valley Farms LLC",
+      "firm_state": "TX"
+    },
+    {
+      "id": 2764,
+      "recall_number": "F-2764-2022",
+      "product_name": "Blue Heron Infant Formula, 6-pack",
+      "category": "Undeclared Allergen",
+      "recall_date": "2022-04-25",
+      "units_affected": 9216,
+      "firm_name": "Blue Ridge Provisions Co.",
+      "firm_state": "PA"
+    },
+    {
+      "id": 4083,
+      "recall_number": "F-4083-2025",
+      "product_name": "Green Leaf Frozen Raw Shrimp, 1 lb bag",
+      "category": "Mislabeling",
+      "recall_date": "2025-02-06",
+      "units_affected": 9877,
+      "firm_name": "Coastal Foods, Inc.",
+      "firm_state": "PA"
+    },
+    {
+      "id": 3598,
+      "recall_number": "F-3598-2022",
+      "product_name": "Prairie Gold Fruit Cups, 2 lb bag",
+      "category": "Mislabeling",
+      "recall_date": "2022-09-07",
+      "units_affected": 462,
+      "firm_name": "Pacific Seafood LLC",
+      "firm_state": "NY"
+    },
+    {
+      "id": 2545,
+      "recall_number": "F-2545-2025",
+      "product_name": "Good Grain Shredded Mozzarella, 16 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2025-08-07",
+      "units_affected": 7455,
+      "firm_name": "Blue Ridge Dairy Co.",
+      "firm_state": "TX"
+    },
+    {
+      "id": 194,
+      "recall_number": "F-0194-2024",
+      "product_name": "Little Acorn Enoki Mushrooms, 16 oz",
+      "category": "Bacterial Contamination",
+      "recall_date": "2024-07-31",
+      "units_affected": 1886,
+      "firm_name": "Stone Mill Bakery Inc.",
+      "firm_state": "FL"
+    },
+    {
+      "id": 3000,
+      "recall_number": "F-3000-2025",
+      "product_name": "Prairie Gold Pistachio Ice Cream, 8 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2025-05-17",
+      "units_affected": 7000,
+      "firm_name": "Blue Ridge Farms LLC",
+      "firm_state": "OR"
+    },
+    {
+      "id": 407,
+      "recall_number": "F-0407-2023",
+      "product_name": "Harbor Point Ground Turkey, 6-pack",
+      "category": "Bacterial Contamination",
+      "recall_date": "2023-02-19",
+      "units_affected": 5633,
+      "firm_name": "Evergreen Farms LLC",
+      "firm_state": "NJ"
+    },
+    {
+      "id": 3746,
+      "recall_number": "F-3746-2023",
+      "product_name": "Morning Dew Fruit Cups, 16 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2023-06-12",
+      "units_affected": 4274,
+      "firm_name": "Willow Foods, Inc.",
+      "firm_state": "NJ"
+    },
+    {
+      "id": 2455,
+      "recall_number": "F-2455-2021",
+      "product_name": "Sunrise Valley Whole Milk Yogurt, 12 oz",
+      "category": "Mislabeling",
+      "recall_date": "2021-10-19",
+      "units_affected": 7545,
+      "firm_name": "Cedar Kitchens Inc.",
+      "firm_state": "NY"
+    },
+    {
+      "id": 1766,
+      "recall_number": "F-1766-2024",
+      "product_name": "Mountain Fresh Smoked Salmon, 1 lb bag",
+      "category": "Mislabeling",
+      "recall_date": "2024-01-22",
+      "units_affected": 6254,
+      "firm_name": "Silver Creek Farms LLC",
+      "firm_state": "WA"
+    },
+    {
+      "id": 1957,
+      "recall_number": "F-1957-2026",
+      "product_name": "Little Acorn Chocolate Chip Cookies, 12 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2026-07-14",
+      "units_affected": 4083,
+      "firm_name": "Lakeside Farms LLC",
+      "firm_state": "NV"
+    },
+    {
+      "id": 3449,
+      "recall_number": "F-3449-2024",
+      "product_name": "Harbor Point Cheddar Crackers, 8 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2024-03-05",
+      "units_affected": 8531,
+      "firm_name": "Northstar Seafood LLC",
+      "firm_state": "MI"
+    },
+    {
+      "id": 1786,
+      "recall_number": "F-1786-2024",
+      "product_name": "Golden Fields Frozen Diced Onions, 2 lb bag",
+      "category": "Mislabeling",
+      "recall_date": "2024-01-11",
+      "units_affected": 6234,
+      "firm_name": "Orchard Bakery Inc.",
+      "firm_state": "CA"
+    },
+    {
+      "id": 3462,
+      "recall_number": "F-3462-2025",
+      "product_name": "Harbor Point Smoked Salmon, 2 lb bag",
+      "category": "Undeclared Allergen",
+      "recall_date": "2025-11-23",
+      "units_affected": 2578,
+      "firm_name": "Willow Farms LLC",
+      "firm_state": "OH"
+    },
+    {
+      "id": 1281,
+      "recall_number": "F-1281-2026",
+      "product_name": "Prairie Gold Whole Milk Yogurt, 6-pack",
+      "category": "Undeclared Allergen",
+      "recall_date": "2026-01-09",
+      "units_affected": 6739,
+      "firm_name": "Blue Ridge Mills Inc.",
+      "firm_state": "NC"
+    },
+    {
+      "id": 2876,
+      "recall_number": "F-2876-2026",
+      "product_name": "True North Almond Granola, 1 lb bag",
+      "category": "Undeclared Allergen",
+      "recall_date": "2026-04-15",
+      "units_affected": 5144,
+      "firm_name": "Prairie Snacks Co.",
+      "firm_state": "TX"
+    },
+    {
+      "id": 2381,
+      "recall_number": "F-2381-2021",
+      "product_name": "Green Leaf Almond Granola, family size",
+      "category": "Mislabeling",
+      "recall_date": "2021-05-06",
+      "units_affected": 5639,
+      "firm_name": "Pacific Farms LLC",
+      "firm_state": "PA"
+    },
+    {
+      "id": 4489,
+      "recall_number": "F-4489-2024",
+      "product_name": "Prairie Gold Chicken Salad, 32 oz tub",
+      "category": "Undeclared Allergen",
+      "recall_date": "2024-06-04",
+      "units_affected": 7491,
+      "firm_name": "Northstar Mills Inc.",
+      "firm_state": "IA"
+    },
+    {
+      "id": 174,
+      "recall_number": "F-0174-2025",
+      "product_name": "Sunrise Valley Smoked Salmon, family size",
+      "category": "Undeclared Allergen",
+      "recall_date": "2025-12-08",
+      "units_affected": 1906,
+      "firm_name": "River Bend Snacks Co.",
+      "firm_state": "PA"
+    },
+    {
+      "id": 1081,
+      "recall_number": "F-1081-2021",
+      "product_name": "Hearth & Home Enoki Mushrooms, 2 lb bag",
+      "category": "Undeclared Allergen",
+      "recall_date": "2021-12-16",
+      "units_affected": 6939,
+      "firm_name": "Cedar Provisions Co.",
+      "firm_state": "PA"
+    },
+    {
+      "id": 406,
+      "recall_number": "F-0406-2024",
+      "product_name": "Sunrise Valley Cheddar Crackers, 1 lb bag",
+      "category": "Foreign Material",
+      "recall_date": "2024-04-19",
+      "units_affected": 7614,
+      "firm_name": "Red Barn Kitchens Inc.",
+      "firm_state": "IA"
+    },
+    {
+      "id": 847,
+      "recall_number": "F-0847-2021",
+      "product_name": "Farmhouse Creamy Peanut Butter, 32 oz tub",
+      "category": "Bacterial Contamination",
+      "recall_date": "2021-08-13",
+      "units_affected": 5193,
+      "firm_name": "Golden Farms LLC",
+      "firm_state": "CA"
+    },
+    {
+      "id": 2975,
+      "recall_number": "F-2975-2021",
+      "product_name": "Prairie Gold Pistachio Ice Cream, 2 lb bag",
+      "category": "Undeclared Allergen",
+      "recall_date": "2021-11-14",
+      "units_affected": 7025,
+      "firm_name": "Lakeside Seafood LLC",
+      "firm_state": "AZ"
+    },
+    {
+      "id": 584,
+      "recall_number": "F-0584-2022",
+      "product_name": "Hearth & Home Frozen Raw Shrimp, 1 lb bag",
+      "category": "Mislabeling",
+      "recall_date": "2022-08-01",
+      "units_affected": 1496,
+      "firm_name": "Willow Foods, Inc.",
+      "firm_state": "NJ"
+    },
+    {
+      "id": 2912,
+      "recall_number": "F-2912-2025",
+      "product_name": "Green Leaf Tahini, 16 oz",
+      "category": "Undeclared Allergen",
+      "recall_date": "2025-12-01",
+      "units_affected": 3128,
+      "firm_name": "Silver Creek Dairy Co.",
+      "firm_state": "FL"
+    },
+    {
+      "id": 3908,
+      "recall_number": "F-3908-2026",
+      "product_name": "Harbor Point Baby Spinach, family size",
+      "category": "Bacterial Contamination",
+      "recall_date": "2026-08-02",
+      "units_affected": 152,
+      "firm_name": "River Bend Bakery Inc.",
+      "firm_state": "NC"
+    },
+    {
+      "id": 2697,
+      "recall_number": "F-2697-2022",
+      "product_name": "Golden Fields Hummus, 6-pack",
+      "category": "Bacterial Contamination",
+      "recall_date": "2022-12-06",
+      "units_affected": 3343,
+      "firm_name": "Prairie Mills Inc.",
+      "firm_state": "MI"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "val_01",
+    "question": "Which firm issued recall F-3449-2024, and how many units were affected?"
+  },
+  {
+    "id": "val_02",
+    "question": "How many units were affected by recall F-9347-2022?"
+  },
+  {
+    "id": "val_03",
+    "question": "In which state is the firm behind recall F-2455-2021 located?"
+  },
+  {
+    "id": "val_04",
+    "question": "What is the recall category of F-3462-2025, and in which state is the firm located?"
+  },
+  {
+    "id": "val_05",
+    "question": "What is the recall category of F-3746-2023?"
+  },
+  {
+    "id": "val_06",
+    "question": "How many units were affected by recall F-7947-2025?"
+  },
+  {
+    "id": "val_07",
+    "question": "How many units were affected by recall F-1766-2024?"
+  },
+  {
+    "id": "val_08",
+    "question": "What product was recalled under F-1786-2024, and when was it issued?"
+  },
+  {
+    "id": "val_09",
+    "question": "Which firm issued recall F-1957-2026?"
+  },
+  {
+    "id": "val_10",
+    "question": "Who wrote the novel Pride and Prejudice?"
+  }
+]
