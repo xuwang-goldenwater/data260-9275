@@ -1,0 +1,28 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The question is not about grocery recall notices and the answer still answers it.",
+    "correction": "Reply that you can only answer questions about grocery recall notices. Do not answer the question itself.",
+    "created_at": "2026-11-06",
+    "use_count": 2,
+    "applies_to": "no_recall_number",
+    "failure_type": "answered_off_domain",
+    "created_from": [
+      "train_01",
+      "train_07"
+    ],
+    "status": "kept",
+    "validation": {
+      "pass_before": 9,
+      "pass_after": 9,
+      "of": 10,
+      "unsupported_before": 1,
+      "unsupported_after": 1,
+      "regressions": [],
+      "fixed": [],
+      "failures_improve_or_same": true,
+      "previously_correct_still_correct": true,
+      "no_new_unsupported_answers_on_unrelated": true
+    }
+  }
+]

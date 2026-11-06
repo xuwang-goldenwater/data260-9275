@@ -1,0 +1,587 @@
+{
+  "run_at": "2026-11-06T15:38:29",
+  "baseline_without_new_lessons": [
+    {
+      "id": "val_01",
+      "question": "Which firm issued recall F-3449-2024, and how many units were affected?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Northstar Seafood LLC issued recall F-3449-2024 for Harbor Point Cheddar Crackers, 8 oz, affecting 8531 units due to an undeclared allergen, and the recall was effective as of 2024-03-05.",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-3449-2024.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 7860.5
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "Northstar Seafood LLC issued recall F-3449-2024 for Harbor Point Cheddar Crackers, 8 oz, affecting 8531 units due to an undeclared allergen, and the recall was effective as of 2024-03-05.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 7862.3
+    },
+    {
+      "id": "val_02",
+      "question": "How many units were affected by recall F-9347-2022?",
+      "features": [
+        "recall_lookup",
+        "record_not_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Recall F-9347-2022 was not found in the database, so the number of units affected cannot be determined.",
+          "result": "PASS",
+          "explanation": "F-9347-2022 is not in the reference dataset and the answer says it was not found.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "not_found",
+          "answer_ms": 3126.1
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "Recall F-9347-2022 was not found in the database, so the number of units affected cannot be determined.",
+      "question_kind": "not_found",
+      "final_failure": null,
+      "latency_ms": 3126.2
+    },
+    {
+      "id": "val_03",
+      "question": "In which state is the firm behind recall F-2455-2021 located?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The firm behind recall F-2455-2021, Cedar Kitchens Inc., is located in the state of New York (NY).",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_state) match the reference record for F-2455-2021.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 5228.8
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The firm behind recall F-2455-2021, Cedar Kitchens Inc., is located in the state of New York (NY).",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 5233.3
+    },
+    {
+      "id": "val_04",
+      "question": "What is the recall category of F-3462-2025, and in which state is the firm located?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The recall category for F-3462-2025 is an Undeclared Allergen, and the firm is located in Ohio.",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_state, category) match the reference record for F-3462-2025.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 4267.8
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The recall category for F-3462-2025 is an Undeclared Allergen, and the firm is located in Ohio.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 4268.3
+    },
+    {
+      "id": "val_05",
+      "question": "What is the recall category of F-3746-2023?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The recall category for F-3746-2023 is an Undeclared Allergen, affecting Morning Dew Fruit Cups, 16 oz products.",
+          "result": "PASS",
+          "explanation": "All asked fields (category) match the reference record for F-3746-2023.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 4840.3
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The recall category for F-3746-2023 is an Undeclared Allergen, affecting Morning Dew Fruit Cups, 16 oz products.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 4840.6
+    },
+    {
+      "id": "val_06",
+      "question": "How many units were affected by recall F-7947-2025?",
+      "features": [
+        "recall_lookup",
+        "record_not_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The database does not contain any recall notice with the identifier F-7947-2025.",
+          "result": "REVISE",
+          "explanation": "F-7947-2025 is not in the reference dataset, but the answer gives details for it as if it existed.",
+          "feedback": "Recall F-7947-2025 does not exist. Say it was not found and do not give any product, firm, units or date.",
+          "failure_type": "fabricated_not_found",
+          "question_kind": "not_found",
+          "answer_ms": 2321.2
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "REVISE",
+      "final_answer": "The database does not contain any recall notice with the identifier F-7947-2025.",
+      "question_kind": "not_found",
+      "final_failure": "fabricated_not_found",
+      "latency_ms": 2321.3
+    },
+    {
+      "id": "val_07",
+      "question": "How many units were affected by recall F-1766-2024?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "6254 units were affected by the recall F-1766-2024 for the Mountain Fresh Smoked Salmon, 1 lb bag.",
+          "result": "PASS",
+          "explanation": "All asked fields (units_affected) match the reference record for F-1766-2024.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 3471.4
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "6254 units were affected by the recall F-1766-2024 for the Mountain Fresh Smoked Salmon, 1 lb bag.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 3471.6
+    },
+    {
+      "id": "val_08",
+      "question": "What product was recalled under F-1786-2024, and when was it issued?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The product recalled under F-1786-2024 was Golden Fields Frozen Diced Onions, 2 lb bag, and the recall notice was issued on January 11, 2024.",
+          "result": "PASS",
+          "explanation": "All asked fields (recall_date, product_name) match the reference record for F-1786-2024.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 5536.9
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The product recalled under F-1786-2024 was Golden Fields Frozen Diced Onions, 2 lb bag, and the recall notice was issued on January 11, 2024.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 5537.6
+    },
+    {
+      "id": "val_09",
+      "question": "Which firm issued recall F-1957-2026?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Lakeside Farms LLC, located in NV, issued the recall with recall number F-1957-2026 for Little Acorn Chocolate Chip Cookies, 12 oz due to an undeclared allergen.",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_name) match the reference record for F-1957-2026.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 5231.3
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "Lakeside Farms LLC, located in NV, issued the recall with recall number F-1957-2026 for Little Acorn Chocolate Chip Cookies, 12 oz due to an undeclared allergen.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 5231.7
+    },
+    {
+      "id": "val_10",
+      "question": "Who wrote the novel Pride and Prejudice?",
+      "features": [
+        "no_recall_number"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Pride and Prejudice was written by the English novelist Jane Austen.",
+          "result": "REVISE",
+          "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+          "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+          "failure_type": "answered_off_domain",
+          "question_kind": "off_domain",
+          "answer_ms": 2050.6
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "REVISE",
+      "final_answer": "Pride and Prejudice was written by the English novelist Jane Austen.",
+      "question_kind": "off_domain",
+      "final_failure": "answered_off_domain",
+      "latency_ms": 2054.4
+    }
+  ],
+  "report": [
+    {
+      "lesson_id": "lesson_001",
+      "kept": true,
+      "after": [
+        {
+          "id": "val_01",
+          "question": "Which firm issued recall F-3449-2024, and how many units were affected?",
+          "features": [
+            "multi_part",
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "Northstar Seafood LLC issued recall F-3449-2024 for Harbor Point Cheddar Crackers, 8 oz, affecting 8531 units due to an undeclared allergen, and the recall was effective as of 2024-03-05.",
+              "result": "PASS",
+              "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-3449-2024.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 6011.0
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "Northstar Seafood LLC issued recall F-3449-2024 for Harbor Point Cheddar Crackers, 8 oz, affecting 8531 units due to an undeclared allergen, and the recall was effective as of 2024-03-05.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 6011.5
+        },
+        {
+          "id": "val_02",
+          "question": "How many units were affected by recall F-9347-2022?",
+          "features": [
+            "recall_lookup",
+            "record_not_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "Recall F-9347-2022 was not found in the database, so the number of units affected cannot be determined.",
+              "result": "PASS",
+              "explanation": "F-9347-2022 is not in the reference dataset and the answer says it was not found.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "not_found",
+              "answer_ms": 2923.5
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "Recall F-9347-2022 was not found in the database, so the number of units affected cannot be determined.",
+          "question_kind": "not_found",
+          "final_failure": null,
+          "latency_ms": 2923.8
+        },
+        {
+          "id": "val_03",
+          "question": "In which state is the firm behind recall F-2455-2021 located?",
+          "features": [
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "The firm behind recall F-2455-2021, Cedar Kitchens Inc., is located in the state of New York (NY).",
+              "result": "PASS",
+              "explanation": "All asked fields (firm_state) match the reference record for F-2455-2021.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 3680.4
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "The firm behind recall F-2455-2021, Cedar Kitchens Inc., is located in the state of New York (NY).",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 3680.9
+        },
+        {
+          "id": "val_04",
+          "question": "What is the recall category of F-3462-2025, and in which state is the firm located?",
+          "features": [
+            "multi_part",
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "The recall category for F-3462-2025 is an Undeclared Allergen, and the firm is located in Ohio.",
+              "result": "PASS",
+              "explanation": "All asked fields (firm_state, category) match the reference record for F-3462-2025.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 2964.6
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "The recall category for F-3462-2025 is an Undeclared Allergen, and the firm is located in Ohio.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 2964.9
+        },
+        {
+          "id": "val_05",
+          "question": "What is the recall category of F-3746-2023?",
+          "features": [
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "The recall category for F-3746-2023 is an Undeclared Allergen, affecting Morning Dew Fruit Cups, 16 oz products.",
+              "result": "PASS",
+              "explanation": "All asked fields (category) match the reference record for F-3746-2023.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 3197.0
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "The recall category for F-3746-2023 is an Undeclared Allergen, affecting Morning Dew Fruit Cups, 16 oz products.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 3197.1
+        },
+        {
+          "id": "val_06",
+          "question": "How many units were affected by recall F-7947-2025?",
+          "features": [
+            "recall_lookup",
+            "record_not_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "The database does not contain any recall notice with the identifier F-7947-2025.",
+              "result": "REVISE",
+              "explanation": "F-7947-2025 is not in the reference dataset, but the answer gives details for it as if it existed.",
+              "feedback": "Recall F-7947-2025 does not exist. Say it was not found and do not give any product, firm, units or date.",
+              "failure_type": "fabricated_not_found",
+              "question_kind": "not_found",
+              "answer_ms": 2847.9
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "REVISE",
+          "final_answer": "The database does not contain any recall notice with the identifier F-7947-2025.",
+          "question_kind": "not_found",
+          "final_failure": "fabricated_not_found",
+          "latency_ms": 2848.1
+        },
+        {
+          "id": "val_07",
+          "question": "How many units were affected by recall F-1766-2024?",
+          "features": [
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "6254 units were affected by the recall F-1766-2024 for the Mountain Fresh Smoked Salmon, 1 lb bag.",
+              "result": "PASS",
+              "explanation": "All asked fields (units_affected) match the reference record for F-1766-2024.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 3902.3
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "6254 units were affected by the recall F-1766-2024 for the Mountain Fresh Smoked Salmon, 1 lb bag.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 3902.5
+        },
+        {
+          "id": "val_08",
+          "question": "What product was recalled under F-1786-2024, and when was it issued?",
+          "features": [
+            "multi_part",
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "The product recalled under F-1786-2024 was Golden Fields Frozen Diced Onions, 2 lb bag, and the recall notice was issued on January 11, 2024.",
+              "result": "PASS",
+              "explanation": "All asked fields (recall_date, product_name) match the reference record for F-1786-2024.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 3993.2
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "The product recalled under F-1786-2024 was Golden Fields Frozen Diced Onions, 2 lb bag, and the recall notice was issued on January 11, 2024.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 3993.6
+        },
+        {
+          "id": "val_09",
+          "question": "Which firm issued recall F-1957-2026?",
+          "features": [
+            "recall_lookup",
+            "record_found"
+          ],
+          "lessons_loaded": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "Lakeside Farms LLC, located in NV, issued the recall with recall number F-1957-2026 for Little Acorn Chocolate Chip Cookies, 12 oz due to an undeclared allergen.",
+              "result": "PASS",
+              "explanation": "All asked fields (firm_name) match the reference record for F-1957-2026.",
+              "feedback": null,
+              "failure_type": null,
+              "question_kind": "record",
+              "answer_ms": 4965.1
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "PASS",
+          "final_answer": "Lakeside Farms LLC, located in NV, issued the recall with recall number F-1957-2026 for Little Acorn Chocolate Chip Cookies, 12 oz due to an undeclared allergen.",
+          "question_kind": "record",
+          "final_failure": null,
+          "latency_ms": 4966.5
+        },
+        {
+          "id": "val_10",
+          "question": "Who wrote the novel Pride and Prejudice?",
+          "features": [
+            "no_recall_number"
+          ],
+          "lessons_loaded": [
+            "lesson_001"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "answer": "Pride and Prejudice was written by Jane Austen.",
+              "result": "REVISE",
+              "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+              "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+              "failure_type": "answered_off_domain",
+              "question_kind": "off_domain",
+              "answer_ms": 2060.7
+            }
+          ],
+          "n_attempts": 1,
+          "final_result": "REVISE",
+          "final_answer": "Pride and Prejudice was written by Jane Austen.",
+          "question_kind": "off_domain",
+          "final_failure": "answered_off_domain",
+          "latency_ms": 2061.1
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "lesson_id": "lesson_001",
+      "failure_pattern": "The question is not about grocery recall notices and the answer still answers it.",
+      "correction": "Reply that you can only answer questions about grocery recall notices. Do not answer the question itself.",
+      "created_at": "2026-11-06",
+      "use_count": 1,
+      "applies_to": "no_recall_number",
+      "failure_type": "answered_off_domain",
+      "created_from": [
+        "train_01",
+        "train_07"
+      ],
+      "status": "kept",
+      "validation": {
+        "pass_before": 8,
+        "pass_after": 8,
+        "of": 10,
+        "unsupported_before": 2,
+        "unsupported_after": 2,
+        "regressions": [],
+        "fixed": [],
+        "failures_improve_or_same": true,
+        "previously_correct_still_correct": true,
+        "no_new_unsupported_answers_on_unrelated": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "run_at": "2026-11-06T15:29:29",
+  "rows": [
+    {
+      "id": "train_01",
+      "question": "What is the capital of France?",
+      "features": [
+        "no_recall_number"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The capital of France is Paris.",
+          "result": "REVISE",
+          "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+          "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+          "failure_type": "answered_off_domain",
+          "question_kind": "off_domain",
+          "answer_ms": 755.2
+        },
+        {
+          "attempt": 2,
+          "answer": "I can only answer questions about grocery recall notices. The question about the capital of France is unrelated to that topic.",
+          "result": "PASS",
+          "explanation": "The answer declines a question outside recall notices.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "off_domain",
+          "answer_ms": 2151.5
+        }
+      ],
+      "n_attempts": 2,
+      "final_result": "PASS",
+      "final_answer": "I can only answer questions about grocery recall notices. The question about the capital of France is unrelated to that topic.",
+      "question_kind": "off_domain",
+      "final_failure": null,
+      "latency_ms": 2907.0
+    },
+    {
+      "id": "train_02",
+      "question": "What product was recalled under F-4083-2025, and when was it issued?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The product recalled under F-4083-2025 was Green Leaf Frozen Raw Shrimp, 1 lb bag, and the recall notice was issued on February 6, 2025.",
+          "result": "PASS",
+          "explanation": "All asked fields (recall_date, product_name) match the reference record for F-4083-2025.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 5337.8
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The product recalled under F-4083-2025 was Green Leaf Frozen Raw Shrimp, 1 lb bag, and the recall notice was issued on February 6, 2025.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 5339.3
+    },
+    {
+      "id": "train_03",
+      "question": "What product was recalled under F-1756-2023?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The product affected by recall F-1756-2023 was Prairie Gold Fruit Cups, 32 oz tub, produced by Northstar Foods, Inc., a company from Iowa.",
+          "result": "PASS",
+          "explanation": "All asked fields (product_name) match the reference record for F-1756-2023.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 4170.5
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The product affected by recall F-1756-2023 was Prairie Gold Fruit Cups, 32 oz tub, produced by Northstar Foods, Inc., a company from Iowa.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 4170.9
+    },
+    {
+      "id": "train_04",
+      "question": "What is the recall category of F-7258-2022?",
+      "features": [
+        "recall_lookup",
+        "record_not_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The recall notice with the identifier F-7258-2022 does not have any associated recall category in the database.",
+          "result": "REVISE",
+          "explanation": "F-7258-2022 is not in the reference dataset, but the answer gives details for it as if it existed.",
+          "feedback": "Recall F-7258-2022 does not exist. Say it was not found and do not give any product, firm, units or date.",
+          "failure_type": "fabricated_not_found",
+          "question_kind": "not_found",
+          "answer_ms": 3212.0
+        },
+        {
+          "attempt": 2,
+          "answer": "Recall F-7258-2022 does not exist in the database and thus has not been categorized.",
+          "result": "PASS",
+          "explanation": "F-7258-2022 is not in the reference dataset and the answer says it was not found.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "not_found",
+          "answer_ms": 3107.1
+        }
+      ],
+      "n_attempts": 2,
+      "final_result": "PASS",
+      "final_answer": "Recall F-7258-2022 does not exist in the database and thus has not been categorized.",
+      "question_kind": "not_found",
+      "final_failure": null,
+      "latency_ms": 6319.9
+    },
+    {
+      "id": "train_05",
+      "question": "Which firm issued recall F-2764-2022, and how many units were affected?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Blue Ridge Provisions Co., based in PA, issued recall F-2764-2022 for Blue Heron Infant Formula, 6-pack, due to an undeclared allergen, affecting 6-pack units.",
+          "result": "REVISE",
+          "explanation": "F-2764-2022: missing or wrong: units_affected.",
+          "feedback": "The answer does not correctly state units_affected. Read that field from the record again and state it.",
+          "failure_type": "missing_field",
+          "question_kind": "record",
+          "answer_ms": 4306.7
+        },
+        {
+          "attempt": 2,
+          "answer": "Blue Ridge Provisions Co., based in PA, issued recall F-2764-2022 for Blue Heron Infant Formula, 6-pack, due to an undeclared allergen, affecting 9216 units.",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_name, units_affected) match the reference record for F-2764-2022.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 6073.3
+        }
+      ],
+      "n_attempts": 2,
+      "final_result": "PASS",
+      "final_answer": "Blue Ridge Provisions Co., based in PA, issued recall F-2764-2022 for Blue Heron Infant Formula, 6-pack, due to an undeclared allergen, affecting 9216 units.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 10381.0
+    },
+    {
+      "id": "train_06",
+      "question": "What is the recall category of F-3598-2022, and in which state is the firm located?",
+      "features": [
+        "multi_part",
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The recall category for F-3598-2022 is mislabeling, and the firm is located in the state of New York.",
+          "result": "PASS",
+          "explanation": "All asked fields (firm_state, category) match the reference record for F-3598-2022.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 3585.1
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The recall category for F-3598-2022 is mislabeling, and the firm is located in the state of New York.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 3586.0
+    },
+    {
+      "id": "train_07",
+      "question": "How long should I boil an egg?",
+      "features": [
+        "no_recall_number"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The general recommendation is to boil an egg for about 7-10 minutes for a hard-boiled egg.",
+          "result": "REVISE",
+          "explanation": "The question is not about recall notices, but the answer gives information that is not in the reference dataset.",
+          "feedback": "Do not answer it. Say that you can only answer questions about grocery recall notices.",
+          "failure_type": "answered_off_domain",
+          "question_kind": "off_domain",
+          "answer_ms": 2181.6
+        },
+        {
+          "attempt": 2,
+          "answer": "I can only provide information about grocery recall notices. For your question about how long to boil an egg, the general recommendation is to boil an egg for about 7-10 minutes for a hard-boiled egg.",
+          "result": "PASS",
+          "explanation": "The answer declines a question outside recall notices.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "off_domain",
+          "answer_ms": 5688.2
+        }
+      ],
+      "n_attempts": 2,
+      "final_result": "PASS",
+      "final_answer": "I can only provide information about grocery recall notices. For your question about how long to boil an egg, the general recommendation is to boil an egg for about 7-10 minutes for a hard-boiled egg.",
+      "question_kind": "off_domain",
+      "final_failure": null,
+      "latency_ms": 7875.4
+    },
+    {
+      "id": "train_08",
+      "question": "When was recall F-4837-2023 issued?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Recall F-4837-2023 was issued on May 29, 2023.",
+          "result": "PASS",
+          "explanation": "All asked fields (recall_date) match the reference record for F-4837-2023.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 3385.3
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "Recall F-4837-2023 was issued on May 29, 2023.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 3385.7
+    },
+    {
+      "id": "train_09",
+      "question": "When was recall F-9873-2024 issued?",
+      "features": [
+        "recall_lookup",
+        "record_not_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Recall F-9873-2024 was not found in the database, so there is no information on when it was issued.",
+          "result": "PASS",
+          "explanation": "F-9873-2024 is not in the reference dataset and the answer says it was not found.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "not_found",
+          "answer_ms": 3733.2
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "Recall F-9873-2024 was not found in the database, so there is no information on when it was issued.",
+      "question_kind": "not_found",
+      "final_failure": null,
+      "latency_ms": 3733.6
+    },
+    {
+      "id": "train_10",
+      "question": "What is the recall category of F-1764-2023?",
+      "features": [
+        "recall_lookup",
+        "record_found"
+      ],
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The recall category for F-1764-2023 is an Undeclared Allergen, affecting Green Leaf Cheddar Crackers, 2 lb bags produced by Pine Valley Farms LLC in Texas.",
+          "result": "PASS",
+          "explanation": "All asked fields (category) match the reference record for F-1764-2023.",
+          "feedback": null,
+          "failure_type": null,
+          "question_kind": "record",
+          "answer_ms": 6277.8
+        }
+      ],
+      "n_attempts": 1,
+      "final_result": "PASS",
+      "final_answer": "The recall category for F-1764-2023 is an Undeclared Allergen, affecting Green Leaf Cheddar Crackers, 2 lb bags produced by Pine Valley Farms LLC in Texas.",
+      "question_kind": "record",
+      "final_failure": null,
+      "latency_ms": 6279.9
+    }
+  ],
+  "lessons": [
+    {
+      "lesson_id": "lesson_001",
+      "failure_pattern": "The question is not about grocery recall notices and the answer still answers it.",
+      "correction": "Reply that you can only answer questions about grocery recall notices. Do not answer the question itself.",
+      "created_at": "2026-11-06",
+      "use_count": 0,
+      "applies_to": "no_recall_number",
+      "failure_type": "answered_off_domain",
+      "created_from": [
+        "train_01",
+        "train_07"
+      ],
+      "status": "candidate",
+      "validation": null
+    }
+  ]
+}

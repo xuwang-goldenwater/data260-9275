@@ -40,7 +40,8 @@ FIELD_PATTERNS = [
 ]
 NOT_FOUND = re.compile(r"not found|no record|does not exist|doesn't exist|no such|"
                        r"could not find|couldn't find|not in the (recall )?database|"
-                       r"no recall notice|no information", re.I)
+                       r"no recall notice|no information|does not contain|doesn't contain|"
+                       r"not contain any|no matching", re.I)
 DECLINE = re.compile(r"only answer|can only|outside|out of scope|not related|unrelated|"
                      r"cannot answer|can't answer|unable to answer|not able to answer", re.I)
 MONTHS = {m: i for i, m in enumerate(
@@ -121,7 +122,12 @@ def evaluate(question: str, answer: str, reference: dict) -> dict:
 
     # --- off-domain: no recall number in the question ---------------------------
     if not numbers:
-        if DECLINE.search(answer):
+        # Every sentence must decline or talk about recall notices. Found in training
+        # (train_07): "I can only provide information about recall notices. ... boil an egg
+        # for about 7-10 minutes" - a decline followed by the answer anyway.
+        sentences = [x for x in re.split(r"(?<=[.!?])\s+", answer.strip()) if x]
+        answering = [x for x in sentences if not (DECLINE.search(x) or re.search(r"recall", x, re.I))]
+        if DECLINE.search(answer) and not answering:
             return _pass("off_domain", "The answer declines a question outside recall notices.")
         return _revise("off_domain", "answered_off_domain",
                        "The question is not about recall notices, but the answer gives "
@@ -192,9 +198,18 @@ if __name__ == "__main__":
          "Recall F-9873-2024 was not found in the recall database.", "PASS"),
         ("When was recall F-9873-2024 issued?",
          "Recall F-9873-2024 was issued on March 3, 2024.", "REVISE"),
+        ("How many units were affected by recall F-7947-2025?",       # validation val_06
+         "The database does not contain any recall notice with the identifier F-7947-2025.",
+         "PASS"),
         ("What is the capital of France?", "The capital of France is Paris.", "REVISE"),
         ("What is the capital of France?",
          "I can only answer questions about grocery recall notices.", "PASS"),
+        ("How long should I boil an egg?",
+         "I can only provide information about grocery recall notices. For your question, "
+         "the general recommendation is to boil an egg for about 7-10 minutes.", "REVISE"),
+        ("What is the capital of France?",
+         "I can only answer questions about grocery recall notices. The question about the "
+         "capital of France is unrelated to that topic.", "PASS"),
         ("In which state is the firm behind recall F-4837-2023 located?",
          f"The firm, {r['firm_name']}, is located in Colorado.", "PASS"),
     ]
