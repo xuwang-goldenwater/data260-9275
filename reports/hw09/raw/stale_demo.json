@@ -1,0 +1,78 @@
+{
+  "run_at": "2026-11-06T15:15:33",
+  "steps": [
+    {
+      "step": "1 before update",
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 57.1,
+      "timings": {
+        "embed_ms": 48.3,
+        "search_ms": 7.3
+      },
+      "threshold": 0.9,
+      "at": "2026-11-06T15:15:03",
+      "matched": "How many units were affected by recall F-0001-2025?",
+      "notice_id": "1",
+      "db_units": 8019,
+      "answer_matches_db": true
+    },
+    {
+      "step": "3 stale hit",
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8019 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 16.1,
+      "timings": {
+        "embed_ms": 13.9,
+        "search_ms": 2.2
+      },
+      "threshold": 0.9,
+      "at": "2026-11-06T15:15:03",
+      "matched": "How many units were affected by recall F-0001-2025?",
+      "notice_id": "1",
+      "db_units": 8500,
+      "answer_matches_db": false
+    },
+    {
+      "step": "4 invalidated",
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8500 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": false,
+      "similarity": 1.0,
+      "latency_ms": 29451.3,
+      "timings": {
+        "embed_ms": 18.3,
+        "search_ms": 1.5,
+        "agent_ms": 29266.3
+      },
+      "threshold": 0.9,
+      "at": "2026-11-06T15:15:33",
+      "notice_id": 1,
+      "status": "approved",
+      "db_units": 8500,
+      "answer_matches_db": true
+    },
+    {
+      "step": "5 fresh hit",
+      "question": "How many units were affected by recall F-0001-2025?",
+      "answer": "Recall F-0001-2025 affected 8500 units of Blue Heron Enoki Mushrooms, 32 oz tub. This recall was due to an undeclared allergen, and the firm involved is Harbor Snacks Co. from Georgia.",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 304.1,
+      "timings": {
+        "embed_ms": 297.4,
+        "search_ms": 5.6
+      },
+      "threshold": 0.9,
+      "at": "2026-11-06T15:15:33",
+      "matched": "How many units were affected by recall F-0001-2025?",
+      "notice_id": "1",
+      "db_units": 8500,
+      "answer_matches_db": true
+    }
+  ]
+}
