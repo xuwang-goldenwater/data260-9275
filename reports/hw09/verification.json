@@ -1,0 +1,191 @@
+{
+  "student": "Xu Wang",
+  "homework": "HW9",
+  "sid4": 9275,
+  "run_at": "2026-11-06T15:56:54",
+  "commit": "a90be28",
+  "model": "qwen2.5:3b (Ollama, temperature 0, seed 9275) - HW8 agents + Part 4",
+  "embedding": "sentence-transformers/all-MiniLM-L6-v2 on CPU",
+  "redis": "redis/redis-stack-server:7.4.0-v1",
+  "seed": 9275,
+  "verify_seed": 269275,
+  "passed": 35,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Repo: no uncommitted changes outside reports/",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Repo: cache_cases.yaml committed before the first sweep result",
+      "passed": true,
+      "detail": "labels 4188961, sweep 93e295a"
+    },
+    {
+      "name": "Repo: cache_cases.yaml never edited after it was committed",
+      "passed": true,
+      "detail": "['4188961']"
+    },
+    {
+      "name": "Docker: container s9275-redis running",
+      "passed": true,
+      "detail": "['s9275-redis', 's9275-api', 's9275-kafka', 'lab2-postgres-1']"
+    },
+    {
+      "name": "Redis: search module loaded (vector index support)",
+      "passed": true,
+      "detail": "['bf', 'search', 'redisgears_2', 'timeseries', 'RedisCompat', 'ReJSON']"
+    },
+    {
+      "name": "Redis: every key starts with s9275:",
+      "passed": true,
+      "detail": "12 keys, bad=[]"
+    },
+    {
+      "name": "P1: recall_notices has view_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1: INCR returns 1..10",
+      "passed": true,
+      "detail": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+    },
+    {
+      "name": "P1: sync to database only on the 10th view",
+      "passed": true,
+      "detail": "[False, False, False, False, False, False, False, False, False, True]"
+    },
+    {
+      "name": "P1: key uses the PREFIX",
+      "passed": true,
+      "detail": "s9275:views:recall_notice:99999999"
+    },
+    {
+      "name": "P2: vector index uses COSINE, 384 dims",
+      "passed": true,
+      "detail": "s9275:semcache_idx"
+    },
+    {
+      "name": "P2: cache entry stores query, embedding, answer, data-version marker",
+      "passed": true,
+      "detail": "['answer', 'created_at', 'data_version', 'embedding', 'notice_id', 'query']"
+    },
+    {
+      "name": "P2: a cached seed's nearest neighbour is itself (sim ~1.0)",
+      "passed": true,
+      "detail": "1.0"
+    },
+    {
+      "name": "P2: >= 10 queries with duplicates, paraphrases and new ones",
+      "passed": true,
+      "detail": "Counter({'new': 5, 'paraphrase': 4, 'duplicate': 3})"
+    },
+    {
+      "name": "P2: every response has is_cached, similarity and latency",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2: saved hit rate matches the rows",
+      "passed": true,
+      "detail": "7/12"
+    },
+    {
+      "name": "P2: duplicates were served from cache",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.1: 40 labeled cases, 10 of each kind",
+      "passed": true,
+      "detail": "{'exact': 10, 'paraphrase': 10, 'similar': 10, 'unrelated': 10}"
+    },
+    {
+      "name": "P3.2: thresholds 0.75 0.80 0.85 0.90 0.95",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.2: summary table recomputed from the 200 case rows",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "name": "P3.3: M03 is a false hit even at 0.95",
+      "passed": true,
+      "detail": "sim 0.9758 -> S3"
+    },
+    {
+      "name": "P3.4: recall guard blocks other recall numbers, allows general questions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.4: cost model ships 0.90 + recall guard",
+      "passed": true,
+      "detail": "cost 22"
+    },
+    {
+      "name": "P3.5: stale hit returned the old answer (cache on, check off)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.5: version check invalidated it and the new answer matches the database",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4: input files hold only id + question (no expected answers)",
+      "passed": true,
+      "detail": "{'training': 10, 'validation': 10, 'test': 12}"
+    },
+    {
+      "name": "P4: test questions ask about records unseen in training / validation",
+      "passed": true,
+      "detail": "8"
+    },
+    {
+      "name": "P4.2: lessons.json entries have the five required fields",
+      "passed": true,
+      "detail": "['lesson_001']"
+    },
+    {
+      "name": "P4.3: every lesson has a validation decision",
+      "passed": true,
+      "detail": "[('lesson_001', 'kept')]"
+    },
+    {
+      "name": "P4.1: evaluator spot checks (right value, wrong value, off-domain, decline+answer)",
+      "passed": true,
+      "detail": "[True, True, True, True]"
+    },
+    {
+      "name": "P4.1: controlled case REVISE -> feedback -> revised PASS in 2 attempts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4.1: no question used more than 2 attempts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4.2: a stored lesson was loaded for a later validation question",
+      "passed": true,
+      "detail": "['val_10']"
+    },
+    {
+      "name": "P4.4: four variants, table recomputed from the 12 test rows each",
+      "passed": true,
+      "detail": "[('Baseline', 8), ('Evaluator Repair', 11), ('Lesson Memory', 11), ('Validated Improvement', 11)]"
+    },
+    {
+      "name": "P4.4: Baseline used 1 attempt and no lessons",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

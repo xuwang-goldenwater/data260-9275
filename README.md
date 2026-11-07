@@ -285,3 +285,14 @@ Code: `code/doc_app/` (FastAPI app: config, db, schemas, routers, memory, token_
 Run instructions: `reports/hw07/reproducible_run_instructions.md`. Results: `reports/hw07/METRICS.md`.
 The session-cookie login of HW4/HW5 (and the React front end that uses it) is kept at tags hw4/hw5.
 
+
+## Homework 9 — Redis counter, semantic cache, threshold economics, self-improving agents
+
+| Part | What | Code |
+|---|---|---|
+| 1 | Redis view counter (`INCR s9275:views:recall_notice:<id>`, sync to MySQL every 10 views) | `code/cache_app/recall_cache.py`, `code/sql/hw09_migrate.sql`, `redis` service in `docker-compose.yml` |
+| 2 | Semantic cache (MiniLM + Redis vector index, cosine) in front of the HW8 pipeline; database facts for Writer/Reviewer | `code/cache_app/semantic_cache.py`, `code/cache_app/part2_demo.py`, `code/kafka_agents/{writer,reviewer}.py` |
+| 3 | 40 labeled cases, threshold sweep, cost model + recall-number guard, stale answer + version invalidation | `reports/hw09/cache_cases.yaml`, `code/cache_app/{threshold_sweep,cost_model,stale_demo}.py` |
+| 4 | Answering + Evaluator agents, revision, lessons, validation, four variants | `code/self_improve/`, `reports/hw09/part4/` |
+
+Make targets: `hw9-*` and `verify-hw09`. Results: `reports/hw09/METRICS.md`. Start the HW8 agents with `HW8_EVENTS=reports/hw09/raw/agent_events.jsonl` so HW9 runs do not write into the HW8 evidence.

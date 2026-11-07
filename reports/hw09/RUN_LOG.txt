@@ -1,0 +1,40 @@
+===== verify-hw09 2026-11-06 15:56:43 =====
+Xu Wang | DATA 260 HW9 self-check | 2026-11-06 15:56:43
+[PASS] Repo: no uncommitted changes outside reports/  []
+[PASS] Repo: cache_cases.yaml committed before the first sweep result  labels 4188961, sweep 93e295a
+[PASS] Repo: cache_cases.yaml never edited after it was committed  ['4188961']
+[PASS] Docker: container s9275-redis running  ['s9275-redis', 's9275-api', 's9275-kafka', 'lab2-postgres-1']
+[PASS] Redis: search module loaded (vector index support)  ['bf', 'search', 'redisgears_2', 'timeseries', 'RedisCompat', 'ReJSON']
+[PASS] Redis: every key starts with s9275:  12 keys, bad=[]
+[PASS] P1: recall_notices has view_count  
+[PASS] P1: INCR returns 1..10  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[PASS] P1: sync to database only on the 10th view  [False, False, False, False, False, False, False, False, False, True]
+[PASS] P1: key uses the PREFIX  s9275:views:recall_notice:99999999
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5564.31it/s]
+[PASS] P2: vector index uses COSINE, 384 dims  s9275:semcache_idx
+[PASS] P2: cache entry stores query, embedding, answer, data-version marker  ['answer', 'created_at', 'data_version', 'embedding', 'notice_id', 'query']
+[PASS] P2: a cached seed's nearest neighbour is itself (sim ~1.0)  1.0
+[PASS] P2: >= 10 queries with duplicates, paraphrases and new ones  Counter({'new': 5, 'paraphrase': 4, 'duplicate': 3})
+[PASS] P2: every response has is_cached, similarity and latency  
+[PASS] P2: saved hit rate matches the rows  7/12
+[PASS] P2: duplicates were served from cache  
+[PASS] P3.1: 40 labeled cases, 10 of each kind  {'exact': 10, 'paraphrase': 10, 'similar': 10, 'unrelated': 10}
+[PASS] P3.2: thresholds 0.75 0.80 0.85 0.90 0.95  
+[PASS] P3.2: summary table recomputed from the 200 case rows  200
+[PASS] P3.3: M03 is a false hit even at 0.95  sim 0.9758 -> S3
+[PASS] P3.4: recall guard blocks other recall numbers, allows general questions  
+[PASS] P3.4: cost model ships 0.90 + recall guard  cost 22
+[PASS] P3.5: stale hit returned the old answer (cache on, check off)  
+[PASS] P3.5: version check invalidated it and the new answer matches the database  
+[PASS] P4: input files hold only id + question (no expected answers)  {'training': 10, 'validation': 10, 'test': 12}
+[PASS] P4: test questions ask about records unseen in training / validation  8
+[PASS] P4.2: lessons.json entries have the five required fields  ['lesson_001']
+[PASS] P4.3: every lesson has a validation decision  [('lesson_001', 'kept')]
+[PASS] P4.1: evaluator spot checks (right value, wrong value, off-domain, decline+answer)  [True, True, True, True]
+[PASS] P4.1: controlled case REVISE -> feedback -> revised PASS in 2 attempts  
+[PASS] P4.1: no question used more than 2 attempts  
+[PASS] P4.2: a stored lesson was loaded for a later validation question  ['val_10']
+[PASS] P4.4: four variants, table recomputed from the 12 test rows each  [('Baseline', 8), ('Evaluator Repair', 11), ('Lesson Memory', 11), ('Validated Improvement', 11)]
+[PASS] P4.4: Baseline used 1 attempt and no lessons  
+
+35 passed, 0 failed -> reports/hw09/verification.json
