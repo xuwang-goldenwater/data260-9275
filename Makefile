@@ -406,3 +406,38 @@ hw9-train hw9-validate hw9-test:
 verify-hw09:
 	@echo "===== verify-hw09 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW9_LOG)
 	python -u verify_hw09.py 2>&1 | tee -a $(HW9_LOG)
+
+# ---- Homework 10 ----------------------------------------------------------
+# Kafka + Redis + MySQL; planner / writer / reviewer AND code/eval_pipeline/evaluator.py
+# running (one each), agents with HW8_EVENTS=reports/hw10/raw/agent_events.jsonl
+HW10_LOG = reports/hw10/RUN_LOG.txt
+
+.PHONY: hw10-judge-smoke hw10-prepare hw10-latency hw10-analyze hw10-traces \
+        hw10-freeze hw10-validate hw10-dashboard verify-hw10
+
+hw10-judge-smoke:
+	python -u code/eval_pipeline/judge.py 2>&1 | tee -a $(HW10_LOG)
+
+hw10-prepare hw10-latency hw10-analyze:
+	@echo "===== $@ $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW10_LOG)
+	caffeinate -i python -u code/eval_pipeline/latency_experiment.py $(subst latency,run,$(subst hw10-,,$@)) 2>&1 | tee -a $(HW10_LOG)
+
+hw10-traces:
+	@echo "===== hw10-traces $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW10_LOG)
+	caffeinate -i python -u code/eval_pipeline/trace_examples.py 2>&1 | tee -a $(HW10_LOG)
+
+hw10-freeze:
+	python -u code/eval_pipeline/freeze_eval_cases.py 2>&1 | tee -a $(HW10_LOG)
+
+# stop the agents and the evaluator first (judge gets the GPU)
+hw10-validate:
+	@echo "===== hw10-validate $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW10_LOG)
+	caffeinate -i python -u code/eval_pipeline/validate_judge.py 2>&1 | tee -a $(HW10_LOG)
+
+hw10-dashboard:
+	streamlit run code/ops_dashboard/app.py
+
+# Self-check -> reports/hw10/verification.json (nothing needs to run; commit code first)
+verify-hw10:
+	@echo "===== verify-hw10 $$(date '+%Y-%m-%d %H:%M:%S') =====" | tee -a $(HW10_LOG)
+	python -u verify_hw10.py 2>&1 | tee -a $(HW10_LOG)
