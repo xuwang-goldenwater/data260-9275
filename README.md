@@ -296,3 +296,14 @@ The session-cookie login of HW4/HW5 (and the React front end that uses it) is ke
 | 4 | Answering + Evaluator agents, revision, lessons, validation, four variants | `code/self_improve/`, `reports/hw09/part4/` |
 
 Make targets: `hw9-*` and `verify-hw09`. Results: `reports/hw09/METRICS.md`. Start the HW8 agents with `HW8_EVENTS=reports/hw09/raw/agent_events.jsonl` so HW9 runs do not write into the HW8 evidence.
+
+## Homework 10 — evaluation, judge validation, tracing, operations dashboard
+
+| Part | What | Code |
+|---|---|---|
+| 1 | Streamlit dashboard: Summary (requests, cache hit rate, error rate, latency), Evaluation, Trace lookup | `code/ops_dashboard/app.py` |
+| 2 | Evaluator consumer joining plan / draft / final on correlation_id; local GEval judge (qwen3:4b, 1-5) | `code/eval_pipeline/{evaluator,judge}.py` |
+| 3 | 20 frozen drafts + human labels, judge vs human (Spearman, MAD), 3-run repeatability | `reports/hw10/{eval_cases.json,human_labels.csv}`, `code/eval_pipeline/{freeze_eval_cases,validate_judge}.py` |
+| 4 | trace_id = correlation_id from the cache lookup on; one JSON span per stage; 50-miss latency run; hit / miss / failed traces | `code/observability/tracing.py`, `code/cache_app/semantic_cache.py`, `code/kafka_agents/`, `code/eval_pipeline/{latency_experiment,trace_examples}.py` |
+
+Make targets: `hw10-*` and `verify-hw10`. Results: `reports/hw10/METRICS.md`. Spans go to `reports/hw10/raw/spans.jsonl` (`HW10_SPANS`); start the agents with `HW8_EVENTS=reports/hw10/raw/agent_events.jsonl` and run exactly one planner, writer, reviewer and evaluator.

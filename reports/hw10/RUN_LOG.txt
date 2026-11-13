@@ -1,0 +1,93 @@
+===== verify-hw10 2026-11-13 11:05:29 =====
+Xu Wang | DATA 260 HW10 self-check | 2026-11-13 11:05:29
+[FAIL] Repo: no uncommitted changes outside reports/  [' M Makefile', '?? verify_hw10.py']
+[PASS] Repo: eval_cases.json + human_labels.csv committed before the first Part 3 judge result  labels ['1794594605', '134994a'], cases ['1794594605', '134994a'], judge ['1794595954', '957ff97']
+[PASS] Repo: human_labels.csv never edited after it was committed  ['134994a']
+[PASS] P4.1: every span has trace_id, stage, start, end, duration, status, error  578 spans
+[PASS] P4.1: one identifier - every agent/evaluator span belongs to a request with a gateway span  61 requests, orphans=[]
+[PASS] P4.1: cache_lookup span on every request, hit/miss recorded  
+[PASS] P4.1: tracing.span() writes ok and error spans and re-raises the error  [('planner', 'ok'), ('writer', 'error')]
+[PASS] P4.3: 50 latency requests, 50 confirmed cache misses  50/50
+[PASS] P4.3: each has the full path (4 queue hops + evaluation)  50
+[PASS] P4.3: p50/p95 table recomputed from spans.jsonl  planner p50 9550.0 ms, 40.1% of e2e
+[PASS] P4.2: hit trace = cache_lookup(hit) + gateway, no agent stage  ['cache_lookup', 'gateway']
+[PASS] P4.2: miss trace completes the agent path, all ok  11
+[PASS] P4.2: failed trace - writer error identified, gateway error  RuntimeError: injected failure (fail_at=writer) -> dead letter after 3
+[PASS] P2.2: every evaluation has plan / draft / final scores on 1-5 with reasons  50
+[PASS] P2.2: final-vs-draft saves both scores, difference = final - draft, interpretation  
+[PASS] P2.1: original texts and Kafka sources (topic/offset) kept for plan, draft, final  
+[PASS] P2.1: judge is a local model  {'model': 'qwen3:4b', 'options': {'temperature': 0.0, 'seed': 9275, 'num_ctx': 4096, 'num_predict': 300}, 'scale': '1-5'}
+[PASS] P2.1: evaluator is bounded - the failed trace was closed as incomplete  
+[PASS] P3.1: 20 frozen cases and 20 human labels in 1..5  
+[PASS] P3.2: Spearman and MAD recomputed from judge_runs.csv  rho=0.265 MAD=1.35
+[PASS] P3.3: 3 runs per draft, repeatability recomputed  0/20 changed
+[PASS] P1: dashboard uses st.cache_data and st.cache_resource  
+2026-11-13 11:05:31.809 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:05:33.693 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:05:33.994 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:05:33.994 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+[PASS] P1: Summary, Evaluation and Trace pages run without exceptions  {'summary_page': [], 'evaluation_page': [], 'trace_page': []}
+
+22 passed, 1 failed -> reports/hw10/verification.json
+===== verify-hw10 2026-11-13 11:06:22 =====
+Xu Wang | DATA 260 HW10 self-check | 2026-11-13 11:06:22
+[FAIL] Repo: no uncommitted changes outside reports/  [' M Makefile', '?? verify_hw10.py']
+[PASS] Repo: eval_cases.json + human_labels.csv committed before the first Part 3 judge result  labels ['1794594605', '134994a'], cases ['1794594605', '134994a'], judge ['1794595954', '957ff97']
+[PASS] Repo: human_labels.csv never edited after it was committed  ['134994a']
+[PASS] P4.1: every span has trace_id, stage, start, end, duration, status, error  578 spans
+[PASS] P4.1: one identifier - every agent/evaluator span belongs to a request with a gateway span  61 requests, orphans=[]
+[PASS] P4.1: cache_lookup span on every request, hit/miss recorded  
+[PASS] P4.1: tracing.span() writes ok and error spans and re-raises the error  [('planner', 'ok'), ('writer', 'error')]
+[PASS] P4.3: 50 latency requests, 50 confirmed cache misses  50/50
+[PASS] P4.3: each has the full path (4 queue hops + evaluation)  50
+[PASS] P4.3: p50/p95 table recomputed from spans.jsonl  planner p50 9550.0 ms, 40.1% of e2e
+[PASS] P4.2: hit trace = cache_lookup(hit) + gateway, no agent stage  ['cache_lookup', 'gateway']
+[PASS] P4.2: miss trace completes the agent path, all ok  11
+[PASS] P4.2: failed trace - writer error identified, gateway error  RuntimeError: injected failure (fail_at=writer) -> dead letter after 3
+[PASS] P2.2: every evaluation has plan / draft / final scores on 1-5 with reasons  50
+[PASS] P2.2: final-vs-draft saves both scores, difference = final - draft, interpretation  
+[PASS] P2.1: original texts and Kafka sources (topic/offset) kept for plan, draft, final  
+[PASS] P2.1: judge is a local model  {'model': 'qwen3:4b', 'options': {'temperature': 0.0, 'seed': 9275, 'num_ctx': 4096, 'num_predict': 300}, 'scale': '1-5'}
+[PASS] P2.1: evaluator is bounded - the failed trace was closed as incomplete  
+[PASS] P3.1: 20 frozen cases and 20 human labels in 1..5  
+[PASS] P3.2: Spearman and MAD recomputed from judge_runs.csv  rho=0.265 MAD=1.35
+[PASS] P3.3: 3 runs per draft, repeatability recomputed  0/20 changed
+[PASS] P1: dashboard uses st.cache_data and st.cache_resource  
+2026-11-13 11:06:24.546 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:06:25.842 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:06:26.134 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:06:26.134 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+[PASS] P1: Summary, Evaluation and Trace pages run without exceptions  {'summary_page': [], 'evaluation_page': [], 'trace_page': []}
+
+22 passed, 1 failed -> reports/hw10/verification.json
+===== verify-hw10 2026-11-13 11:07:19 =====
+Xu Wang | DATA 260 HW10 self-check | 2026-11-13 11:07:19
+[PASS] Repo: no uncommitted changes outside reports/  []
+[PASS] Repo: eval_cases.json + human_labels.csv committed before the first Part 3 judge result  labels ['1794594605', '134994a'], cases ['1794594605', '134994a'], judge ['1794595954', '957ff97']
+[PASS] Repo: human_labels.csv never edited after it was committed  ['134994a']
+[PASS] P4.1: every span has trace_id, stage, start, end, duration, status, error  578 spans
+[PASS] P4.1: one identifier - every agent/evaluator span belongs to a request with a gateway span  61 requests, orphans=[]
+[PASS] P4.1: cache_lookup span on every request, hit/miss recorded  
+[PASS] P4.1: tracing.span() writes ok and error spans and re-raises the error  [('planner', 'ok'), ('writer', 'error')]
+[PASS] P4.3: 50 latency requests, 50 confirmed cache misses  50/50
+[PASS] P4.3: each has the full path (4 queue hops + evaluation)  50
+[PASS] P4.3: p50/p95 table recomputed from spans.jsonl  planner p50 9550.0 ms, 40.1% of e2e
+[PASS] P4.2: hit trace = cache_lookup(hit) + gateway, no agent stage  ['cache_lookup', 'gateway']
+[PASS] P4.2: miss trace completes the agent path, all ok  11
+[PASS] P4.2: failed trace - writer error identified, gateway error  RuntimeError: injected failure (fail_at=writer) -> dead letter after 3
+[PASS] P2.2: every evaluation has plan / draft / final scores on 1-5 with reasons  50
+[PASS] P2.2: final-vs-draft saves both scores, difference = final - draft, interpretation  
+[PASS] P2.1: original texts and Kafka sources (topic/offset) kept for plan, draft, final  
+[PASS] P2.1: judge is a local model  {'model': 'qwen3:4b', 'options': {'temperature': 0.0, 'seed': 9275, 'num_ctx': 4096, 'num_predict': 300}, 'scale': '1-5'}
+[PASS] P2.1: evaluator is bounded - the failed trace was closed as incomplete  
+[PASS] P3.1: 20 frozen cases and 20 human labels in 1..5  
+[PASS] P3.2: Spearman and MAD recomputed from judge_runs.csv  rho=0.265 MAD=1.35
+[PASS] P3.3: 3 runs per draft, repeatability recomputed  0/20 changed
+[PASS] P1: dashboard uses st.cache_data and st.cache_resource  
+2026-11-13 11:07:20.729 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:07:22.086 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:07:22.380 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-13 11:07:22.380 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+[PASS] P1: Summary, Evaluation and Trace pages run without exceptions  {'summary_page': [], 'evaluation_page': [], 'trace_page': []}
+
+23 passed, 0 failed -> reports/hw10/verification.json

@@ -1,0 +1,130 @@
+{
+  "student": "Xu Wang",
+  "homework": "HW10",
+  "sid4": 9275,
+  "run_at": "2026-11-13T11:07:22",
+  "commit": "b8610c1",
+  "agents": "qwen2.5:3b (Ollama, temperature 0, seed 9275) - HW8 Planner/Writer/Reviewer",
+  "judge": "qwen3:4b (Ollama, local, temperature 0, seed 9275), DeepEval GEval 1-5",
+  "seed": 9275,
+  "verify_seed": 269275,
+  "passed": 23,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Repo: no uncommitted changes outside reports/",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Repo: eval_cases.json + human_labels.csv committed before the first Part 3 judge result",
+      "passed": true,
+      "detail": "labels ['1794594605', '134994a'], cases ['1794594605', '134994a'], judge ['1794595954', '957ff97']"
+    },
+    {
+      "name": "Repo: human_labels.csv never edited after it was committed",
+      "passed": true,
+      "detail": "['134994a']"
+    },
+    {
+      "name": "P4.1: every span has trace_id, stage, start, end, duration, status, error",
+      "passed": true,
+      "detail": "578 spans"
+    },
+    {
+      "name": "P4.1: one identifier - every agent/evaluator span belongs to a request with a gateway span",
+      "passed": true,
+      "detail": "61 requests, orphans=[]"
+    },
+    {
+      "name": "P4.1: cache_lookup span on every request, hit/miss recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P4.1: tracing.span() writes ok and error spans and re-raises the error",
+      "passed": true,
+      "detail": "[('planner', 'ok'), ('writer', 'error')]"
+    },
+    {
+      "name": "P4.3: 50 latency requests, 50 confirmed cache misses",
+      "passed": true,
+      "detail": "50/50"
+    },
+    {
+      "name": "P4.3: each has the full path (4 queue hops + evaluation)",
+      "passed": true,
+      "detail": "50"
+    },
+    {
+      "name": "P4.3: p50/p95 table recomputed from spans.jsonl",
+      "passed": true,
+      "detail": "planner p50 9550.0 ms, 40.1% of e2e"
+    },
+    {
+      "name": "P4.2: hit trace = cache_lookup(hit) + gateway, no agent stage",
+      "passed": true,
+      "detail": "['cache_lookup', 'gateway']"
+    },
+    {
+      "name": "P4.2: miss trace completes the agent path, all ok",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "P4.2: failed trace - writer error identified, gateway error",
+      "passed": true,
+      "detail": "RuntimeError: injected failure (fail_at=writer) -> dead letter after 3"
+    },
+    {
+      "name": "P2.2: every evaluation has plan / draft / final scores on 1-5 with reasons",
+      "passed": true,
+      "detail": "50"
+    },
+    {
+      "name": "P2.2: final-vs-draft saves both scores, difference = final - draft, interpretation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2.1: original texts and Kafka sources (topic/offset) kept for plan, draft, final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P2.1: judge is a local model",
+      "passed": true,
+      "detail": "{'model': 'qwen3:4b', 'options': {'temperature': 0.0, 'seed': 9275, 'num_ctx': 4096, 'num_predict': 300}, 'scale': '1-5'}"
+    },
+    {
+      "name": "P2.1: evaluator is bounded - the failed trace was closed as incomplete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.1: 20 frozen cases and 20 human labels in 1..5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P3.2: Spearman and MAD recomputed from judge_runs.csv",
+      "passed": true,
+      "detail": "rho=0.265 MAD=1.35"
+    },
+    {
+      "name": "P3.3: 3 runs per draft, repeatability recomputed",
+      "passed": true,
+      "detail": "0/20 changed"
+    },
+    {
+      "name": "P1: dashboard uses st.cache_data and st.cache_resource",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "P1: Summary, Evaluation and Trace pages run without exceptions",
+      "passed": true,
+      "detail": "{'summary_page': [], 'evaluation_page': [], 'trace_page': []}"
+    }
+  ]
+}
