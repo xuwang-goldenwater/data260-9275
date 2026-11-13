@@ -1,0 +1,64 @@
+{
+  "labels_commit": "134994a HW10 Part 3.1: freeze 20 Writer drafts and hand-assigned helpfulness labels (before any judge validation run)",
+  "judge": {
+    "model": "qwen3:4b",
+    "options": {
+      "temperature": 0.0,
+      "seed": 9275,
+      "num_ctx": 4096,
+      "num_predict": 300
+    },
+    "timeout_s": 90.0,
+    "metric": "Helpfulness (judge.py)",
+    "runs": 3
+  },
+  "vs_human": {
+    "run1": {
+      "n": 20,
+      "spearman_rho": 0.265,
+      "spearman_p": 0.2597,
+      "mean_abs_diff": 1.35,
+      "mean_judge_minus_human": -0.75,
+      "exact_agreement": 0.3,
+      "within_1": 0.65
+    },
+    "run2": {
+      "n": 20,
+      "spearman_rho": 0.265,
+      "spearman_p": 0.2597,
+      "mean_abs_diff": 1.35,
+      "mean_judge_minus_human": -0.75,
+      "exact_agreement": 0.3,
+      "within_1": 0.65
+    },
+    "run3": {
+      "n": 20,
+      "spearman_rho": 0.265,
+      "spearman_p": 0.2597,
+      "mean_abs_diff": 1.35,
+      "mean_judge_minus_human": -0.75,
+      "exact_agreement": 0.3,
+      "within_1": 0.65
+    },
+    "mean_of_3_runs": {
+      "n": 20,
+      "spearman_rho": 0.265,
+      "spearman_p": 0.2597,
+      "mean_abs_diff": 1.35,
+      "mean_judge_minus_human": -0.75,
+      "exact_agreement": 0.3,
+      "within_1": 0.65
+    }
+  },
+  "repeatability": {
+    "cases": 20,
+    "cases_with_any_change": 0,
+    "share_cases_changed": 0.0,
+    "run_pairs_compared": 60,
+    "share_pairs_changed": 0.0,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0,
+    "changed_case_ids": [],
+    "judge_errors": 0
+  }
+}
