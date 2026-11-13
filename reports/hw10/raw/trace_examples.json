@@ -1,0 +1,260 @@
+{
+  "hit": {
+    "trace_id": "b21e9595-2f0e-4641-8fcf-4fa25fdd717e",
+    "question": "Which firm issued recall F-0002-2021?",
+    "spans": [
+      {
+        "trace_id": "b21e9595-2f0e-4641-8fcf-4fa25fdd717e",
+        "stage": "cache_lookup",
+        "start_ts": "2026-11-13T10:05:30.471",
+        "end_ts": "2026-11-13T10:05:30.676",
+        "duration_ms": 205.8,
+        "status": "ok",
+        "error": null,
+        "pid": 14805,
+        "similarity": 1.0,
+        "cache": "hit"
+      },
+      {
+        "trace_id": "b21e9595-2f0e-4641-8fcf-4fa25fdd717e",
+        "stage": "gateway",
+        "start_ts": "2026-11-13T10:05:30.471",
+        "end_ts": "2026-11-13T10:05:30.677",
+        "duration_ms": 206.8,
+        "status": "ok",
+        "error": null,
+        "pid": 14805,
+        "question": "Which firm issued recall F-0002-2021?",
+        "cache": "hit",
+        "outcome": "cached"
+      }
+    ]
+  },
+  "miss": {
+    "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+    "spans": [
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "cache_lookup",
+        "start_ts": "2026-11-13T09:01:36.025",
+        "end_ts": "2026-11-13T09:01:36.182",
+        "duration_ms": 156.9,
+        "status": "ok",
+        "error": null,
+        "pid": 84673,
+        "similarity": 0.8206,
+        "miss_reason": "below_threshold",
+        "cache": "miss"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "gateway",
+        "start_ts": "2026-11-13T09:01:36.025",
+        "end_ts": "2026-11-13T09:02:08.922",
+        "duration_ms": 32896.7,
+        "status": "ok",
+        "error": null,
+        "pid": 84673,
+        "question": "When was recall F-9616-2024 issued?",
+        "cache": "miss",
+        "outcome": "approved"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "facts_lookup",
+        "start_ts": "2026-11-13T09:01:36.183",
+        "end_ts": "2026-11-13T09:01:36.860",
+        "duration_ms": 677.4,
+        "status": "ok",
+        "error": null,
+        "pid": 84673
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T09:01:37.270",
+        "end_ts": "2026-11-13T09:01:37.304",
+        "duration_ms": 34.4,
+        "status": "ok",
+        "error": null,
+        "pid": 81717,
+        "hop": "inbox"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "planner",
+        "start_ts": "2026-11-13T09:01:37.306",
+        "end_ts": "2026-11-13T09:01:50.778",
+        "duration_ms": 13472.3,
+        "status": "ok",
+        "error": null,
+        "pid": 81717
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T09:01:50.711",
+        "end_ts": "2026-11-13T09:01:50.905",
+        "duration_ms": 194.9,
+        "status": "ok",
+        "error": null,
+        "pid": 81725,
+        "hop": "tasks"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "writer",
+        "start_ts": "2026-11-13T09:01:50.925",
+        "end_ts": "2026-11-13T09:02:00.133",
+        "duration_ms": 9208.2,
+        "status": "ok",
+        "error": null,
+        "pid": 81725,
+        "writer": "w1"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T09:02:00.096",
+        "end_ts": "2026-11-13T09:02:00.209",
+        "duration_ms": 113.1,
+        "status": "ok",
+        "error": null,
+        "pid": 81802,
+        "hop": "drafts"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "reviewer",
+        "start_ts": "2026-11-13T09:02:00.213",
+        "end_ts": "2026-11-13T09:02:08.885",
+        "duration_ms": 8672.2,
+        "status": "ok",
+        "error": null,
+        "pid": 81802,
+        "review_status": "approved"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T09:02:08.829",
+        "end_ts": "2026-11-13T09:02:08.905",
+        "duration_ms": 76.9,
+        "status": "ok",
+        "error": null,
+        "pid": 84673,
+        "hop": "final"
+      },
+      {
+        "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe",
+        "stage": "evaluation",
+        "start_ts": "2026-11-13T09:02:08.917",
+        "end_ts": "2026-11-13T09:03:17.673",
+        "duration_ms": 68755.9,
+        "status": "ok",
+        "error": null,
+        "pid": 81809,
+        "judge": "qwen3:4b",
+        "plan_quality": 3,
+        "writer_helpfulness": 2,
+        "final_helpfulness": 2
+      }
+    ]
+  },
+  "failed": {
+    "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+    "question": "How many units were affected by recall F-1000-2022?",
+    "injected": {
+      "fail_at": "writer"
+    },
+    "spans": [
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "cache_lookup",
+        "start_ts": "2026-11-13T10:05:30.680",
+        "end_ts": "2026-11-13T10:05:30.710",
+        "duration_ms": 30.4,
+        "status": "ok",
+        "error": null,
+        "pid": 14805,
+        "similarity": 0.9687,
+        "miss_reason": "recall_guard",
+        "cache": "miss"
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "gateway",
+        "start_ts": "2026-11-13T10:05:30.680",
+        "end_ts": "2026-11-13T10:06:33.312",
+        "duration_ms": 62632.2,
+        "status": "error",
+        "error": "TimeoutError: no answer for fb34ab83-8eec-471a-b121-0835b7f2348c in 60.0s - are the 3 agents running?",
+        "pid": 14805,
+        "question": "How many units were affected by recall F-1000-2022?"
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "facts_lookup",
+        "start_ts": "2026-11-13T10:05:30.710",
+        "end_ts": "2026-11-13T10:05:31.647",
+        "duration_ms": 936.9,
+        "status": "ok",
+        "error": null,
+        "pid": 14805
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T10:05:32.311",
+        "end_ts": "2026-11-13T10:05:32.377",
+        "duration_ms": 66.5,
+        "status": "ok",
+        "error": null,
+        "pid": 81717,
+        "hop": "inbox"
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "planner",
+        "start_ts": "2026-11-13T10:05:32.381",
+        "end_ts": "2026-11-13T10:05:41.406",
+        "duration_ms": 9024.6,
+        "status": "ok",
+        "error": null,
+        "pid": 81717
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "queue_wait",
+        "start_ts": "2026-11-13T10:05:41.384",
+        "end_ts": "2026-11-13T10:05:41.436",
+        "duration_ms": 52.6,
+        "status": "ok",
+        "error": null,
+        "pid": 81725,
+        "hop": "tasks"
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "evaluation",
+        "start_ts": "2026-11-13T10:05:41.432",
+        "end_ts": "2026-11-13T10:07:42.352",
+        "duration_ms": 120920.3,
+        "status": "error",
+        "error": "incomplete: no draft, final within 120s",
+        "pid": 81809
+      },
+      {
+        "trace_id": "fb34ab83-8eec-471a-b121-0835b7f2348c",
+        "stage": "writer",
+        "start_ts": "2026-11-13T10:05:41.438",
+        "end_ts": "2026-11-13T10:05:43.036",
+        "duration_ms": 1597.4,
+        "status": "error",
+        "error": "RuntimeError: injected failure (fail_at=writer) -> dead letter after 3 attempts",
+        "pid": 81725,
+        "writer": "w1"
+      }
+    ]
+  }
+}

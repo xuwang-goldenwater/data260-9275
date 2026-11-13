@@ -1,0 +1,92 @@
+{
+  "requests_planned": 50,
+  "traces_found": 50,
+  "cache_lookup_spans": 50,
+  "cache_lookup_misses": 50,
+  "all_confirmed_misses": true,
+  "complete_ok_misses": 50,
+  "table": [
+    {
+      "stage": "cache_lookup",
+      "n": 50,
+      "p50_ms": 343.9,
+      "p95_ms": 1222.5,
+      "pct_of_cache_miss_e2e": 2.0
+    },
+    {
+      "stage": "facts_lookup",
+      "n": 50,
+      "p50_ms": 102.3,
+      "p95_ms": 290.2,
+      "pct_of_cache_miss_e2e": 0.5
+    },
+    {
+      "stage": "planner",
+      "n": 50,
+      "p50_ms": 9550.0,
+      "p95_ms": 13832.0,
+      "pct_of_cache_miss_e2e": 40.1
+    },
+    {
+      "stage": "writer",
+      "n": 50,
+      "p50_ms": 8481.2,
+      "p95_ms": 12004.8,
+      "pct_of_cache_miss_e2e": 34.5
+    },
+    {
+      "stage": "reviewer",
+      "n": 50,
+      "p50_ms": 5367.2,
+      "p95_ms": 8285.8,
+      "pct_of_cache_miss_e2e": 20.3
+    },
+    {
+      "stage": "queue_wait_total",
+      "n": 50,
+      "p50_ms": 107.0,
+      "p95_ms": 715.0,
+      "pct_of_cache_miss_e2e": 2.6
+    },
+    {
+      "stage": "gateway_overhead",
+      "n": 50,
+      "p50_ms": -20.3,
+      "p95_ms": -6.3,
+      "pct_of_cache_miss_e2e": -0.2
+    },
+    {
+      "stage": "end_to_end",
+      "n": 50,
+      "p50_ms": 23135.2,
+      "p95_ms": 35508.3,
+      "pct_of_cache_miss_e2e": null
+    },
+    {
+      "stage": "evaluation",
+      "n": 50,
+      "p50_ms": 44775.9,
+      "p95_ms": 58208.8,
+      "pct_of_cache_miss_e2e": 188.2
+    }
+  ],
+  "queue_wait_by_hop": {
+    "inbox": {
+      "p50_ms": 39.3,
+      "p95_ms": 437.5
+    },
+    "tasks": {
+      "p50_ms": 32.7,
+      "p95_ms": 163.9
+    },
+    "drafts": {
+      "p50_ms": 24.2,
+      "p95_ms": 118.1
+    },
+    "final": {
+      "p50_ms": 11.4,
+      "p95_ms": 67.8
+    }
+  },
+  "note": "end_to_end = gateway span (ask() start to final received). Stage shares sum to 100% with gateway_overhead (consumer join, embedding, result logging). evaluation runs after the final answer, off the request path; its share is relative to the same end-to-end total for comparison only."
+}

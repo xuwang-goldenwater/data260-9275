@@ -1,0 +1,313 @@
+{
+  "seed": 9275,
+  "cached_recall_numbers_excluded": [
+    "F-0002-2021",
+    "F-0003-2023",
+    "F-2015-2026",
+    "F-4393-2026",
+    "F-4529-2026"
+  ],
+  "replaced_by_precheck": 0,
+  "questions": [
+    {
+      "n": 1,
+      "kind": "not_found",
+      "question": "When was recall F-9616-2024 issued?",
+      "trace_id": "0aaa45c3-1488-43bc-a1d3-1a6ac35e20fe"
+    },
+    {
+      "n": 2,
+      "kind": "record",
+      "question": "When was recall F-0586-2025 issued?",
+      "trace_id": "d36570a8-0884-4f1a-8b69-87bd21201bab"
+    },
+    {
+      "n": 3,
+      "kind": "not_found",
+      "question": "What product was recalled under F-6090-2023?",
+      "trace_id": "ae9dade9-c537-4e48-bb9a-c853e262a7ac"
+    },
+    {
+      "n": 4,
+      "kind": "record",
+      "question": "How many units were affected by recall F-2548-2021?",
+      "trace_id": "5c4695a8-b73e-4b4f-b4c0-0c548c5f3f43"
+    },
+    {
+      "n": 5,
+      "kind": "record",
+      "question": "In which state is the firm behind recall F-3899-2024 located?",
+      "trace_id": "41d76725-597b-4302-bae3-4fe60b1f872c"
+    },
+    {
+      "n": 6,
+      "kind": "record",
+      "question": "How many units were affected by recall F-4842-2022?",
+      "trace_id": "ad2d02c0-9be7-430f-90cd-ae3c2a891e44"
+    },
+    {
+      "n": 7,
+      "kind": "record",
+      "question": "What product was recalled under F-2044-2023?",
+      "trace_id": "b48bab25-f371-44fe-9aa2-c6b640e60176"
+    },
+    {
+      "n": 8,
+      "kind": "record",
+      "question": "How many units were affected by recall F-3086-2021?",
+      "trace_id": "1853b463-6bbb-4daa-84b6-b6c9aaf84a37"
+    },
+    {
+      "n": 9,
+      "kind": "off_domain",
+      "question": "How many bones are in the adult human body?",
+      "trace_id": "b0435809-0d04-46b3-af7a-23ad320103ab"
+    },
+    {
+      "n": 10,
+      "kind": "record",
+      "question": "What is the recall category of F-3749-2022?",
+      "trace_id": "721b22ae-0e0f-4f34-ac8e-9e86cb125afc"
+    },
+    {
+      "n": 11,
+      "kind": "record",
+      "question": "In which state is the firm behind recall F-2458-2024 located?",
+      "trace_id": "feb6a619-806f-43bb-bf5f-1c6ca24af94a"
+    },
+    {
+      "n": 12,
+      "kind": "record",
+      "question": "When was recall F-1766-2024 issued?",
+      "trace_id": "4c10c0f9-9b82-4137-a893-4c5d61624c09"
+    },
+    {
+      "n": 13,
+      "kind": "record",
+      "question": "What is the recall category of F-1083-2023?",
+      "trace_id": "f8c450c6-d04a-465b-bd46-c3797c811ddf"
+    },
+    {
+      "n": 14,
+      "kind": "not_found",
+      "question": "What is the recall category of F-6255-2023?",
+      "trace_id": "9dccc2f7-2338-4067-8eb1-7b6d75053f70"
+    },
+    {
+      "n": 15,
+      "kind": "record",
+      "question": "What product was recalled under F-2915-2023?",
+      "trace_id": "4cc37364-696c-4143-b70e-63e70e80ef7e"
+    },
+    {
+      "n": 16,
+      "kind": "record",
+      "question": "What product was recalled under F-1788-2023?",
+      "trace_id": "edde13f2-d9cc-44d0-8c76-bbfc1176d2b7"
+    },
+    {
+      "n": 17,
+      "kind": "record",
+      "question": "Which firm issued recall F-1758-2024?",
+      "trace_id": "bf761287-d198-4377-868f-ea0c865f540a"
+    },
+    {
+      "n": 18,
+      "kind": "record",
+      "question": "Which firm issued recall F-3452-2023, and how many units were affected?",
+      "trace_id": "18bd00ea-eef2-44c1-8e28-273a4d39f67c"
+    },
+    {
+      "n": 19,
+      "kind": "off_domain",
+      "question": "What is the tallest mountain in Africa?",
+      "trace_id": "063eff00-f821-4138-a88d-270c1c1eeae5"
+    },
+    {
+      "n": 20,
+      "kind": "not_found",
+      "question": "In which state is the firm behind recall F-6687-2025 located?",
+      "trace_id": "6ec7c9cd-7a53-44de-acfb-67f87a604329"
+    },
+    {
+      "n": 21,
+      "kind": "record",
+      "question": "In which state is the firm behind recall F-1283-2024 located?",
+      "trace_id": "b55e5d20-c2f1-42c9-826d-5945ce289413"
+    },
+    {
+      "n": 22,
+      "kind": "record",
+      "question": "In which state is the firm behind recall F-0408-2023 located?",
+      "trace_id": "d1c6c1c1-afac-4582-87c5-1d286cf72019"
+    },
+    {
+      "n": 23,
+      "kind": "record",
+      "question": "When was recall F-3003-2024 issued?",
+      "trace_id": "551f6c7f-6202-449b-a6b1-c4a2587b9605"
+    },
+    {
+      "n": 24,
+      "kind": "record",
+      "question": "Which firm issued recall F-1959-2022?",
+      "trace_id": "1e407509-dabf-491e-a226-608a40e9456c"
+    },
+    {
+      "n": 25,
+      "kind": "record",
+      "question": "How many units were affected by recall F-1768-2023?",
+      "trace_id": "1c34b76b-4fad-4e9c-86da-ee0919cccbe5"
+    },
+    {
+      "n": 26,
+      "kind": "record",
+      "question": "In which state is the firm behind recall F-3601-2024 located?",
+      "trace_id": "89423477-236d-46da-a9c2-4c012919181d"
+    },
+    {
+      "n": 27,
+      "kind": "record",
+      "question": "What product was recalled under F-2767-2024?",
+      "trace_id": "6189f1ef-b850-40b9-be79-a14e5ac374e6"
+    },
+    {
+      "n": 28,
+      "kind": "record",
+      "question": "When was recall F-3684-2026 issued?",
+      "trace_id": "5304c811-a777-4e77-988f-b279746361b9"
+    },
+    {
+      "n": 29,
+      "kind": "off_domain",
+      "question": "Who painted the ceiling of the Sistine Chapel?",
+      "trace_id": "978e7f1f-d702-419b-8ebc-d485a913fd52"
+    },
+    {
+      "n": 30,
+      "kind": "record",
+      "question": "What product was recalled under F-2700-2025, and when was it issued?",
+      "trace_id": "b821bf40-8a2f-481f-8c66-c8ca4ac225f8"
+    },
+    {
+      "n": 31,
+      "kind": "record",
+      "question": "Which firm issued recall F-2520-2022?",
+      "trace_id": "ec4574d5-b044-433a-99f0-47b33846747a"
+    },
+    {
+      "n": 32,
+      "kind": "record",
+      "question": "Which firm issued recall F-4086-2025, and how many units were affected?",
+      "trace_id": "6bab5b2d-9c70-4403-9ddf-14115a81a735"
+    },
+    {
+      "n": 33,
+      "kind": "record",
+      "question": "What is the recall category of F-3465-2024?",
+      "trace_id": "92c64511-7812-497c-8673-a991a513b6ea"
+    },
+    {
+      "n": 34,
+      "kind": "record",
+      "question": "When was recall F-4493-2022 issued?",
+      "trace_id": "f929d461-e032-4830-86f8-e72c76a57ba9"
+    },
+    {
+      "n": 35,
+      "kind": "off_domain",
+      "question": "Which programming language should I learn first?",
+      "trace_id": "c14dc019-28f2-4904-a6b6-a9a743c30ef8"
+    },
+    {
+      "n": 36,
+      "kind": "not_found",
+      "question": "What product was recalled under F-7907-2023?",
+      "trace_id": "f09c2ea3-b85d-4f19-a103-3e6ff1c30c3b"
+    },
+    {
+      "n": 37,
+      "kind": "record",
+      "question": "Which firm issued recall F-0849-2025, and how many units were affected?",
+      "trace_id": "9f6f38d4-e4e9-4219-851c-e1db132945af"
+    },
+    {
+      "n": 38,
+      "kind": "record",
+      "question": "What product was recalled under F-0409-2021, and when was it issued?",
+      "trace_id": "8c0ca413-f221-4722-8cc6-61603aed6bce"
+    },
+    {
+      "n": 39,
+      "kind": "not_found",
+      "question": "What is the recall category of F-9624-2024?",
+      "trace_id": "48327727-e666-4ec8-b1bc-acdacb90459b"
+    },
+    {
+      "n": 40,
+      "kind": "record",
+      "question": "What product was recalled under F-0176-2024?",
+      "trace_id": "e8a06b2b-8e0c-4a09-b9dc-7c0ae231d814"
+    },
+    {
+      "n": 41,
+      "kind": "record",
+      "question": "How many units were affected by recall F-2879-2023?",
+      "trace_id": "60c25d7f-83b9-4350-bf56-60cca52519e2"
+    },
+    {
+      "n": 42,
+      "kind": "record",
+      "question": "Which firm issued recall F-0196-2022?",
+      "trace_id": "5e4c27a4-84d3-4979-9bbf-89e94042d8ef"
+    },
+    {
+      "n": 43,
+      "kind": "record",
+      "question": "What product was recalled under F-2384-2026, and when was it issued?",
+      "trace_id": "e334f772-ef9c-4e8b-a9b7-76e275421a02"
+    },
+    {
+      "n": 44,
+      "kind": "record",
+      "question": "Which firm issued recall F-2978-2023?",
+      "trace_id": "9cdaee6e-d26a-47c7-9a39-5f7f03cd1fbe"
+    },
+    {
+      "n": 45,
+      "kind": "off_domain",
+      "question": "How do I change a flat bicycle tyre?",
+      "trace_id": "9ee3b76d-2d80-4924-97a8-d2a772c98637"
+    },
+    {
+      "n": 46,
+      "kind": "record",
+      "question": "Which firm issued recall F-2512-2025?",
+      "trace_id": "6c869c77-4b66-4558-8a63-9b0c1514372d"
+    },
+    {
+      "n": 47,
+      "kind": "record",
+      "question": "How many units were affected by recall F-1453-2025?",
+      "trace_id": "a541b887-88cd-4fa9-854c-84cbcf8a0fcc"
+    },
+    {
+      "n": 48,
+      "kind": "record",
+      "question": "What is the recall category of F-3911-2024?",
+      "trace_id": "ec6e5849-9072-412a-8708-8f0f319ebfdb"
+    },
+    {
+      "n": 49,
+      "kind": "record",
+      "question": "Which firm issued recall F-0062-2026, and how many units were affected?",
+      "trace_id": "d1daeabc-895a-4635-b95a-ed18abf04411"
+    },
+    {
+      "n": 50,
+      "kind": "off_domain",
+      "question": "What is a good stretching routine before running?",
+      "trace_id": "0302304f-ba47-419f-949f-329b1f5a8887"
+    }
+  ]
+}
