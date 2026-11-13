@@ -193,7 +193,11 @@ class SemanticCache:
             self._consumer = Consumer({"bootstrap.servers": BOOTSTRAP,
                                        "group.id": f"{PREFIX}_cache_{uuid.uuid4().hex[:8]}",
                                        "auto.offset.reset": "latest",
-                                       "enable.auto.commit": True})
+                                       "enable.auto.commit": True,
+                                       # HW10: a caller may pause between requests (the latency
+                                       # run waits for the evaluator); without this the idle
+                                       # consumer is kicked out after 300 s (MAXPOLL).
+                                       "max.poll.interval.ms": 3600000})
             self._consumer.subscribe([FINAL])
             joined_by = time.time() + 30          # HW10: never wait forever for Kafka
             while not self._consumer.assignment():
