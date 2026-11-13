@@ -20,6 +20,10 @@ Test helpers (only used by part3_tools.py):
     "order_test" field   fake 0.1-0.6 s of work instead of a model call and log
                          the processing order to reports/hw08/raw/ordering_<run>.csv
 
+HW10: the stage is wrapped in a "writer" span (trace_id = correlation_id) and
+the tasks -> Writer queue wait is recorded. A message with "fail_at": "writer"
+raises on purpose (Part 4.2 failed trace): retries, then dead letter, span = error.
+
 HW9: a message may carry "facts" (one recall notice, looked up by the HW9
 gateway). The Writer then answers from those values; without "facts" the
 prompt is exactly the HW8 one.
@@ -39,7 +43,7 @@ import time
 from datetime import datetime
 
 from common import (DRAFTS, ROOT, TASKS, add_trace, llm, log, make_consumer,
-                    make_producer, send)
+                    make_producer, record_queue_wait, send, span)
 from reliability import MAX_ATTEMPTS, ProcessedStore, run_with_retries, to_dead_letter
 
 WRITER_ID = os.getenv("WRITER_ID", "w1")
@@ -62,6 +66,8 @@ SYSTEM = (
 
 def write_draft(message: dict) -> str:
     """The real work. A message without 'question' raises KeyError (the poison case)."""
+    if message.get("fail_at") == "writer":     # HW10 Part 4.2: controlled failure
+        raise RuntimeError("injected failure (fail_at=writer)")
     if SLOW_SECONDS:
         log(AGENT, "WORKING", f"cid={message.get('correlation_id')} "
                               f"pid={os.getpid()} sleeping {SLOW_SECONDS:.0f}s - kill window")
@@ -140,31 +146,14 @@ def main() -> None:
                 continue
 
             work = (lambda m: order_test_work(m, msg)) if message.get("order_test") else write_draft
-
-            if FIX_DLQ:
-                ok, result, attempts = run_with_retries(
-                    work, message,
-                    on_retry=lambda n, exc: log(AGENT, "RETRY", f"cid={cid} attempt {n}/"
-                                                f"{MAX_ATTEMPTS} failed: {type(exc).__name__}: {exc}",
-                                                cid=cid))
-                if not ok:
-                    to_dead_letter(producer, raw, msg, AGENT, result, attempts)
-                    log(AGENT, "DEAD_LTR", f"cid={cid} -> s9275_dead_letter after {attempts} "
-                                           f"attempts ({result})", cid=cid)
+            traced = cid is not None and not message.get("order_test")   # HW8 order test: no spans
+            if traced:
+                record_queue_wait(cid, "tasks", msg)        # HW10: hop 2, Planner -> Writer
+            stage = span(cid, "writer", writer=WRITER_ID) if traced else _no_span()
+            with stage as s:
+                if not process(message, msg, raw, cid, work, producer, s):
                     commit(msg)
                     continue
-                draft = result
-            else:
-                draft = work(message)        # before fix: an exception ends the process
-
-            if message.get("order_test"):
-                log(AGENT, "ORDERED", f"cid={cid} {draft}", cid=cid,
-                    recall_notice_id=message["recall_notice_id"], seq=message["seq"])
-            else:
-                log(AGENT, "WROTE", f"cid={cid} draft={len(draft.split())} words", cid=cid)
-                out = {**message, "draft": draft, "trace": add_trace(message, AGENT)}
-                send(producer, DRAFTS, out)
-                log(AGENT, "SENT", f"cid={cid} -> {DRAFTS}", cid=cid)
 
             store.mark(cid)      # after the output is in Kafka
             commit(msg)          # last: only now is this message done
@@ -172,6 +161,42 @@ def main() -> None:
         pass
     finally:
         consumer.close()
+
+
+def _no_span():
+    from contextlib import nullcontext
+    return nullcontext({})
+
+
+def process(message, msg, raw, cid, work, producer, s) -> bool:
+    """Write (with retries / dead letter) and send. False = went to the dead letter.
+    s is the open writer span: a dead-lettered message marks it status=error."""
+    if FIX_DLQ:
+        ok, result, attempts = run_with_retries(
+            work, message,
+            on_retry=lambda n, exc: log(AGENT, "RETRY", f"cid={cid} attempt {n}/"
+                                        f"{MAX_ATTEMPTS} failed: {type(exc).__name__}: {exc}",
+                                        cid=cid))
+        if not ok:
+            to_dead_letter(producer, raw, msg, AGENT, result, attempts)
+            log(AGENT, "DEAD_LTR", f"cid={cid} -> s9275_dead_letter after {attempts} "
+                                   f"attempts ({result})", cid=cid)
+            s["status"] = "error"
+            s["error"] = f"{result} -> dead letter after {attempts} attempts"
+            return False
+        draft = result
+    else:
+        draft = work(message)        # before fix: an exception ends the process
+
+    if message.get("order_test"):
+        log(AGENT, "ORDERED", f"cid={cid} {draft}", cid=cid,
+            recall_notice_id=message["recall_notice_id"], seq=message["seq"])
+    else:
+        log(AGENT, "WROTE", f"cid={cid} draft={len(draft.split())} words", cid=cid)
+        out = {**message, "draft": draft, "trace": add_trace(message, AGENT)}
+        send(producer, DRAFTS, out)
+        log(AGENT, "SENT", f"cid={cid} -> {DRAFTS}", cid=cid)
+    return True
 
 
 if __name__ == "__main__":

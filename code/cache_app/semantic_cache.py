@@ -49,6 +49,8 @@ from redis.commands.search.query import Query
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "code"))
 sys.path.insert(0, str(ROOT / "code" / "kafka_agents"))
+sys.path.insert(0, str(ROOT / "code" / "observability"))
+from tracing import new_trace_id, record_queue_wait, span  # noqa: E402  HW10 Part 4
 
 PREFIX = "s9275"
 ENTRY_PREFIX = f"{PREFIX}:semcache:"
@@ -59,9 +61,10 @@ DEFAULT_THRESHOLD = 0.85
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 VERSION_CHECK = os.getenv("VERSION_CHECK", "1") == "1"        # Part 3.5 switch
 RECALL_GUARD = os.getenv("RECALL_GUARD", "1") == "1"          # Part 3.4 shipped config
-AGENT_TIMEOUT_S = 240
+CACHE_STORE = os.getenv("CACHE_STORE", "1") == "1"            # HW10 4.3: 0 = never write answers
+AGENT_TIMEOUT_S = float(os.getenv("AGENT_TIMEOUT_S", "240"))   # HW10 failed-trace demo uses a short one
 RECALL_NUMBER = re.compile(r"\bF-\d{4}-\d{4}\b", re.IGNORECASE)
-QUERY_LOG = ROOT / "reports/hw09/raw/part2_queries.jsonl"
+QUERY_LOG = Path(os.getenv("CACHE_QUERY_LOG", ROOT / "reports/hw09/raw/part2_queries.jsonl"))
 
 log = logging.getLogger("semantic_cache")
 
@@ -179,8 +182,11 @@ class SemanticCache:
                  "firm_name": n["firm"]["name"], "firm_state": n["firm"]["state"]}
         return facts, n["id"]
 
-    def run_agent(self, question: str, facts: Optional[dict]) -> dict:
-        """Send to s9275_inbox, wait for the same correlation_id on s9275_final."""
+    def run_agent(self, question: str, facts: Optional[dict], trace_id: Optional[str] = None,
+                  extra: Optional[dict] = None) -> dict:
+        """Send to s9275_inbox, wait for the same correlation_id on s9275_final.
+        HW10: correlation_id IS the trace_id created in ask(); extra carries test
+        fields such as {"fail_at": "writer"} (Part 4.2 failed trace)."""
         from confluent_kafka import Consumer
         from common import BOOTSTRAP, FINAL, INBOX, make_producer, send
         if self._consumer is None:          # one consumer for the whole run, joined once
@@ -189,11 +195,16 @@ class SemanticCache:
                                        "auto.offset.reset": "latest",
                                        "enable.auto.commit": True})
             self._consumer.subscribe([FINAL])
+            joined_by = time.time() + 30          # HW10: never wait forever for Kafka
             while not self._consumer.assignment():
+                if time.time() > joined_by:
+                    self._consumer.close()
+                    self._consumer = None
+                    raise ConnectionError(f"no partition of {FINAL} assigned in 30s - is Kafka up?")
                 self._consumer.poll(0.2)
             self._producer = make_producer()
-        cid = str(uuid.uuid4())
-        message = {"correlation_id": cid, "question": question}
+        cid = trace_id or new_trace_id()       # HW9 threshold_sweep.py calls without one
+        message = {"correlation_id": cid, "question": question, **(extra or {})}
         if facts is not None:
             message["facts"] = facts
         send(self._producer, INBOX, message)
@@ -204,52 +215,81 @@ class SemanticCache:
                 continue
             final = json.loads(msg.value())
             if final.get("correlation_id") == cid:
+                record_queue_wait(cid, "final", msg)      # hop 4: s9275_final -> gateway
                 return final
         raise TimeoutError(f"no answer for {cid} in {AGENT_TIMEOUT_S}s - are the 3 agents running?")
 
     # ---- the ingress ---------------------------------------------------------
-    def ask(self, question: str) -> dict:
-        t0 = time.perf_counter()
-        vec = self.embed(question)
-        t_embed = time.perf_counter()
-        best = self.lookup(vec)
-        t_search = time.perf_counter()
-        sim = best["similarity"] if best else None
-        timings = {"embed_ms": (t_embed - t0) * 1000, "search_ms": (t_search - t_embed) * 1000}
+    def ask(self, question: str, trace_id: Optional[str] = None,
+            extra: Optional[dict] = None) -> dict:
+        """HW10: the trace_id is created here, BEFORE the cache lookup, so hits
+        and misses both have one; on a miss it becomes the Kafka correlation_id."""
+        trace_id = trace_id or new_trace_id()
+        with span(trace_id, "gateway", question=question) as g:   # = end-to-end span
+            out = self._ask(question, trace_id, extra)
+            g["cache"] = "hit" if out["is_cached"] else "miss"
+            # A Reviewer rejection is an answer outcome, not a system error: the request
+            # completed. Errors are exceptions/timeouts (span() records those itself).
+            g["outcome"] = "cached" if out["is_cached"] else out.get("status")
+            return out
 
-        if best and sim >= self.threshold and self.recall_guard \
-                and not recall_guard_ok(question, best["query"]):
-            log.info("CACHE GUARD sim=%.4f but recall number differs from %r -> miss",
-                     sim, best["query"])
-            best = None                       # not allowed to reuse; fall through to the agents
-        if best and sim >= self.threshold:
-            stale = VERSION_CHECK and best["data_version"] != self.current_version(best["notice_id"])
-            if not stale:
-                total = (time.perf_counter() - t0) * 1000
-                log.info("CACHE HIT  sim=%.4f  matched=%r", sim, best["query"])
-                return self._result(question, best["answer"], True, sim, total, timings,
-                                    matched=best["query"], notice_id=best["notice_id"])
-            # Part 3.5: the record changed after this answer was cached
-            self.r.delete(best["key"])
-            log.info("CACHE STALE sim=%.4f  v%s != v%s  -> entry deleted, treated as miss",
-                     sim, best["data_version"], self.current_version(best["notice_id"]))
+    def _ask(self, question: str, trace_id: str, extra: Optional[dict]) -> dict:
+        t0 = time.perf_counter()
+        with span(trace_id, "cache_lookup") as c:
+            vec = self.embed(question)
+            t_embed = time.perf_counter()
+            best = self.lookup(vec)
+            t_search = time.perf_counter()
+            sim = best["similarity"] if best else None
+            c["similarity"] = None if sim is None else round(sim, 4)
+            timings = {"embed_ms": (t_embed - t0) * 1000, "search_ms": (t_search - t_embed) * 1000}
+
+            if best and sim >= self.threshold and self.recall_guard \
+                    and not recall_guard_ok(question, best["query"]):
+                log.info("CACHE GUARD sim=%.4f but recall number differs from %r -> miss",
+                         sim, best["query"])
+                c["miss_reason"] = "recall_guard"
+                best = None                   # not allowed to reuse; fall through to the agents
+            hit = None
+            if best and sim >= self.threshold:
+                stale = VERSION_CHECK and best["data_version"] != self.current_version(best["notice_id"])
+                if not stale:
+                    hit = best
+                else:                         # Part 3.5: record changed after the answer was cached
+                    self.r.delete(best["key"])
+                    c["miss_reason"] = "stale"
+                    log.info("CACHE STALE sim=%.4f  v%s != v%s  -> entry deleted, treated as miss",
+                             sim, best["data_version"], self.current_version(best["notice_id"]))
+            elif best is not None:
+                c["miss_reason"] = "below_threshold"
+            elif "miss_reason" not in c:
+                c["miss_reason"] = "empty_index"
+            c["cache"] = "hit" if hit else "miss"
+
+        if hit:
+            total = (time.perf_counter() - t0) * 1000
+            log.info("CACHE HIT  sim=%.4f  matched=%r", sim, hit["query"])
+            return self._result(question, hit["answer"], True, sim, total, timings, trace_id,
+                                matched=hit["query"], notice_id=hit["notice_id"])
 
         log.info("CACHE MISS best_sim=%s -> HW8 agent pipeline",
                  "none" if sim is None else f"{sim:.4f}")
-        facts, notice_id = self.facts_for(question)
-        version = self.current_version(notice_id)
+        with span(trace_id, "facts_lookup"):
+            facts, notice_id = self.facts_for(question)
+            version = self.current_version(notice_id)
         t_agent = time.perf_counter()
-        final = self.run_agent(question, facts)
+        final = self.run_agent(question, facts, trace_id, extra)
         timings["agent_ms"] = (time.perf_counter() - t_agent) * 1000
         answer = final.get("answer", "")
-        if final.get("status") == "approved":       # never cache an answer the Reviewer rejected
+        if CACHE_STORE and final.get("status") == "approved":   # never cache a rejected answer
             self.store(question, vec, answer, notice_id, version)
         total = (time.perf_counter() - t0) * 1000
-        return self._result(question, answer, False, sim, total, timings,
+        return self._result(question, answer, False, sim, total, timings, trace_id,
                             notice_id=notice_id, status=final.get("status"))
 
-    def _result(self, question, answer, is_cached, sim, total_ms, timings, **extra) -> dict:
-        out = {"question": question, "answer": answer, "is_cached": is_cached,
+    def _result(self, question, answer, is_cached, sim, total_ms, timings, trace_id,
+                **extra) -> dict:
+        out = {"trace_id": trace_id, "question": question, "answer": answer, "is_cached": is_cached,
                "similarity": None if sim is None else round(sim, 4),
                "latency_ms": round(total_ms, 1),
                "timings": {k: round(v, 1) for k, v in timings.items()},

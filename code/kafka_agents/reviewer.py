@@ -26,7 +26,8 @@ import json
 import re
 from difflib import SequenceMatcher
 
-from common import DRAFTS, FINAL, add_trace, llm, log, make_consumer, make_producer, send
+from common import (DRAFTS, FINAL, add_trace, llm, log, make_consumer, make_producer,
+                    record_queue_wait, send, span)
 
 AGENT = "reviewer"
 GROUP_ID = "s9275_reviewer"
@@ -110,13 +111,16 @@ def main() -> None:
             message = json.loads(msg.value())
             cid = message.get("correlation_id")
             log(AGENT, "RECEIVED", f"cid={cid} from {DRAFTS} offset={msg.offset()}", cid=cid)
+            record_queue_wait(cid, "drafts", msg)           # HW10: hop 3, Writer -> Reviewer
 
-            status, reason = review(message)
-            log(AGENT, "REVIEWED", f"cid={cid} status={status} reason={reason!r}", cid=cid)
+            with span(cid, "reviewer") as s:                # HW10: review + send
+                status, reason = review(message)
+                s["review_status"] = status                 # a rejection is an outcome, not an error
+                log(AGENT, "REVIEWED", f"cid={cid} status={status} reason={reason!r}", cid=cid)
 
-            out = {**message, "status": status, "answer": message.get("draft", ""),
-                   "review": reason, "trace": add_trace(message, AGENT)}
-            send(producer, FINAL, out)
+                out = {**message, "status": status, "answer": message.get("draft", ""),
+                       "review": reason, "trace": add_trace(message, AGENT)}
+                send(producer, FINAL, out)
             log(AGENT, "SENT", f"cid={cid} -> {FINAL}", cid=cid)
             consumer.commit(message=msg, asynchronous=False)
     except KeyboardInterrupt:

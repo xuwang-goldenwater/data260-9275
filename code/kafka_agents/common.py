@@ -26,6 +26,9 @@ from typing import Any, Dict, List, Optional
 
 from confluent_kafka import Consumer, Producer
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "observability"))
+from tracing import record_queue_wait, span, write_span  # noqa: E402,F401  HW10 Part 4 spans
+
 ROOT = Path(__file__).resolve().parents[2]          # repo root
 PREFIX = "s9275"
 SEED = 9275

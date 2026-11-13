@@ -13,7 +13,8 @@ from __future__ import annotations
 import json
 import re
 
-from common import INBOX, TASKS, add_trace, llm, log, make_consumer, make_producer, send
+from common import (INBOX, TASKS, add_trace, llm, log, make_consumer, make_producer,
+                    record_queue_wait, send, span)
 
 AGENT = "planner"
 GROUP_ID = "s9275_planner"
@@ -47,12 +48,14 @@ def main() -> None:
             cid = message.get("correlation_id")
             log(AGENT, "RECEIVED", f"cid={cid} from {INBOX} offset={msg.offset()} "
                                    f"question={message.get('question')!r}", cid=cid)
+            record_queue_wait(cid, "inbox", msg)            # HW10: hop 1, gateway -> Planner
 
-            steps = parse_steps(llm(SYSTEM, message["question"], max_tokens=200))
-            log(AGENT, "PLANNED", f"cid={cid} steps={steps}", cid=cid)
+            with span(cid, "planner"):                      # HW10: model call + send
+                steps = parse_steps(llm(SYSTEM, message["question"], max_tokens=200))
+                log(AGENT, "PLANNED", f"cid={cid} steps={steps}", cid=cid)
 
-            out = {**message, "plan": steps, "trace": add_trace(message, AGENT)}
-            send(producer, TASKS, out)
+                out = {**message, "plan": steps, "trace": add_trace(message, AGENT)}
+                send(producer, TASKS, out)
             log(AGENT, "SENT", f"cid={cid} -> {TASKS}", cid=cid)
             consumer.commit(message=msg, asynchronous=False)
     except KeyboardInterrupt:
