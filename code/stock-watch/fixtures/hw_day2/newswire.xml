@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE (Xu Wang). "Example Newswire" and all companies named are fictional. -->
+<rss version="2.0"><channel>
+  <title>Example Newswire: markets (HW11 fixture, day 2)</title>
+  <link>https://example-newswire.example/markets</link>
+  <item>
+    <title>Market wrap: grocers mixed in light pre-holiday trading</title>
+    <link>https://example-newswire.example/markets/wrap-1202</link>
+    <pubDate>Wed, 02 Dec 2026 21:30:00 GMT</pubDate>
+    <description>(HW11 fixture, fictional.) Grocery and food stocks were mixed; chipmakers led gains.</description>
+  </item>
+</channel></rss>

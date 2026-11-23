@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE (Xu Wang). Greenvale Grocers (GRVL), Harvest Pantry Foods (HRVT) and Voltara Chips (VLTA) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture, day 2)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000202</id>
+    <updated>2026-12-02T08:30:00-05:00</updated>
+    <title>GRVL: 8-K - Current report (Item 8.01)</title>
+    <summary>(HW11 fixture, fictional company.) Greenvale Grocers Inc. Item 8.01 Other Events: voluntary recall of Greenvale Select frozen vegetables (12 SKUs) sold in 140 stores after a supplier reported possible Listeria contamination; products removed from shelves and customers offered full refunds.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000202/0009999911-26-000202-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000203</id>
+    <updated>2026-12-02T09:15:00-05:00</updated>
+    <title>GRVL: 8-K/A - Current report, amendment</title>
+    <summary>(HW11 fixture, fictional company.) Greenvale Grocers Inc. Amendment No. 1 to the 8-K filed November 30, 2026 (accession 0009999911-26-000201 is referenced in Exhibit 99.1 only). Purpose: correct a typographical error in the exhibit index. No change to reported results.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000203/0009999911-26-000203-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000201</id>
+    <updated>2026-11-30T16:10:00-05:00</updated>
+    <title>GRVL: 8-K - Current report (Item 2.02)</title>
+    <summary>(HW11 fixture, fictional company.) Greenvale Grocers Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Q3 net sales $2.41B, up 6% year over year; identical-store sales up 3.1%; full-year guidance maintained.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000201/0009999911-26-000201-index.htm" rel="alternate"/>
+  </entry>
+</feed>

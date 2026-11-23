@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE (Xu Wang). Greenvale Grocers (GRVL), Harvest Pantry Foods (HRVT) and Voltara Chips (VLTA) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture, day 1)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000201</id>
+    <updated>2026-11-30T16:10:00-05:00</updated>
+    <title>GRVL: 8-K - Current report (Item 2.02)</title>
+    <summary>(HW11 fixture, fictional company.) Greenvale Grocers Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Q3 net sales $2.41B, up 6% year over year; identical-store sales up 3.1%; full-year guidance maintained.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000201/0009999911-26-000201-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000301</id>
+    <updated>2026-11-30T17:05:00-05:00</updated>
+    <title>HRVT: 8-K - Current report (Item 5.02)</title>
+    <summary>(HW11 fixture, fictional company.) Harvest Pantry Foods Inc. Item 5.02 Departure of Directors or Certain Officers: Chief Financial Officer Dana Ruiz will step down effective December 31, 2026; the board has begun a search for a successor.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000301/0009999912-26-000301-index.htm" rel="alternate"/>
+  </entry>
+</feed>
