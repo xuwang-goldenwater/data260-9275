@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DEMO FIXTURE for DATA 260. NorthBay Robotics (NBRX), Cobalt Data Systems (CBDS) and Larkspur Biotech (LKSP) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (demo fixture)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999901-26-000101</id>
+    <updated>2026-11-10T16:30:00-05:00</updated>
+    <title>NBRX: 8-K - Current report</title>
+    <summary>(Demo fixture, fictional company.) NorthBay Robotics Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Q3 revenue $412M, up 38% year over year; full-year guidance raised.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999901/000999990126000101/0009999901-26-000101-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999903-26-000044</id>
+    <updated>2026-11-10T09:05:00-05:00</updated>
+    <title>LKSP: 8-K - Current report</title>
+    <summary>(Demo fixture, fictional company.) Larkspur Biotech Inc. Item 8.01 Other Events: the company will present at an industry conference on December 3.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999903/000999990326000044/0009999903-26-000044-index.htm" rel="alternate"/>
+  </entry>
+</feed>

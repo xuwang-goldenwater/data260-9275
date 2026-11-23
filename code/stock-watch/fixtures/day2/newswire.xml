@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DEMO FIXTURE for DATA 260. "Example Newswire" and all companies named are fictional. -->
+<rss version="2.0"><channel>
+  <title>Example Newswire: markets (demo fixture, day 2)</title>
+  <link>https://example-newswire.example/markets</link>
+  <item>
+    <title>Cobalt Data Systems lands $1.2B storage deal; shares jump</title>
+    <link>https://example-newswire.example/markets/cobalt-deal</link>
+    <pubDate>Wed, 11 Nov 2026 20:30:00 GMT</pubDate>
+    <description>(Demo fixture, fictional.) Cobalt Data Systems signed a five-year supply agreement. Filing: https://www.sec.gov/Archives/edgar/data/9999902/000999990226000077/0009999902-26-000077-index.htm</description>
+  </item>
+  <item>
+    <title>Market wrap: indexes edge higher in quiet trading</title>
+    <link>https://example-newswire.example/markets/wrap-1111</link>
+    <pubDate>Wed, 11 Nov 2026 21:10:00 GMT</pubDate>
+    <description>(Demo fixture, fictional.) Major indexes rose about 0.3% on light volume.</description>
+  </item>
+</channel></rss>

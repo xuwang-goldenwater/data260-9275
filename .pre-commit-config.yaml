@@ -11,4 +11,4 @@ repos:
         entry: ruff check
         language: system
         types: [python]
-        exclude: ^(frontend|reports|postman)/
+        exclude: ^(frontend|reports|postman|code/stock-watch)/

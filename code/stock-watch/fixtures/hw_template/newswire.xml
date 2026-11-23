@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW fixture template. One <item> per test case. Use fictional companies and label items fictional. -->
+<rss version="2.0"><channel>
+  <title>My test newswire (fictional)</title>
+  <link>https://example-newswire.example/markets</link>
+  <item>
+    <title>REPLACE: distinctive title for case N1</title>
+    <link>https://example-newswire.example/markets/n1</link>
+    <pubDate>Mon, 30 Nov 2026 09:00:00 GMT</pubDate>
+    <description>(Fictional test item.) To make it a duplicate of a filing, include the filing's accession number, e.g. 0009999901-26-000101.</description>
+  </item>
+</channel></rss>

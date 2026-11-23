@@ -29,3 +29,7 @@ postman/
 
 # HW8 - runtime state for idempotency (processed correlation_ids)
 var/
+
+# HW11 - stock-watch runtime state (ledger DB, snapshots, digests) is recreated by watch.py init/scan
+code/stock-watch/state/
+code/stock-watch/digests/

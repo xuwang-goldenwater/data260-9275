@@ -4,7 +4,8 @@
 target-version = "py312"
 line-length = 100
 # Evidence folders and the React app are not Python application code.
-extend-exclude = ["frontend", "reports", "postman"]
+# HW11: code/stock-watch is the instructor's starter kit, kept verbatim.
+extend-exclude = ["frontend", "reports", "postman", "code/stock-watch"]
 
 [tool.ruff.lint]
 # Ruff's default rule set, written out so the report can name it:

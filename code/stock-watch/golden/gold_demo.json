@@ -1,0 +1,15 @@
+{
+  "description": "Golden set for the demo fixtures (day1 + day2). All companies are fictional.",
+  "cases": [
+    {"case_id": "D1", "category": "normal",         "match_title": "NBRX closed +8.1%",                   "expected": "notify"},
+    {"case_id": "D2", "category": "normal",         "match_title": "NBRX: 8-K",                           "expected": "notify"},
+    {"case_id": "D3", "category": "normal",         "match_title": "LKSP closed -3.2%",                   "expected": "digest"},
+    {"case_id": "D4", "category": "low_value",      "match_title": "LKSP: 8-K - Current report",          "expected": "quiet"},
+    {"case_id": "D5", "category": "low_value",      "match_title": "5 robotics stocks to watch",          "expected": "quiet"},
+    {"case_id": "D6", "category": "adversarial",    "match_title": "Analyst note: Larkspur Biotech",      "expected": "ask"},
+    {"case_id": "D7", "category": "normal",         "match_title": "CBDS closed +12.5%",                  "expected": "notify"},
+    {"case_id": "D8", "category": "normal",         "match_title": "CBDS: 8-K",                           "expected": "notify"},
+    {"case_id": "D9", "category": "near_duplicate", "match_title": "LKSP: 8-K/A",                         "expected": "quiet"},
+    {"case_id": "D10","category": "low_value",      "match_title": "Market wrap: indexes edge higher",    "expected": "quiet"}
+  ]
+}

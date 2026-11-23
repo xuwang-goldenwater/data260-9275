@@ -1,0 +1,90 @@
+{
+  "description": "HW golden set: 12 cases, 2 per category. Label 'expected' BEFORE you run the agent. match_title = a distinctive part of the item's title. Use fictional companies in fixtures.",
+  "labeler": "your name",
+  "cases": [
+    {
+      "case_id": "N1",
+      "category": "normal",
+      "match_title": "",
+      "expected": "notify",
+      "why": ""
+    },
+    {
+      "case_id": "N2",
+      "category": "normal",
+      "match_title": "",
+      "expected": "digest",
+      "why": ""
+    },
+    {
+      "case_id": "B1",
+      "category": "boundary",
+      "match_title": "",
+      "expected": "",
+      "why": "e.g. a price move exactly at the threshold"
+    },
+    {
+      "case_id": "B2",
+      "category": "boundary",
+      "match_title": "",
+      "expected": "",
+      "why": "e.g. a ticker with missing prices (N/D) or one day of data"
+    },
+    {
+      "case_id": "A1",
+      "category": "adversarial",
+      "match_title": "",
+      "expected": "ask",
+      "why": "prompt injection in a news summary"
+    },
+    {
+      "case_id": "A2",
+      "category": "adversarial",
+      "match_title": "",
+      "expected": "",
+      "why": "e.g. injection phrased so the regex misses it"
+    },
+    {
+      "case_id": "M1",
+      "category": "ambiguous",
+      "match_title": "",
+      "expected": "",
+      "why": ""
+    },
+    {
+      "case_id": "M2",
+      "category": "ambiguous",
+      "match_title": "",
+      "expected": "",
+      "why": ""
+    },
+    {
+      "case_id": "D1",
+      "category": "near_duplicate",
+      "match_title": "",
+      "expected": "",
+      "why": "same filing reported by a news item (shares the accession number)"
+    },
+    {
+      "case_id": "D2",
+      "category": "near_duplicate",
+      "match_title": "",
+      "expected": "",
+      "why": "an 8-K/A amendment of a reported filing"
+    },
+    {
+      "case_id": "R1",
+      "category": "interruption",
+      "match_title": "",
+      "expected": "",
+      "why": "item processed after --stop-after and --resume"
+    },
+    {
+      "case_id": "R2",
+      "category": "interruption",
+      "match_title": "",
+      "expected": "",
+      "why": "retry of an alert that was already sent"
+    }
+  ]
+}
