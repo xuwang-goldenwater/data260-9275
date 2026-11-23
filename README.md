@@ -307,3 +307,14 @@ Make targets: `hw9-*` and `verify-hw09`. Results: `reports/hw09/METRICS.md`. Sta
 | 4 | trace_id = correlation_id from the cache lookup on; one JSON span per stage; 50-miss latency run; hit / miss / failed traces | `code/observability/tracing.py`, `code/cache_app/semantic_cache.py`, `code/kafka_agents/`, `code/eval_pipeline/{latency_experiment,trace_examples}.py` |
 
 Make targets: `hw10-*` and `verify-hw10`. Results: `reports/hw10/METRICS.md`. Spans go to `reports/hw10/raw/spans.jsonl` (`HW10_SPANS`); start the agents with `HW8_EVENTS=reports/hw10/raw/agent_events.jsonl` and run exactly one planner, writer, reviewer and evaluator.
+
+## Homework 11 — always-on stock monitor on Meta Muse, golden set, failure injection
+
+| Part | What | Code |
+|---|---|---|
+| 1 | Instructor kit installed on Muse (standing instructions in Muse memory, weekday 1:30 PM PT scheduled task); live watchlist KO, KR, NVDA, TSLA. Extensions: non-CSV price replies raise `source_error`, Yahoo chart API as live price source, EDGAR `count` 10 and `max_age_days` 7 | `code/stock-watch/{watch.py,sources.json}` |
+| 2 | Materiality policy with per-ticker thresholds (digest ≈ 1.5 sigma, notify ≈ 3 sigma of daily returns) | `code/stock-watch/policy.md`, `reports/hw11/VOLATILITY.md` |
+| 3 | 12 golden cases (2 per category) on fictional grocery-domain companies, labelled before any agent run | `code/stock-watch/fixtures/hw_day{1,2}/`, `code/stock-watch/golden/gold_hw11.json` |
+| 4-6 | Duplicate, restart and prompt-injection tests; one HIGH alert traced; metrics | `reports/hw11/METRICS.md` |
+
+Everything runs on the Muse cloud computer, not on the Mac: live state in `~/stock-watch`, fixture tests in a separate copy `~/stock-watch-test`. Quick local check of the kit: `cd code/stock-watch && bash demo_test.sh` (state goes to `code/stock-watch/state/`, git-ignored). Results: `reports/hw11/METRICS.md`; AI use: `reports/hw11/AI_USE.md`.
