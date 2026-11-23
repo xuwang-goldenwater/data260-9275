@@ -50,6 +50,8 @@
       "url": "https://www.sec.gov/cgi-bin/browse-edgar",
       "form": "8-K",
       "per_company": 10,
+      "max_age_days": 7,
+      "note": "SEC accepts count 10-500 only. max_age_days: filings older than 7 days are skipped (logged as stale_skip), so a first run does not alert on a year of old 8-Ks.",
       "ciks": {"KO": "0000021344", "KR": "0000056873", "NVDA": "0001045810", "TSLA": "0001318605"}
     },
     {

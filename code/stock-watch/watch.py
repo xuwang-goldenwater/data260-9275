@@ -314,6 +314,18 @@ def fetch_source(src, args, allowed_hosts, con, run_id):
             for it in parse_feed(http_get(src["url"] + "?" + q, allowed_hosts, con, run_id)):
                 it["title"] = f"{tk}: {it['title']}"
                 items.append(it)
+        # HW11: a filing is news only while it is recent. Without this, the first live run
+        # treats a year of old 8-Ks as new and alerts on every one of them.
+        max_age = src.get("max_age_days")
+        if max_age:
+            cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=max_age)).strftime("%Y-%m-%d")
+            fresh = [it for it in items if (it.get("published") or "")[:10] >= cutoff]
+            stale = [it for it in items if (it.get("published") or "")[:10] < cutoff]
+            if stale:
+                log(con, run_id, None, "stale_skip",
+                    {"source": src["id"], "skipped": len(stale), "max_age_days": max_age,
+                     "cutoff": cutoff, "newest_skipped": max(it["published"][:10] for it in stale)})
+            items = fresh
         return items
     url = src["url"]
     if typ == "arxiv":
