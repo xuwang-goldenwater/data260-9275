@@ -244,10 +244,40 @@ def price_events(ticker, csv_text, threshold, page_url, lookback=3):
     return out_
 
 
+def check_price_csv(text, ticker):
+    """HW11: a price source must return CSV that starts with a Date header.
+    Without this check a bot-check page, an empty body or 'No data' parses to zero rows and the
+    scan reports "0 new" as if nothing moved. Raising here makes cmd_scan log a source_error."""
+    head = (text or "").lstrip()[:120]
+    if not head.startswith("Date,"):
+        raise ValueError(f"{ticker}: price source did not return CSV; got: {head[:80]!r}")
+
+
+def yahoo_to_csv(raw, ticker):
+    """HW11: Yahoo chart API JSON -> the same Date,Open,High,Low,Close,Volume CSV that
+    price_events() reads. Missing closes become N/D (dropped by price_events)."""
+    try:
+        res = json.loads(raw)["chart"]["result"][0]
+    except (ValueError, KeyError, IndexError, TypeError):
+        raise ValueError(f"{ticker}: Yahoo did not return chart JSON; got: {raw[:80]!r}")
+    off = res.get("meta", {}).get("gmtoffset", 0) or 0
+    q = res["indicators"]["quote"][0]
+    lines = ["Date,Open,High,Low,Close,Volume"]
+    for i, ts in enumerate(res.get("timestamp") or []):
+        d = dt.datetime.fromtimestamp(ts + off, dt.timezone.utc).strftime("%Y-%m-%d")
+        c = q["close"][i]
+        if c is None:
+            lines.append(f"{d},N/D,N/D,N/D,N/D,0")
+            continue
+        o, h, lo = (q[k][i] if q[k][i] is not None else c for k in ("open", "high", "low"))
+        lines.append(f"{d},{o:.2f},{h:.2f},{lo:.2f},{c:.2f},{q['volume'][i] or 0}")
+    return "\n".join(lines) + "\n"
+
+
 def fetch_source(src, args, allowed_hosts, con, run_id):
     typ = src.get("type")
     n = src.get("max_results", 25)
-    if typ == "stooq":
+    if typ in ("stooq", "yahoo"):
         items = []
         for tk in src["tickers"]:
             page = f"https://stooq.com/q/?s={tk}"
@@ -258,8 +288,14 @@ def fetch_source(src, args, allowed_hosts, con, run_id):
                     continue
                 with open(p, encoding="utf-8") as f:
                     text = f.read()
+            elif typ == "yahoo":
+                page = f"https://finance.yahoo.com/quote/{tk.upper()}"
+                raw = http_get(f"{src['url']}{tk.upper()}?range=1mo&interval=1d",
+                               allowed_hosts, con, run_id)
+                text = yahoo_to_csv(raw, tk)
             else:
                 text = http_get(f"{src['url']}?s={tk}&i=d", allowed_hosts, con, run_id)
+            check_price_csv(text, tk)  # HW11: a non-CSV reply is an error, not "no moves"
             items += price_events(tk.split(".")[0], text, src.get("threshold_pct", 2.0), page,
                                   src.get("lookback_days", 3))
         return items

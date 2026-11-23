@@ -1,44 +1,44 @@
 {
   "topic": "Material changes for a stock watchlist: large daily price moves and new SEC 8-K filings",
   "user_agent": "DATA260-stock-watch/1.0 xu.wang@sjsu.edu",
-  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. One price source per ticker so each ticker has its own threshold. threshold_pct is the DIGEST floor (moves below it are never candidates); the NOTIFY line for each ticker is in policy.md. Thresholds: digest ~1.5 sigma, notify ~3 sigma of daily returns, 2025-11-21 to 2026-11-20.",
+  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. One price source per ticker so each ticker has its own threshold. Live prices come from the Yahoo chart API: since Nov 2026 Stooq answers automated clients with a JavaScript bot check instead of CSV. threshold_pct is the DIGEST floor (moves below it are never candidates); the NOTIFY line for each ticker is in policy.md. Thresholds: digest ~1.5 sigma, notify ~3 sigma of daily returns, 2025-11-21 to 2026-11-20.",
   "sources": [
     {
       "id": "prices_live_ko",
-      "type": "stooq",
+      "type": "yahoo",
       "modes": ["live"],
-      "url": "https://stooq.com/q/d/l/",
-      "tickers": ["ko.us"],
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/",
+      "tickers": ["ko"],
       "threshold_pct": 2.0,
       "lookback_days": 3,
       "note": "KO daily sigma 1.19%. Digest >= 2.0%, notify >= 3.5%."
     },
     {
       "id": "prices_live_kr",
-      "type": "stooq",
+      "type": "yahoo",
       "modes": ["live"],
-      "url": "https://stooq.com/q/d/l/",
-      "tickers": ["kr.us"],
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/",
+      "tickers": ["kr"],
       "threshold_pct": 3.0,
       "lookback_days": 3,
       "note": "KR daily sigma 1.90%. Digest >= 3.0%, notify >= 5.5%."
     },
     {
       "id": "prices_live_nvda",
-      "type": "stooq",
+      "type": "yahoo",
       "modes": ["live"],
-      "url": "https://stooq.com/q/d/l/",
-      "tickers": ["nvda.us"],
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/",
+      "tickers": ["nvda"],
       "threshold_pct": 4.0,
       "lookback_days": 3,
       "note": "NVDA daily sigma 2.60%. Digest >= 4.0%, notify >= 8.0%."
     },
     {
       "id": "prices_live_tsla",
-      "type": "stooq",
+      "type": "yahoo",
       "modes": ["live"],
-      "url": "https://stooq.com/q/d/l/",
-      "tickers": ["tsla.us"],
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/",
+      "tickers": ["tsla"],
       "threshold_pct": 4.5,
       "lookback_days": 3,
       "note": "TSLA daily sigma 2.91%. Digest >= 4.5%, notify >= 9.0%."
@@ -49,7 +49,7 @@
       "modes": ["live"],
       "url": "https://www.sec.gov/cgi-bin/browse-edgar",
       "form": "8-K",
-      "per_company": 5,
+      "per_company": 10,
       "ciks": {"KO": "0000021344", "KR": "0000056873", "NVDA": "0001045810", "TSLA": "0001318605"}
     },
     {
